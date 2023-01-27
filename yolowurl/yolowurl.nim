@@ -105,6 +105,9 @@ debugEcho "you are ", sj[0] & $sj.wha & $sj.t
 
 
 #### procedures
+proc pubfn*(): void =
+  echo "the * makes me available when imported"
+
 proc eko(this: string): void =
   debugEcho this
 eko "wtf"
