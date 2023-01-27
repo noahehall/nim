@@ -2,6 +2,15 @@
   getting back up to speed on nim
 ]#
 
+#[
+  importing other modules
+
+  import math === import std/math
+  import firstFile
+  import mySubdir/thirdFile
+  import myOtherSubdir / [fourthFile, fifthFile]
+]#
+
 # strings
 var msg: string = "yolo"
 echo msg & " wurl" # returns a new string

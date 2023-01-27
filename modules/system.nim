@@ -29,6 +29,7 @@ debugEcho "my string length: " & $(len myString)
   https://nim-lang.org/docs/io.html
 ]#
 
+echo "length of readme.md ", len (readFile "README.md")
 #[
   https://nim-lang.org/docs/widestrs.html
 ]#
