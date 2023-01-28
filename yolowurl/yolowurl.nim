@@ -1,10 +1,11 @@
 #[
-  getting back up to speed on nim
+  super long nim syntax file
+  ctrl -f it
+  bookmark: https://nim-by-example.github.io/procs/
 ]#
 
 #[
-  importing other modules
-
+  # import
   import math === import std/math
   import firstFile
   import mySubdir/thirdFile
@@ -12,7 +13,7 @@
 ]#
 
 #[
-  lol cant get these to compile
+  # wtf lol cant get these to compile
   echo "nil === void", $nil.nil
   discard echo "ignore return values"
   echo "true | false ", true | false
@@ -21,6 +22,9 @@
 ############################ variables
 var poop1 = "flush" # runtime mutable
 let poop2 = "hello" # runtime immutable
+# compile-time evaluation cannot interface with C
+# there is no compile-time foreign function interface at this time.
+# consts must be initialized with a value
 const poop3 = "flush" # compile time immutable
 let `let` = "stropping"; echo(`let`) # stropping enables keywords as identifiers
 
@@ -80,17 +84,23 @@ const
 
 
 ############################ control flow: branching
+# if
 if not false: echo "true": else: echo "false"
 if 11 < 2 or (11 == 11 and 'a' >= 'b' and not true):
   echo "or " & "true"
 elif "poop" == "boob": echo "boobs arent poops"
 else: echo false
 
+# when is a compile time if statement
 when true:
   echo "evaluated at compile time"
-when false:
-  echo "this code is commented out"
+when false: # false = trick for commenting code
+  echo "this code is never run"
 
+# case
+# are actually expressions
+# every possible case must be covered
+# can use strings, sets and ranges of ordinal types
 case num3
 of 2:
   echo "of 2 satisifes float 2.0"
@@ -105,10 +115,24 @@ else: echo "not all cases covered: compile error if we remove else:discard"
   case num2:
   of 2.0: echo "type mispmatch because num2 is int"
 ]#
+proc positiveOrNegative(num: int): string =
+  result = case num: # <-- case is an expression
+    of low(int).. -1: # <--- check the low proc
+      "negative"
+    of 0:
+      "zero"
+    of 1..high(int): # <--- check the high proc
+      "positive"
+    else: # <--- this is unreachable, but doesnt throw err
+      "impossible"
+
+echo positiveOrNegative(-1)
 
 ############################ control flow: loops
+# for
+# this uses the items iterator, as we are only using i
 for i in 1..2:
-  echo "loop " & $i # & concat nor $ conversion required
+  echo "loop " & $i
 for i in 1 ..< 2:
   echo "loop ", i
 for i in countup(0,10,2):
@@ -117,6 +141,7 @@ for i in countdown(11,0, 2):
   echo "odds only ", i
 for i in "noah":
   echo "spell my name spell my name when your not around me ", i
+# this iuses the pairs iterator, as we are using i AND n
 for i, n in "noah":
   echo "index ", i, " is ", n
 
@@ -125,6 +150,46 @@ while num6 < 10: # break, continue work as expected
   echo "num6 is ", num6
   inc num6
 
+# block statements
+# wide range of uses cases, but primarily breaking out of nested loops
+block poop:
+  var count = 0
+  while true:
+    while true:
+      while count < 5:
+        echo "I took ", count, " poops"
+        count += 1
+        if count > 2:
+          break poop
+
+# iterators
+# can be used as operators if you enclose the name in back ticks
+# you can define an interator for looping over anything, e.g. user types
+# @see https://nim-by-example.github.io/for_iterators/
+iterator `...`*[T](a: T, b: T): T =
+  var res: T = a
+  while res <= b:
+    yield res
+    inc res
+
+for i in 0...5:
+  echo i
+
+# iterator: inlined for loop
+# do not have the overhead from function calling
+iterator countTo(n: int): int =
+  var i = 0
+  while i <= n:
+    yield i
+    inc i
+
+for i in countTo(5):
+  echo i
+
+# iterator: closures
+# basically javascript yield
+# have state and can be resumed
+# @see https://nim-by-example.github.io/for_iterators/
 ############################ structs
 
 # fixed-length homogeneous arrays
@@ -161,29 +226,33 @@ var sj = (iz: "super", wha: 133, t: 't')
 sj.iz = "duper"
 debugEcho "you are ", sj[0] & $sj.wha & $sj.t
 
-# create a type, associate a procedure, and instantiate an instance
-# type
-#   SomeType = object
-#     propName: poops
-
+# types: user defined struct
+type
+  IPoop = object
+    didi: bool
+    times: int
 
 
 ############################ procedures
-# used as procedure return types, for type inference
-# auto
-# void
+# special return types
+# auto = type inference
+# void = nothing is returned
 proc pubfn*(): void =
-  echo "the * makes me available when imported"
+  echo "the * makes this fn importable"
 
 proc eko(this: string): void =
   debugEcho this
 eko "wtf"
 eko("wtf")
 
+# result serves as an implicit return variable
+# initialized as: var result: ReturnType
+# its idiomatic nim to mutate it
 proc redurn(this: string): string =
-  return this
-debugEcho redurn "Wtf"
+  result = this
+debugEcho redurn "Wtf is result value"
 
+# you can use explicitly return aswell
 proc mutate(this: var int): int =
   this += 5
   return this

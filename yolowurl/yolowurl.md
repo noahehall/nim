@@ -66,18 +66,17 @@
 
 ```sh
 
-nim c poop.nim # compile poop binary
-nim c -r  poop.nim # compile and run poop
+# nim CMD -OPTS --FLAGS somefile ARGS
+nim c poop.nim # compile poop to binary
+nim c -r poop.nim # compile then run poop
 
-```
-
-### flags
-
-```sh
-  --gc:GC_NAME # chose the type of garbage collector to use
-  --boundsChecks # perform runtime checks, less perf > greater safety
-  -d:release # turns off a variety of things, like boundsChecks
-
+# cmd/opts/flags
+c # compile
+-r # run
+--verbosity:X # 0 essential, 1 errs, 2 err + line numbers
+--gc:GC_NAME # chose the type of garbage collector to use
+--boundsChecks # perform runtime checks, less perf > greater safety
+-d:release # turns off a variety of things, like boundsChecks
 ```
 
 ## variables
@@ -92,6 +91,8 @@ nim c -r  poop.nim # compile and run poop
 - value types: allocated on the stack
 - reference types: are stored on the heap
 - dividing 2 ints produces a float unless you use `div` operator
+- statically typed: however variable declarations have their types inferred
+- you can explicitly convert types to another via the `cast` keyword
 
 ## procedures
 
@@ -108,3 +109,10 @@ nim c -r  poop.nim # compile and run poop
   - forward declaration: the function signature without a body
 - procs without parameters can omit the paranthesis in the difinition
 - you can overload procedures by assigning the same name to procedures with different parameter signatures
+
+## loops and iterators
+
+- iterating over an object with one item
+  - nim uses the `items` iterator
+- iterating over an object with two items
+  - nim uses the `pairs` iterator
