@@ -11,6 +11,7 @@ let
     string
     """
 
+
 echo str1.split
 echo str1.toUpperAscii
 echo str1.repeat(5)

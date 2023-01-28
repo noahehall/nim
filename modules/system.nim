@@ -16,6 +16,7 @@ debugEcho "my string length: ", len myString
 # s.add(c): append char/string to an existing char/string
 # in: i.e. contains
 # notin: i.e. doesnt contain
+# parseInt/parseFloat
 
 #[
   https://nim-lang.org/docs/dollars.html
