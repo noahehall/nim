@@ -1,14 +1,14 @@
 #[
   https://nim-lang.org/docs/system.html
-  every module implictlys the system module
+  every module implictly imports the system module
   system also imports other modules (listed below)
   system cannot be imported explicitly
 ]#
 
 
-var myString = "im not your string, we broke up"
+const myString = "im not your string, we broke up"
 echo myString
-debugEcho "my string length: " & $(len myString)
+debugEcho "my string length: ", len myString
 
 # chr(i): convert 0..255 to a char
 # ord(i): convert char to an int
@@ -16,6 +16,12 @@ debugEcho "my string length: " & $(len myString)
 # s.add(c): append char/string to an existing char/string
 # in: i.e. contains
 # notin: i.e. doesnt contain
+
+#[
+  https://nim-lang.org/docs/dollars.html
+  $s: toString
+]#
+
 
 #[
   https://nim-lang.org/docs/iterators.html
@@ -30,11 +36,10 @@ debugEcho "my string length: " & $(len myString)
 ]#
 
 echo "length of readme.md ", len (readFile "README.md")
-#[
-  https://nim-lang.org/docs/widestrs.html
-]#
+
+echo "whats your name: "
+echo "hello: ", readLine(stdin)
 
 #[
-  https://nim-lang.org/docs/dollars.html
-  $s: toString
+  https://nim-lang.org/docs/widestrs.html
 ]#

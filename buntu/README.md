@@ -1,1 +1,2 @@
-moving all of my bookOfNoah ubuntu fns to nim
+- moving all of my bookOfNoah ubuntu fns to nim
+- hopefully this will serve as a good trial for converting my nirv.sh fns to a binary for use across nirvai
