@@ -11,19 +11,46 @@
   import myOtherSubdir / [fourthFile, fifthFile]
 ]#
 
-# strings
+#[
+  lol cant get these to compile
+  echo "nil === void", $nil.nil
+  discard echo "ignore return values"
+  echo "true | false ", true | false
+]#
+
+############################ variables
+var poop1 = "flush" # runtime mutable
+let poop2 = "hello" # runtime immutable
+const poop3 = "flush" # compile time immutable
+let `let` = "stropping"; echo(`let`) # stropping enables keywords as identifiers
+
+############################ strings
+# must be enclosed in double quotes
+# escape sequences are parsed
+# always mutable
 var msg: string = "yolo"
 echo msg & " wurl" # returns a new string
 msg.add(" wurl") # modifies the string in place
 echo msg
+let
+  poop6 = "flush"
+  flush = r"raw string, no escape sequences required"
+  multiline = """can be split on multiple lines, no escape sequences required"""
+
+############################ char
+# single ASCII characters
+# enclosed in single quotes
+let
+  x = 'a'
+  y = '\109'
+  z = '\x79'
 
 
-# number types
+############################ number types
 const num1: int = 2
 const num2: int = 4
 echo "4 / 2 === ", num2 / num1
 echo "4 div 2 === ", num2 div num1
-
 const num3 = 2.0
 const num4: float = 4.0
 const num5: float = 4.9
@@ -31,8 +58,28 @@ echo "4.0 / 2.0 === ", num4 / num3
 echo "4.0 div 2.0 === ", "gotcha: div is only for integers"
 echo "conversion acts like javascript floor()"
 echo "int(4.9) div int(2.0) === ", int(num5) div int(num3)
+echo "remainder of 5 / 2: ", 5 mod 2
 
-# control flow: branching
+# - signed integers, 32bit/64bit depending on system
+# - int8,16,32,64 # 8 = +-127, 16 = +-~32k, 32 = +-~2.1billion
+const
+  a = 100
+  b: int8 = 100
+  c = 100'i8
+  d: int = 1
+# uint: positive integers, 32/64 bit depending on system,
+# uint8,16,32,64 # 8 = 0 -> 2550, 16 = ~65k, 32 = ~4billion
+const
+  e: uint8 = 100
+  f = 100'u8
+# floats
+const
+  g = 100.0
+  h = 100.0'f32
+  i = 4e7 # 4 * 10^7
+
+
+############################ control flow: branching
 if not false: echo "true": else: echo "false"
 if 11 < 2 or (11 == 11 and 'a' >= 'b' and not true):
   echo "or " & "true"
@@ -41,6 +88,8 @@ else: echo false
 
 when true:
   echo "evaluated at compile time"
+when false:
+  echo "this code is commented out"
 
 case num3
 of 2:
@@ -57,7 +106,7 @@ else: echo "not all cases covered: compile error if we remove else:discard"
   of 2.0: echo "type mispmatch because num2 is int"
 ]#
 
-# control flow: loops
+############################ control flow: loops
 for i in 1..2:
   echo "loop " & $i # & concat nor $ conversion required
 for i in 1 ..< 2:
@@ -76,7 +125,7 @@ while num6 < 10: # break, continue work as expected
   echo "num6 is ", num6
   inc num6
 
-###### structs
+############################ structs
 
 # fixed-length homogeneous arrays
 var
@@ -112,8 +161,17 @@ var sj = (iz: "super", wha: 133, t: 't')
 sj.iz = "duper"
 debugEcho "you are ", sj[0] & $sj.wha & $sj.t
 
+# create a type, associate a procedure, and instantiate an instance
+# type
+#   SomeType = object
+#     propName: poops
 
-#### procedures
+
+
+############################ procedures
+# used as procedure return types, for type inference
+# auto
+# void
 proc pubfn*(): void =
   echo "the * makes me available when imported"
 
@@ -143,3 +201,17 @@ proc allInts(x,y,z: int): int
 echo allInts(1, 2, 3) # used before defined
 proc allInts(x, y, z: int): int =
   result = x + y + z
+
+# proc someName(p1: varargs[string]): string =
+#   # p1 is an object that takes an arbitrary amount of strings
+# proc someName = # returns void, and doesnt accept params
+# proc someName: void = echo "defined on one line"
+# proc someName: auto = "return type is inferred"
+
+# # anonymous proc: doesnt have a name and surrounded by paranthesis
+# var someName = ( proc (params): returnType = "poop")
+# # alternatively you can import sugar to get the -> symbol
+# import sugar
+# var someName = (params) -> returnType => "poop"
+# # can also be used as a type for a proc param that accepts a fn
+# proc someName(someFn: (params) -> returnType) =

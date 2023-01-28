@@ -1,5 +1,3 @@
 # nim
 
-## yolo wurl
-
-- just hella syntax
+- my adventures in nim
