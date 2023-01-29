@@ -248,7 +248,7 @@ eko("wtf")
 # result serves as an implicit return variable
 # initialized as: var result: ReturnType
 # its idiomatic nim to mutate it
-proc redurn(this: string): string =
+proc redurn(this: string): auto =
   result = this
 debugEcho redurn "Wtf is result value"
 
@@ -261,7 +261,8 @@ proc mutate(this: var int): int =
 var num7 = 5
 debugEcho mutate num7, num7.mutate, mutate(num7)
 
-proc add5(num: int): int =
+# noSideEffect pragma: statically ensures there are no side effects
+proc add5(num: int): int {. noSideEffect .} =
   result = num + 5 # returned implicitly
 debugEcho add5 5, 5.add5.add5, add5 add5(5).add5
 
@@ -270,6 +271,18 @@ proc allInts(x,y,z: int): int
 echo allInts(1, 2, 3) # used before defined
 proc allInts(x, y, z: int): int =
   result = x + y + z
+
+# procs as operators
+# must use `symbol`
+proc `***`(i: int): auto =
+  result = i * i * i
+
+echo ***5 + ***(5)
+
+# generic procs
+proc wtf[T](a: T): auto =
+  result = "wtf " & $a
+echo wtf "yo"
 
 # proc someName(p1: varargs[string]): string =
 #   # p1 is an object that takes an arbitrary amount of strings
