@@ -162,6 +162,13 @@ block poop:
         if count > 2:
           break poop
 
+# do statements
+# you have to read the docs on this one
+echo do:
+  "this ting"
+
+
+
 # iterators
 # can be used as operators if you enclose the name in back ticks
 # you can define an interator for looping over anything, e.g. user types
@@ -248,8 +255,8 @@ eko("wtf")
 # result serves as an implicit return variable
 # initialized as: var result: ReturnType
 # its idiomatic nim to mutate it
-proc redurn(this: string): auto =
-  result = this
+proc redurn(this: string): string =
+  result &= this
 debugEcho redurn "Wtf is result value"
 
 # you can use explicitly return aswell
@@ -284,11 +291,20 @@ proc wtf[T](a: T): auto =
   result = "wtf " & $a
 echo wtf "yo"
 
+# closures with proc notation
+proc runFn(a: string, fn: proc(x: string): string): string =
+  fn a
+echo runFn("with this string", proc (x: string): string = "received: " & x)
+
+# closures with do notation
+# just a shorter proc
+# haha fkn notice how the DO is placed after the fn
+# lol and not as a param to the fn
+# @see https://nim-lang.org/docs/manual_experimental.html#do-notation
+echo runFn("with another string") do (x: string) -> string: "another: " & x
+
 # proc someName(p1: varargs[string]): string =
 #   # p1 is an object that takes an arbitrary amount of strings
-# proc someName = # returns void, and doesnt accept params
-# proc someName: void = echo "defined on one line"
-# proc someName: auto = "return type is inferred"
 
 # # anonymous proc: doesnt have a name and surrounded by paranthesis
 # var someName = ( proc (params): returnType = "poop")
