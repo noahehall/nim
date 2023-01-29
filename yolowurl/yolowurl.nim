@@ -1,7 +1,7 @@
 #[
   super long nim syntax file
   ctrl -f it
-  bookmark: https://nim-by-example.github.io/procs/
+  bookmark: https://nim-by-example.github.io/types/objects/
 ]#
 
 #[
@@ -43,6 +43,7 @@ let
 
 ############################ char
 # single ASCII characters
+# basically an alias for uint8
 # enclosed in single quotes
 let
   x = 'a'
@@ -53,8 +54,8 @@ let
 ############################ number types
 const num1: int = 2
 const num2: int = 4
-echo "4 / 2 === ", num2 / num1
-echo "4 div 2 === ", num2 div num1
+echo "4 / 2 === ", num2 / num1 # / always returns a float
+echo "4 div 2 === ", num2 div num1 # div always returns an int
 const num3 = 2.0
 const num4: float = 4.0
 const num5: float = 4.9
@@ -64,19 +65,22 @@ echo "conversion acts like javascript floor()"
 echo "int(4.9) div int(2.0) === ", int(num5) div int(num3)
 echo "remainder of 5 / 2: ", 5 mod 2
 
-# - signed integers, 32bit/64bit depending on system
-# - int8,16,32,64 # 8 = +-127, 16 = +-~32k, 32 = +-~2.1billion
+# signed integers, 32bit/64bit depending on system
+# int8,16,32,64 # 8 = +-127, 16 = +-~32k, 32 = +-~2.1billion
+# int === same size as pointer
 const
   a = 100
   b: int8 = 100
   c = 100'i8
   d: int = 1
+
 # uint: positive integers, 32/64 bit depending on system,
 # uint8,16,32,64 # 8 = 0 -> 2550, 16 = ~65k, 32 = ~4billion
 const
   e: uint8 = 100
   f = 100'u8
-# floats
+# floats:  float32, float64, and float
+# float === processors fastest type
 const
   g = 100.0
   h = 100.0'f32
@@ -151,6 +155,7 @@ while num6 < 10: # break, continue work as expected
   inc num6
 
 # block statements
+# theres a () syntax but we skipped it as its not idiomatic nim
 # wide range of uses cases, but primarily breaking out of nested loops
 block poop:
   var count = 0
@@ -159,7 +164,7 @@ block poop:
       while count < 5:
         echo "I took ", count, " poops"
         count += 1
-        if count > 2:
+        if count > 2: # dont want to take too many
           break poop
 
 # do statements
@@ -232,12 +237,6 @@ echo js
 var sj = (iz: "super", wha: 133, t: 't')
 sj.iz = "duper"
 debugEcho "you are ", sj[0] & $sj.wha & $sj.t
-
-# types: user defined struct
-type
-  IPoop = object
-    didi: bool
-    times: int
 
 
 ############################ procedures
@@ -313,3 +312,24 @@ echo runFn("with another string") do (x: string) -> string: "another: " & x
 # var someName = (params) -> returnType => "poop"
 # # can also be used as a type for a proc param that accepts a fn
 # proc someName(someFn: (params) -> returnType) =
+
+############################ types
+# type aliases are identical to their super
+# theres a technical term for this, check the scala docs
+type
+  BigMoney* = int # <- can be used wherever int is expected
+echo 4 + BigMoney(2000)
+
+# object types
+# traced by the garbage collector, no need to free them when allocated
+type
+  PrivatePoop = object
+    i*: bool
+    times: int
+  PublicPoop* = object # <-- u dirty animal
+    u: bool
+    times: int
+let ipoop = PrivatePoop(i: false, times: 0)
+let upoop = PublicPoop(u: true, times: 100)
+echo "did ", ipoop
+echo "or did ", upoop
