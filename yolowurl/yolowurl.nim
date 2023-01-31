@@ -22,6 +22,17 @@
 ]#
 
 #[
+  # compiling stuff
+  nim CMD OPTS FILE ARGS
+  CMDS
+    c compile
+    r compile to $nimcache/projectname then run it
+  OPTS
+    --threads:on enable threads for parallism
+    --backend c|find-the-other-backends
+
+]#
+#[
   # wtf lol cant get these to compile
   echo "nil === void", $nil.nil # <-- think its just suppose to be nil and not nil.nil
   discard echo "ignore return values" <-- you cant discard a void
@@ -414,8 +425,9 @@ method dIdIpOoP(self: IPoop): string =
 var sherlockpoops: seq[WhoPoop] = @[]
 sherlockpoops.add(YouPoop(name: "spiderman"))
 sherlockpoops.add(IPoop(name: "noah"))
-for investigate in sherlockpoops:
-  echo investigate.dIDIPOOP
+for criminal in sherlockpoops:
+  # echo $criminal doesnt work because $ doesnt exist on RootObj
+  echo criminal.dIDIPOOP
 
 ############################ type aliases
 # type aliases are identical to their base
@@ -487,7 +499,7 @@ let people2 = SomeoneRef(name: "npc",
 # type checked (thus cant be anonymous and must have a type)
 type
   GangsOfAmerica = enum
-    bloods, crips, democrats, republicans, politicians
+    democrats, republicans, politicians
 # you can assign custom values to enums
 type
   PeopleOfAmerica {.pure.} = enum
