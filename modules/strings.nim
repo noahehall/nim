@@ -44,3 +44,21 @@ let
   d = "dee"
 
 echo &"{a} {b} {c} {d}"
+
+############################ use cases
+# formatting objects
+type
+  Nirv = object
+    paths, strats, actions: bool
+var nirv = Nirv(paths: true, strats: true, actions: true)
+echo "we need better $ " & $nirv
+echo "we need better % $1 " % [$nirv]
+echo &"we need better & {nirv}"
+echo &"we need better & {$nirv}"
+
+# overload dollars to modify the Nirv toString
+proc `$`(self: Nirv): string =
+  &"paths = {self.paths}, strats = {self.strats}, actions = {self.actions}"
+echo "we need better `$` " & $nirv
+echo &"[original] we need better & {nirv}"
+echo &"[overloadded] we need better & {$nirv}"
