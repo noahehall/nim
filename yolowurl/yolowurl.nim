@@ -1,12 +1,14 @@
 #[
   super long nim syntax file focusing on the basics
-  see the modules dir for diving in deep
+  only uses the implicitly imported system module
+  see deepdives dir to dive deep
 
   bookmark: https://nim-by-example.github.io/string_formatting/
   then here: https://nim-lang.org/docs/nimc.html
   then here: https://nim-lang.org/docs/manual_experimental.html
   then here: https://nim-lang.org/docs/docgen.html
   then here: https://nim-lang.org/docs/destructors.html
+  then here: https://nimbus.guide/auditors-book/
   and finally: https://nim-lang.org/docs/manual.html
 
   skipped
@@ -19,6 +21,9 @@
   import fileInThisDir
   import mySubdir/thirdFile
   import myOtherSubdir / [fourthFile, fifthFile]
+
+  # exporting stuff
+  export something
 ]#
 
 #[
@@ -26,8 +31,9 @@
   nim CMD OPTS FILE ARGS
   CMDS
     c compile
-    r compile to $nimcache/projectname then run it
+    r compile to $nimcache/projectname then run it, prefer this over `c -r`
   OPTS
+    -r used with c to compile then run
     --threads:on enable threads for parallism
     --backend c|find-the-other-backends
 
@@ -39,13 +45,14 @@
   echo "true | false ", true | falsev <-- | is xor
 ]#
 
-############################ pragmas
+echo "############################ pragmas"
 # find them in the docs somewhere
 # {.pure.} requires all ambigigious references be qualified
 # ^ x fails, but y.x doesnt
 # {.base.} for methods, to specify whom this fn belongs
 # ^ see inheritance
-############################ variables
+
+echo "############################ variables"
 var poop1 = "flush" # runtime mutable
 let poop2 = "hello" # runtime immutable
 # compile-time evaluation cannot interface with C
@@ -54,7 +61,7 @@ let poop2 = "hello" # runtime immutable
 const poop3 = "flush" # compile time immutable
 let `let` = "stropping"; echo(`let`) # stropping enables keywords as identifiers
 
-############################ strings
+echo "############################ strings"
 # must be enclosed in double quotes
 # are really just seq[char] so you can use any seq proc for manipulation
 # check # proc section for proc strings
@@ -73,7 +80,7 @@ let
 echo poop6, flush, multiline
 
 
-############################ char
+echo "############################ char"
 # single ASCII characters
 # basically an alias for uint8
 # enclosed in single quotes
@@ -83,7 +90,7 @@ let
   z = '\x79'
 
 
-############################ number types
+echo "############################ number types"
 const num1: int = 2
 const num2: int = 4
 echo "4 / 2 === ", num2 / num1 # / always returns a float
@@ -119,7 +126,7 @@ const
   i = 4e7 # 4 * 10^7
 
 
-############################ control flow: branching
+echo "############################ control flow: branching"
 # if
 if not false: echo "true": else: echo "false"
 if 11 < 2 or (11 == 11 and 'a' >= 'b' and not true):
@@ -164,7 +171,7 @@ proc positiveOrNegative(num: int): string =
 
 echo positiveOrNegative(-1)
 
-############################ control flow: loops
+echo "############################ control flow: loops"
 # for
 # this uses the items iterator, as we are only using i
 for i in 1..2:
@@ -237,7 +244,7 @@ for i in countTo(5):
 
 
 
-############################# arrays fixed-length homogeneous
+echo "############################ arrays fixed-length homogeneous"
 # the array size is encoded in its type
 # so you to pass an array to a proc the proc must specify the size as well as type
 var
@@ -254,7 +261,7 @@ proc withArrParam[I, T](a: array[I, T]): string =
 discard withArrParam nums
 discard withArrParam smun
 
-############################ sequences dynamic-length homogeneous
+echo "############################ sequences dynamic-length homogeneous"
 # dynamically allocated (on the heap, not the stack)
 # but still immutable unless created with var
 var
@@ -276,7 +283,7 @@ var me = "noAH"
 me[0 .. 1] = "NO"
 echo "change first 2 els ", me
 
-############################ tuple fixed length hetergenous
+echo "############################ tuple fixed length hetergenous"
 let js = ("super", 133, 't')
 echo js
 
@@ -285,7 +292,7 @@ sj.iz = "duper"
 debugEcho "you are ", sj[0] & $sj.wha & $sj.t
 
 
-############################ procedures
+echo "############################ procedures"
 # special return types
 # auto = type inference
 # void = nothing is returned
@@ -400,36 +407,8 @@ echo runFn("with another string") do (x: string) -> string: "another: " & x
 # # can also be used as a type for a proc param that accepts a fn
 # proc someName(someFn: (params) -> returnType) =
 
-############################ inheritance
-# of creates inheritance between types
-# base types must be of RootObj type
-# object types with no ancestors are implictly `final`
-type WhoPoop = ref object of RootObj
-    name: string
-type YouPoop = ref object of WhoPoop
-type IPoop = ref object of WhoPoop
 
-# @see https://matthiashager.com/proc-method-nim
-# ^ you have to read this, maybe twice
-# ^ the gist: dont need dynamic dispatch, then dont use method
-method did_i_poop(self: WhoPoop): string {.base.} =
-  "i dont know"
-method didipoop(self: YouPoop): string =
-  self.name & " is a filthy animal"
-method dIdIpOoP(self: IPoop): string =
-  self.name & " has evolved passed pooping"
-
-# this has to be `var` to enable adding subtypes
-# let throws error because You/IPoop arent WhoPoops
-# const doesnt work at all and im not sure why but its a compile time issue
-var sherlockpoops: seq[WhoPoop] = @[]
-sherlockpoops.add(YouPoop(name: "spiderman"))
-sherlockpoops.add(IPoop(name: "noah"))
-for criminal in sherlockpoops:
-  # echo $criminal doesnt work because $ doesnt exist on RootObj
-  echo criminal.dIDIPOOP
-
-############################ type aliases
+echo "############################ type aliases"
 # type aliases are identical to their base
 # are automatically cast to their base
 # theres a technical term for this, check the scala docs
@@ -437,7 +416,7 @@ type
   BigMoney* = int # <- can be used wherever int is expected
 echo 4 + BigMoney(2000)
 
-############################ type aliases distinct
+echo "############################ type aliases distinct"
 # are identical to their base
 # requires explicit casting to their base
 # requires base procs to be be borred
@@ -446,7 +425,7 @@ type
   BiggestMoney {.borrow: `.`.} = distinct BigMoney # borrows all procs
 # echo 10 + FkUMoney(100) # type mismatch
 
-############################ objects
+echo "############################ objects"
 # just a group of fields
 # note the placement of * for visibility
 # traced by the garbage collector, no need to free them when allocated
@@ -495,7 +474,40 @@ let people2 = SomeoneRef(name: "npc",
   bday: "before noah",
   age: 1)
 
-############################ enums
+echo "############################ inheritance"
+# of creates inheritance between types
+# base types must be of RootObj type else they wont have an ancestor
+# object types with no ancestors are implictly `final`
+type WhoPoop = ref object of RootObj
+    name: string
+type YouPoop = ref object of WhoPoop
+type IPoop = ref object of WhoPoop
+
+# overload methods/procs by changing the self arg
+# we use method for dynamic dispatch
+# ^ i.e. the overloaded method is called based on the type
+# ^ with proc only the {.base.} method is called
+method did_i_poop(self: WhoPoop): string {.base.} =
+  "i dont know"
+method didipoop(self: YouPoop): string =
+  self.name & " is a filthy animal"
+method dIdIpOoP(self: IPoop): string =
+  self.name & " has evolved passed pooping"
+
+# this has to be `var` to enable adding subtypes
+# let throws error because You/IPoop arent WhoPoops
+# const doesnt work at all and im not sure why but its a compile time issue
+var sherlockpoops: seq[WhoPoop] = @[]
+sherlockpoops.add(YouPoop(name: "spiderman"))
+sherlockpoops.add(IPoop(name: "noah"))
+for criminal in sherlockpoops:
+  # echo $criminal doesnt work because $ doesnt exist on RootObj
+  echo criminal.dIDIPOOP
+
+# type checking
+if sherlockpoops[0] of YouPoop: echo "filthy animal" else: echo "snobby bourgeois"
+
+echo "############################ enums"
 # type checked (thus cant be anonymous and must have a type)
 type
   GangsOfAmerica = enum
@@ -530,7 +542,7 @@ for peeps in PeopleOfAmerica.coders .. PeopleOfAmerica.scientists:
 
 
 
-############################ files
+echo "############################ files"
 # no clue why we need to add the dir
 # not that way in system.nim
 # ^ its because vscode pwd is /nim and not /nim/yolowurl
@@ -558,7 +570,7 @@ proc writeLines(s: seq[string]): void =
 writeLines @["first line", "Second line"]
 echo readFile tmpfile
 
-############################ assert
+echo "############################ assert"
 # check the compiler flags for how to embed unit tests in code
 # ^ think its -d:danger or --asertions:off
 # ^ so that assertions are optionally removed when compiled

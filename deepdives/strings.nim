@@ -4,6 +4,12 @@
   @see https://nim-lang.org/docs/dollars.html
 ]#
 
+#[
+  # basics
+  & = concat, is overloaded when strformat is imported
+  $ = toString
+]#
+
 import std/[strutils, strformat]
 
 let
