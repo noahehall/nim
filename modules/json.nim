@@ -4,11 +4,12 @@
 
   before using marshal for json @see # @see https://stackoverflow.com/questions/26191114/how-to-convert-object-to-json-in-nim
 ]#
-import
-  std/json,
-  std/jsonutils,
-  std/marshal # they say not to use this for json
-  # std/parsejson # auto imported by json, but can be imported explicitly
+import std/[
+  json,
+  jsonutils,
+  marshal # they say not to use this for json
+  # parsejson auto imported by json, but can be imported explicitly
+]
 
 let
   v1 = "value 1"

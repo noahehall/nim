@@ -2,7 +2,7 @@
   super long nim syntax file focusing on the basics
   see the modules dir for diving in deep
 
-  bookmark: https://nim-by-example.github.io/varargs/
+  bookmark: https://nim-by-example.github.io/string_formatting/
   then here: https://nim-lang.org/docs/nimc.html
   then here: https://nim-lang.org/docs/manual.html
   then here: https://nim-lang.org/docs/docgen.html
@@ -14,9 +14,9 @@
 ]#
 
 #[
-  # import
-  import math === import std/math
-  import firstFile
+  # importing stuff
+  import math is the same as import std/math
+  import fileInThisDir
   import mySubdir/thirdFile
   import myOtherSubdir / [fourthFile, fifthFile]
 ]#
@@ -278,15 +278,32 @@ debugEcho "you are ", sj[0] & $sj.wha & $sj.t
 # auto = type inference
 # void = nothing is returned
 proc pubfn*(): void =
-  echo "the * makes this fn importable"
+  echo "the * makes this fn public"
 
 proc eko(this: string): void =
   debugEcho this
 eko "wtf"
 eko("wtf")
+"wtf".echo
 
+# haha almost forgot the _ doesnt matter
+proc eko_all(s: varargs[string]) =
+  for x in s:
+    echo x
+# notice the missing _
+ekoall "this", "that", "thot"
 
-proc passedByValue(x: string): void = echo x, " cant be modified"
+# `$` second param converts everything to string
+proc eko_anything(s: varargs[string, `$`]) =
+  for x in s:
+    echo x
+eKoAnyThInG 1, "threee", @[1,2,3]
+
+# you cant mutate args passed by value
+proc passedByValue(x: string): void =
+  when false:
+    x = 20 # this will throw an error
+  echo x, " cant be modified"
 let xx = "I"
 passedByValue xx
 
@@ -297,6 +314,8 @@ proc copyThenMutateValue(x: string): void =
 
 copyThenMutateValue xx
 
+# arguments to proc are immutable by default
+# you have to prepend var to arg type defs to mutate them
 var zz = "who"
 proc passedByReference(yy: var string): void =
   yy = "you" # mutates whatever yy points to
@@ -368,6 +387,11 @@ echo runFn("with another string") do (x: string) -> string: "another: " & x
 # var someName = (params) -> returnType => "poop"
 # # can also be used as a type for a proc param that accepts a fn
 # proc someName(someFn: (params) -> returnType) =
+
+############################ methods
+# @see https://matthiashager.com/proc-method-nim
+# ^ you have to read this, maybe twice
+# ^ the gist: dont need dynamic dispatch, then dont use method
 
 ############################ type aliases
 # type aliases are identical to their base
@@ -472,6 +496,7 @@ for peeps in PeopleOfAmerica.coders .. PeopleOfAmerica.scientists:
 ############################ files
 # no clue why we need to add the dir
 # not that way in system.nim
+# ^ its because vscode pwd is /nim and not /nim/yolowurl
 let entireFile = readFile "yolowurl/yolowurl.md"
 echo "file has ", len entireFile, " characters"
 
@@ -495,3 +520,9 @@ proc writeLines(s: seq[string]): void =
   for i, l in s: f.writeLine l
 writeLines @["first line", "Second line"]
 echo readFile tmpfile
+
+############################ assert
+# check the compiler flags for how to embed unit tests in code
+# ^ think its -d:danger or --asertions:off
+# ^ so that assertions are removed when compiled
+assert "a" == $'a' # has to be of same type

@@ -18,11 +18,6 @@ debugEcho "my string length: ", len myString
 # notin: i.e. doesnt contain
 # parseInt/parseFloat
 
-#[
-  https://nim-lang.org/docs/dollars.html
-  $s: toString
-]#
-
 
 #[
   https://nim-lang.org/docs/iterators.html
