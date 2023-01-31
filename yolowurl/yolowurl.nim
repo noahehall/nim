@@ -3,18 +3,27 @@
   only uses the implicitly imported system module
   see deepdives dir to dive deep
 
-  bookmark: https://nim-by-example.github.io/string_formatting/
-  then here: https://matthiashager.com/nim-object-oriented-programming
-  tthen here: https://matthiashager.com/gui-options-for-nim
+  bookmark: https://matthiashager.com/nim-object-oriented-programming
+  then here: https://peterme.net/asynchronous-programming-in-nim.html
+  then here: https://nimbus.guide/auditors-book/
   then here: https://nim-lang.org/docs/nimc.html
-  then here: https://nim-lang.org/docs/manual_experimental.html
   then here: https://nim-lang.org/docs/docgen.html
   then here: https://nim-lang.org/docs/destructors.html
-  then here: https://nimbus.guide/auditors-book/
+  then here: https://nim-lang.org/docs/manual_experimental.html
+  then here: https://matthiashager.com/gui-options-for-nim
   and finally: https://nim-lang.org/docs/manual.html
 
   skipped
     https://nim-by-example.github.io/bitsets/
+    https://nim-by-example.github.io/macros/
+
+  idiomatic nim
+    - todo
+
+  my preferences thus far
+    - strive for parantheseless code, fkn hate the shift key
+    - keep shiz as sugary as possible
+    - prefer fn x,y over x.fn y over fn(x, y) unless the context demands it
 ]#
 
 #[
@@ -59,13 +68,13 @@
 ]#
 echo "############################ pragmas"
 # find them in the docs somewhere
-# {.pure.} requires all ambigigious references be qualified
+# {.pure.} requires qualifying ambigigious references
 # ^ x fails, but y.x doesnt
-# {.base.} for methods, to specify whom this fn belongs
+# {.base.} for methods, to associate fns with a base type
 # ^ see inheritance
 # {.thread.} informs the compiler this fn is meant for execution on a new thread
 # {.threadvar.} informs the compiler this var should be local to a thread
-
+# {.async.} this fn is asynchronous and can use the await keyword
 echo "############################ variables"
 var poop1 = "flush" # runtime mutable
 let poop2 = "hello" # runtime immutable
