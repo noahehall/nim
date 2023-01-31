@@ -3,8 +3,7 @@
   only uses the implicitly imported system module
   see deepdives dir to dive deep
 
-  bookmark: https://matthiashager.com/nim-object-oriented-programming
-  then here: https://peterme.net/asynchronous-programming-in-nim.html
+  bookmark: https://peterme.net/asynchronous-programming-in-nim.html
   then here: https://nimbus.guide/auditors-book/
   then here: https://nim-lang.org/docs/nimc.html
   then here: https://nim-lang.org/docs/docgen.html
@@ -448,6 +447,9 @@ type
   BiggestMoney {.borrow: `.`.} = distinct BigMoney # borrows all procs
 # echo 10 + FkUMoney(100) # type mismatch
 
+echo "############################ type conversions & casts"
+echo "todo"
+
 echo "############################ objects"
 # just a group of fields
 # note the placement of * for visibility
@@ -498,9 +500,12 @@ let people2 = SomeoneRef(name: "npc",
   age: 1)
 
 echo "############################ inheritance"
-# of creates inheritance between types
+# of creates a single layer of inheritance between types
 # base types must be of RootObj type else they wont have an ancestor
 # object types with no ancestors are implictly `final`
+# generally you should always use ref objects with inheritance
+# use the [] operator when logging the object (see strutils)
+# objects can be self-referencing
 type WhoPoop = ref object of RootObj
     name: string
 type YouPoop = ref object of WhoPoop
