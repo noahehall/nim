@@ -11,6 +11,8 @@
   then here: https://nim-lang.org/docs/docgen.html
   then here: https://nim-lang.org/docs/destructors.html
   then here: https://nim-lang.org/docs/manual_experimental.html
+  then here: https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html
+  then here: https://nim-lang.org/docs/backends.html
   then here: nim in action
     - reading: shiz finished this like 2 years ago, it was super old then away
     - copying pg40 custom array ranges, just skim the remainder in case the above missed something
@@ -99,6 +101,7 @@ echo "############################ pragmas"
 # {.pure.} requires qualifying ambiguous references; x fails, but y.x doesnt
 # {.thread.} informs the compiler this fn is meant for execution on a new thread
 # {.threadvar.} informs the compiler this var should be local to a thread
+# {.acyclic.} dunno read the docs
 
 echo "############################ variables"
 var poop1 = "flush" # runtime mutable
@@ -671,6 +674,9 @@ echo readFile tmpfile
 echo "############################ assert"
 # useful for pre & post conditions if using design by contract
 # haha remember trying to use thiz: https://github.com/codemix/contractual
-# think its -d:danger or --asertions:off to remove the asserts from compilation
-# and --assertions:on to keep them in compiled output
+# -d:danger or --asertions:off to remove from compilation
+# --assertions:on to keep them in compiled output
 assert "a" == $'a' # has to be of same type
+
+# is always turned on regardless of --assertions flag
+doAssert 1 < 2, "failure msg"
