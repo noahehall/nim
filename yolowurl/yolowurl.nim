@@ -4,10 +4,10 @@
 
   bookmark: https://nim-by-example.github.io/string_formatting/
   then here: https://nim-lang.org/docs/nimc.html
-  then here: https://nim-lang.org/docs/manual.html
+  then here: https://nim-lang.org/docs/manual_experimental.html
   then here: https://nim-lang.org/docs/docgen.html
-  https://nim-lang.org/docs/manual_experimental.html
-  https://nim-lang.org/docs/destructors.html
+  then here: https://nim-lang.org/docs/destructors.html
+  and finally: https://nim-lang.org/docs/manual.html
 
   skipped
     https://nim-by-example.github.io/bitsets/
@@ -503,7 +503,7 @@ type
 # you can assign custom values to enums
 type
   PeopleOfAmerica {.pure.} = enum
-    coders = "now", teachers = "use to be", farmers = "prefer to be", scientists = "trying to be"
+    coders = "think i am", teachers = "pretend to be", farmers = "prefer to be", scientists = "trying to be"
 
 echo politicians # impure so doesnt need to be qualified
 echo PeopleOfAmerica.coders # coders needs to be qualified cuz its labeled pure
