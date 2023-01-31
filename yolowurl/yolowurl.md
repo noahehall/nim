@@ -1,3 +1,6 @@
+- TODO
+  - move all of this into bookofnoah so there arent 1000 places to look
+
 ### links
 
 - [quick intro](https://narimiran.github.io/nim-basics/)

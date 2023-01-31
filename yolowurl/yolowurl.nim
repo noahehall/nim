@@ -442,9 +442,10 @@ echo noah
 let you = Someone(name:"not noah", bday:"dunno", age: 19)
 debugEcho you
 
-# reference object allocated on the heap
+# ref objects allocated on the heap
 # mittens cant be changed (i.e. point to something else)
-# but the pointer in on the heap can be changed
+# but the pointer on the heap can be changed (i.e. mutate its attrs)
+# also dont have to label ref objects as var in proc signatures to mutate them
 let people: ref Someone = new(Someone)
 people.name = "npc"
 people.bday = "< now"
