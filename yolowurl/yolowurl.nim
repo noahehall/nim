@@ -3,7 +3,7 @@
   only uses the implicitly imported system module
   see deepdives dir to dive deep
 
-  bookmark: https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html
+  bookmark: https://nimbus.guide/auditors-book/02.2_stack_ref_ptr_types.html
   then here: https://nim-lang.org/docs/tut1.html
   then here: https://nim-lang.org/docs/tut2.html
   then here: https://nim-lang.org/docs/tut3.html
@@ -88,13 +88,18 @@
 ]#
 echo "############################ pragmas"
 # find them in the docs somewhere
-# {.pure.} requires qualifying ambigigious references
-# ^ x fails, but y.x doesnt
-# {.base.} for methods, to associate fns with a base type
-# ^ see inheritance
+# {.async.} this fn is asynchronous and can use the await keyword
+# {.base.} for methods, to associate fns with a base type. see inheritance
+# {.bycopy|byref.} label a proc arg
+# {.dirty.} dunno, but used with templates
+# {.exportc: "or-use-this-specific-name".}
+# {.exportc.} disable proc name mangling when compiled
+# {.inject.} dunno, something to do with symbol visibility
+# {.noSideEffect.} convert a proc to a func, but why not just use func?
+# {.pure.} requires qualifying ambiguous references; x fails, but y.x doesnt
 # {.thread.} informs the compiler this fn is meant for execution on a new thread
 # {.threadvar.} informs the compiler this var should be local to a thread
-# {.async.} this fn is asynchronous and can use the await keyword
+
 echo "############################ variables"
 var poop1 = "flush" # runtime mutable
 let poop2 = "hello" # runtime immutable
@@ -169,7 +174,7 @@ const
   i = 4e7 # 4 * 10^7
 
 
-echo "############################ control flow: branching"
+echo "############################ if"
 # if
 if not false: echo "true": else: echo "false"
 if 11 < 2 or (11 == 11 and 'a' >= 'b' and not true):
@@ -177,14 +182,14 @@ if 11 < 2 or (11 == 11 and 'a' >= 'b' and not true):
 elif "poop" == "boob": echo "boobs arent poops"
 else: echo false
 
-# when is a compile time if statement
+echo "############################ when"
+# a compile time if statement
 when true:
   echo "evaluated at compile time"
 when false: # false = trick for commenting code
   echo "this code is never run"
 
-# case
-# are actually expressions
+echo "############################ case expressions"
 # every possible case must be covered
 # can use strings, sets and ranges of ordinal types
 case num3
@@ -214,8 +219,7 @@ proc positiveOrNegative(num: int): string =
 
 echo positiveOrNegative(-1)
 
-echo "############################ control flow: loops"
-# for
+echo "############################ for"
 # this uses the items iterator, as we are only using i
 for i in 1..2:
   echo "loop " & $i
@@ -231,12 +235,13 @@ for i in "noah":
 for i, n in "noah":
   echo "index ", i, " is ", n
 
+echo "############################ while"
 var num6 = 0
 while num6 < 10: # break, continue work as expected
   echo "num6 is ", num6
   inc num6
 
-# block statements
+echo "############################ block"
 # theres a () syntax but we skipped it as its not idiomatic nim
 # wide range of uses cases, but primarily breaking out of nested loops
 block poop:
@@ -249,41 +254,10 @@ block poop:
         if count > 2: # dont want to take too many
           break poop
 
-# do statements
+echo "############################ do"
 # you have to read the docs on this one
 echo do:
   "this ting"
-
-
-
-# iterators
-# can be used as operators if you enclose the name in back ticks
-# you can define an interator for looping over anything, e.g. user types
-# @see https://nim-by-example.github.io/for_iterators/
-iterator `...`*[T](a: T, b: T): T =
-  var res: T = a
-  while res <= b:
-    yield res
-    inc res
-
-for i in 0...5:
-  echo i
-
-# iterator: inlined for loop
-# do not have the overhead from function calling
-iterator countTo(n: int): int =
-  var i = 0
-  while i <= n:
-    yield i
-    inc i
-
-for i in countTo(5):
-  echo i
-
-# iterator: closures
-# basically javascript yield
-# have state and can be resumed
-# @see https://nim-by-example.github.io/for_iterators/
 
 
 
@@ -337,8 +311,12 @@ debugEcho "you are ", sj[0] & $sj.wha & $sj.t
 
 echo "############################ procedures"
 # special return types
-# auto = type inference
-# void = nothing is returned
+# ^ auto = type inference
+# ^ void = nothing is returned, no need to use discard
+# returning things:
+# ^ use return keyword for early returns
+# ^ assign to result var: enables return value optimization & copy elision
+# ^ have the last statement be an expression
 proc pubfn*(): void =
   echo "the * makes this fn public"
 
@@ -361,7 +339,8 @@ proc eko_anything(s: varargs[string, `$`]) =
     echo x
 eKoAnyThInG 1, "threee", @[1,2,3]
 
-# you cant mutate args passed by value
+# arguments to proc are immutable by default
+# anything less than 3*sizeof(pointer), i.e. 24 bytes on 64-bit OS
 proc passedByValue(x: string): void =
   when false:
     x = 20 # this will throw an error
@@ -369,6 +348,7 @@ proc passedByValue(x: string): void =
 let xx = "I"
 passedByValue xx
 
+# but you can copy then mutate, duh
 proc copyThenMutateValue(x: string): void =
   var ll = x
   ll = ll & " was cloned"
@@ -376,8 +356,7 @@ proc copyThenMutateValue(x: string): void =
 
 copyThenMutateValue xx
 
-# arguments to proc are immutable by default
-# you have to prepend var to arg type defs to mutate them
+# but you can declare args mutable with var
 var zz = "who"
 proc passedByReference(yy: var string): void =
   yy = "you" # mutates whatever yy points to
@@ -401,6 +380,7 @@ var num7 = 5
 debugEcho mutate num7, num7.mutate, mutate(num7)
 
 # noSideEffect pragma: statically ensures there are no side effects
+# see func
 proc add5(num: int): int {. noSideEffect .} =
   result = num + 5 # returned implicitly
 debugEcho add5 5, 5.add5.add5, add5 add5(5).add5
@@ -427,6 +407,76 @@ proc wtf[T](a: T): auto =
   result = "wtf " & $a
 echo wtf "yo"
 
+echo "############################ funcs (pure procs)"
+# alias for {. noSideEffect .}
+func poop(): string =
+  "hello"
+echo poop()
+
+
+echo "############################ iterators (loop procs)"
+# inlined at the callsite when compiled
+# ^ do not have the overhead from function calling
+# ^ however prone to code bloat
+# ^ useful for defining custom loops on complex objects
+# can be used as operators if you enclose the name in back ticks
+# @see https://nim-by-example.github.io/for_iterators/
+# @see https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#iterators
+# items iterator: when there is 1 iteration variable (i)
+# pairs iterator: when there are 2 iteration variables (i,x)
+# fields and fieldPairs iterator magic: enable iterating on an object field (k, v)
+iterator `...`*[T](a: T, b: T): T =
+  var res: T = a
+  while res <= b:
+    yield res
+    inc res
+
+for i in 0...5:
+  echo "useless iterator ", i
+
+
+iterator countTo(n: int): int =
+  var i = 0
+  while i <= n:
+    yield i
+    inc i
+for i in countTo(5):
+  echo i
+
+# iterator: closures
+# basically javascript yield
+# have state and can be resumed
+# @see https://nim-by-example.github.io/for_iterators/
+
+
+echo "############################ converters (implicit type conversion procs)"
+# @see https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#converter
+
+type Option[T] = object
+  case hasValue: bool
+  of true:
+    value: T
+  else:
+    discard
+let aa = Option[int](hasValue: true, value: 1)
+let bb = Option[int](hasValue: true, value: 2)
+
+# create an implicit conversion
+converter get[T](x: Option[T]): T =
+  x.value
+# aa and bb are implicitly converted to ints, and can use the + operator
+echo "adding two options ", aa + bb
+
+echo "############################ templates (code gen procs)"
+# enables raw code substitution
+# read the docs on this one
+# @see https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#template
+
+echo "############################ closures"
+# read the docs on this one
+# something to do with long lived ref objects & unreclaimable memory
+# @see https://nimbus.guide/auditors-book/02.1.4_closure_iterators.html
+
 # closures with proc notation
 proc runFn(a: string, fn: proc(x: string): string): string =
   fn a
@@ -450,15 +500,17 @@ echo runFn("with another string") do (x: string) -> string: "another: " & x
 # # can also be used as a type for a proc param that accepts a fn
 # proc someName(someFn: (params) -> returnType) =
 
-
 echo "############################ type aliases"
-# type aliases are identical to their base
-# are automatically cast to their base
-# theres a technical term for this, check the scala docs
+# type aliases are identical & auto cast to their base
 type
   BigMoney* = int # <- can be used wherever int is expected
 echo 4 + BigMoney(2000)
 
+type StrOrInt = string|int
+let thizString: StrOrInt = "1"
+let thisInt: StrOrInt = 1
+
+echo "could be a string or an int ", thizString, thisInt
 echo "############################ type aliases distinct"
 # are identical to their base
 # requires explicit casting to their base
@@ -467,9 +519,6 @@ type
   BiggerMoney = distinct BigMoney
   BiggestMoney {.borrow: `.`.} = distinct BigMoney # borrows all procs
 # echo 10 + FkUMoney(100) # type mismatch
-
-echo "############################ type conversions & casts"
-echo "todo"
 
 echo "############################ objects"
 # just a group of fields
@@ -533,8 +582,8 @@ type YouPoop = ref object of WhoPoop
 type IPoop = ref object of WhoPoop
 
 # overload methods/procs by changing the self arg
-# we use method for dynamic dispatch
-# ^ i.e. the overloaded method is called based on the type
+# use method whenever an object has an inherited subtype only known at runtime
+# ^ i.e. invocation depends on the actual object being invoked
 # ^ with proc only the {.base.} method is called
 method did_i_poop(self: WhoPoop): string {.base.} =
   "i dont know"
@@ -620,8 +669,8 @@ writeLines @["first line", "Second line"]
 echo readFile tmpfile
 
 echo "############################ assert"
-# check the compiler flags for how to embed unit tests in code
-# ^ think its -d:danger or --asertions:off
-# ^ so that assertions are optionally removed when compiled
-# ^^ theres a technical term for this type of runtime assertions
+# useful for pre & post conditions if using design by contract
+# haha remember trying to use thiz: https://github.com/codemix/contractual
+# think its -d:danger or --asertions:off to remove the asserts from compilation
+# and --assertions:on to keep them in compiled output
 assert "a" == $'a' # has to be of same type
