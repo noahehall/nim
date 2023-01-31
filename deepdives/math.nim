@@ -1,5 +1,6 @@
-import std/math
+#[
+  @see https://nim-lang.org/docs/stats.html
+  @see https://nim-lang.org/docs/math.html
+]#
 
-echo 2^5
-
-# sum
+echo "############################ something"

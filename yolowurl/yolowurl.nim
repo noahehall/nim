@@ -7,6 +7,7 @@
   then here: https://nim-lang.org/docs/tut1.html
   then here: https://nim-lang.org/docs/tut2.html
   then here: https://nim-lang.org/docs/tut3.html
+  then here: https://nim-lang.org/docs/lib.html # categorize these deepdive files
   then here: https://nim-lang.org/docs/nimc.html
   then here: https://nim-lang.org/docs/docgen.html
   then here: https://nim-lang.org/docs/destructors.html
@@ -85,6 +86,9 @@
   !     ?     ^     .     :     \
   == => != etc
 
+  value semantics: = copies
+  ref semantics: = creates a ref to loc in memory
+
   # keywords
   and or not xor shl shr div mod in notin is isnot of as
 ]#
@@ -145,7 +149,7 @@ echo "############################ number types"
 const num1: int = 2
 const num2: int = 4
 echo "4 / 2 === ", num2 / num1 # / always returns a float
-echo "4 div 2 === ", num2 div num1 # div always returns an int
+echo "4 div 2 === ", num2 div num1 # always returns an int
 const num3 = 2.0
 const num4: float = 4.0
 const num5: float = 4.9
@@ -156,26 +160,30 @@ echo "int(4.9) div int(2.0) === ", int(num5) div int(num3)
 echo "remainder of 5 / 2: ", 5 mod 2
 
 # signed integers, 32bit/64bit depending on system
+# Conversion between int and int32 or int64 must be explicit except for string literals.
 # int8,16,32,64 # 8 = +-127, 16 = +-~32k, 32 = +-~2.1billion
-# int === same size as pointer
+# default int === same size as pointer (platform word size)
 const
-  a = 100
   b: int8 = 100
   c = 100'i8
-  d: int = 1
 
-# uint: positive integers, 32/64 bit depending on system,
+# uint: unsigned integers, 32/64 bit depending on system,
 # uint8,16,32,64 # 8 = 0 -> 2550, 16 = ~65k, 32 = ~4billion
 const
   e: uint8 = 100
   f = 100'u8
-# floats:  float32, float64, and float
-# float === processors fastest type
+
+# float:  float32 (C Float), 64 (C Double)
+# float (alias for float64) === processors fastest type
 const
   g = 100.0
   h = 100.0'f32
   i = 4e7 # 4 * 10^7
 
+echo "############################ byte"
+# behaves like uint8
+# when dealing with binary blobs, prefer seq[byte] > string,
+# when dealing with binary data, prefer seq[char|uint8]
 
 echo "############################ if"
 # if
