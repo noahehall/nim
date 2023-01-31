@@ -32,7 +32,8 @@
 # find them in the docs somewhere
 # {.pure.} requires all ambigigious references be qualified
 # ^ x fails, but y.x doesnt
-
+# {.base.} for methods, to specify whom this fn belongs
+# ^ see inheritance
 ############################ variables
 var poop1 = "flush" # runtime mutable
 let poop2 = "hello" # runtime immutable
@@ -388,10 +389,33 @@ echo runFn("with another string") do (x: string) -> string: "another: " & x
 # # can also be used as a type for a proc param that accepts a fn
 # proc someName(someFn: (params) -> returnType) =
 
-############################ methods
+############################ inheritance
+# of creates inheritance between types
+# base types must be of RootObj type
+# object types with no ancestors are implictly `final`
+type WhoPoop = ref object of RootObj
+    name: string
+type YouPoop = ref object of WhoPoop
+type IPoop = ref object of WhoPoop
+
 # @see https://matthiashager.com/proc-method-nim
 # ^ you have to read this, maybe twice
 # ^ the gist: dont need dynamic dispatch, then dont use method
+method did_i_poop(self: WhoPoop): string {.base.} =
+  "i dont know"
+method didipoop(self: YouPoop): string =
+  self.name & " is a filthy animal"
+method dIdIpOoP(self: IPoop): string =
+  self.name & " has evolved passed pooping"
+
+# this has to be `var` to enable adding subtypes
+# let throws error because You/IPoop arent WhoPoops
+# const doesnt work at all and im not sure why but its a compile time issue
+var sherlockpoops: seq[WhoPoop] = @[]
+sherlockpoops.add(YouPoop(name: "spiderman"))
+sherlockpoops.add(IPoop(name: "noah"))
+for investigate in sherlockpoops:
+  echo investigate.dIDIPOOP
 
 ############################ type aliases
 # type aliases are identical to their base
@@ -525,5 +549,6 @@ echo readFile tmpfile
 ############################ assert
 # check the compiler flags for how to embed unit tests in code
 # ^ think its -d:danger or --asertions:off
-# ^ so that assertions are removed when compiled
+# ^ so that assertions are optionally removed when compiled
+# ^^ theres a technical term for this type of runtime assertions
 assert "a" == $'a' # has to be of same type
