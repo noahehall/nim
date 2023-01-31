@@ -3,33 +3,40 @@
   only uses the implicitly imported system module
   see deepdives dir to dive deep
 
-  bookmark: https://nimbus.guide/auditors-book/
+  bookmark: https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html
+  then here: https://nim-lang.org/docs/tut1.html
+  then here: https://nim-lang.org/docs/tut2.html
+  then here: https://nim-lang.org/docs/tut3.html
   then here: https://nim-lang.org/docs/nimc.html
   then here: https://nim-lang.org/docs/docgen.html
   then here: https://nim-lang.org/docs/destructors.html
   then here: https://nim-lang.org/docs/manual_experimental.html
-  then here: https://matthiashager.com/gui-options-for-nim
+  then here: nim in action
+    - reading: shiz finished this like 2 years ago, it was super old then away
+    - copying pg40 custom array ranges, just skim the remainder in case the above missed something
+  and finally: https://nim-lang.org/docs/nep1.html
   and finally: https://nim-lang.org/docs/manual.html
-  peter should have some useful information
-    https://peterme.net/asynchronous-programming-in-nim.html
-    https://peterme.net/multitasking-in-nim.html
-    https://peterme.net/creating-condensed-shared-libraries-embedding-nimscript-pt-3.html
-    https://peterme.net/how-to-embed-nimscript-into-a-nim-program-embedding-nimscript-pt-2.html
-    https://peterme.net/using-nimscript-as-a-configuration-language-embedding-nimscript-pt-1.html
+  other stuff
     https://nim-lang.org/docs/nims.html
-    https://peterme.net/tips-and-tricks-with-implicit-return-in-nim.html
-    https://peterme.net/metaprogramming-and-read-and-maintainability-in-nim.html
-    https://peterme.net/optional-value-handling-in-nim.html
+    https://peterme.net/asynchronous-programming-in-nim.html
     https://peterme.net/handling-files-in-nim.html
-    https://peterme.net/nim-types-originally-a-reddit-reply.html
-    https://peterme.net/cross-platform-guis-and-nim-macros.html
+    https://peterme.net/multitasking-in-nim.html
+    https://peterme.net/optional-value-handling-in-nim.html
+    https://peterme.net/tips-and-tricks-with-implicit-return-in-nim.html
+    https://peterme.net/using-nimscript-as-a-configuration-language-embedding-nimscript-pt-1.html
+    https://peterme.net/how-to-embed-nimscript-into-a-nim-program-embedding-nimscript-pt-2.html
+    https://peterme.net/creating-condensed-shared-libraries-embedding-nimscript-pt-3.html
+
 
   skipped
     https://nim-by-example.github.io/bitsets/
     https://nim-by-example.github.io/macros/
 
-  idiomatic nim
-    - todo
+  idiomatic nim, or borrowed from somewhere else (e.g. some status project)
+    - camelCase for code
+    - MACRO_CASE for external constants
+    - PascalCase for all types
+    - PascalCase for internal constants
 
   my preferences thus far
     - strive for parantheseless code, fkn hate the shift key
@@ -58,6 +65,8 @@
     -r used with c to compile then run
     --threads:on enable threads for parallism
     --backend c|find-the-other-backends
+    -d:danger super duper production: optimization optimizes away all runtime checks and debugging help like stackframes
+    -d:release production: but still includes Runtime checks (overflow, array bounds checks, nil checks, ...)
 
 ]#
 #[
