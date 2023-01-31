@@ -3,14 +3,26 @@
   only uses the implicitly imported system module
   see deepdives dir to dive deep
 
-  bookmark: https://peterme.net/asynchronous-programming-in-nim.html
-  then here: https://nimbus.guide/auditors-book/
+  bookmark: https://nimbus.guide/auditors-book/
   then here: https://nim-lang.org/docs/nimc.html
   then here: https://nim-lang.org/docs/docgen.html
   then here: https://nim-lang.org/docs/destructors.html
   then here: https://nim-lang.org/docs/manual_experimental.html
   then here: https://matthiashager.com/gui-options-for-nim
   and finally: https://nim-lang.org/docs/manual.html
+  peter should have some useful information
+    https://peterme.net/asynchronous-programming-in-nim.html
+    https://peterme.net/multitasking-in-nim.html
+    https://peterme.net/creating-condensed-shared-libraries-embedding-nimscript-pt-3.html
+    https://peterme.net/how-to-embed-nimscript-into-a-nim-program-embedding-nimscript-pt-2.html
+    https://peterme.net/using-nimscript-as-a-configuration-language-embedding-nimscript-pt-1.html
+    https://nim-lang.org/docs/nims.html
+    https://peterme.net/tips-and-tricks-with-implicit-return-in-nim.html
+    https://peterme.net/metaprogramming-and-read-and-maintainability-in-nim.html
+    https://peterme.net/optional-value-handling-in-nim.html
+    https://peterme.net/handling-files-in-nim.html
+    https://peterme.net/nim-types-originally-a-reddit-reply.html
+    https://peterme.net/cross-platform-guis-and-nim-macros.html
 
   skipped
     https://nim-by-example.github.io/bitsets/
