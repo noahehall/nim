@@ -1,5 +1,6 @@
 #[
   @see https://nim-lang.org/docs/manual_experimental.html#parallel-amp-spawn
+  @see https://nim-lang.org/docs/channels_builtin.html
 
   thread related stuff requires --threads:on
 
