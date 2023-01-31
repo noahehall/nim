@@ -1,7 +1,7 @@
 # https://nim-lang.org/docs/strutils.html
 
 # std/X required because this module is named strutils
-import std/strutils
+import std/strutils, std/strformat
 
 let
   str1 = "pooper scooper"

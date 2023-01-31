@@ -1,7 +1,16 @@
 #[
-  super long nim syntax file
-  ctrl -f it
-  bookmark: https://nim-by-example.github.io/types/objects/
+  super long nim syntax file focusing on the basics
+  see the modules dir for diving in deep
+
+  bookmark: https://nim-by-example.github.io/varargs/
+  then here: https://nim-lang.org/docs/nimc.html
+  then here: https://nim-lang.org/docs/manual.html
+  then here: https://nim-lang.org/docs/docgen.html
+  https://nim-lang.org/docs/manual_experimental.html
+  https://nim-lang.org/docs/destructors.html
+
+  skipped
+    https://nim-by-example.github.io/bitsets/
 ]#
 
 #[
@@ -14,10 +23,15 @@
 
 #[
   # wtf lol cant get these to compile
-  echo "nil === void", $nil.nil
-  discard echo "ignore return values"
-  echo "true | false ", true | false
+  echo "nil === void", $nil.nil # <-- think its just suppose to be nil and not nil.nil
+  discard echo "ignore return values" <-- you cant discard a void
+  echo "true | false ", true | falsev <-- | is xor
 ]#
+
+############################ pragmas
+# find them in the docs somewhere
+# {.pure.} requires all ambigigious references be qualified
+# ^ x fails, but y.x doesnt
 
 ############################ variables
 var poop1 = "flush" # runtime mutable
@@ -30,16 +44,22 @@ let `let` = "stropping"; echo(`let`) # stropping enables keywords as identifiers
 
 ############################ strings
 # must be enclosed in double quotes
-# escape sequences are parsed
-# always mutable
+# are really just seq[char] so you can use any seq proc for manipulation
+# check # proc section for proc strings
+# to intrepret unicode, you need to import the unicode module
 var msg: string = "yolo"
 echo msg & " wurl" # returns a new string
 msg.add(" wurl") # modifies the string in place
 echo msg
 let
-  poop6 = "flush"
-  flush = r"raw string, no escape sequences required"
-  multiline = """can be split on multiple lines, no escape sequences required"""
+  poop6 = "flush\n\n\n\n\n\nescapes are interpreted"
+  flush = r"raw string, escapes arent interpreted"
+  multiline = """
+    can be split on multiple lines,
+    escape sequences arent interpreted
+    """
+echo poop6, flush, multiline
+
 
 ############################ char
 # single ASCII characters
@@ -202,18 +222,32 @@ for i in countTo(5):
 # basically javascript yield
 # have state and can be resumed
 # @see https://nim-by-example.github.io/for_iterators/
-############################ structs
 
-# fixed-length homogeneous arrays
+
+
+############################# arrays fixed-length homogeneous
+# the array size is encoded in its type
+# so you to pass an array to a proc the proc must specify the size as well as type
 var
   nums: array[4, int] = [1,9,8,5]
   smun = [5,8,9,1]
   emptyArr: array[4, int]
+  # this allows you to convert an ordinal (e.g. an enum) to an array
+  # when declaring an array, e,g. x: array[MyEnum, string] = [x, y, z]
+  # @see matrix section: https://nim-by-example.github.io/arrays/
+  arrayWithRange: array[0..5, string] = ["one", "two", "three", "four", "five", "six"]
 
-# dynamic-length homogeneous sequences
+proc withArrParam[I, T](a: array[I, T]): string =
+  echo "first item in array ", a[0]
+discard withArrParam nums
+discard withArrParam smun
+
+############################ sequences dynamic-length homogeneous
+# dynamically allocated (on the heap, not the stack)
+# but still immutable unless created with var
 var
   poops: seq[int] = @[1,2,3,4]
-  spoop = @[4,3,2,1]
+  spoop: seq[int] = newSeq[int](4) # empty but has length 4
   emptySeq: seq[int]
   seqEmpty = newSeq[int]()
 
@@ -230,7 +264,7 @@ var me = "noAH"
 me[0 .. 1] = "NO"
 echo "change first 2 els ", me
 
-# fixed length hetergenous tuples
+############################ tuple fixed length hetergenous
 let js = ("super", 133, 't')
 echo js
 
@@ -250,6 +284,24 @@ proc eko(this: string): void =
   debugEcho this
 eko "wtf"
 eko("wtf")
+
+
+proc passedByValue(x: string): void = echo x, " cant be modified"
+let xx = "I"
+passedByValue xx
+
+proc copyThenMutateValue(x: string): void =
+  var ll = x
+  ll = ll & " was cloned"
+  echo ll, " then mutated"
+
+copyThenMutateValue xx
+
+var zz = "who"
+proc passedByReference(yy: var string): void =
+  yy = "you" # mutates whatever yy points to
+  echo zz, " were modified"
+passedByReference zz
 
 # result serves as an implicit return variable
 # initialized as: var result: ReturnType
@@ -277,6 +329,10 @@ proc allInts(x,y,z: int): int
 echo allInts(1, 2, 3) # used before defined
 proc allInts(x, y, z: int): int =
   result = x + y + z
+
+# procs as (raw) strings
+proc str(s: string): string = s
+echo str"proc as a string\n escapes arent interporeted"
 
 # procs as operators
 # must use `symbol`
@@ -313,14 +369,26 @@ echo runFn("with another string") do (x: string) -> string: "another: " & x
 # # can also be used as a type for a proc param that accepts a fn
 # proc someName(someFn: (params) -> returnType) =
 
-############################ types
-# type aliases are identical to their super
+############################ type aliases
+# type aliases are identical to their base
+# are automatically cast to their base
 # theres a technical term for this, check the scala docs
 type
   BigMoney* = int # <- can be used wherever int is expected
 echo 4 + BigMoney(2000)
 
-# object types
+############################ type aliases distinct
+# are identical to their base
+# requires explicit casting to their base
+# requires base procs to be be borred
+type
+  BiggerMoney = distinct BigMoney
+  BiggestMoney {.borrow: `.`.} = distinct BigMoney # borrows all procs
+# echo 10 + FkUMoney(100) # type mismatch
+
+############################ objects
+# just a group of fields
+# note the placement of * for visibility
 # traced by the garbage collector, no need to free them when allocated
 type
   PrivatePoop = object
@@ -333,3 +401,97 @@ let ipoop = PrivatePoop(i: false, times: 0)
 let upoop = PublicPoop(u: true, times: 100)
 echo "did ", ipoop
 echo "or did ", upoop
+
+
+type
+  Someone* = object
+    name*, bday: string
+    age*: int
+
+# mutable (var) object created on the stack
+# can be passed to fns that require a mutable param
+var noah: Someone = Someone(name: "Noah",
+  bday: "12/12/2023",
+  age: 18 )
+echo noah
+# immutable (let) object created on the stack
+let you = Someone(name:"not noah", bday:"dunno", age: 19)
+debugEcho you
+
+# reference object allocated on the heap
+# mittens cant be changed (i.e. point to something else)
+# but the pointer in on the heap can be changed
+let people: ref Someone = new(Someone)
+people.name = "npc"
+people.bday = "< now"
+people.age = 1
+# alternative ref syntax via declaration
+type
+  SomeoneRef* = ref Someone
+  OrRefObject = ref object
+    fieldX, y, z: string
+let people2 = SomeoneRef(name: "npc",
+  bday: "before noah",
+  age: 1)
+
+############################ enums
+# type checked (thus cant be anonymous and must have a type)
+type
+  GangsOfAmerica = enum
+    bloods, crips, democrats, republicans, politicians
+# you can assign custom values to enums
+type
+  PeopleOfAmerica {.pure.} = enum
+    coders = "now", teachers = "use to be", farmers = "prefer to be", scientists = "trying to be"
+
+echo politicians # impure so doesnt need to be qualified
+echo PeopleOfAmerica.coders # coders needs to be qualified cuz its labeled pure
+
+# its idiomatic nim to have ordinal enums (1, 2, 3, etc)
+# ^ and not assign disjoint values (1, 5, -10)
+# enum iteration via ord
+for i in ord(low(GangsOfAmerica))..
+        ord(high(GangsOfAmerica)):
+  echo GangsOfAmerica(i), " index is: ", i
+# enum iteration via enum
+# this echos the custom strings
+for peeps in PeopleOfAmerica.coders .. PeopleOfAmerica.scientists:
+  echo "we need more ", peeps
+
+# ordinals doesnt work with disjoint enums
+# i.e. those assigned custom integer values (string values okay i think)
+## low(x) lowest possible value
+## high(x) highest possible value
+## inc x ++1
+## dec x --1
+## ord(x) the ordinal value of x
+## X(i) casts the index to an enum
+
+
+
+############################ files
+# no clue why we need to add the dir
+# not that way in system.nim
+let entireFile = readFile "yolowurl/yolowurl.md"
+echo "file has ", len entireFile, " characters"
+
+# you need to open a file to read line by line
+# notice the dope bash-like syntax
+proc readFile: string =
+  let f = open "yolowurl/yolowurl.md"
+  defer: close f # <-- make sure to close the file object
+  result = readline f
+echo "first line of file is ", readFile()
+
+# upsert a file
+const tmpfile = "/tmp/yolowurl.txt"
+writeFile tmpfile, "a luv letter to nim"
+echo readFile tmpfile
+
+# overwrite an existing file
+proc writeLines(s: seq[string]): void =
+  let f = tmpfile.open(fmWrite) # open for writing
+  defer: close f
+  for i, l in s: f.writeLine l
+writeLines @["first line", "Second line"]
+echo readFile tmpfile
