@@ -4,6 +4,8 @@
   see deepdives dir to dive deep
 
   bookmark: https://nim-by-example.github.io/string_formatting/
+  then here: https://matthiashager.com/nim-object-oriented-programming
+  tthen here: https://matthiashager.com/gui-options-for-nim
   then here: https://nim-lang.org/docs/nimc.html
   then here: https://nim-lang.org/docs/manual_experimental.html
   then here: https://nim-lang.org/docs/docgen.html
@@ -45,12 +47,24 @@
   echo "true | false ", true | falsev <-- | is xor
 ]#
 
+#[
+  # operators
+  =     +     -     *     /     <     >
+  @     $     ~     &     %     |
+  !     ?     ^     .     :     \
+  == => != etc
+
+  # keywords
+  and or not xor shl shr div mod in notin is isnot of as
+]#
 echo "############################ pragmas"
 # find them in the docs somewhere
 # {.pure.} requires all ambigigious references be qualified
 # ^ x fails, but y.x doesnt
 # {.base.} for methods, to specify whom this fn belongs
 # ^ see inheritance
+# {.thread.} informs the compiler this fn is meant for execution on a new thread
+# {.threadvar.} informs the compiler this var should be local to a thread
 
 echo "############################ variables"
 var poop1 = "flush" # runtime mutable

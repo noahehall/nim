@@ -12,3 +12,19 @@
 ]#
 
 import std/threadpool
+
+# a fn meant for a thread
+proc ekothis(i: int): void {.thread.} =
+  echo "i am thread ", $i
+
+var threads: array[10, Thread[int]]
+
+# without threadpool
+for i in threads.low..threads.high:
+  createThread(threads[i], ekothis, i)
+joinThreads(threads)
+
+# with spawn
+for i in ord(threads.low)..ord(threads.high):
+  spawn (i + 10).ekothis
+sync()
