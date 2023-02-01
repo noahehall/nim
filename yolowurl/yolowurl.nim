@@ -3,15 +3,14 @@
   only uses the implicitly imported system module
   see deepdives dir to dive deep
 
-  bookmark: https://nimbus.guide/auditors-book/02.2_stack_ref_ptr_types.html
-  then here: https://nim-lang.org/docs/tut1.html
+  bookmark: https://nim-lang.org/docs/tut1.html
   then here: https://nim-lang.org/docs/tut2.html
   then here: https://nim-lang.org/docs/tut3.html
-  then here: https://nim-lang.org/docs/lib.html # categorize these deepdive files
+  then here: https://nim-lang.org/docs/lib.html # categorize these in deepdive files
   then here: https://nim-lang.org/docs/nimc.html
+  then here: https://nim-lang.org/docs/manual_experimental.html
   then here: https://nim-lang.org/docs/docgen.html
   then here: https://nim-lang.org/docs/destructors.html
-  then here: https://nim-lang.org/docs/manual_experimental.html
   then here: https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html
   then here: https://nim-lang.org/docs/backends.html
   then here: nim in action
@@ -136,6 +135,7 @@ let
 echo "############################ number types"
 const num1: int = 2
 const num2: int = 4
+const amillamillamill = 1_000_000
 echo "4 / 2 === ", num2 / num1 # / always returns a float
 echo "4 div 2 === ", num2 div num1 # always returns an int
 const num3 = 2.0
@@ -167,6 +167,20 @@ const
   g = 100.0
   h = 100.0'f32
   i = 4e7 # 4 * 10^7
+  l = 1.0e9
+  m = 1.0E9
+
+echo "############################ hexadecimal"
+const
+  n = 0x123
+
+echo "############################ binary"
+const
+  o = 0b1010101
+
+echo "############################ octal"
+const
+  p = 0o123
 
 echo "############################ byte"
 # behaves like uint8

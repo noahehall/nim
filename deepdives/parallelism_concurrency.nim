@@ -6,12 +6,12 @@
   @see https://nim-lang.org/docs/asynchttpserver.html
   @see https://nim-lang.org/docs/asyncnet.html
   @see https://nim-lang.org/docs/asyncstreams.html
-  @see https://nim-lang.org/docs/channels_builtin.html
+  @see https://nim-lang.org/docs/channels_builtin.html (auto imported)
   @see https://nim-lang.org/docs/locks.html
   @see https://nim-lang.org/docs/manual_experimental.html#parallel-amp-spawn
   @see https://nim-lang.org/docs/streams.html
   @see https://nim-lang.org/docs/threadpool.html
-  @see https://nim-lang.org/docs/threads.html
+  @see https://nim-lang.org/docs/threads.html (auto imported)
   @see https://peterme.net/asynchronous-programming-in-nim.html
 
   thread related stuff requires --threads:on

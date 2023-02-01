@@ -1,5 +1,6 @@
 #[
   @see https://github.com/status-im/nim-testutils/tree/master/testutils/fuzzing
+  @see https://nim-lang.org/docs/assertions.html
 ]#
 
 echo "############################ assert"

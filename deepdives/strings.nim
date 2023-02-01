@@ -15,12 +15,15 @@ import std/[strutils, strformat]
 let
   str1 = "pooper scooper"
   str2 = """
-    multi
-    line
+    long
     string
+    literal
+    nothing\i\s
+    \s\es\ca\pe\d
     """
-  str3 = r"string\tliteral"
+  str3 = r"raw string\tliteral"
   str4 = "\r\rstring\t\n\rstring"
+  char1 = 'a'
 
 ############################ dollars (system)
 # $ === toString

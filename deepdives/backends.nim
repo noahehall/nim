@@ -10,7 +10,7 @@
     --threads:on enable threads for parallism
     --backend c|find-the-other-backends
     -d:danger super duper production: optimization optimizes away all runtime checks and debugging help like stackframes
-    -d:release production: but still includes Runtime checks (overflow, array bounds checks, nil checks, ...)
+    -d:release production: includes some runtime checks and optimizations are turned on
     --nimcache=<targetdir> change the location of nims cache dir
 
 ]#

@@ -1,15 +1,18 @@
 #[
-  https://nim-lang.org/docs/system.html
-  every module implictly imports the system module
-  system also imports other modules (listed below)
-  system cannot be imported explicitly
+  @see https://nim-lang.org/docs/system.html
+    - _ assertions: see testing.nim
+    - https://nim-lang.org/docs/io.html
+    - https://nim-lang.org/docs/iterators.html
+    - https://nim-lang.org/docs/widestrs.html
+
+  every module implictly imports the system, threads and channel built_int module
+    - threads & channels: see parallelism_concurrency.nim
+  system also imports all the modules listed in this file
+
 ]#
 
-
-const myString = "im not your string, we broke up"
-echo myString
-debugEcho "my string length: ", len myString
-
+echo "############################ system"
+# echo, debugEcho
 # chr(i): convert 0..255 to a char
 # ord(i): convert char to an int
 # a & b : string concat
@@ -19,23 +22,8 @@ debugEcho "my string length: ", len myString
 # parseInt/parseFloat
 
 
-#[
-  https://nim-lang.org/docs/iterators.html
-]#
-
-#[
-  https://nim-lang.org/docs/assertions.html
-]#
-
-#[
-  https://nim-lang.org/docs/io.html
-]#
-
+echo "############################ io"
 echo "length of readme.md ", len (readFile "README.md")
 
 echo "whats your name: "
 echo "hello: ", readLine(stdin)
-
-#[
-  https://nim-lang.org/docs/widestrs.html
-]#
