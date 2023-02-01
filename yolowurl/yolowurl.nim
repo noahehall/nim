@@ -19,6 +19,7 @@
     - copying pg40 custom array ranges, just skim the remainder in case the above missed something
   and finally: https://nim-lang.org/docs/nep1.html
   and finally: https://nim-lang.org/docs/manual.html
+  you should be good when there arent any empty sections in this file
   other stuff
     https://nim-lang.org/docs/nims.html
     https://peterme.net/asynchronous-programming-in-nim.html
@@ -42,9 +43,12 @@
     - PascalCase for internal constants
 
   my preferences thus far
-    - strive for parantheseless code, fkn hate the shift key
-    - keep shiz as sugary as possible
-    - prefer fn x,y over x.fn y over fn(x, y) unless the context demands it
+    - strive for parantheseless code
+    - keep it as sugary as possible
+    - prefer fn x,y over x.fn y over fn(x, y) unless it conflicts with the context
+      - e.g. pref x.fn y when working with objects
+      - e.g. pref fn x,y when working with procs
+      - e.g. pref fn(x, ...) when chaining
 ]#
 
 #[
@@ -72,12 +76,6 @@
     -d:release production: but still includes Runtime checks (overflow, array bounds checks, nil checks, ...)
 
 ]#
-#[
-  # wtf lol cant get these to compile
-  echo "nil === void", $nil.nil # <-- think its just suppose to be nil and not nil.nil
-  discard echo "ignore return values" <-- you cant discard a void
-  echo "true | false ", true | falsev <-- | is xor
-]#
 
 #[
   # operators
@@ -86,8 +84,8 @@
   !     ?     ^     .     :     \
   == => != etc
 
-  value semantics: = copies
-  ref semantics: = creates a ref to loc in memory
+  value semantics: = copied on assignment
+  ref semantics: = referenced on assignment
 
   # keywords
   and or not xor shl shr div mod in notin is isnot of as
@@ -108,18 +106,21 @@ echo "############################ pragmas"
 # {.acyclic.} dunno read the docs
 
 echo "############################ variables"
-var poop1 = "flush" # runtime mutable
-let poop2 = "hello" # runtime immutable
+var poop1 = "flush"
+let poop2 = "hello"
 # compile-time evaluation cannot interface with C
 # there is no compile-time foreign function interface at this time.
 # consts must be initialized with a value
-const poop3 = "flush" # compile time immutable
+const poop3 = "flush"
 let `let` = "stropping"; echo(`let`) # stropping enables keywords as identifiers
 
+echo "############################ nil"
+# for reference & pointer types to prove parameters are initialized
+
 echo "############################ strings"
-# must be enclosed in double quotes
-# are really just seq[char] so you can use any seq proc for manipulation
-# check # proc section for proc strings
+# value semantics
+# are really just seq[char|byte] except for the terminating nullbyte \0
+# can use any seq proc for manipulation
 # to intrepret unicode, you need to import the unicode module
 var msg: string = "yolo"
 echo msg & " wurl" # returns a new string
@@ -185,6 +186,7 @@ echo "############################ byte"
 # when dealing with binary blobs, prefer seq[byte] > string,
 # when dealing with binary data, prefer seq[char|uint8]
 
+
 echo "############################ if"
 # if
 if not false: echo "true": else: echo "false"
@@ -194,10 +196,11 @@ elif "poop" == "boob": echo "boobs arent poops"
 else: echo false
 
 echo "############################ when"
-# a compile time if statement
+# a compile time if statement, can add elif & else blocks just like if
 when true:
-  echo "evaluated at compile time"
-when false: # false = trick for commenting code
+  echo "run this code"
+
+when false: # trick for commenting code
   echo "this code is never run"
 
 echo "############################ case expressions"
@@ -230,6 +233,7 @@ proc positiveOrNegative(num: int): string =
 
 echo positiveOrNegative(-1)
 
+
 echo "############################ for"
 # this uses the items iterator, as we are only using i
 for i in 1..2:
@@ -251,6 +255,11 @@ var num6 = 0
 while num6 < 10: # break, continue work as expected
   echo "num6 is ", num6
   inc num6
+
+echo "############################ range"
+# are checked at runtime whenever the value changes
+# valuable for catching / preventing underflows.
+# e.g. Nims natural type: type Natural = range[0 .. high(int)]
 
 echo "############################ block"
 # theres a () syntax but we skipped it as its not idiomatic nim
@@ -289,9 +298,13 @@ proc withArrParam[I, T](a: array[I, T]): string =
 discard withArrParam nums
 discard withArrParam smun
 
+echo "############################ openarray"
+# parameter-only type representing a pointer, length pair
+# aka slices, ranges, views, spans
+# arrays and seqs are implicity converted to openArray
+
 echo "############################ sequences dynamic-length homogeneous"
-# dynamically allocated (on the heap, not the stack)
-# but still immutable unless created with var
+
 var
   poops: seq[int] = @[1,2,3,4]
   spoop: seq[int] = newSeq[int](4) # empty but has length 4
@@ -350,7 +363,6 @@ proc eko_anything(s: varargs[string, `$`]) =
     echo x
 eKoAnyThInG 1, "threee", @[1,2,3]
 
-# arguments to proc are immutable by default
 # anything less than 3*sizeof(pointer), i.e. 24 bytes on 64-bit OS
 proc passedByValue(x: string): void =
   when false:
@@ -367,7 +379,6 @@ proc copyThenMutateValue(x: string): void =
 
 copyThenMutateValue xx
 
-# but you can declare args mutable with var
 var zz = "who"
 proc passedByReference(yy: var string): void =
   yy = "you" # mutates whatever yy points to
@@ -420,8 +431,14 @@ echo wtf "yo"
 
 echo "############################ funcs (pure procs)"
 # alias for {. noSideEffect .}
+# compiler throws error if reading/writing to global variables
+# ^ i.e. any var not a parameter/local
+# allocating a seq/string does not throw an err
+
 func poop(): string =
-  "hello"
+  result = "yolo"
+  result.add(" wurl") # <-- permitted because its a local var
+
 echo poop()
 
 
@@ -523,16 +540,16 @@ let thisInt: StrOrInt = 1
 
 echo "could be a string or an int ", thizString, thisInt
 echo "############################ type aliases distinct"
-# are identical to their base
+# are identical to their base but cant be used in their place
 # requires explicit casting to their base
-# requires base procs to be be borred
+# requires base procs & fields to be be borred for use on subtypes
 type
   BiggerMoney = distinct BigMoney
   BiggestMoney {.borrow: `.`.} = distinct BigMoney # borrows all procs
 # echo 10 + FkUMoney(100) # type mismatch
 
-echo "############################ objects"
-# just a group of fields
+echo "############################ object values"
+# structural equality check
 # note the placement of * for visibility
 # traced by the garbage collector, no need to free them when allocated
 type
@@ -553,20 +570,17 @@ type
     name*, bday: string
     age*: int
 
-# mutable (var) object created on the stack
-# can be passed to fns that require a mutable param
 var noah: Someone = Someone(name: "Noah",
   bday: "12/12/2023",
   age: 18 )
 echo noah
-# immutable (let) object created on the stack
+
 let you = Someone(name:"not noah", bday:"dunno", age: 19)
 debugEcho you
 
-# ref objects allocated on the heap
-# mittens cant be changed (i.e. point to something else)
-# but the pointer on the heap can be changed (i.e. mutate its attrs)
-# also dont have to label ref objects as var in proc signatures to mutate them
+echo "############################ object refs"
+# reference equality check
+# dont have to label ref objects as var in proc signatures to mutate them
 let people: ref Someone = new(Someone)
 people.name = "npc"
 people.bday = "< now"
@@ -579,6 +593,9 @@ type
 let people2 = SomeoneRef(name: "npc",
   bday: "before noah",
   age: 1)
+
+echo "############################ object pointers"
+# manually managed
 
 echo "############################ inheritance"
 # of creates a single layer of inheritance between types
@@ -615,6 +632,11 @@ for criminal in sherlockpoops:
 
 # type checking
 if sherlockpoops[0] of YouPoop: echo "filthy animal" else: echo "snobby bourgeois"
+
+echo "############################ generics"
+# parameterized: Thing[T]
+# restricted Thing[T: x or y]
+# static Thing[MaxLen: static int, T] <-- find this one in the docs
 
 echo "############################ enums"
 # type checked (thus cant be anonymous and must have a type)

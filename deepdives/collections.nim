@@ -3,4 +3,5 @@
 ]#
 import sequtils
 
-echo "############################ something"
+echo "############################ sequtils"
+# useful for functional programming
