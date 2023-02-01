@@ -63,21 +63,6 @@
 ]#
 
 #[
-  # compiling stuff
-  nim CMD OPTS FILE ARGS
-  CMDS
-    c compile
-    r compile to $nimcache/projectname then run it, prefer this over `c -r`
-  OPTS
-    -r used with c to compile then run
-    --threads:on enable threads for parallism
-    --backend c|find-the-other-backends
-    -d:danger super duper production: optimization optimizes away all runtime checks and debugging help like stackframes
-    -d:release production: but still includes Runtime checks (overflow, array bounds checks, nil checks, ...)
-
-]#
-
-#[
   # operators
   =     +     -     *     /     <     >
   @     $     ~     &     %     |
@@ -91,7 +76,7 @@
   and or not xor shl shr div mod in notin is isnot of as
 ]#
 echo "############################ pragmas"
-# find them in the docs somewhere
+# {.acyclic.} dunno read the docs
 # {.async.} this fn is asynchronous and can use the await keyword
 # {.base.} for methods, to associate fns with a base type. see inheritance
 # {.bycopy|byref.} label a proc arg
@@ -100,10 +85,12 @@ echo "############################ pragmas"
 # {.exportc.} disable proc name mangling when compiled
 # {.inject.} dunno, something to do with symbol visibility
 # {.noSideEffect.} convert a proc to a func, but why not just use func?
+# {.pop.} # removes a pragma from the code that follows, check the docs
 # {.pure.} requires qualifying ambiguous references; x fails, but y.x doesnt
+# {.push ...} # pushes a pragma into the context of the code that follows, check the docs
+# {.raises: [permit,these].} # compiler throws error if an unlisted exception can be raised
 # {.thread.} informs the compiler this fn is meant for execution on a new thread
 # {.threadvar.} informs the compiler this var should be local to a thread
-# {.acyclic.} dunno read the docs
 
 echo "############################ variables"
 var poop1 = "flush"
@@ -700,13 +687,3 @@ proc writeLines(s: seq[string]): void =
   for i, l in s: f.writeLine l
 writeLines @["first line", "Second line"]
 echo readFile tmpfile
-
-echo "############################ assert"
-# useful for pre & post conditions if using design by contract
-# haha remember trying to use thiz: https://github.com/codemix/contractual
-# -d:danger or --asertions:off to remove from compilation
-# --assertions:on to keep them in compiled output
-assert "a" == $'a' # has to be of same type
-
-# is always turned on regardless of --assertions flag
-doAssert 1 < 2, "failure msg"
