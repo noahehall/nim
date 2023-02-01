@@ -40,8 +40,9 @@
     - MACRO_CASE for external constants (status)
     - PascalCase for all types (status)
     - PascalCase for internal constants (status)
-    - shadowing proc params > declaring them as var (docs); enables the most efficient parameter passing
+    - shadowing proc params > declaring them as var enables the most efficient parameter passing (docs)
     - declare as var > proc params (docs): modifying global vars
+    - use result > last statement expression > return statement (status)
 
   my preferences thus far
     - strive for parantheseless code
@@ -66,26 +67,47 @@
 
 #[
   # operators
+    - precedence determined by its first character
+    - are just overloaded procs, e.g. proc `+`(....) and can be invoked just like procs
+    - infix: a + b must receive 2 args
+    - prefix: + a must receive 1 arg
+    - postfix: dont exist in nim
 
-  =     +     -     *     /     <     >
-  @     $     ~     &     %     |
-  !     ?     ^     .     :     \
-  == => != etc
+  + - * \ / < > @ $ ~ & % ! ? ^ . |
 
-  value semantics: = copied on assignment
-  ref semantics: = referenced on assignment
+  bool operators
+    not, and, or, xor, <, <=, >, >=, !=, ==
 
+  short circuit operators
+    and or
+
+  char operators
+    ==, <, <=, >, >=
+
+  integer bitwise
+    and or xor not shl shr
+  integer division
+    div
+  module
+    mod
+
+  =
+    - value semantics: copied on assignment
+    - ref semantics: referenced on assignment
+]#
+
+#[
   # keywords
-  and or not div mod in notin is isnot of as
-  xor shl shr
-  return
-    - without an expression is shorthand for return result
-  result
-    - implicit return variable
-    - initialized with procs default value, for ref types it will be nil (may require manual init)
-    - its idiomatic nim to mutate it
-  discard
-    - use a proc for its side effects but ignore its return value
+    of as in notin is isnot
+
+    return
+      - without an expression is shorthand for return result
+    result
+      - implicit return variable
+      - initialized with procs default value, for ref types it will be nil (may require manual init)
+      - its idiomatic nim to mutate it
+    discard
+      - use a proc for its side effects but ignore its return value
 
 ]#
 
@@ -158,6 +180,7 @@ echo "############################ bool"
 echo "############################ strings"
 # value semantics
 # are really just seq[char|byte] except for the terminating nullbyte \0
+# ^0 terminated so nim strings can be converted to a cstring without a copy
 # can use any seq proc for manipulation
 # to intrepret unicode, you need to import the unicode module
 var msg: string = "yolo"
@@ -175,6 +198,7 @@ echo poop6, flush, multiline
 
 
 echo "############################ char"
+# always 1 byte so cant represent most UTF-8 chars
 # single ASCII characters
 # basically an alias for uint8
 # enclosed in single quotes
@@ -185,14 +209,18 @@ let
 
 
 echo "############################ number types"
-const num1: int = 2
-const num2: int = 4
-const amillamillamill = 1_000_000
+const
+  num0 = 0 # int
+  num1: int = 2
+  num2: int = 4
+  amillamillamill = 1_000_000
 echo "4 / 2 === ", num2 / num1 # / always returns a float
 echo "4 div 2 === ", num2 div num1 # always returns an int
-const num3 = 2.0
-const num4: float = 4.0
-const num5: float = 4.9
+
+const
+  num3 = 2.0 # float
+  num4: float = 4.0
+  num5: float = 4.9
 echo "4.0 / 2.0 === ", num4 / num3
 echo "4.0 div 2.0 === ", "gotcha: div is only for integers"
 echo "conversion acts like javascript floor()"
@@ -204,7 +232,7 @@ echo "remainder of 5 / 2: ", 5 mod 2
 # int8,16,32,64 # 8 = +-127, 16 = +-~32k, 32 = +-~2.1billion
 # default int === same size as pointer (platform word size)
 const
-  b: int8 = 100
+  b = 100
   c = 100'i8
 
 # uint: unsigned integers, 32/64 bit depending on system,
@@ -213,8 +241,9 @@ const
   e: uint8 = 100
   f = 100'u8
 
-# float:  float32 (C Float), 64 (C Double)
+# float: float32 (C Float), 64 (C Double)
 # float (alias for float64) === processors fastest type
+#
 const
   g = 100.0
   h = 100.0'f32
@@ -270,13 +299,12 @@ when false: # trick for commenting code
 echo "############################ case expressions"
 
 # can use strings, ordinal types and integers, ints/ordinals can also use ranges
-case num3
-of 2:
-  echo "of 2 satisifes float 2.0"
-of 2.0: echo "is float 2.0"
-of 5.0, 6.0: echo "float is 5 or 6.0"
-of 7.0..12.9999: echo "wow your almost a teenager"
-else: echo "not all cases covered: compile error if we remove else:discard"
+echo case num3
+  of 2: "of 2 satisifes float 2.0"
+  of 2.0: "is float 2.0"
+  of 5.0, 6.0: "float is 5 or 6.0"
+  of 7.0..12.9999: "wow your almost a teenager"
+  else: "not all cases covered: compile error if we dont discard"
 
 case 'a'
 of 'b', 'c': echo "char 'a' isnt of char 'b' or 'c'"
@@ -303,19 +331,24 @@ echo positiveOrNegative(-1)
 echo "############################ iterators "
 # inlined at the callsite when compiled
 # ^ do not have the overhead from function calling
-# ^ however prone to code bloat
+# ^ prone to code bloat
 # ^ useful for defining custom loops on complex objects
 # can be used as operators if you enclose the name in back ticks
+# can be wrapped in a proc with the same name to accumulate the result and return it as a seq
+# distinction with procs
+# ^ can only be called from loops
+# ^ cant contain a return statement
+# ^ doesnt have an implicit result
+# ^ dont support recursion
+# ^ cant be forward declared
 # @see https://nim-by-example.github.io/for_iterators/
 # @see https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#iterators
-# items iterator: when there is 1 iteration variable (i)
-# pairs iterator: when there are 2 iteration variables (i,x)
-# fields and fieldPairs iterator magic: enable iterating on an object field (k, v)
+
 iterator `...`*[T](a: T, b: T): T =
   var res: T = a
   while res <= b:
-    yield res
-    inc res
+    yield res # enables returning a value without exiting
+    inc res # we can continue because of yield
 
 for i in 0...5:
   echo "useless iterator ", i
@@ -454,30 +487,33 @@ echo "############################ procedures"
 # special return types
 # ^ auto = type inference
 # ^ void = nothing is returned, no need to use discard
-# returning things:
+# returning things: (cant contain a yield statement)
 # ^ use return keyword for early returns
 # ^ result = sumExpression: enables return value optimization & copy elision
 # ^ if return/result isnt used last expression's value is returned
+# overload: redeclare with different signature
 proc pubfn*(): void =
   echo "the * makes this fn public"
 
-proc eko(this: string): void =
+# params with defaults dont requre a type
+proc eko(this = "Default value"): void =
   debugEcho this
-eko "wtf"
-eko("wtf")
-"wtf".echo
+eko "wtf1"
+eko("wtf2")
+"wtf3".eChO
 
 # haha almost forgot the _ doesnt matter
 proc eko_all(s: varargs[string]) =
   for x in s:
-    echo x
-# notice the missing _
-ekoall "this", "that", "thot"
+    echo "var arg: ", x
+e_k_o_a_l_l "this", "that", "thot"
 
 # use of semi to group parameters by type
-proc ekoGroups(a, b: int; c, d: char): void =
+proc ekoGroups(a, b: int; c: string, d: char): void =
   echo "ints: ", a, b, " strings: ", c, d
-ekogroups 1, 2, 'a', 'b'
+ekogroups 1, 2, "c", 'd'
+# requires parenths for named args
+ekogroups(b = 2, a = 1, c = "c is named, but d param isnt", 'd')
 
 # `$` second param converts everything to string
 proc eko_anything(s: varargs[string, `$`]) =
@@ -527,6 +563,8 @@ proc add5(num: int): int {. noSideEffect .} =
 debugEcho add5 5, 5.add5.add5, add5 add5(5).add5
 
 # forward declaration
+# everything must be declared (vars, objects, procs, etc) before being used
+# cannot be used with mutually recursive procedures
 proc allInts(x,y,z: int): int
 echo allInts(1, 2, 3) # used before defined
 proc allInts(x, y, z: int): int =
@@ -540,8 +578,9 @@ echo str"proc as a string\n escapes arent interporeted"
 # must use `symbol`
 proc `***`(i: int): auto =
   result = i * i * i
-
 echo ***5 + ***(5)
+
+if `==`( `+`(3, 4), 7): echo "invoking operator as proc looks wierd"
 
 # generic procs
 proc wtf[T](a: T): auto =
@@ -601,8 +640,6 @@ echo runFn("with this string", proc (x: string): string = "received: " & x)
 # @see https://nim-lang.org/docs/manual_experimental.html#do-notation
 echo runFn("with another string") do (x: string) -> string: "another: " & x
 
-# proc someName(p1: varargs[string]): string =
-#   # p1 is an object that takes an arbitrary amount of strings
 
 # # anonymous proc: doesnt have a name and surrounded by paranthesis
 # var someName = ( proc (params): returnType = "poop")

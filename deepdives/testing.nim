@@ -4,8 +4,9 @@
 ]#
 
 echo "############################ assert"
-# useful for pre & post conditions if using design by contract
-# haha remember trying to use thiz: https://github.com/codemix/contractual
+# useful for guard, pre & post conditions if using design by contract
+# ^ i think drnim even extends this further
+# ^ haha remember trying to use thiz: https://github.com/codemix/contractual
 # -d:danger or --asertions:off to remove from compilation
 # --assertions:on to keep them in compiled output
 assert "a" == $'a' # has to be of same type

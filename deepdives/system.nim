@@ -20,6 +20,7 @@ echo "############################ system"
 # in: i.e. contains
 # notin: i.e. doesnt contain
 # parseInt/parseFloat
+# len(seq|char)
 
 
 echo "############################ io"
