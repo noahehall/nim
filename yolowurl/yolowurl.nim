@@ -3,7 +3,7 @@
   only uses the implicitly imported system module
   see deepdives dir to dive deep
 
-  bookmark: https://nim-lang.org/docs/tut1.html
+  bookmark: https://nim-lang.org/docs/tut1.html#statements-and-indentation
   then here: https://nim-lang.org/docs/tut2.html
   then here: https://nim-lang.org/docs/tut3.html
   then here: https://nim-lang.org/docs/lib.html # categorize these in deepdive files
@@ -56,6 +56,7 @@
   import fileInThisDir
   import mySubdir/thirdFile
   import myOtherSubdir / [fourthFile, fifthFile]
+  from thatThing import thisThing
 
   # exporting stuff
   export something
@@ -63,6 +64,7 @@
 
 #[
   # operators
+
   =     +     -     *     /     <     >
   @     $     ~     &     %     |
   !     ?     ^     .     :     \
@@ -73,6 +75,14 @@
 
   # keywords
   and or not xor shl shr div mod in notin is isnot of as
+]#
+
+#[
+  # visibility
+
+  var: local or global var
+  *: this thing is visible outside the module
+  scopes: all blocks (ifs, loops, procs, etc) introduce a closure EXCEPT when statements
 ]#
 echo "############################ pragmas"
 # {.acyclic.} dunno read the docs
@@ -101,7 +111,7 @@ const poop3 = "flush"
 let `let` = "stropping"; echo(`let`) # stropping enables keywords as identifiers
 
 echo "############################ nil"
-# for reference & pointer types to prove parameters are initialized
+# eference & pointer types to prove parameters are initialized
 
 echo "############################ strings"
 # value semantics
@@ -184,8 +194,8 @@ const
 
 echo "############################ byte"
 # behaves like uint8
-# when dealing with binary blobs, prefer seq[byte] > string,
-# when dealing with binary data, prefer seq[char|uint8]
+# if dealing with binary blobs, prefer seq[byte] > string,
+# if dealing with binary data, prefer seq[char|uint8]
 
 
 echo "############################ if"
@@ -197,21 +207,34 @@ elif "poop" == "boob": echo "boobs arent poops"
 else: echo false
 
 echo "############################ when"
-# a compile time if statement, can add elif & else blocks just like if
-when true:
-  echo "run this code"
+# a compile time if statement
+# the condition MUST be a constant expression
+# does not open a new scope
+# only the first truthy value is compiled
+when system.hostOS == "windows":
+  echo "running on Windows!"
+elif system.hostOS == "linux":
+  echo "running on Linux!"
+elif system.hostOS == "macosx":
+  echo "running on Mac OS X!"
+else:
+  echo "unknown operating system"
+
+
 
 when false: # trick for commenting code
   echo "this code is never run"
 
 echo "############################ case expressions"
-# every possible case must be covered
-# can use strings, sets and ranges of ordinal types
+
+# can use strings, ordinal types and integers, ints/ordinals can also use ranges
 case num3
 of 2:
   echo "of 2 satisifes float 2.0"
 of 2.0: echo "is float 2.0"
-else: discard
+of 5.0, 6.0: echo "float is 5 or 6.0"
+of 7.0..12.9999: echo "wow your almost a teenager"
+else: discard # every possible case must be covered, so we discard the rest
 
 case 'a'
 of 'b', 'c': echo "char 'a' isnt of char 'b' or 'c'"
@@ -235,8 +258,53 @@ proc positiveOrNegative(num: int): string =
 echo positiveOrNegative(-1)
 
 
+echo "############################ iterators "
+# inlined at the callsite when compiled
+# ^ do not have the overhead from function calling
+# ^ however prone to code bloat
+# ^ useful for defining custom loops on complex objects
+# can be used as operators if you enclose the name in back ticks
+# @see https://nim-by-example.github.io/for_iterators/
+# @see https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#iterators
+# items iterator: when there is 1 iteration variable (i)
+# pairs iterator: when there are 2 iteration variables (i,x)
+# fields and fieldPairs iterator magic: enable iterating on an object field (k, v)
+iterator `...`*[T](a: T, b: T): T =
+  var res: T = a
+  while res <= b:
+    yield res
+    inc res
+
+for i in 0...5:
+  echo "useless iterator ", i
+
+
+iterator countTo(n: int): int =
+  var i = 0
+  while i <= n:
+    yield i
+    inc i
+for i in countTo(5):
+  echo i
+
+# iterator: closures
+# basically javascript yield
+# have state and can be resumed
+# @see https://nim-by-example.github.io/for_iterators/
+
+# std count iterators
+# countup == .. and ..< (zero index countup)
+# countdown == ..^ and ..^1 (zero index countdown)
+
+# std collection iterators
+# items/mitems : mutable/immutable, just the value
+for item in "noah".items:
+  echo "item is ", item
+# pairs/mpairs: mutable/immutable index & item
+for index, item in ["a","b"].pairs:
+  echo item, " at index ", index
 echo "############################ for"
-# this uses the items iterator, as we are only using i
+# loops over iterators
 for i in 1..2:
   echo "loop " & $i
 for i in 1 ..< 2:
@@ -247,7 +315,6 @@ for i in countdown(11,0, 2):
   echo "odds only ", i
 for i in "noah":
   echo "spell my name spell my name when your not around me ", i
-# this iuses the pairs iterator, as we are using i AND n
 for i, n in "noah":
   echo "index ", i, " is ", n
 
@@ -264,7 +331,14 @@ echo "############################ range"
 
 echo "############################ block"
 # theres a () syntax but we skipped it as its not idiomatic nim
-# wide range of uses cases, but primarily breaking out of nested loops
+# introducing a new scope
+let sniper = "scope parent"
+block:
+  let sniper = "scope private"
+  echo sniper
+echo sniper
+
+# break out of nested loops
 block poop:
   var count = 0
   while true:
@@ -290,7 +364,7 @@ var
   smun = [5,8,9,1]
   emptyArr: array[4, int]
   # this allows you to convert an ordinal (e.g. an enum) to an array
-  # when declaring an array, e,g. x: array[MyEnum, string] = [x, y, z]
+  # e.g. declaring an array x: array[MyEnum, string] = [x, y, z]
   # @see matrix section: https://nim-by-example.github.io/arrays/
   arrayWithRange: array[0..5, string] = ["one", "two", "three", "four", "five", "six"]
 
@@ -441,41 +515,6 @@ func poop(): string =
   result.add(" wurl") # <-- permitted because its a local var
 
 echo poop()
-
-
-echo "############################ iterators (loop procs)"
-# inlined at the callsite when compiled
-# ^ do not have the overhead from function calling
-# ^ however prone to code bloat
-# ^ useful for defining custom loops on complex objects
-# can be used as operators if you enclose the name in back ticks
-# @see https://nim-by-example.github.io/for_iterators/
-# @see https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#iterators
-# items iterator: when there is 1 iteration variable (i)
-# pairs iterator: when there are 2 iteration variables (i,x)
-# fields and fieldPairs iterator magic: enable iterating on an object field (k, v)
-iterator `...`*[T](a: T, b: T): T =
-  var res: T = a
-  while res <= b:
-    yield res
-    inc res
-
-for i in 0...5:
-  echo "useless iterator ", i
-
-
-iterator countTo(n: int): int =
-  var i = 0
-  while i <= n:
-    yield i
-    inc i
-for i in countTo(5):
-  echo i
-
-# iterator: closures
-# basically javascript yield
-# have state and can be resumed
-# @see https://nim-by-example.github.io/for_iterators/
 
 
 echo "############################ converters (implicit type conversion procs)"

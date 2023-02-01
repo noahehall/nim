@@ -25,11 +25,11 @@ let
   str4 = "\r\rstring\t\n\rstring"
   char1 = 'a'
 
-############################ dollars (system)
+echo "############################  dollars (system)"
 # $ === toString
 echo $1 & $2, " concats to 12"
 
-############################ strutils
+echo "############################  strutils"
 echo str1.split
 echo str1.toUpperAscii
 echo str1.repeat(5)
@@ -39,8 +39,9 @@ echo str2.strip.splitLines
 echo "$1 $2" % ["index1", "index2"]
 echo "$# $#" % ["get first", "then get next"]
 echo "$hello $world" % ["hello", "yolo", "world", "wurl"]
+echo "the number is ", parseInt("10")
 
-############################ strformat
+echo "############################  strformat"
 # fmt doesnt interprate literal escape sequeqnces
 echo fmt"{str1}\n\n\n{str2}\n\n\n{str3}\n\n\n{str4}"
 # & does intrepret literal escape sequences
@@ -54,7 +55,7 @@ let
 
 echo &"{a} {b} {c} {d}"
 
-############################ use cases
+echo "############################  use cases"
 # formatting objects
 type
   Nirv = object

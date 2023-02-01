@@ -26,7 +26,7 @@
 
   immutable
     - const (compile time)
-    - let (runtime)
+    - let (runtime, cant be reassigned)
     - ref/pointer variables cant point to a new ref/pointer after
 
   memory allocation
