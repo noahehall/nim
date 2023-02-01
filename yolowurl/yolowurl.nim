@@ -35,11 +35,13 @@
     https://nim-by-example.github.io/bitsets/
     https://nim-by-example.github.io/macros/
 
-  idiomatic nim, or borrowed from somewhere else (e.g. some status project)
-    - camelCase for code
-    - MACRO_CASE for external constants
-    - PascalCase for all types
-    - PascalCase for internal constants
+  idiomatic nim (from docs/styleguide), or borrowed from somewhere else (e.g. status auditor docs)
+    - camelCase for code (status)
+    - MACRO_CASE for external constants (status)
+    - PascalCase for all types (status)
+    - PascalCase for internal constants (status)
+    - shadowing proc params > declaring them as var (docs); enables the most efficient parameter passing
+    - declare as var > proc params (docs): modifying global vars
 
   my preferences thus far
     - strive for parantheseless code
@@ -74,9 +76,38 @@
   ref semantics: = referenced on assignment
 
   # keywords
-  and or not xor shl shr div mod in notin is isnot of as
+  and or not div mod in notin is isnot of as
+  xor shl shr
+  return
+    - without an expression is shorthand for return result
+  result
+    - implicit return variable
+    - initialized with procs default value, for ref types it will be nil (may require manual init)
+    - its idiomatic nim to mutate it
+  discard
+    - use a proc for its side effects but ignore its return value
+
 ]#
 
+#[
+  # statements
+
+  simple statements
+    - cant contain other statements
+    - e.g. assignment, invocations, and using return
+  complex statements
+    - can contain other statements
+    - must always be indented except for single complex statements
+    - e.g. if, when, for, while
+]#
+
+#[
+  # expressions
+    - result in a value
+    - indentation can occur after operators, open parantheiss and commas
+    - paranthesis and semicolins allow you to embed statements where expressions are expected
+
+]#
 #[
   # visibility
 
@@ -108,10 +139,21 @@ let poop2 = "hello"
 # there is no compile-time foreign function interface at this time.
 # consts must be initialized with a value
 const poop3 = "flush"
+
+# computes fac(4) at compile time:
+# notice the use of paranthesis and semi colins
+const fac4 = (var x = 1; for i in 1..4: x *= i; x)
+
+echo poop1, poop2, poop3, fac4
+# stropping
 let `let` = "stropping"; echo(`let`) # stropping enables keywords as identifiers
 
 echo "############################ nil"
-# eference & pointer types to prove parameters are initialized
+# reference & pointer types to prove parameters are initialized
+
+echo "############################ bool"
+# only true & false evaluate to bool
+# if and while conditions must be of type bool
 
 echo "############################ strings"
 # value semantics
@@ -137,7 +179,7 @@ echo "############################ char"
 # basically an alias for uint8
 # enclosed in single quotes
 let
-  x = 'a'
+  xxx = 'a'
   y = '\109'
   z = '\x79'
 
@@ -234,11 +276,11 @@ of 2:
 of 2.0: echo "is float 2.0"
 of 5.0, 6.0: echo "float is 5 or 6.0"
 of 7.0..12.9999: echo "wow your almost a teenager"
-else: discard # every possible case must be covered, so we discard the rest
+else: echo "not all cases covered: compile error if we remove else:discard"
 
 case 'a'
 of 'b', 'c': echo "char 'a' isnt of char 'b' or 'c'"
-else: echo "not all cases covered: compile error if we remove else:discard"
+else: discard
 
 #[
   case num2:
@@ -414,8 +456,8 @@ echo "############################ procedures"
 # ^ void = nothing is returned, no need to use discard
 # returning things:
 # ^ use return keyword for early returns
-# ^ assign to result var: enables return value optimization & copy elision
-# ^ have the last statement be an expression
+# ^ result = sumExpression: enables return value optimization & copy elision
+# ^ if return/result isnt used last expression's value is returned
 proc pubfn*(): void =
   echo "the * makes this fn public"
 
@@ -431,6 +473,11 @@ proc eko_all(s: varargs[string]) =
     echo x
 # notice the missing _
 ekoall "this", "that", "thot"
+
+# use of semi to group parameters by type
+proc ekoGroups(a, b: int; c, d: char): void =
+  echo "ints: ", a, b, " strings: ", c, d
+ekogroups 1, 2, 'a', 'b'
 
 # `$` second param converts everything to string
 proc eko_anything(s: varargs[string, `$`]) =
@@ -460,9 +507,6 @@ proc passedByReference(yy: var string): void =
   echo zz, " were modified"
 passedByReference zz
 
-# result serves as an implicit return variable
-# initialized as: var result: ReturnType
-# its idiomatic nim to mutate it
 proc redurn(this: string): string =
   result &= this
 debugEcho redurn "Wtf is result value"
