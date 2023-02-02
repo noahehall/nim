@@ -65,7 +65,10 @@
   import fileInThisDir
   import mySubdir/thirdFile
   import myOtherSubdir / [fourthFile, fifthFile]
-  from thatThing import thisThing
+  import thisTHing except thiz,thaz,thoz
+  from thisThing import this,thaz,thoz
+  from thisThing import nil # now you have to qualify all thisThing.blah() to invoke
+  include a,b,c # instead of imports, it includes, i.e. a,b,c are 1 module in 3 files
 
   # exporting stuff
   export something
