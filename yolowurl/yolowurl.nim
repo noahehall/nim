@@ -3,7 +3,7 @@
   only uses the implicitly imported system module
   see deepdives dir to dive deep
 
-  bookmark: https://nim-lang.org/docs/tut1.html#advanced-types-sets
+  bookmark: https://nim-lang.org/docs/tut1.html#advanced-types-arrays
   then here: https://nim-lang.org/docs/tut2.html
   then here: https://nim-lang.org/docs/tut3.html
   then here: https://nim-lang.org/docs/lib.html # categorize these in deepdive files
@@ -101,8 +101,8 @@
 
   assignment
     =
-      - value semantics: copied on assignment
-      - ref semantics: referenced on assignment
+      - value semantics: copied on assignment, most types are value semantics
+      - ref semantics: referenced on assignment, anything with ref keyword
 
   ordinal
     ord(x)	returns the integer value that is used to represent x's value
@@ -174,6 +174,7 @@
 ]#
 
 echo "############################ pragmas"
+# @see https://nim-lang.org/docs/manual.html#pragmas
 # {.acyclic.} dunno read the docs
 # {.async.} this fn is asynchronous and can use the await keyword
 # {.base.} for methods, to associate fns with a base type. see inheritance
@@ -189,6 +190,7 @@ echo "############################ pragmas"
 # {.raises: [permit,these].} # compiler throws error if an unlisted exception can be raised
 # {.thread.} informs the compiler this fn is meant for execution on a new thread
 # {.threadvar.} informs the compiler this var should be local to a thread
+# {.size: ...} # check the docs
 
 echo "############################ variables"
 var poop1 = "flush"
@@ -419,6 +421,7 @@ for item in "noah".items:
 # pairs/mpairs: mutable/immutable index & item
 for index, item in ["a","b"].pairs:
   echo item, " at index ", index
+
 echo "############################ for"
 # loops over iterators
 for i in 1..2:
@@ -433,6 +436,10 @@ for i in "noah":
   echo "spell my name spell my name when your not around me ", i
 for i, n in "noah":
   echo "index ", i, " is ", n
+
+let intArr = [5,4,3,2,1]
+for i in low(intArr) .. high(intArr):
+  echo "index ", i, " in nums = ", intArr[i]
 
 echo "############################ while"
 var num6 = 0
@@ -480,8 +487,10 @@ echo do:
 echo "############################ arrays fixed-length homogeneous"
 # the array size is encoded in its type
 # so you to pass an array to a proc the proc must specify the size as well as type
+# array access is always bounds checked
 var
   nums: array[4, int] = [1,9,8,5]
+  rangeArr: array[0..10, int]
   smun = [5,8,9,1]
   emptyArr: array[4, int]
   # this allows you to convert an ordinal (e.g. an enum) to an array
@@ -533,6 +542,33 @@ echo "############################ set"
 # ^ hash sets (import sets) have no restrictions
 # implemented as high performance bit vectors
 # often used to provide flags for procs
+type Opts = set[char]
+type IsOn = set[int8]
+let
+  simpleOpts: Opts = {'a','b','c'}
+  on: IsOn = {1'i8}
+  off: IsOn = {0'i8}
+  flags: Opts = {'d'..'z'}
+
+echo "my cli opts are: ", simpleOpts, on , off, flags
+# flag example from tut1
+type
+  MyFlag* {.size: sizeof(cint).} = enum
+    A
+    B
+    C
+    D
+  MyFlags = set[MyFlag]
+
+proc toNum(f: MyFlags): int = cast[cint](f)
+proc toFlags(v: int): MyFlags = cast[MyFlags](v)
+
+echo "toNum {}: ", toNum({})
+echo "toNum {A}: ", toNum({A})
+echo "toNum {D}: ", toNum({D})
+echo "toNum {A,C}: ", toNum({A, C})
+echo "toFlags 0: ", toFlags(0)
+echo "toFlags 7: ", toFlags(7)
 
 echo "############################ procedures"
 # special return types
