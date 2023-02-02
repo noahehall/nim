@@ -48,6 +48,7 @@
     - declare as var > proc params (docs): modifying global vars
     - use result > last statement expression > return statement (status)
     - use Natural range to guard against negative numbers (e.g. in loops)
+    - use sets for flags > integers that have to be or'ed
 
   my preferences thus far
     - strive for parantheseless code
@@ -113,6 +114,20 @@
     succ(x, n)	returns the n'th successor of x
     pred(x)	returns the predecessor of x
     pred(x, n)	returns the n'th predecessor of x
+
+  set
+    A + B	union of two sets
+    A * B	intersection of two sets
+    A - B	difference of two sets (A without B's elements)
+    A == B	set equality
+    A <= B	subset relation (A is subset of B or equal to B)
+    A < B	strict subset relation (A is a proper subset of B)
+    e in A	set membership (A contains element e)
+    e notin A	A does not contain element e
+    contains(A, e)	A contains element e
+    card(A)	the cardinality of A (number of elements in A)
+    incl(A, elem)	same as A = A + {elem}
+    excl(A, elem)	same as A = A - {elem}
 ]#
 
 #[
@@ -513,6 +528,11 @@ var sj = (iz: "super", wha: 133, t: 't')
 sj.iz = "duper"
 debugEcho "you are ", sj[0] & $sj.wha & $sj.t
 
+echo "############################ set"
+# basetype must be of int8/16, uint8/16/byte, char, enum
+# ^ hash sets (import sets) have no restrictions
+# implemented as high performance bit vectors
+# often used to provide flags for procs
 
 echo "############################ procedures"
 # special return types
