@@ -3,7 +3,7 @@
   only uses the implicitly imported system module
   see deepdives dir to dive deep
 
-  bookmark: https://nim-lang.org/docs/tut1.html#statements-and-indentation
+  bookmark: https://nim-lang.org/docs/tut1.html#advanced-types-sets
   then here: https://nim-lang.org/docs/tut2.html
   then here: https://nim-lang.org/docs/tut3.html
   then here: https://nim-lang.org/docs/lib.html # categorize these in deepdive files
@@ -34,6 +34,10 @@
   skipped
     https://nim-by-example.github.io/bitsets/
     https://nim-by-example.github.io/macros/
+]#
+
+#[
+  # style guide
 
   idiomatic nim (from docs/styleguide), or borrowed from somewhere else (e.g. status auditor docs)
     - camelCase for code (status)
@@ -43,6 +47,7 @@
     - shadowing proc params > declaring them as var enables the most efficient parameter passing (docs)
     - declare as var > proc params (docs): modifying global vars
     - use result > last statement expression > return statement (status)
+    - use Natural range to guard against negative numbers (e.g. in loops)
 
   my preferences thus far
     - strive for parantheseless code
@@ -75,25 +80,39 @@
 
   + - * \ / < > @ $ ~ & % ! ? ^ . |
 
-  bool operators
+  bool
     not, and, or, xor, <, <=, >, >=, !=, ==
 
-  short circuit operators
+  short circuit
     and or
 
-  char operators
+  char
     ==, <, <=, >, >=
 
   integer bitwise
     and or xor not shl shr
+
   integer division
     div
+
   module
     mod
 
-  =
-    - value semantics: copied on assignment
-    - ref semantics: referenced on assignment
+  assignment
+    =
+      - value semantics: copied on assignment
+      - ref semantics: referenced on assignment
+
+  ordinal
+    ord(x)	returns the integer value that is used to represent x's value
+    inc(x)	increments x by one
+    inc(x, n)	increments x by n; n is an integer
+    dec(x)	decrements x by one
+    dec(x, n)	decrements x by n; n is an integer
+    succ(x)	returns the successor of x
+    succ(x, n)	returns the n'th successor of x
+    pred(x)	returns the predecessor of x
+    pred(x, n)	returns the n'th predecessor of x
 ]#
 
 #[
@@ -130,6 +149,7 @@
     - paranthesis and semicolins allow you to embed statements where expressions are expected
 
 ]#
+
 #[
   # visibility
 
@@ -137,6 +157,7 @@
   *: this thing is visible outside the module
   scopes: all blocks (ifs, loops, procs, etc) introduce a closure EXCEPT when statements
 ]#
+
 echo "############################ pragmas"
 # {.acyclic.} dunno read the docs
 # {.async.} this fn is asynchronous and can use the await keyword
@@ -182,11 +203,12 @@ echo "############################ strings"
 # are really just seq[char|byte] except for the terminating nullbyte \0
 # ^0 terminated so nim strings can be converted to a cstring without a copy
 # can use any seq proc for manipulation
+# compared using lexicographical order
 # to intrepret unicode, you need to import the unicode module
 var msg: string = "yolo"
 echo msg & " wurl" # returns a new string
 msg.add(" wurl") # modifies the string in place
-echo msg
+echo msg, "has length ", len msg
 let
   poop6 = "flush\n\n\n\n\n\nescapes are interpreted"
   flush = r"raw string, escapes arent interpreted"
@@ -209,23 +231,14 @@ let
 
 
 echo "############################ number types"
-const
-  num0 = 0 # int
-  num1: int = 2
-  num2: int = 4
-  amillamillamill = 1_000_000
-echo "4 / 2 === ", num2 / num1 # / always returns a float
-echo "4 div 2 === ", num2 div num1 # always returns an int
-
-const
-  num3 = 2.0 # float
-  num4: float = 4.0
-  num5: float = 4.9
-echo "4.0 / 2.0 === ", num4 / num3
-echo "4.0 div 2.0 === ", "gotcha: div is only for integers"
-echo "conversion acts like javascript floor()"
-echo "int(4.9) div int(2.0) === ", int(num5) div int(num3)
-echo "remainder of 5 / 2: ", 5 mod 2
+# a word on integers
+# not converted to floats automatically
+# use toInt and toFloat
+let
+  x1: int32 = 1.int32   # same as calling int32(1)
+  y1: int8  = int8('a') # 'a' == 97'i8
+  z1: float = 2.5       # int(2.5) rounds down to 2
+  sum: int = int(x1) + int(y1) + int(z1) # sum == 100
 
 # signed integers, 32bit/64bit depending on system
 # Conversion between int and int32 or int64 must be explicit except for string literals.
@@ -234,22 +247,35 @@ echo "remainder of 5 / 2: ", 5 mod 2
 const
   b = 100
   c = 100'i8
+  num0 = 0 # int
+  num1: int = 2
+  num2: int = 4
+  amilliamilliamilli = 1_000_000
 
 # uint: unsigned integers, 32/64 bit depending on system,
 # uint8,16,32,64 # 8 = 0 -> 2550, 16 = ~65k, 32 = ~4billion
 const
   e: uint8 = 100
   f = 100'u8
+echo "4 / 2 === ", num2 / num1 # / always returns a float
+echo "4 div 2 === ", num2 div num1 # always returns an int
 
 # float: float32 (C Float), 64 (C Double)
 # float (alias for float64) === processors fastest type
-#
 const
+  num3 = 2.0 # float
+  num4 = 4.0'f32
+  num5: float64 = 4.9'f64
   g = 100.0
   h = 100.0'f32
   i = 4e7 # 4 * 10^7
   l = 1.0e9
   m = 1.0E9
+echo "4.0 / 2.0 === ", num4 / num3
+echo "4.0 div 2.0 === ", "gotcha: div is only for integers"
+echo "conversion acts like javascript floor()"
+echo "int(4.9) div int(2.0) === ", int(num5) div int(num3)
+echo "remainder of 5 / 2: ", 5 mod 2
 
 echo "############################ hexadecimal"
 const
@@ -400,10 +426,15 @@ while num6 < 10: # break, continue work as expected
   inc num6
 
 echo "############################ range"
+# range of values from an integer or enumeration type
 # are checked at runtime whenever the value changes
 # valuable for catching / preventing underflows.
 # e.g. Nims natural type: type Natural = range[0 .. high(int)]
+# ^ should be used to guard against negative numbers
+type
+  MySubrange = range[0..5]
 
+echo MySubrange
 echo "############################ block"
 # theres a () syntax but we skipped it as its not idiomatic nim
 # introducing a new scope
@@ -565,7 +596,7 @@ debugEcho add5 5, 5.add5.add5, add5 add5(5).add5
 # forward declaration
 # everything must be declared (vars, objects, procs, etc) before being used
 # cannot be used with mutually recursive procedures
-proc allInts(x,y,z: int): int
+proc allInts(x,y,z: int): int # dont include = or a body
 echo allInts(1, 2, 3) # used before defined
 proc allInts(x, y, z: int): int =
   result = x + y + z
@@ -670,6 +701,7 @@ type
 # echo 10 + FkUMoney(100) # type mismatch
 
 echo "############################ object values"
+# Enumeration and object types may only be defined within a type statement.
 # structural equality check
 # note the placement of * for visibility
 # traced by the garbage collector, no need to free them when allocated
@@ -730,7 +762,7 @@ type WhoPoop = ref object of RootObj
 type YouPoop = ref object of WhoPoop
 type IPoop = ref object of WhoPoop
 
-# overload methods/procs by changing the self arg
+# overload methods/procs by changing the signature
 # use method whenever an object has an inherited subtype only known at runtime
 # ^ i.e. invocation depends on the actual object being invoked
 # ^ with proc only the {.base.} method is called
@@ -754,13 +786,24 @@ for criminal in sherlockpoops:
 # type checking
 if sherlockpoops[0] of YouPoop: echo "filthy animal" else: echo "snobby bourgeois"
 
+echo "############################ repr"
+# prints anything
+# advanced/custom types cant use $ unless its defined for them (see elseware)
+# but you can use the repr proc on anything (its not the prettiest)
+
+echo "repr: ", sherlockpoops.repr
+
 echo "############################ generics"
 # parameterized: Thing[T]
 # restricted Thing[T: x or y]
 # static Thing[MaxLen: static int, T] <-- find this one in the docs
 
 echo "############################ enums"
-# type checked (thus cant be anonymous and must have a type)
+# A variable of an enum can only be assigned one of the enum's specified values
+# enum values are usually a set of ordered symbols, internally mapped to an integer (0-based)
+# $ convert enum value to its name
+# ord convert enum name to its value
+
 type
   GangsOfAmerica = enum
     democrats, republicans, politicians
@@ -792,7 +835,9 @@ for peeps in PeopleOfAmerica.coders .. PeopleOfAmerica.scientists:
 ## ord(x) the ordinal value of x
 ## X(i) casts the index to an enum
 
-
+echo "############################ ordinal types"
+# Enumerations, integer types, char and bool (and subranges)
+# see operators > ordinal
 
 echo "############################ files"
 # no clue why we need to add the dir
