@@ -3,22 +3,31 @@
   only uses the implicitly imported system module
   see deepdives dir to dive deep
 
-  bookmark: https://nim-lang.org/docs/tut1.html#advanced-types-arrays
-  then here: https://nim-lang.org/docs/tut2.html
-  then here: https://nim-lang.org/docs/tut3.html
-  then here: https://nim-lang.org/docs/lib.html # categorize these in deepdive files
-  then here: https://nim-lang.org/docs/nimc.html
-  then here: https://nim-lang.org/docs/manual_experimental.html
-  then here: https://nim-lang.org/docs/docgen.html
-  then here: https://nim-lang.org/docs/destructors.html
-  then here: https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html
-  then here: https://nim-lang.org/docs/backends.html
-  then here: nim in action
-    - reading: shiz finished this like 2 years ago, it was super old then away
-    - copying pg40 custom array ranges, just skim the remainder in case the above missed something
-  and finally: https://nim-lang.org/docs/nep1.html
-  and finally: https://nim-lang.org/docs/manual.html
-  you should be good when there arent any empty sections in this file
+  the road to code
+    bookmark: https://nim-lang.org/docs/tut1.html#advanced-types-arrays
+    then here: https://nim-lang.org/docs/tut2.html
+    then here: https://nim-lang.org/docs/lib.html # categorize these in deepdive files
+    then here: https://nim-lang.org/docs/nimc.html
+    then here: https://nim-lang.org/docs/docgen.html
+    then here: https://nim-lang.org/docs/manual_experimental.html
+    then here: https://nim-lang.org/docs/backends.html
+    then here: https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html
+    and finally: https://nim-lang.org/docs/nep1.html
+
+  skim and copy:
+    the available procs and grab the ones with immediate usefulness
+      https://nim-lang.org/docs/manual.html
+    nim in action
+      - reading: finished this like a year ago, it was super old then away
+      - copying pg40 custom array ranges
+
+  review:
+    - we have like 1000 different nim files, consolidate
+
+  eventual:
+    https://nim-lang.org/docs/tut3.html
+    https://nim-lang.org/docs/destructors.html
+
   other stuff
     https://nim-lang.org/docs/nims.html
     https://peterme.net/asynchronous-programming-in-nim.html
@@ -29,7 +38,6 @@
     https://peterme.net/using-nimscript-as-a-configuration-language-embedding-nimscript-pt-1.html
     https://peterme.net/how-to-embed-nimscript-into-a-nim-program-embedding-nimscript-pt-2.html
     https://peterme.net/creating-condensed-shared-libraries-embedding-nimscript-pt-3.html
-
 
   skipped
     https://nim-by-example.github.io/bitsets/
