@@ -15,6 +15,8 @@
     and finally: https://nim-lang.org/docs/nep1.html
 
   skim and copy:
+    nim package directory: get familiar with what exists
+      https://nimble.directory/
     the available procs and grab the ones with immediate usefulness
       https://nim-lang.org/docs/manual.html
     nim in action
@@ -55,7 +57,7 @@
     - PascalCase for internal constants (status)
     - shadowing proc params > declaring them as var enables the most efficient parameter passing (docs)
     - declare as var > proc var params when modifying global vars (docs)
-    - use result > last statement expression > return statement (status)
+    - use result > last statement expression > return statement (docs [result = optimized]) (status prefers last statement)
     - use Natural range to guard against negative numbers (e.g. in loops) (docs)
     - use sets for flags > integers that have to be or'ed (docs)
     - spaces in range operators, e.g. this .. that > this..that (docs)
