@@ -4,7 +4,7 @@
   see deepdives dir to dive deep
 
   the road to code
-    bookmark: https://nim-lang.org/docs/tut1.html#advanced-types-arrays
+    bookmark: https://nim-lang.org/docs/tut1.html#advanced-types-slices
     then here: https://nim-lang.org/docs/tut2.html
     then here: https://nim-lang.org/docs/lib.html # categorize these in deepdive files
     then here: https://nim-lang.org/docs/nimc.html
@@ -39,9 +39,10 @@
     https://peterme.net/how-to-embed-nimscript-into-a-nim-program-embedding-nimscript-pt-2.html
     https://peterme.net/creating-condensed-shared-libraries-embedding-nimscript-pt-3.html
 
-  skipped
+  skipped/should read again
     https://nim-by-example.github.io/bitsets/
     https://nim-by-example.github.io/macros/
+    https://nim-lang.org/docs/tut1.html#sets-bit-fields
 ]#
 
 #[
@@ -53,10 +54,11 @@
     - PascalCase for all types (status)
     - PascalCase for internal constants (status)
     - shadowing proc params > declaring them as var enables the most efficient parameter passing (docs)
-    - declare as var > proc params (docs): modifying global vars
+    - declare as var > proc var params when modifying global vars (docs)
     - use result > last statement expression > return statement (status)
-    - use Natural range to guard against negative numbers (e.g. in loops)
-    - use sets for flags > integers that have to be or'ed
+    - use Natural range to guard against negative numbers (e.g. in loops) (docs)
+    - use sets for flags > integers that have to be or'ed (docs)
+    - spaces in range operators, e.g. this .. that > this..that (docs)
 
   my preferences thus far
     - strive for parantheseless code
@@ -112,19 +114,21 @@
 
   assignment
     =
-      - value semantics: copied on assignment, most types are value semantics
+      - value semantics: copied on assignment, all types have value semantics
       - ref semantics: referenced on assignment, anything with ref keyword
 
-  ordinal
-    ord(x)	returns the integer value that is used to represent x's value
-    inc(x)	increments x by one
-    inc(x, n)	increments x by n; n is an integer
-    dec(x)	decrements x by one
+  ordinal (integers, chars, bool, subranges)
     dec(x, n)	decrements x by n; n is an integer
-    succ(x)	returns the successor of x
-    succ(x, n)	returns the n'th successor of x
-    pred(x)	returns the predecessor of x
+    dec(x)	decrements x by one
+    high(x) highest possible value
+    inc(x, n)	increments x by n; n is an integer
+    inc(x)	increments x by one
+    low(x) lowest possible value
+    ord(x)	returns the integer value that is used to represent x's value
     pred(x, n)	returns the n'th predecessor of x
+    pred(x)	returns the predecessor of x
+    succ(x, n)	returns the n'th successor of x
+    succ(x)	returns the successor of x
 
   set
     A + B	union of two sets
@@ -139,6 +143,7 @@
     card(A)	the cardinality of A (number of elements in A)
     incl(A, elem)	same as A = A + {elem}
     excl(A, elem)	same as A = A - {elem}
+
 ]#
 
 #[
@@ -495,13 +500,17 @@ echo do:
 
 
 
-echo "############################ arrays fixed-length homogeneous"
+echo "############################ arrays fixed-length dimensionally homogeneous"
 # the array size is encoded in its type
-# so you to pass an array to a proc the proc must specify the size as well as type
-# array access is always bounds checked
+# to pass an array to a proc its signature must specify the size and type
+# array access is always bounds checked (theres a flag to disable)
+# the index type can be any ordinal type
+# each array dimension must have the same type,
+# ^ nested (multi-dimensin) arrays can have different types than their parent
 var
-  nums: array[4, int] = [1,9,8,5]
-  rangeArr: array[0..10, int]
+  nums: array[4, int] = [1,9,8,5] # 4 items
+  nums4: array[0 .. 3, int] # 4 items
+  rangeArr: array[0..10, int] # max 11 items
   smun = [5,8,9,1]
   emptyArr: array[4, int]
   # this allows you to convert an ordinal (e.g. an enum) to an array
@@ -514,12 +523,84 @@ proc withArrParam[I, T](a: array[I, T]): string =
 discard withArrParam nums
 discard withArrParam smun
 
-echo "############################ openarray"
-# parameter-only type representing a pointer, length pair
-# aka slices, ranges, views, spans
-# arrays and seqs are implicity converted to openArray
+# multi dimensional array with different index types
+type
+  TimeToEat = enum
+    breakfast, lunch, dinner, sweettooth
+  WhatToEat = enum
+    proteinshake, ramen, ramentWithMeet, pnutbutteryjelly
+  Eating = array[breakfast .. sweettooth, WhatToEat] # enum indexed
+  WeeklyFoodTracker = array[0 .. 6, Eating] # integer indexed
+  MonthlyFoodTracker = array[0 .. 3, array[0 .. 6, array[breakfast .. sweettooth, WhatToEat]]] # oneliner, if only months were exactly 4 weeks
 
-echo "############################ sequences dynamic-length homogeneous"
+var onSundayIAte: Eating
+onSundayIAte[breakfast] = proteinshake
+onSundayIAte[lunch] = ramen
+onSundayIAte[dinner] = ramentWithMeet
+onSundayIAte[sweettooth] = pnutbutteryjelly
+
+# remember, not assigning a value sets a default value
+# ^ in this case 1 .. high will be filled with proteinshakes
+# ^ because we only set index 0
+var lastWeek: WeeklyFoodTracker
+lastWeek[0] = onSundayIAte
+echo "last sunday i ate: ", lastWeek[0]
+echo "but there are ", lastWeek.len , " days in a week.. are you cheating on your diet?"
+
+echo "############################ enums"
+# A variable of an enum can only be assigned one of the enum's specified values
+# enum values are usually a set of ordered symbols, internally mapped to an integer (0-based)
+# $ convert enum value to its name
+# ord convert enum name to its value
+
+type
+  GangsOfAmerica = enum
+    democrats, republicans, politicians
+# you can assign custom values to enums
+type
+  PeopleOfAmerica {.pure.} = enum
+    coders = "think i am", teachers = "pretend to be", farmers = "prefer to be", scientists = "trying to be"
+
+echo politicians # impure so doesnt need to be qualified
+echo PeopleOfAmerica.coders # coders needs to be qualified cuz its labeled pure
+
+# its idiomatic nim to have ordinal enums (1, 2, 3, etc)
+# ^ and not assign disjoint values (1, 5, -10)
+# enum iteration via ord
+for i in ord(low(GangsOfAmerica))..
+        ord(high(GangsOfAmerica)):
+  echo GangsOfAmerica(i), " index is: ", i
+# iteration via enum
+# this echos the custom strings
+for peeps in PeopleOfAmerica.coders .. PeopleOfAmerica.scientists:
+  echo "we need more ", peeps
+
+# example from tut1
+type
+  Direction = enum
+    north, east, south, west # 0,1,2,3
+  BlinkLights = enum
+    off, on, slowBlink, mediumBlink, fastBlink
+  LevelSetting = array[north..west, BlinkLights] # 4 items of BlinkLights
+var
+  level: LevelSetting
+level[north] = on
+level[south] = slowBlink
+level[east] = fastBlink
+echo level        # --> [on, fastBlink, slowBlink, off]
+echo low(level)   # --> north
+echo len(level)   # --> 4
+echo high(level)  # --> west
+
+
+echo "############################ sequences dynamic-length dimensionally homogeneous"
+# length can change @ runtime (like strings)
+# always heap allocated & gc'ed
+# always indexed starting at 0
+# can be passed to any proc accepting a seq/openarray
+# the @ is the array to seq operator: init array and convert to seq
+# ^ or use the newSeq proc
+# for loops use the items (seq value) or pairs (index, value) on seqs
 
 var
   poops: seq[int] = @[1,2,3,4]
@@ -557,11 +638,11 @@ type Opts = set[char]
 type IsOn = set[int8]
 let
   simpleOpts: Opts = {'a','b','c'}
-  on: IsOn = {1'i8}
-  off: IsOn = {0'i8}
+  onn: IsOn = {1'i8}
+  offf: IsOn = {0'i8}
   flags: Opts = {'d'..'z'}
 
-echo "my cli opts are: ", simpleOpts, on , off, flags
+echo "my cli opts are: ", simpleOpts, onn , offf, flags
 # flag example from tut1
 type
   MyFlag* {.size: sizeof(cint).} = enum
@@ -600,24 +681,12 @@ eko "wtf1"
 eko("wtf2")
 "wtf3".eChO
 
-# haha almost forgot the _ doesnt matter
-proc eko_all(s: varargs[string]) =
-  for x in s:
-    echo "var arg: ", x
-e_k_o_a_l_l "this", "that", "thot"
-
 # use of semi to group parameters by type
 proc ekoGroups(a, b: int; c: string, d: char): void =
   echo "ints: ", a, b, " strings: ", c, d
 ekogroups 1, 2, "c", 'd'
 # requires parenths for named args
 ekogroups(b = 2, a = 1, c = "c is named, but d param isnt", 'd')
-
-# `$` second param converts everything to string
-proc eko_anything(s: varargs[string, `$`]) =
-  for x in s:
-    echo x
-eKoAnyThInG 1, "threee", @[1,2,3]
 
 # anything less than 3*sizeof(pointer), i.e. 24 bytes on 64-bit OS
 proc passedByValue(x: string): void =
@@ -684,6 +753,48 @@ if `==`( `+`(3, 4), 7): echo "invoking operator as proc looks wierd"
 proc wtf[T](a: T): auto =
   result = "wtf " & $a
 echo wtf "yo"
+
+echo "############################ openarray (proc params)"
+# proc signature type only enabling accepting an array of any length
+# ^ but only 1 dimension, i.e. wont accept a nested arr/seq
+# always index with int and starting at 0
+# array args must match the param base type, index type is ignored
+# arrays and seqs are implicity converted for openArray params
+
+# copied from docs
+var
+  fruits: seq[string] # reference to a sequence of strings that is initialized with '@[]'
+  capitals: array[3, string] # array of strings with a fixed size
+
+capitals = ["New York", "London", "Berlin"] # array 'capitals' allows assignment of only three elements
+fruits.add("Banana") # sequence 'fruits' is dynamically expandable during runtime
+fruits.add("Mango")
+
+proc openArraySize(oa: openArray[string]): int =
+  oa.len
+
+# procedure accepts a sequence as parameter
+echo "size of fruits ", openArraySize(fruits)
+# but also an array type
+echo "number of capitals ", openArraySize(capitals)
+
+echo "############################ varargs (proc spread params)"
+# enables passing a variable number of args to a proc param
+# the args are converted to an array if the param is the last param
+
+# haha almost forgot the _ doesnt matter
+# s  == seq[string]
+proc eko_all(s: varargs[string]) =
+  for x in s:
+    echo "var arg: ", x
+e_k_o_a_l_l "this", "that", "thot"
+
+# `$` second param converts each item to string
+# s == seq[string] no matter what we pass
+proc eko_anything(s: varargs[string, `$`]) =
+  for x in s:
+    echo x
+eKoAnyThInG 1, "threee", @[1,2,3]
 
 echo "############################ funcs (pure procs)"
 # alias for {. noSideEffect .}
@@ -864,47 +975,6 @@ echo "############################ generics"
 # parameterized: Thing[T]
 # restricted Thing[T: x or y]
 # static Thing[MaxLen: static int, T] <-- find this one in the docs
-
-echo "############################ enums"
-# A variable of an enum can only be assigned one of the enum's specified values
-# enum values are usually a set of ordered symbols, internally mapped to an integer (0-based)
-# $ convert enum value to its name
-# ord convert enum name to its value
-
-type
-  GangsOfAmerica = enum
-    democrats, republicans, politicians
-# you can assign custom values to enums
-type
-  PeopleOfAmerica {.pure.} = enum
-    coders = "think i am", teachers = "pretend to be", farmers = "prefer to be", scientists = "trying to be"
-
-echo politicians # impure so doesnt need to be qualified
-echo PeopleOfAmerica.coders # coders needs to be qualified cuz its labeled pure
-
-# its idiomatic nim to have ordinal enums (1, 2, 3, etc)
-# ^ and not assign disjoint values (1, 5, -10)
-# enum iteration via ord
-for i in ord(low(GangsOfAmerica))..
-        ord(high(GangsOfAmerica)):
-  echo GangsOfAmerica(i), " index is: ", i
-# enum iteration via enum
-# this echos the custom strings
-for peeps in PeopleOfAmerica.coders .. PeopleOfAmerica.scientists:
-  echo "we need more ", peeps
-
-# ordinals doesnt work with disjoint enums
-# i.e. those assigned custom integer values (string values okay i think)
-## low(x) lowest possible value
-## high(x) highest possible value
-## inc x ++1
-## dec x --1
-## ord(x) the ordinal value of x
-## X(i) casts the index to an enum
-
-echo "############################ ordinal types"
-# Enumerations, integer types, char and bool (and subranges)
-# see operators > ordinal
 
 echo "############################ files"
 # no clue why we need to add the dir
