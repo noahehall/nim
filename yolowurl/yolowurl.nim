@@ -4,8 +4,7 @@
   see deepdives dir to dive deep
 
   the road to code
-    bookmark: https://nim-lang.org/docs/tut1.html#advanced-types-slices
-    then here: https://nim-lang.org/docs/tut2.html
+    bookmark: https://nim-lang.org/docs/tut2.html
     then here: https://nim-lang.org/docs/lib.html # categorize these in deepdive files
     then here: https://nim-lang.org/docs/nimc.html
     then here: https://nim-lang.org/docs/docgen.html
@@ -62,6 +61,9 @@
     - use sets for flags > integers that have to be or'ed (docs)
     - spaces in range operators, e.g. this .. that > this..that (docs)
     - X.y > x[].y for accssing ref/ptr objects (docs: highly discouraged)
+    - run initialization logic as toplevel module statements, e.g. init data (docs)
+    - module names are generally long to be descriptive (docs)
+    - use include to split large modules into distinct files (docs)
 
   my preferences thus far
     - strive for parantheseless code
@@ -77,15 +79,29 @@
 ]#
 
 #[
-  # importing stuff
-  import math is the same as import std/math
-  import fileInThisDir
-  import mySubdir/thirdFile
-  import myOtherSubdir / [fourthFile, fifthFile]
-  import thisTHing except thiz,thaz,thoz
-  from thisThing import this,thaz,thoz
-  from thisThing import nil # now you have to qualify all thisThing.blah() to invoke
-  include a,b,c # instead of imports, it includes, i.e. a,b,c are 1 module in 3 files
+  # modules
+    - generally 1 file == 1 module
+    - include can split 1 module == 1..X files
+    - top level statements are exected at start of program
+    - isMainModule: returns true if current module compiled as the main file (see testing.nim)
+
+  ambiguity
+    - when a third imports the same symbol from 2 different modules
+    - procs/iterators are overloaded, so no ambiguity
+    - everything else must be qualified (modName.poop) if ambiguous
+
+  import: top-level symbols marked * from another module
+    import math # imports everything
+    import std/math # qualified import everything
+    import mySubdir/thirdFile
+    import myOtherSubdir / [fourthFile, fifthFile]
+    import thisTHing except thiz,thaz,thoz
+    from thisThing import this, thaz, thoz # can invoke this,that,thot without qualifying
+    from thisThing import nil # must qualify symbols to invoke, e.g. thisThing.blah()
+    from thisThing as tt import nil # define an alias
+
+  include: a file as part of this module
+    include xA,xB,xC
 
   # exporting stuff
   export something
