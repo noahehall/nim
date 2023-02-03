@@ -466,6 +466,9 @@ while num6 < 10: # break, continue work as expected
   inc num6
 
 echo "############################ range"
+# b[0 .. ^1] ==  b[0 .. b.len-1] == b[0 ..< b.len]
+# forward: starts at 0
+# backward: start at ^1,
 # range of values from an integer or enumeration type
 # are checked at runtime whenever the value changes
 # valuable for catching / preventing underflows.
@@ -473,8 +476,22 @@ echo "############################ range"
 # ^ should be used to guard against negative numbers
 type
   MySubrange = range[0..5]
-
 echo MySubrange
+
+echo "############################ slice"
+# same syntax as slice but different type (Slice) & context
+# collection types define operators/procs which accept slices in place of ranges
+# the operator/proc specify the type of values they work with
+# the slice provides a range of values matching the type required by the operator/proc
+
+# copied from docs
+var
+  a = "Nim is a programming language"
+  bbb = "Slices are useless."
+echo a[7 .. 12] # --> 'a prog' > forward slice
+bbb[11 .. ^2] = "useful" # backward slice
+echo bbb # --> 'Slices are useful.'
+
 echo "############################ block"
 # theres a () syntax but we skipped it as its not idiomatic nim
 # introducing a new scope
@@ -622,14 +639,6 @@ echo "last ", poops[^1]
 var me = "noAH"
 me[0 .. 1] = "NO"
 echo "change first 2 els ", me
-
-echo "############################ tuple fixed length hetergenous"
-let js = ("super", 133, 't')
-echo js
-
-var sj = (iz: "super", wha: 133, t: 't')
-sj.iz = "duper"
-debugEcho "you are ", sj[0] & $sj.wha & $sj.t
 
 echo "############################ set"
 # basetype must be of int8/16, uint8/16/byte, char, enum
@@ -833,6 +842,12 @@ echo "############################ templates (code gen procs)"
 # enables raw code substitution
 # read the docs on this one
 # @see https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#template
+# ^ used in ranges/slices is a template
+# ^ returns a distinct int of type BackwardsIndex
+
+const lastOne = ^1
+const lastFour = ^4
+echo "tell me your name ", "my name is noah"[lastFour .. lastOne]
 
 echo "############################ closures"
 # read the docs on this one
@@ -882,21 +897,23 @@ type
 
 echo "############################ object values"
 # Enumeration and object types may only be defined within a type statement.
-# structural equality check
 # note the placement of * for visibility
 # traced by the garbage collector, no need to free them when allocated
+# each object type has a construct,
+# when instantiated unspecified fields receive the field types default value
 type
   PrivatePoop = object
-    i*: bool
+    i*: bool # field is visible
     times: int
-  PublicPoop* = object # <-- u dirty animal
+  PublicPoop* = object # <-- type is visible
     u: bool
     times: int
 let ipoop = PrivatePoop(i: false, times: 0)
 let upoop = PublicPoop(u: true, times: 100)
+let everyonepoop = upoop # deep copy
 echo "did ", ipoop
 echo "or did ", upoop
-
+echo "does ", everyonepoop
 
 type
   Someone* = object
@@ -965,6 +982,55 @@ for criminal in sherlockpoops:
 
 # type checking
 if sherlockpoops[0] of YouPoop: echo "filthy animal" else: echo "snobby bourgeois"
+
+
+echo "############################ tuple fixed length hetergenous"
+# similar to objects sans inheritance, + unpacking + more dynamic
+# structural equality check
+# ^ tuples of diff types are == if fields have same type, name and order
+# ^ anonymous tuples are compatible with tuples with field names if type matches
+# instantiation must match order of fields in signature
+# instantiation doesnt require field names
+# field access by name/index (const int)
+
+type
+  # object syntax
+  NirvStack = tuple
+    fe: seq[string]
+    be: seq[string]
+  # tuple syntax
+  StackNirv = tuple[fe: seq[string], be: seq[string]]
+
+# no names required
+var hardCoreStack: NirvStack = (@["ts"], @["ts, bash"])
+# if provided, order must match signature
+var newCoreStack: StackNirv = (fe: @["ts", "nim"], be: @["ts", "nim", "bash"])
+
+# anonymous field syntax
+let js = ("super", 133, 't')
+echo js
+
+var sj = (iz: "super", wha: 133, t: 't')
+sj.iz = "duper"
+debugEcho "you are ", js[0] & $sj.wha & $sj.t
+
+# tuples dont need their type declared separately
+var bizDevOps: tuple[biz: string, dev: string, ops: string] =
+  ("intermediate", "senior", "intermediate")
+echo "rate yourself on bizDevOps: ", bizDevOps
+
+# tuples can be destructured (unpacked)
+let (bizRating, devRating, opsRating) = bizDevOps
+echo "rate yourself on bizDevOps: ", bizRating, " ", devRating, " ", opsRating
+
+# copied from docs
+# even in loops
+let aaa = [(10, 'a'), (20, 'b'), (30, 'c')]
+for (x, c) in aaa:
+  echo x # This will output: 10; 20; 30
+for i, (x, c) in aaa:
+  echo i, c # Accessing the index is also possible
+
 
 echo "############################ repr"
 # prints anything
