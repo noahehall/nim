@@ -910,9 +910,11 @@ let thisInt: StrOrInt = 1
 
 echo "could be a string or an int ", thizString, thisInt
 echo "############################ type aliases distinct"
-# are identical to their base but cant be used in their place
-# requires explicit casting to their base
-# requires base procs & fields to be be borred for use on subtypes
+# does not create inheritance but are identical with to base type
+# ^ you can borrow fields/procs/etc from the base type
+# ^ else explicity define everything
+# base and distinct can be cast to eachother
+
 type
   BiggerMoney = distinct BigMoney
   BiggestMoney {.borrow: `.`.} = distinct BigMoney # borrows all procs
