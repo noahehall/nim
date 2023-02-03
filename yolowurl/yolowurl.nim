@@ -61,6 +61,7 @@
     - use Natural range to guard against negative numbers (e.g. in loops) (docs)
     - use sets for flags > integers that have to be or'ed (docs)
     - spaces in range operators, e.g. this .. that > this..that (docs)
+    - X.y > x[].y for accssing ref/ptr objects (docs: highly discouraged)
 
   my preferences thus far
     - strive for parantheseless code
@@ -68,7 +69,11 @@
     - prefer fn x,y over x.fn y over fn(x, y) unless it conflicts with the context
       - e.g. pref x.fn y when working with objects
       - e.g. pref fn x,y when working with procs
-      - e.g. pref fn(x, ...) when chaining
+      - e.g. pref fn(x, ...) when chaining/closures (calling syntax impacts type compatibility (docs))
+    - object vs tuple
+      - TODO: figure out which is more performant or if there are existing guidelines
+      - tuple: no inheritance / private fields required
+      - object: inheritance / private fields required
 ]#
 
 #[
@@ -146,6 +151,11 @@
     incl(A, elem)	same as A = A + {elem}
     excl(A, elem)	same as A = A - {elem}
 
+  ref/pter:
+    . and [] always def-ref, i.e. return the value and not the ref
+    . access tuple/object
+    [] arr/seq/string
+    new allocate a new instance
 ]#
 
 #[
@@ -227,7 +237,8 @@ echo poop1, poop2, poop3, fac4
 let `let` = "stropping"; echo(`let`) # stropping enables keywords as identifiers
 
 echo "############################ nil"
-# reference & pointer types to prove parameters are initialized
+# if a ref/ptr points to nothing, its value is nil
+# thus use in comparison to prove not nil
 
 echo "############################ bool"
 # only true & false evaluate to bool
@@ -765,6 +776,18 @@ proc wtf[T](a: T): auto =
   result = "wtf " & $a
 echo wtf "yo"
 
+# calling syntax impacts type compatability
+# ^ I cant seem to get this to throw an error
+# ^ read the docs (manual) and figure this out
+# ^ @see https://nim-lang.org/docs/manual.html#types-procedural-type
+proc greet(name: string): string =
+  "Hello, " & name & "!"
+proc bye(name: string): string =
+  "Goodbye, " & name & "."
+proc communicate(greeting: proc (x: string): string, name: string) =
+  echo greeting(name)
+communicate(greet, "John")
+communicate(bye, "Mary")
 echo "############################ openarray (proc params)"
 # proc signature type only enabling accepting an array of any length
 # ^ but only 1 dimension, i.e. wont accept a nested arr/seq
@@ -929,31 +952,40 @@ let you = Someone(name:"not noah", bday:"dunno", age: 19)
 debugEcho you
 
 echo "############################ object refs"
-# reference equality check
+# see inheritance
+# traced references pointing gc'ed heap
+# generally you should always use ref objects with inheritance
+
 # dont have to label ref objects as var in proc signatures to mutate them
+# Someone isnt Ref, but people instance is
 let people: ref Someone = new(Someone)
 people.name = "npc"
 people.bday = "< now"
 people.age = 1
-# alternative ref syntax via declaration
+
+# alternative ref syntax via type signature
 type
-  SomeoneRef* = ref Someone
+  SomeoneRef* = ref Someone # causes all instances to be ref types
   OrRefObject = ref object
     fieldX, y, z: string
 let people2 = SomeoneRef(name: "npc",
   bday: "before noah",
   age: 1)
 
-echo "############################ object pointers"
-# manually managed
+echo "############################ object ptr"
+# see inheritance
+# untraced references (are unsafe), pointing to manually managed memory locations
+# required when accessing hardware/low-level ops
 
-echo "############################ inheritance"
+echo "############################ inheritance: ref / ptr"
+# introduce many-to-one relationships: many instances point to the same heap
+# reference equality check
 # of creates a single layer of inheritance between types
 # base types must be of RootObj type else they wont have an ancestor
 # object types with no ancestors are implictly `final`
-# generally you should always use ref objects with inheritance
-# use the [] operator when logging the object (see strutils)
 # objects can be self-referencing
+# use the [] operator when logging the object (see strutils)
+
 type WhoPoop = ref object of RootObj
     name: string
 type YouPoop = ref object of WhoPoop
@@ -985,7 +1017,7 @@ if sherlockpoops[0] of YouPoop: echo "filthy animal" else: echo "snobby bourgeoi
 
 
 echo "############################ tuple fixed length hetergenous"
-# similar to objects sans inheritance, + unpacking + more dynamic
+# similar to objects sans inheritance, + unpacking + more dynamic + fields always public
 # structural equality check
 # ^ tuples of diff types are == if fields have same type, name and order
 # ^ anonymous tuples are compatible with tuples with field names if type matches
