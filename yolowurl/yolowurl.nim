@@ -71,6 +71,7 @@
     - object variants > inheritance for simple types; no type conversion required (docs)
     - MyCustomError should follow the hierarchy defiend in system.Exception (docs)
     - never raise an exception with a msg, and only in exceptional cases (not for control flow)
+    - use status push > raises convention to help track unfound errs (docs + status)
 
   my preferences thus far
     - strive for parantheseless code
@@ -241,10 +242,11 @@ echo "############################ pragmas"
 # {.pop.} # removes a pragma from the code that follows, check the docs
 # {.pure.} requires qualifying ambiguous references; x fails, but y.x doesnt
 # {.push ...} # pushes a pragma into the context of the code that follows, check the docs
-# {.raises: [permit,these].} # compiler throws error if an unlisted exception can be raised
+# {.raises: [permit,these].} # list permitted/none exceptions; unlisted force compiler errs
 # {.size: ...} # check the docs
 # {.thread.} informs the compiler this fn is meant for execution on a new thread
 # {.threadvar.} informs the compiler this var should be local to a thread
+# {.effects.} check the docs: will output all inferred effects (e.g. exceptions) up to this point
 
 echo "############################ variables"
 var poop1 = "flush"
@@ -439,6 +441,11 @@ err.msg = "the request to the OS failed"
 # raise newException(OSError, "the request to the os Failed")
 # raise # raising without an error rethrows the previous exception
 
+# this proc/child calls arent allowed to raise any errs
+proc safe_echo(this = "I cant raise any errors"): void {.raises: [].} =
+  echo this, " or compiler will throw error"
+
+safe_echo "nothing is safe"
 echo "############################ try/catch/finally "
 
 if true:
@@ -547,6 +554,12 @@ echo "############################ range"
 # valuable for catching / preventing underflows.
 # e.g. Nims natural type: type Natural = range[0 .. high(int)]
 # ^ should be used to guard against negative numbers
+
+# ^ returns a distinct int of type BackwardsIndex
+const lastFour = ^4
+const lastOne = ^1
+echo "tell me your name ", "my name is noah"[lastFour .. lastOne]
+
 type
   MySubrange = range[0..5]
 echo MySubrange
@@ -564,6 +577,8 @@ var
 echo a[7 .. 12] # --> 'a prog' > forward slice
 bbb[11 .. ^2] = "useful" # backward slice
 echo bbb # --> 'Slices are useful.'
+
+
 
 echo "############################ block"
 # theres a () syntax but we skipped it as its not idiomatic nim
@@ -755,6 +770,8 @@ echo "############################ procedures"
 # ^ result = sumExpression: enables return value optimization & copy elision
 # ^ if return/result isnt used last expression's value is returned
 # overload: redeclare with different signature
+# args passed to procs are eagerly evaluated
+# ^ see templates for lazy evaluation
 proc pubfn*(): void =
   echo "the * makes this fn public"
 
@@ -832,11 +849,6 @@ proc `***`(i: int): auto =
 echo ***5 + ***(5)
 
 if `==`( `+`(3, 4), 7): echo "invoking operator as proc looks wierd"
-
-# generic procs
-proc wtf[T](a: T): auto =
-  result = "wtf " & $a
-echo wtf "yo"
 
 # calling syntax impacts type compatability
 # ^ I cant seem to get this to throw an error
@@ -922,17 +934,6 @@ converter get[T](x: Option[T]): T =
   x.value
 # aa and bb are implicitly converted to ints, and can use the + operator
 echo "adding two options ", aa + bb
-
-echo "############################ templates (code gen procs)"
-# enables raw code substitution
-# read the docs on this one
-# @see https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#template
-# ^ used in ranges/slices is a template
-# ^ returns a distinct int of type BackwardsIndex
-
-const lastOne = ^1
-const lastFour = ^4
-echo "tell me your name ", "my name is noah"[lastFour .. lastOne]
 
 echo "############################ closures"
 # read the docs on this one
@@ -1278,9 +1279,102 @@ echo "############################ repr"
 echo "repr: ", sherlockpoops.repr
 
 echo "############################ generics"
+# parameterize procs, iterators or types
 # parameterized: Thing[T]
 # restricted Thing[T: x or y]
 # static Thing[MaxLen: static int, T] <-- find this one in the docs
+
+# generic procs
+proc wtf[T](a: T): auto =
+  result = "wtf " & $a
+echo wtf "yo"
+
+# generic proc method call syntax
+proc foo[T](i: T) =
+  echo i, " using method call syntax"
+var ii: int
+# ii.foo[int]() # Error: expression 'foo(i)' has no type (or is ambiguous)
+ii.foo[:int]() # Success
+
+# copied from docs
+# generic types
+type
+  BinaryTree*[T] = ref object # BinaryTree is a generic type with
+                              # generic param `T`
+    le, ri: BinaryTree[T]     # left and right subtrees; may be nil
+    data: T                   # the data stored in a node
+proc newNode*[T](data: T): BinaryTree[T] =
+  # constructor for a node
+  new(result)
+  result.data = data
+
+# generic iterator
+iterator preorder*[T](root: BinaryTree[T]): T =
+  # Preorder traversal of a binary tree.
+  # This uses an explicit stack (which is more efficient than
+  # a recursive iterator factory).
+  var stack: seq[BinaryTree[T]] = @[root]
+  while stack.len > Natural: # <-- haha docs didnt follow style guide!
+    var n = stack.pop()
+    while n != nil:
+      yield n.data
+      add(stack, n.ri)  # push right subtree onto the stack
+      n = n.le          # and follow the left pointer
+
+
+echo "############################ template "
+# enables raw code substitution on nim's abstract syntax tree
+# are processed in the semantic pass of the compiler
+# accepts meta types:
+# ^ untyped: lookup symbols & perform type resolution after the expression is interpreted
+# ^^ use to pass a block of statements
+# ^ typed: dunno, find in docs
+# ^ type: i.e. you set the type in the signature
+
+# copied from docs
+template `!=` (a, b: untyped): untyped =
+  # it will extract the left & right args
+  # then inject whatever remains
+  not (a == b) # this definition exists in the System module
+# thats how the compiler rewrites below to: assert(not (5 == 6))
+assert(5 != 6)
+
+# lazy evaluation of proc args
+const
+  debug = true
+var
+  xy = 4
+# msg arg is evaluted before the fn is evoked
+proc log_eager(msg: string) {.inline.} =
+  if debug: stdout.writeLine(msg)
+# the template is processed before msg arg
+template log_lazy(msg: string) =
+  if debug: stdout.writeLine(msg)
+
+logEager("x has the value: " & $xy) # & and $ are expensive! only use with lazy templates
+logLazy("x has the value: " & $xy) # $ and $ wont be evaluated if debug is false
+
+# copied from docs
+# example of using untyped to get a block of statements
+# we shadow please arg so that its only evaluted once
+# the block statements are passed to the body param
+template blockRunner(please: bool, body: untyped): void =
+  let theyAskedNickely = please
+  if theyAskedNickely:
+    try:
+      body
+    finally:
+      echo "maze runner was okay, should have been better"
+  else:
+    echo "you forgot to say please"
+
+blockRunner true:
+  echo "number 1"
+  echo "number 2"
+blockRunner false:
+  echo "i dont say please"
+  echo "do or you will die a horrible death"
+
 
 echo "############################ files"
 # no clue why we need to add the dir
