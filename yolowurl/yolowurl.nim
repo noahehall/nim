@@ -10,16 +10,17 @@
     then here: https://nim-lang.org/docs/docgen.html
     then here: https://nim-lang.org/docs/manual_experimental.html
     then here: https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html
+    then here: https://nim-lang.org/docs/manual.html
     and finally: https://nim-lang.org/docs/nep1.html
 
   review:
     - we have like 1000 different nim files, consolidate
 
-  skim and copy:
+  skim:
     nim package directory: get familiar with what exists
       https://nimble.directory/
-    the available procs and grab the ones with immediate usefulness
-      https://nim-lang.org/docs/manual.html
+    theck each deepdive file and add some comments to each @see link
+      - you should probably copypasta some examples as well
     nim in action
       - reading: finished this like a year ago, it was super old then away
       - copying pg40 custom array ranges
