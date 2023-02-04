@@ -1,0 +1,219 @@
+poop1	yolowurl.html#poop1	yolowurl: poop1	
+poop2	yolowurl.html#poop2	yolowurl: poop2	
+poop3	yolowurl.html#poop3	yolowurl: poop3	
+fac4	yolowurl.html#fac4	yolowurl: fac4	
+`let`	yolowurl.html#let	yolowurl: let	
+msg	yolowurl.html#msg	yolowurl: msg	
+poop6	yolowurl.html#poop6	yolowurl: poop6	
+flush	yolowurl.html#flush	yolowurl: flush	
+multiline	yolowurl.html#multiline	yolowurl: multiline	
+xxx	yolowurl.html#xxx	yolowurl: xxx	
+y	yolowurl.html#y	yolowurl: y	
+z	yolowurl.html#z	yolowurl: z	
+x1	yolowurl.html#x1	yolowurl: x1	
+y1	yolowurl.html#y1	yolowurl: y1	
+z1	yolowurl.html#z1	yolowurl: z1	
+sum	yolowurl.html#sum	yolowurl: sum	
+b	yolowurl.html#b	yolowurl: b	
+c	yolowurl.html#c	yolowurl: c	
+num0	yolowurl.html#num0	yolowurl: num0	
+num1	yolowurl.html#num1	yolowurl: num1	
+num2	yolowurl.html#num2	yolowurl: num2	
+amilliamilliamilli	yolowurl.html#amilliamilliamilli	yolowurl: amilliamilliamilli	
+e	yolowurl.html#e	yolowurl: e	
+f	yolowurl.html#f	yolowurl: f	
+num3	yolowurl.html#num3	yolowurl: num3	
+num4	yolowurl.html#num4	yolowurl: num4	
+num5	yolowurl.html#num5	yolowurl: num5	
+g	yolowurl.html#g	yolowurl: g	
+h	yolowurl.html#h	yolowurl: h	
+i	yolowurl.html#i	yolowurl: i	
+l	yolowurl.html#l	yolowurl: l	
+m	yolowurl.html#m	yolowurl: m	
+n	yolowurl.html#n	yolowurl: n	
+o	yolowurl.html#o	yolowurl: o	
+p	yolowurl.html#p	yolowurl: p	
+positiveOrNegative	yolowurl.html#positiveOrNegative,int	yolowurl: positiveOrNegative(num: int): string	
+err	yolowurl.html#err	yolowurl: err	
+safe_echo	yolowurl.html#safe_echo,string	yolowurl: safe_echo(this = &quot;I cant raise any errors&quot;): void	
+`...`	yolowurl.html#....i,T,T	yolowurl: `...`[T](a: T; b: T): T	
+countTo	yolowurl.html#countTo.i,int	yolowurl: countTo(n: int): int	
+intArr	yolowurl.html#intArr	yolowurl: intArr	
+num6	yolowurl.html#num6	yolowurl: num6	
+lastFour	yolowurl.html#lastFour	yolowurl: lastFour	
+lastOne	yolowurl.html#lastOne	yolowurl: lastOne	
+MySubrange	yolowurl.html#MySubrange	yolowurl: MySubrange	
+a	yolowurl.html#a	yolowurl: a	
+bbb	yolowurl.html#bbb	yolowurl: bbb	
+sniper	yolowurl.html#sniper	yolowurl: sniper	
+nums	yolowurl.html#nums	yolowurl: nums	
+nums4	yolowurl.html#nums4	yolowurl: nums4	
+rangeArr	yolowurl.html#rangeArr	yolowurl: rangeArr	
+smun	yolowurl.html#smun	yolowurl: smun	
+emptyArr	yolowurl.html#emptyArr	yolowurl: emptyArr	
+arrayWithRange	yolowurl.html#arrayWithRange	yolowurl: arrayWithRange	
+withArrParam	yolowurl.html#withArrParam,array[I,T]	yolowurl: withArrParam[I, T](a: array[I, T]): string	
+breakfast	yolowurl.html#breakfast	TimeToEat.breakfast	
+lunch	yolowurl.html#lunch	TimeToEat.lunch	
+dinner	yolowurl.html#dinner	TimeToEat.dinner	
+sweettooth	yolowurl.html#sweettooth	TimeToEat.sweettooth	
+TimeToEat	yolowurl.html#TimeToEat	yolowurl: TimeToEat	
+proteinshake	yolowurl.html#proteinshake	WhatToEat.proteinshake	
+ramen	yolowurl.html#ramen	WhatToEat.ramen	
+ramentWithMeet	yolowurl.html#ramentWithMeet	WhatToEat.ramentWithMeet	
+pnutbutteryjelly	yolowurl.html#pnutbutteryjelly	WhatToEat.pnutbutteryjelly	
+WhatToEat	yolowurl.html#WhatToEat	yolowurl: WhatToEat	
+Eating	yolowurl.html#Eating	yolowurl: Eating	
+WeeklyFoodTracker	yolowurl.html#WeeklyFoodTracker	yolowurl: WeeklyFoodTracker	
+MonthlyFoodTracker	yolowurl.html#MonthlyFoodTracker	yolowurl: MonthlyFoodTracker	
+onSundayIAte	yolowurl.html#onSundayIAte	yolowurl: onSundayIAte	
+lastWeek	yolowurl.html#lastWeek	yolowurl: lastWeek	
+democrats	yolowurl.html#democrats	GangsOfAmerica.democrats	
+republicans	yolowurl.html#republicans	GangsOfAmerica.republicans	
+politicians	yolowurl.html#politicians	GangsOfAmerica.politicians	
+GangsOfAmerica	yolowurl.html#GangsOfAmerica	yolowurl: GangsOfAmerica	
+PeopleOfAmerica	yolowurl.html#PeopleOfAmerica	yolowurl: PeopleOfAmerica	
+north	yolowurl.html#north	Direction.north	
+east	yolowurl.html#east	Direction.east	
+south	yolowurl.html#south	Direction.south	
+west	yolowurl.html#west	Direction.west	
+Direction	yolowurl.html#Direction	yolowurl: Direction	
+off	yolowurl.html#off	BlinkLights.off	
+on	yolowurl.html#on	BlinkLights.on	
+slowBlink	yolowurl.html#slowBlink	BlinkLights.slowBlink	
+mediumBlink	yolowurl.html#mediumBlink	BlinkLights.mediumBlink	
+fastBlink	yolowurl.html#fastBlink	BlinkLights.fastBlink	
+BlinkLights	yolowurl.html#BlinkLights	yolowurl: BlinkLights	
+LevelSetting	yolowurl.html#LevelSetting	yolowurl: LevelSetting	
+level	yolowurl.html#level	yolowurl: level	
+poops	yolowurl.html#poops	yolowurl: poops	
+spoop	yolowurl.html#spoop	yolowurl: spoop	
+emptySeq	yolowurl.html#emptySeq	yolowurl: emptySeq	
+seqEmpty	yolowurl.html#seqEmpty	yolowurl: seqEmpty	
+me	yolowurl.html#me	yolowurl: me	
+Opts	yolowurl.html#Opts	yolowurl: Opts	
+IsOn	yolowurl.html#IsOn	yolowurl: IsOn	
+simpleOpts	yolowurl.html#simpleOpts	yolowurl: simpleOpts	
+onn	yolowurl.html#onn	yolowurl: onn	
+offf	yolowurl.html#offf	yolowurl: offf	
+flags	yolowurl.html#flags	yolowurl: flags	
+MyFlag	yolowurl.html#MyFlag	yolowurl: MyFlag	
+MyFlags	yolowurl.html#MyFlags	yolowurl: MyFlags	
+toNum	yolowurl.html#toNum,MyFlags	yolowurl: toNum(f: MyFlags): int	
+toFlags	yolowurl.html#toFlags,int	yolowurl: toFlags(v: int): MyFlags	
+pubfn	yolowurl.html#pubfn	yolowurl: pubfn(): void	
+eko	yolowurl.html#eko,string	yolowurl: eko(this = &quot;Default value&quot;): void	
+ekoGroups	yolowurl.html#ekoGroups,int,int,string,char	yolowurl: ekoGroups(a, b: int; c: string; d: char): void	
+passedByValue	yolowurl.html#passedByValue,string	yolowurl: passedByValue(x: string): void	
+xx	yolowurl.html#xx	yolowurl: xx	
+copyThenMutateValue	yolowurl.html#copyThenMutateValue,string	yolowurl: copyThenMutateValue(x: string): void	
+zz	yolowurl.html#zz	yolowurl: zz	
+passedByReference	yolowurl.html#passedByReference,string	yolowurl: passedByReference(yy: var string): void	
+redurn	yolowurl.html#redurn,string	yolowurl: redurn(this: string): string	
+mutate	yolowurl.html#mutate,int	yolowurl: mutate(this: var int): int	
+num7	yolowurl.html#num7	yolowurl: num7	
+add5	yolowurl.html#add5,int	yolowurl: add5(num: int): int	
+allInts	yolowurl.html#allInts,int,int,int	yolowurl: allInts(x, y, z: int): int	
+str	yolowurl.html#str,string	yolowurl: str(s: string): string	
+`***`	yolowurl.html#***,int	yolowurl: `***`(i: int): auto	
+greet	yolowurl.html#greet,string	yolowurl: greet(name: string): string	
+bye	yolowurl.html#bye,string	yolowurl: bye(name: string): string	
+communicate	yolowurl.html#communicate,proc(string),string	yolowurl: communicate(greeting: proc (x: string): string; name: string)	
+fruits	yolowurl.html#fruits	yolowurl: fruits	
+capitals	yolowurl.html#capitals	yolowurl: capitals	
+openArraySize	yolowurl.html#openArraySize,openArray[string]	yolowurl: openArraySize(oa: openArray[string]): int	
+eko_all	yolowurl.html#eko_all,varargs[string]	yolowurl: eko_all(s: varargs[string])	
+eko_anything	yolowurl.html#eko_anything,varargs[string,]	yolowurl: eko_anything(s: varargs[string, `$`])	
+poop	yolowurl.html#poop	yolowurl: poop(): string	
+Option	yolowurl.html#Option	yolowurl: Option	
+aa	yolowurl.html#aa	yolowurl: aa	
+bb	yolowurl.html#bb	yolowurl: bb	
+get	yolowurl.html#get.c,Option[T]	yolowurl: get[T](x: Option[T]): T	
+runFn	yolowurl.html#runFn,string,proc(string)	yolowurl: runFn(a: string; fn: proc (x: string): string): string	
+BigMoney	yolowurl.html#BigMoney	yolowurl: BigMoney	
+StrOrInt	yolowurl.html#StrOrInt	yolowurl: StrOrInt	
+thizString	yolowurl.html#thizString	yolowurl: thizString	
+thisInt	yolowurl.html#thisInt	yolowurl: thisInt	
+BiggerMoney	yolowurl.html#BiggerMoney	yolowurl: BiggerMoney	
+BiggestMoney	yolowurl.html#BiggestMoney	yolowurl: BiggestMoney	
+PrivatePoop	yolowurl.html#PrivatePoop	yolowurl: PrivatePoop	
+PublicPoop	yolowurl.html#PublicPoop	yolowurl: PublicPoop	
+ipoop	yolowurl.html#ipoop	yolowurl: ipoop	
+upoop	yolowurl.html#upoop	yolowurl: upoop	
+everyonepoop	yolowurl.html#everyonepoop	yolowurl: everyonepoop	
+Someone	yolowurl.html#Someone	yolowurl: Someone	
+noah	yolowurl.html#noah	yolowurl: noah	
+you	yolowurl.html#you	yolowurl: you	
+SomeObj	yolowurl.html#SomeObj	yolowurl: SomeObj	
+prv=	yolowurl.html#prv=,SomeObj,string	yolowurl: prv=(x: var SomeObj; v: string)	
+prv	yolowurl.html#prv,SomeObj	yolowurl: prv(x: SomeObj): string	
+myobj	yolowurl.html#myobj	yolowurl: myobj	
+Vector	yolowurl.html#Vector	yolowurl: Vector	
+`[]=`	yolowurl.html#[]=,Vector,int,float	yolowurl: `[]=`(v: var Vector; i: int; value: float)	
+`[]`	yolowurl.html#[],Vector,int	yolowurl: `[]`(v: Vector; i: int): float	
+people	yolowurl.html#people	yolowurl: people	
+SomeoneRef	yolowurl.html#SomeoneRef	yolowurl: SomeoneRef	
+OrRefObject	yolowurl.html#OrRefObject	yolowurl: OrRefObject	
+people2	yolowurl.html#people2	yolowurl: people2	
+WhoPoop	yolowurl.html#WhoPoop	yolowurl: WhoPoop	
+YouPoop	yolowurl.html#YouPoop	yolowurl: YouPoop	
+IPoop	yolowurl.html#IPoop_2	yolowurl: IPoop	
+did_i_poop	yolowurl.html#did_i_poop,WhoPoop	yolowurl: did_i_poop(self: WhoPoop): string	
+didipoop	yolowurl.html#didipoop,YouPoop	yolowurl: didipoop(self: YouPoop): string	
+dIdIpOoP	yolowurl.html#dIdIpOoP,IPoop	yolowurl: dIdIpOoP(self: IPoop): string	
+sherlockpoops	yolowurl.html#sherlockpoops	yolowurl: sherlockpoops	
+Expression	yolowurl.html#Expression	yolowurl: Expression	
+Literal	yolowurl.html#Literal	yolowurl: Literal	
+PlusExpr	yolowurl.html#PlusExpr	yolowurl: PlusExpr	
+eval	yolowurl.html#eval.e,Expression	yolowurl: eval(e: Expression): int	
+eval	yolowurl.html#eval.e,Literal	yolowurl: eval(e: Literal): int	
+eval	yolowurl.html#eval.e,PlusExpr	yolowurl: eval(e: PlusExpr): int	
+newLit	yolowurl.html#newLit,int	yolowurl: newLit(x: int): Literal	
+newPlus	yolowurl.html#newPlus,Expression,Expression	yolowurl: newPlus(a, b: Expression): PlusExpr	
+Thing	yolowurl.html#Thing	yolowurl: Thing	
+Unit	yolowurl.html#Unit	yolowurl: Unit	
+collide	yolowurl.html#collide.e,Thing,Thing	yolowurl: collide(a, b: Thing)	
+collide	yolowurl.html#collide.e,Thing,Unit	yolowurl: collide(a: Thing; b: Unit)	
+collide	yolowurl.html#collide.e,Unit,Thing	yolowurl: collide(a: Unit; b: Thing)	
+aaaa	yolowurl.html#aaaa	yolowurl: aaaa	
+bbbb	yolowurl.html#bbbb	yolowurl: bbbb	
+nkInt	yolowurl.html#nkInt	NodeKind.nkInt	
+nkFloat	yolowurl.html#nkFloat	NodeKind.nkFloat	
+nkString	yolowurl.html#nkString	NodeKind.nkString	
+nkAdd	yolowurl.html#nkAdd	NodeKind.nkAdd	
+nkSub	yolowurl.html#nkSub	NodeKind.nkSub	
+nkIf	yolowurl.html#nkIf	NodeKind.nkIf	
+NodeKind	yolowurl.html#NodeKind	yolowurl: NodeKind	
+Node2	yolowurl.html#Node2	yolowurl: Node2	
+myFloat	yolowurl.html#myFloat	yolowurl: myFloat	
+NirvStack	yolowurl.html#NirvStack	yolowurl: NirvStack	
+StackNirv	yolowurl.html#StackNirv	yolowurl: StackNirv	
+hardCoreStack	yolowurl.html#hardCoreStack	yolowurl: hardCoreStack	
+newCoreStack	yolowurl.html#newCoreStack	yolowurl: newCoreStack	
+js	yolowurl.html#js	yolowurl: js	
+sj	yolowurl.html#sj	yolowurl: sj	
+bizDevOps	yolowurl.html#bizDevOps	yolowurl: bizDevOps	
+bizRating	yolowurl.html#bizRating	yolowurl: bizRating	
+aaa	yolowurl.html#aaa	yolowurl: aaa	
+Node	yolowurl.html#Node	yolowurl: Node	
+Sym	yolowurl.html#Sym	yolowurl: Sym	
+wtf	yolowurl.html#wtf,T	yolowurl: wtf[T](a: T): auto	
+foo	yolowurl.html#foo,T	yolowurl: foo[T](i: T)	
+ii	yolowurl.html#ii	yolowurl: ii	
+BinaryTree	yolowurl.html#BinaryTree	yolowurl: BinaryTree	
+newNode	yolowurl.html#newNode,T	yolowurl: newNode[T](data: T): BinaryTree[T]	
+preorder	yolowurl.html#preorder.i,BinaryTree[T]	yolowurl: preorder[T](root: BinaryTree[T]): T	
+`!=`	yolowurl.html#!=.t,untyped,untyped	yolowurl: `!=`(a, b: untyped): untyped	
+loc`gensym29	yolowurl.html#loc`gensym29	yolowurl: loc`gensym29	
+ploc`gensym29	yolowurl.html#ploc`gensym29	yolowurl: ploc`gensym29	
+debug	yolowurl.html#debug	yolowurl: debug	
+xy	yolowurl.html#xy	yolowurl: xy	
+log_eager	yolowurl.html#log_eager,string	yolowurl: log_eager(msg: string)	
+log_lazy	yolowurl.html#log_lazy.t,string	yolowurl: log_lazy(msg: string)	
+blockRunner	yolowurl.html#blockRunner.t,bool,untyped	yolowurl: blockRunner(please: bool; body: untyped): void	
+theyAskedNickely`gensym31	yolowurl.html#theyAskedNickely`gensym31	yolowurl: theyAskedNickely`gensym31	
+theyAskedNickely`gensym32	yolowurl.html#theyAskedNickely`gensym32	yolowurl: theyAskedNickely`gensym32	
+entireFile	yolowurl.html#entireFile	yolowurl: entireFile	
+readFile	yolowurl.html#readFile	yolowurl: readFile(): string	
+tmpfile	yolowurl.html#tmpfile	yolowurl: tmpfile	
+writeLines	yolowurl.html#writeLines,seq[string]	yolowurl: writeLines(s: seq[string]): void	

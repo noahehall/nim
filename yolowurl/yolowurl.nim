@@ -5,9 +5,12 @@
 
   the road to code
     bookmark: https://nim-lang.org/docs/nimc.html
+    then here: https://nim-lang.org/docs/mm.html
     then here: https://nim-lang.org/docs/backends.html
     then here: https://nim-lang.org/docs/system.html
     then here: https://nim-lang.org/docs/docgen.html
+    then here: https://nim-lang.org/docs/nims.html (usecase: configs, scripts, build tool, bash replacement)
+    then here: https://nim-lang.org/docs/nimscript.html
     then here: https://nim-lang.org/docs/manual_experimental.html
     then here: https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html
     then here: https://nim-lang.org/docs/manual.html
@@ -30,7 +33,6 @@
     https://nim-lang.org/docs/destructors.html
 
   other stuff
-    https://nim-lang.org/docs/nims.html
     https://peterme.net/asynchronous-programming-in-nim.html
     https://peterme.net/handling-files-in-nim.html
     https://peterme.net/multitasking-in-nim.html
@@ -253,6 +255,7 @@ echo "############################ pragmas"
 # {.size: ...} # check the docs
 # {.thread.} informs the compiler this fn is meant for execution on a new thread
 # {.threadvar.} informs the compiler this var should be local to a thread
+# {.compiletime.} check the docs, maybe runs a proc @ compile time
 
 echo "############################ variables"
 var poop1 = "flush"
