@@ -4,7 +4,7 @@
   see deepdives dir to dive deep
 
   the road to code
-    bookmark: https://nim-lang.org/docs/tut2.html
+    bookmark: https://nim-lang.org/docs/tut2.html#object-oriented-programming-inheritance
     then here: https://nim-lang.org/docs/lib.html # categorize these in deepdive files
     then here: https://nim-lang.org/docs/nimc.html
     then here: https://nim-lang.org/docs/docgen.html
@@ -47,7 +47,7 @@
 ]#
 
 #[
-  # style guide
+  # style guide & best practices
 
   idiomatic nim (from docs/styleguide), or borrowed from somewhere else (e.g. status auditor docs)
     - camelCase for code (status)
@@ -58,18 +58,22 @@
     - declare as var > proc var params when modifying global vars (docs)
     - use result > last statement expression > return statement (docs [result = optimized]) (status prefers last statement)
     - use Natural range to guard against negative numbers (e.g. in loops) (docs)
-    - use sets for flags > integers that have to be or'ed (docs)
+    - use sets (e.g. as flags) > integers that have to be or'ed (docs)
     - spaces in range operators, e.g. this .. that > this..that (docs)
     - X.y > x[].y for accssing ref/ptr objects (docs: highly discouraged)
     - run initialization logic as toplevel module statements, e.g. init data (docs)
     - module names are generally long to be descriptive (docs)
     - use include to split large modules into distinct files (docs)
+    - composition > inheritance is often the better design (docs)
+    - type > cast operator cuz type preserves the bit pattern (docs)
+    - cast > type conversion to force the compiler to reinterpret the bit pattern (docs)
+    - object variants > inheritance for simple types; no type conversion required (docs)
 
   my preferences thus far
     - strive for parantheseless code
     - keep it as sugary as possible
     - prefer fn x,y over x.fn y over fn(x, y) unless it conflicts with the context
-      - e.g. pref x.fn y when working with objects
+      - e.g. pref x.fn y,z when working with objects
       - e.g. pref fn x,y when working with procs
       - e.g. pref fn(x, ...) when chaining/closures (calling syntax impacts type compatibility (docs))
     - object vs tuple
@@ -219,6 +223,7 @@
 
 echo "############################ pragmas"
 # @see https://nim-lang.org/docs/manual.html#pragmas
+# @see https://nim-lang.org/docs/nimc.html#additional-features
 # {.acyclic.} dunno read the docs
 # {.async.} this fn is asynchronous and can use the await keyword
 # {.base.} for methods, to associate fns with a base type. see inheritance
@@ -226,15 +231,17 @@ echo "############################ pragmas"
 # {.dirty.} dunno, but used with templates
 # {.exportc: "or-use-this-specific-name".}
 # {.exportc.} disable proc name mangling when compiled
+# {.inheritable.} # check the docs: create alternative RootObj
 # {.inject.} dunno, something to do with symbol visibility
+# {.inline.} # check the docs:
 # {.noSideEffect.} convert a proc to a func, but why not just use func?
 # {.pop.} # removes a pragma from the code that follows, check the docs
 # {.pure.} requires qualifying ambiguous references; x fails, but y.x doesnt
 # {.push ...} # pushes a pragma into the context of the code that follows, check the docs
 # {.raises: [permit,these].} # compiler throws error if an unlisted exception can be raised
+# {.size: ...} # check the docs
 # {.thread.} informs the compiler this fn is meant for execution on a new thread
 # {.threadvar.} informs the compiler this var should be local to a thread
-# {.size: ...} # check the docs
 
 echo "############################ variables"
 var poop1 = "flush"
@@ -936,9 +943,9 @@ type
   BiggestMoney {.borrow: `.`.} = distinct BigMoney # borrows all procs
 # echo 10 + FkUMoney(100) # type mismatch
 
-echo "############################ object values"
+echo "############################ object"
 # Enumeration and object types may only be defined within a type statement.
-# note the placement of * for visibility
+# note the placement of * for visibility outside of the module
 # traced by the garbage collector, no need to free them when allocated
 # each object type has a construct,
 # when instantiated unspecified fields receive the field types default value
@@ -969,12 +976,27 @@ echo noah
 let you = Someone(name:"not noah", bday:"dunno", age: 19)
 debugEcho you
 
-echo "############################ object refs"
+echo "############################ object getter/setters"
+# public fields can ignore this section
+# private fields (without *) arenot publically visible
+# you can create an export a getter & setter
+
+type SomeObj* = object
+  pub*: string # can be set outside the mod
+  prv: string # requires a getter & setter outside the mod
+
+var myobj = SomeObj(pub: "pub field")
+
+echo "myobj before setting: ", myobj
+echo "############################ ref"
 # see inheritance
 # traced references pointing gc'ed heap
 # generally you should always use ref objects with inheritance
-
+# non-ref objects truncate subclass fields on = assignment
+# since objs are value types, composition is as efficient as inheritance
+# ^ unlike in other languages
 # dont have to label ref objects as var in proc signatures to mutate them
+
 # Someone isnt Ref, but people instance is
 let people: ref Someone = new(Someone)
 people.name = "npc"
@@ -990,7 +1012,7 @@ let people2 = SomeoneRef(name: "npc",
   bday: "before noah",
   age: 1)
 
-echo "############################ object ptr"
+echo "############################ ptr"
 # see inheritance
 # untraced references (are unsafe), pointing to manually managed memory locations
 # required when accessing hardware/low-level ops
@@ -999,8 +1021,9 @@ echo "############################ inheritance: ref / ptr"
 # introduce many-to-one relationships: many instances point to the same heap
 # reference equality check
 # of creates a single layer of inheritance between types
-# base types must be of RootObj type else they wont have an ancestor
-# object types with no ancestors are implictly `final`
+# base types must be of an existing obj that points to RootObj or RootObj
+# ^ else they are implictly `final`
+# ^ TODO: find {.inheritable.} for introducing new object roots
 # objects can be self-referencing
 # use the [] operator when logging the object (see strutils)
 
@@ -1033,6 +1056,33 @@ for criminal in sherlockpoops:
 # type checking
 if sherlockpoops[0] of YouPoop: echo "filthy animal" else: echo "snobby bourgeois"
 
+echo "############################ variants"
+
+# copied from docs
+# This is an example how an abstract syntax tree could be modelled in Nim
+type
+  NodeKind = enum  # the different node types
+    nkInt,          # a leaf with an integer value
+    nkFloat,        # a leaf with a float value
+    nkString,       # a leaf with a string value
+    nkAdd,          # an addition
+    nkSub,          # a subtraction
+    nkIf            # an if statement
+  Node2 = ref object
+    case kind: NodeKind  # the `kind` field is the discriminator
+    of nkInt: intVal: int
+    of nkFloat: floatVal: float
+    of nkString: strVal: string
+    of nkAdd, nkSub:
+      leftOp, rightOp: Node2
+    of nkIf:
+      condition, thenPart, elsePart: Node2
+
+var myFloat = Node2(kind: nkFloat, floatVal: 1.0)
+echo "my float is: ", myFloat.repr
+# the following statement raises an `FieldDefect` exception, because
+# n.kind's value does not fit:
+# n.strVal = ""
 
 echo "############################ tuple fixed length hetergenous"
 # similar to objects sans inheritance, + unpacking + more dynamic + fields always public
@@ -1080,6 +1130,26 @@ for (x, c) in aaa:
   echo x # This will output: 10; 20; 30
 for i, (x, c) in aaa:
   echo i, c # Accessing the index is also possible
+
+
+echo "############################ recursive types"
+# objects, tuples and ref objects that recursively depend on each other
+# must be declared within a single type section
+
+# copied from docs
+type
+  Node = ref object  # a reference to an object with the following field:
+    le, ri: Node     # left and right subtrees
+    sym: ref Sym     # leaves contain a reference to a Sym
+
+  Sym = object       # a symbol
+    name: string     # the symbol's name
+    line: int        # the line the symbol was declared in
+    code: Node       # the symbol's abstract syntax tree
+
+echo "############################ type conversions"
+# cast operator forces the compiler to interpret a bit pattern to be of another type
+# type() converions preserve the abstract value, but not the bit-pattern
 
 
 echo "############################ repr"
