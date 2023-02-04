@@ -4,8 +4,9 @@
   see deepdives dir to dive deep
 
   the road to code
-    bookmark: https://nim-lang.org/docs/tut2.html#object-oriented-programming-inheritance
+    bookmark: https://nim-lang.org/docs/tut2.html#exceptions
     then here: https://nim-lang.org/docs/lib.html # categorize these in deepdive files
+    then here: https://nim-lang.org/docs/system.html
     then here: https://nim-lang.org/docs/nimc.html
     then here: https://nim-lang.org/docs/docgen.html
     then here: https://nim-lang.org/docs/manual_experimental.html
@@ -233,7 +234,7 @@ echo "############################ pragmas"
 # {.exportc.} disable proc name mangling when compiled
 # {.inheritable.} # check the docs: create alternative RootObj
 # {.inject.} dunno, something to do with symbol visibility
-# {.inline.} # check the docs:
+# {.inline.} # check the docs: inlines a procedure
 # {.noSideEffect.} convert a proc to a func, but why not just use func?
 # {.pop.} # removes a pragma from the code that follows, check the docs
 # {.pure.} requires qualifying ambiguous references; x fails, but y.x doesnt
@@ -978,17 +979,48 @@ debugEcho you
 
 echo "############################ object getter/setters"
 # public fields can ignore this section
-# private fields (without *) arenot publically visible
-# you can create an export a getter & setter
+# private fields (without *) are not publically visible
+# you can create and export a proc operator for get/set operations
 
 type SomeObj* = object
   pub*: string # can be set outside the mod
   prv: string # requires a getter & setter outside the mod
 
+# make sure to export your getters and setters
+proc `prv=`*(x: var SomeObj, v: string) {.inline.} =
+    x.prv = v
+proc `prv`*(x: SomeObj): string {.inline.} = x.prv
+
 var myobj = SomeObj(pub: "pub field")
 
 echo "myobj before setting: ", myobj
+myobj.prv= "another value"
+echo "myobjn after setting: ", myobj
+
+# copied from docs
+type
+  Vector* = object # should use a tuple for vectors
+    x, y, z: float
+
+# example overloading [] operator
+proc `[]=`* (v: var Vector, i: int, value: float) =
+  # setter
+  case i
+  of 0: v.x = value
+  of 1: v.y = value
+  of 2: v.z = value
+  else: assert(false)
+proc `[]`* (v: Vector, i: int): float =
+  # getter
+  case i
+  of 0: result = v.x
+  of 1: result = v.y
+  of 2: result = v.z
+  else: assert(false)
 echo "############################ ref"
+
+
+
 # see inheritance
 # traced references pointing gc'ed heap
 # generally you should always use ref objects with inheritance
@@ -1032,15 +1064,12 @@ type WhoPoop = ref object of RootObj
 type YouPoop = ref object of WhoPoop
 type IPoop = ref object of WhoPoop
 
-# overload methods/procs by changing the signature
-# use method whenever an object has an inherited subtype only known at runtime
-# ^ i.e. invocation depends on the actual object being invoked
-# ^ with proc only the {.base.} method is called
-method did_i_poop(self: WhoPoop): string {.base.} =
+# overload procs by changing the signature
+proc did_i_poop(self: WhoPoop): string  =
   "i dont know"
-method didipoop(self: YouPoop): string =
+proc didipoop(self: YouPoop): string =
   self.name & " is a filthy animal"
-method dIdIpOoP(self: IPoop): string =
+proc dIdIpOoP(self: IPoop): string =
   self.name & " has evolved passed pooping"
 
 # this has to be `var` to enable adding subtypes
@@ -1055,6 +1084,57 @@ for criminal in sherlockpoops:
 
 # type checking
 if sherlockpoops[0] of YouPoop: echo "filthy animal" else: echo "snobby bourgeois"
+
+echo "############################ dynamic dispatch"
+# generally only required with ref objects
+# use method whenever an object has an inherited subtype only known at runtime
+
+# copied from docs
+type
+  Expression = ref object of RootObj ## abstract base class for an expression
+  Literal = ref object of Expression
+    x: int
+  PlusExpr = ref object of Expression
+    a, b: Expression
+
+# watch out: 'eval' relies on dynamic binding
+method eval(e: Expression): int {.base.} = # <-- its for the base type
+  # override this base method
+  quit "to override!"
+## use methods because at runtime we need to know the type
+method eval(e: Literal): int = e.x
+method eval(e: PlusExpr): int = eval(e.a) + eval(e.b)
+# these procs dont need dynamic binding
+proc newLit(x: int): Literal = Literal(x: x)
+proc newPlus(a, b: Expression): PlusExpr = PlusExpr(a: a, b: b)
+
+echo eval(newPlus(newPlus(newLit(1), newLit(2)), newLit(4)))
+
+echo "############################ multi-methods"
+# occurs when multiple overloaded procs exist with different signatures
+# however they are still ambiguous because of inheritance
+# you have to use --multimethods:on when compiling
+
+type
+  Thing = ref object of RootObj
+  Unit = ref object of Thing
+    x: int
+# accepts any Thing
+method collide(a, b: Thing) {.inline.} =
+  quit "to override!"
+# note the order
+method collide(a: Thing, b: Unit) {.inline.} =
+  echo "1"
+# note the order
+method collide(a: Unit, b: Thing) {.inline.} =
+  echo "2"
+
+var aaaa, bbbb: Unit
+new aaaa
+new bbbb
+# there both Units, but collide doesnt have an over specifically for that
+# so which will be used? type preference occurs from left -> right
+collide(aaaa, bbbb) # output: 2
 
 echo "############################ variants"
 
