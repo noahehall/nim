@@ -7,6 +7,7 @@
     - https://nim-lang.org/docs/testament.html (preferred std testing tool)
     - https://nim-lang.org/docs/unittest.html (use testament instead)
     - https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling
+    - https://nim-lang.org/docs/docgen.html
 
   defects: non-recoverable errors
     - Defect, OverflowDefect
@@ -14,6 +15,12 @@
     - ValueError, IOError
 
 ]#
+
+echo "############################ documenting code"
+## double bang starts a documentation comment
+## are part of the syntax tree
+## only permitted in specific places
+
 
 echo "############################ raises"
 

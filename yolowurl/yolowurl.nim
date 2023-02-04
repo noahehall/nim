@@ -4,12 +4,11 @@
   see deepdives dir to dive deep
 
   the road to code
-    bookmark: https://nim-lang.org/docs/lib.html
+    bookmark: https://nim-lang.org/docs/nimc.html
+    then here: https://nim-lang.org/docs/backends.html
     then here: https://nim-lang.org/docs/system.html
-    then here: https://nim-lang.org/docs/nimc.html
     then here: https://nim-lang.org/docs/docgen.html
     then here: https://nim-lang.org/docs/manual_experimental.html
-    then here: https://nim-lang.org/docs/backends.html
     then here: https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html
     and finally: https://nim-lang.org/docs/nep1.html
 
