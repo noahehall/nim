@@ -47,7 +47,7 @@
 
   - pure libraries: do not depend on external *.dll/lib*.so binary
   - impure libraries: !pure libraries
-  - wrapper libraries: impure low level itnerface to a C library
+  - wrapper libraries: impure low level interfaces to a C library
 ]#
 
 #[
@@ -83,10 +83,11 @@
       - e.g. pref x.fn y,z when working with objects
       - e.g. pref fn x,y when working with procs
       - e.g. pref fn(x, ...) when chaining/closures (calling syntax impacts type compatibility (docs))
+    - -- > - cmd line switches so you can sort nim compiler options
     - object vs tuple
       - TODO: figure out which is more performant or if there are existing guidelines
-      - tuple: no inheritance / private fields required
-      - object: inheritance / private fields required
+      - tuple: inheritance / private fields / reference equality arent required
+      - object: inheritance / private fields / reference equality are required
 ]#
 
 #[
