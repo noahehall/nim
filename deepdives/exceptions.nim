@@ -2,9 +2,9 @@
   @see https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling
 
   defects: non-recoverable errors
-    - Defect
+    - Defect, OverflowDefect
   exceptions: recoverable errors
-    - ValueError
+    - ValueError, IOError
 
 ]#
 
