@@ -1,18 +1,16 @@
 #[
-  @see https://github.com/status-im/nim-chronos/
-  @see https://nim-lang.org/docs/asyncdispatch.html
-  @see https://nim-lang.org/docs/asyncfile.html
-  @see https://nim-lang.org/docs/asyncfutures.html
-  @see https://nim-lang.org/docs/asynchttpserver.html
-  @see https://nim-lang.org/docs/asyncnet.html
-  @see https://nim-lang.org/docs/asyncstreams.html
-  @see https://nim-lang.org/docs/channels_builtin.html (auto imported)
-  @see https://nim-lang.org/docs/locks.html
-  @see https://nim-lang.org/docs/manual_experimental.html#parallel-amp-spawn
-  @see https://nim-lang.org/docs/streams.html
-  @see https://nim-lang.org/docs/threadpool.html
-  @see https://nim-lang.org/docs/threads.html (auto imported)
-  @see https://peterme.net/asynchronous-programming-in-nim.html
+  @see
+    - https://github.com/status-im/nim-chronos/
+    - https://nim-lang.org/docs/asyncdispatch.html
+    - https://nim-lang.org/docs/asyncfutures.html
+    - https://nim-lang.org/docs/asyncstreams.html
+    - https://nim-lang.org/docs/channels_builtin.html (system)
+    - https://nim-lang.org/docs/coro.html
+    - https://nim-lang.org/docs/manual_experimental.html#parallel-amp-spawn
+    - https://nim-lang.org/docs/streams.html
+    - https://nim-lang.org/docs/threadpool.html
+    - https://nim-lang.org/docs/threads.html (system)
+    - https://peterme.net/asynchronous-programming-in-nim.html
 
   thread related stuff requires --threads:on
 
@@ -27,8 +25,8 @@
 
 import std/[threadpool, asyncdispatch]
 
-
-echo "############################ basic cpu intensive calculation"
+echo "############################ threads"
+# basic cpu intensive calculation
 proc ekothis(i: int): void {.thread.} =
   echo "i am thread ", $i
 var threads: array[10, Thread[int]]
@@ -73,7 +71,8 @@ echo "############################ channels: non blocking"
 echo "############################ channels: blocked msgs"
 # if not chizzle.trySend("this msg"): then try again later maybe
 
-echo "############################ basic i/o intensive operation"
+echo "############################ async"
+# basic i/o intensive operation
 # an async proc
 proc laterGater(s: string): Future[void] {.async.} =
   for i in 1..10:

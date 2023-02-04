@@ -48,6 +48,14 @@
 ]#
 
 #[
+  # std library
+
+  - pure libraries: do not depend on external *.dll/lib*.so binary
+  - impure libraries: !pure libraries
+  - wrapper libraries: impure low level itnerface to a C library
+]#
+
+#[
   # style guide & best practices
 
   idiomatic nim (from docs/styleguide), or borrowed from somewhere else (e.g. status auditor docs)
@@ -226,6 +234,8 @@
 ]#
 
 echo "############################ pragmas"
+# enable new fntionality without adding new keywords to the language
+# {.pragma1, pragma2, etc.}
 # @see https://nim-lang.org/docs/manual.html#pragmas
 # @see https://nim-lang.org/docs/nimc.html#additional-features
 # {.acyclic.} dunno read the docs
@@ -233,6 +243,7 @@ echo "############################ pragmas"
 # {.base.} for methods, to associate fns with a base type. see inheritance
 # {.bycopy|byref.} label a proc arg
 # {.dirty.} dunno, but used with templates
+# {.effects.} check the docs: will output all inferred effects (e.g. exceptions) up to this point
 # {.exportc: "or-use-this-specific-name".}
 # {.exportc.} disable proc name mangling when compiled
 # {.inheritable.} # check the docs: create alternative RootObj
@@ -246,7 +257,6 @@ echo "############################ pragmas"
 # {.size: ...} # check the docs
 # {.thread.} informs the compiler this fn is meant for execution on a new thread
 # {.threadvar.} informs the compiler this var should be local to a thread
-# {.effects.} check the docs: will output all inferred effects (e.g. exceptions) up to this point
 
 echo "############################ variables"
 var poop1 = "flush"

@@ -1,10 +1,15 @@
 #[
-  @see https://nim-lang.org/docs/sugar.html
+  @see
+    - https://nim-lang.org/docs/sugar.html
+    - https://nim-lang.org/docs/with.html
+
   syntactic sugar based on nims macro system
   pretty sure youre going to want this especially as a js dev
 ]#
 
 import std/sugar
+
+echo "############################ sugar"
 
 # -> macro: simple proc type declarations
 proc runFn(x: string, fn: (string) -> string): string =

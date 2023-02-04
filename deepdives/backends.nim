@@ -1,5 +1,15 @@
 #[
-  @see https://nim-lang.org/docs/backends.html
+  @see
+    - https://nim-lang.org/docs/asyncjs.html (js)
+    - https://nim-lang.org/docs/backends.html
+    - https://nim-lang.org/docs/dom.html (js)
+    - https://nim-lang.org/docs/jsbigints.html (js)
+    - https://nim-lang.org/docs/jsconsole.html (js)
+    - https://nim-lang.org/docs/jscore.html (js)
+    - https://nim-lang.org/docs/jsffi.html (js)
+    - https://nim-lang.org/docs/packaging.html
+
+
 
   nim CMD OPTS FILE ARGS
   CMDS
@@ -27,3 +37,6 @@
     - cast[T](x) translated to (x), except between signed/unsigned ints
     - cstring in JavaScript means JavaScript string, and shouldnt be used as binary data buffer
 ]#
+
+
+echo "############################ something"

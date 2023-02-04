@@ -1,17 +1,22 @@
 #[
-  @see https://nim-lang.org/docs/system.html
-    - _ assertions: see testing.nim
+
+  @see
     - https://nim-lang.org/docs/io.html
     - https://nim-lang.org/docs/iterators.html
+    - https://nim-lang.org/docs/system.html
     - https://nim-lang.org/docs/widestrs.html
 
+
   every module implictly imports the system, threads and channel built_int module
-    - threads & channels: see parallelism_concurrency.nim
-  system also imports all the modules listed in this file
+    - dont import any of them directly, theres some compiler magic to makem work
+    - everything in this file is an automatic import
+    - some other system stuff is put in other files (and should be notated as system)
 
 ]#
 
 echo "############################ system"
+# basic procs/operators every program needs
+
 # echo, debugEcho
 # chr(i): convert 0..255 to a char
 # ord(i): convert char to an int

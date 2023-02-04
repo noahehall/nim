@@ -1,7 +1,16 @@
 #[
-  @see https://nim-lang.org/docs/strutils.html
-  @see https://nim-lang.org/docs/strformat.html
-  @see https://nim-lang.org/docs/dollars.html
+  @see
+    - https://nim-lang.org/docs/cstrutils.html
+    - https://nim-lang.org/docs/dollars.html
+    - https://nim-lang.org/docs/parseutils.html
+    - https://nim-lang.org/docs/ropes.html
+    - https://nim-lang.org/docs/strbasics.html
+    - https://nim-lang.org/docs/strformat.html
+    - https://nim-lang.org/docs/strmisc.html
+    - https://nim-lang.org/docs/strutils.html
+    - https://nim-lang.org/docs/unicode.html
+    - https://nim-lang.org/docs/unidecode.html
+    - https://nim-lang.org/docs/wordwrap.html
 ]#
 
 #[
