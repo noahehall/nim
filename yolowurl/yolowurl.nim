@@ -12,6 +12,9 @@
     then here: https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html
     and finally: https://nim-lang.org/docs/nep1.html
 
+  review:
+    - we have like 1000 different nim files, consolidate
+
   skim and copy:
     nim package directory: get familiar with what exists
       https://nimble.directory/
@@ -21,10 +24,7 @@
       - reading: finished this like a year ago, it was super old then away
       - copying pg40 custom array ranges
 
-  review:
-    - we have like 1000 different nim files, consolidate
-
-  eventual:
+  eventually:
     https://nim-lang.org/docs/tut3.html
     https://nim-lang.org/docs/destructors.html
 
@@ -39,11 +39,6 @@
     https://peterme.net/how-to-embed-nimscript-into-a-nim-program-embedding-nimscript-pt-2.html
     https://peterme.net/creating-condensed-shared-libraries-embedding-nimscript-pt-3.html
 
-  skipped/should read again
-    https://nim-by-example.github.io/bitsets/
-    https://nim-by-example.github.io/macros/
-    https://nim-lang.org/docs/tut1.html#sets-bit-fields
-    https://nim-lang.org/docs/tut2.html#templates-examplecolon-lifting-procs
 ]#
 
 #[
