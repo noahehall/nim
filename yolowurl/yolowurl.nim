@@ -4,8 +4,7 @@
   see deepdives dir to dive deep
 
   the road to code
-    bookmark: https://nim-lang.org/docs/tut2.html#exceptions-annotating-procs-with-raised-exceptions
-    then here: https://nim-lang.org/docs/lib.html # categorize these in deepdive files
+    bookmark: https://nim-lang.org/docs/lib.html
     then here: https://nim-lang.org/docs/system.html
     then here: https://nim-lang.org/docs/nimc.html
     then here: https://nim-lang.org/docs/docgen.html
@@ -1284,7 +1283,6 @@ echo "############################ generics"
 # parameterized: Thing[T]
 # restricted Thing[T: x or y]
 # static Thing[MaxLen: static int, T] <-- find this one in the docs
-
 # generic procs
 proc wtf[T](a: T): auto =
   result = "wtf " & $a
@@ -1326,10 +1324,11 @@ iterator preorder*[T](root: BinaryTree[T]): T =
 echo "############################ template "
 # enables raw code substitution on nim's abstract syntax tree
 # are processed in the semantic pass of the compiler
-# accepts meta types:
-# ^ untyped: lookup symbols & perform type resolution after the expression is interpreted
+# accepts meta types: @see https://nim-lang.org/docs/tut3.html
+# ^ untyped: lookup symbols & perform type resolution after the expression is interpreted & checked
 # ^^ use to pass a block of statements
-# ^ typed: dunno, find in docs
+# ^ typed: semantic checker evaluates and transforms args before expression is interprted & checked
+# ^^ basically opposite of typed, lol which now makes sense
 # ^ type: i.e. you set the type in the signature
 
 # copied from docs
