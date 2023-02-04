@@ -45,6 +45,7 @@
     https://nim-by-example.github.io/bitsets/
     https://nim-by-example.github.io/macros/
     https://nim-lang.org/docs/tut1.html#sets-bit-fields
+    https://nim-lang.org/docs/tut2.html#templates-examplecolon-lifting-procs
 ]#
 
 #[
@@ -1333,33 +1334,31 @@ echo "############################ template "
 
 # copied from docs
 template `!=` (a, b: untyped): untyped =
-  # it will extract the left & right args
-  # then inject whatever remains
-  not (a == b) # this definition exists in the System module
+  # it will replace a & b with the a and b operands to !=
+  # then replace a != b in the original with the below template
+  not (a == b)
 # thats how the compiler rewrites below to: assert(not (5 == 6))
 assert(5 != 6)
 
 # lazy evaluation of proc args
-const
-  debug = true
-var
-  xy = 4
+const debug = true
+var xy = 4
 # msg arg is evaluted before the fn is evoked
 proc log_eager(msg: string) {.inline.} =
   if debug: stdout.writeLine(msg)
 # the template is processed before msg arg
+# so if debug is false, msg wont be evaluted
 template log_lazy(msg: string) =
   if debug: stdout.writeLine(msg)
 
 logEager("x has the value: " & $xy) # & and $ are expensive! only use with lazy templates
-logLazy("x has the value: " & $xy) # $ and $ wont be evaluated if debug is false
+logLazy("x has the value: " & $xy)
 
 # copied from docs
 # example of using untyped to get a block of statements
-# we shadow please arg so that its only evaluted once
-# the block statements are passed to the body param
+# the block statements are bound to the body param
 template blockRunner(please: bool, body: untyped): void =
-  let theyAskedNickely = please
+  let theyAskedNickely = please # reassign please so its only evaluted once
   if theyAskedNickely:
     try:
       body
