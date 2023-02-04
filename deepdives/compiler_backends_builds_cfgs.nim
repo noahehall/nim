@@ -44,6 +44,7 @@
       --hotCodeReloading:on|off support for hot code reloading on|off
       --implicitStatic:on|off implicit compile time evaluation on|off
       --incremental:on|off only recompile the changed modules
+      --deepcopy:on|off  'system.deepCopy' for --mm:arc|orc
       --mm:orc|arc|refc|markAndSweep|boehm|go|none|regions memory mgmt strategy, orc for new/async
       --multimethods:on|off
       --panics:on|off turn panics into process terminations
@@ -52,9 +53,10 @@
       --threads:on enable mult-threading
       --tlsEmulation:on|off thread local storage emulation
       --trmacros:on|off term rewriting macros
-      --verbosity:0|1|2|3
+      --verbosity:0|1|2|3 0 minimal, 1 default, 2 stats/libs/filters, 3 debug for compiler developers
 
     compile time symbol OPTS
+    @see https://nim-lang.org/docs/nimc.html#compiler-usage-compileminustime-symbols
       -d:danger remove all runtime checks and debugging, e.g. benchmarks against C
       -d:release optimize for performance
       -d:ssl activate ssl sockets
@@ -128,11 +130,15 @@
       --rangeChecks
 
     specific compiler hint OPTS
+    @see https://nim-lang.org/docs/nimc.html#compiler-usage-list-of-hints
+    can also be set via {.hint[POOP]:on/off.}
     require :on/off, set all --hints:on/off/list
       --hint:POOP:
       --hintAsError:POOP:
 
     specific compiler warning OPTS
+    @see https://nim-lang.org/docs/nimc.html#compiler-usage-list-of-warnings
+    can also be set via {.warning[POOP]:on/off.}
     require :on/off, set all --warnings/-w:on|off|list
       --warning:POOP
       --warningAsError:POOP
@@ -173,7 +179,15 @@
 ]#
 
 #[
-  # C - the default backend
+  # C backend - the default
+]#
+
+#[
+  # CPP backend
+]#
+
+#[
+  # OBJC backend
 ]#
 
 #[

@@ -4,7 +4,7 @@
   see deepdives dir to dive deep
 
   the road to code
-    bookmark: https://nim-lang.org/docs/nimc.html
+    bookmark: https://nim-lang.org/docs/nimc.html#compiler-usage-compileminustime-symbols
     then here: https://nim-lang.org/docs/mm.html
     then here: https://nim-lang.org/docs/backends.html
     then here: https://nim-lang.org/docs/system.html
@@ -240,10 +240,12 @@ echo "############################ pragmas"
 # {.async.} this fn is asynchronous and can use the await keyword
 # {.base.} for methods, to associate fns with a base type. see inheritance
 # {.bycopy|byref.} label a proc arg
+# {.compiletime.} check the docs, maybe runs a proc @ compile time
 # {.dirty.} dunno, but used with templates
 # {.effects.} check the docs: will output all inferred effects (e.g. exceptions) up to this point
 # {.exportc: "or-use-this-specific-name".}
 # {.exportc.} disable proc name mangling when compiled
+# {.hint[POOP]:on/off.} can also be set via cli flags
 # {.inheritable.} # check the docs: create alternative RootObj
 # {.inject.} dunno, something to do with symbol visibility
 # {.inline.} # check the docs: inlines a procedure
@@ -255,7 +257,7 @@ echo "############################ pragmas"
 # {.size: ...} # check the docs
 # {.thread.} informs the compiler this fn is meant for execution on a new thread
 # {.threadvar.} informs the compiler this var should be local to a thread
-# {.compiletime.} check the docs, maybe runs a proc @ compile time
+# {.warning[POOP]:on/off.} can also be set via cli flags
 
 echo "############################ variables"
 var poop1 = "flush"
