@@ -8,6 +8,7 @@
     - https://nim-lang.org/docs/lists.html
     - https://nim-lang.org/docs/options.html
     - https://nim-lang.org/docs/packedsets.html
+    - https://nim-lang.org/docs/sequtils.html
     - https://nim-lang.org/docs/sets.html
     - https://nim-lang.org/docs/sharedlist.html
     - https://nim-lang.org/docs/sharedtables.html

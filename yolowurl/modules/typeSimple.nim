@@ -1,6 +1,51 @@
 #[
   @see
     - https://nim-lang.org/docs/widestrs.html
+
+  string/char procs
+    len(s)	Return the length of a string
+    chr(i)	Convert an int in the range 0..255 to a character
+    ord(c)	Return int value of a character
+    a & b	Concatenate two strings
+    s.add(c)	Add character to the string
+    $	Convert various types to string
+
+  number procs
+    div	Integer division	//
+    mod	Integer modulo (remainder)	%
+    shl	Shift left	<<
+    shr	Shift right	>>
+    ashr	Arithmetic shift right
+    and	Bitwise and	&
+    or	Bitwise or	|
+    xor	Bitwise xor	^
+    not	Bitwise not (complement)	~
+    toInt	Convert floating-point number into an int
+    toFloat	Convert an integer into a float
+
+  ordinal procs (integer, bool, char, enum)
+    succ	Successor of the value
+    pred	Predecessor of the value
+    inc	Increment the ordinal
+    dec	Decrement the ordinal
+    high	Return the highest possible value
+    low	Return the lowest possible value
+    ord	Return int value of an ordinal value
+
+  misc procs
+    is	Check if two arguments are of the same type
+    isnot	Negated version of is
+    !=	Not equals
+    addr	Take the address of a memory location
+    T and F	Boolean and
+    T or F	Boolean or
+    T xor F	Boolean xor (exclusive or)
+    not T	Boolean not
+    a[^x]	Take the element at the reversed index x
+    a .. b	Binary slice that constructs an interval [a, b]
+    a ..^ b	Interval [a, b] but b as reversed index
+    a ..< b	Interval [a, b) (excluded upper bound)
+    runnableExamples	Create testable documentation
 ]#
 
 echo "############################ nil"

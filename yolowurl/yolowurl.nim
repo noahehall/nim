@@ -1,15 +1,14 @@
 #[
   yolo wurl: basic nim syntax
-  only uses the implicitly imported system, threads and channel built_int module
-    - dont import any of them directly, theres some compiler magic to makem work
-    - everything in this file is an automatic import
-    - some other system stuff is put in other files (and should be notated as system)
+  only uses the implicitly imported system, threads and channel built_int module (and their imports)
+  dont import any of them directly, theres some compiler magic to makem work
 
-  @see https://nim-lang.org/docs/system.html
-  @see ../deepdives dir to dive deep
+  @see
+    - https://nim-lang.org/docs/system.html
+    - ../deepdives dir to dive deep
 
   the road to code
-    bookmark: https://nim-lang.org/docs/system.html
+    bookmark: https://nim-lang.org/docs/system.html#7
       - move system out of deepdives and put in yolowurl
     then here: https://nim-lang.org/docs/nims.html (usecase: configs, scripts, build tool, bash replacement)
     then here: https://nim-lang.org/docs/nimscript.html

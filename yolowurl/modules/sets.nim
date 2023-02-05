@@ -1,3 +1,14 @@
+#[
+  procs
+    a - b	Difference
+    a * b	Intersection
+    a + b	Union
+    a < b	Check if a is a subset of b
+    card	Return the cardinality of the set, i.e. the number of elements
+    contains	Check if an element is in the set
+    excl	Exclude element y from the set x
+    incl	Include element y in the set x
+]#
 
 echo "############################ set"
 # basetype must be of int8/16, uint8/16/byte, char, enum

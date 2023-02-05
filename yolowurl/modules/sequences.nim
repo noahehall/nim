@@ -1,4 +1,20 @@
-
+#[
+  procs
+    @	Turn an array into a sequence
+    add	Add an item to the sequence
+    del	O(1) removal, doesn't preserve the order
+    delete	Delete an item while preserving the order of elements (O(n) operation)
+    insert	Insert an item at a specific position
+    len	Return the length of a sequence
+    newSeq	Create a new sequence of a given length
+    newSeqOfCap	Create a new sequence with zero length and a given capacity
+    pop	Remove and return last item of a sequence
+    setLen	Set the length of a sequence
+    x & y	Concatenate two sequences
+    x[a .. ^b]	Slice of a sequence but b is a reversed index (both ends included)
+    x[a .. b]	Slice of a sequence (both ends included)
+    x[a ..< b]	Slice of a sequence (excluded upper bound)
+]#
 echo "############################ sequences dynamic-length dimensionally homogeneous"
 # length can change @ runtime (like strings)
 # always heap allocated & gc'ed
