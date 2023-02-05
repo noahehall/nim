@@ -1,3 +1,9 @@
+#[
+  @see
+    - https://nim-lang.org/docs/io.html
+
+  # echo, debugEcho
+]#
 echo "############################ repr"
 # prints anything
 # advanced/custom types cant use $ unless its defined for them (see elseware)

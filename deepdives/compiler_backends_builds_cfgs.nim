@@ -33,11 +33,8 @@
     compiler OPTS
       --app:console/gui/lib/staticlib generate a console app|GUI app|DLL|static library
       --backend/-b:c|cpp|js|objc backend to use with commands like nim doc or nim r
-      --cc:SYMBOL specify the C compiler
       --checks/-x:on/off turn all runtime checks on|off
       --colors:on|off for compiler msgs
-      --compileOnly/-c:on|off generate a compile script and .deps file
-      --cpu:SYMBOL set the target processor (cross-compilation)
       --errorMax:N stop compilation after N errors; 0 means unlimited
       --exceptions:setjmp|cpp|goto|quirky exception handling implementation
       --experimental:$1 enable experimental language feature X
@@ -45,7 +42,7 @@
       --implicitStatic:on|off implicit compile time evaluation on|off
       --incremental:on|off only recompile the changed modules
       --deepcopy:on|off  'system.deepCopy' for --mm:arc|orc
-      --mm:orc|arc|refc|markAndSweep|boehm|go|none|regions memory mgmt strategy, orc for new/async
+      --mm:orc|arc|refc|markAndSweep|boehm|go|none|regions memory mgmt strategy, orc for new/async, arc|orc for realtime systems
       --multimethods:on|off
       --panics:on|off turn panics into process terminations
       --parallelBuild:N num of cpus for parallel build (0 for auto-detect)
@@ -55,43 +52,73 @@
       --trmacros:on|off term rewriting macros
       --verbosity:0|1|2|3 0 minimal, 1 default, 2 stats/libs/filters, 3 debug for compiler developers
 
-    compile time symbol OPTS
+    compile time symbol/switches OPTS
+    values can be checked in when, defined(), and define pragmas
+    case and _ insensitive
+    keys starting with nim are reserved
     @see https://nim-lang.org/docs/nimc.html#compiler-usage-compileminustime-symbols
-      -d:danger remove all runtime checks and debugging, e.g. benchmarks against C
-      -d:release optimize for performance
-      -d:ssl activate ssl sockets
-      -d:useMalloc optimize for low memory systems
+    either --define/-d:poop[=soop]
+      --define:danger remove all runtime checks and debugging, e.g. benchmarks against C
+      --define:release optimize for performance (default is debug)
+      --define:ssl activate OpenSSL ssl sockets module
+      --define:useMalloc optimize for low memory systems using C's malloc instead of Nim's memory manager, requires --mm:none/arc/orc, also see nimPage256/516/1k & nimMemAlignTiny
+      --define:useRealtimeGC support for soft realtime systems
+      --define:logGC gc logging to stdout
+      --define:nodejs target nodejs (not web) when target is js
+      --define:memProfiler memory profile for the native GC
+      --define:uClibc use uClibc instead of libc
+
 
     output OPTS
       --asm produce assembler code
       --assertions/-a:on/off
       --embedsrc:on|off embeds the original source code as comments in the generated output
       --forceBuild/-f:on/off rebuild all modules
-      --genScript:on|off think its just an alias for --compileOnly (does the same thing)
       --index:on|off index file generation
       --lineDir:on|off runtime stacktraces include #line directives C only with --native:debugger
       --lineTrace:on/off runtime stacktraces include line numbers C only
+      --nimcache:PATH generated files, ($XDG_CACHE_HOME|~/.cache)/nim/$projectname(_r|_d) useful for isolating/immutable/deleting built files
       --nimMainPrefix:prefix use {prefix}NimMain instead of NimMain in the produced C/C++ code
       --noLinking:on|off compile Nim and generated files but do not link
-      --noMain:on|off do not generate a main procedure (required for some cross-compilation targets)
       --opt:none/speed/size e.g. small output size (IoT), or fast runtime
-      --os:SYMBOL the target operating system (cross-compilation)
       --out/-o:FILE change the output filename
       --outdir:DIR change the output dir
       --stackTrace:on/off runtime stacktrackes C only
 
-    configuration OPTS
+    cross compilation OPTS
+    @see https://nim-lang.org/docs/nimc.html#crossminuscompilation-for-windows (then scroll down for other targets)
+      --cc:llvm_gcc|etc specify the C compiler, use --forceBuild to switch between compilers
+      --compileOnly/-c:on|off compile nim and generate .dep files, but do not link
+      --cpu:arm|i386|etc set the target processor
+      --genScript:on|off generates a compile script, forces --compileOnly
+      --noMain:on|off do not generate a main procedure (required for some targets)
+      --os:any|linux|android|ios|nintendoswitch the target operating system
+
+    path OPTS
       --clearNimblePath empty the list of Nimble package search paths
       --import:PATH a module before compiling/running
       --include:PATH a module before compiling/running
       --lib:PATH set system library path
       --NimblePath:PATH add a path for Nimble support
-      --nimcache:PATH path used for generated files
       --noNimblePath deactivate the Nimble path
       --path/-p:PATH add path to search paths
+
+    configuration file hierarchy & precedence
+    file.nim passed to compile/run becomes the $project file name
+    later files overwrite previous settings
+    any OPT in this file can be specified in a cfg file; same format as cmd line args
+    cmd line opts > cfg file opts
+      - install dirs: $nim/config/nim.cfg > etc/nim/nim.cfg [nix] | <nim dir>/config/nim.cfg [win]
+      - user dirs: $XDG_CONFIG_HOME/nim/nim.cfg | ~/.config/nim/nim.cfg [nix] | %APPDATA%/nim/nim.cfg [win]
+      - recursive parent dirs: $parentDir/nim.cfg all the way to root
+      - project dir: $projectDir/nim.cfg lives next to the $project file
+      - project cfg file: $projectDir/$project.nim.cfg
+
+    configuration OPTS
+    cli opts > file opts
       --skipCfg:on|off do not read the nim installation's configuration file
       --skipParentCfg:on|off do not read the parent dirs' configuration files
-      --skipProjCfg:on|off do not read the project's configuration file
+      --skipProjCfg:on|off do not read the project dir/file configuration file
       --skipUserCfg:on|off do not read the user's configuration
 
     documention OPTS
@@ -147,13 +174,14 @@
       --styleCheck:off|hint|error hints or errors for identifiers conflicting with official style guide
       --styleCheck:usages enforce consistent spellings of identifiers, but not style declarations
 
+  environment variables
+    CC sets compiler when --cc:env is used
 
   skipped
     --cincludes:DIR
     --clib:LIBNAME
     --clibdir:DIR
     --cppCompileToNamespace:namespace
-    --define/-d
     --defusages
     --dynlibOverride:SYMBOL
     --dynlibOverrideAll
@@ -164,14 +192,29 @@
     --filenames:abs|canonical|legacyRelProj
     --legacy:$2
     --maxLoopIterationsVM:N
-    --passC/-t:OPTION
-    --passL/-l:OPTION
+    --passC/-t:OPTION e.g. option for the C compiler, e.g. optimization/cross compilation support
+    --passL/-l:OPTION e.g.option for the linker, e.g. cross compilation support
     --processing:dots|filenames|off
     --spellSuggest|:num
     --undefine/-u
     --unitsep:on|off
     --usenimcache
     --useVersion:1.0|1.2
+    -d:androidNDK (cross compile for android supporting android studio projects)
+    -d:checkAbi
+    -d:globalSymbols
+    -d:mingw (cross compile for windows from linux)
+    -d:nimBultinSetjmp
+    -d:nimRawSetjmp
+    -d:nimSigSetjmp
+    -d:nimStdSetjmp
+    -d:nimThreadStackGuard
+    -d:nimThreadStackSize
+    -d:noSignalHandler @see https://nim-lang.org/docs/nimc.html#signal-handling-in-nim
+    -d:tempDir
+    -d:useFork
+    -d:useNimRtl
+    -d:useShPath
     doc2text
     rst2html
     rst2tex

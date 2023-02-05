@@ -8,6 +8,10 @@
 
 ## Todos
 
+- [skipped most of the section on cross compilation](https://nim-lang.org/docs/nimc.html#crossminuscompilation-for-windows)
+- [pacman devkitpro for nix](https://github.com/devkitPro/pacman/releases)
+- [dll generation](https://nim-lang.org/docs/nimc.html#dll-generation)
+- [optmizing string handling](https://nim-lang.org/docs/nimc.html#optimizing-for-nim-optimizing-string-handling)
 - https://nim-by-example.github.io/bitsets/
 - https://nim-by-example.github.io/macros/
 - https://nim-lang.org/docs/atomics.html

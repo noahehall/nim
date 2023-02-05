@@ -2,7 +2,9 @@
 echo "############################ type conversions"
 # cast operator forces the compiler to interpret a bit pattern to be of another type
 # type() converions preserve the abstract value, but not the bit-pattern
-
+# chr(i): convert 0..255 to a char
+# ord(i): convert char to an int
+# parseInt/parseFloat
 
 echo "############################ generics"
 # parameterize procs, iterators or types

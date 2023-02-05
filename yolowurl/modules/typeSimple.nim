@@ -1,3 +1,7 @@
+#[
+  @see
+    - https://nim-lang.org/docs/widestrs.html
+]#
 
 echo "############################ nil"
 # if a ref/ptr points to nothing, its value is nil
@@ -15,7 +19,7 @@ echo "############################ strings"
 # compared using lexicographical order
 # to intrepret unicode, you need to import the unicode module
 var msg: string = "yolo"
-echo msg & " wurl" # returns a new string
+echo msg & " wurl" # concat and return new string
 msg.add(" wurl") # modifies the string in place
 echo msg, "has length ", len msg
 let

@@ -1,4 +1,9 @@
 
+#[
+  @see
+    - https://nim-lang.org/docs/iterators.html
+]#
+
 echo "############################ iterators "
 # inlined at the callsite when compiled
 # ^ do not have the overhead from function calling

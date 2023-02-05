@@ -2,9 +2,6 @@
   @see
     - https://nim-by-example.github.io/json/
     - https://nim-lang.org/docs/asyncfile.html
-    - https://nim-lang.org/docs/db_mysql.html
-    - https://nim-lang.org/docs/db_postgres.html
-    - https://nim-lang.org/docs/db_sqlite.html
     - https://nim-lang.org/docs/htmlgen.html
     - https://nim-lang.org/docs/htmlparser.html
     - https://nim-lang.org/docs/json.html
@@ -12,15 +9,10 @@
     - https://nim-lang.org/docs/logging.html
     - https://nim-lang.org/docs/marshal.html
     - https://nim-lang.org/docs/memfiles.html
-    - https://nim-lang.org/docs/mysql.html
-    - https://nim-lang.org/docs/odbcsql.html
     - https://nim-lang.org/docs/parsecfg.html
     - https://nim-lang.org/docs/parsecsv.html
     - https://nim-lang.org/docs/parsejson.html
-    - https://nim-lang.org/docs/parsesql.html
     - https://nim-lang.org/docs/parsexml.html (and html)
-    - https://nim-lang.org/docs/postgres.html
-    - https://nim-lang.org/docs/sqlite3.html
     - https://nim-lang.org/docs/varints.html
     - https://nim-lang.org/docs/xmlparser.html (and html)
     - https://nim-lang.org/docs/xmltree.html (and html)

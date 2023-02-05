@@ -1,20 +1,25 @@
 #[
   yolo wurl: basic nim syntax
-  only uses the implicitly imported system module
-  see ../deepdives dir to dive deep
+  only uses the implicitly imported system, threads and channel built_int module
+    - dont import any of them directly, theres some compiler magic to makem work
+    - everything in this file is an automatic import
+    - some other system stuff is put in other files (and should be notated as system)
+
+  @see https://nim-lang.org/docs/system.html
+  @see ../deepdives dir to dive deep
 
   the road to code
-    bookmark: https://nim-lang.org/docs/nimc.html#compiler-usage-compileminustime-symbols
-    then here: https://nim-lang.org/docs/mm.html
-    then here: https://nim-lang.org/docs/system.html
-    then here: https://nim-lang.org/docs/docgen.html
+    bookmark: https://nim-lang.org/docs/system.html
+      - move system out of deepdives and put in yolowurl
     then here: https://nim-lang.org/docs/nims.html (usecase: configs, scripts, build tool, bash replacement)
     then here: https://nim-lang.org/docs/nimscript.html
+    then here: https://nim-lang.org/docs/nep1.html
     then here: https://nim-lang.org/docs/manual_experimental.html
+    then here: https://nim-lang.org/docs/mm.html
+    then here: https://nim-lang.org/docs/docgen.html
     then here: https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html
     then here: https://nim-lang.org/docs/backends.html
-    then here: https://nim-lang.org/docs/manual.html
-    and finally: https://nim-lang.org/docs/nep1.html
+    and finally: https://nim-lang.org/docs/manual.html
 
   review:
     - we have like 1000 different nim files, consolidate
@@ -100,11 +105,14 @@
     - isMainModule: returns true if current module compiled as the main file (see testing.nim)
 
   ambiguity
-    - when a third imports the same symbol from 2 different modules
+    - when module A imports symbol B that exists in C and D
     - procs/iterators are overloaded, so no ambiguity
-    - everything else must be qualified (modName.poop) if ambiguous
+    - everything else must be qualified (c.b | d.b) if signatures are ambiguous
 
   import: top-level symbols marked * from another module
+  looks in the current dir relative to the imported file and uses the first match
+  else traverses up the nim PATH for the first match
+  @see https://nim-lang.org/docs/nimc.html#compiler-usage-search-path-handling
     import math # imports everything
     import std/math # qualified import everything
     import mySubdir/thirdFile
@@ -270,7 +278,7 @@
 
 include modules/[
   variables,
-  simpleTypes,
+  typeSimple,
   ifWhenCase,
   exceptionHandling,
   loops,
@@ -280,9 +288,9 @@ include modules/[
   sequences,
   sets,
   procedures,
-  customTypes,
+  typeCustom,
   tuples,
-  typeHelpers,
-  console,
-  files
+  typeSupport,
+  messages,
+  osIoFiles,
 ]
