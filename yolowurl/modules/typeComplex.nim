@@ -6,13 +6,23 @@ echo "############################ useful type list"
 # BackwardsIndex type of ^ values for reverse array access
 
 var autoInt: auto = 7
-echo "autoInt labeled auto but its type is " & $type(autoInt)
+echo "autoInt labeled auto but its type is ", $type(autoInt)
+
+echo "############################ REEEAAALLLY should todo type list"
+# GC_Strategy (enum) the application should use
+  # gcThroughput,             ## optimize for throughput
+  # gcResponsiveness,         ## optimize for responsiveness (default)
+  # gcOptimizeTime,           ## optimize for speed
+  # gcOptimizeSpace            ## optimize for memory footprint
 
 echo "############################ todo type list"
 # @see https://nim-lang.org/docs/system.html#7
 # AllocStats
 # AtomType
 # Endianness
+# ExecIOEffect
+# FileSeekPos
+# ForeignCell
 
 echo "############################ type aliases"
 # type aliases are identical & auto cast to their base

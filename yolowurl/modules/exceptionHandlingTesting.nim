@@ -1,15 +1,16 @@
 #[
-  exceptions, error related stuff, assertions, documentation
+  exception stuff, documentation and testing
+
   @see
-    - https://nim-lang.org/docs/assertions.html
     - https://github.com/status-im/nim-testutils/tree/master/testutils/fuzzing
     - https://nim-lang.org/docs/assertions.html
+    - https://nim-lang.org/docs/assertions.html
+    - https://nim-lang.org/docs/docgen.html
     - https://nim-lang.org/docs/drnim.html
     - https://nim-lang.org/docs/segfaults.html
     - https://nim-lang.org/docs/testament.html (preferred std testing tool)
     - https://nim-lang.org/docs/unittest.html (use testament instead)
     - https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling
-    - https://nim-lang.org/docs/docgen.html
 
 ]#
 
@@ -21,20 +22,28 @@ echo "############################ documentation"
 # ^ for examples of writing excellent documentation and how to document your src c0d3
 
 echo "############################ Defects "
-# Defect abstract type representing all uncatchable errors (anything mappable to a quit/trap/exit operation)
 # AccessViolationDefect invalid memory access
 # ArithmeticDefect any kin dof arithmetic error
 # AssertionDefect assertion returns false
 # DeadThreadDefect sending a msg to a dead thread
+# Defect abstract type representing all uncatchable errors (anything mappable to a quit/trap/exit operation)
 # DivByZeroDefect int div by 0
-
+# FieldDefect field is not accessible because its discriminants value does not fit
+# FloatDivByZeroDefect  float div by 0
+# FloatInexactDefect operation cant be represented with infinite precision, e.g. 2.0/3.0, log(1.1)
+# FloatingPointDefect base type for floating point defects
+# FloatInvalidOpDefect invalid ops according to IEEE, e.g. 0.0/0.0
+# FloatOverflowDefect  stackoverflow.com
+# FloatUnderflowDefect stackunderflow.com
+# IndexDefect  array index out of bounds
 echo "############################ Errors "
 # CatchableError abstract type for all catchable exceptions
 # EOFError end of file
 
 
 echo "############################ Exceptions "
-# all exceptions should ref Exception type ?
+# all custom exceptions should ref Exception
+# @see https://nim-lang.org/docs/system.html#Exception
 # @see https://nim-lang.org/docs/manual.html#exception-handling-exception-hierarchy
 
 echo "############################ raise "

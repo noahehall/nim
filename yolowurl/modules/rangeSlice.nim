@@ -1,3 +1,7 @@
+#[
+  types
+    - HSlice heterogeneous slice type
+]#
 
 echo "############################ range"
 # b[0 .. ^1] ==  b[0 .. b.len-1] == b[0 ..< b.len]

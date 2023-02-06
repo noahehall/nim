@@ -1,6 +1,8 @@
 #[
   @see
     - https://nim-lang.org/docs/widestrs.html
+    - https://nim-lang.org/docs/digitsutils.html
+    - https://nim-lang.org/docs/dollars.html
 
   string/char procs
     len(s)	Return the length of a string
@@ -90,19 +92,16 @@ let
 
 
 echo "############################ number types"
-# a word on integers
-# not converted to floats automatically
-# use toInt and toFloat
 let
   x1: int32 = 1.int32   # same as calling int32(1)
   y1: int8  = int8('a') # 'a' == 97'i8
   z1: float = 2.5       # int(2.5) rounds down to 2
   sum: int = int(x1) + int(y1) + int(z1) # sum == 100
 
-# signed integers, 32bit/64bit depending on system
+# int (signed), 32bit/64bit depending on system
 # Conversion between int and int32 or int64 must be explicit except for string literals.
 # int8,16,32,64 # 8 = +-127, 16 = +-~32k, 32 = +-~2.1billion, BiggestInt alias for int64
-# default int === same size as pointer (platform word size)
+# default int === same size as pointer (platform word size), bitwidth depends on architecture
 const
   b = 100
   c = 100'i8
