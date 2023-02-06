@@ -1,9 +1,8 @@
 echo "############################ useful type list"
-# static[T] meta type representing all values that can be evaluated at compile time
 # type[T] the type of all type values
 # auto generally used with procs as it provides type inference
 # void generally used with procs
-# BackwardsIndex type of ^ values for reverse array access
+
 
 var autoInt: auto = 7
 echo "autoInt labeled auto but its type is ", $type(autoInt)
@@ -14,6 +13,8 @@ echo "############################ REEEAAALLLY should todo type list"
   # gcResponsiveness,         ## optimize for responsiveness (default)
   # gcOptimizeTime,           ## optimize for speed
   # gcOptimizeSpace            ## optimize for memory footprint
+# owned[T] mark a ref/ptr/closure as owned
+# pointer use addr operator to get a pointer to a variable
 
 echo "############################ todo type list"
 # @see https://nim-lang.org/docs/system.html#7
@@ -153,7 +154,8 @@ echo "############################ inheritance: ref / ptr"
 # introduce many-to-one relationships: many instances point to the same heap
 # reference equality check
 # of creates a single layer of inheritance between types
-# base types must be of an existing obj that points to RootObj or RootObj
+# base types should ref RootObj/a type that does
+# ^ is the root of nims object hierachy, like javascripts object
 # ^ else they are implictly `final`
 # ^ TODO: find {.inheritable.} for introducing new object roots
 # objects can be self-referencing

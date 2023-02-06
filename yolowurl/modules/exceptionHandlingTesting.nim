@@ -1,5 +1,5 @@
 #[
-  exception stuff, documentation and testing
+  exception stuff, debugging, documentation and testing
 
   @see
     - https://github.com/status-im/nim-testutils/tree/master/testutils/fuzzing
@@ -36,6 +36,13 @@ echo "############################ Defects "
 # FloatOverflowDefect  stackoverflow.com
 # FloatUnderflowDefect stackunderflow.com
 # IndexDefect  array index out of bounds
+# NilAccessDefect dereferences of nil pointers (only raised when segfaults is imported)
+# ObjectAssignmentDefect object being assigned to its parent object
+# ObjectConversionDefect converting to an incompatible type
+# OutOfMemDefect failed to allocate memory
+# OverflowDefect runtime integer stackoverflows.com, results too big for the provided bits
+# RangeDefect range check error
+# ReraiseDefect if there is no exception to reraise
 
 echo "############################ error (exception) types "
 # CatchableError abstract type for all catchable exceptions
@@ -43,7 +50,8 @@ echo "############################ error (exception) types "
 # IOError occcurred
 # KeyError key cannot be found in a table/set/strtabs
 # LibraryError dynamic library doesnt load
-
+# OSError operating system service failure
+# ResourceExhaustedError when resource request cant be fulfilled
 
 echo "############################ Exceptions "
 # all custom exceptions should ref Exception
@@ -129,3 +137,7 @@ doAssert 1 < 2, "failure msg"
 # useful for embedding tests within the module
 when isMainModule:
   assert true == true
+
+echo "############################ debugger"
+# Todo, find the debugger[ api] in the docs somewhere
+# PFrame runtime frame of the callstack, part of the debugger api

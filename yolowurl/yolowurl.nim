@@ -8,7 +8,7 @@
     - ../deepdives dir to dive deep
 
   the road to code
-    bookmark: https://nim-lang.org/docs/system.html#7
+    bookmark: https://nim-lang.org/docs/system.html#RootRef
       - move system out of deepdives and put in yolowurl
     then here: https://nim-lang.org/docs/nims.html (usecase: configs, scripts, build tool, bash replacement)
     then here: https://nim-lang.org/docs/nimscript.html

@@ -25,7 +25,8 @@
     toInt	Convert floating-point number into an int
     toFloat	Convert an integer into a float
 
-  ordinal procs (integer, bool, char, enum)
+  Ordinal[T]
+  ordinal procs (integer, bool, char, enum and their subtypes)
     succ	Successor of the value
     pred	Predecessor of the value
     inc	Increment the ordinal
@@ -99,10 +100,14 @@ let
   sum: int = int(x1) + int(y1) + int(z1) # sum == 100
 
 # int (signed), 32bit/64bit depending on system
-# Conversion between int and int32 or int64 must be explicit except for string literals.
 # int8,16,32,64 # 8 = +-127, 16 = +-~32k, 32 = +-~2.1billion, BiggestInt alias for int64
+# Natural alias for range[0, ..high(int): useful for documentation/debugging/guards
+# Positive alias for range[1, ..high(int): useful for documentation/debugging/guards
+# PInt32 alias for ptr int32
+# Pint64 alias for ptrint64
+# BackwardsIndex alias for distinct int, see range docs
 # default int === same size as pointer (platform word size), bitwidth depends on architecture
-# Natural alias for range[0, ..high(int): useful for documentation/debugging/guarding
+# Conversion between int and int32 or int64 must be explicit except for string literals.
 const
   b = 100
   c = 100'i8
@@ -121,6 +126,8 @@ echo "4 div 2 === ", num2 div num1 # always returns an int
 
 # float: float32 (C Float), 64 (C Double)
 # float (alias for float64|BiggestFloat) === processors fastest type
+# PFloat32 alias for ptr float32
+# PFloat64 alias for ptr float64
 const
   num3 = 2.0 # float
   num4 = 4.0'f32

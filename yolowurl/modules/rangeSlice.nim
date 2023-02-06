@@ -13,11 +13,12 @@ echo "############################ range"
 # e.g. Nims natural type: type Natural = range[0 .. high(int)]
 # ^ should be used to guard against negative numbers
 
-# ^ returns a distinct int of type BackwardsIndex
+# BackwardsIndex returned by ^ (distinct int) values for reverse array access
 const lastFour = ^4
 const lastOne = ^1
 echo "tell me your name ", "my name is noah"[lastFour .. lastOne]
 
+# range[T] for constructing range types
 type
   MySubrange = range[0..5]
 echo MySubrange

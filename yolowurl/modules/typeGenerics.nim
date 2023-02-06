@@ -4,6 +4,8 @@ echo "############################ generics"
 # parameterized: Thing[T]
 # restricted Thing[T: x or y]
 # static Thing[MaxLen: static int, T] <-- find this one in the docs
+# ^ static[T] meta type representing all values that can be evaluated at compile time
+
 # generic procs
 proc wtf[T](a: T): auto =
   result = "wtf " & $a
@@ -28,6 +30,7 @@ proc newNode*[T](data: T): BinaryTree[T] =
   new(result)
   result.data = data
 
+# copied from docs
 # generic iterator
 iterator preorder*[T](root: BinaryTree[T]): T =
   # Preorder traversal of a binary tree.

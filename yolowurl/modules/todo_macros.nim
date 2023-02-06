@@ -6,4 +6,5 @@
 #[
   # types
     ForLoopStmt
+    NimNode
 ]#

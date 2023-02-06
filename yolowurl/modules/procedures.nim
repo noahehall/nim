@@ -98,8 +98,9 @@ proc communicate(greeting: proc (x: string): string, name: string) =
 communicate(greet, "John")
 communicate(bye, "Mary")
 echo "############################ openarray (proc params)"
-# proc signature type only enabling accepting an array of any length
-# ^ but only 1 dimension, i.e. wont accept a nested arr/seq
+# openArray[T] implemented as a pointer to the array data and a length field
+# only used in proc signatures for accepting an array of any length
+# ^ cant be used to with multidimensional array arguments
 # always index with int and starting at 0
 # array args must match the param base type, index type is ignored
 # arrays and seqs are implicity converted for openArray params

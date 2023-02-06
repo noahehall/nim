@@ -44,3 +44,4 @@
 - https://nim-lang.org/docs/typeinfo.html
 - https://nim-lang.org/docs/typetraits.html
 - https://nim-lang.org/docs/volatile.html
+- https://nim-lang.org/docs/segfaults.html

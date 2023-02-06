@@ -6,5 +6,7 @@
 #[
   dork `nimlang "poop"`
   IOEffect
-  ExecIOEffect
+  ExecIOEffect executing IO operation
+  ReadIOEffect describes a read IO operation
+  RootEffect custom effects should inherit from this
 ]#
