@@ -22,6 +22,7 @@ echo "############################ todo type list"
 # Endianness
 # FileSeekPos
 # ForeignCell
+# lent[T]
 
 echo "############################ type aliases"
 # type aliases are identical & auto cast to their base

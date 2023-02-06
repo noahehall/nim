@@ -290,6 +290,7 @@ include modules/[
   sets,
   procedures,
   typeComplex,
+  typeGenerics,
   tuples,
   typeSupport,
   messages,

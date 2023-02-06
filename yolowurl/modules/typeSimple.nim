@@ -102,6 +102,7 @@ let
 # Conversion between int and int32 or int64 must be explicit except for string literals.
 # int8,16,32,64 # 8 = +-127, 16 = +-~32k, 32 = +-~2.1billion, BiggestInt alias for int64
 # default int === same size as pointer (platform word size), bitwidth depends on architecture
+# Natural alias for range[0, ..high(int): useful for documentation/debugging/guarding
 const
   b = 100
   c = 100'i8
@@ -123,7 +124,7 @@ echo "4 div 2 === ", num2 div num1 # always returns an int
 const
   num3 = 2.0 # float
   num4 = 4.0'f32
-  num5: float64 = 4.9'
+  num5: float64 = 4.9'f64
   g = 100.0
   h = 100.0'f32
   i = 4e7 # 4 * 10^7
