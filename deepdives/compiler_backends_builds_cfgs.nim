@@ -89,10 +89,10 @@
     @see https://nim-lang.org/docs/nimc.html#crossminuscompilation-for-windows (then scroll down for other targets)
       --cc:llvm_gcc|etc specify the C compiler, use --forceBuild to switch between compilers
       --compileOnly/-c:on|off compile nim and generate .dep files, but do not link
-      --cpu:arm|i386|etc set the target processor
+      --cpu:arm|i386|etc set the target processor, grep hostCPU for values
       --genScript:on|off generates a compile script, forces --compileOnly
       --noMain:on|off do not generate a main procedure (required for some targets)
-      --os:any|linux|android|ios|nintendoswitch the target operating system
+      --os:any|linux|android|ios|nintendoswitch the target operating system, grep hostOS for values
 
     path OPTS
       --clearNimblePath empty the list of Nimble package search paths
