@@ -1,9 +1,13 @@
-
-echo "############################ type conversions"
+echo "############################ type casts"
 # cast operator forces the compiler to interpret a bit pattern to be of another type
-# type() converions preserve the abstract value, but not the bit-pattern
+
+echo "############################ type coercions"
+# type coercions preserve the abstract value, but not the bit-pattern
 # chr(i): convert 0..255 to a char
 # ord(i): convert char to an int
+# static(x): force the compile-time evaluation of the given expression
+# type(x): retrieve the type of x
+
 # parseInt/parseFloat
 
 echo "############################ generics"

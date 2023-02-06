@@ -1,5 +1,18 @@
+echo "############################ useful type list"
+# static[T] meta type representing all values that can be evaluated at compile time
+# type[T] the type of all type values
+# auto generally used with procs as it provides type inference
+# void generally used with procs
+# BackwardsIndex type of ^ values for reverse array access
 
+var autoInt: auto = 7
+echo "autoInt labeled auto but its type is " & $type(autoInt)
 
+echo "############################ todo type list"
+# @see https://nim-lang.org/docs/system.html#7
+# AllocStats
+# AtomType
+# Endianness
 
 echo "############################ type aliases"
 # type aliases are identical & auto cast to their base
@@ -98,15 +111,11 @@ proc `[]`* (v: Vector, i: int): float =
   of 2: result = v.z
   else: assert(false)
 echo "############################ ref"
-
-
-
 # see inheritance
-# traced references pointing gc'ed heap
+# generic traced pointer type mem is gc'ed on heap
 # generally you should always use ref objects with inheritance
 # non-ref objects truncate subclass fields on = assignment
 # since objs are value types, composition is as efficient as inheritance
-# ^ unlike in other languages
 # dont have to label ref objects as var in proc signatures to mutate them
 
 # Someone isnt Ref, but people instance is
@@ -126,6 +135,7 @@ let people2 = SomeoneRef(name: "npc",
 
 echo "############################ ptr"
 # see inheritance
+# generic untraced pointer type
 # untraced references (are unsafe), pointing to manually managed memory locations
 # required when accessing hardware/low-level ops
 

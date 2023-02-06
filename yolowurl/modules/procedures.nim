@@ -1,8 +1,5 @@
 
 echo "############################ procedures"
-# special return types
-# ^ auto = type inference
-# ^ void = nothing is returned, no need to use discard
 # returning things: (cant contain a yield statement)
 # ^ use return keyword for early returns
 # ^ result = sumExpression: enables return value optimization & copy elision

@@ -7,6 +7,7 @@ let poop2 = "hello"
 # consts must be initialized with a value
 const poop3 = "flush"
 
+
 # computes fac(4) at compile time:
 # notice the use of paranthesis and semi colins
 const fac4 = (var x = 1; for i in 1..4: x *= i; x)

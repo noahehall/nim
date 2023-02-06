@@ -54,6 +54,7 @@ echo "############################ nil"
 
 echo "############################ bool"
 # only true & false evaluate to bool
+# but its an enum, so 0=false, 1=true
 # if and while conditions must be of type bool
 
 echo "############################ strings"
@@ -78,9 +79,9 @@ echo poop6, flush, multiline
 
 
 echo "############################ char"
+# 8 bit char (unsigned, basically an alias for uint8)
 # always 1 byte so cant represent most UTF-8 chars
 # single ASCII characters
-# basically an alias for uint8
 # enclosed in single quotes
 let
   xxx = 'a'
@@ -100,7 +101,7 @@ let
 
 # signed integers, 32bit/64bit depending on system
 # Conversion between int and int32 or int64 must be explicit except for string literals.
-# int8,16,32,64 # 8 = +-127, 16 = +-~32k, 32 = +-~2.1billion
+# int8,16,32,64 # 8 = +-127, 16 = +-~32k, 32 = +-~2.1billion, BiggestInt alias for int64
 # default int === same size as pointer (platform word size)
 const
   b = 100
@@ -111,7 +112,7 @@ const
   amilliamilliamilli = 1_000_000
 
 # uint: unsigned integers, 32/64 bit depending on system,
-# uint8,16,32,64 # 8 = 0 -> 2550, 16 = ~65k, 32 = ~4billion
+# uint8,16,32,64 # 8 = 0 -> 2550, 16 = ~65k, 32 = ~4billion, BiggestUInt alias uinty64
 const
   e: uint8 = 100
   f = 100'u8
@@ -119,11 +120,11 @@ echo "4 / 2 === ", num2 / num1 # / always returns a float
 echo "4 div 2 === ", num2 div num1 # always returns an int
 
 # float: float32 (C Float), 64 (C Double)
-# float (alias for float64) === processors fastest type
+# float (alias for float64|BiggestFloat) === processors fastest type
 const
   num3 = 2.0 # float
   num4 = 4.0'f32
-  num5: float64 = 4.9'f64
+  num5: float64 = 4.9'
   g = 100.0
   h = 100.0'f32
   i = 4e7 # 4 * 10^7
@@ -148,6 +149,7 @@ const
   p = 0o123
 
 echo "############################ byte"
-# behaves like uint8
+# alias for uint8 that is 8 bits wide
 # if dealing with binary blobs, prefer seq[byte] > string,
 # if dealing with binary data, prefer seq[char|uint8]
+# ByteAddress alias for int, used for converting pointers to itneger addresses

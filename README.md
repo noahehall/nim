@@ -8,6 +8,11 @@
 
 ## Todos
 
+- there are some basic stuff in deepdives that should actually be in yolowurl
+  - ensure deepdives goes beyond the basics
+
+---
+
 - [skipped most of the section on cross compilation](https://nim-lang.org/docs/nimc.html#crossminuscompilation-for-windows)
 - [pacman devkitpro for nix](https://github.com/devkitPro/pacman/releases)
 - [dll generation](https://nim-lang.org/docs/nimc.html#dll-generation)
