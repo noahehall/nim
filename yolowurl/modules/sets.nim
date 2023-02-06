@@ -1,4 +1,7 @@
 #[
+  @see
+    - https://nim-lang.org/docs/sets.html
+
   procs
     a - b	Difference
     a * b	Intersection

@@ -36,9 +36,11 @@ echo "############################ Defects "
 # FloatOverflowDefect  stackoverflow.com
 # FloatUnderflowDefect stackunderflow.com
 # IndexDefect  array index out of bounds
-echo "############################ Errors "
+echo "############################ error (exception) types "
 # CatchableError abstract type for all catchable exceptions
 # EOFError end of file
+# IOError occcurred
+# KeyError key cannot be found in a table/set/strtabs
 
 
 echo "############################ Exceptions "

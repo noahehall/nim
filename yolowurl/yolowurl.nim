@@ -19,6 +19,8 @@
     then here: https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html
     then here: https://nim-lang.org/docs/backends.html
     and finally: https://nim-lang.org/docs/manual.html
+    really finally this time: go through modules @see links and ensure you have captured relevant info in each file
+    no really this is the final one: ensure deepdives dir does not contain any system/basic info, and truly dives deep
 
   review:
     - we have like 1000 different nim files, consolidate

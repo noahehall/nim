@@ -20,6 +20,7 @@ echo "############################ iterators "
 # @see https://nim-by-example.github.io/for_iterators/
 # @see https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#iterators
 
+# iterable[T] an expression that yeilds T
 iterator `...`*[T](a: T, b: T): T =
   var res: T = a
   while res <= b:

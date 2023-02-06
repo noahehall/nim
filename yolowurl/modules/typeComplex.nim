@@ -20,7 +20,6 @@ echo "############################ todo type list"
 # AllocStats
 # AtomType
 # Endianness
-# ExecIOEffect
 # FileSeekPos
 # ForeignCell
 
