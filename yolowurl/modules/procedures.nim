@@ -127,7 +127,8 @@ echo "############################ varargs (proc spread params)"
 # the args are converted to an array if the param is the last param
 
 # haha almost forgot the _ doesnt matter
-# s  == seq[string]
+# varargs[T] generic constructor
+# s auto converted to seq[string]
 proc eko_all(s: varargs[string]) =
   for x in s:
     echo "var arg: ", x
@@ -198,15 +199,11 @@ echo runFn("with another string") do (x: string) -> string: "another: " & x
 # proc someName(someFn: (params) -> returnType) =
 
 
-echo "############################ template "
+echo "############################ template"
 # enables raw code substitution on nim's abstract syntax tree
 # are processed in the semantic pass of the compiler
-# accepts meta types: @see https://nim-lang.org/docs/tut3.html
-# ^ untyped: lookup symbols & perform type resolution after the expression is interpreted & checked
-# ^^ use to pass a block of statements
-# ^ typed: semantic checker evaluates and transforms args before expression is interprted & checked
-# ^^ basically opposite of typed, lol which now makes sense
-# ^ type: i.e. you set the type in the signature
+# accepts meta types
+
 
 # copied from docs
 template `!=` (a, b: untyped): untyped =

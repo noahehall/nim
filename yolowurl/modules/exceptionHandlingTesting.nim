@@ -43,6 +43,7 @@ echo "############################ Defects "
 # OverflowDefect runtime integer stackoverflows.com, results too big for the provided bits
 # RangeDefect range check error
 # ReraiseDefect if there is no exception to reraise
+# StackOverflowDefect when the hardware used for a subroutine stackoverflows.com
 
 echo "############################ error (exception) types "
 # CatchableError abstract type for all catchable exceptions
@@ -52,6 +53,7 @@ echo "############################ error (exception) types "
 # LibraryError dynamic library doesnt load
 # OSError operating system service failure
 # ResourceExhaustedError when resource request cant be fulfilled
+# ValueError string/object conversion
 
 echo "############################ Exceptions "
 # all custom exceptions should ref Exception

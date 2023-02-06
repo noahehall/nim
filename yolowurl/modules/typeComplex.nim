@@ -14,7 +14,7 @@
 echo "############################ useful type list"
 # type[T] the type of all type values
 # auto generally used with procs as it provides type inference
-# void generally used with procs
+
 
 
 var autoInt: auto = 7
@@ -29,8 +29,8 @@ echo "############################ REEEAAALLLY should todo type list"
 # owned[T] mark a ref/ptr/closure as owned
 # pointer use addr operator to get a pointer to a variable
 
-echo "############################ todo type list"
-# @see https://nim-lang.org/docs/system.html#7
+echo "############################ skipped type list"
+# @see https://nim-lang.org/docs/system.html#7 are somewhere on this page
 # AllocStats
 # AtomType
 # Endianness
@@ -38,6 +38,9 @@ echo "############################ todo type list"
 # ForeignCell
 # lent[T]
 # sink[T]
+# StackTraceEntry a single entry in a stack trace
+# TFrame something to do with callstacks
+# TypeOfMode something to do with proc/iter invocations
 
 echo "############################ type aliases"
 # type aliases are identical & auto cast to their base
@@ -61,6 +64,15 @@ type
   BiggestMoney {.borrow: `.`.} = distinct BigMoney # borrows all procs
 # echo 10 + FkUMoney(100) # type mismatch
 
+echo "############################ metatypes"
+# untyped  lookup symbols & perform type resolution after the expression is interpreted & checked
+# ^ i.e. expression is lazily resolved to its value (for templates)
+# ^ use to pass a block of statements
+# typed: semantic checker evaluates and transforms args before expression is interprted & checked
+# ^ an expression that is [eagerly] resolved to its value (for templates)
+# ^ i.e. whenever u set a type in a signature its resolved immediately
+# typedesc a type description
+# void absence of any type, generally used as proc return type
 
 echo "############################ object"
 # Enumeration and object types may only be defined within a type statement.

@@ -1,3 +1,6 @@
+#[
+  UncheckedArray[T]
+]#
 
 echo "############################ arrays fixed-length dimensionally homogeneous"
 # the array size is encoded in its type
