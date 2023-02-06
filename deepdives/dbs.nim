@@ -9,5 +9,5 @@
     - https://nim-lang.org/docs/odbcsql.html
     - https://nim-lang.org/docs/parsesql.html
 
-  before using marshal for json @see # @see https://stackoverflow.com/questions/26191114/how-to-convert-object-to-json-in-nim
+  before using marshal for json @see https://stackoverflow.com/questions/26191114/how-to-convert-object-to-json-in-nim
 ]#
