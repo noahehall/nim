@@ -1,3 +1,16 @@
+#[
+  SomeOrdinal matches any ordinal type (including enums with holes)
+  Ordinal[T] generic ordinal type (integer, bool, char, enum and their subtypes)
+  ordinal procs
+    succ	Successor of the value
+    pred	Predecessor of the value
+    inc	Increment the ordinal
+    dec	Decrement the ordinal
+    high	Return the highest possible value
+    low	Return the lowest possible value
+    ord	Return int value of an ordinal value
+
+]#
 echo "############################ useful type list"
 # type[T] the type of all type values
 # auto generally used with procs as it provides type inference
@@ -24,6 +37,7 @@ echo "############################ todo type list"
 # FileSeekPos
 # ForeignCell
 # lent[T]
+# sink[T]
 
 echo "############################ type aliases"
 # type aliases are identical & auto cast to their base
@@ -155,6 +169,7 @@ echo "############################ inheritance: ref / ptr"
 # reference equality check
 # of creates a single layer of inheritance between types
 # base types should ref RootObj/a type that does
+# ^ RootRef is a reference to RootObj
 # ^ is the root of nims object hierachy, like javascripts object
 # ^ else they are implictly `final`
 # ^ TODO: find {.inheritable.} for introducing new object roots

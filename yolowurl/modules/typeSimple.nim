@@ -25,15 +25,6 @@
     toInt	Convert floating-point number into an int
     toFloat	Convert an integer into a float
 
-  Ordinal[T]
-  ordinal procs (integer, bool, char, enum and their subtypes)
-    succ	Successor of the value
-    pred	Predecessor of the value
-    inc	Increment the ordinal
-    dec	Decrement the ordinal
-    high	Return the highest possible value
-    low	Return the lowest possible value
-    ord	Return int value of an ordinal value
 
   misc procs
     is	Check if two arguments are of the same type
@@ -93,6 +84,11 @@ let
 
 
 echo "############################ number types"
+# SomeNumber matches Some[Integer|Float]
+# SomeFloat matches all float types
+# SomeInteger matches Some[Signed|Unsigned]Int
+# SomeSignedInt matches all signed integer types
+# SomeUnsignedInt matches all unsigned integer types
 let
   x1: int32 = 1.int32   # same as calling int32(1)
   y1: int8  = int8('a') # 'a' == 97'i8
@@ -128,6 +124,7 @@ echo "4 div 2 === ", num2 div num1 # always returns an int
 # float (alias for float64|BiggestFloat) === processors fastest type
 # PFloat32 alias for ptr float32
 # PFloat64 alias for ptr float64
+
 const
   num3 = 2.0 # float
   num4 = 4.0'f32

@@ -18,6 +18,8 @@ echo "############################ set"
 # ^ hash sets (import sets) have no restrictions
 # implemented as high performance bit vectors
 # often used to provide flags for procs
+
+# set[T] generic type for constructing bit sets
 type Opts = set[char]
 type IsOn = set[int8]
 let

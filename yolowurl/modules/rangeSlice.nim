@@ -1,6 +1,5 @@
 #[
-  types
-    - HSlice heterogeneous slice type
+  ...
 ]#
 
 echo "############################ range"
@@ -29,6 +28,8 @@ echo "############################ slice"
 # the operator/proc specify the type of values they work with
 # the slice provides a range of values matching the type required by the operator/proc
 
+# HSlice[T; U] T inclusive lower bound, U inclusive upper bound
+# Slice[T] alias for HSlice[T, T]
 # copied from docs
 var
   a = "Nim is a programming language"

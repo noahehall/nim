@@ -24,6 +24,7 @@ echo "############################ sequences dynamic-length dimensionally homoge
 # ^ or use the newSeq proc
 # for loops use the items (seq value) or pairs (index, value) on seqs
 
+# seq[T] generic type for constructing sequences
 var
   poops: seq[int] = @[1,2,3,4]
   spoop: seq[int] = newSeq[int](4) # empty but has length 4
