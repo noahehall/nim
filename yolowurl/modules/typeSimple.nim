@@ -58,6 +58,7 @@ echo "############################ strings"
 # can use any seq proc for manipulation
 # compared using lexicographical order
 # to intrepret unicode, you need to import the unicode module
+
 var msg: string = "yolo"
 echo msg & " wurl" # concat and return new string
 msg.add(" wurl") # modifies the string in place
@@ -70,7 +71,9 @@ let
     escape sequences arent interpreted
     """
 echo poop6, flush, multiline
-
+echo "cmp a, z ", cmp("a", "z")
+echo "cmp z, a ", cmp("z", "a")
+echo "cmp a, a ", cmp("a", "a")
 
 echo "############################ char"
 # 8 bit char (unsigned, basically an alias for uint8)
@@ -142,6 +145,7 @@ echo "4.0 div 2.0 === ", "gotcha: div is only for integers"
 echo "conversion acts like javascript floor()"
 echo "int(4.9) div int(2.0) === ", int(num5) div int(num3)
 echo "remainder of 5 / 2: ", 5 mod 2
+echo "(x).clamp(y, z) is faster than max(y, min(z, x)) ", 2.clamp(1, 3)
 
 echo "############################ hexadecimal"
 const

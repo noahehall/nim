@@ -243,4 +243,7 @@
 ]#
 
 
-echo "############################ something"
+echo "############################ runtime checking"
+# @see https://nim-lang.org/docs/system.html#compileOption%2Cstring%2Cstring
+when compileOption("opt", "size") and compileOption("gc", "boehm"):
+  echo "compiled with optimization for size and uses Boehm's GC"

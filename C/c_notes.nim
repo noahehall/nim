@@ -24,6 +24,7 @@
     culong unsigned long
     culonglong unsigned long long
     cushort unsigned short
-
+    cstringArrayToSeq
+    deallocCStringArray
 
 ]#

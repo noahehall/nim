@@ -11,7 +11,7 @@ echo "############################ type coercions"
 # toInt(float): convert float to an int
 # type(x): retrieve the type of x
 
-echo "############################ type inference"
+echo "############################ type checking"
 
 var somevar: seq[char] = @['n', 'o', 'a', 'h']
 echo "somevar is seq? ", somevar is seq
@@ -22,3 +22,8 @@ type MyType = ref object of RootObj
 var instance: MyType = MyType()
 
 echo "instance of MyType ", instance of MyType
+
+# checks whether x can be compiled without any semantic error.
+# useful to verify whether a type supports some operation:
+when compiles(3 + 4):
+  echo "'+' for integers is available"
