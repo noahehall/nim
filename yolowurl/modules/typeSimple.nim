@@ -107,10 +107,13 @@ let
 const
   b = 100
   c = 100'i8
+  negint = -1
   num0 = 0 # int
   num1: int = 2
   num2: int = 4
   amilliamilliamilli = 1_000_000
+
+echo "abs -1 is ", abs -1
 
 # uint: unsigned integers, 32/64 bit depending on system,
 # uint8,16,32,64 # 8 = 0 -> 2550, 16 = ~65k, 32 = ~4billion, BiggestUInt alias uinty64

@@ -3,6 +3,7 @@
 ]#
 
 echo "############################ range"
+# .. Binary slice operator that constructs an inclusive interval
 # b[0 .. ^1] ==  b[0 .. b.len-1] == b[0 ..< b.len]
 # forward: starts at 0
 # backward: start at ^1,

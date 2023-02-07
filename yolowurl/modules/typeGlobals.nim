@@ -1,5 +1,8 @@
 #[
-  all global operators, procs, etc
+  additional global operators, procs, etc
+  only captured the unusual/interesting globals
+  everything else is likely in yolowurl or another file
+
 
   @see
     - https://nim-lang.org/docs/system.html#8 are all on this page somewhere
@@ -13,6 +16,9 @@ echo "############################ interesting globals"
 # onUnhandledException (var) override default behavior: write stacktrace to stderr then quit(1)
 # outOfMemHook (var) override default behavior: write err msg then terminate (see docs for example)
 # unhandledExceptionHook (var) override default behavior: write err msg then terminate
+# addAndFetch doesnt have a description
+# addEscapedChar escapes y:char then appends to x:string
+# addQuoted escapes and quotes y:string then appends to x:string
 
 # hostCPU (const) "i386", "alpha", "powerpc", "powerpc64", "powerpc64el", "sparc", "amd64", "mips", "mipsel", "arm", "arm64", "mips64", "mips64el", "riscv32", "riscv64"
 echo "my hostCPU is " & hostCPU
@@ -61,18 +67,31 @@ echo "############################ global const"
 # Inf
 # NegInf
 
-echo "############################ global operators (numbers)"
+echo "############################ a word on operators"
+echo "anything like `blah=|blah=` can be written `blah =`"
+echo "the former enables you to define/overload operators via 'proc `poop=`[bloop](soop): doop = toot'"
+
+echo "############################ global operators dunno"
+# x =copy y
+# x =destroy y Generic destructor implementation
+# x =sink y Generic sink implementation
+# x =trace y Generic trace implementation
+
+echo "############################ global operators numbers"
 
 var globalint = 2
 var globalfloat = 2.5
 
+echo "can use blah% w/ generally any operator. ints are suppose to cast to uint before operation but doesnt seem to work"
 echo "10 %% 3 = ", 10 %% 3
 echo "3 *% -3 = ", 3 *% -3
 echo "3 +% -3 = ", 3 +% -3
+echo "3 <=% -3 = ", 3 <=% -3
+echo "can use blah= w/ generally any operator to mutate in place "
 echo "*= will multiply in place and return void for ints/floats, lol remember those errors we kept getting in the beginning?"
 
 
-echo "############################ global operators (string/char)"
+echo "############################ global operators string/char"
 
 var globalstring = "before"
 globalstring &= "appends in place, returns void"
@@ -80,17 +99,27 @@ echo "before ", globalstring
 
 echo globalstring & "appends char or string and returns new string"
 
-echo "############################ global operators (seqs)"
-
+echo "############################ global operators seqs"
+# @ converts [x..y, type] into seq[type] efficiently
+# converting an openArray into a seq is not as efficient as it copies all elements
 var globalseq = @[1,2,3]
 
 echo "concat 2 seq, copies both returns new", globalseq & @[4,5,6]
 echo "copy seq then append a single el and return new seq ", globalSeq & 4
 echo "copy seq then prepend a single el and return new seq ", 0 & globalseq
 
-echo "############################ global operators (sets)"
+echo "############################ global operators sets"
 
 var globalset1 = {1,2,3}
 var globalset2 = {2,4,6}
 echo "intersection of {1,2,3} and {2,4,6} = ", globalset1 * globalset2
 echo "union of {1,2,3} and {2,4,6} = ", globalset1 + globalset2
+echo "difference of {1,2,3} and {2,4,6} = ", globalset1 - globalset2
+echo "is {1,2,3} a subset of {1,2,3} ", globalset1 <= {1,2,3}
+echo "is {1,2,3} a strict subset of y ", globalset1 < {1,2,3}
+echo "the cardinality of {1,2,3} is ", card globalset1
+
+echo "############################ global operators ordinal"
+var globalarr = [1,0,0,4]
+globalarr[1..2] = @[2,3]
+echo "inplace mutation [1,0,0,4][1..2] = @[2,3] should be ", globalarr

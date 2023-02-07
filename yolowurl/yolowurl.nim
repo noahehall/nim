@@ -8,8 +8,7 @@
     - ../deepdives dir to dive deep
 
   the road to code
-    bookmark: https://nim-lang.org/docs/system.html#-%25%2Cint%2Cint
-      - move system out of deepdives and put in yolowurl
+    bookmark: https://nim-lang.org/docs/system.html#clamp%2CT%2CT%2CT
     then here: https://nim-lang.org/docs/nims.html (usecase: configs, scripts, build tool, bash replacement)
     then here: https://nim-lang.org/docs/nimscript.html
     then here: https://nim-lang.org/docs/nep1.html
@@ -139,6 +138,10 @@
     - postfix: dont exist in nim
 
   + - * \ / < > @ $ ~ & % ! ? ^ . |
+
+  in place mutations
+    add (appends y to x for any seq like container)
+    op= (left operand mutates in place)
 
   bool
     not, and, or, xor, <, <=, >, >=, !=, ==

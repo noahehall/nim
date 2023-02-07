@@ -10,3 +10,15 @@ echo "############################ type coercions"
 # toFloat(int): convert int to a float
 # toInt(float): convert float to an int
 # type(x): retrieve the type of x
+
+echo "############################ type inference"
+
+var somevar: seq[char] = @['n', 'o', 'a', 'h']
+echo "somevar is seq? ", somevar is seq
+echo "somevar is seq[char]? ", "throws err if testing seq[char]"
+echo "somevar isnot set? ", somevar isnot set
+
+type MyType = ref object of RootObj
+var instance: MyType = MyType()
+
+echo "instance of MyType ", instance of MyType
