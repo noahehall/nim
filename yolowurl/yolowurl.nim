@@ -8,7 +8,7 @@
     - ../deepdives dir to dive deep
 
   the road to code
-    bookmark: https://nim-lang.org/docs/system.html#clamp%2CT%2CT%2CT
+    bookmark: https://nim-lang.org/docs/system.html#del%2Cseq%5BT%5D%2CNatural
     then here: https://nim-lang.org/docs/nims.html (usecase: configs, scripts, build tool, bash replacement)
     then here: https://nim-lang.org/docs/nimscript.html
     then here: https://nim-lang.org/docs/nep1.html
@@ -167,11 +167,11 @@
       - ref semantics: referenced on assignment, anything with ref keyword
 
   ordinal (integers, chars, bool, subranges)
-    dec(x, n)	decrements x by n; n is an integer
-    dec(x)	decrements x by one
+    dec(x, n)	decrements x by n; n is an integer (mutates)
+    dec(x)	decrements x by one (mutates)
     high(x) highest possible value
-    inc(x, n)	increments x by n; n is an integer
-    inc(x)	increments x by one
+    inc(x, n)	increments x by n; n is an integer (mutes)
+    inc(x)	increments x by one (mutates)
     low(x) lowest possible value
     ord(x)	returns the integer value that is used to represent x's value
     pred(x, n)	returns the n'th predecessor of x

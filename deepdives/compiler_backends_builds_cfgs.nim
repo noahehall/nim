@@ -41,7 +41,7 @@
       --hotCodeReloading:on|off support for hot code reloading on|off
       --implicitStatic:on|off implicit compile time evaluation on|off
       --incremental:on|off only recompile the changed modules
-      --deepcopy:on|off  'system.deepCopy' for --mm:arc|orc
+      --deepcopy:on|off 'system.deepCopy', required to set via cli if using with --mm:arc|orc
       --mm:orc|arc|refc|markAndSweep|boehm|go|none|regions memory mgmt strategy, orc for new/async, arc|orc for realtime systems
       --multimethods:on|off
       --panics:on|off turn panics into process terminations
