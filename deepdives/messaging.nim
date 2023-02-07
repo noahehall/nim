@@ -1,19 +1,15 @@
 #[
   @see
-    - https://nim-by-example.github.io/json/
-    - https://nim-lang.org/docs/asyncfile.html
     - https://nim-lang.org/docs/htmlgen.html
     - https://nim-lang.org/docs/htmlparser.html
     - https://nim-lang.org/docs/json.html
+    - https://nim-by-example.github.io/json/
     - https://nim-lang.org/docs/jsonutils.html
-    - https://nim-lang.org/docs/logging.html
     - https://nim-lang.org/docs/marshal.html
-    - https://nim-lang.org/docs/memfiles.html
-    - https://nim-lang.org/docs/parsecfg.html
-    - https://nim-lang.org/docs/parsecsv.html
     - https://nim-lang.org/docs/parsejson.html
-    - https://nim-lang.org/docs/parsexml.html (and html)
     - https://nim-lang.org/docs/varints.html
+    - https://nim-lang.org/docs/logging.html
+    - https://nim-lang.org/docs/parsexml.html (and html)
     - https://nim-lang.org/docs/xmlparser.html (and html)
     - https://nim-lang.org/docs/xmltree.html (and html)
 

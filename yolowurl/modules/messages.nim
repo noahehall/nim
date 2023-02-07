@@ -8,7 +8,7 @@
 type MessageWhatev = ref object of RootObj
   iam: string
 
-var someMsg: MessageWhatev = MessageWhatev(iam: "lost in nim")
+var someMsg: MessageWhatev = MessageWhatev(iam: "lost in learning nim, but slowing starting to understand")
 
 echo "############################ echo and related"
 echo "just a regular echo statement"
@@ -18,6 +18,6 @@ echo "just a regular echo statement"
 debugEcho "this time with debugEcho "
 
 # prints anything
-# advanced/custom types cant use $ unless its defined for them (see elseware)
+# custom types cant use $ unless its defined for them (see elseware)
 # but you can use the repr proc on anything (its not the prettiest)
 echo "this time with repr ", someMsg.repr
