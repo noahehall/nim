@@ -67,6 +67,7 @@
       --define:nodejs target nodejs (not web) when target is js
       --define:memProfiler memory profile for the native GC
       --define:uClibc use uClibc instead of libc
+      --define:nimStrictDelete throws if indexed passed to a delete operator is out of bounds
 
 
     output OPTS

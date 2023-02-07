@@ -12,10 +12,6 @@ echo "############################ interesting globals"
 # globalRaiseHook (var) influence exception handling on a global level
 # ^ if not nil, every raise statement calls this hook
 # ^ if returns false, exception is caught and does not propagate
-# errorMessageWriter (var) called instead of stdmsg.write when printing stacktrace
-# onUnhandledException (var) override default behavior: write stacktrace to stderr then quit(1)
-# outOfMemHook (var) override default behavior: write err msg then terminate (see docs for example)
-# unhandledExceptionHook (var) override default behavior: write err msg then terminate
 # addAndFetch doesnt have a description
 # addEscapedChar escapes y:char then appends to x:string
 # addQuoted escapes and quotes y:string then appends to x:string
@@ -28,7 +24,21 @@ echo "############################ interesting globals"
 # dealloc frees the memory allocated with alloc, alloc0, realloc, create or createU
 # deallocHeap frees the thread local heap
 # deallocShared frees the mem allocated with allocShared, allocShared0 or reallocShared
-
+# equalMem compares size bytes of mem blocks a and b
+# errorMessageWriter (var) called instead of stdmsg.write when printing stacktrace
+# freeShared frees the mem allocated with createShared, createSharedU, or resizeShared
+# GC_disable()
+# GC_disableMarkAndSweep()
+# onUnhandledException (var) override default behavior: write stacktrace to stderr then quit(1)
+# outOfMemHook (var) override default behavior: write err msg then terminate (see docs for example)
+# unhandledExceptionHook (var) override default behavior: write err msg then terminate
+# GC_enable()
+# GC_enableMarkAndSweep()
+# GC_fullCollect()
+# GC_getStatistics():
+# getAllocStats():
+# getFrame():
+# getFrameState():
 
 # hostCPU (const) "i386", "alpha", "powerpc", "powerpc64", "powerpc64el", "sparc", "amd64", "mips", "mipsel", "arm", "arm64", "mips64", "mips64el", "riscv32", "riscv64"
 echo "my hostCPU is " & hostCPU
@@ -65,6 +75,16 @@ echo "on failure I call quit with ", $QuitFailure
 # QuitSuccess (const)
 echo "on success i call quit with ", $QuitSuccess
 
+# number of bytes owned by the process, but do not hold any meaningful data
+echo "my process has X bytes of free memory ", getFreeMem()
+
+# amount of memory i suppose, doesnt have description
+echo "my process has X bytes of max memory ", getMaxMem()
+echo "my process has X bytes of total memory ", getTotalMem()
+
+# number of bytes owned by the process and hold data
+echo "my process is using X bytes of memory ", getOccupiedMem()
+
 echo "############################ global vars"
 # labeled var because they are anonymous procs
 # localRaiseHook: same as globalRaiseHook but on a thread local level
@@ -77,12 +97,14 @@ echo "############################ global const"
 # Inf
 # NegInf
 
-echo "############################ global collections"
+echo "############################ global collections/sequences"
 # overload contains proc for custom in logic
 echo "seq[int] contains 6 ", @[5,6,7].contains(6)
 echo "(1..3) contains 2 ", (1..3).contains(2)
 echo "is a in arr[char] ", 'a' in ['a', 'b', 'c']
 echo "99 notin {1,2,3} ", 99 notin {1,2,3}
+echo "index of b in [a,b,c] ", ['a','b', 'c'].find('b')
+echo "index of 4 in @[1..8] ", @[1,2,3,4,5,6,7,8].find 4
 
 echo "############################ a word on operators"
 echo "anything like `xBLAH=` can be written `xBLAH =`"
@@ -135,6 +157,10 @@ echo "difference of {1,2,3} and {2,4,6} = ", globalset1 - globalset2
 echo "is {1,2,3} a subset of {1,2,3} ", globalset1 <= {1,2,3}
 echo "is {1,2,3} a strict subset of y ", globalset1 < {1,2,3}
 echo "the cardinality of {1,2,3} is ", card globalset1
+
+var globalset11 = deepCopy globalset1
+globalset11.excl({2})
+echo "remove {2} from {1,2,3} ", globalset11
 
 echo "############################ global operators ordinal"
 var globalarr = [1,0,0,4]

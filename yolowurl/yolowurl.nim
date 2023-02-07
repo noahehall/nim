@@ -8,7 +8,7 @@
     - ../deepdives dir to dive deep
 
   the road to code
-    bookmark: https://nim-lang.org/docs/system.html#del%2Cseq%5BT%5D%2CNatural
+    bookmark: https://nim-lang.org/docs/system.html#gorge%2Cstring%2Cstring%2Cstring
     then here: https://nim-lang.org/docs/nims.html (usecase: configs, scripts, build tool, bash replacement)
     then here: https://nim-lang.org/docs/nimscript.html
     then here: https://nim-lang.org/docs/nep1.html
@@ -123,6 +123,8 @@
     from thisThing as tt import nil # define an alias
 
   include: a file as part of this module
+  becareful with too many includes, its difficult to debug
+  line numbers dont point to specific included files, but to the composite file
     include xA,xB,xC
 
   # exporting stuff

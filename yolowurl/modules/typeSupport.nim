@@ -1,3 +1,9 @@
+#[
+  @see
+    - https://nim-lang.org/docs/typeinfo.html
+
+]#
+
 echo "############################ type casts"
 # cast operator forces the compiler to interpret a bit pattern to be of another type
 

@@ -11,6 +11,9 @@ type MessageWhatev = ref object of RootObj
 var someMsg: MessageWhatev = MessageWhatev(iam: "lost in learning nim, but slowing starting to understand")
 
 echo "############################ echo and related"
+# roughly equivalent to writeLine(stdout, x); flushFile(stdout)
+# available for the JavaScript target too.
+# cant be used with funcs/{.noSideEffect.}
 echo "just a regular echo statement"
 
 # same as echo but pretends to be free of sideffects

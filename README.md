@@ -3,8 +3,8 @@
 - my adventures in nim
 - all files are executable
 - alot of nodejs devs are moving to/incorporating rust/go in their stack; I chose nim for (many, but definitely these) two reasons
-  - [cross compilation](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
-  - [nimscript](https://nim-lang.org/docs/nims.html#benefits)
+  - [cross compile applications](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
+  - [cross platform scripts](https://nim-lang.org/docs/nims.html#benefits)
 
 ## Todos
 

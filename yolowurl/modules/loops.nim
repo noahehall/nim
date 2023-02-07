@@ -2,6 +2,10 @@
 #[
   @see
     - https://nim-lang.org/docs/iterators.html
+
+
+  iterator procs
+    - finished determine if a first class iterator has finished
 ]#
 
 echo "############################ iterators "
