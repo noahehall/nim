@@ -8,8 +8,7 @@
     - ../deepdives dir to dive deep
 
   the road to code
-    bookmark: https://nim-lang.org/docs/nims.html#nimscript-as-a-build-tool
-    then here: https://nim-lang.org/docs/nimscript.html
+    bookmark: https://nim-lang.org/docs/nimscript.html
     then here: https://nim-lang.org/docs/nep1.html
     then here: https://nim-lang.org/docs/backends.html
     finally 1: go through modules @see links and ensure you have captured relevant info in each file
@@ -17,6 +16,11 @@
 
   review:
     - we have like 1000 different nim files, consolidate
+    - somehow we've skipped a bunch of stuff (maybe there in deepdives as links?)
+      - effect tracking system
+      - testing
+      - tasks
+
 
   skim:
     then here: https://nim-lang.org/docs/manual_experimental.html
