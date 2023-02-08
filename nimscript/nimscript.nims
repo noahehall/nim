@@ -5,6 +5,8 @@
     - https://nim-lang.org/docs/nimscript.html
     - https://nim-lang.org/docs/tasks.html
     - https://github.com/kaushalmodi/nim_config/blob/master/config.nims (example script)
+    - https://github.com/nim-lang/Nim/blob/devel/tests/test_nimscript.nims (compatibility tests)
+    - https://github.com/nim-lang/nimble#creating-packages (with nimscript for nimble integration)
 
   usecase: configs (see compiler for --skip flags)
   nim will automatically process .nims configs in the following order (later overrides previous)
@@ -43,7 +45,7 @@ echo "############################ scripts"
 
 import std/distros
 
-# Architectures.
+# example Architectures.
 if defined(amd64):
   echo "Architecture is x86 64Bits"
 elif defined(i386):
@@ -51,7 +53,7 @@ elif defined(i386):
 elif defined(arm):
   echo "Architecture is ARM"
 
-# Operating Systems.
+# example Operating Systems.
 if defined(linux):
   echo "Operating System is GNU Linux"
 elif defined(windows):
@@ -59,10 +61,16 @@ elif defined(windows):
 elif defined(macosx):
   echo "Operating System is Apple OS X"
 
-# Distros.
+# example Distros.
 if detectOs(Ubuntu):
   echo "Distro is Ubuntu"
 elif detectOs(ArchLinux):
   echo "Distro is ArchLinux"
 elif detectOs(Debian):
   echo "Distro is Debian"
+
+# set the mode when the script starts
+author = "noah edward hall"
+backend = "c"
+mode = ScriptMode.Verbose ## \
+  ## Silent, Whatif echos instead of executes

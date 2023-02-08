@@ -1,10 +1,4 @@
 #[
-  i know more about cooking than I do about C
-  and I can barely reheat my coffee in the morning
-  still, here are some notes
-]#
-
-#[
   # types
 
   # nimtype = ctype

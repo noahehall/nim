@@ -11,7 +11,7 @@
     - https://nim-lang.org/docs/testament.html (preferred std testing tool)
     - https://nim-lang.org/docs/unittest.html (use testament instead)
     - https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling
-
+    - https://github.com/nim-lang/Nim/blob/devel/tests/test_nimscript.nims (testfile for nimscript)
 
   interesting stuff
     getStackTrace() only works for debug builds
