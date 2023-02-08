@@ -1,4 +1,8 @@
-
+#[
+  todos
+    likely @see https://nim-lang.org/docs/system.html#likely.t%2Cbool
+    unlikely @see https://nim-lang.org/docs/system.html#unlikely.t%2Cbool
+]#
 echo "############################ if"
 # if
 if not false: echo "true": else: echo "false"

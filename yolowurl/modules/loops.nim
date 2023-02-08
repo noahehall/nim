@@ -4,8 +4,10 @@
     - https://nim-lang.org/docs/iterators.html
 
 
-  iterator procs
-    - finished determine if a first class iterator has finished
+  procs/ops/etc
+    finished determine if a first class iterator has finished
+    closureScope @see https://nim-lang.org/docs/system.html#%7C%7C.i%2CS%2CT%2Cstaticstring
+
 ]#
 
 echo "############################ iterators "

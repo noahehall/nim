@@ -1,4 +1,8 @@
-
+#[
+  todos
+    offsetOf @see https://nim-lang.org/docs/system.html#offsetOf.t%2Ctypedesc%5BT%5D%2Cuntyped
+    rangeCheck(cond) @see https://nim-lang.org/docs/system.html#rangeCheck.t
+]#
 echo "############################ procedures"
 # returning things: (cant contain a yield statement)
 # ^ use return keyword for early returns
@@ -130,6 +134,8 @@ echo "############################ varargs (proc spread params)"
 # varargs[T] generic constructor
 # s auto converted to seq[string]
 proc eko_all(s: varargs[string]) =
+  # varargsLen returns the numbe rof variadic arguments
+  echo "total els in varargs: ", varargsLen(s), " maybe not ", len(s)
   for x in s:
     echo "var arg: ", x
 e_k_o_a_l_l "this", "that", "thot"

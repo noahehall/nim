@@ -23,3 +23,8 @@ echo "############################ do"
 # you have to read the docs on this one
 echo do:
   "this ting"
+
+echo "############################ once"
+
+once:
+  echo "this the first time this block is reached"

@@ -3,6 +3,12 @@
   @see
     - https://nim-lang.org/docs/io.html
 
+  procs/ops/etc
+    currentSourcePath() @see https://nim-lang.org/docs/system.html#currentSourcePath.t
+    os.parentDir()
+    macros.getProjectPath()
+    getCurrentDir proc
+
 ]#
 
 
