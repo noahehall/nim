@@ -2,7 +2,31 @@
 #[
   @see
     - https://nim-lang.org/docs/io.html
+
 ]#
+
+
+type MessageWhatev = ref object of RootObj
+  iam: string
+
+var someMsg: MessageWhatev = MessageWhatev(iam: "lost in learning nim, but slowing starting to understand")
+
+echo "############################ echo and related"
+# roughly equivalent to writeLine(stdout, x); flushFile(stdout)
+# available for the JavaScript target too.
+# cant be used with funcs/{.noSideEffect.}
+echo "just a regular echo statement"
+
+# same as echo but pretends to be free of sideffects
+# for use with funcs/procs marked as {.noSideEffect.}
+debugEcho "this time with debugEcho "
+
+# prints anything
+# custom types cant use $ unless its defined for them (see elseware)
+# but you can use the repr proc on anything (its not the prettiest)
+echo "this time with repr ", someMsg.repr
+
+
 echo "############################ io"
 # no clue why we need to add the dir
 # not that way in system.nim
@@ -33,3 +57,16 @@ proc writeLines(s: seq[string]): void =
   for i, l in s: f.writeLine l
 writeLines @["first line", "Second line"]
 echo readFile tmpfile
+
+echo "############################ exec related"
+
+# gorge alias for staticExec
+# gorgeEx similar to gorge but returns tuple(result, exitCode)
+# staticExec external process at compiletime and return its output (stdout + stderr)
+# slurp alias for staticRead
+# staticRead compile-time readFile for easy resource embedding, e.g. const myResource = staticRead"mydatafile.bin"
+
+# docs
+const buildInfo = "Revision " & staticExec("git rev-parse HEAD") &
+                  "\nCompiled on " & staticExec("uname -v")
+echo "build info: ", buildInfo

@@ -12,11 +12,13 @@
     - https://nim-lang.org/docs/unittest.html (use testament instead)
     - https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling
 
+
   interesting stuff
     getStackTrace() only works for debug builds
     getStackTrace(e) of a specific exception
     getStackTraceEntries() doesnt work for the js backend
     getStackTraceEntries(e) of a specific exception
+    runnableExamples embed copypasta in documentation, @see https://nim-lang.org/docs/system.html#runnableExamples%2Cstring%2Cuntyped
 
 ]#
 

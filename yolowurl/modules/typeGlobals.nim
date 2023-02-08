@@ -1,7 +1,7 @@
 #[
   additional global operators, procs, etc
   only captured the unusual/interesting globals
-  everything else is likely in yolowurl or another file
+  everything else is likely in another file
 
 
   @see
@@ -29,9 +29,6 @@ echo "############################ interesting globals"
 # freeShared frees the mem allocated with createShared, createSharedU, or resizeShared
 # GC_disable()
 # GC_disableMarkAndSweep()
-# onUnhandledException (var) override default behavior: write stacktrace to stderr then quit(1)
-# outOfMemHook (var) override default behavior: write err msg then terminate (see docs for example)
-# unhandledExceptionHook (var) override default behavior: write err msg then terminate
 # GC_enable()
 # GC_enableMarkAndSweep()
 # GC_fullCollect()
@@ -39,6 +36,20 @@ echo "############################ interesting globals"
 # getAllocStats():
 # getFrame():
 # getFrameState():
+# isNotForeign returns true if x belongs to the calling thread
+# iterToProc
+# moveMem copies content from memory at source to memory at dest
+# onUnhandledException (var) override default behavior: write stacktrace to stderr then quit(1)
+# outOfMemHook (var) override default behavior: write err msg then terminate (see docs for example)
+# prepareMutation string literals in ARC/ORC mode are copy on write, this must be called before mutating them
+# rawEnv retrieve the raw env pointer of a closure
+# rawProc retrieve the raw proc pointer of closer X
+# reset an object to its default value
+# resize a memory block
+# resizeShared
+# setControlCHook proc to run when program is ctrlc'ed
+# sizeof blah in bytes
+# unhandledExceptionHook (var) override default behavior: write err msg then terminate
 
 # hostCPU (const) "i386", "alpha", "powerpc", "powerpc64", "powerpc64el", "sparc", "amd64", "mips", "mipsel", "arm", "arm64", "mips64", "mips64el", "riscv32", "riscv64"
 echo "my hostCPU is " & hostCPU
@@ -84,6 +95,15 @@ echo "my process has X bytes of total memory ", getTotalMem()
 
 # number of bytes owned by the process and hold data
 echo "my process is using X bytes of memory ", getOccupiedMem()
+
+# efficiently retrieve a tuple of all local variables
+echo "locally defined vars are those not in a global scope ", locals()
+block superPrivateScope:
+  var inScope: string = "im in a block"
+  echo "locals in a block: ", locals()
+
+# shorthand for echo(msg); quit(code)
+echo "quit the program with quit(n) or quit(msg, n)"
 
 echo "############################ global vars"
 # labeled var because they are anonymous procs

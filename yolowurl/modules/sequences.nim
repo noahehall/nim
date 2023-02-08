@@ -6,8 +6,10 @@
     delete	Delete an item while preserving the order of elements (O(n) operation)
     insert	Insert an item at a specific position
     len	Return the length of a sequence
-    newSeq	Create a new sequence of a given length
+    newSeq[T](n)	create seq of T with length n, = values to each index instead of add
+    newSeq[T](s: seq[T]; n) create seq of T with length n, assigned to var s
     newSeqOfCap	Create a new sequence with zero length and a given capacity
+    newSeqUninitialized only available for number types
     pop	Remove and return last item of a sequence
     setLen	Set the length of a sequence
     x & y	Concatenate two sequences
@@ -15,14 +17,12 @@
     x[a .. b]	Slice of a sequence (both ends included)
     x[a ..< b]	Slice of a sequence (excluded upper bound)
 ]#
+
 echo "############################ sequences dynamic-length dimensionally homogeneous"
-# length can change @ runtime (like strings)
 # always heap allocated & gc'ed
-# always indexed starting at 0
 # can be passed to any proc accepting a seq/openarray
 # the @ is the array to seq operator: init array and convert to seq
 # ^ or use the newSeq proc
-# for loops use the items (seq value) or pairs (index, value) on seqs
 
 # seq[T] generic type for constructing sequences
 var

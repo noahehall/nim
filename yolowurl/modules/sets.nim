@@ -4,13 +4,19 @@
 
   procs
     a - b	Difference
-    a * b	Intersection
-    a + b	Union
+    A - B	difference of two sets (A without B's elements)
+    A * B	intersection of two sets
+    A + B	union of two sets
     a < b	Check if a is a subset of b
-    card	Return the cardinality of the set, i.e. the number of elements
-    contains	Check if an element is in the set
-    excl	Exclude element y from the set x
-    incl	Include element y in the set x
+    A < B	strict subset relation (A is a proper subset of B)
+    A <= B	subset relation (A is subset of B or equal to B)
+    A == B	set equality
+    card(A)	the cardinality of A (number of elements in A)
+    contains(A, e)	A contains element e
+    e in A	set membership (A contains element e)
+    e notin A	A does not contain element e
+    excl(A, elem)	same as A = A - {elem}
+    incl(A, elem)	same as A = A + {elem}
 ]#
 
 echo "############################ set"

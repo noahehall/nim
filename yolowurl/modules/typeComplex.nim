@@ -2,13 +2,37 @@
   SomeOrdinal matches any ordinal type (including enums with holes)
   Ordinal[T] generic ordinal type (integer, bool, char, enum and their subtypes)
   ordinal procs
-    succ	Successor of the value
-    pred	Predecessor of the value
-    inc	Increment the ordinal
-    dec	Decrement the ordinal
-    high	Return the highest possible value
-    low	Return the lowest possible value
-    ord	Return int value of an ordinal value
+    dec(x, n)	decrements x by n; n is an integer (mutates)
+    dec(x)	decrements x by one (mutates)
+    high(x) highest possible value
+    inc(x, n)	increments x by n; n is an integer (mutes)
+    inc(x)	increments x by one (mutates)
+    low(x) lowest possible value
+    ord(x)	returns the integer value that is used to represent x's value
+    pred(x, n)	returns the n'th predecessor of x, pred(5) == 4
+    succ(x, n)	returns the n'th successor of x
+    succ(x)	returns the successor of x
+
+  ref/pter:
+    . and [] always def-ref, i.e. return the value and not the ref
+    . access tuple/object
+    [] arr/seq/string
+    new(T) object of type T and return a traced ref, when T is a ref the result type will be T, else ref T
+    new[T](a) object of type T and return a trace reference to it in a
+    new[T](a; finalizer) same as before, but this time finalizer is called a is gc'ed
+
+  most types
+    isNil(x) everything sans Seq (check for 0 length instead)
+    len(x)
+    of
+    as
+    in notin is isnot
+    setLen increase/truncate the length of something
+    shallow(blah) marks blah as shallow for optimization, subsequent assignments  wont deep copy
+    shallowCopy(blah) use this instead of = for a shallow copy
+    toOpenArray
+    toOpenArrayByte
+
 
 ]#
 echo "############################ useful type list"
@@ -239,6 +263,7 @@ proc newPlus(a, b: Expression): PlusExpr = PlusExpr(a: a, b: b)
 
 echo eval(newPlus(newPlus(newLit(1), newLit(2)), newLit(4)))
 
+# you can force call the base method via procCall someMethod(a,b)
 
 echo "############################ multi-methods"
 # occurs when multiple overloaded procs exist with different signatures

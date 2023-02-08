@@ -11,19 +11,25 @@
     a & b	Concatenate two strings
     s.add(c)	Add character to the string
     $	Convert various types to string
+    substr
 
   number procs
-    div	Integer division	//
+    and	Bitwise and	&
+    ashr	Arithmetic shift right
+    div	Integer division
+    max(x,y)
+    min(x,y)
     mod	Integer modulo (remainder)	%
+    not	Bitwise not (complement)	~
+    or	Bitwise or	|
     shl	Shift left	<<
     shr	Shift right	>>
-    ashr	Arithmetic shift right
-    and	Bitwise and	&
-    or	Bitwise or	|
-    xor	Bitwise xor	^
-    not	Bitwise not (complement)	~
-    toInt	Convert floating-point number into an int
+    toBiggestFloat
+    toBiggestInt
     toFloat	Convert an integer into a float
+    toInt	Convert floating-point number into an int
+    xor	Bitwise xor	^
+
 
 
   misc procs
@@ -58,6 +64,7 @@ echo "############################ strings"
 # can use any seq proc for manipulation
 # compared using lexicographical order
 # to intrepret unicode, you need to import the unicode module
+
 
 var msg: string = "yolo"
 echo msg & " wurl" # concat and return new string

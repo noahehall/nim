@@ -16,6 +16,7 @@ echo "############################ type coercions"
 # toFloat(int): convert int to a float
 # toInt(float): convert float to an int
 # type(x): retrieve the type of x
+# typeof(x): same as type
 
 echo "############################ type catchall"
 var somevar: seq[char] = @['n', 'o', 'a', 'h']

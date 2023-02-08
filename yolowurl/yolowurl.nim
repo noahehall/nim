@@ -8,7 +8,7 @@
     - ../deepdives dir to dive deep
 
   the road to code
-    bookmark: https://nim-lang.org/docs/system.html#gorge%2Cstring%2Cstring%2Cstring
+    bookmark: https://nim-lang.org/docs/system.html#15
     then here: https://nim-lang.org/docs/nims.html (usecase: configs, scripts, build tool, bash replacement)
     then here: https://nim-lang.org/docs/nimscript.html
     then here: https://nim-lang.org/docs/nep1.html
@@ -95,6 +95,7 @@
       - TODO: figure out which is more performant or if there are existing guidelines
       - tuple: inheritance / private fields / reference equality arent required
       - object: inheritance / private fields / reference equality are required
+    - refrain from using blah% operators, then tend to be legacy, see https://github.com/nirv-ai/docs/issues/50
 ]#
 
 #[
@@ -127,8 +128,8 @@
   line numbers dont point to specific included files, but to the composite file
     include xA,xB,xC
 
-  # exporting stuff
-  export something
+  # exporting
+    export something
 ]#
 
 #[
@@ -143,7 +144,7 @@
 
   in place mutations
     add (appends y to x for any seq like container)
-    op= (left operand mutates in place)
+    blah= (generally left operand mutated in place)
 
   bool
     not, and, or, xor, <, <=, >, >=, !=, ==
@@ -160,7 +161,7 @@
   integer division
     div
 
-  module
+  modulo
     mod
 
   assignment
@@ -168,44 +169,9 @@
       - value semantics: copied on assignment, all types have value semantics
       - ref semantics: referenced on assignment, anything with ref keyword
 
-  ordinal (integers, chars, bool, subranges)
-    dec(x, n)	decrements x by n; n is an integer (mutates)
-    dec(x)	decrements x by one (mutates)
-    high(x) highest possible value
-    inc(x, n)	increments x by n; n is an integer (mutes)
-    inc(x)	increments x by one (mutates)
-    low(x) lowest possible value
-    ord(x)	returns the integer value that is used to represent x's value
-    pred(x, n)	returns the n'th predecessor of x
-    pred(x)	returns the predecessor of x
-    succ(x, n)	returns the n'th successor of x
-    succ(x)	returns the successor of x
-
-  set
-    A + B	union of two sets
-    A * B	intersection of two sets
-    A - B	difference of two sets (A without B's elements)
-    A == B	set equality
-    A <= B	subset relation (A is subset of B or equal to B)
-    A < B	strict subset relation (A is a proper subset of B)
-    e in A	set membership (A contains element e)
-    e notin A	A does not contain element e
-    contains(A, e)	A contains element e
-    card(A)	the cardinality of A (number of elements in A)
-    incl(A, elem)	same as A = A + {elem}
-    excl(A, elem)	same as A = A - {elem}
-
-  ref/pter:
-    . and [] always def-ref, i.e. return the value and not the ref
-    . access tuple/object
-    [] arr/seq/string
-    new allocate a new instance
 ]#
 
 #[
-  # keywords
-    of as in notin is isnot
-
     return
       - without an expression is shorthand for return result
     result
@@ -298,7 +264,6 @@ include modules/[
   typeGenerics,
   tuples,
   typeSupport,
-  messages,
   osIoFiles,
   typeGlobals
 ]

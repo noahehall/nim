@@ -1,6 +1,9 @@
 #[
   @see
     - https://nim-lang.org/docs/algorithm.html
+
+  procs n stuff
+    swap (a,b) swatch the values of a and b, more efficient than tmp = a; a = b; b = tmp.
 ]#
 
 import std/algorithm

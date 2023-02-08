@@ -4,7 +4,8 @@
 ]#
 
 #[
-  # types
+  # stuff
     ForLoopStmt
     NimNode
+    instantiationInfo
 ]#
