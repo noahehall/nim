@@ -7,6 +7,7 @@
     - https://github.com/kaushalmodi/nim_config/blob/master/config.nims (example script)
     - https://github.com/nim-lang/Nim/blob/devel/tests/test_nimscript.nims (compatibility tests)
     - https://github.com/nim-lang/nimble#creating-packages (with nimscript for nimble integration)
+    - https://nim-lang.org/docs/os.html
 
   usecase: configs (see compiler for --skip flags)
   nim will automatically process .nims configs in the following order (later overrides previous)
@@ -23,6 +24,8 @@
     - The syntax, style, etc is identical to compiled nim
     - supports templates, macros, types, concepts, effect tracking system, etc
     - modules can work in both .nim and .nims (see limitations)
+    - FYI: a *.nims file doesnt have a separate $projectDir/$project config file,
+      - it is its own config file, but can rely on the other types, or manually import
 
   limitations
     - any stdlib module relying on `importc` pragma cant be used
@@ -45,7 +48,7 @@ echo "############################ scripts"
 
 import std/distros
 
-# example Architectures.
+# example Architectures (docs)
 if defined(amd64):
   echo "Architecture is x86 64Bits"
 elif defined(i386):
@@ -53,7 +56,7 @@ elif defined(i386):
 elif defined(arm):
   echo "Architecture is ARM"
 
-# example Operating Systems.
+# example Operating Systems (docs)
 if defined(linux):
   echo "Operating System is GNU Linux"
 elif defined(windows):
@@ -61,7 +64,7 @@ elif defined(windows):
 elif defined(macosx):
   echo "Operating System is Apple OS X"
 
-# example Distros.
+# example Distros (docs)
 if detectOs(Ubuntu):
   echo "Distro is Ubuntu"
 elif detectOs(ArchLinux):
@@ -69,8 +72,50 @@ elif detectOs(ArchLinux):
 elif detectOs(Debian):
   echo "Distro is Debian"
 
-# set the mode when the script starts
+# nimble integration/metadata
+# bin, binDir, installDirs, installExt, installFiles
+# skipDirs, skipExt, skipFiles, srcDir
+# packageName = the default is the nimscript filename
 author = "noah edward hall"
 backend = "c"
+description = "my first nimscript!"
+license = "Free"
+version = "0.0.1"
+
 mode = ScriptMode.Verbose ## \
   ## Silent, Whatif echos instead of executes
+  ## set the mode when the script starts
+  ## influece how mkDir, rmDir, etc behave
+
+# requiresData: seq[string] = ## \
+  # list of requirments for r/w access
+
+const buildCPU = system.hostCPU ## \
+  ## useful for cross compilation
+
+const buildOS = system.hostOS ## \
+  ## useful for cross copmilation
+
+when true:
+  echo "this package was built on: ", buildOs, "/", buildCPU
+
+# nimscript specific procs
+# cppDefine,
+# cpDir(from, to)
+# cpFile(from, to)
+
+cd ".." ## \
+  ## permanently change directories
+  ## use withDir
+
+exec "ls" ## \
+  ## if cmd errs an OSError is raised
+  ## use gorgeEx to instead receive the exit code & output
+
+echo "is a == A ? ", cmpic("a", "A")
+
+delEnv("MY_LEAKED_BANKACCOUNT_PASSWORD") ## \
+  ## from the environment
+
+echo "yolo world? ", dirExists("../yolowurl") ## \
+  ## reporting false, dunno, likely due to cwd

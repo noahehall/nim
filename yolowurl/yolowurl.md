@@ -1,2 +1,2 @@
-- modules: I attemped to group things by my expect search patterns
-- yolowurl.nim: includes each module/\*.nim
+- modules: I attemped to group things by my expected search patterns
+- yolowurl.nim: simply includes each module/\*.nim

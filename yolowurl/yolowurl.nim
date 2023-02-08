@@ -20,6 +20,8 @@
       - effect tracking system
       - testing
       - tasks
+    - cant get too far in nim without readin through the nimble github readme
+    - rework all of these weird comments to use docgen
 
 
   skim:
