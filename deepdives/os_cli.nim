@@ -3,6 +3,7 @@
 
   @see
     - https://nim-lang.org/docs/browsers.html
+    - https://nim-lang.org/docs/packaging.html
     - https://nim-lang.org/docs/cpuinfo.html
     - https://nim-lang.org/docs/distros.html
     - https://nim-lang.org/docs/os.html

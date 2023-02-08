@@ -2,10 +2,16 @@
 
 - my adventures in nim
 - all files are executable
-- alot of nodejs devs are moving to/incorporating rust/go in their stack; I chose nim for (many, but definitely these) two reasons
+- alot of nodejs devs are moving to/incorporating rust/go in their stack; I chose nim for (many, but definitely these) two (lol) reasons
   - [cross compile applications](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
   - [cross platform scripts](https://nim-lang.org/docs/nims.html#benefits)
   - [documentation support](https://nim-lang.org/docs/docgen.html)
+  - [spidermans uncle](https://nim-lang.org/docs/tut3.html)
+- tldr
+  - [hello world](./yolowurl/)
+  - [deep dives](./deepdives/)
+  - [community repos](./community/README.md)
+  - [nimscript](./nimscript/nimscript.nims)
 
 ## Todos
 
@@ -14,6 +20,7 @@
 
 ---
 
+- [you can grep for specifics here](https://nim-lang.github.io/fusion/theindex.html)
 - [skipped most of the section on cross compilation](https://nim-lang.org/docs/nimc.html#crossminuscompilation-for-windows)
 - [pacman devkitpro for nix](https://github.com/devkitPro/pacman/releases)
 - [dll generation](https://nim-lang.org/docs/nimc.html#dll-generation)
