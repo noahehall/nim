@@ -111,28 +111,24 @@ window.addEventListener('DOMContentLoaded', main);
     title="BinaryTree[T] = ref object
   le, ri: BinaryTree[T]
   data: T">BinaryTree</a></li>
-  <li><a class="reference" href="#BlinkLights"
-    title="BlinkLights = enum
-  off, on, slowBlink, mediumBlink, fastBlink">BlinkLights</a></li>
-  <li><a class="reference" href="#Direction"
-    title="Direction = enum
-  north, east, south, west">Direction</a></li>
   <li><a class="reference" href="#Eating"
     title="Eating = array[breakfast .. sweettooth, WhatToEat]">Eating</a></li>
   <li><a class="reference" href="#Expression"
     title="Expression = ref object of RootObj">Expression</a></li>
-  <li><a class="reference" href="#GangsOfAmerica"
-    title="GangsOfAmerica = enum
-  democrats, republicans, politicians">GangsOfAmerica</a></li>
+  <li><a class="reference" href="#goodapplications"
+    title="goodapplications = object
+  pubfield*: string          ## is included in docs
+  prvfield: string           ## also included since goodapplications is exported">goodapplications</a></li>
   <li><a class="reference" href="#IPoop_2"
     title="IPoop = ref object of WhoPoop">IPoop</a></li>
   <li><a class="reference" href="#IsOn"
     title="IsOn = set[int8]">IsOn</a></li>
-  <li><a class="reference" href="#LevelSetting"
-    title="LevelSetting = array[north .. west, BlinkLights]">LevelSetting</a></li>
   <li><a class="reference" href="#Literal"
     title="Literal = ref object of Expression
   x: int">Literal</a></li>
+  <li><a class="reference" href="#MessageWhatev"
+    title="MessageWhatev = ref object of RootObj
+  iam: string">MessageWhatev</a></li>
   <li><a class="reference" href="#MonthlyFoodTracker"
     title="MonthlyFoodTracker = array[0 .. 3, array[0 .. 6,
     array[breakfast .. sweettooth, WhatToEat]]]">MonthlyFoodTracker</a></li>
@@ -143,6 +139,8 @@ window.addEventListener('DOMContentLoaded', main);
     title="MyFlags = set[MyFlag]">MyFlags</a></li>
   <li><a class="reference" href="#MySubrange"
     title="MySubrange = range[0 .. 5]">MySubrange</a></li>
+  <li><a class="reference" href="#MyType"
+    title="MyType = ref object of RootObj">MyType</a></li>
   <li><a class="reference" href="#NirvStack"
     title="NirvStack = tuple[fe: seq[string], be: seq[string]]">NirvStack</a></li>
   <li><a class="reference" href="#Node"
@@ -179,10 +177,6 @@ window.addEventListener('DOMContentLoaded', main);
   <li><a class="reference" href="#OrRefObject"
     title="OrRefObject = ref object
   fieldX, y, z: string">OrRefObject</a></li>
-  <li><a class="reference" href="#PeopleOfAmerica"
-    title="PeopleOfAmerica {.pure.} = enum
-  coders = &quot;think i am&quot;, teachers = &quot;pretend to be&quot;, farmers = &quot;prefer to be&quot;,
-  scientists = &quot;trying to be&quot;">PeopleOfAmerica</a></li>
   <li><a class="reference" href="#PlusExpr"
     title="PlusExpr = ref object of Expression
   a, b: Expression">PlusExpr</a></li>
@@ -244,9 +238,13 @@ window.addEventListener('DOMContentLoaded', main);
     title="a = &quot;Nim is a programming language&quot;">a</a></li>
   <li><a class="reference" href="#aaaa"
     title="aaaa: Unit">aaaa</a></li>
+  <li><a class="reference" href="#alreadyExecuted%60gensym17"
+    title="alreadyExecuted`gensym17 = false">alreadyExecuted`gensym17</a></li>
   <li><a class="reference" href="#arrayWithRange"
     title="arrayWithRange: array[0 .. 5, string] = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;,
     &quot;six&quot;]">arrayWithRange</a></li>
+  <li><a class="reference" href="#autoInt"
+    title="autoInt: auto = 7">autoInt</a></li>
   <li><a class="reference" href="#bbb"
     title="bbb = &quot;Slices are useless.&quot;">bbb</a></li>
   <li><a class="reference" href="#bbbb"
@@ -256,6 +254,8 @@ window.addEventListener('DOMContentLoaded', main);
     &quot;senior&quot;, &quot;intermediate&quot;)">bizDevOps</a></li>
   <li><a class="reference" href="#capitals"
     title="capitals: array[3, string]">capitals</a></li>
+  <li><a class="reference" href="#d33pcopy"
+    title="d33pcopy: string">d33pcopy</a></li>
   <li><a class="reference" href="#emptyArr"
     title="emptyArr: array[4, int]">emptyArr</a></li>
   <li><a class="reference" href="#emptySeq"
@@ -264,14 +264,30 @@ window.addEventListener('DOMContentLoaded', main);
     title="err: ref OSError">err</a></li>
   <li><a class="reference" href="#fruits"
     title="fruits: seq[string]">fruits</a></li>
+  <li><a class="reference" href="#globalarr"
+    title="globalarr = [1, 0, 0, 4]">globalarr</a></li>
+  <li><a class="reference" href="#globalfloat"
+    title="globalfloat = 2.5">globalfloat</a></li>
+  <li><a class="reference" href="#globalint"
+    title="globalint = 2">globalint</a></li>
+  <li><a class="reference" href="#globalseq"
+    title="globalseq = @[1, 2, 3]">globalseq</a></li>
+  <li><a class="reference" href="#globalset1"
+    title="globalset1 = {1, 2, 3}">globalset1</a></li>
+  <li><a class="reference" href="#globalset2"
+    title="globalset2 = {2, 4, 6}">globalset2</a></li>
+  <li><a class="reference" href="#globalset11"
+    title="globalset11 = deepCopy globalset1">globalset11</a></li>
+  <li><a class="reference" href="#globalstring"
+    title="globalstring = &quot;before&quot;">globalstring</a></li>
   <li><a class="reference" href="#hardCoreStack"
     title="hardCoreStack: NirvStack = (@[&quot;ts&quot;], @[&quot;ts, bash&quot;])">hardCoreStack</a></li>
   <li><a class="reference" href="#ii"
     title="ii: int">ii</a></li>
+  <li><a class="reference" href="#instance"
+    title="instance: MyType = MyType()">instance</a></li>
   <li><a class="reference" href="#lastWeek"
     title="lastWeek: WeeklyFoodTracker">lastWeek</a></li>
-  <li><a class="reference" href="#level"
-    title="level: LevelSetting">level</a></li>
   <li><a class="reference" href="#me"
     title="me = &quot;noAH&quot;">me</a></li>
   <li><a class="reference" href="#msg"
@@ -308,8 +324,14 @@ window.addEventListener('DOMContentLoaded', main);
     title="sj = (iz: &quot;super&quot;, wha: 133, t: 't')">sj</a></li>
   <li><a class="reference" href="#smun"
     title="smun = [5, 8, 9, 1]">smun</a></li>
+  <li><a class="reference" href="#someMsg"
+    title="someMsg: MessageWhatev = MessageWhatev(iam: &quot;lost in learning nim, but slowing starting to understand&quot;)">someMsg</a></li>
+  <li><a class="reference" href="#somevar"
+    title="somevar: seq[char] = @['n', 'o', 'a', 'h']">somevar</a></li>
   <li><a class="reference" href="#spoop"
     title="spoop: seq[int] = newSeq(4)">spoop</a></li>
+  <li><a class="reference" href="#typeSupportBlah"
+    title="typeSupportBlah = &quot;halb&quot;">typeSupportBlah</a></li>
   <li><a class="reference" href="#xy"
     title="xy = 4">xy</a></li>
   <li><a class="reference" href="#zz"
@@ -326,6 +348,8 @@ window.addEventListener('DOMContentLoaded', main);
     title="aa = Option[int](hasValue: true, value: 1)">aa</a></li>
   <li><a class="reference" href="#aaa"
     title="aaa = [(10, 'a'), (20, 'b'), (30, 'c')]">aaa</a></li>
+  <li><a class="reference" href="#badcode"
+    title="badcode = &quot;ishardtomaintain&quot;">badcode</a></li>
   <li><a class="reference" href="#bb"
     title="bb = Option[int](hasValue: true, value: 2)">bb</a></li>
   <li><a class="reference" href="#bizRating"
@@ -338,6 +362,8 @@ window.addEventListener('DOMContentLoaded', main);
     title="flags: Opts = {'d'..'z'}">flags</a></li>
   <li><a class="reference" href="#flush"
     title="flush = r&quot;raw string, escapes arent interpreted&quot;">flush</a></li>
+  <li><a class="reference" href="#goodcode"
+    title="goodcode = &quot;isdocumented&quot;">goodcode</a></li>
   <li><a class="reference" href="#intArr"
     title="intArr = [5, 4, 3, 2, 1]">intArr</a></li>
   <li><a class="reference" href="#ipoop"
@@ -366,10 +392,10 @@ window.addEventListener('DOMContentLoaded', main);
     title="sniper = &quot;scope parent&quot;">sniper</a></li>
   <li><a class="reference" href="#sum"
     title="sum: int = int(x1) + int(y1) + int(z1)">sum</a></li>
+  <li><a class="reference" href="#theyAskedNickely%60gensym30"
+    title="theyAskedNickely`gensym30 = true">theyAskedNickely`gensym30</a></li>
   <li><a class="reference" href="#theyAskedNickely%60gensym31"
-    title="theyAskedNickely`gensym31 = true">theyAskedNickely`gensym31</a></li>
-  <li><a class="reference" href="#theyAskedNickely%60gensym32"
-    title="theyAskedNickely`gensym32 = false">theyAskedNickely`gensym32</a></li>
+    title="theyAskedNickely`gensym31 = false">theyAskedNickely`gensym31</a></li>
   <li><a class="reference" href="#thisInt"
     title="thisInt: StrOrInt = 1">thisInt</a></li>
   <li><a class="reference" href="#thizString"
@@ -402,6 +428,8 @@ window.addEventListener('DOMContentLoaded', main);
     title="amilliamilliamilli = 1000000">amilliamilliamilli</a></li>
   <li><a class="reference" href="#b"
     title="b = 100">b</a></li>
+  <li><a class="reference" href="#buildInfo"
+    title="buildInfo = &quot;Revision 3940f957028b6158ce1f6b7117e07e4f6ab8312e\nCompiled on #64-Ubuntu SMP Thu Jan 5 11:43:13 UTC 2023&quot;">buildInfo</a></li>
   <li><a class="reference" href="#c"
     title="c = 100'i8">c</a></li>
   <li><a class="reference" href="#debug"
@@ -424,13 +452,24 @@ window.addEventListener('DOMContentLoaded', main);
     title="lastFour = 4">lastFour</a></li>
   <li><a class="reference" href="#lastOne"
     title="lastOne = 1">lastOne</a></li>
-  <li><a class="reference" href="#loc%60gensym29"
-    title="loc`gensym29 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/yolowurl.nim&quot;,
-                line: 1349, column: 6)">loc`gensym29</a></li>
+  <li><a class="reference" href="#loc%60gensym2"
+    title="loc`gensym2 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;,
+               line: 156, column: 7)">loc`gensym2</a></li>
+  <li><a class="reference" href="#loc%60gensym4"
+    title="loc`gensym4 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;,
+               line: 159, column: 9)">loc`gensym4</a></li>
+  <li><a class="reference" href="#loc%60gensym6"
+    title="loc`gensym6 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;,
+               line: 164, column: 9)">loc`gensym6</a></li>
+  <li><a class="reference" href="#loc%60gensym28"
+    title="loc`gensym28 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/procedures.nim&quot;,
+                line: 220, column: 6)">loc`gensym28</a></li>
   <li><a class="reference" href="#m"
     title="m = 1000000000.0">m</a></li>
   <li><a class="reference" href="#n"
     title="n = 0x00000123">n</a></li>
+  <li><a class="reference" href="#negint"
+    title="negint = -1">negint</a></li>
   <li><a class="reference" href="#num0"
     title="num0 = 0">num0</a></li>
   <li><a class="reference" href="#num1"
@@ -447,8 +486,14 @@ window.addEventListener('DOMContentLoaded', main);
     title="o = 0b00000000000000000000000001010101">o</a></li>
   <li><a class="reference" href="#p"
     title="p = 0o000000000123">p</a></li>
-  <li><a class="reference" href="#ploc%60gensym29"
-    title="ploc`gensym29 = &quot;/home/poop/git/foss/nim/yolowurl/yolowurl.nim(1349, 7)&quot;">ploc`gensym29</a></li>
+  <li><a class="reference" href="#ploc%60gensym2"
+    title="ploc`gensym2 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(156, 8)&quot;">ploc`gensym2</a></li>
+  <li><a class="reference" href="#ploc%60gensym4"
+    title="ploc`gensym4 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(159, 10)&quot;">ploc`gensym4</a></li>
+  <li><a class="reference" href="#ploc%60gensym6"
+    title="ploc`gensym6 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(164, 10)&quot;">ploc`gensym6</a></li>
+  <li><a class="reference" href="#ploc%60gensym28"
+    title="ploc`gensym28 = &quot;/home/poop/git/foss/nim/yolowurl/modules/procedures.nim(220, 7)&quot;">ploc`gensym28</a></li>
   <li><a class="reference" href="#poop3"
     title="poop3 = &quot;flush&quot;">poop3</a></li>
   <li><a class="reference" href="#tmpfile"
@@ -549,9 +594,19 @@ window.addEventListener('DOMContentLoaded', main);
     title="log_eager(msg: string)">log_eager(msg: string)</a></li>
 
   </ul>
+  <ul class="simple nested-toc-section">maybeThrows
+      <li><a class="reference" href="#maybeThrows%2Cint"
+    title="maybeThrows(x: int): int">maybeThrows(x: int): int</a></li>
+
+  </ul>
   <ul class="simple nested-toc-section">mutate
       <li><a class="reference" href="#mutate%2Cint"
     title="mutate(this: var int): int">mutate(this: var int): int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">neverThrows
+      <li><a class="reference" href="#neverThrows"
+    title="neverThrows(): string">neverThrows(): string</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">newLit
@@ -622,11 +677,6 @@ window.addEventListener('DOMContentLoaded', main);
   <ul class="simple nested-toc-section">runFn
       <li><a class="reference" href="#runFn%2Cstring%2Cproc%28string%29"
     title="runFn(a: string; fn: proc (x: string): string): string">runFn(a: string; fn: proc (x: string): string): string</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">safe_echo
-      <li><a class="reference" href="#safe_echo%2Cstring"
-    title="safe_echo(this = &quot;I cant raise any errors&quot;): void">safe_echo(this = &quot;I cant raise any errors&quot;): void</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">str
@@ -747,7 +797,7 @@ window.addEventListener('DOMContentLoaded', main);
   <div class="nine columns" id="content">
   <div id="tocRoot"></div>
   
-  <p class="module-desc">use methods because at runtime we need to know the type</p>
+  <p class="module-desc">this top level doc is for the module generate documentation via nim_docsdouble bang starts a documentation comment are part of the syntax tree only permitted in specific placesuse methods because at runtime we need to know the type</p>
   <div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
 <dl class="item">
@@ -786,24 +836,6 @@ window.addEventListener('DOMContentLoaded', main);
 
 </dd>
 </div>
-<div id="BlinkLights">
-<dt><pre><span class="Identifier">BlinkLights</span> <span class="Other">=</span> <span class="Keyword">enum</span>
-  <span class="Identifier">off</span><span class="Other">,</span> <span class="Identifier">on</span><span class="Other">,</span> <span class="Identifier">slowBlink</span><span class="Other">,</span> <span class="Identifier">mediumBlink</span><span class="Other">,</span> <span class="Identifier">fastBlink</span></pre></dt>
-<dd>
-
-
-
-</dd>
-</div>
-<div id="Direction">
-<dt><pre><span class="Identifier">Direction</span> <span class="Other">=</span> <span class="Keyword">enum</span>
-  <span class="Identifier">north</span><span class="Other">,</span> <span class="Identifier">east</span><span class="Other">,</span> <span class="Identifier">south</span><span class="Other">,</span> <span class="Identifier">west</span></pre></dt>
-<dd>
-
-
-
-</dd>
-</div>
 <div id="Eating">
 <dt><pre><span class="Identifier">Eating</span> <span class="Other">=</span> <span class="Identifier">array</span><span class="Other">[</span><span class="Identifier">breakfast</span> <span class="Operator">..</span> <span class="Identifier">sweettooth</span><span class="Other">,</span> <span class="Identifier">WhatToEat</span><span class="Other">]</span></pre></dt>
 <dd>
@@ -820,12 +852,14 @@ abstract base class for an expression
 
 </dd>
 </div>
-<div id="GangsOfAmerica">
-<dt><pre><span class="Identifier">GangsOfAmerica</span> <span class="Other">=</span> <span class="Keyword">enum</span>
-  <span class="Identifier">democrats</span><span class="Other">,</span> <span class="Identifier">republicans</span><span class="Other">,</span> <span class="Identifier">politicians</span></pre></dt>
+<div id="goodapplications">
+<dt><pre><a href="yolowurl.html#goodapplications"><span class="Identifier">goodapplications</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
+  <span class="Identifier">pubfield</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>          <span class="Comment">## is included in docs</span>
+  <span class="Identifier">prvfield</span><span class="Other">:</span> <span class="Identifier">string</span>           <span class="Comment">## also included since goodapplications is exported</span>
+  </pre></dt>
 <dd>
 
-
+especially things like custom types may need additional abbreviations to describe their purpose
 
 </dd>
 </div>
@@ -845,17 +879,19 @@ abstract base class for an expression
 
 </dd>
 </div>
-<div id="LevelSetting">
-<dt><pre><span class="Identifier">LevelSetting</span> <span class="Other">=</span> <span class="Identifier">array</span><span class="Other">[</span><span class="Identifier">north</span> <span class="Operator">..</span> <span class="Identifier">west</span><span class="Other">,</span> <span class="Identifier">BlinkLights</span><span class="Other">]</span></pre></dt>
+<div id="Literal">
+<dt><pre><span class="Identifier">Literal</span> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">Expression</span>
+  <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span>
+</pre></dt>
 <dd>
 
 
 
 </dd>
 </div>
-<div id="Literal">
-<dt><pre><span class="Identifier">Literal</span> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">Expression</span>
-  <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span>
+<div id="MessageWhatev">
+<dt><pre><span class="Identifier">MessageWhatev</span> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">RootObj</span>
+  <span class="Identifier">iam</span><span class="Other">:</span> <span class="Identifier">string</span>
 </pre></dt>
 <dd>
 
@@ -891,6 +927,14 @@ abstract base class for an expression
 </div>
 <div id="MySubrange">
 <dt><pre><span class="Identifier">MySubrange</span> <span class="Other">=</span> <span class="Identifier">range</span><span class="Other">[</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="DecNumber">5</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="MyType">
+<dt><pre><span class="Identifier">MyType</span> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">RootObj</span></pre></dt>
 <dd>
 
 
@@ -975,16 +1019,6 @@ abstract base class for an expression
 <dt><pre><span class="Identifier">OrRefObject</span> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
   <span class="Identifier">fieldX</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">,</span> <span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">string</span>
 </pre></dt>
-<dd>
-
-
-
-</dd>
-</div>
-<div id="PeopleOfAmerica">
-<dt><pre><span class="Identifier">PeopleOfAmerica</span> {.<span class="Identifier">pure</span>.} <span class="Other">=</span> <span class="Keyword">enum</span>
-  <span class="Identifier">coders</span> <span class="Other">=</span> <span class="StringLit">&quot;think i am&quot;</span><span class="Other">,</span> <span class="Identifier">teachers</span> <span class="Other">=</span> <span class="StringLit">&quot;pretend to be&quot;</span><span class="Other">,</span> <span class="Identifier">farmers</span> <span class="Other">=</span> <span class="StringLit">&quot;prefer to be&quot;</span><span class="Other">,</span>
-  <span class="Identifier">scientists</span> <span class="Other">=</span> <span class="StringLit">&quot;trying to be&quot;</span></pre></dt>
 <dd>
 
 
@@ -1174,9 +1208,25 @@ abstract base class for an expression
 
 </dd>
 </div>
+<div id="alreadyExecuted`gensym17">
+<dt><pre><span class="Identifier">alreadyExecuted`gensym17</span> <span class="Other">=</span> <span class="Identifier">false</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 <div id="arrayWithRange">
 <dt><pre><span class="Identifier">arrayWithRange</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="DecNumber">5</span><span class="Other">,</span> <span class="Identifier">string</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">[</span><span class="StringLit">&quot;one&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;two&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;three&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;four&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;five&quot;</span><span class="Other">,</span>
     <span class="StringLit">&quot;six&quot;</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="autoInt">
+<dt><pre><span class="Identifier">autoInt</span><span class="Other">:</span> <span class="Identifier">auto</span> <span class="Other">=</span> <span class="DecNumber">7</span></pre></dt>
 <dd>
 
 
@@ -1216,6 +1266,14 @@ abstract base class for an expression
 
 </dd>
 </div>
+<div id="d33pcopy">
+<dt><pre><span class="Identifier">d33pcopy</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 <div id="emptyArr">
 <dt><pre><span class="Identifier">emptyArr</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">4</span><span class="Other">,</span> <span class="Identifier">int</span><span class="Other">]</span></pre></dt>
 <dd>
@@ -1248,6 +1306,70 @@ abstract base class for an expression
 
 </dd>
 </div>
+<div id="globalarr">
+<dt><pre><span class="Identifier">globalarr</span> <span class="Other">=</span> <span class="Other">[</span><span class="DecNumber">1</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">4</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="globalfloat">
+<dt><pre><span class="Identifier">globalfloat</span> <span class="Other">=</span> <span class="FloatNumber">2.5</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="globalint">
+<dt><pre><span class="Identifier">globalint</span> <span class="Other">=</span> <span class="DecNumber">2</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="globalseq">
+<dt><pre><span class="Identifier">globalseq</span> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">,</span> <span class="DecNumber">2</span><span class="Other">,</span> <span class="DecNumber">3</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="globalset1">
+<dt><pre><span class="Identifier">globalset1</span> <span class="Other">=</span> <span class="Other">{</span><span class="DecNumber">1</span><span class="Other">,</span> <span class="DecNumber">2</span><span class="Other">,</span> <span class="DecNumber">3</span><span class="Other">}</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="globalset2">
+<dt><pre><span class="Identifier">globalset2</span> <span class="Other">=</span> <span class="Other">{</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="DecNumber">4</span><span class="Other">,</span> <span class="DecNumber">6</span><span class="Other">}</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="globalset11">
+<dt><pre><span class="Identifier">globalset11</span> <span class="Other">=</span> <span class="Identifier">deepCopy</span> <span class="Identifier">globalset1</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="globalstring">
+<dt><pre><span class="Identifier">globalstring</span> <span class="Other">=</span> <span class="StringLit">&quot;before&quot;</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 <div id="hardCoreStack">
 <dt><pre><span class="Identifier">hardCoreStack</span><span class="Other">:</span> <span class="Identifier">NirvStack</span> <span class="Other">=</span> <span class="Other">(</span><span class="Operator">@</span><span class="Other">[</span><span class="StringLit">&quot;ts&quot;</span><span class="Other">]</span><span class="Other">,</span> <span class="Operator">@</span><span class="Other">[</span><span class="StringLit">&quot;ts, bash&quot;</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
@@ -1264,16 +1386,16 @@ abstract base class for an expression
 
 </dd>
 </div>
-<div id="lastWeek">
-<dt><pre><span class="Identifier">lastWeek</span><span class="Other">:</span> <span class="Identifier">WeeklyFoodTracker</span></pre></dt>
+<div id="instance">
+<dt><pre><span class="Identifier">instance</span><span class="Other">:</span> <span class="Identifier">MyType</span> <span class="Other">=</span> <span class="Identifier">MyType</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 
 </dd>
 </div>
-<div id="level">
-<dt><pre><span class="Identifier">level</span><span class="Other">:</span> <span class="Identifier">LevelSetting</span></pre></dt>
+<div id="lastWeek">
+<dt><pre><span class="Identifier">lastWeek</span><span class="Other">:</span> <span class="Identifier">WeeklyFoodTracker</span></pre></dt>
 <dd>
 
 
@@ -1424,8 +1546,32 @@ abstract base class for an expression
 
 </dd>
 </div>
+<div id="someMsg">
+<dt><pre><span class="Identifier">someMsg</span><span class="Other">:</span> <span class="Identifier">MessageWhatev</span> <span class="Other">=</span> <span class="Identifier">MessageWhatev</span><span class="Other">(</span><span class="Identifier">iam</span><span class="Other">:</span> <span class="StringLit">&quot;lost in learning nim, but slowing starting to understand&quot;</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="somevar">
+<dt><pre><span class="Identifier">somevar</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">char</span><span class="Other">]</span> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="CharLit">'n'</span><span class="Other">,</span> <span class="CharLit">'o'</span><span class="Other">,</span> <span class="CharLit">'a'</span><span class="Other">,</span> <span class="CharLit">'h'</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 <div id="spoop">
 <dt><pre><span class="Identifier">spoop</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="DecNumber">4</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="typeSupportBlah">
+<dt><pre><span class="Identifier">typeSupportBlah</span> <span class="Other">=</span> <span class="StringLit">&quot;halb&quot;</span></pre></dt>
 <dd>
 
 
@@ -1477,6 +1623,15 @@ abstract base class for an expression
 
 </dd>
 </div>
+<div id="badcode">
+<dt><pre><span class="Identifier">badcode</span> <span class="Other">=</span> <span class="StringLit">&quot;ishardtomaintain&quot;</span></pre></dt>
+<dd>
+
+
+this is not included in docs because its not exported
+
+</dd>
+</div>
 <div id="bb">
 <dt><pre><span class="Identifier">bb</span> <span class="Other">=</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">hasValue</span><span class="Other">:</span> <span class="DecNumber">true</span><span class="Other">,</span> <span class="Identifier">value</span><span class="Other">:</span> <span class="DecNumber">2</span><span class="Other">)</span></pre></dt>
 <dd>
@@ -1522,6 +1677,15 @@ abstract base class for an expression
 <dd>
 
 
+
+</dd>
+</div>
+<div id="goodcode">
+<dt><pre><a href="yolowurl.html#goodcode"><span class="Identifier">goodcode</span></a> <span class="Other">=</span> <span class="StringLit">&quot;isdocumented&quot;</span></pre></dt>
+<dd>
+
+
+<tt class="docutils literal"><span class="pre"><span class="Identifier">goodcode</span></span></tt> should be self documenting, but sometimes good naming conventions arent informative
 
 </dd>
 </div>
@@ -1631,16 +1795,16 @@ abstract base class for an expression
 
 </dd>
 </div>
-<div id="theyAskedNickely`gensym31">
-<dt><pre><span class="Identifier">theyAskedNickely`gensym31</span> <span class="Other">=</span> <span class="Identifier">true</span></pre></dt>
+<div id="theyAskedNickely`gensym30">
+<dt><pre><span class="Identifier">theyAskedNickely`gensym30</span> <span class="Other">=</span> <span class="Identifier">true</span></pre></dt>
 <dd>
 
 
 
 </dd>
 </div>
-<div id="theyAskedNickely`gensym32">
-<dt><pre><span class="Identifier">theyAskedNickely`gensym32</span> <span class="Other">=</span> <span class="Identifier">false</span></pre></dt>
+<div id="theyAskedNickely`gensym31">
+<dt><pre><span class="Identifier">theyAskedNickely`gensym31</span> <span class="Other">=</span> <span class="Identifier">false</span></pre></dt>
 <dd>
 
 
@@ -1756,6 +1920,14 @@ abstract base class for an expression
 
 </dd>
 </div>
+<div id="buildInfo">
+<dt><pre><span class="Identifier">buildInfo</span> <span class="Other">=</span> <span class="StringLit">&quot;Revision 3940f957028b6158ce1f6b7117e07e4f6ab8312e\nCompiled on #64-Ubuntu SMP Thu Jan 5 11:43:13 UTC 2023&quot;</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 <div id="c">
 <dt><pre><span class="Identifier">c</span> <span class="Other">=</span> <span class="DecNumber">100'i8</span></pre></dt>
 <dd>
@@ -1844,9 +2016,36 @@ abstract base class for an expression
 
 </dd>
 </div>
-<div id="loc`gensym29">
-<dt><pre><span class="Identifier">loc`gensym29</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/yolowurl.nim&quot;</span><span class="Other">,</span>
-                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">1349</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">6</span><span class="Other">)</span></pre></dt>
+<div id="loc`gensym2">
+<dt><pre><span class="Identifier">loc`gensym2</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;</span><span class="Other">,</span>
+               <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">156</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">7</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="loc`gensym4">
+<dt><pre><span class="Identifier">loc`gensym4</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;</span><span class="Other">,</span>
+               <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">159</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="loc`gensym6">
+<dt><pre><span class="Identifier">loc`gensym6</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;</span><span class="Other">,</span>
+               <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">164</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="loc`gensym28">
+<dt><pre><span class="Identifier">loc`gensym28</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/procedures.nim&quot;</span><span class="Other">,</span>
+                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">220</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">6</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -1863,6 +2062,14 @@ abstract base class for an expression
 </div>
 <div id="n">
 <dt><pre><span class="Identifier">n</span> <span class="Other">=</span> <span class="DecNumber">0x00000123</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="negint">
+<dt><pre><span class="Identifier">negint</span> <span class="Other">=</span> <span class="DecNumber">-1</span></pre></dt>
 <dd>
 
 
@@ -1933,8 +2140,32 @@ abstract base class for an expression
 
 </dd>
 </div>
-<div id="ploc`gensym29">
-<dt><pre><span class="Identifier">ploc`gensym29</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/yolowurl.nim(1349, 7)&quot;</span></pre></dt>
+<div id="ploc`gensym2">
+<dt><pre><span class="Identifier">ploc`gensym2</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(156, 8)&quot;</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="ploc`gensym4">
+<dt><pre><span class="Identifier">ploc`gensym4</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(159, 10)&quot;</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="ploc`gensym6">
+<dt><pre><span class="Identifier">ploc`gensym6</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(164, 10)&quot;</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="ploc`gensym28">
+<dt><pre><span class="Identifier">ploc`gensym28</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/procedures.nim(220, 7)&quot;</span></pre></dt>
 <dd>
 
 
@@ -2107,8 +2338,24 @@ abstract base class for an expression
 
 </dd>
 </div>
+<div id="maybeThrows,int">
+<dt><pre><span class="Keyword">proc</span> <a href="#maybeThrows%2Cint"><span class="Identifier">maybeThrows</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 <div id="mutate,int">
 <dt><pre><span class="Keyword">proc</span> <a href="#mutate%2Cint"><span class="Identifier">mutate</span></a><span class="Other">(</span><span class="Identifier">this</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="neverThrows">
+<dt><pre><span class="Keyword">proc</span> <a href="#neverThrows"><span class="Identifier">neverThrows</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 
@@ -2228,14 +2475,6 @@ abstract base class for an expression
 
 </dd>
 </div>
-<div id="safe_echo,string">
-<dt><pre><span class="Keyword">proc</span> <a href="#safe_echo%2Cstring"><span class="Identifier">safe_echo</span></a><span class="Other">(</span><span class="Identifier">this</span> <span class="Other">=</span> <span class="StringLit">&quot;I cant raise any errors&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
-
-
-
-</dd>
-</div>
 <div id="str,string">
 <dt><pre><span class="Keyword">proc</span> <a href="#str%2Cstring"><span class="Identifier">str</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
@@ -2330,7 +2569,7 @@ abstract base class for an expression
 </dd>
 </div>
 <div id="eval.e,PlusExpr">
-<dt><pre><span class="Keyword">method</span> <a href="#eval.e%2CPlusExpr"><span class="Identifier">eval</span></a><span class="Other">(</span><span class="Identifier">e</span><span class="Other">:</span> <span class="Identifier">PlusExpr</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+<dt><pre><span class="Keyword">method</span> <a href="#eval.e%2CPlusExpr"><span class="Identifier">eval</span></a><span class="Other">(</span><span class="Identifier">e</span><span class="Other">:</span> <span class="Identifier">PlusExpr</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 
@@ -2418,7 +2657,7 @@ abstract base class for an expression
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-04 22:55:47 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-08 13:08:47 UTC</small>
       </div>
     </div>
   </div>

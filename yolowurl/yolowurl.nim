@@ -8,10 +8,10 @@
     - ../deepdives dir to dive deep
 
   the road to code
-    bookmark: https://nim-lang.org/docs/nims.html#nimscript-as-a-build-tool
+    bookmark: https://nim-lang.org/docs/docgen.html
+    then here: https://nim-lang.org/docs/nims.html#nimscript-as-a-build-tool
     then here: https://nim-lang.org/docs/nimscript.html
     then here: https://nim-lang.org/docs/nep1.html
-    then here: https://nim-lang.org/docs/docgen.html
     then here: https://nim-lang.org/docs/backends.html
     finally 1: go through modules @see links and ensure you have captured relevant info in each file
     finally 2: ensure deepdives dir does not contain any system/basic info, and truly dives deep
@@ -251,7 +251,7 @@ include modules/[
   variables,
   typeSimple,
   ifWhenCase,
-  exceptionHandlingTesting,
+  exceptionHandlingTestingDocs,
   loops,
   rangeSlice,
   blockDo,

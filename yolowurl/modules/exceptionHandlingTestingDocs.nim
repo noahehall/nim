@@ -23,6 +23,21 @@
 ]#
 
 echo "############################ documentation"
+## this top level doc is for the module
+## generate documentation via nim_docs
+
+let goodcode* = "isdocumented" ## \
+  ## `goodcode` should be self documenting, but sometimes good naming conventions arent enuff
+
+let badcode = "ishardtomaintain" ## \
+  ## this is not included in docs because its not exported
+
+type goodapplications* = object
+  ## especially things like custom types
+  ## may need additional abbreviations to describe their purpose
+  pubfield*: string ## is included in docs
+  prvfield: string ## also included since goodapplications is exported
+
 ## double bang starts a documentation comment
 ## are part of the syntax tree
 ## only permitted in specific places

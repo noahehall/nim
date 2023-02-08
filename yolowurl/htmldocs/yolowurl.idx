@@ -16,6 +16,7 @@ z1	yolowurl.html#z1	yolowurl: z1
 sum	yolowurl.html#sum	yolowurl: sum	
 b	yolowurl.html#b	yolowurl: b	
 c	yolowurl.html#c	yolowurl: c	
+negint	yolowurl.html#negint	yolowurl: negint	
 num0	yolowurl.html#num0	yolowurl: num0	
 num1	yolowurl.html#num1	yolowurl: num1	
 num2	yolowurl.html#num2	yolowurl: num2	
@@ -34,8 +35,18 @@ n	yolowurl.html#n	yolowurl: n
 o	yolowurl.html#o	yolowurl: o	
 p	yolowurl.html#p	yolowurl: p	
 positiveOrNegative	yolowurl.html#positiveOrNegative,int	yolowurl: positiveOrNegative(num: int): string	
+goodcode	yolowurl.html#goodcode	yolowurl: goodcode	
+badcode	yolowurl.html#badcode	yolowurl: badcode	
+goodapplications	yolowurl.html#goodapplications	yolowurl: goodapplications	
+neverThrows	yolowurl.html#neverThrows	yolowurl: neverThrows(): string	
+maybeThrows	yolowurl.html#maybeThrows,int	yolowurl: maybeThrows(x: int): int	
 err	yolowurl.html#err	yolowurl: err	
-safe_echo	yolowurl.html#safe_echo,string	yolowurl: safe_echo(this = &quot;I cant raise any errors&quot;): void	
+loc`gensym2	yolowurl.html#loc`gensym2	yolowurl: loc`gensym2	
+ploc`gensym2	yolowurl.html#ploc`gensym2	yolowurl: ploc`gensym2	
+loc`gensym4	yolowurl.html#loc`gensym4	yolowurl: loc`gensym4	
+ploc`gensym4	yolowurl.html#ploc`gensym4	yolowurl: ploc`gensym4	
+loc`gensym6	yolowurl.html#loc`gensym6	yolowurl: loc`gensym6	
+ploc`gensym6	yolowurl.html#ploc`gensym6	yolowurl: ploc`gensym6	
 `...`	yolowurl.html#....i,T,T	yolowurl: `...`[T](a: T; b: T): T	
 countTo	yolowurl.html#countTo.i,int	yolowurl: countTo(n: int): int	
 intArr	yolowurl.html#intArr	yolowurl: intArr	
@@ -46,6 +57,7 @@ MySubrange	yolowurl.html#MySubrange	yolowurl: MySubrange
 a	yolowurl.html#a	yolowurl: a	
 bbb	yolowurl.html#bbb	yolowurl: bbb	
 sniper	yolowurl.html#sniper	yolowurl: sniper	
+alreadyExecuted`gensym17	yolowurl.html#alreadyExecuted`gensym17	yolowurl: alreadyExecuted`gensym17	
 nums	yolowurl.html#nums	yolowurl: nums	
 nums4	yolowurl.html#nums4	yolowurl: nums4	
 rangeArr	yolowurl.html#rangeArr	yolowurl: rangeArr	
@@ -68,24 +80,6 @@ WeeklyFoodTracker	yolowurl.html#WeeklyFoodTracker	yolowurl: WeeklyFoodTracker
 MonthlyFoodTracker	yolowurl.html#MonthlyFoodTracker	yolowurl: MonthlyFoodTracker	
 onSundayIAte	yolowurl.html#onSundayIAte	yolowurl: onSundayIAte	
 lastWeek	yolowurl.html#lastWeek	yolowurl: lastWeek	
-democrats	yolowurl.html#democrats	GangsOfAmerica.democrats	
-republicans	yolowurl.html#republicans	GangsOfAmerica.republicans	
-politicians	yolowurl.html#politicians	GangsOfAmerica.politicians	
-GangsOfAmerica	yolowurl.html#GangsOfAmerica	yolowurl: GangsOfAmerica	
-PeopleOfAmerica	yolowurl.html#PeopleOfAmerica	yolowurl: PeopleOfAmerica	
-north	yolowurl.html#north	Direction.north	
-east	yolowurl.html#east	Direction.east	
-south	yolowurl.html#south	Direction.south	
-west	yolowurl.html#west	Direction.west	
-Direction	yolowurl.html#Direction	yolowurl: Direction	
-off	yolowurl.html#off	BlinkLights.off	
-on	yolowurl.html#on	BlinkLights.on	
-slowBlink	yolowurl.html#slowBlink	BlinkLights.slowBlink	
-mediumBlink	yolowurl.html#mediumBlink	BlinkLights.mediumBlink	
-fastBlink	yolowurl.html#fastBlink	BlinkLights.fastBlink	
-BlinkLights	yolowurl.html#BlinkLights	yolowurl: BlinkLights	
-LevelSetting	yolowurl.html#LevelSetting	yolowurl: LevelSetting	
-level	yolowurl.html#level	yolowurl: level	
 poops	yolowurl.html#poops	yolowurl: poops	
 spoop	yolowurl.html#spoop	yolowurl: spoop	
 emptySeq	yolowurl.html#emptySeq	yolowurl: emptySeq	
@@ -130,6 +124,17 @@ aa	yolowurl.html#aa	yolowurl: aa
 bb	yolowurl.html#bb	yolowurl: bb	
 get	yolowurl.html#get.c,Option[T]	yolowurl: get[T](x: Option[T]): T	
 runFn	yolowurl.html#runFn,string,proc(string)	yolowurl: runFn(a: string; fn: proc (x: string): string): string	
+`!=`	yolowurl.html#!=.t,untyped,untyped	yolowurl: `!=`(a, b: untyped): untyped	
+loc`gensym28	yolowurl.html#loc`gensym28	yolowurl: loc`gensym28	
+ploc`gensym28	yolowurl.html#ploc`gensym28	yolowurl: ploc`gensym28	
+debug	yolowurl.html#debug	yolowurl: debug	
+xy	yolowurl.html#xy	yolowurl: xy	
+log_eager	yolowurl.html#log_eager,string	yolowurl: log_eager(msg: string)	
+log_lazy	yolowurl.html#log_lazy.t,string	yolowurl: log_lazy(msg: string)	
+blockRunner	yolowurl.html#blockRunner.t,bool,untyped	yolowurl: blockRunner(please: bool; body: untyped): void	
+theyAskedNickely`gensym30	yolowurl.html#theyAskedNickely`gensym30	yolowurl: theyAskedNickely`gensym30	
+theyAskedNickely`gensym31	yolowurl.html#theyAskedNickely`gensym31	yolowurl: theyAskedNickely`gensym31	
+autoInt	yolowurl.html#autoInt	yolowurl: autoInt	
 BigMoney	yolowurl.html#BigMoney	yolowurl: BigMoney	
 StrOrInt	yolowurl.html#StrOrInt	yolowurl: StrOrInt	
 thizString	yolowurl.html#thizString	yolowurl: thizString	
@@ -186,6 +191,14 @@ nkIf	yolowurl.html#nkIf	NodeKind.nkIf
 NodeKind	yolowurl.html#NodeKind	yolowurl: NodeKind	
 Node2	yolowurl.html#Node2	yolowurl: Node2	
 myFloat	yolowurl.html#myFloat	yolowurl: myFloat	
+Node	yolowurl.html#Node	yolowurl: Node	
+Sym	yolowurl.html#Sym	yolowurl: Sym	
+wtf	yolowurl.html#wtf,T	yolowurl: wtf[T](a: T): auto	
+foo	yolowurl.html#foo,T	yolowurl: foo[T](i: T)	
+ii	yolowurl.html#ii	yolowurl: ii	
+BinaryTree	yolowurl.html#BinaryTree	yolowurl: BinaryTree	
+newNode	yolowurl.html#newNode,T	yolowurl: newNode[T](data: T): BinaryTree[T]	
+preorder	yolowurl.html#preorder.i,BinaryTree[T]	yolowurl: preorder[T](root: BinaryTree[T]): T	
 NirvStack	yolowurl.html#NirvStack	yolowurl: NirvStack	
 StackNirv	yolowurl.html#StackNirv	yolowurl: StackNirv	
 hardCoreStack	yolowurl.html#hardCoreStack	yolowurl: hardCoreStack	
@@ -195,25 +208,23 @@ sj	yolowurl.html#sj	yolowurl: sj
 bizDevOps	yolowurl.html#bizDevOps	yolowurl: bizDevOps	
 bizRating	yolowurl.html#bizRating	yolowurl: bizRating	
 aaa	yolowurl.html#aaa	yolowurl: aaa	
-Node	yolowurl.html#Node	yolowurl: Node	
-Sym	yolowurl.html#Sym	yolowurl: Sym	
-wtf	yolowurl.html#wtf,T	yolowurl: wtf[T](a: T): auto	
-foo	yolowurl.html#foo,T	yolowurl: foo[T](i: T)	
-ii	yolowurl.html#ii	yolowurl: ii	
-BinaryTree	yolowurl.html#BinaryTree	yolowurl: BinaryTree	
-newNode	yolowurl.html#newNode,T	yolowurl: newNode[T](data: T): BinaryTree[T]	
-preorder	yolowurl.html#preorder.i,BinaryTree[T]	yolowurl: preorder[T](root: BinaryTree[T]): T	
-`!=`	yolowurl.html#!=.t,untyped,untyped	yolowurl: `!=`(a, b: untyped): untyped	
-loc`gensym29	yolowurl.html#loc`gensym29	yolowurl: loc`gensym29	
-ploc`gensym29	yolowurl.html#ploc`gensym29	yolowurl: ploc`gensym29	
-debug	yolowurl.html#debug	yolowurl: debug	
-xy	yolowurl.html#xy	yolowurl: xy	
-log_eager	yolowurl.html#log_eager,string	yolowurl: log_eager(msg: string)	
-log_lazy	yolowurl.html#log_lazy.t,string	yolowurl: log_lazy(msg: string)	
-blockRunner	yolowurl.html#blockRunner.t,bool,untyped	yolowurl: blockRunner(please: bool; body: untyped): void	
-theyAskedNickely`gensym31	yolowurl.html#theyAskedNickely`gensym31	yolowurl: theyAskedNickely`gensym31	
-theyAskedNickely`gensym32	yolowurl.html#theyAskedNickely`gensym32	yolowurl: theyAskedNickely`gensym32	
+somevar	yolowurl.html#somevar	yolowurl: somevar	
+MyType	yolowurl.html#MyType	yolowurl: MyType	
+instance	yolowurl.html#instance	yolowurl: instance	
+typeSupportBlah	yolowurl.html#typeSupportBlah	yolowurl: typeSupportBlah	
+d33pcopy	yolowurl.html#d33pcopy	yolowurl: d33pcopy	
+MessageWhatev	yolowurl.html#MessageWhatev	yolowurl: MessageWhatev	
+someMsg	yolowurl.html#someMsg	yolowurl: someMsg	
 entireFile	yolowurl.html#entireFile	yolowurl: entireFile	
 readFile	yolowurl.html#readFile	yolowurl: readFile(): string	
 tmpfile	yolowurl.html#tmpfile	yolowurl: tmpfile	
 writeLines	yolowurl.html#writeLines,seq[string]	yolowurl: writeLines(s: seq[string]): void	
+buildInfo	yolowurl.html#buildInfo	yolowurl: buildInfo	
+globalint	yolowurl.html#globalint	yolowurl: globalint	
+globalfloat	yolowurl.html#globalfloat	yolowurl: globalfloat	
+globalstring	yolowurl.html#globalstring	yolowurl: globalstring	
+globalseq	yolowurl.html#globalseq	yolowurl: globalseq	
+globalset1	yolowurl.html#globalset1	yolowurl: globalset1	
+globalset2	yolowurl.html#globalset2	yolowurl: globalset2	
+globalset11	yolowurl.html#globalset11	yolowurl: globalset11	
+globalarr	yolowurl.html#globalarr	yolowurl: globalarr	
