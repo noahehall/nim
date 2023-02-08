@@ -10,17 +10,19 @@
 - tldr
   - [hello world](./yolowurl/)
   - [deep dives](./deepdives/)
-  - [community repos](./community/README.md)
   - [nimscript](./nimscript/nimscript.nims)
+  - [community repos](./community/README.md)
+  - [backends](./backends/)
 
 ## Todos
 
 - there are some basic stuff in deepdives that should actually be in yolowurl
   - ensure deepdives goes beyond the basics
+- [you can grep for specifics here](https://nim-lang.github.io/fusion/theindex.html)
 
 ---
 
-- [you can grep for specifics here](https://nim-lang.github.io/fusion/theindex.html)
+- [checkout status opensource theyve already built bunch of things you'll need for nirv](https://github.com/status-im)
 - [skipped most of the section on cross compilation](https://nim-lang.org/docs/nimc.html#crossminuscompilation-for-windows)
 - [pacman devkitpro for nix](https://github.com/devkitPro/pacman/releases)
 - [dll generation](https://nim-lang.org/docs/nimc.html#dll-generation)

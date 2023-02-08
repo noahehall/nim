@@ -4,6 +4,7 @@
     - https://nim-lang.org/docs/nims.html
     - https://nim-lang.org/docs/nimscript.html
     - https://nim-lang.org/docs/tasks.html
+    - https://github.com/kaushalmodi/nim_config/blob/master/config.nims (example script)
 
   usecase: configs (see compiler for --skip flags)
   nim will automatically process .nims configs in the following order (later overrides previous)
@@ -18,7 +19,7 @@
 
   usecase: cross platform scripting (good bye complex bash scripts?)
     - The syntax, style, etc is identical to compiled nim
-    - supports templates, macros, types, oncepts, effect tracking system, etc
+    - supports templates, macros, types, concepts, effect tracking system, etc
     - modules can work in both .nim and .nims (see limitations)
 
   limitations

@@ -1,4 +1,6 @@
 # lets setup nimscript.nim for prod using the preferred syntax
+# $projectDir/config.nims is useful for setting defaults
+# ^ that override $parent & base nims and can be overridden by $projectfile.nims
 --assertions:on
 --debugger:native
 --define:nimStrictDelete
