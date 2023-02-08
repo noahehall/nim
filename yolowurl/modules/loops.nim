@@ -49,8 +49,8 @@ for i in countTo(5):
 # @see https://nim-by-example.github.io/for_iterators/
 
 # std count iterators
-# countup == .. and ..< (zero index countup)
-# countdown == ..^ and ..^1 (zero index countdown)
+# countup == .. == ..< (zero index countup)
+# countdown == ..^ == ..^1 (zero index countdown)
 
 # std collection iterators
 # items/mitems : mutable/immutable, just the value

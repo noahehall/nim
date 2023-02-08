@@ -2,6 +2,7 @@
   @see
     - https://nim-lang.org/docs/sugar.html
     - https://nim-lang.org/docs/with.html
+    - https://nim-lang.org/docs/system.html#...i%2CT%2CT example of collect
 
   syntactic sugar based on nims macro system
   pretty sure youre going to want this especially as a js dev
