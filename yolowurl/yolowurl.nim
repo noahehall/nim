@@ -8,8 +8,7 @@
     - ../deepdives dir to dive deep
 
   the road to code
-    bookmark: https://nim-lang.org/docs/docgen.html
-    then here: https://nim-lang.org/docs/nims.html#nimscript-as-a-build-tool
+    bookmark: https://nim-lang.org/docs/nims.html#nimscript-as-a-build-tool
     then here: https://nim-lang.org/docs/nimscript.html
     then here: https://nim-lang.org/docs/nep1.html
     then here: https://nim-lang.org/docs/backends.html

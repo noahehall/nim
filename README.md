@@ -5,6 +5,7 @@
 - alot of nodejs devs are moving to/incorporating rust/go in their stack; I chose nim for (many, but definitely these) two reasons
   - [cross compile applications](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
   - [cross platform scripts](https://nim-lang.org/docs/nims.html#benefits)
+  - [documentation support](https://nim-lang.org/docs/docgen.html)
 
 ## Todos
 
