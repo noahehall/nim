@@ -12,19 +12,19 @@
     then here: https://nim-lang.org/docs/nims.html (usecase: configs, scripts, build tool, bash replacement)
     then here: https://nim-lang.org/docs/nimscript.html
     then here: https://nim-lang.org/docs/nep1.html
-    then here: https://nim-lang.org/docs/manual_experimental.html
-    then here: https://nim-lang.org/docs/mm.html
     then here: https://nim-lang.org/docs/docgen.html
-    then here: https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html
     then here: https://nim-lang.org/docs/backends.html
-    and finally: https://nim-lang.org/docs/manual.html
-    really finally this time: go through modules @see links and ensure you have captured relevant info in each file
-    no really this is the final one: ensure deepdives dir does not contain any system/basic info, and truly dives deep
+    finally 1: go through modules @see links and ensure you have captured relevant info in each file
+    finally 2: ensure deepdives dir does not contain any system/basic info, and truly dives deep
 
   review:
     - we have like 1000 different nim files, consolidate
 
   skim:
+    then here: https://nim-lang.org/docs/manual_experimental.html
+    then here: https://nim-lang.org/docs/mm.html
+    then here: https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html
+    and finally: https://nim-lang.org/docs/manual.html
     nim package directory: get familiar with what exists
       https://nimble.directory/
     theck each deepdive file and add some comments to each @see link
