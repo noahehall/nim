@@ -46,6 +46,7 @@
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/strmantle.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/channels_builtin.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/dyncalls.nim
+/home/poop/git/foss/nim/yolowurl/modules/pragmas.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/cellseqs_v1.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/repr_impl.nim
 /home/poop/git/foss/nim/yolowurl/modules/rangeSlice.nim

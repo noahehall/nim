@@ -17,7 +17,6 @@
       - likely  need to do a bunchy of recategorization
       - focus on os related stuff first so we can get back to nirv
       - you likely want to review the types section in system: https://nim-lang.org/docs/system.html#7
-      - anything you skip before to take note of, e.g. we forgot to do docs > runnableExamples
     ensure deepdives dir does not contain any system/basic info, and truly dives deep
       - like need to do a bunch of recategorization
       - focus on os related stuff so we can get back to nirv

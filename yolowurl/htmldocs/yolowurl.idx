@@ -37,7 +37,7 @@ p	yolowurl.html#p	yolowurl: p
 positiveOrNegative	yolowurl.html#positiveOrNegative,int	yolowurl: positiveOrNegative(num: int): string	
 goodcode	yolowurl.html#goodcode	yolowurl: goodcode	
 badcode	yolowurl.html#badcode	yolowurl: badcode	
-goodapplications	yolowurl.html#goodapplications	yolowurl: goodapplications	
+GoodApplications	yolowurl.html#GoodApplications	yolowurl: GoodApplications	
 neverThrows	yolowurl.html#neverThrows	yolowurl: neverThrows(): string	
 maybeThrows	yolowurl.html#maybeThrows,int	yolowurl: maybeThrows(x: int): int	
 err	yolowurl.html#err	yolowurl: err	
@@ -230,4 +230,6 @@ globalset11	yolowurl.html#globalset11	yolowurl: globalset11
 globalarr	yolowurl.html#globalarr	yolowurl: globalarr	
 yolo wurl: basic nim syntax	yolowurl.html#yolo-wurlcolon-basic-nim-syntax	 yolo wurl: basic nim syntax	
 exception stuff, debugging, documentation and testing	yolowurl.html#exception-stuff-debugging-documentation-and-testing	 exception stuff, debugging, documentation and testing	
-this top level doc is for the module	yolowurl.html#this-top-level-doc-is-for-the-module	 this top level doc is for the module	
+top level docs are for the module	yolowurl.html#top-level-docs-are-for-the-module	 top level docs are for the module	
+array, sequences, etc	yolowurl.html#array-sequences-etc	 array, sequences, etc	
+enable new functionality without adding new keywords to the language	yolowurl.html#enable-new-functionality-without-adding-new-keywords-to-the-language	 enable new functionality without adding new keywords to the language	

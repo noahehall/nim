@@ -28,10 +28,10 @@
 
 ]#
 
-echo "############################ documentation"
+echo "############################ documentation: src code"
 ##
-## this top level doc is for the module
-## ====================================
+## top level docs are for the module
+## =================================
 ##
 ## - the === creates an underline and must be same length as whatever its underlining
 ## - be sure to use empty ## for line breaks so it looks good in the html thats output
@@ -45,12 +45,24 @@ let goodcode* = "isdocumented"  ## `goodcode` should be self documenting, but so
 
 let badcode = "ishardtomaintain"  ## this is not included in docs because its not exported
 
-type goodapplications* = object
+
+type GoodApplications* = object
   ## especially things like custom types
   ## may need additional abbreviations to describe their purpose
   pubfield*: string ## is included in docs
   prvfield: string  ## also included since goodapplications is exported
 
+echo "############################ documentation: runnableExamples"
+
+runnableExamples:
+  ## ignored in release/debug, however during docgen:
+  ## - will aggregate all into a separate module, compile, test
+  ## - ensure only exported symbols exist
+  var iam: GoodApplications = GoodApplications(pubfield: "yes u are", prvfield: "I know I am") ## \
+    ## example of creating a good application
+  iam.repr ## \
+    ## prints to stdout
+  var
 
 echo "############################ Defects "
 # AccessViolationDefect invalid memory access
@@ -132,7 +144,6 @@ echo "############################ push/pop pragma"
 
 
 echo "############################ try/catch/finally "
-
 if true:
   try:
     let f: File = open "this file doesnt exist"
