@@ -4,7 +4,6 @@
   @see
     - https://github.com/status-im/nim-testutils/tree/master/testutils/fuzzing
     - https://nim-lang.org/docs/assertions.html
-    - https://nim-lang.org/docs/assertions.html
     - https://nim-lang.org/docs/docgen.html
     - https://nim-lang.org/docs/drnim.html
     - https://nim-lang.org/docs/segfaults.html
@@ -12,6 +11,7 @@
     - https://nim-lang.org/docs/unittest.html (use testament instead)
     - https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling
     - https://github.com/nim-lang/Nim/blob/devel/tests/test_nimscript.nims (testfile for nimscript)
+    - https://nim-lang.org/docs/rst.html
 
   interesting stuff
     getStackTrace() only works for debug builds
@@ -24,8 +24,9 @@
 
 echo "############################ documentation"
 ## this top level doc is for the module
-## generate documentation via nim_docs
-
+## it doesnt look right in the html output
+## if its dispersed throughout multiple include files
+## @see https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim
 let goodcode* = "isdocumented" ## \
   ## `goodcode` should be self documenting, but sometimes good naming conventions arent enuff
 
@@ -38,11 +39,6 @@ type goodapplications* = object
   pubfield*: string ## is included in docs
   prvfield: string ## also included since goodapplications is exported
 
-## double bang starts a documentation comment
-## are part of the syntax tree
-## only permitted in specific places
-# @see https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim
-# ^ for examples of writing excellent documentation and how to document your src c0d3
 
 echo "############################ Defects "
 # AccessViolationDefect invalid memory access

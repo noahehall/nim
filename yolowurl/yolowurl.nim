@@ -11,7 +11,11 @@
     bookmark: https://nim-lang.org/docs/nep1.html
     then here: https://nim-lang.org/docs/backends.html
     finally 1: go through modules @see links and ensure you have captured relevant info in each file
+      - likely  need to do a bunchy of recategorization
+      - focus on os related stuff first so we can get back to nirv
     finally 2: ensure deepdives dir does not contain any system/basic info, and truly dives deep
+      - like need to do a bunch of recategorization
+      - focus on os related stuff so we can get back to nirv
 
   review:
     - we have like 1000 different nim files, consolidate
@@ -64,28 +68,30 @@
 #[
   # style guide & best practices
 
-  idiomatic nim (from docs/styleguide), or borrowed from somewhere else (e.g. status auditor docs)
+  idiomatic nim (from docs/styleguide),
+    - cast > type conversion to force the compiler to reinterpret the bit pattern (docs)
+    - composition > inheritance is often the better design (docs)
+    - declare as var > proc var params when modifying global vars (docs)
+    - module names are generally long to be descriptive (docs)
+    - MyCustomError should follow the hierarchy defiend in system.Exception (docs)
+    - never raise an exception without a msg, and never for control flow (docs maybe?)
+    - object variants > inheritance for simple types; no type conversion required (docs)
+    - run initialization logic as toplevel module statements, e.g. init data (docs)
+    - shadowing proc params > declaring them as var enables the most efficient parameter passing (docs)
+    - spaces in range operators, e.g. this .. that > this..that (docs)
+    - type > cast operator cuz type preserves the bit pattern (docs)
+    - use include to split large modules into distinct files (docs)
+    - use Natural range to guard against negative numbers (e.g. in loops) (docs)
+    - use result > last statement expression > return statement (docs [result = optimized]) (status prefers last statement)
+    - use sets (e.g. as flags) > integers that have to be or'ed (docs)
+    - use status push > raises convention to help track unfound errs (docs + status)
+    - X.y > x[].y for accessing ref/ptr objects (docs: x[].y highly discouraged)
+
+  borrowed from somewhere else (e.g. status auditor docs)
     - camelCase for code (status)
     - MACRO_CASE for external constants (status)
     - PascalCase for all types (status)
     - PascalCase for internal constants (status)
-    - shadowing proc params > declaring them as var enables the most efficient parameter passing (docs)
-    - declare as var > proc var params when modifying global vars (docs)
-    - use result > last statement expression > return statement (docs [result = optimized]) (status prefers last statement)
-    - use Natural range to guard against negative numbers (e.g. in loops) (docs)
-    - use sets (e.g. as flags) > integers that have to be or'ed (docs)
-    - spaces in range operators, e.g. this .. that > this..that (docs)
-    - X.y > x[].y for accssing ref/ptr objects (docs: highly discouraged)
-    - run initialization logic as toplevel module statements, e.g. init data (docs)
-    - module names are generally long to be descriptive (docs)
-    - use include to split large modules into distinct files (docs)
-    - composition > inheritance is often the better design (docs)
-    - type > cast operator cuz type preserves the bit pattern (docs)
-    - cast > type conversion to force the compiler to reinterpret the bit pattern (docs)
-    - object variants > inheritance for simple types; no type conversion required (docs)
-    - MyCustomError should follow the hierarchy defiend in system.Exception (docs)
-    - never raise an exception with a msg, and only in exceptional cases (not for control flow)
-    - use status push > raises convention to help track unfound errs (docs + status)
 
   my preferences thus far
     - strive for parantheseless code
