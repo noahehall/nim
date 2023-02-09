@@ -41,9 +41,6 @@ echo "############################ config"
 # --define:release # prefer this cleaner syntax
 --opt:size
 
-echo "############################ build"
-# TODO: you need to read through the task docs
-
 echo "############################ scripts"
 #!/usr/bin/env nim
 # to set switches in shebang: #!/usr/bin/env -S nim --hints:off
@@ -52,6 +49,8 @@ echo "############################ scripts"
 # bin, binDir, installDirs, installExt, installFiles
 # skipDirs, skipExt, skipFiles, srcDir
 # packageName = the default is the nimscript filename
+# requires(varargs[string])  set the list of reqs of this nimble pkg
+
 author = "noah edward hall"
 backend = "c"
 description = "my first nimscript!"
@@ -59,18 +58,19 @@ license = "Free"
 version = "0.0.1"
 
 # generally any std nim/third party package may work
-# see the limitations section
+# see the limitations section & tests link
 import std/distros
 
 echo "############################ scripts: vars/flags"
-# hint(name, bool) enable/disable a specific hint
+# hint(name, bool) enable/disable specific hints
+# warning(name, bool) enable/disable specific warnings
 
 mode = ScriptMode.Verbose ## \
   ## Silent, Whatif echos instead of executes
   ## set the mode when the script starts
   ## influece how mkDir, rmDir, etc behave
 
-# requiresData: seq[string] = ## \
+# requiresData = seq[string] ## \
   # list of requirments for r/w access
 
 const buildCPU = system.hostCPU ## \
@@ -84,14 +84,22 @@ when true:
 
 
 echo "############################ scripts: env"
-delEnv("MY_LEAKED_BANKACCOUNT_PASSWORD") ## \
+# env
+putEnv("MY_LEAKED_BANKACOUNT_PASSWORD", "p0oP1nurm0u7h")
+echo "are we gonna get pwned? ", existsEnv("MY_LEAKED_BANKACOUNT_PASSWORD")
+delEnv("MY_LEAKED_BANKACOUNT_PASSWORD") ## \
   ## from the environment
-echo "are we gonna get pwned? ", existsEnv("MY_LEAKED_BANKACCOUNT_PASSWORD")
 echo "do you know my name? ", getEnv("USER")
 
-echo "does this configuration key exist? ", exists("opt.size") ## \
+# nim conf
+echo "does this key exist in conf? ", exists("opt.size") ## \
   ## we set --opt:size previously, still reports false, dunno
-echo "whats the value of conf key: ", get("gcc")
+put("poop", "first check the tp") ## \
+  ## upserts conf
+echo "read conf key poop: ", get("poop") ## \
+  ## returns empty string if not found
+
+# nim
 echo "what invocation cmd was used ", getCommand() ## \
   ## e.g. e, c, js, build, help
 
@@ -124,42 +132,108 @@ echo "############################ scripts: files/dirs/etc"
 # files/dirs
 # cpDir(from, to)
 # cpFile(from, to)
+# mvFile(from, to)
+# rmFile
+
+echo "wheres nimcache ", nimcacheDir() ## \
+  ## remember blah_d is debug and blah_r is release
 
 echo "yolo world? ", dirExists("../yolowurl") ## \
-  ## reporting false, dunno, likely due to cwd
-echo "every repo should have a root readme: ", fileExists("../README.md") ## \
-  ## probably cwd again, ahh yup cwd is ..
+  ## reporting false, dunno, likely due to cwd (in vscode)
+  ## like in bash, always have a reference point
+withDir "nimscript":
+  ## after this block exists we return to prev dir
+  ## the below should now return true if running this file in vscode
+  echo "yolo world? ", dirExists("../yolowurl")
 
-echo "whats the absolute path: ", getCurrentDir()
+echo "every repo should have a root readme: ", fileExists("../README.md") ## \
+  ## probably cwd again, ahh yup cwd is .. in vscode
+  ## like in bash, always have a reference point
+withDir "nimscript":
+  echo "README.md is in parentDir now? ", fileExists("../README.md")
+
+echo "cwd: ", getCurrentDir()
+echo "project dir: ", projectDir()
+echo "what dir is this file in? ", thisDir()
 
 echo "subdirs in cwd: ", listDirs(".") ## \
   ## non-recursive, seq[string]
 echo "files in cwd: ", listFiles(".") ## \
   ## non-recursive, seq[string]
 
-mkDir("tmp/mkdir/p") ## \
+const tmpDir = "tmp/mkdir/p"
+mkDir(tmpDir) ## \
   ## mkdir -p blah
-
-try: mvDir("tmp/mkdir/p", getCurrentDir() & "/nimscript/")
+echo tmpDir, " created? ", dirExists(tmpDir)
+try: mvDir("tmp", getCurrentDir() & "/nimscript/")
 except: echo "cant move TO a non-empty dir, ", getCurrentDir() & "/nimscript/"
 
-echo "############################ scripts: exec"
-echo "will u return the symlink or resolve it? ", findExe("runpostman") ## \
-  ## first in cwd, then each $PATH dir
+rmDir("tmp")
+echo tmpDir, " deleted? ", not dirExists(tmpDir)
 
-exec "ls" ## \
+echo "############################ scripts: exec"
+# setCommand(cmd; project) ## \
+# pretty sure project is the path to a project
+# sets the nim cmd that should be used after  this script is finished
+# not sure the usecase for this one
+# why would you need to set a cmd after a script has finished?
+# ^ probably because `.nims` dual purpose is for configuration which executes before a `.nim` file
+# ^ thus you can control (e.g. cross compilation) execution of the mainfile
+
+echo "how many args did we receive? ", paramCount()
+for i in 0..<paramCount(): echo "param ", i, " is ", paramStr i ## \
+  ## 0 absolute path to nim
+  ## 1 is cmd
+
+echo "will u return the symlink or resolve it? ", findExe("runpostman") ## \
+  ## searches first in cwd, then each $PATH dir until it finds the executable
+
+echo "which executable is running? ", selfExe() ## \
+  ## absolute path to nim/nimble
+selfExec("-v") ## \
+  ## command must not contain the nim part
+
+exec "pwd" ## \
   ## if cmd errs an OSError is raised
   ## use gorgeEx to instead receive the exit code & output
-# exec("ls", "..") ## \
-## exec cmd, input; cache = ""
-## doesnt seem to work as expected when passing input
+exec "groups", "blah" ## \
+  ## exec cmd, input; cache = ""
+  ## doesnt seem to work as expected when passing input
+  ## expected groups: ‘blah’: no such user
+  ## exec groups blah does return expected
 
 cd ".." ## \
   ## permanently change directories
-  ## use withDir
+  ## use withDir for a temporary change
 
 
 
 echo "############################ scripts: catchall procs"
-# cppDefine(blah) is a C preprocessor #define and needs to be mangled
-echo "is a == A ? ", cmpic("a", "A")
+# cppDefine(string) is a C preprocessor #define and needs to be mangled
+# patchFile(pkg, thisFile, withThisFile) overrides location of a file belonging to pkg
+# readAllFromStdin() read all data from stdin; blocks until EOF event (stdin closed)
+# readLineFromStdin() read a line from stdin; blocks until EOF event (stdin closed)
+# toDll(fname) posix adds lib$fname.so, windows appends .dll to fname
+# toExe(fname) posix returns fname unmodified, windows appends .exe
+echo "is a == A ? ", cmpic("a", "A") == 0
+
+echo "############################ scripts: tasks"
+# used in buildscripts, but also for defining tasks in general
+# now whats a task? lol for that we'll have to search the docs
+# technically its a template which creates a proc named blahTask
+# but why do you need a task, and not just a proc? no fkn clue
+
+task poop, "with this description":
+  ## a task with a description is public
+  echo "completed!"
+
+task soup, "":
+  ## a task without a description is hidden
+  ## you can call one task from another
+  poopTask()
+
+poopTask() ## \
+  ## tasks can also be called directly
+
+echo "############################ build"
+# TODO: you need to read through the task docs
