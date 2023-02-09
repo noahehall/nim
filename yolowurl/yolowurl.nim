@@ -22,6 +22,7 @@
       - tasks
     - cant get too far in nim without readin through the nimble github readme
     - rework all of these weird comments to use docgen
+    - didnt appreciate the semicolons usefulness in grouping statements, search the docs
 
 
   skim:

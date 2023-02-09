@@ -38,15 +38,62 @@
 echo "############################ config"
 # you can set switches via 2 syntax
 # switch("opt", "size") # --opt:size
-# --define:release # --define:Release #  prefer this cleaner syntax
+# --define:release # prefer this cleaner syntax
+--opt:size
 
 echo "############################ build"
-# TODO
+# TODO: you need to read through the task docs
 
 echo "############################ scripts"
 #!/usr/bin/env nim
+# to set switches in shebang: #!/usr/bin/env -S nim --hints:off
 
+# nimble integration/metadata
+# bin, binDir, installDirs, installExt, installFiles
+# skipDirs, skipExt, skipFiles, srcDir
+# packageName = the default is the nimscript filename
+author = "noah edward hall"
+backend = "c"
+description = "my first nimscript!"
+license = "Free"
+version = "0.0.1"
+
+# generally any std nim/third party package may work
+# see the limitations section
 import std/distros
+
+echo "############################ scripts: vars/flags"
+# hint(name, bool) enable/disable a specific hint
+
+mode = ScriptMode.Verbose ## \
+  ## Silent, Whatif echos instead of executes
+  ## set the mode when the script starts
+  ## influece how mkDir, rmDir, etc behave
+
+# requiresData: seq[string] = ## \
+  # list of requirments for r/w access
+
+const buildCPU = system.hostCPU ## \
+  ## useful for cross compilation if set to a nondefault value
+
+const buildOS = system.hostOS ## \
+  ## useful for cross cmmpilation if set to a nondefault value
+
+when true:
+  echo "this package was built on: ", buildOs, "/", buildCPU
+
+
+echo "############################ scripts: env"
+delEnv("MY_LEAKED_BANKACCOUNT_PASSWORD") ## \
+  ## from the environment
+echo "are we gonna get pwned? ", existsEnv("MY_LEAKED_BANKACCOUNT_PASSWORD")
+echo "do you know my name? ", getEnv("USER")
+
+echo "does this configuration key exist? ", exists("opt.size") ## \
+  ## we set --opt:size previously, still reports false, dunno
+echo "whats the value of conf key: ", get("gcc")
+echo "what invocation cmd was used ", getCommand() ## \
+  ## e.g. e, c, js, build, help
 
 # example Architectures (docs)
 if defined(amd64):
@@ -72,50 +119,47 @@ elif detectOs(ArchLinux):
 elif detectOs(Debian):
   echo "Distro is Debian"
 
-# nimble integration/metadata
-# bin, binDir, installDirs, installExt, installFiles
-# skipDirs, skipExt, skipFiles, srcDir
-# packageName = the default is the nimscript filename
-author = "noah edward hall"
-backend = "c"
-description = "my first nimscript!"
-license = "Free"
-version = "0.0.1"
 
-mode = ScriptMode.Verbose ## \
-  ## Silent, Whatif echos instead of executes
-  ## set the mode when the script starts
-  ## influece how mkDir, rmDir, etc behave
-
-# requiresData: seq[string] = ## \
-  # list of requirments for r/w access
-
-const buildCPU = system.hostCPU ## \
-  ## useful for cross compilation
-
-const buildOS = system.hostOS ## \
-  ## useful for cross copmilation
-
-when true:
-  echo "this package was built on: ", buildOs, "/", buildCPU
-
-# nimscript specific procs
-# cppDefine,
+echo "############################ scripts: files/dirs/etc"
+# files/dirs
 # cpDir(from, to)
 # cpFile(from, to)
+
+echo "yolo world? ", dirExists("../yolowurl") ## \
+  ## reporting false, dunno, likely due to cwd
+echo "every repo should have a root readme: ", fileExists("../README.md") ## \
+  ## probably cwd again, ahh yup cwd is ..
+
+echo "whats the absolute path: ", getCurrentDir()
+
+echo "subdirs in cwd: ", listDirs(".") ## \
+  ## non-recursive, seq[string]
+echo "files in cwd: ", listFiles(".") ## \
+  ## non-recursive, seq[string]
+
+mkDir("tmp/mkdir/p") ## \
+  ## mkdir -p blah
+
+try: mvDir("tmp/mkdir/p", getCurrentDir() & "/nimscript/")
+except: echo "cant move TO a non-empty dir, ", getCurrentDir() & "/nimscript/"
+
+echo "############################ scripts: exec"
+echo "will u return the symlink or resolve it? ", findExe("runpostman") ## \
+  ## first in cwd, then each $PATH dir
+
+exec "ls" ## \
+  ## if cmd errs an OSError is raised
+  ## use gorgeEx to instead receive the exit code & output
+# exec("ls", "..") ## \
+## exec cmd, input; cache = ""
+## doesnt seem to work as expected when passing input
 
 cd ".." ## \
   ## permanently change directories
   ## use withDir
 
-exec "ls" ## \
-  ## if cmd errs an OSError is raised
-  ## use gorgeEx to instead receive the exit code & output
 
+
+echo "############################ scripts: catchall procs"
+# cppDefine(blah) is a C preprocessor #define and needs to be mangled
 echo "is a == A ? ", cmpic("a", "A")
-
-delEnv("MY_LEAKED_BANKACCOUNT_PASSWORD") ## \
-  ## from the environment
-
-echo "yolo world? ", dirExists("../yolowurl") ## \
-  ## reporting false, dunno, likely due to cwd
