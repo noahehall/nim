@@ -1,6 +1,13 @@
-#[
-  exception stuff, debugging, documentation and testing
+##
+## exception stuff, debugging, documentation and testing
+## =====================================================
+##
+## - [sys mod src excellent doc example](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L292)
+## - [nimscript test file](https://github.com/nim-lang/Nim/blob/devel/tests/test_nimscript.nims)
+## - [system exceptions](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim) for you to extend from
+##
 
+#[
   @see
     - https://github.com/status-im/nim-testutils/tree/master/testutils/fuzzing
     - https://nim-lang.org/docs/assertions.html
@@ -10,7 +17,6 @@
     - https://nim-lang.org/docs/testament.html (preferred std testing tool)
     - https://nim-lang.org/docs/unittest.html (use testament instead)
     - https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling
-    - https://github.com/nim-lang/Nim/blob/devel/tests/test_nimscript.nims (testfile for nimscript)
     - https://nim-lang.org/docs/rst.html
 
   interesting stuff
@@ -25,10 +31,13 @@
 echo "############################ documentation"
 ##
 ## this top level doc is for the module
-## it doesnt look right in the html output
-## if its dispersed throughout multiple include files
+## ====================================
 ##
-## @see https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim for good examples
+## - the === creates an underline and must be same length as whatever its underlining
+## - be sure to use empty ## for line breaks so it looks good in the html thats output
+## - it appears to accept some (not all) markdown syntax ;)
+##
+
 ##
 let goodcode* = "isdocumented" ## \
   ## `goodcode` should be self documenting, but sometimes good naming conventions arent enuff

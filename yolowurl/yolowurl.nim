@@ -1,7 +1,8 @@
 ## yolo wurl: basic nim syntax
+## ===========================
 ##
-## only uses the implicitly imported system, threads and channel built_int module (and their imports)
-## dont import any of them directly, theres some compiler magic to makem work
+## - only uses the implicitly imported system, threads and channel built_int module (and their imports)
+## - dont import any of them directly, theres some compiler magic to makem work
 ##
 #[
   @see
@@ -11,11 +12,10 @@
     - ../backends for compilation (todo currently its in compiler_blah_blah too)
 
   review:
-    cleanup
-      - we have like 1000 different nim files, consolidate
     go through modules @see links and ensure you have captured relevant info in each file
       - likely  need to do a bunchy of recategorization
       - focus on os related stuff first so we can get back to nirv
+      - you likely want to review the types section in system: https://nim-lang.org/docs/system.html#7
     ensure deepdives dir does not contain any system/basic info, and truly dives deep
       - like need to do a bunch of recategorization
       - focus on os related stuff so we can get back to nirv
@@ -285,8 +285,7 @@ include modules/[
   loops,
   rangeSlice,
   blockDo,
-  arrays,
-  sequences,
+  arraySequences,
   sets,
   procedures,
   typeComplex,

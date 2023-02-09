@@ -52,6 +52,7 @@
 ### INim
 
 - [internatice nim shell] https://github.com/inim-repl/INim
+- must have for getting into a repl
 
 ### nodejs
 
