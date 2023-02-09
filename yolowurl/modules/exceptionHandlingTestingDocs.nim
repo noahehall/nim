@@ -23,10 +23,13 @@
 ]#
 
 echo "############################ documentation"
+##
 ## this top level doc is for the module
 ## it doesnt look right in the html output
 ## if its dispersed throughout multiple include files
-## @see https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim
+##
+## @see https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim for good examples
+##
 let goodcode* = "isdocumented" ## \
   ## `goodcode` should be self documenting, but sometimes good naming conventions arent enuff
 

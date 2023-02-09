@@ -1,11 +1,14 @@
+## yolo wurl: basic nim syntax
+##
+## only uses the implicitly imported system, threads and channel built_int module (and their imports)
+## dont import any of them directly, theres some compiler magic to makem work
+##
 #[
-  yolo wurl: basic nim syntax
-  only uses the implicitly imported system, threads and channel built_int module (and their imports)
-  dont import any of them directly, theres some compiler magic to makem work
-
   @see
     - https://nim-lang.org/docs/system.html
     - ../deepdives dir to dive deep
+    - ../nimscript for nim scripting
+    - ../backends for compilation (todo currently its in compiler_blah_blah too)
 
   the road to code
     bookmark: https://nim-lang.org/docs/backends.html
