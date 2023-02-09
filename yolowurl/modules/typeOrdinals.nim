@@ -11,6 +11,20 @@
     array[n, T] fixed-length dimensionally homogeneous
     seq[T] dynamic-length dimensionally homogeneous
 
+  SomeOrdinal matches any ordinal type (including enums with holes)
+  Ordinal[T] generic ordinal type (array, seq, integer, bool, char, enum and their subtypes)
+  ordinal procs
+    dec(x, n)	decrements x by n; n is an integer (mutates)
+    dec(x)	decrements x by one (mutates)
+    high(x) highest possible value
+    inc(x, n)	increments x by n; n is an integer (mutes)
+    inc(x)	increments x by one (mutates)
+    low(x) lowest possible value
+    ord(x)	returns the integer value that is used to represent x's value
+    pred(x, n)	returns the n'th predecessor of x, pred(5) == 4
+    succ(x, n)	returns the n'th successor of x
+    succ(x)	returns the successor of x
+
   procs
     @	Turn an array into a sequence
     high (len x) - 1
@@ -29,7 +43,39 @@
     x[a .. ^b]	Slice of a sequence but b is a reversed index (both ends included)
     x[a .. b]	Slice of a sequence (both ends included)
     x[a ..< b]	Slice of a sequence (excluded upper bound)
+    low usually blah[0]
 ]#
+
+echo "############################ bool"
+# only true & false evaluate to bool
+# but its an enum, so 0=false, 1=true
+# if and while conditions must be of type bool
+
+
+echo "############################ strings"
+# value semantics
+# are really just seq[char|byte] except for the terminating nullbyte \0
+# ^0 terminated so nim strings can be converted to a cstring without a copy
+# can use any seq proc for manipulation
+# compared using lexicographical order
+# to intrepret unicode, you need to import the unicode module
+
+
+var msg: string = "yolo"
+echo msg & " wurl" # concat and return new string
+msg.add(" wurl") # modifies the string in place
+echo msg, "has length ", len msg
+let
+  poop6 = "flush\n\n\n\n\n\nescapes are interpreted"
+  flush = r"raw string, escapes arent interpreted"
+  multiline = """
+    can be split on multiple lines,
+    escape sequences arent interpreted
+    """
+echo poop6, flush, multiline
+echo "cmp a, z ", cmp("a", "z")
+echo "cmp z, a ", cmp("z", "a")
+echo "cmp a, a ", cmp("a", "a")
 
 
 echo "############################ arrays"
@@ -51,9 +97,10 @@ var
   arrayWithRange: array[0..5, string] = ["one", "two", "three", "four", "five", "six"]
 
 proc withArrParam[I, T](a: array[I, T]): string =
-  echo "first item in array ", a[0]
+  result = "first item in array " & $a[0]
 discard withArrParam nums
 discard withArrParam smun
+echo "the range of this array is ", low nums, "..", high nums
 
 # multi dimensional array with different index types
 type
@@ -105,3 +152,48 @@ echo "last ", poops[^1]
 var me = "noAH"
 me[0 .. 1] = "NO"
 echo "change first 2 els ", me
+
+echo "############################ enums"
+# A variable of an enum can only be assigned one of the enum's specified values
+# enum values are usually a set of ordered symbols, internally mapped to an integer (0-based)
+# $ convert enum value to its name
+# ord convert enum name to its value
+
+type
+  GangsOfAmerica = enum
+    democrats, republicans, politicians
+# you can assign custom values to enums
+type
+  PeopleOfAmerica {.pure.} = enum
+    coders = "think i am", teachers = "pretend to be", farmers = "prefer to be", scientists = "trying to be"
+
+echo politicians # impure so doesnt need to be qualified
+echo PeopleOfAmerica.coders # coders needs to be qualified cuz its labeled pure
+
+# its idiomatic nim to have ordinal enums (1, 2, 3, etc)
+# ^ and not assign disjoint values (1, 5, -10)
+# enum iteration via ord
+for i in ord(low(GangsOfAmerica))..
+        ord(high(GangsOfAmerica)):
+  echo GangsOfAmerica(i), " index is: ", i
+# iteration via enum
+# this echos the custom strings
+for peeps in PeopleOfAmerica.coders .. PeopleOfAmerica.scientists:
+  echo "we need more ", peeps
+
+# example from tut1
+type
+  Direction = enum
+    north, east, south, west # 0,1,2,3
+  BlinkLights = enum
+    off, on, slowBlink, mediumBlink, fastBlink
+  LevelSetting = array[north..west, BlinkLights] # 4 items of BlinkLights
+var
+  level: LevelSetting
+level[north] = on
+level[south] = slowBlink
+level[east] = fastBlink
+echo level        # --> [on, fastBlink, slowBlink, off]
+echo low(level)   # --> north
+echo len(level)   # --> 4
+echo high(level)  # --> west

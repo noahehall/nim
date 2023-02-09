@@ -1,18 +1,4 @@
 #[
-  SomeOrdinal matches any ordinal type (including enums with holes)
-  Ordinal[T] generic ordinal type (integer, bool, char, enum and their subtypes)
-  ordinal procs
-    dec(x, n)	decrements x by n; n is an integer (mutates)
-    dec(x)	decrements x by one (mutates)
-    high(x) highest possible value
-    inc(x, n)	increments x by n; n is an integer (mutes)
-    inc(x)	increments x by one (mutates)
-    low(x) lowest possible value
-    ord(x)	returns the integer value that is used to represent x's value
-    pred(x, n)	returns the n'th predecessor of x, pred(5) == 4
-    succ(x, n)	returns the n'th successor of x
-    succ(x)	returns the successor of x
-
   ref/pter:
     . and [] always def-ref, i.e. return the value and not the ref
     . access tuple/object
@@ -334,3 +320,48 @@ type
     name: string     # the symbol's name
     line: int        # the line the symbol was declared in
     code: Node       # the symbol's abstract syntax tree
+
+echo "############################ generics"
+# parameterize procs, iterators or types
+# parameterized: Thing[T]
+# restricted Thing[T: x or y]
+# static Thing[MaxLen: static int, T] <-- find this one in the docs
+# ^ static[T] meta type representing all values that can be evaluated at compile time
+
+# generic procs
+proc wtf[T](a: T): auto =
+  result = "wtf " & $a
+echo wtf "yo"
+
+# generic proc method call syntax
+proc foo[T](i: T) =
+  echo i, " using method call syntax"
+var ii: int
+# ii.foo[int]() # Error: expression 'foo(i)' has no type (or is ambiguous)
+ii.foo[:int]() # Success
+
+# copied from docs
+# generic types
+type
+  BinaryTree*[T] = ref object # BinaryTree is a generic type with
+                              # generic param `T`
+    le, ri: BinaryTree[T]     # left and right subtrees; may be nil
+    data: T                   # the data stored in a node
+proc newNode*[T](data: T): BinaryTree[T] =
+  # constructor for a node
+  new(result)
+  result.data = data
+
+# copied from docs
+# generic iterator
+iterator preorder*[T](root: BinaryTree[T]): T =
+  # Preorder traversal of a binary tree.
+  # This uses an explicit stack (which is more efficient than
+  # a recursive iterator factory).
+  var stack: seq[BinaryTree[T]] = @[root]
+  while stack.len > Natural:
+    var n = stack.pop()
+    while n != nil:
+      yield n.data
+      add(stack, n.ri)  # push right subtree onto the stack
+      n = n.le          # and follow the left pointer
