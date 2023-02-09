@@ -36,15 +36,17 @@ echo "############################ documentation: src code"
 ## - the === creates an underline and must be same length as whatever its underlining
 ## - be sure to use empty ## for line breaks so it looks good in the html thats output
 ## - it appears to accept some (not all) markdown syntax ;)
+## - haha it [check reStructured text docs](https://docutils.sourceforge.io/docs/user/rst/quickref.html) for whats accepted
 ##
 ## some copypasta from nim source
 ## --------------------------------
-## the -- creates a new section, should be same length as the line above it
+## the -- creates a new section (h2?), should be same length as the line above it
 ## - see also * `low(openArray) <#low,openArray[T]>`_  creates a #fragment
 ##
 ## .. code-block:: Nim
 ##  var poop = soup is inside a code block
 ##  so am I because I indented 1 space
+##
 ## i am outside of a code block
 ##
 

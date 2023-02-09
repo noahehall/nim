@@ -1,5 +1,9 @@
 ## yolo wurl: basic nim syntax
 ## ===========================
+## :Authors:
+##  noah for @nirvai
+## :Org:
+##  nirvai
 ##
 ## - only uses the implicitly imported system, threads and channel built_int module (and their imports)
 ## - dont import any of them directly, theres some compiler magic to makem work
