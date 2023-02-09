@@ -254,7 +254,7 @@ type
 method eval(e: Expression): int {.base.} = # <-- its for the base type
   # override this base method
   quit "to override!"
-## use methods because at runtime we need to know the type
+# use methods because at runtime we need to know the type
 method eval(e: Literal): int = e.x
 method eval(e: PlusExpr): int = eval(e.a) + eval(e.b)
 # these procs dont need dynamic binding
