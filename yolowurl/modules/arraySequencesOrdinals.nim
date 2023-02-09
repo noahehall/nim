@@ -1,8 +1,9 @@
 ##
-## array, sequences, etc
-## =====================
+## ordinals, array, sequences
+## ==========================
 ##
-## basically any collection sharing roughly the same interface (sans strings)
+## ordinals: enums, integers, char, bool, subranges
+## including arrays and sequences as the interface is similar to Ordinals
 ##
 #[
   types
@@ -10,9 +11,25 @@
     openArray[T] ptr to the array data and a length field
     array[n, T] fixed-length dimensionally homogeneous
     seq[T] dynamic-length dimensionally homogeneous
+    Ordinal[T] generic ordinal type
 
-  SomeOrdinal matches any ordinal type (including enums with holes)
-  Ordinal[T] generic ordinal type (array, seq, integer, bool, char, enum and their subtypes)
+  array procs
+    swapRefsInArray swaps x[N] with y[N] if the elements are refs
+
+  seq procs
+    @	Turn an array type into a sequence
+    add	Add an item to the sequence
+    del	O(1) removal, doesn't preserve the order
+    delete	Delete an item while preserving the order of elements (O(n) operation)
+    high (len x) - 1
+    insert	Insert an item at a specific position
+    newSeq[T](n)	create seq of T with length n, = values to each index instead of add
+    newSeq[T](s: seq[T]; n) create seq of T with length n, assigned to var s
+    newSeqOfCap	Create a new sequence with zero length and a given capacity
+    newSeqUninitialized only available for number types
+    pop	Remove and return last item of a sequence
+
+
   ordinal procs
     [a .. ^b]	Slice: b is a backwardsIndex (inclusive)
     [a .. b]	Slice: inclusive
@@ -33,53 +50,7 @@
     succ(x, n)	returns the n'th successor of x
     succ(x)	returns the successor of x
 
-  array procs
-    swapRefsInArray swaps x[N] with y[N] if the elements are refs
-
-  seq procs
-    @	Turn an array type into a sequence
-    del	O(1) removal, doesn't preserve the order
-    delete	Delete an item while preserving the order of elements (O(n) operation)
-    insert	Insert an item at a specific position
-    newSeq[T](n)	create seq of T with length n, = values to each index instead of add
-    newSeq[T](s: seq[T]; n) create seq of T with length n, assigned to var s
-    newSeqOfCap	Create a new sequence with zero length and a given capacity
-    newSeqUninitialized only available for number types
-    pop	Remove and return last item of a sequence
-
 ]#
-
-echo "############################ bool"
-# only true & false evaluate to bool
-# but its an enum, so 0=false, 1=true
-# if and while conditions must be of type bool
-
-
-echo "############################ strings"
-# value semantics
-# are really just seq[char|byte] except for the terminating nullbyte \0
-# ^0 terminated so nim strings can be converted to a cstring without a copy
-# can use any seq proc for manipulation
-# compared using lexicographical order
-# to intrepret unicode, you need to import the unicode module
-
-
-var msg: string = "yolo"
-echo msg & " wurl" # concat and return new string
-msg.add(" wurl") # modifies the string in place
-echo msg, "has length ", len msg
-let
-  poop6 = "flush\n\n\n\n\n\nescapes are interpreted"
-  flush = r"raw string, escapes arent interpreted"
-  multiline = """
-    can be split on multiple lines,
-    escape sequences arent interpreted
-    """
-echo poop6, flush, multiline
-echo "cmp a, z ", cmp("a", "z")
-echo "cmp z, a ", cmp("z", "a")
-echo "cmp a, a ", cmp("a", "a")
-
 
 echo "############################ arrays"
 # the array size is encoded in its type

@@ -247,7 +247,7 @@ include modules/[
   loops,
   rangeSlice,
   blockDo,
-  typeOrdinals,
+  arraySequencesOrdinals,
   sets,
   procedures,
   typeComplex,

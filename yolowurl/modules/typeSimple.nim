@@ -141,3 +141,33 @@ echo "############################ byte"
 # if dealing with binary blobs, prefer seq[byte] > string,
 # if dealing with binary data, prefer seq[char|uint8]
 # ByteAddress alias for int, used for converting pointers to itneger addresses
+
+echo "############################ bool"
+# only true & false evaluate to bool
+# but its an enum, so 0=false, 1=true
+# if and while conditions must be of type bool
+
+echo "############################ strings"
+# value semantics
+# are really just seq[char|byte] except for the terminating nullbyte \0
+# ^0 terminated so nim strings can be converted to a cstring without a copy
+# can use any seq proc for manipulation
+# compared using lexicographical order
+# to intrepret unicode, you need to import the unicode module
+
+
+var msg: string = "yolo"
+echo msg & " wurl" # concat and return new string
+msg.add(" wurl") # modifies the string in place
+echo msg, "has length ", len msg
+let
+  poop6 = "flush\n\n\n\n\n\nescapes are interpreted"
+  flush = r"raw string, escapes arent interpreted"
+  multiline = """
+    can be split on multiple lines,
+    escape sequences arent interpreted
+    """
+echo poop6, flush, multiline
+echo "cmp a, z ", cmp("a", "z")
+echo "cmp z, a ", cmp("z", "a")
+echo "cmp a, a ", cmp("a", "a")
