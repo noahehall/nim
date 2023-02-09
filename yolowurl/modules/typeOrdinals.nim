@@ -16,23 +16,23 @@
   ordinal procs
     dec(x, n)	decrements x by n; n is an integer (mutates)
     dec(x)	decrements x by one (mutates)
-    high(x) highest possible value
+    high(x) highest possible value/index
     inc(x, n)	increments x by n; n is an integer (mutes)
     inc(x)	increments x by one (mutates)
-    low(x) lowest possible value
+    low(x) lowest possible value/index
     ord(x)	returns the integer value that is used to represent x's value
     pred(x, n)	returns the n'th predecessor of x, pred(5) == 4
     succ(x, n)	returns the n'th successor of x
     succ(x)	returns the successor of x
+    len	Return the length
+    setLen increase/truncate the length of something
 
-  procs
+  seq procs
     @	Turn an array into a sequence
-    high (len x) - 1
     add	Add an item to the sequence
     del	O(1) removal, doesn't preserve the order
     delete	Delete an item while preserving the order of elements (O(n) operation)
     insert	Insert an item at a specific position
-    len	Return the length of a sequence
     newSeq[T](n)	create seq of T with length n, = values to each index instead of add
     newSeq[T](s: seq[T]; n) create seq of T with length n, assigned to var s
     newSeqOfCap	Create a new sequence with zero length and a given capacity
@@ -43,7 +43,6 @@
     x[a .. ^b]	Slice of a sequence but b is a reversed index (both ends included)
     x[a .. b]	Slice of a sequence (both ends included)
     x[a ..< b]	Slice of a sequence (excluded upper bound)
-    low usually blah[0]
 ]#
 
 echo "############################ bool"

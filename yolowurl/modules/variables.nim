@@ -13,11 +13,17 @@ const poop3 = "flush"
 const fac4 = (var x = 1; for i in 1..4: x *= i; x)
 
 echo poop1, poop2, poop3, fac4
+
 # stropping
 let `let` = "stropping"
 echo(`let`) # stropping enables keywords as identifiers
 
+var autoInt: auto = 7 # auto generally used with procs as it provides type inference
+echo "autoInt labeled auto but its type is ", $type(autoInt)
+
 echo "############################ variable support"
+# shallow(blah) marks blah as shallow for optimization, subsequent assignments  wont deep copy
+# shallowCopy(blah) use this instead of = for a shallow copy
 # checks whether x can be compiled without any semantic error.
 # useful to verify whether a type supports some operation:
 when compiles(3 + 4):

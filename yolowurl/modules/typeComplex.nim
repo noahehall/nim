@@ -1,4 +1,7 @@
 #[
+  objects
+    of
+
   ref/pter:
     . and [] always def-ref, i.e. return the value and not the ref
     . access tuple/object
@@ -6,30 +9,14 @@
     new(T) object of type T and return a traced ref, when T is a ref the result type will be T, else ref T
     new[T](a) object of type T and return a trace reference to it in a
     new[T](a; finalizer) same as before, but this time finalizer is called a is gc'ed
+    isNil generally more efficient than == nil
 
-  most types
-    isNil(x) everything sans Seq (check for 0 length instead)
-    len(x)
-    of
+  procs
     as
     in notin is isnot
-    setLen increase/truncate the length of something
-    shallow(blah) marks blah as shallow for optimization, subsequent assignments  wont deep copy
-    shallowCopy(blah) use this instead of = for a shallow copy
-    toOpenArray
-    toOpenArrayByte
-
+    isNil(x) sometimes more efficient than == nil
 
 ]#
-echo "############################ useful type list"
-# type[T] the type of all type values
-# auto generally used with procs as it provides type inference
-
-
-
-var autoInt: auto = 7
-echo "autoInt labeled auto but its type is ", $type(autoInt)
-
 echo "############################ REEEAAALLLY should todo type list"
 # GC_Strategy (enum) the application should use
   # gcThroughput,             ## optimize for throughput
@@ -103,6 +90,7 @@ let everyonepoop = upoop # deep copy
 echo "did ", ipoop
 echo "or did ", upoop
 echo "does ", everyonepoop
+
 
 type
   Someone* = object
@@ -211,6 +199,7 @@ proc didipoop(self: YouPoop): string =
 proc dIdIpOoP(self: IPoop): string =
   self.name & " has evolved passed pooping"
 
+
 # this has to be `var` to enable adding subtypes
 # let throws error because You/IPoop arent WhoPoops
 # const doesnt work at all and im not sure why but its a compile time issue
@@ -223,6 +212,7 @@ for criminal in sherlockpoops:
 
 # type checking
 if sherlockpoops[0] of YouPoop: echo "filthy animal" else: echo "snobby bourgeois"
+echo "is sherlockpoops[0] nil? ", isNil(sherlockpoops[0])
 
 echo "############################ dynamic dispatch"
 # generally only required with ref objects

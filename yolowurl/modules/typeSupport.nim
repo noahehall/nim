@@ -15,14 +15,18 @@ echo "############################ type coercions"
 # static(x): force the compile-time evaluation of the given expression
 # toFloat(int): convert int to a float
 # toInt(float): convert float to an int
+# toOpenArray
+# toOpenArrayByte
 # type(x): retrieve the type of x
 # typeof(x): same as type
 
 echo "############################ type inference"
 var somevar: seq[char] = @['n', 'o', 'a', 'h']
+var othervar: string = ""
 echo "somevar is seq? ", somevar is seq
 echo "somevar is seq[char]? ", "throws err when adding subtype seq[char]"
 echo "somevar isnot string? ", somevar isnot string
+
 
 type MyType = ref object of RootObj
 var instance: MyType = MyType()
