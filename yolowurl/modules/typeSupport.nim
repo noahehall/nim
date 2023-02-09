@@ -10,6 +10,7 @@ echo "############################ type casts"
 echo "############################ type coercions"
 # type coercions preserve the abstract value, but not the bit-pattern
 # chr(i): convert 0..255 to a char
+# cstringArrayToSeq
 # ord(i): convert char to an int
 # parseInt/parseFloat from a string
 # static(x): force the compile-time evaluation of the given expression
@@ -19,6 +20,7 @@ echo "############################ type coercions"
 # toOpenArrayByte
 # type(x): retrieve the type of x
 # typeof(x): same as type
+# allocCStringArray creates a null terminated cstringArray from x
 
 echo "############################ type inference"
 var somevar: seq[char] = @['n', 'o', 'a', 'h']

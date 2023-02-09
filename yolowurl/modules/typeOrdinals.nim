@@ -14,22 +14,30 @@
   SomeOrdinal matches any ordinal type (including enums with holes)
   Ordinal[T] generic ordinal type (array, seq, integer, bool, char, enum and their subtypes)
   ordinal procs
+    [a .. ^b]	Slice: b is a backwardsIndex (inclusive)
+    [a .. b]	Slice: inclusive
+    [a ..< b]	Slice: excluded upper bound like b == len - 1
+    & concat 2 things
+    add	y to x
+    contains true if y is in x, shortcut for find(a, item) => 0
     dec(x, n)	decrements x by n; n is an integer (mutates)
     dec(x)	decrements x by one (mutates)
     high(x) highest possible value/index
     inc(x, n)	increments x by n; n is an integer (mutes)
     inc(x)	increments x by one (mutates)
+    len	Return the length
     low(x) lowest possible value/index
     ord(x)	returns the integer value that is used to represent x's value
     pred(x, n)	returns the n'th predecessor of x, pred(5) == 4
+    setLen increase/truncate the length of something
     succ(x, n)	returns the n'th successor of x
     succ(x)	returns the successor of x
-    len	Return the length
-    setLen increase/truncate the length of something
+
+  array procs
+    swapRefsInArray swaps x[N] with y[N] if the elements are refs
 
   seq procs
-    @	Turn an array into a sequence
-    add	Add an item to the sequence
+    @	Turn an array type into a sequence
     del	O(1) removal, doesn't preserve the order
     delete	Delete an item while preserving the order of elements (O(n) operation)
     insert	Insert an item at a specific position
@@ -38,11 +46,7 @@
     newSeqOfCap	Create a new sequence with zero length and a given capacity
     newSeqUninitialized only available for number types
     pop	Remove and return last item of a sequence
-    setLen	Set the length of a sequence
-    x & y	Concatenate two sequences
-    x[a .. ^b]	Slice of a sequence but b is a reversed index (both ends included)
-    x[a .. b]	Slice of a sequence (both ends included)
-    x[a ..< b]	Slice of a sequence (excluded upper bound)
+
 ]#
 
 echo "############################ bool"
