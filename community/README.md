@@ -54,10 +54,6 @@
 - [repl nim] https://github.com/inim-repl/INim
 - dude this is a fkn must have
 
-### moe
-
-- [vim like editor with syntax highlighting & autocomplete](https://github.com/fox0430/moe)
-
 ### chronos
 
 - [asyncdispatch alternative used by some other popular pkgs](https://github.com/status-im/nim-chronos)
@@ -69,18 +65,22 @@
 
 ## Recommended/alternatives
 
-- [nodejs alternative stdlib for js targets](https://github.com/juancarlospaco/nodejs)
-- [jester: a sinetra-like web framework built on httpbeast](https://github.com/dom96/jester)
 - [httpbeast: fast http 1.1 server](https://github.com/dom96/httpbeast)
+- [jester: a sinetra-like web framework built on httpbeast](https://github.com/dom96/jester)
+- [mummy: http/websocket server focusing on performance](https://github.com/guzba/mummy)
+- [nimtemplate: github repo template with github actions, tests, etc](https://github.com/treeform/nimtemplate)
+- [nodejs: alternative stdlib for js targets](https://github.com/juancarlospaco/nodejs)
+- [norm: postgres orm](https://github.com/moigagoo/norm)
+- [nyml: yaml parser](https://github.com/openpeep/nyml)
 - [presto: rest api from status-im built on chronos](https://github.com/status-im/nim-presto)
 - [scorper: micro webframework built on chronos](https://github.com/bung87/scorper)
 - [valido: string validators & sanitizers](https://github.com/openpeep/valido)
-- [nyml: yaml parser](https://github.com/openpeep/nyml)
-- [norm: postgres orm](https://github.com/moigagoo/norm)
-- [nimtemplate: github repo template with github actions, tests, etc](https://github.com/treeform/nimtemplate)
-- [mummy: http/websocket server focusing on performance](https://github.com/guzba/mummy)
 
 ## Could be useful
 
 - [c2nm](https://github.com/nim-lang/c2nim)
   - converts C and C++ header files to nim code, enabling you to use existing C/++ libraries with nim
+
+## should try again
+
+- [moe: vim like editor that didnt work on the first try](https://github.com/fox0430/moe)
