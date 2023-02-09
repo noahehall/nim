@@ -17,6 +17,7 @@
       - likely  need to do a bunchy of recategorization
       - focus on os related stuff first so we can get back to nirv
       - you likely want to review the types section in system: https://nim-lang.org/docs/system.html#7
+      - anything you skip before to take note of, e.g. we forgot to do docs > runnableExamples
     ensure deepdives dir does not contain any system/basic info, and truly dives deep
       - like need to do a bunch of recategorization
       - focus on os related stuff so we can get back to nirv
@@ -235,42 +236,6 @@
 ]#
 
 
-#[
-  # pragmas
-  enable new fntionality without adding new keywords to the language
-
-  @see
-    - https://nim-lang.org/docs/manual.html#pragmas
-    - https://nim-lang.org/docs/nimc.html#additional-features
-
-  syntax:
-    {.pragma1, pragma2, etc.}
-
-
-  {.acyclic.} dunno read the docs
-  {.async.} this fn is asynchronous and can use the await keyword
-  {.base.} for methods, to associate fns with a base type. see inheritance
-  {.bycopy|byref.} label a proc arg
-  {.compiletime.} check the docs, maybe runs a proc @ compile time
-  {.dirty.} dunno, but used with templates
-  {.effects.} check the docs: will output all inferred effects (e.g. exceptions) up to this point
-  {.exportc: "or-use-this-specific-name".}
-  {.exportc.} disable proc name mangling when compiled
-  {.hint[POOP]:on/off.} can also be set via cli flags
-  {.inheritable.} # check the docs: create alternative RootObj
-  {.inject.} dunno, something to do with symbol visibility
-  {.inline.} # check the docs: inlines a procedure
-  {.noSideEffect.} convert a proc to a func, but why not just use func?
-  {.pop.} # removes a pragma from the code that follows, check the docs
-  {.pure.} requires qualifying ambiguous references; x fails, but y.x doesnt
-  {.push ...} # pushes a pragma into the context of the code that follows, check the docs
-  {.raises: [permit,these].} # list permitted/none exceptions; unlisted force compiler errs
-  {.size: ...} # check the docs
-  {.thread.} informs the compiler this fn is meant for execution on a new thread
-  {.threadvar.} informs the compiler this var should be local to a thread
-  {.warning[POOP]:on/off.} can also be set via cli flags
-]#
-
 include modules/[
   variables,
   typeSimple,
@@ -287,5 +252,6 @@ include modules/[
   tuples,
   typeSupport,
   osIoFiles,
-  typeGlobals
+  typeGlobals,
+  pragmas
 ]
