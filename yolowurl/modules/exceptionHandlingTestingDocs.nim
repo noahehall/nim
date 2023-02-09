@@ -62,7 +62,7 @@ runnableExamples:
     ## example of creating a good application
   iam.repr ## \
     ## prints to stdout
-  var
+
 
 echo "############################ Defects "
 # AccessViolationDefect invalid memory access

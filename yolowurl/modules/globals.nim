@@ -50,6 +50,7 @@ echo "############################ interesting globals"
 # setControlCHook proc to run when program is ctrlc'ed
 # sizeof blah in bytes
 # unhandledExceptionHook (var) override default behavior: write err msg then terminate
+# compileOption(x[, y]) check if a switch is active and/or its value at compile time
 
 # hostCPU (const) "i386", "alpha", "powerpc", "powerpc64", "powerpc64el", "sparc", "amd64", "mips", "mipsel", "arm", "arm64", "mips64", "mips64el", "riscv32", "riscv64"
 echo "my hostCPU is " & hostCPU

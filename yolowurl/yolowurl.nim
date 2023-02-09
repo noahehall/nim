@@ -14,9 +14,9 @@
 
   review:
     go through modules @see links and ensure you have captured relevant info in each file
-      - likely  need to do a bunchy of recategorization
+      - likely need to do a bunchy of recategorization
       - focus on os related stuff first so we can get back to nirv
-      - you likely want to review the types section in system: https://nim-lang.org/docs/system.html#7
+      - open the source code https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim and ctrl-f keywords
     ensure deepdives dir does not contain any system/basic info, and truly dives deep
       - like need to do a bunch of recategorization
       - focus on os related stuff so we can get back to nirv
@@ -251,6 +251,6 @@ include modules/[
   tuples,
   typeSupport,
   osIoFiles,
-  typeGlobals,
+  globals,
   pragmas
 ]
