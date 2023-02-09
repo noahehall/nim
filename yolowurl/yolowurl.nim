@@ -10,27 +10,31 @@
     - ../nimscript for nim scripting
     - ../backends for compilation (todo currently its in compiler_blah_blah too)
 
-  the road to code
-    bookmark: https://nim-lang.org/docs/backends.html
-    finally 1: go through modules @see links and ensure you have captured relevant info in each file
+  review:
+    cleanup
+      - we have like 1000 different nim files, consolidate
+    go through modules @see links and ensure you have captured relevant info in each file
       - likely  need to do a bunchy of recategorization
       - focus on os related stuff first so we can get back to nirv
-    finally 2: ensure deepdives dir does not contain any system/basic info, and truly dives deep
+    ensure deepdives dir does not contain any system/basic info, and truly dives deep
       - like need to do a bunch of recategorization
       - focus on os related stuff so we can get back to nirv
-
-  review:
-    - we have like 1000 different nim files, consolidate
-    - somehow we've skipped a bunch of stuff (maybe there in deepdives as links?)
+    somehow we've skipped a bunch of stuff (maybe there in deepdives as links?)
       - effect tracking system
       - testing
       - tasks
-    - cant get too far in nim without readin through the nimble github readme
-    - rework all of these weird comments to use docgen
-    - didnt appreciate the semicolons usefulness in grouping statements, search the docs
+      - didnt appreciate the semicolons usefulness in grouping statements, search the docs
+      - cant get too far in nim without readin through the nimble github readme
+      - rework all of these weird comments to use docgen
+    finally 3: https://nim-lang.org/docs/backends.html
+      - you need to have some code ready so your not just copypasting documentation
+    nim in action
+      - reading: finished this like a year ago, it was super old then away
+      - copying pg40 custom array ranges
+      - have to finish copying this book as it provides real world examples and guidance
 
 
-  skim:
+  eventually: bro, lets start coding and swing back to these later
     then here: https://nim-lang.org/docs/manual_experimental.html
     then here: https://nim-lang.org/docs/mm.html
     then here: https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html
@@ -39,9 +43,7 @@
       https://nimble.directory/
     theck each deepdive file and add some comments to each @see link
       - you should probably copypasta some examples as well
-    nim in action
-      - reading: finished this like a year ago, it was super old then away
-      - copying pg40 custom array ranges
+
 
   eventually:
     https://nim-lang.org/docs/tut3.html
