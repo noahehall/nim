@@ -3,6 +3,8 @@ poop2	yolowurl.html#poop2	yolowurl: poop2
 poop3	yolowurl.html#poop3	yolowurl: poop3	
 fac4	yolowurl.html#fac4	yolowurl: fac4	
 `let`	yolowurl.html#let	yolowurl: let	
+typeSupportBlah	yolowurl.html#typeSupportBlah	yolowurl: typeSupportBlah	
+d33pcopy	yolowurl.html#d33pcopy	yolowurl: d33pcopy	
 msg	yolowurl.html#msg	yolowurl: msg	
 poop6	yolowurl.html#poop6	yolowurl: poop6	
 flush	yolowurl.html#flush	yolowurl: flush	
@@ -41,12 +43,12 @@ GoodApplications	yolowurl.html#GoodApplications	yolowurl: GoodApplications
 neverThrows	yolowurl.html#neverThrows	yolowurl: neverThrows(): string	
 maybeThrows	yolowurl.html#maybeThrows,int	yolowurl: maybeThrows(x: int): int	
 err	yolowurl.html#err	yolowurl: err	
-loc`gensym2	yolowurl.html#loc`gensym2	yolowurl: loc`gensym2	
-ploc`gensym2	yolowurl.html#ploc`gensym2	yolowurl: ploc`gensym2	
 loc`gensym4	yolowurl.html#loc`gensym4	yolowurl: loc`gensym4	
 ploc`gensym4	yolowurl.html#ploc`gensym4	yolowurl: ploc`gensym4	
 loc`gensym6	yolowurl.html#loc`gensym6	yolowurl: loc`gensym6	
 ploc`gensym6	yolowurl.html#ploc`gensym6	yolowurl: ploc`gensym6	
+loc`gensym8	yolowurl.html#loc`gensym8	yolowurl: loc`gensym8	
+ploc`gensym8	yolowurl.html#ploc`gensym8	yolowurl: ploc`gensym8	
 `...`	yolowurl.html#....i,T,T	yolowurl: `...`[T](a: T; b: T): T	
 countTo	yolowurl.html#countTo.i,int	yolowurl: countTo(n: int): int	
 intArr	yolowurl.html#intArr	yolowurl: intArr	
@@ -57,7 +59,7 @@ MySubrange	yolowurl.html#MySubrange	yolowurl: MySubrange
 a	yolowurl.html#a	yolowurl: a	
 bbb	yolowurl.html#bbb	yolowurl: bbb	
 sniper	yolowurl.html#sniper	yolowurl: sniper	
-alreadyExecuted`gensym17	yolowurl.html#alreadyExecuted`gensym17	yolowurl: alreadyExecuted`gensym17	
+alreadyExecuted`gensym19	yolowurl.html#alreadyExecuted`gensym19	yolowurl: alreadyExecuted`gensym19	
 nums	yolowurl.html#nums	yolowurl: nums	
 nums4	yolowurl.html#nums4	yolowurl: nums4	
 rangeArr	yolowurl.html#rangeArr	yolowurl: rangeArr	
@@ -125,15 +127,15 @@ bb	yolowurl.html#bb	yolowurl: bb
 get	yolowurl.html#get.c,Option[T]	yolowurl: get[T](x: Option[T]): T	
 runFn	yolowurl.html#runFn,string,proc(string)	yolowurl: runFn(a: string; fn: proc (x: string): string): string	
 `!=`	yolowurl.html#!=.t,untyped,untyped	yolowurl: `!=`(a, b: untyped): untyped	
-loc`gensym28	yolowurl.html#loc`gensym28	yolowurl: loc`gensym28	
-ploc`gensym28	yolowurl.html#ploc`gensym28	yolowurl: ploc`gensym28	
+loc`gensym26	yolowurl.html#loc`gensym26	yolowurl: loc`gensym26	
+ploc`gensym26	yolowurl.html#ploc`gensym26	yolowurl: ploc`gensym26	
 debug	yolowurl.html#debug	yolowurl: debug	
 xy	yolowurl.html#xy	yolowurl: xy	
 log_eager	yolowurl.html#log_eager,string	yolowurl: log_eager(msg: string)	
 log_lazy	yolowurl.html#log_lazy.t,string	yolowurl: log_lazy(msg: string)	
 blockRunner	yolowurl.html#blockRunner.t,bool,untyped	yolowurl: blockRunner(please: bool; body: untyped): void	
-theyAskedNickely`gensym30	yolowurl.html#theyAskedNickely`gensym30	yolowurl: theyAskedNickely`gensym30	
-theyAskedNickely`gensym31	yolowurl.html#theyAskedNickely`gensym31	yolowurl: theyAskedNickely`gensym31	
+theyAskedNickely`gensym28	yolowurl.html#theyAskedNickely`gensym28	yolowurl: theyAskedNickely`gensym28	
+theyAskedNickely`gensym29	yolowurl.html#theyAskedNickely`gensym29	yolowurl: theyAskedNickely`gensym29	
 autoInt	yolowurl.html#autoInt	yolowurl: autoInt	
 BigMoney	yolowurl.html#BigMoney	yolowurl: BigMoney	
 StrOrInt	yolowurl.html#StrOrInt	yolowurl: StrOrInt	
@@ -211,8 +213,6 @@ aaa	yolowurl.html#aaa	yolowurl: aaa
 somevar	yolowurl.html#somevar	yolowurl: somevar	
 MyType	yolowurl.html#MyType	yolowurl: MyType	
 instance	yolowurl.html#instance	yolowurl: instance	
-typeSupportBlah	yolowurl.html#typeSupportBlah	yolowurl: typeSupportBlah	
-d33pcopy	yolowurl.html#d33pcopy	yolowurl: d33pcopy	
 MessageWhatev	yolowurl.html#MessageWhatev	yolowurl: MessageWhatev	
 someMsg	yolowurl.html#someMsg	yolowurl: someMsg	
 entireFile	yolowurl.html#entireFile	yolowurl: entireFile	
@@ -231,5 +231,6 @@ globalarr	yolowurl.html#globalarr	yolowurl: globalarr
 yolo wurl: basic nim syntax	yolowurl.html#yolo-wurlcolon-basic-nim-syntax	 yolo wurl: basic nim syntax	
 exception stuff, debugging, documentation and testing	yolowurl.html#exception-stuff-debugging-documentation-and-testing	 exception stuff, debugging, documentation and testing	
 top level docs are for the module	yolowurl.html#top-level-docs-are-for-the-module	 top level docs are for the module	
+some copypasta from nim source	yolowurl.html#top-level-docs-are-for-the-module-some-copypasta-from-nim-source	  some copypasta from nim source	
 array, sequences, etc	yolowurl.html#array-sequences-etc	 array, sequences, etc	
 enable new functionality without adding new keywords to the language	yolowurl.html#enable-new-functionality-without-adding-new-keywords-to-the-language	 enable new functionality without adding new keywords to the language	

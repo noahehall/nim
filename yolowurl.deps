@@ -75,4 +75,4 @@
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/setops.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/assign.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/mmdisp.nim
-/home/poop/git/foss/nim/yolowurl/modules/typeGlobals.nim
+/home/poop/git/foss/nim/yolowurl/modules/globals.nim
