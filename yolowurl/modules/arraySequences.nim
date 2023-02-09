@@ -1,3 +1,9 @@
+##
+## array, sequences, etc
+## =====================
+##
+## basically any collection sharing roughly the same interface (sans strings)
+##
 #[
   types
     UncheckedArray[T] array with no bounds checking
@@ -7,6 +13,7 @@
 
   procs
     @	Turn an array into a sequence
+    high (len x) - 1
     add	Add an item to the sequence
     del	O(1) removal, doesn't preserve the order
     delete	Delete an item while preserving the order of elements (O(n) operation)

@@ -39,17 +39,17 @@ echo "############################ documentation"
 ##
 
 ##
-let goodcode* = "isdocumented" ## \
-  ## `goodcode` should be self documenting, but sometimes good naming conventions arent enuff
+let goodcode* = "isdocumented"  ## `goodcode` should be self documenting, but sometimes good naming
+                                ## conventions arent enuff
+                                ## notice how we are aligning this shiz to the right
 
-let badcode = "ishardtomaintain" ## \
-  ## this is not included in docs because its not exported
+let badcode = "ishardtomaintain"  ## this is not included in docs because its not exported
 
 type goodapplications* = object
   ## especially things like custom types
   ## may need additional abbreviations to describe their purpose
   pubfield*: string ## is included in docs
-  prvfield: string ## also included since goodapplications is exported
+  prvfield: string  ## also included since goodapplications is exported
 
 
 echo "############################ Defects "

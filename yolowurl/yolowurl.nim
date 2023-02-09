@@ -4,6 +4,7 @@
 ## - only uses the implicitly imported system, threads and channel built_int module (and their imports)
 ## - dont import any of them directly, theres some compiler magic to makem work
 ##
+
 #[
   @see
     - https://nim-lang.org/docs/system.html
@@ -28,24 +29,17 @@
       - rework all of these weird comments to use docgen
     finally 3: https://nim-lang.org/docs/backends.html
       - you need to have some code ready so your not just copypasting documentation
+    nim package directory: get familiar with what exists https://nimble.directory/
     nim in action
       - reading: finished this like a year ago, it was super old then away
       - copying pg40 custom array ranges
       - have to finish copying this book as it provides real world examples and guidance
 
-
-  eventually: bro, lets start coding and swing back to these later
+  eventually: rather start coding and swing back to these later
     then here: https://nim-lang.org/docs/manual_experimental.html
     then here: https://nim-lang.org/docs/mm.html
     then here: https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html
     and finally: https://nim-lang.org/docs/manual.html
-    nim package directory: get familiar with what exists
-      https://nimble.directory/
-    theck each deepdive file and add some comments to each @see link
-      - you should probably copypasta some examples as well
-
-
-  eventually:
     https://nim-lang.org/docs/tut3.html
     https://nim-lang.org/docs/destructors.html
 
