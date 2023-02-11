@@ -4,11 +4,13 @@
 ##
 ## structured: arrays, sequences, tuples, objects sets
 ## - tuples and objects are in typeStructured
+## - can hold multiple values and have unlimited levels of nesting
 ##
 ## ordinals: enums, integers, char, bool, subranges
 ## - integers, chars and bool are in typeSimple
+## - are countable and ordered, with a smallest & highest value
 ##
-## arrays: array, openArray, UncheckedArray
+## arrays: array, openArray, UncheckedArray, varargs
 ##
 ## set: base type can be any ordinal type
 ##
@@ -16,13 +18,14 @@
   types
     array[n, T] fixed-length dimensionally homogeneous
     cstringArray
-    openArray[T] ptr to the array data and a length field
+    openArray[T] a procs parameter that accepts an array/seq of any size but only of 1 dimension
     Ordinal[T] generic ordinal type
     range[T] generic constructor for range
     seq[T] dynamic-length dimensionally homogeneous
     set[T] generic set constructor
     SomeOrdinal
-    UncheckedArray[T] array with no bounds checking
+    UncheckedArray[T] array with no bounds checking for implmenting customized flexibly sized arrays
+    varargs[T] an openarray paramter that accepts a variable number of args in a procedure
 
   immutable ops
     [a .. ^b]	Slice: b is a backwardsIndex (inclusive)

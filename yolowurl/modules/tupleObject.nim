@@ -1,3 +1,9 @@
+##
+## tuples & objects
+## ================
+##
+## heterogenous storage containers of named fields of any type
+##
 #[
   objects
     of
@@ -18,7 +24,7 @@
 
 ]#
 
-echo "############################ tuple fixed length hetergenous"
+echo "############################ tuple fixed length"
 # similar to objects sans inheritance, + unpacking + more dynamic + fields always public
 # structural equality check
 # ^ tuples of diff types are == if fields have same type, name and order

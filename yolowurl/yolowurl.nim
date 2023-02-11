@@ -255,7 +255,7 @@ include modules/[
   blockDo,
   ordinalStructured,
   procedures,
-  typeStructured,
+  tupleObject,
   osIoFiles,
   pragmas
 ]
