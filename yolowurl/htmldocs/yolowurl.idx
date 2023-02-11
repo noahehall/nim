@@ -3,12 +3,21 @@ poop2	yolowurl.html#poop2	yolowurl: poop2
 poop3	yolowurl.html#poop3	yolowurl: poop3	
 fac4	yolowurl.html#fac4	yolowurl: fac4	
 `let`	yolowurl.html#let	yolowurl: let	
+autoInt	yolowurl.html#autoInt	yolowurl: autoInt	
 typeSupportBlah	yolowurl.html#typeSupportBlah	yolowurl: typeSupportBlah	
 d33pcopy	yolowurl.html#d33pcopy	yolowurl: d33pcopy	
-msg	yolowurl.html#msg	yolowurl: msg	
-poop6	yolowurl.html#poop6	yolowurl: poop6	
-flush	yolowurl.html#flush	yolowurl: flush	
-multiline	yolowurl.html#multiline	yolowurl: multiline	
+globalint	yolowurl.html#globalint	yolowurl: globalint	
+globalfloat	yolowurl.html#globalfloat	yolowurl: globalfloat	
+globalstring	yolowurl.html#globalstring	yolowurl: globalstring	
+globalseq	yolowurl.html#globalseq	yolowurl: globalseq	
+globalset1	yolowurl.html#globalset1	yolowurl: globalset1	
+globalset2	yolowurl.html#globalset2	yolowurl: globalset2	
+globalset11	yolowurl.html#globalset11	yolowurl: globalset11	
+globalarr	yolowurl.html#globalarr	yolowurl: globalarr	
+somevar	yolowurl.html#somevar	yolowurl: somevar	
+othervar	yolowurl.html#othervar	yolowurl: othervar	
+MyType	yolowurl.html#MyType	yolowurl: MyType	
+instance	yolowurl.html#instance	yolowurl: instance	
 xxx	yolowurl.html#xxx	yolowurl: xxx	
 y	yolowurl.html#y	yolowurl: y	
 z	yolowurl.html#z	yolowurl: z	
@@ -36,6 +45,10 @@ m	yolowurl.html#m	yolowurl: m
 n	yolowurl.html#n	yolowurl: n	
 o	yolowurl.html#o	yolowurl: o	
 p	yolowurl.html#p	yolowurl: p	
+msg	yolowurl.html#msg	yolowurl: msg	
+poop6	yolowurl.html#poop6	yolowurl: poop6	
+flush	yolowurl.html#flush	yolowurl: flush	
+multiline	yolowurl.html#multiline	yolowurl: multiline	
 positiveOrNegative	yolowurl.html#positiveOrNegative,int	yolowurl: positiveOrNegative(num: int): string	
 goodcode	yolowurl.html#goodcode	yolowurl: goodcode	
 badcode	yolowurl.html#badcode	yolowurl: badcode	
@@ -43,23 +56,18 @@ GoodApplications	yolowurl.html#GoodApplications	yolowurl: GoodApplications
 neverThrows	yolowurl.html#neverThrows	yolowurl: neverThrows(): string	
 maybeThrows	yolowurl.html#maybeThrows,int	yolowurl: maybeThrows(x: int): int	
 err	yolowurl.html#err	yolowurl: err	
-loc`gensym4	yolowurl.html#loc`gensym4	yolowurl: loc`gensym4	
-ploc`gensym4	yolowurl.html#ploc`gensym4	yolowurl: ploc`gensym4	
-loc`gensym6	yolowurl.html#loc`gensym6	yolowurl: loc`gensym6	
-ploc`gensym6	yolowurl.html#ploc`gensym6	yolowurl: ploc`gensym6	
 loc`gensym8	yolowurl.html#loc`gensym8	yolowurl: loc`gensym8	
 ploc`gensym8	yolowurl.html#ploc`gensym8	yolowurl: ploc`gensym8	
+loc`gensym10	yolowurl.html#loc`gensym10	yolowurl: loc`gensym10	
+ploc`gensym10	yolowurl.html#ploc`gensym10	yolowurl: ploc`gensym10	
+loc`gensym12	yolowurl.html#loc`gensym12	yolowurl: loc`gensym12	
+ploc`gensym12	yolowurl.html#ploc`gensym12	yolowurl: ploc`gensym12	
 `...`	yolowurl.html#....i,T,T	yolowurl: `...`[T](a: T; b: T): T	
 countTo	yolowurl.html#countTo.i,int	yolowurl: countTo(n: int): int	
 intArr	yolowurl.html#intArr	yolowurl: intArr	
 num6	yolowurl.html#num6	yolowurl: num6	
-lastFour	yolowurl.html#lastFour	yolowurl: lastFour	
-lastOne	yolowurl.html#lastOne	yolowurl: lastOne	
-MySubrange	yolowurl.html#MySubrange	yolowurl: MySubrange	
-a	yolowurl.html#a	yolowurl: a	
-bbb	yolowurl.html#bbb	yolowurl: bbb	
 sniper	yolowurl.html#sniper	yolowurl: sniper	
-alreadyExecuted`gensym19	yolowurl.html#alreadyExecuted`gensym19	yolowurl: alreadyExecuted`gensym19	
+alreadyExecuted`gensym14	yolowurl.html#alreadyExecuted`gensym14	yolowurl: alreadyExecuted`gensym14	
 nums	yolowurl.html#nums	yolowurl: nums	
 nums4	yolowurl.html#nums4	yolowurl: nums4	
 rangeArr	yolowurl.html#rangeArr	yolowurl: rangeArr	
@@ -87,6 +95,33 @@ spoop	yolowurl.html#spoop	yolowurl: spoop
 emptySeq	yolowurl.html#emptySeq	yolowurl: emptySeq	
 seqEmpty	yolowurl.html#seqEmpty	yolowurl: seqEmpty	
 me	yolowurl.html#me	yolowurl: me	
+democrats	yolowurl.html#democrats	GangsOfAmerica.democrats	
+republicans	yolowurl.html#republicans	GangsOfAmerica.republicans	
+politicians	yolowurl.html#politicians	GangsOfAmerica.politicians	
+GangsOfAmerica	yolowurl.html#GangsOfAmerica	yolowurl: GangsOfAmerica	
+PeopleOfAmerica	yolowurl.html#PeopleOfAmerica	yolowurl: PeopleOfAmerica	
+AA	yolowurl.html#AA	ExplicitEnum.AA	
+BB	yolowurl.html#BB	ExplicitEnum.BB	
+ExplicitEnum	yolowurl.html#ExplicitEnum	yolowurl: ExplicitEnum	
+north	yolowurl.html#north	Direction.north	
+east	yolowurl.html#east	Direction.east	
+south	yolowurl.html#south	Direction.south	
+west	yolowurl.html#west	Direction.west	
+Direction	yolowurl.html#Direction	yolowurl: Direction	
+off	yolowurl.html#off	BlinkLights.off	
+on	yolowurl.html#on	BlinkLights.on	
+slowBlink	yolowurl.html#slowBlink	BlinkLights.slowBlink	
+mediumBlink	yolowurl.html#mediumBlink	BlinkLights.mediumBlink	
+fastBlink	yolowurl.html#fastBlink	BlinkLights.fastBlink	
+BlinkLights	yolowurl.html#BlinkLights	yolowurl: BlinkLights	
+LevelSetting	yolowurl.html#LevelSetting	yolowurl: LevelSetting	
+level	yolowurl.html#level	yolowurl: level	
+lastFour	yolowurl.html#lastFour	yolowurl: lastFour	
+lastOne	yolowurl.html#lastOne	yolowurl: lastOne	
+MySubrange	yolowurl.html#MySubrange	yolowurl: MySubrange	
+thisRange	yolowurl.html#thisRange	yolowurl: thisRange	
+a	yolowurl.html#a	yolowurl: a	
+bbb	yolowurl.html#bbb	yolowurl: bbb	
 Opts	yolowurl.html#Opts	yolowurl: Opts	
 IsOn	yolowurl.html#IsOn	yolowurl: IsOn	
 simpleOpts	yolowurl.html#simpleOpts	yolowurl: simpleOpts	
@@ -122,21 +157,29 @@ eko_all	yolowurl.html#eko_all,varargs[string]	yolowurl: eko_all(s: varargs[strin
 eko_anything	yolowurl.html#eko_anything,varargs[string,]	yolowurl: eko_anything(s: varargs[string, `$`])	
 poop	yolowurl.html#poop	yolowurl: poop(): string	
 Option	yolowurl.html#Option	yolowurl: Option	
-aa	yolowurl.html#aa	yolowurl: aa	
-bb	yolowurl.html#bb	yolowurl: bb	
+aa	yolowurl.html#aa_2	yolowurl: aa	
+bb	yolowurl.html#bb_2	yolowurl: bb	
 get	yolowurl.html#get.c,Option[T]	yolowurl: get[T](x: Option[T]): T	
 runFn	yolowurl.html#runFn,string,proc(string)	yolowurl: runFn(a: string; fn: proc (x: string): string): string	
 `!=`	yolowurl.html#!=.t,untyped,untyped	yolowurl: `!=`(a, b: untyped): untyped	
-loc`gensym26	yolowurl.html#loc`gensym26	yolowurl: loc`gensym26	
-ploc`gensym26	yolowurl.html#ploc`gensym26	yolowurl: ploc`gensym26	
+loc`gensym30	yolowurl.html#loc`gensym30	yolowurl: loc`gensym30	
+ploc`gensym30	yolowurl.html#ploc`gensym30	yolowurl: ploc`gensym30	
 debug	yolowurl.html#debug	yolowurl: debug	
 xy	yolowurl.html#xy	yolowurl: xy	
 log_eager	yolowurl.html#log_eager,string	yolowurl: log_eager(msg: string)	
 log_lazy	yolowurl.html#log_lazy.t,string	yolowurl: log_lazy(msg: string)	
 blockRunner	yolowurl.html#blockRunner.t,bool,untyped	yolowurl: blockRunner(please: bool; body: untyped): void	
-theyAskedNickely`gensym28	yolowurl.html#theyAskedNickely`gensym28	yolowurl: theyAskedNickely`gensym28	
-theyAskedNickely`gensym29	yolowurl.html#theyAskedNickely`gensym29	yolowurl: theyAskedNickely`gensym29	
-autoInt	yolowurl.html#autoInt	yolowurl: autoInt	
+theyAskedNickely`gensym32	yolowurl.html#theyAskedNickely`gensym32	yolowurl: theyAskedNickely`gensym32	
+theyAskedNickely`gensym33	yolowurl.html#theyAskedNickely`gensym33	yolowurl: theyAskedNickely`gensym33	
+NirvStack	yolowurl.html#NirvStack	yolowurl: NirvStack	
+StackNirv	yolowurl.html#StackNirv	yolowurl: StackNirv	
+hardCoreStack	yolowurl.html#hardCoreStack	yolowurl: hardCoreStack	
+newCoreStack	yolowurl.html#newCoreStack	yolowurl: newCoreStack	
+js	yolowurl.html#js	yolowurl: js	
+sj	yolowurl.html#sj	yolowurl: sj	
+bizDevOps	yolowurl.html#bizDevOps	yolowurl: bizDevOps	
+bizRating	yolowurl.html#bizRating	yolowurl: bizRating	
+aaa	yolowurl.html#aaa	yolowurl: aaa	
 BigMoney	yolowurl.html#BigMoney	yolowurl: BigMoney	
 StrOrInt	yolowurl.html#StrOrInt	yolowurl: StrOrInt	
 thizString	yolowurl.html#thizString	yolowurl: thizString	
@@ -201,18 +244,6 @@ ii	yolowurl.html#ii	yolowurl: ii
 BinaryTree	yolowurl.html#BinaryTree	yolowurl: BinaryTree	
 newNode	yolowurl.html#newNode,T	yolowurl: newNode[T](data: T): BinaryTree[T]	
 preorder	yolowurl.html#preorder.i,BinaryTree[T]	yolowurl: preorder[T](root: BinaryTree[T]): T	
-NirvStack	yolowurl.html#NirvStack	yolowurl: NirvStack	
-StackNirv	yolowurl.html#StackNirv	yolowurl: StackNirv	
-hardCoreStack	yolowurl.html#hardCoreStack	yolowurl: hardCoreStack	
-newCoreStack	yolowurl.html#newCoreStack	yolowurl: newCoreStack	
-js	yolowurl.html#js	yolowurl: js	
-sj	yolowurl.html#sj	yolowurl: sj	
-bizDevOps	yolowurl.html#bizDevOps	yolowurl: bizDevOps	
-bizRating	yolowurl.html#bizRating	yolowurl: bizRating	
-aaa	yolowurl.html#aaa	yolowurl: aaa	
-somevar	yolowurl.html#somevar	yolowurl: somevar	
-MyType	yolowurl.html#MyType	yolowurl: MyType	
-instance	yolowurl.html#instance	yolowurl: instance	
 MessageWhatev	yolowurl.html#MessageWhatev	yolowurl: MessageWhatev	
 someMsg	yolowurl.html#someMsg	yolowurl: someMsg	
 entireFile	yolowurl.html#entireFile	yolowurl: entireFile	
@@ -220,17 +251,10 @@ readFile	yolowurl.html#readFile	yolowurl: readFile(): string
 tmpfile	yolowurl.html#tmpfile	yolowurl: tmpfile	
 writeLines	yolowurl.html#writeLines,seq[string]	yolowurl: writeLines(s: seq[string]): void	
 buildInfo	yolowurl.html#buildInfo	yolowurl: buildInfo	
-globalint	yolowurl.html#globalint	yolowurl: globalint	
-globalfloat	yolowurl.html#globalfloat	yolowurl: globalfloat	
-globalstring	yolowurl.html#globalstring	yolowurl: globalstring	
-globalseq	yolowurl.html#globalseq	yolowurl: globalseq	
-globalset1	yolowurl.html#globalset1	yolowurl: globalset1	
-globalset2	yolowurl.html#globalset2	yolowurl: globalset2	
-globalset11	yolowurl.html#globalset11	yolowurl: globalset11	
-globalarr	yolowurl.html#globalarr	yolowurl: globalarr	
 yolo wurl: basic nim syntax	yolowurl.html#yolo-wurlcolon-basic-nim-syntax	 yolo wurl: basic nim syntax	
 exception stuff, debugging, documentation and testing	yolowurl.html#exception-stuff-debugging-documentation-and-testing	 exception stuff, debugging, documentation and testing	
 top level docs are for the module	yolowurl.html#top-level-docs-are-for-the-module	 top level docs are for the module	
 some copypasta from nim source	yolowurl.html#top-level-docs-are-for-the-module-some-copypasta-from-nim-source	  some copypasta from nim source	
-array, sequences, etc	yolowurl.html#array-sequences-etc	 array, sequences, etc	
+ordinals and structured types	yolowurl.html#ordinals-and-structured-types	 ordinals and structured types	
+tuples &amp; objects	yolowurl.html#tuples-amp-objects	 tuples &amp; objects	
 enable new functionality without adding new keywords to the language	yolowurl.html#enable-new-functionality-without-adding-new-keywords-to-the-language	 enable new functionality without adding new keywords to the language	

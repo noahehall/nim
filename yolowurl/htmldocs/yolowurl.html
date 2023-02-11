@@ -102,7 +102,8 @@ window.addEventListener('DOMContentLoaded', main);
 <li><a class="reference" id="exception-stuff-debugging-documentation-and-testing_toc" href="#exception-stuff-debugging-documentation-and-testing">exception stuff, debugging, documentation and testing</a></li>
 <li><a class="reference" id="top-level-docs-are-for-the-module_toc" href="#top-level-docs-are-for-the-module">top level docs are for the module</a></li>
 <ul class="simple"><li><a class="reference" id="top-level-docs-are-for-the-module-some-copypasta-from-nim-source_toc" href="#top-level-docs-are-for-the-module-some-copypasta-from-nim-source">some copypasta from nim source</a></li>
-</ul><li><a class="reference" id="array-sequences-etc_toc" href="#array-sequences-etc">array, sequences, etc</a></li>
+</ul><li><a class="reference" id="ordinals-and-structured-types_toc" href="#ordinals-and-structured-types">ordinals and structured types</a></li>
+<li><a class="reference" id="tuples-amp-objects_toc" href="#tuples-amp-objects">tuples &amp; objects</a></li>
 <li><a class="reference" id="enable-new-functionality-without-adding-new-keywords-to-the-language_toc" href="#enable-new-functionality-without-adding-new-keywords-to-the-language">enable new functionality without adding new keywords to the language</a></li>
 <li>
   <a class="reference reference-toplevel" href="#7" id="57">Types</a>
@@ -117,10 +118,22 @@ window.addEventListener('DOMContentLoaded', main);
     title="BinaryTree[T] = ref object
   le, ri: BinaryTree[T]
   data: T">BinaryTree</a></li>
+  <li><a class="reference" href="#BlinkLights"
+    title="BlinkLights = enum
+  off, on, slowBlink, mediumBlink, fastBlink">BlinkLights</a></li>
+  <li><a class="reference" href="#Direction"
+    title="Direction = enum
+  north, east, south, west">Direction</a></li>
   <li><a class="reference" href="#Eating"
     title="Eating = array[breakfast .. sweettooth, WhatToEat]">Eating</a></li>
+  <li><a class="reference" href="#ExplicitEnum"
+    title="ExplicitEnum = enum
+  AA = (0, &quot;letter AA&quot;), BB = (1, &quot;letter BB&quot;)">ExplicitEnum</a></li>
   <li><a class="reference" href="#Expression"
     title="Expression = ref object of RootObj">Expression</a></li>
+  <li><a class="reference" href="#GangsOfAmerica"
+    title="GangsOfAmerica = enum
+  democrats, republicans, politicians">GangsOfAmerica</a></li>
   <li><a class="reference" href="#GoodApplications"
     title="GoodApplications = object
   pubfield*: string          ## is included in docs
@@ -129,6 +142,8 @@ window.addEventListener('DOMContentLoaded', main);
     title="IPoop = ref object of WhoPoop">IPoop</a></li>
   <li><a class="reference" href="#IsOn"
     title="IsOn = set[int8]">IsOn</a></li>
+  <li><a class="reference" href="#LevelSetting"
+    title="LevelSetting = array[north .. west, BlinkLights]">LevelSetting</a></li>
   <li><a class="reference" href="#Literal"
     title="Literal = ref object of Expression
   x: int">Literal</a></li>
@@ -183,6 +198,10 @@ window.addEventListener('DOMContentLoaded', main);
   <li><a class="reference" href="#OrRefObject"
     title="OrRefObject = ref object
   fieldX, y, z: string">OrRefObject</a></li>
+  <li><a class="reference" href="#PeopleOfAmerica"
+    title="PeopleOfAmerica {.pure.} = enum
+  coders = &quot;think i am&quot;, teachers = &quot;pretend to be&quot;, farmers = &quot;prefer to be&quot;,
+  scientists = &quot;trying to be&quot;">PeopleOfAmerica</a></li>
   <li><a class="reference" href="#PlusExpr"
     title="PlusExpr = ref object of Expression
   a, b: Expression">PlusExpr</a></li>
@@ -244,8 +263,8 @@ window.addEventListener('DOMContentLoaded', main);
     title="a = &quot;Nim is a programming language&quot;">a</a></li>
   <li><a class="reference" href="#aaaa"
     title="aaaa: Unit">aaaa</a></li>
-  <li><a class="reference" href="#alreadyExecuted%60gensym19"
-    title="alreadyExecuted`gensym19 = false">alreadyExecuted`gensym19</a></li>
+  <li><a class="reference" href="#alreadyExecuted%60gensym14"
+    title="alreadyExecuted`gensym14 = false">alreadyExecuted`gensym14</a></li>
   <li><a class="reference" href="#arrayWithRange"
     title="arrayWithRange: array[0 .. 5, string] = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;,
     &quot;six&quot;]">arrayWithRange</a></li>
@@ -294,6 +313,8 @@ window.addEventListener('DOMContentLoaded', main);
     title="instance: MyType = MyType()">instance</a></li>
   <li><a class="reference" href="#lastWeek"
     title="lastWeek: WeeklyFoodTracker">lastWeek</a></li>
+  <li><a class="reference" href="#level"
+    title="level: LevelSetting">level</a></li>
   <li><a class="reference" href="#me"
     title="me = &quot;noAH&quot;">me</a></li>
   <li><a class="reference" href="#msg"
@@ -316,6 +337,8 @@ window.addEventListener('DOMContentLoaded', main);
     title="nums4: array[0 .. 3, int]">nums4</a></li>
   <li><a class="reference" href="#onSundayIAte"
     title="onSundayIAte: Eating">onSundayIAte</a></li>
+  <li><a class="reference" href="#othervar"
+    title="othervar: string = &quot;&quot;">othervar</a></li>
   <li><a class="reference" href="#poop1"
     title="poop1 = &quot;flush&quot;">poop1</a></li>
   <li><a class="reference" href="#poops"
@@ -336,6 +359,8 @@ window.addEventListener('DOMContentLoaded', main);
     title="somevar: seq[char] = @['n', 'o', 'a', 'h']">somevar</a></li>
   <li><a class="reference" href="#spoop"
     title="spoop: seq[int] = newSeq(4)">spoop</a></li>
+  <li><a class="reference" href="#thisRange"
+    title="thisRange: range[0 .. 5]">thisRange</a></li>
   <li><a class="reference" href="#typeSupportBlah"
     title="typeSupportBlah = &quot;halb&quot;">typeSupportBlah</a></li>
   <li><a class="reference" href="#xy"
@@ -350,13 +375,13 @@ window.addEventListener('DOMContentLoaded', main);
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#let"
     title="let = &quot;stropping&quot;">`let`</a></li>
-  <li><a class="reference" href="#aa"
+  <li><a class="reference" href="#aa_2"
     title="aa = Option[int](hasValue: true, value: 1)">aa</a></li>
   <li><a class="reference" href="#aaa"
     title="aaa = [(10, 'a'), (20, 'b'), (30, 'c')]">aaa</a></li>
   <li><a class="reference" href="#badcode"
     title="badcode = &quot;ishardtomaintain&quot;">badcode</a></li>
-  <li><a class="reference" href="#bb"
+  <li><a class="reference" href="#bb_2"
     title="bb = Option[int](hasValue: true, value: 2)">bb</a></li>
   <li><a class="reference" href="#bizRating"
     title="(bizRating, devRating, opsRating) = bizDevOps">bizRating</a></li>
@@ -398,10 +423,10 @@ window.addEventListener('DOMContentLoaded', main);
     title="sniper = &quot;scope parent&quot;">sniper</a></li>
   <li><a class="reference" href="#sum"
     title="sum: int = int(x1) + int(y1) + int(z1)">sum</a></li>
-  <li><a class="reference" href="#theyAskedNickely%60gensym28"
-    title="theyAskedNickely`gensym28 = true">theyAskedNickely`gensym28</a></li>
-  <li><a class="reference" href="#theyAskedNickely%60gensym29"
-    title="theyAskedNickely`gensym29 = false">theyAskedNickely`gensym29</a></li>
+  <li><a class="reference" href="#theyAskedNickely%60gensym32"
+    title="theyAskedNickely`gensym32 = true">theyAskedNickely`gensym32</a></li>
+  <li><a class="reference" href="#theyAskedNickely%60gensym33"
+    title="theyAskedNickely`gensym33 = false">theyAskedNickely`gensym33</a></li>
   <li><a class="reference" href="#thisInt"
     title="thisInt: StrOrInt = 1">thisInt</a></li>
   <li><a class="reference" href="#thizString"
@@ -435,7 +460,7 @@ window.addEventListener('DOMContentLoaded', main);
   <li><a class="reference" href="#b"
     title="b = 100">b</a></li>
   <li><a class="reference" href="#buildInfo"
-    title="buildInfo = &quot;Revision 7ec65306c237e35c2b7a20976623eb311cc79fb1\nCompiled on #66-Ubuntu SMP Fri Jan 20 14:29:49 UTC 2023&quot;">buildInfo</a></li>
+    title="buildInfo = &quot;Revision 491ba4654b250598660ca5af3b1ec9ea8a387f35\nCompiled on #66-Ubuntu SMP Fri Jan 20 14:29:49 UTC 2023&quot;">buildInfo</a></li>
   <li><a class="reference" href="#c"
     title="c = 100'i8">c</a></li>
   <li><a class="reference" href="#debug"
@@ -458,18 +483,18 @@ window.addEventListener('DOMContentLoaded', main);
     title="lastFour = 4">lastFour</a></li>
   <li><a class="reference" href="#lastOne"
     title="lastOne = 1">lastOne</a></li>
-  <li><a class="reference" href="#loc%60gensym4"
-    title="loc`gensym4 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;,
-               line: 187, column: 7)">loc`gensym4</a></li>
-  <li><a class="reference" href="#loc%60gensym6"
-    title="loc`gensym6 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;,
-               line: 190, column: 9)">loc`gensym6</a></li>
   <li><a class="reference" href="#loc%60gensym8"
     title="loc`gensym8 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;,
-               line: 195, column: 9)">loc`gensym8</a></li>
-  <li><a class="reference" href="#loc%60gensym26"
-    title="loc`gensym26 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/procedures.nim&quot;,
-                line: 220, column: 6)">loc`gensym26</a></li>
+               line: 187, column: 7)">loc`gensym8</a></li>
+  <li><a class="reference" href="#loc%60gensym10"
+    title="loc`gensym10 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;,
+                line: 190, column: 9)">loc`gensym10</a></li>
+  <li><a class="reference" href="#loc%60gensym12"
+    title="loc`gensym12 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;,
+                line: 195, column: 9)">loc`gensym12</a></li>
+  <li><a class="reference" href="#loc%60gensym30"
+    title="loc`gensym30 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/procedures.nim&quot;,
+                line: 220, column: 6)">loc`gensym30</a></li>
   <li><a class="reference" href="#m"
     title="m = 1000000000.0">m</a></li>
   <li><a class="reference" href="#n"
@@ -492,14 +517,14 @@ window.addEventListener('DOMContentLoaded', main);
     title="o = 0b00000000000000000000000001010101">o</a></li>
   <li><a class="reference" href="#p"
     title="p = 0o000000000123">p</a></li>
-  <li><a class="reference" href="#ploc%60gensym4"
-    title="ploc`gensym4 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(187, 8)&quot;">ploc`gensym4</a></li>
-  <li><a class="reference" href="#ploc%60gensym6"
-    title="ploc`gensym6 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(190, 10)&quot;">ploc`gensym6</a></li>
   <li><a class="reference" href="#ploc%60gensym8"
-    title="ploc`gensym8 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(195, 10)&quot;">ploc`gensym8</a></li>
-  <li><a class="reference" href="#ploc%60gensym26"
-    title="ploc`gensym26 = &quot;/home/poop/git/foss/nim/yolowurl/modules/procedures.nim(220, 7)&quot;">ploc`gensym26</a></li>
+    title="ploc`gensym8 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(187, 8)&quot;">ploc`gensym8</a></li>
+  <li><a class="reference" href="#ploc%60gensym10"
+    title="ploc`gensym10 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(190, 10)&quot;">ploc`gensym10</a></li>
+  <li><a class="reference" href="#ploc%60gensym12"
+    title="ploc`gensym12 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(195, 10)&quot;">ploc`gensym12</a></li>
+  <li><a class="reference" href="#ploc%60gensym30"
+    title="ploc`gensym30 = &quot;/home/poop/git/foss/nim/yolowurl/modules/procedures.nim(220, 7)&quot;">ploc`gensym30</a></li>
   <li><a class="reference" href="#poop3"
     title="poop3 = &quot;flush&quot;">poop3</a></li>
   <li><a class="reference" href="#tmpfile"
@@ -835,7 +860,26 @@ window.addEventListener('DOMContentLoaded', main);
   <span class="Comment">## example of creating a good application</span>
 <span class="Identifier">iam</span><span class="Operator">.</span><span class="Identifier">repr</span> <span class="Comment">## \</span>
   <span class="Comment">## prints to stdout</span></pre>
-<h1><a class="toc-backref" id="array-sequences-etc" href="#array-sequences-etc">array, sequences, etc</a></h1><p>basically any collection sharing roughly the same interface (sans strings) </p>
+<h1><a class="toc-backref" id="ordinals-and-structured-types" href="#ordinals-and-structured-types">ordinals and structured types</a></h1><p>structured: arrays, sequences, tuples, objects sets</p>
+<ul class="simple"><li>tuples and objects are in typeStructured</li>
+<li>can hold multiple values and have unlimited levels of nesting</li>
+</ul>
+<p>ordinals: enums, integers, char, bool, subranges</p>
+<ul class="simple"><li>integers, chars and bool are in typeSimple</li>
+<li>are countable and ordered, with a smallest &amp; highest value</li>
+</ul>
+<p>arrays: array, openArray, UncheckedArray, varargs</p>
+<p>set: base type can be any ordinal type </p>
+
+<h1><a class="toc-backref" id="tuples-amp-objects" href="#tuples-amp-objects">tuples &amp; objects</a></h1><p>heterogenous storage containers of named fields of any type</p>
+<p>tuples</p>
+<ul class="simple"><li>lexical order of fields with few abstractions</li>
+<li>are equivalent if the order &amp; type of fields match</li>
+</ul>
+<p>objects</p>
+<ul class="simple"><li>complex tuples without lexical ordering (lol my definition)</li>
+<li>are structurally equivalent unless ref'embed</li>
+</ul>
 
 <h1><a class="toc-backref" id="enable-new-functionality-without-adding-new-keywords-to-the-language" href="#enable-new-functionality-without-adding-new-keywords-to-the-language">enable new functionality without adding new keywords to the language</a></h1><ul class="simple"><li>syntax: {.pragma1, pragma2:val, etc.}</li>
 </ul>
@@ -878,8 +922,35 @@ window.addEventListener('DOMContentLoaded', main);
 
 </dd>
 </div>
+<div id="BlinkLights">
+<dt><pre><span class="Identifier">BlinkLights</span> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">off</span><span class="Other">,</span> <span class="Identifier">on</span><span class="Other">,</span> <span class="Identifier">slowBlink</span><span class="Other">,</span> <span class="Identifier">mediumBlink</span><span class="Other">,</span> <span class="Identifier">fastBlink</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="Direction">
+<dt><pre><span class="Identifier">Direction</span> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">north</span><span class="Other">,</span> <span class="Identifier">east</span><span class="Other">,</span> <span class="Identifier">south</span><span class="Other">,</span> <span class="Identifier">west</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 <div id="Eating">
 <dt><pre><span class="Identifier">Eating</span> <span class="Other">=</span> <span class="Identifier">array</span><span class="Other">[</span><span class="Identifier">breakfast</span> <span class="Operator">..</span> <span class="Identifier">sweettooth</span><span class="Other">,</span> <span class="Identifier">WhatToEat</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="ExplicitEnum">
+<dt><pre><span class="Identifier">ExplicitEnum</span> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">AA</span> <span class="Other">=</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;letter AA&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">BB</span> <span class="Other">=</span> <span class="Other">(</span><span class="DecNumber">1</span><span class="Other">,</span> <span class="StringLit">&quot;letter BB&quot;</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -891,6 +962,15 @@ window.addEventListener('DOMContentLoaded', main);
 <dd>
 
 abstract base class for an expression
+
+</dd>
+</div>
+<div id="GangsOfAmerica">
+<dt><pre><span class="Identifier">GangsOfAmerica</span> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">democrats</span><span class="Other">,</span> <span class="Identifier">republicans</span><span class="Other">,</span> <span class="Identifier">politicians</span></pre></dt>
+<dd>
+
+
 
 </dd>
 </div>
@@ -915,6 +995,14 @@ especially things like custom types may need additional abbreviations to describ
 </div>
 <div id="IsOn">
 <dt><pre><span class="Identifier">IsOn</span> <span class="Other">=</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">int8</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="LevelSetting">
+<dt><pre><span class="Identifier">LevelSetting</span> <span class="Other">=</span> <span class="Identifier">array</span><span class="Other">[</span><span class="Identifier">north</span> <span class="Operator">..</span> <span class="Identifier">west</span><span class="Other">,</span> <span class="Identifier">BlinkLights</span><span class="Other">]</span></pre></dt>
 <dd>
 
 
@@ -1061,6 +1149,16 @@ especially things like custom types may need additional abbreviations to describ
 <dt><pre><span class="Identifier">OrRefObject</span> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
   <span class="Identifier">fieldX</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">,</span> <span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">string</span>
 </pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="PeopleOfAmerica">
+<dt><pre><span class="Identifier">PeopleOfAmerica</span> {.<span class="Identifier">pure</span>.} <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">coders</span> <span class="Other">=</span> <span class="StringLit">&quot;think i am&quot;</span><span class="Other">,</span> <span class="Identifier">teachers</span> <span class="Other">=</span> <span class="StringLit">&quot;pretend to be&quot;</span><span class="Other">,</span> <span class="Identifier">farmers</span> <span class="Other">=</span> <span class="StringLit">&quot;prefer to be&quot;</span><span class="Other">,</span>
+  <span class="Identifier">scientists</span> <span class="Other">=</span> <span class="StringLit">&quot;trying to be&quot;</span></pre></dt>
 <dd>
 
 
@@ -1250,8 +1348,8 @@ especially things like custom types may need additional abbreviations to describ
 
 </dd>
 </div>
-<div id="alreadyExecuted`gensym19">
-<dt><pre><span class="Identifier">alreadyExecuted`gensym19</span> <span class="Other">=</span> <span class="Identifier">false</span></pre></dt>
+<div id="alreadyExecuted`gensym14">
+<dt><pre><span class="Identifier">alreadyExecuted`gensym14</span> <span class="Other">=</span> <span class="Identifier">false</span></pre></dt>
 <dd>
 
 
@@ -1444,6 +1542,14 @@ especially things like custom types may need additional abbreviations to describ
 
 </dd>
 </div>
+<div id="level">
+<dt><pre><span class="Identifier">level</span><span class="Other">:</span> <span class="Identifier">LevelSetting</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 <div id="me">
 <dt><pre><span class="Identifier">me</span> <span class="Other">=</span> <span class="StringLit">&quot;noAH&quot;</span></pre></dt>
 <dd>
@@ -1532,6 +1638,14 @@ especially things like custom types may need additional abbreviations to describ
 
 </dd>
 </div>
+<div id="othervar">
+<dt><pre><span class="Identifier">othervar</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 <div id="poop1">
 <dt><pre><span class="Identifier">poop1</span> <span class="Other">=</span> <span class="StringLit">&quot;flush&quot;</span></pre></dt>
 <dd>
@@ -1612,6 +1726,14 @@ especially things like custom types may need additional abbreviations to describ
 
 </dd>
 </div>
+<div id="thisRange">
+<dt><pre><span class="Identifier">thisRange</span><span class="Other">:</span> <span class="Identifier">range</span><span class="Other">[</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="DecNumber">5</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 <div id="typeSupportBlah">
 <dt><pre><span class="Identifier">typeSupportBlah</span> <span class="Other">=</span> <span class="StringLit">&quot;halb&quot;</span></pre></dt>
 <dd>
@@ -1649,7 +1771,7 @@ especially things like custom types may need additional abbreviations to describ
 
 </dd>
 </div>
-<div id="aa">
+<div id="aa_2">
 <dt><pre><span class="Identifier">aa</span> <span class="Other">=</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">hasValue</span><span class="Other">:</span> <span class="DecNumber">true</span><span class="Other">,</span> <span class="Identifier">value</span><span class="Other">:</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
 <dd>
 
@@ -1673,7 +1795,7 @@ this is not included in docs because its not exported
 
 </dd>
 </div>
-<div id="bb">
+<div id="bb_2">
 <dt><pre><span class="Identifier">bb</span> <span class="Other">=</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">hasValue</span><span class="Other">:</span> <span class="DecNumber">true</span><span class="Other">,</span> <span class="Identifier">value</span><span class="Other">:</span> <span class="DecNumber">2</span><span class="Other">)</span></pre></dt>
 <dd>
 
@@ -1835,16 +1957,16 @@ this is not included in docs because its not exported
 
 </dd>
 </div>
-<div id="theyAskedNickely`gensym28">
-<dt><pre><span class="Identifier">theyAskedNickely`gensym28</span> <span class="Other">=</span> <span class="Identifier">true</span></pre></dt>
+<div id="theyAskedNickely`gensym32">
+<dt><pre><span class="Identifier">theyAskedNickely`gensym32</span> <span class="Other">=</span> <span class="Identifier">true</span></pre></dt>
 <dd>
 
 
 
 </dd>
 </div>
-<div id="theyAskedNickely`gensym29">
-<dt><pre><span class="Identifier">theyAskedNickely`gensym29</span> <span class="Other">=</span> <span class="Identifier">false</span></pre></dt>
+<div id="theyAskedNickely`gensym33">
+<dt><pre><span class="Identifier">theyAskedNickely`gensym33</span> <span class="Other">=</span> <span class="Identifier">false</span></pre></dt>
 <dd>
 
 
@@ -1961,7 +2083,7 @@ this is not included in docs because its not exported
 </dd>
 </div>
 <div id="buildInfo">
-<dt><pre><span class="Identifier">buildInfo</span> <span class="Other">=</span> <span class="StringLit">&quot;Revision 7ec65306c237e35c2b7a20976623eb311cc79fb1\nCompiled on #66-Ubuntu SMP Fri Jan 20 14:29:49 UTC 2023&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">buildInfo</span> <span class="Other">=</span> <span class="StringLit">&quot;Revision 491ba4654b250598660ca5af3b1ec9ea8a387f35\nCompiled on #66-Ubuntu SMP Fri Jan 20 14:29:49 UTC 2023&quot;</span></pre></dt>
 <dd>
 
 
@@ -2056,8 +2178,8 @@ this is not included in docs because its not exported
 
 </dd>
 </div>
-<div id="loc`gensym4">
-<dt><pre><span class="Identifier">loc`gensym4</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;</span><span class="Other">,</span>
+<div id="loc`gensym8">
+<dt><pre><span class="Identifier">loc`gensym8</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;</span><span class="Other">,</span>
                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">187</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">7</span><span class="Other">)</span></pre></dt>
 <dd>
 
@@ -2065,26 +2187,26 @@ this is not included in docs because its not exported
 
 </dd>
 </div>
-<div id="loc`gensym6">
-<dt><pre><span class="Identifier">loc`gensym6</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;</span><span class="Other">,</span>
-               <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">190</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
+<div id="loc`gensym10">
+<dt><pre><span class="Identifier">loc`gensym10</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;</span><span class="Other">,</span>
+                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">190</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 
 </dd>
 </div>
-<div id="loc`gensym8">
-<dt><pre><span class="Identifier">loc`gensym8</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;</span><span class="Other">,</span>
-               <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">195</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
+<div id="loc`gensym12">
+<dt><pre><span class="Identifier">loc`gensym12</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;</span><span class="Other">,</span>
+                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">195</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 
 </dd>
 </div>
-<div id="loc`gensym26">
-<dt><pre><span class="Identifier">loc`gensym26</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/procedures.nim&quot;</span><span class="Other">,</span>
+<div id="loc`gensym30">
+<dt><pre><span class="Identifier">loc`gensym30</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/procedures.nim&quot;</span><span class="Other">,</span>
                 <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">220</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">6</span><span class="Other">)</span></pre></dt>
 <dd>
 
@@ -2180,32 +2302,32 @@ this is not included in docs because its not exported
 
 </dd>
 </div>
-<div id="ploc`gensym4">
-<dt><pre><span class="Identifier">ploc`gensym4</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(187, 8)&quot;</span></pre></dt>
-<dd>
-
-
-
-</dd>
-</div>
-<div id="ploc`gensym6">
-<dt><pre><span class="Identifier">ploc`gensym6</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(190, 10)&quot;</span></pre></dt>
-<dd>
-
-
-
-</dd>
-</div>
 <div id="ploc`gensym8">
-<dt><pre><span class="Identifier">ploc`gensym8</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(195, 10)&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">ploc`gensym8</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(187, 8)&quot;</span></pre></dt>
 <dd>
 
 
 
 </dd>
 </div>
-<div id="ploc`gensym26">
-<dt><pre><span class="Identifier">ploc`gensym26</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/procedures.nim(220, 7)&quot;</span></pre></dt>
+<div id="ploc`gensym10">
+<dt><pre><span class="Identifier">ploc`gensym10</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(190, 10)&quot;</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="ploc`gensym12">
+<dt><pre><span class="Identifier">ploc`gensym12</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(195, 10)&quot;</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="ploc`gensym30">
+<dt><pre><span class="Identifier">ploc`gensym30</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/procedures.nim(220, 7)&quot;</span></pre></dt>
 <dd>
 
 
@@ -2697,7 +2819,7 @@ this is not included in docs because its not exported
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-09 13:22:10 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-11 21:12:10 UTC</small>
       </div>
     </div>
   </div>

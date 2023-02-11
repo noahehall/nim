@@ -4,6 +4,14 @@
 ##
 ## heterogenous storage containers of named fields of any type
 ##
+## tuples
+## - lexical order of fields with few abstractions
+## - are equivalent if the order & type of fields match
+##
+## objects
+## - complex tuples without lexical ordering (lol my definition)
+## - are structurally equivalent unless ref'embed
+##
 #[
   objects
     of
