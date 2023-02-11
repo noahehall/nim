@@ -115,7 +115,7 @@
     - MACRO_CASE for external constants (status) (permitted in styleguide but not preferred)
 
   my preferences thus far
-    - strive for parantheseless code, probly a dumb idea, i'm fumbling everywhere to achieve this
+    - strive for parantheseless code, remember echo f 1, f2 == echo(f(1), f(2)) and not echo(f(1, f(2)))
     - keep it as sugary as possible
     - prefer fn x,y over x.fn y over fn(x, y) unless it conflicts with the context
       - e.g. pref x.fn y,z when working with objects
@@ -255,7 +255,7 @@ include modules/[
   blockDo,
   ordinalStructured,
   procedures,
-  tupleObject,
+  tupleObjectTable,
   osIoFiles,
   pragmas
 ]

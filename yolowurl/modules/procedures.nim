@@ -101,7 +101,7 @@ proc communicate(greeting: proc (x: string): string, name: string) =
   echo greeting(name)
 communicate(greet, "John")
 communicate(bye, "Mary")
-echo "############################ openarray (proc params)"
+echo "############################ openarray"
 # openArray[T] implemented as a pointer to the array data and a length field
 # only used in proc signatures for accepting an array of any length
 # ^ cant be used to with multidimensional array arguments
@@ -206,6 +206,7 @@ echo runFn("with another string") do (x: string) -> string: "another: " & x
 
 
 echo "############################ template"
+# @see https://nim-lang.org/docs/manual.html#overload-resolution-lazy-type-resolution-for-untyped
 # enables raw code substitution on nim's abstract syntax tree
 # are processed in the semantic pass of the compiler
 # accepts meta types

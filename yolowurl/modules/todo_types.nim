@@ -6,6 +6,7 @@ echo "############################ REEEAAALLLY should todo type list"
   # gcOptimizeSpace            ## optimize for memory footprint
 # owned[T] mark a ref/ptr/closure as owned
 # pointer use addr operator to get a pointer to a variable
+# using statement provides syntactic convenience where the same param names & types are used over and over
 
 echo "############################ skipped type list"
 # @see https://nim-lang.org/docs/system.html#7 are somewhere on this page
@@ -19,3 +20,4 @@ echo "############################ skipped type list"
 # StackTraceEntry a single entry in a stack trace
 # TFrame something to do with callstacks
 # TypeOfMode something to do with proc/iter invocations
+# asm assembler statements enabled direct embedding of assemlber code in nim code

@@ -4,8 +4,13 @@
     unlikely @see https://nim-lang.org/docs/system.html#unlikely.t%2Cbool
 ]#
 echo "############################ if"
-# if
+# new scopes are introduced immediately aftered the if,elif,else keywords
 if not false: echo "true": else: echo "false"
+
+# difficult to read, but note the placement of :
+echo if 1 > 2: "its true" elif 2 < 1: "also true" else: "must be in a different universe"
+
+# another funny one
 if 11 < 2 or (11 == 11 and 'a' >= 'b' and not true):
   echo "or " & "true"
 elif "poop" == "boob": echo "boobs arent poops"
@@ -26,19 +31,29 @@ else:
   echo "unknown operating system"
 
 
+var whichVerse:string = when 1 > 2: "real world" else: "twitter verse"
+echo "i live in the " & whichVerse
 
 when false: # trick for commenting code
   echo "this code is never run"
 
-echo "############################ case expressions"
+# check if execution is compiletime or runtime (executable)
+when nimvm:
+  echo "in nim's vm, so its compile time"
+else:
+  echo "I must be running after compilation via an executable"
 
+echo "############################ case expressions"
+# similar to if, but represents a multi-branch selection
 # can use strings, ordinal types and integers, ints/ordinals can also use ranges
-echo case num3
-  of 2: "of 2 satisifes float 2.0"
+var numCase = 50.345
+echo case numCase
+  of 2: "of 2 satisifes float 2.0" # ofs must a constant expression
   of 2.0: "is float 2.0"
   of 5.0, 6.0: "float is 5 or 6.0"
   of 7.0..12.9999: "wow your almost a teenager"
-  else: "not all cases covered: compile error if we dont discard"
+  elif numCase in 13.00 .. 51.00: "just made it!" # must come after of statements
+  else: "not all cases covered: compile error if we dont discard" # required for non-ordinal types
 
 case 'a'
 of 'b', 'c': echo "char 'a' isnt of char 'b' or 'c'"

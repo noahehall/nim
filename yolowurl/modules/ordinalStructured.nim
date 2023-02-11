@@ -3,7 +3,7 @@
 ## =============================
 ##
 ## structured: arrays, sequences, tuples, objects sets
-## - tuples and objects are in typeStructured
+## - tuples and objects are in tupleObjectTable
 ## - can hold multiple values and have unlimited levels of nesting
 ##
 ## ordinals: enums, integers, char, bool, subranges

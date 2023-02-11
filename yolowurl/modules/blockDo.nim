@@ -19,6 +19,14 @@ block poop:
         if count > 2: # dont want to take too many
           break poop
 
+# like ifs and whens, blocks can also be expressions
+var stupidChar = block:
+  var dumbChar = 'a'
+  if dumbChar in {'a', 'b', 'c'}:
+    echo "dumbChar is in alphabeta ", dumbChar
+  ord(dumbChar)
+echo "im running out of silly examples ", ord(stupidChar) == ord(true)
+
 echo "############################ do"
 # you have to read the docs on this one
 echo do:

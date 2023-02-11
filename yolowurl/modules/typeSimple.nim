@@ -48,9 +48,7 @@
     runnableExamples	Create testable documentation
 ]#
 
-echo "############################ nil"
-# if a ref/ptr points to nothing, its value is nil
-# thus use in comparison to prove not nil
+
 
 echo "############################ char"
 # 8 bit char (unsigned, basically an alias for uint8)

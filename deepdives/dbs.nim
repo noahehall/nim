@@ -1,5 +1,6 @@
 #[
   @see
+    - https://nim-lang.org/docs/manual.html#distinct-type-avoiding-sql-injection-attacks
     - https://nim-lang.org/docs/db_mysql.html
     - https://nim-lang.org/docs/db_postgres.html
     - https://nim-lang.org/docs/db_sqlite.html

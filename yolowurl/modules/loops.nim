@@ -19,7 +19,7 @@ echo "############################ iterators "
 # can be wrapped in a proc with the same name to accumulate the result and return it as a seq
 # distinction with procs
 # ^ can only be called from loops
-# ^ cant contain a return statement
+# ^ uses yield instead of return keyword
 # ^ doesnt have an implicit result
 # ^ dont support recursion
 # ^ cant be forward declared

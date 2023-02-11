@@ -16,6 +16,7 @@ let poop2 = "hello"
 # compile-time evaluation cannot interface with C
 # there is no compile-time foreign function interface at this time.
 # consts must be initialized with a value
+# declares variables whose values are constant expressions
 const poop3 = "flush"
 
 
@@ -29,8 +30,14 @@ echo poop1, poop2, poop3, fac4
 let `let` = "stropping"
 echo(`let`) # stropping enables keywords as identifiers
 
-var autoInt: auto = 7 # auto generally used with procs as it provides type inference
+# auto only for proc return types and signature parameters
+# parameter auto: creates an implicit generic of proc[x](a: [x])
+# return auto: causes the compiler to infer the type form the routine body
+var autoInt: auto = 7
 echo "autoInt labeled auto but its type is ", $type(autoInt)
+
+static:
+  echo "explicitly requires compile-time execution, not just simple expressions"
 
 echo "############################ variable support"
 # checks whether x can be compiled without any semantic error.
@@ -256,8 +263,16 @@ echo "inplace mutation [1,0,0,4][1..2]= @[2,3] should be ", globalarr
 
 echo "############################ type casts"
 # cast operator forces the compiler to interpret a bit pattern to be of another type
+# i.e. interpret the bit pattern as another type, but dont actually convert it to the other type
+# only needed for low-level programming and are inherently unsafe
+
+var myInt = 10
+
+proc doubleFloat(x: float): float = x * x
+echo "old people double your money in this infomercial: ", doubleFloat(cast[float](myInt))
 
 echo "############################ type coercions"
+# aka type conversions sometimes in docs, but always means to coercions
 # type coercions preserve the abstract value, but not the bit-pattern
 # only widening (smaller > larger) conversions are automatic/implicit
 # chr(i): convert 0..255 to a char

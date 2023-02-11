@@ -6,16 +6,18 @@
 ##
 ## tuples
 ## - lexical order of fields with few abstractions
-## - are equivalent if the order & type of fields match
+## - structurally equivalent if the order & type of fields match
 ##
 ## objects
 ## - complex tuples without lexical ordering (lol my definition)
-## - are structurally equivalent unless ref'embed
+## - provide inheritance & hidden fields > tuples
+## - nominally equivalent
+##
+## table
+## - syntactic sugar for an array constructor
+## - {"k": "v"} == [("k", "v")]
 ##
 #[
-  objects
-    of
-
   ref/pter:
     . and [] always def-ref, i.e. return the value and not the ref
     . access tuple/object
@@ -26,11 +28,24 @@
     isNil generally more efficient than == nil
 
   procs
+    of i.e. instanceof
     as
     in notin is isnot
     isNil(x) sometimes more efficient than == nil
 
 ]#
+
+echo "############################ tuple fixed length"
+# {key, val}.newOrderedTable
+# empty table is {:} in contrast to a set which is {}
+# the order of (key,val) are preserved to support ordered dicts
+# can be a const which requires a minimal amounbt of memory
+
+var myTable = {"fname": "noah", "lname": "hall"}
+echo "my name is: ", $myTable
+# TODO: find this in the docs somewhere, this seems a bit rediculouos
+echo "my firstname is: ", $myTable[0][1]
+
 
 echo "############################ tuple fixed length"
 # similar to objects sans inheritance, + unpacking + more dynamic + fields always public
@@ -70,6 +85,8 @@ echo "rate yourself on bizDevOps: ", bizDevOps
 # tuples can be destructured (unpacked)
 let (bizRating, devRating, opsRating) = bizDevOps
 echo "rate yourself on bizDevOps: ", bizRating, " ", devRating, " ", opsRating
+let (first, _, third) = bizDevOps
+echo "skipped the second item ", first & " " & third
 
 # copied from docs
 # even in loops
@@ -92,9 +109,11 @@ let thisInt: StrOrInt = 1
 
 echo "could be a string or an int ", thizString, thisInt
 echo "############################ type aliases distinct"
-# does not create inheritance but are identical with to base type
+# @see https://nim-lang.org/docs/manual.html#types-distinct-type
+# a type derived from a base type but incompatible with its base type
+# i.e. does not create inheritance with its base type but is expected to match its structure
 # ^ you can borrow fields/procs/etc from the base type
-# ^ else explicity define everything
+# ^ else you must explicity redefine everything
 # base and distinct can be cast to eachother
 
 type
@@ -186,6 +205,7 @@ proc `[]`* (v: Vector, i: int): float =
   of 1: result = v.y
   of 2: result = v.z
   else: assert(false)
+
 echo "############################ ref"
 # see inheritance
 # generic traced pointer type mem is gc'ed on heap
@@ -215,7 +235,12 @@ echo "############################ ptr"
 # untraced references (are unsafe), pointing to manually managed memory locations
 # required when accessing hardware/low-level ops
 
+echo "############################ nil"
+# if a ref/ptr points to nothing, its value is nil
+# thus use in comparison to prove not nil
+
 echo "############################ inheritance: ref / ptr"
+# @see https://nim-lang.org/docs/manual.html#type-relations
 # introduce many-to-one relationships: many instances point to the same heap
 # reference equality check
 # of creates a single layer of inheritance between types
@@ -309,6 +334,9 @@ new bbbb
 collide(aaaa, bbbb) # output: 2
 
 echo "############################ variants"
+# preferred over an object hierarchy with multiple levels
+# when simple variants (based on some discriminate field) will suffice
+# this is something you'll need to study up on
 
 # copied from docs
 # This is an example how an abstract syntax tree could be modelled in Nim
