@@ -16,7 +16,7 @@
     - ../nimscript for nim scripting
     - ../backends for compilation (todo currently its in compiler_blah_blah too)
 
-  road to code: beyond the syntax
+  road to code: beyond the syntax: https://nim-lang.org/docs/manual.html#types-tuples-and-object-types
     - https://nim-lang.org/docs/manual.html
     - https://nim-lang.org/docs/destructors.html
 
