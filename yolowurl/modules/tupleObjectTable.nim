@@ -165,7 +165,7 @@ echo noah
 let you = Someone(name:"not noah", bday:"dunno", age: 19)
 debugEcho you
 
-echo "############################ object getter/setters"
+echo "############################ Properties: object getter/setters"
 # public fields can ignore this section
 # private fields (without *) are not publically visible
 # you can create and export a proc operator for get/set operations
@@ -205,6 +205,11 @@ proc `[]`* (v: Vector, i: int): float =
   of 1: result = v.y
   of 2: result = v.z
   else: assert(false)
+
+echo "############################ type bound operators"
+# @see https://nim-lang.org/docs/manual.html#procedures-type-bound-operators
+# a proc or func whose name starts with = but isnt an operator
+# unrelated to propertie setters which end in = despite syntax similarities
 
 echo "############################ ref"
 # see inheritance

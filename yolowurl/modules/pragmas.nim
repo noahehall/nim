@@ -13,11 +13,11 @@
     - https://nim-lang.org/docs/nimc.html#additional-features
 
   syntax:
-
   {.acyclic.} dunno read the docs
   {.async.} this fn is asynchronous and can use the await keyword
   {.base.} for methods, to associate fns with a base type. see inheritance
   {.bycopy|byref.} label a proc arg
+  {.closure.} introduces a closure?
   {.compiletime.} check the docs, maybe runs a proc @ compile time
   {.dirty.} dunno, but used with templates
   {.effects.} check the docs: will output all inferred effects (e.g. exceptions) up to this point

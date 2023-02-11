@@ -62,6 +62,25 @@ for item in "noah".items:
 for index, item in ["a","b"].pairs:
   echo item, " at index ", index
 
+# copied from docs: finished proc
+iterator mycount(a, b: int): int {.closure.} =
+  var x = a
+  while x <= b:
+    yield x
+    inc x
+# case 1: finished is error prone
+# ^ it only returns true AFTER the iteration is finished
+var finishedIncorrect = mycount # instantiate the iterator
+while not finished(finishedIncorrect):
+  echo "incorrect finished usage: ", finishedIncorrect(1, 3) # 1,2,3,0
+# case 2: correct usage for finished
+# ^ here we break out of the loop
+var finishedCorrect = mycount # instantiate the iterator
+while true:
+  let value = finishedCorrect(1, 3)
+  if finished(finishedCorrect): break # and discard 'value'!
+  echo "correct finished usage: ", value # 1,2,3
+
 echo "############################ for"
 # loops over iterators
 for i in 1..2:

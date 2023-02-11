@@ -297,6 +297,30 @@ echo "############################ type coercions"
 # typeof(x): same as type
 # allocCStringArray creates a null terminated cstringArray from x
 
+echo "############################ converters (implicit type conversion procs)"
+# @see https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#converter
+
+type Option[T] = object
+  case hasValue: bool
+  of true:
+    value: T
+  else:
+    discard
+let aa = Option[int](hasValue: true, value: 1)
+let bb = Option[int](hasValue: true, value: 2)
+
+# create an implicit conversion
+converter get[T](x: Option[T]): T =
+  x.value
+# aa and bb are implicitly converted to ints, and can use the + operator
+echo "adding two options ", aa + bb
+
+# copied from docs
+# bad style ahead: Nim is not C.
+converter toBool(x: int): bool = x != 0
+if 4:
+  echo "compiles because implicit conversxion converts int to bool"
+
 echo "############################ type inference"
 var somevar: seq[char] = @['n', 'o', 'a', 'h']
 var othervar: string = ""

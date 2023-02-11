@@ -70,6 +70,13 @@ proc mutate(this: var int): int =
 var num7 = 5
 debugEcho mutate num7, num7.mutate, mutate(num7)
 
+# you can return a var indicating the caller can mutate the return
+var g = 0
+proc writeAccessToG(): var int =
+  result = g
+writeAccessToG() = 6
+echo "g == 6 ", g == 6
+
 # noSideEffect pragma: statically ensures there are no side effects
 # see func
 proc add5(num: int): int {. noSideEffect .} =
@@ -83,6 +90,14 @@ proc allInts(x,y,z: int): int # dont include = or a body
 echo allInts(1, 2, 3) # used before defined
 proc allInts(x, y, z: int): int =
   result = x + y + z
+
+# forward directions
+# @see https://nim-lang.org/docs/manual.html#var-return-type-future-directions
+# couldnt get this one to compile
+# proc runningOutOfNames[X, Y, T](x: X, y: Y): T from y
+# proc runningOutOfNames[X, Y, T](x: X, y: Y): T from y =
+#   result = toFloat(x) + toInt y[0]
+# echo runningOutOfNames(10, @[1.0])
 
 # procs as (raw) strings
 proc str(s: string): string = s
@@ -165,25 +180,6 @@ func poop(): string =
   result.add(" wurl") # <-- permitted because its a local var
 
 echo poop()
-
-
-echo "############################ converters (implicit type conversion procs)"
-# @see https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#converter
-
-type Option[T] = object
-  case hasValue: bool
-  of true:
-    value: T
-  else:
-    discard
-let aa = Option[int](hasValue: true, value: 1)
-let bb = Option[int](hasValue: true, value: 2)
-
-# create an implicit conversion
-converter get[T](x: Option[T]): T =
-  x.value
-# aa and bb are implicitly converted to ints, and can use the + operator
-echo "adding two options ", aa + bb
 
 echo "############################ closures"
 # read the docs on this one
