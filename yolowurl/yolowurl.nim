@@ -16,6 +16,9 @@
     - ../nimscript for nim scripting
     - ../backends for compilation (todo currently its in compiler_blah_blah too)
 
+  road to code:
+    recap: https://nim-lang.org/docs/manual.html
+
   review:
     go through modules @see links and ensure you have captured relevant info in each file
       - likely need to do a bunchy of recategorization
@@ -43,7 +46,6 @@
     then here: https://nim-lang.org/docs/manual_experimental.html
     then here: https://nim-lang.org/docs/mm.html
     then here: https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html
-    and finally: https://nim-lang.org/docs/manual.html
     https://nim-lang.org/docs/tut3.html
     https://nim-lang.org/docs/destructors.html
 
