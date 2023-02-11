@@ -1,3 +1,10 @@
+##
+## routines
+## ========
+##
+## routine: a symbol of kind proc, func, method, iterator, macro, template, converter
+## - converters are covered in globalVariables i think
+##
 #[
   todos
     offsetOf @see https://nim-lang.org/docs/system.html#offsetOf.t%2Ctypedesc%5BT%5D%2Cuntyped

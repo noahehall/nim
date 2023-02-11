@@ -1,3 +1,12 @@
+##
+## variables and globals
+## =====================
+##
+## creating variables & other assignment operators
+## catchall for global keywords/procs/etc not specified in other files
+##
+
+
 #[
   additional global operators, procs, etc
   only captured the unusual/interesting globals
