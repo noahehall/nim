@@ -1,7 +1,5 @@
 #[
   @see
-    - https://nim-lang.org/docs/htmlgen.html
-    - https://nim-lang.org/docs/htmlparser.html
     - https://nim-lang.org/docs/json.html
     - https://nim-by-example.github.io/json/
     - https://nim-lang.org/docs/jsonutils.html
