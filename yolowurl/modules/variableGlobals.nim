@@ -69,8 +69,6 @@ echo "############################ interesting globals"
 # ^ if not nil, every raise statement calls this hook
 # ^ if returns false, exception is caught and does not propagate
 # addAndFetch doesnt have a description
-# addEscapedChar escapes y:char then appends to x:string
-# addQuoted escapes and quotes y:string then appends to x:string
 # copyMem copies content from memory at source to memory at dest
 # cpuRelax
 # create allocates a new memory block with atleast T.sizeof * size bytes
@@ -107,7 +105,6 @@ echo "############################ interesting globals"
 # sizeof blah in bytes
 # unhandledExceptionHook (var) override default behavior: write err msg then terminate
 # compileOption(x[, y]) check if a switch is active and/or its value at compile time
-
 # hostCPU (const) "i386", "alpha", "powerpc", "powerpc64", "powerpc64el", "sparc", "amd64", "mips", "mipsel", "arm", "arm64", "mips64", "mips64el", "riscv32", "riscv64"
 echo "my hostCPU is " & hostCPU
 
@@ -174,6 +171,12 @@ echo "############################ global const"
 # Inf
 # NegInf
 
+block myBlock:
+  var mysTring = "just a block"
+  echo myString
+
+# eval executes a block of code at compile time
+# eval(myBlock) # dunno @see https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L2816
 echo "############################ global collections/sequences"
 # overload contains proc for custom in logic
 # shallow(blah) marks blah as shallow for optimization, subsequent assignments  wont deep copy
@@ -198,6 +201,7 @@ echo "############################ global operators dunno"
 # x =trace y Generic trace implementation
 
 echo "############################ global operators numbers"
+# stay away from blah% operators in practice
 
 var globalint = 2
 var globalfloat = 2.5

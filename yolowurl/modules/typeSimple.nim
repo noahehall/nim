@@ -154,7 +154,8 @@ echo "############################ strings"
 # can use any seq proc for manipulation
 # compared using lexicographical order
 # to intrepret unicode, you need to import the unicode module
-
+# addQuoted escapes and quotes y:string then appends to x:string
+# addEscapedChar escapes y:char then appends to x:string
 
 var msg: string = "yolo"
 echo msg & " wurl" # concat and return new string
