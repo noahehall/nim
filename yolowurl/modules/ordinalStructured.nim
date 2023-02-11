@@ -1,13 +1,12 @@
 ##
-## ordinals, array, sequences, range, set
-## ==========================
+## ordinals and structured types
+## =============================
 ##
-## including arrays and sequences as the interface is similar to Ordinals
-##
+## structured: arrays, sequences, tuples, objects sets
+## - tuples and objects are in typeStructured
 ##
 ## ordinals: enums, integers, char, bool, subranges
-## - only enums and sub/ranges are included in this file
-## - see typeSimple.nim for integers, chars and bool
+## - integers, chars and bool are in typeSimple
 ##
 ## arrays: array, openArray, UncheckedArray
 ##
@@ -162,14 +161,19 @@ echo "############################ enums"
 # $ convert enum value to its name
 # ord convert enum name to its value
 
-type
-  GangsOfAmerica = enum
-    democrats, republicans, politicians
-# you can assign custom values to enums
-type
-  PeopleOfAmerica {.pure.} = enum
-    coders = "think i am", teachers = "pretend to be", farmers = "prefer to be", scientists = "trying to be"
+type GangsOfAmerica = enum
+  democrats, republicans, politicians # order matters: assigned as 0,1,2
 
+# you can assign custom string values for use with $ operator
+type PeopleOfAmerica {.pure.} = enum
+  coders = "think i am", teachers = "pretend to be", farmers = "prefer to be", scientists = "trying to be"
+
+# you can assign both the ordinal and string value
+type ExplicitEnum = enum
+  AA = (0, "letter AA"),
+  BB = (1, "letter BB")
+
+echo ExplicitEnum.AA # letter AA
 echo politicians # impure so doesnt need to be qualified
 echo PeopleOfAmerica.coders # coders needs to be qualified cuz its labeled pure
 
@@ -203,6 +207,7 @@ echo high(level)  # --> west
 
 
 echo "############################ range"
+# range of values from an ordinal/flaoting-point type
 # .. Binary slice operator that constructs an inclusive interval
 # b[0 .. ^1] ==  b[0 .. b.len-1] == b[0 ..< b.len]
 # forward: starts at 0

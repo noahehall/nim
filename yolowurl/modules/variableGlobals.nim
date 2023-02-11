@@ -201,7 +201,8 @@ echo "############################ global operators dunno"
 # x =trace y Generic trace implementation
 
 echo "############################ global operators numbers"
-# stay away from blah% operators in practice
+# stay away from blah% operators in practice @see https://nim-lang.org/docs/manual.html#types-preminusdefined-integer-types
+# % are mainly for backwards compatibility with previous nim versions
 
 var globalint = 2
 var globalfloat = 2.5
@@ -258,6 +259,7 @@ echo "############################ type casts"
 
 echo "############################ type coercions"
 # type coercions preserve the abstract value, but not the bit-pattern
+# only widening (smaller > larger) conversions are automatic/implicit
 # chr(i): convert 0..255 to a char
 # cstringArrayToSeq
 # ord(i): convert char to an int

@@ -16,8 +16,9 @@
     - ../nimscript for nim scripting
     - ../backends for compilation (todo currently its in compiler_blah_blah too)
 
-  road to code:
-    recap: https://nim-lang.org/docs/manual.html
+  road to code: beyond the syntax
+    - https://nim-lang.org/docs/manual.html
+    - https://nim-lang.org/docs/destructors.html
 
   review:
     go through modules @see links and ensure you have captured relevant info in each file
@@ -125,6 +126,8 @@
       - tuple: inheritance / private fields / reference equality arent required
       - object: inheritance / private fields / reference equality are required
     - refrain from using blah% operators they tend to be legacy, see https://github.com/nirv-ai/docs/issues/50
+    - always compile with --panics:on (manual: smaller binaries + optimizations)
+    - dont use any unsafe language features or disable runtime checks (manual: removes possibility of unchecked runtime errs)
 ]#
 
 #[
@@ -169,16 +172,18 @@
     - prefix: + a must receive 1 arg
     - postfix: dont exist in nim
 
-  + - * \ / < > @ $ ~ & % ! ? ^ . |
+    =     +     -     *     /     <     >
+    @     $     ~     &     %     |
+    !     ?     ^     .     :     \
+    and or not xor shl shr div mod in notin is isnot of as from
+      not is always a unary operator
+      ^ a not b == a(not b) AND NOT (a) not (b)
 
-  in place mutations
-    add (appends y to x for any seq like container)
-    blah= (generally left operand mutated in place)
 
   bool
     not, and, or, xor, <, <=, >, >=, !=, ==
-
-  short circuit
+    not, and, or, xor, <, <=, >, >=, !=, ==
+  bool (shortcircuit)
     and or
 
   char
@@ -248,10 +253,9 @@ include modules/[
   exceptionHandlingTestingDocs,
   loops,
   blockDo,
-  arraySequenceOrdinalRangeSet,
+  ordinalStructured,
   procedures,
-  typeComplex,
-  tuples,
+  typeStructured,
   osIoFiles,
   pragmas
 ]

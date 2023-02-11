@@ -69,6 +69,9 @@ echo "############################ number types"
 # SomeInteger matches Some[Signed|Unsigned]Int
 # SomeSignedInt matches all signed integer types
 # SomeUnsignedInt matches all unsigned integer types
+# Positive range[1..high(int)]
+# Inf == high(int)
+
 let
   x1: int32 = 1.int32   # same as calling int32(1)
   y1: int8  = int8('a') # 'a' == 97'i8
