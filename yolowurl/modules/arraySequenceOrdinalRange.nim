@@ -6,7 +6,7 @@
 ##
 ##
 ## ordinals: enums, integers, char, bool, subranges
-## - only enums and subranges are included in this file
+## - only enums and sub/ranges are included in this file
 ## - see typeSimple.nim for integers, chars and bool
 ##
 ## arrays: array, openArray, UncheckedArray
@@ -14,11 +14,13 @@
 #[
   types
     array[n, T] fixed-length dimensionally homogeneous
+    cstringArray
     openArray[T] ptr to the array data and a length field
     Ordinal[T] generic ordinal type
+    range[T] generic constructor for range
     seq[T] dynamic-length dimensionally homogeneous
+    SomeOrdinal
     UncheckedArray[T] array with no bounds checking
-    cstringArray
 
   immutable ops
     [a .. ^b]	Slice: b is a backwardsIndex (inclusive)
@@ -202,6 +204,12 @@ echo "tell me your name ", "my name is noah"[lastFour .. lastOne]
 type
   MySubrange = range[0..5]
 echo MySubrange
+
+var thisRange: range[0..5]
+echo "thisRange bounds = ", thisRange.low, "..", thisRange.high
+# for i in thisRange:  doesnt work, you need to use low & and high
+for i in low(thisRange)..high(thisRange):
+  echo "got range to work ", i
 
 echo "############################ slice"
 # same syntax as slice but different type (Slice) & context
