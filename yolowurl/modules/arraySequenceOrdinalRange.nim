@@ -26,35 +26,38 @@
     [a ..< b]	Slice: excluded upper bound like b == len - 1
     @	Turn an array type into a sequence
     & concat 2 things
-    ord(x)	returns the integer value that is used to represent x's value
-    succ(x[, n]) returns the n'th successor of x
-    pred(x[, n]) opposite of succ, i.e. previous
     cstringArrayToSeq cstringArray to seq[int]
-
-  mutable ops
-    add	y to x
-    dec(x, n)	decrements x by n; n is an integer
-    dec(x)	decrements x by one
-    del	O(1) removal, doesn't preserve the order
-    delete	Delete an item while preserving the order of elements (O(n) operation)
-    inc(x, n)	increments x by n; n is an integer
-    inc(x)	increments x by one
-    insert	Insert an item at a specific position
-    newSeq[T](n)	create seq of T with length n, = values to each index instead of add
+    newSeq[T](n) create new seq of T with length n into y
     newSeq[T](s: seq[T]; n) create seq of T with length n, assigned to var s
     newSeqOfCap	Create a new sequence with zero length and a given capacity
     newSeqUninitialized only available for number types
-    pop	Remove and return last item of a sequence
-    swapRefsInArray swaps x[N] with y[N] if the elements are refs
-    setLen increase/truncate the length of something
+    ord(x)	returns the integer value that is used to represent x's value
+    pred(x[, n]) opposite of succ, i.e. previous
+    succ(x[, n]) returns the n'th successor of x
     toOpenArray not defined in js targets
+
+
+  mutable ops
+    add	y to container x
+    dec(x, n)	decrements x by n; n is an integer
+    dec(x)	decrements x by one
+    del	O(1) delete item at index, doesn't preserve the order
+    delete	Delete an item while preserving the order of elements (O(n) operation)
+    inc(x, n)	increments x by n; n is an integer
+    inc(x)	increments x by one
+    insert	Insert an item into container x
+    pop	Remove and return last item of a sequence
+    setLen increase/truncate the length of something
+    swapRefsInArray swaps x[N] with y[N] if the elements are refs
 
   inspection ops
     contains true if y is in x, shortcut for find(a, item) => 0
-    len	Return the length
-    low(x) lowest possible value/index
     high (len x) - 1
     high(x) highest possible value/index
+    is(x, y) true if value x of type y
+    isnot(x,y) opposite of is, equivalent to not(x is type)
+    len	Return the length
+    low(x) lowest possible value/index
     varargsLen the number of variadic arguments in x
 ]#
 

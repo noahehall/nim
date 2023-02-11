@@ -6,7 +6,63 @@
 
   @see
     - https://nim-lang.org/docs/system.html#8 are all on this page somewhere
+    - https://nim-lang.org/docs/typeinfo.html
 ]#
+
+
+echo "############################ variables"
+var poop1 = "flush"
+let poop2 = "hello"
+# compile-time evaluation cannot interface with C
+# there is no compile-time foreign function interface at this time.
+# consts must be initialized with a value
+const poop3 = "flush"
+
+
+# computes fac(4) at compile time:
+# notice the use of paranthesis and semi colins
+const fac4 = (var x = 1; for i in 1..4: x *= i; x)
+
+echo poop1, poop2, poop3, fac4
+
+# stropping
+let `let` = "stropping"
+echo(`let`) # stropping enables keywords as identifiers
+
+var autoInt: auto = 7 # auto generally used with procs as it provides type inference
+echo "autoInt labeled auto but its type is ", $type(autoInt)
+
+echo "############################ variable support"
+# checks whether x can be compiled without any semantic error.
+# useful to verify whether a type supports some operation:
+when compiles(3 + 4):
+  echo "'+' for integers is available at compile time"
+
+# whether x is declared at compile time
+var typeSupportBlah = "halb"
+when declared typeSupportBlah:
+  echo "blah is declared at compile time"
+
+when not declared thisDoesntExist:
+  echo "some thing doesnt exist at compile time"
+
+# checks currenty scope at compile time
+when declaredInScope typeSupportBlah:
+  echo "blah is declared in scope at compile time"
+
+# checks whether something is defined at compile time
+when defined typeSupportBlah:
+  echo "something is defined at compile time"
+
+# if gc:arc|orc you have to enable via --deepcopy:on
+var d33pcopy: string
+d33pcopy.deepCopy typeSupportBlah
+echo "deep copy of some other thing ", d33pcopy
+
+# get the default value
+echo "the default int value is ", int.default
+echo "the default seq[int] value is ", $ seq[int].default
+
 
 echo "############################ interesting globals"
 # globalRaiseHook (var) influence exception handling on a global level
@@ -120,12 +176,16 @@ echo "############################ global const"
 
 echo "############################ global collections/sequences"
 # overload contains proc for custom in logic
+# shallow(blah) marks blah as shallow for optimization, subsequent assignments  wont deep copy
+# shallowCopy(x, y) copies y into x
+
 echo "seq[int] contains 6 ", @[5,6,7].contains(6)
 echo "(1..3) contains 2 ", (1..3).contains(2)
 echo "is a in arr[char] ", 'a' in ['a', 'b', 'c']
 echo "99 notin {1,2,3} ", 99 notin {1,2,3}
 echo "index of b in [a,b,c] ", ['a','b', 'c'].find('b')
 echo "index of 4 in @[1..8] ", @[1,2,3,4,5,6,7,8].find 4
+echo ""
 
 echo "############################ a word on operators"
 echo "anything like `xBLAH=` can be written `xBLAH =`"
@@ -187,3 +247,51 @@ echo "############################ global operators ordinal"
 var globalarr = [1,0,0,4]
 globalarr[1..2] = @[2,3]
 echo "inplace mutation [1,0,0,4][1..2]= @[2,3] should be ", globalarr
+
+
+echo "############################ type casts"
+# cast operator forces the compiler to interpret a bit pattern to be of another type
+
+echo "############################ type coercions"
+# type coercions preserve the abstract value, but not the bit-pattern
+# chr(i): convert 0..255 to a char
+# cstringArrayToSeq
+# ord(i): convert char to an int
+# parseInt/parseFloat from a string
+# static(x): force the compile-time evaluation of the given expression
+# toFloat(int): convert int to a float
+# toInt(float): convert float to an int
+# toOpenArray
+# toOpenArrayByte
+# type(x): retrieve the type of x
+# typeof(x): same as type
+# allocCStringArray creates a null terminated cstringArray from x
+
+echo "############################ type inference"
+var somevar: seq[char] = @['n', 'o', 'a', 'h']
+var othervar: string = ""
+echo "somevar is seq? ", somevar is seq
+echo "somevar is seq[char]? ", "throws err when adding subtype seq[char]"
+echo "somevar isnot string? ", somevar isnot string
+
+
+type MyType = ref object of RootObj
+var instance: MyType = MyType()
+
+echo "is instance of MyType ", instance of MyType
+
+
+echo "############################ echo and related"
+# roughly equivalent to writeLine(stdout, x); flushFile(stdout)
+# available for the JavaScript target too.
+# cant be used with funcs/{.noSideEffect.}
+echo "just a regular echo statement"
+
+# same as echo but pretends to be free of sideffects
+# for use with funcs/procs marked as {.noSideEffect.}
+debugEcho "this time with debugEcho "
+
+# prints anything
+# custom types cant use $ unless its defined for them (see elseware)
+# but you can use the repr proc on anything (its not the prettiest)
+echo "this time with repr ", @[1,2,3].repr

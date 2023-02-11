@@ -112,7 +112,7 @@
     - MACRO_CASE for external constants (status) (permitted in styleguide but not preferred)
 
   my preferences thus far
-    - strive for parantheseless code
+    - strive for parantheseless code, probly a dumb idea, i'm fumbling everywhere to achieve this
     - keep it as sugary as possible
     - prefer fn x,y over x.fn y over fn(x, y) unless it conflicts with the context
       - e.g. pref x.fn y,z when working with objects
@@ -240,7 +240,7 @@
 
 
 include modules/[
-  variables,
+  variableGlobals,
   typeSimple,
   ifWhenCase,
   exceptionHandlingTestingDocs,
@@ -251,8 +251,6 @@ include modules/[
   procedures,
   typeComplex,
   tuples,
-  typeSupport,
   osIoFiles,
-  globals,
   pragmas
 ]
