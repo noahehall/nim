@@ -114,9 +114,9 @@ echo "############################ Exceptions "
 # all custom exceptions should ref Exception
 # @see https://nim-lang.org/docs/system.html#Exception
 # @see https://nim-lang.org/docs/manual.html#exception-handling-exception-hierarchy
-
-# inherit from a specific error (e.g. ValueError)
-# or from abstract CatchableError or Defect
+# Exception > CatachableError, Defect (non catchable)
+# you should inherit from a specific error (e.g. ValueError) instead of Exception
+# or from the abstract CatchableError or Defect
 # refrain from using Exception (docs might be old?)
 type LearningError = object of CatchableError
 
@@ -128,7 +128,7 @@ block howlong:
     echo e.msg & " but i finally found the time"
 
 echo "############################ raise "
-# throw an exception
+# the only way to raise (throw) an exception
 # system.Exception provides the interface
 # have to be allocated on the heap (var) because their lifetime is unknown
 
@@ -148,24 +148,6 @@ err.msg = "the request to the OS failed"
 # alternatively, you can raise without defining a custom err
 # raise newException(OSError, "the request to the os Failed")
 # raise # raising without an error rethrows the previous exception
-
-
-echo "############################ push/pop pragma"
-# this (im-status) trick prohibits procs from throwing defects, but allows errors
-# compiler will throw if its analysis determines a proc can throw a defect, helps u debug
-
-# all procs after this line will have this pragma
-# first line of your file
-{.push raises:[Defect]}
-
-# your
-# code
-# here
-
-# all procs after this line will have the previous push removed
-# last line of your file
-{.pop.}
-
 
 echo "############################ try/catch/finally "
 if true:
@@ -198,6 +180,18 @@ if true:
 let divBy0: float = try: 4 / 0 except: -1.0
 echo "oops! ", divBy0
 
+echo "############################ defer "
+# @see https://nim-lang.org/docs/manual.html#exception-handling-defer-statement
+# alternative try finally statement that avoids lexical nesting + scoping flexibility
+# all statements after defer will be within an implicit try block
+# top level defers arent supported (must be within a block/proc/etc)
+
+proc somethingStupid: auto =
+  result =  "something"
+  defer: echo "this is the finally block"
+  result &= " stupid in an implicit try block"
+
+echo somethingStupid()
 
 echo "############################ assert"
 # useful for guard, pre & post conditions if using design by contract
@@ -218,3 +212,20 @@ when isMainModule:
 echo "############################ debugger"
 # Todo, find the debugger[ api] in the docs somewhere
 # PFrame runtime frame of the callstack, part of the debugger api
+
+
+echo "############################ push/pop pragma"
+# this (im-status) trick prohibits procs from throwing defects, but allows errors
+# compiler will throw if its analysis determines a proc can throw a defect, helps u debug
+
+# all procs after this line will have this pragma
+# first line of your file
+{.push raises:[Defect]}
+
+# your
+# code
+# here
+
+# all procs after this line will have the previous push removed
+# last line of your file
+{.pop.}
