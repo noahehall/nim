@@ -9,7 +9,7 @@
   # pragmas
 
   @see
-    - https://nim-lang.org/docs/manual.html#pragmas
+    - https://nim-lang.org/docs/manual.html#pragmas (skipped)
     - https://nim-lang.org/docs/nimc.html#additional-features
 
   syntax:

@@ -21,9 +21,9 @@ let poop2 = "hello"
 # declares variables whose values are constant expressions
 const poop3 = "flush"
 
-
+# docs
 # computes fac(4) at compile time:
-# notice the use of paranthesis and semi colins
+# notice the use of semi colins to have multiple statements on a single line
 const fac4 = (var x = 1; for i in 1..4: x *= i; x)
 
 echo poop1, poop2, poop3, fac4
@@ -231,9 +231,15 @@ echo "############################ type coercions"
 # toInt(float): convert float to an int
 # toOpenArray
 # toOpenArrayByte
-# type(x): retrieve the type of x
-# typeof(x): same as type
+# type(x): retrieve the type of x, discouraged should use typeof
+# typeof(x): retrieve the type of x
+# typeOfProc: retrieve the result of a proc
 # allocCStringArray creates a null terminated cstringArray from x
+
+# assert typeof("a b c".split) is string
+# assert typeof("a b c".split, typeOfProc) is seq[string]
+
+echo "coerce to expression to static: ", static[bool](1 == 1)
 
 echo "############################ converters (implicit type conversion procs)"
 # @see https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#converter

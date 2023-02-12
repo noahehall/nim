@@ -400,6 +400,7 @@ echo "############################ generics"
 # static constrained: Thing[T: x or y] will resolve to x or y staticlly, and remain so at runtime
 # ^ i.e. a var Z cant change between x & y after semantic resolution phase
 # generic params are compiled separately for each unique value/combination of such
+# ^ generic params should not be overused (IMO) as it will lead to code bloat
 
 # generic procs
 proc wtf[T](a: T): auto =
@@ -455,3 +456,14 @@ printFields(utherRecord)
 proc fieldsPrint[T: distinct tuple | object](first, second: T) =
   if typeof first is typeof second: echo "got two of the same"
   else: echo "got a tuple and object"
+
+echo "############################ typedesc"
+# since nim treats the names of types as regular values in certain contexts in the compilation phase
+# typedesc is a generic type for all types denoting the type class of all types
+# procs using typedesc params are implicitly generic
+
+# docs
+template declareVariableWithType(T: typedesc, value: T) =
+  var x: T = value
+
+declareVariableWithType(int, 42)

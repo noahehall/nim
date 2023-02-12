@@ -215,6 +215,7 @@ echo "############################ debugger"
 
 
 echo "############################ push/pop pragma"
+# @see https://nim-lang.org/docs/manual.html#pragmas-push-and-pop-pragmas
 # this (im-status) trick prohibits procs from throwing defects, but allows errors
 # compiler will throw if its analysis determines a proc can throw a defect, helps u debug
 
