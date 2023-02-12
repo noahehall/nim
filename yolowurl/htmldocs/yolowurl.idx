@@ -14,6 +14,13 @@ globalset1	yolowurl.html#globalset1	yolowurl: globalset1
 globalset2	yolowurl.html#globalset2	yolowurl: globalset2	
 globalset11	yolowurl.html#globalset11	yolowurl: globalset11	
 globalarr	yolowurl.html#globalarr	yolowurl: globalarr	
+myInt	yolowurl.html#myInt	yolowurl: myInt	
+doubleFloat	yolowurl.html#doubleFloat,float	yolowurl: doubleFloat(x: float): float	
+Option	yolowurl.html#Option	yolowurl: Option	
+aa	yolowurl.html#aa	yolowurl: aa	
+bb	yolowurl.html#bb	yolowurl: bb	
+get	yolowurl.html#get.c,Option[T]	yolowurl: get[T](x: Option[T]): T	
+toBool	yolowurl.html#toBool.c,int	yolowurl: toBool(x: int): bool	
 somevar	yolowurl.html#somevar	yolowurl: somevar	
 othervar	yolowurl.html#othervar	yolowurl: othervar	
 MyType	yolowurl.html#MyType	yolowurl: MyType	
@@ -49,25 +56,34 @@ msg	yolowurl.html#msg	yolowurl: msg
 poop6	yolowurl.html#poop6	yolowurl: poop6	
 flush	yolowurl.html#flush	yolowurl: flush	
 multiline	yolowurl.html#multiline	yolowurl: multiline	
+whichVerse	yolowurl.html#whichVerse	yolowurl: whichVerse	
+numCase	yolowurl.html#numCase	yolowurl: numCase	
 positiveOrNegative	yolowurl.html#positiveOrNegative,int	yolowurl: positiveOrNegative(num: int): string	
 goodcode	yolowurl.html#goodcode	yolowurl: goodcode	
 badcode	yolowurl.html#badcode	yolowurl: badcode	
 GoodApplications	yolowurl.html#GoodApplications	yolowurl: GoodApplications	
+LearningError	yolowurl.html#LearningError	yolowurl: LearningError	
 neverThrows	yolowurl.html#neverThrows	yolowurl: neverThrows(): string	
 maybeThrows	yolowurl.html#maybeThrows,int	yolowurl: maybeThrows(x: int): int	
 err	yolowurl.html#err	yolowurl: err	
-loc`gensym8	yolowurl.html#loc`gensym8	yolowurl: loc`gensym8	
-ploc`gensym8	yolowurl.html#ploc`gensym8	yolowurl: ploc`gensym8	
-loc`gensym10	yolowurl.html#loc`gensym10	yolowurl: loc`gensym10	
-ploc`gensym10	yolowurl.html#ploc`gensym10	yolowurl: ploc`gensym10	
-loc`gensym12	yolowurl.html#loc`gensym12	yolowurl: loc`gensym12	
-ploc`gensym12	yolowurl.html#ploc`gensym12	yolowurl: ploc`gensym12	
+divBy0	yolowurl.html#divBy0	yolowurl: divBy0	
+somethingStupid	yolowurl.html#somethingStupid	yolowurl: somethingStupid(): auto	
+loc`gensym13	yolowurl.html#loc`gensym13	yolowurl: loc`gensym13	
+ploc`gensym13	yolowurl.html#ploc`gensym13	yolowurl: ploc`gensym13	
+loc`gensym15	yolowurl.html#loc`gensym15	yolowurl: loc`gensym15	
+ploc`gensym15	yolowurl.html#ploc`gensym15	yolowurl: ploc`gensym15	
+loc`gensym17	yolowurl.html#loc`gensym17	yolowurl: loc`gensym17	
+ploc`gensym17	yolowurl.html#ploc`gensym17	yolowurl: ploc`gensym17	
 `...`	yolowurl.html#....i,T,T	yolowurl: `...`[T](a: T; b: T): T	
 countTo	yolowurl.html#countTo.i,int	yolowurl: countTo(n: int): int	
+mycount	yolowurl.html#mycount.i,int,int	yolowurl: mycount(a, b: int): int	
+finishedIncorrect	yolowurl.html#finishedIncorrect	yolowurl: finishedIncorrect	
+finishedCorrect	yolowurl.html#finishedCorrect	yolowurl: finishedCorrect	
 intArr	yolowurl.html#intArr	yolowurl: intArr	
 num6	yolowurl.html#num6	yolowurl: num6	
 sniper	yolowurl.html#sniper	yolowurl: sniper	
-alreadyExecuted`gensym14	yolowurl.html#alreadyExecuted`gensym14	yolowurl: alreadyExecuted`gensym14	
+stupidChar	yolowurl.html#stupidChar	yolowurl: stupidChar	
+alreadyExecuted`gensym20	yolowurl.html#alreadyExecuted`gensym20	yolowurl: alreadyExecuted`gensym20	
 nums	yolowurl.html#nums	yolowurl: nums	
 nums4	yolowurl.html#nums4	yolowurl: nums4	
 rangeArr	yolowurl.html#rangeArr	yolowurl: rangeArr	
@@ -100,8 +116,8 @@ republicans	yolowurl.html#republicans	GangsOfAmerica.republicans
 politicians	yolowurl.html#politicians	GangsOfAmerica.politicians	
 GangsOfAmerica	yolowurl.html#GangsOfAmerica	yolowurl: GangsOfAmerica	
 PeopleOfAmerica	yolowurl.html#PeopleOfAmerica	yolowurl: PeopleOfAmerica	
-AA	yolowurl.html#AA	ExplicitEnum.AA	
-BB	yolowurl.html#BB	ExplicitEnum.BB	
+AA	yolowurl.html#AA_2	ExplicitEnum.AA	
+BB	yolowurl.html#BB_2	ExplicitEnum.BB	
 ExplicitEnum	yolowurl.html#ExplicitEnum	yolowurl: ExplicitEnum	
 north	yolowurl.html#north	Direction.north	
 east	yolowurl.html#east	Direction.east	
@@ -143,6 +159,8 @@ passedByReference	yolowurl.html#passedByReference,string	yolowurl: passedByRefer
 redurn	yolowurl.html#redurn,string	yolowurl: redurn(this: string): string	
 mutate	yolowurl.html#mutate,int	yolowurl: mutate(this: var int): int	
 num7	yolowurl.html#num7	yolowurl: num7	
+gg	yolowurl.html#gg	yolowurl: gg	
+writeAccessToG	yolowurl.html#writeAccessToG	yolowurl: writeAccessToG(): var int	
 add5	yolowurl.html#add5,int	yolowurl: add5(num: int): int	
 allInts	yolowurl.html#allInts,int,int,int	yolowurl: allInts(x, y, z: int): int	
 str	yolowurl.html#str,string	yolowurl: str(s: string): string	
@@ -156,21 +174,8 @@ openArraySize	yolowurl.html#openArraySize,openArray[string]	yolowurl: openArrayS
 eko_all	yolowurl.html#eko_all,varargs[string]	yolowurl: eko_all(s: varargs[string])	
 eko_anything	yolowurl.html#eko_anything,varargs[string,]	yolowurl: eko_anything(s: varargs[string, `$`])	
 poop	yolowurl.html#poop	yolowurl: poop(): string	
-Option	yolowurl.html#Option	yolowurl: Option	
-aa	yolowurl.html#aa_2	yolowurl: aa	
-bb	yolowurl.html#bb_2	yolowurl: bb	
-get	yolowurl.html#get.c,Option[T]	yolowurl: get[T](x: Option[T]): T	
 runFn	yolowurl.html#runFn,string,proc(string)	yolowurl: runFn(a: string; fn: proc (x: string): string): string	
-`!=`	yolowurl.html#!=.t,untyped,untyped	yolowurl: `!=`(a, b: untyped): untyped	
-loc`gensym30	yolowurl.html#loc`gensym30	yolowurl: loc`gensym30	
-ploc`gensym30	yolowurl.html#ploc`gensym30	yolowurl: ploc`gensym30	
-debug	yolowurl.html#debug	yolowurl: debug	
-xy	yolowurl.html#xy	yolowurl: xy	
-log_eager	yolowurl.html#log_eager,string	yolowurl: log_eager(msg: string)	
-log_lazy	yolowurl.html#log_lazy.t,string	yolowurl: log_lazy(msg: string)	
-blockRunner	yolowurl.html#blockRunner.t,bool,untyped	yolowurl: blockRunner(please: bool; body: untyped): void	
-theyAskedNickely`gensym32	yolowurl.html#theyAskedNickely`gensym32	yolowurl: theyAskedNickely`gensym32	
-theyAskedNickely`gensym33	yolowurl.html#theyAskedNickely`gensym33	yolowurl: theyAskedNickely`gensym33	
+myTable	yolowurl.html#myTable	yolowurl: myTable	
 NirvStack	yolowurl.html#NirvStack	yolowurl: NirvStack	
 StackNirv	yolowurl.html#StackNirv	yolowurl: StackNirv	
 hardCoreStack	yolowurl.html#hardCoreStack	yolowurl: hardCoreStack	
@@ -179,6 +184,7 @@ js	yolowurl.html#js	yolowurl: js
 sj	yolowurl.html#sj	yolowurl: sj	
 bizDevOps	yolowurl.html#bizDevOps	yolowurl: bizDevOps	
 bizRating	yolowurl.html#bizRating	yolowurl: bizRating	
+first	yolowurl.html#first	yolowurl: first	
 aaa	yolowurl.html#aaa	yolowurl: aaa	
 BigMoney	yolowurl.html#BigMoney	yolowurl: BigMoney	
 StrOrInt	yolowurl.html#StrOrInt	yolowurl: StrOrInt	
@@ -241,9 +247,12 @@ Sym	yolowurl.html#Sym	yolowurl: Sym
 wtf	yolowurl.html#wtf,T	yolowurl: wtf[T](a: T): auto	
 foo	yolowurl.html#foo,T	yolowurl: foo[T](i: T)	
 ii	yolowurl.html#ii	yolowurl: ii	
-BinaryTree	yolowurl.html#BinaryTree	yolowurl: BinaryTree	
-newNode	yolowurl.html#newNode,T	yolowurl: newNode[T](data: T): BinaryTree[T]	
-preorder	yolowurl.html#preorder.i,BinaryTree[T]	yolowurl: preorder[T](root: BinaryTree[T]): T	
+myRecord	yolowurl.html#myRecord	yolowurl: myRecord	
+OtherRecord	yolowurl.html#OtherRecord	yolowurl: OtherRecord	
+RecordType	yolowurl.html#RecordType	yolowurl: RecordType	
+printFields	yolowurl.html#printFields,T	yolowurl: printFields[T: RecordType](rec: T)	
+utherRecord	yolowurl.html#utherRecord	yolowurl: utherRecord	
+fieldsPrint	yolowurl.html#fieldsPrint,T,T	yolowurl: fieldsPrint[T: distinct tuple | object](first, second: T)	
 MessageWhatev	yolowurl.html#MessageWhatev	yolowurl: MessageWhatev	
 someMsg	yolowurl.html#someMsg	yolowurl: someMsg	
 entireFile	yolowurl.html#entireFile	yolowurl: entireFile	
@@ -251,10 +260,23 @@ readFile	yolowurl.html#readFile	yolowurl: readFile(): string
 tmpfile	yolowurl.html#tmpfile	yolowurl: tmpfile	
 writeLines	yolowurl.html#writeLines,seq[string]	yolowurl: writeLines(s: seq[string]): void	
 buildInfo	yolowurl.html#buildInfo	yolowurl: buildInfo	
+`!=`	yolowurl.html#!=.t,untyped,untyped	yolowurl: `!=`(a, b: untyped): untyped	
+loc`gensym44	yolowurl.html#loc`gensym44	yolowurl: loc`gensym44	
+ploc`gensym44	yolowurl.html#ploc`gensym44	yolowurl: ploc`gensym44	
+debug	yolowurl.html#debug	yolowurl: debug	
+xy	yolowurl.html#xy	yolowurl: xy	
+log_eager	yolowurl.html#log_eager,string	yolowurl: log_eager(msg: string)	
+log_lazy	yolowurl.html#log_lazy.t,string	yolowurl: log_lazy(msg: string)	
+blockRunner	yolowurl.html#blockRunner.t,bool,untyped	yolowurl: blockRunner(please: bool; body: untyped): void	
+theyAskedNickely`gensym46	yolowurl.html#theyAskedNickely`gensym46	yolowurl: theyAskedNickely`gensym46	
+theyAskedNickely`gensym47	yolowurl.html#theyAskedNickely`gensym47	yolowurl: theyAskedNickely`gensym47	
 yolo wurl: basic nim syntax	yolowurl.html#yolo-wurlcolon-basic-nim-syntax	 yolo wurl: basic nim syntax	
+variables and globals	yolowurl.html#variables-and-globals	 variables and globals	
 exception stuff, debugging, documentation and testing	yolowurl.html#exception-stuff-debugging-documentation-and-testing	 exception stuff, debugging, documentation and testing	
 top level docs are for the module	yolowurl.html#top-level-docs-are-for-the-module	 top level docs are for the module	
 some copypasta from nim source	yolowurl.html#top-level-docs-are-for-the-module-some-copypasta-from-nim-source	  some copypasta from nim source	
 ordinals and structured types	yolowurl.html#ordinals-and-structured-types	 ordinals and structured types	
-tuples &amp; objects	yolowurl.html#tuples-amp-objects	 tuples &amp; objects	
+routines	yolowurl.html#routines	 routines	
+tuples &amp; objects &amp; tables	yolowurl.html#tuples-amp-objects-amp-tables	 tuples &amp; objects &amp; tables	
+templates and macros	yolowurl.html#templates-and-macros	 templates and macros	
 enable new functionality without adding new keywords to the language	yolowurl.html#enable-new-functionality-without-adding-new-keywords-to-the-language	 enable new functionality without adding new keywords to the language	

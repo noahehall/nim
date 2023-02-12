@@ -99,11 +99,14 @@ window.addEventListener('DOMContentLoaded', main);
   </div>
   <ul class="simple simple-toc" id="toc-list">
 <li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax_toc" href="#yolo-wurlcolon-basic-nim-syntax">yolo wurl: basic nim syntax</a></li>
+<li><a class="reference" id="variables-and-globals_toc" href="#variables-and-globals">variables and globals</a></li>
 <li><a class="reference" id="exception-stuff-debugging-documentation-and-testing_toc" href="#exception-stuff-debugging-documentation-and-testing">exception stuff, debugging, documentation and testing</a></li>
 <li><a class="reference" id="top-level-docs-are-for-the-module_toc" href="#top-level-docs-are-for-the-module">top level docs are for the module</a></li>
 <ul class="simple"><li><a class="reference" id="top-level-docs-are-for-the-module-some-copypasta-from-nim-source_toc" href="#top-level-docs-are-for-the-module-some-copypasta-from-nim-source">some copypasta from nim source</a></li>
 </ul><li><a class="reference" id="ordinals-and-structured-types_toc" href="#ordinals-and-structured-types">ordinals and structured types</a></li>
-<li><a class="reference" id="tuples-amp-objects_toc" href="#tuples-amp-objects">tuples &amp; objects</a></li>
+<li><a class="reference" id="routines_toc" href="#routines">routines</a></li>
+<li><a class="reference" id="tuples-amp-objects-amp-tables_toc" href="#tuples-amp-objects-amp-tables">tuples &amp; objects &amp; tables</a></li>
+<li><a class="reference" id="templates-and-macros_toc" href="#templates-and-macros">templates and macros</a></li>
 <li><a class="reference" id="enable-new-functionality-without-adding-new-keywords-to-the-language_toc" href="#enable-new-functionality-without-adding-new-keywords-to-the-language">enable new functionality without adding new keywords to the language</a></li>
 <li>
   <a class="reference reference-toplevel" href="#7" id="57">Types</a>
@@ -114,10 +117,6 @@ window.addEventListener('DOMContentLoaded', main);
     title="BiggestMoney {.borrow: `.`.} = distinct BigMoney">BiggestMoney</a></li>
   <li><a class="reference" href="#BigMoney"
     title="BigMoney = int">BigMoney</a></li>
-  <li><a class="reference" href="#BinaryTree"
-    title="BinaryTree[T] = ref object
-  le, ri: BinaryTree[T]
-  data: T">BinaryTree</a></li>
   <li><a class="reference" href="#BlinkLights"
     title="BlinkLights = enum
   off, on, slowBlink, mediumBlink, fastBlink">BlinkLights</a></li>
@@ -142,6 +141,8 @@ window.addEventListener('DOMContentLoaded', main);
     title="IPoop = ref object of WhoPoop">IPoop</a></li>
   <li><a class="reference" href="#IsOn"
     title="IsOn = set[int8]">IsOn</a></li>
+  <li><a class="reference" href="#LearningError"
+    title="LearningError = object of CatchableError">LearningError</a></li>
   <li><a class="reference" href="#LevelSetting"
     title="LevelSetting = array[north .. west, BlinkLights]">LevelSetting</a></li>
   <li><a class="reference" href="#Literal"
@@ -198,6 +199,8 @@ window.addEventListener('DOMContentLoaded', main);
   <li><a class="reference" href="#OrRefObject"
     title="OrRefObject = ref object
   fieldX, y, z: string">OrRefObject</a></li>
+  <li><a class="reference" href="#OtherRecord"
+    title="OtherRecord = tuple[wtf: string]">OtherRecord</a></li>
   <li><a class="reference" href="#PeopleOfAmerica"
     title="PeopleOfAmerica {.pure.} = enum
   coders = &quot;think i am&quot;, teachers = &quot;pretend to be&quot;, farmers = &quot;prefer to be&quot;,
@@ -213,6 +216,8 @@ window.addEventListener('DOMContentLoaded', main);
     title="PublicPoop = object
   u: bool
   times: int">PublicPoop</a></li>
+  <li><a class="reference" href="#RecordType"
+    title="RecordType = (typeof myRecord) or object | tuple">RecordType</a></li>
   <li><a class="reference" href="#SomeObj"
     title="SomeObj = object
   pub*: string
@@ -263,8 +268,8 @@ window.addEventListener('DOMContentLoaded', main);
     title="a = &quot;Nim is a programming language&quot;">a</a></li>
   <li><a class="reference" href="#aaaa"
     title="aaaa: Unit">aaaa</a></li>
-  <li><a class="reference" href="#alreadyExecuted%60gensym14"
-    title="alreadyExecuted`gensym14 = false">alreadyExecuted`gensym14</a></li>
+  <li><a class="reference" href="#alreadyExecuted%60gensym20"
+    title="alreadyExecuted`gensym20 = false">alreadyExecuted`gensym20</a></li>
   <li><a class="reference" href="#arrayWithRange"
     title="arrayWithRange: array[0 .. 5, string] = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;,
     &quot;six&quot;]">arrayWithRange</a></li>
@@ -287,8 +292,14 @@ window.addEventListener('DOMContentLoaded', main);
     title="emptySeq: seq[int]">emptySeq</a></li>
   <li><a class="reference" href="#err"
     title="err: ref OSError">err</a></li>
+  <li><a class="reference" href="#finishedCorrect"
+    title="finishedCorrect = mycount">finishedCorrect</a></li>
+  <li><a class="reference" href="#finishedIncorrect"
+    title="finishedIncorrect = mycount">finishedIncorrect</a></li>
   <li><a class="reference" href="#fruits"
     title="fruits: seq[string]">fruits</a></li>
+  <li><a class="reference" href="#gg"
+    title="gg = 0">gg</a></li>
   <li><a class="reference" href="#globalarr"
     title="globalarr = [1, 0, 0, 4]">globalarr</a></li>
   <li><a class="reference" href="#globalfloat"
@@ -321,8 +332,14 @@ window.addEventListener('DOMContentLoaded', main);
     title="msg: string = &quot;yolo&quot;">msg</a></li>
   <li><a class="reference" href="#myFloat"
     title="myFloat = Node2(kind: nkFloat, floatVal: 1.0)">myFloat</a></li>
+  <li><a class="reference" href="#myInt"
+    title="myInt = 10">myInt</a></li>
   <li><a class="reference" href="#myobj"
     title="myobj = SomeObj(pub: &quot;pub field&quot;)">myobj</a></li>
+  <li><a class="reference" href="#myRecord"
+    title="myRecord: tuple[wtf: string] = (wtf: &quot;yo&quot;)">myRecord</a></li>
+  <li><a class="reference" href="#myTable"
+    title="myTable = [(&quot;fname&quot;, &quot;noah&quot;), (&quot;lname&quot;, &quot;hall&quot;)]">myTable</a></li>
   <li><a class="reference" href="#newCoreStack"
     title="newCoreStack: StackNirv = (fe: @[&quot;ts&quot;, &quot;nim&quot;], be: @[&quot;ts&quot;, &quot;nim&quot;, &quot;bash&quot;])">newCoreStack</a></li>
   <li><a class="reference" href="#noah"
@@ -331,6 +348,8 @@ window.addEventListener('DOMContentLoaded', main);
     title="num6 = 0">num6</a></li>
   <li><a class="reference" href="#num7"
     title="num7 = 5">num7</a></li>
+  <li><a class="reference" href="#numCase"
+    title="numCase = 50.345">numCase</a></li>
   <li><a class="reference" href="#nums"
     title="nums: array[4, int] = [1, 9, 8, 5]">nums</a></li>
   <li><a class="reference" href="#nums4"
@@ -359,10 +378,20 @@ window.addEventListener('DOMContentLoaded', main);
     title="somevar: seq[char] = @['n', 'o', 'a', 'h']">somevar</a></li>
   <li><a class="reference" href="#spoop"
     title="spoop: seq[int] = newSeq(4)">spoop</a></li>
+  <li><a class="reference" href="#stupidChar"
+    title="stupidChar = block:
+  var dumbChar = 'a'
+  if contains({'a', 'b', 'c'}, dumbChar):
+    echo [&quot;dumbChar is in alphabeta &quot;, dumbChar]
+  ord(dumbChar)">stupidChar</a></li>
   <li><a class="reference" href="#thisRange"
     title="thisRange: range[0 .. 5]">thisRange</a></li>
   <li><a class="reference" href="#typeSupportBlah"
     title="typeSupportBlah = &quot;halb&quot;">typeSupportBlah</a></li>
+  <li><a class="reference" href="#utherRecord"
+    title="utherRecord: OtherRecord = (wtf: &quot;yo2&quot;)">utherRecord</a></li>
+  <li><a class="reference" href="#whichVerse"
+    title="whichVerse: string = &quot;twitter verse&quot;">whichVerse</a></li>
   <li><a class="reference" href="#xy"
     title="xy = 4">xy</a></li>
   <li><a class="reference" href="#zz"
@@ -375,20 +404,27 @@ window.addEventListener('DOMContentLoaded', main);
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#let"
     title="let = &quot;stropping&quot;">`let`</a></li>
-  <li><a class="reference" href="#aa_2"
+  <li><a class="reference" href="#aa"
     title="aa = Option[int](hasValue: true, value: 1)">aa</a></li>
   <li><a class="reference" href="#aaa"
     title="aaa = [(10, 'a'), (20, 'b'), (30, 'c')]">aaa</a></li>
   <li><a class="reference" href="#badcode"
     title="badcode = &quot;ishardtomaintain&quot;">badcode</a></li>
-  <li><a class="reference" href="#bb_2"
+  <li><a class="reference" href="#bb"
     title="bb = Option[int](hasValue: true, value: 2)">bb</a></li>
   <li><a class="reference" href="#bizRating"
     title="(bizRating, devRating, opsRating) = bizDevOps">bizRating</a></li>
+  <li><a class="reference" href="#divBy0"
+    title="divBy0: float = try:
+  4 / 0
+except:
+  -1.0">divBy0</a></li>
   <li><a class="reference" href="#entireFile"
     title="entireFile = readFile &quot;yolowurl/yolowurl.md&quot;">entireFile</a></li>
   <li><a class="reference" href="#everyonepoop"
     title="everyonepoop = upoop">everyonepoop</a></li>
+  <li><a class="reference" href="#first"
+    title="(first, __436210859, third) = bizDevOps">first</a></li>
   <li><a class="reference" href="#flags"
     title="flags: Opts = {'d'..'z'}">flags</a></li>
   <li><a class="reference" href="#flush"
@@ -423,10 +459,10 @@ window.addEventListener('DOMContentLoaded', main);
     title="sniper = &quot;scope parent&quot;">sniper</a></li>
   <li><a class="reference" href="#sum"
     title="sum: int = int(x1) + int(y1) + int(z1)">sum</a></li>
-  <li><a class="reference" href="#theyAskedNickely%60gensym32"
-    title="theyAskedNickely`gensym32 = true">theyAskedNickely`gensym32</a></li>
-  <li><a class="reference" href="#theyAskedNickely%60gensym33"
-    title="theyAskedNickely`gensym33 = false">theyAskedNickely`gensym33</a></li>
+  <li><a class="reference" href="#theyAskedNickely%60gensym46"
+    title="theyAskedNickely`gensym46 = true">theyAskedNickely`gensym46</a></li>
+  <li><a class="reference" href="#theyAskedNickely%60gensym47"
+    title="theyAskedNickely`gensym47 = false">theyAskedNickely`gensym47</a></li>
   <li><a class="reference" href="#thisInt"
     title="thisInt: StrOrInt = 1">thisInt</a></li>
   <li><a class="reference" href="#thizString"
@@ -460,7 +496,7 @@ window.addEventListener('DOMContentLoaded', main);
   <li><a class="reference" href="#b"
     title="b = 100">b</a></li>
   <li><a class="reference" href="#buildInfo"
-    title="buildInfo = &quot;Revision 491ba4654b250598660ca5af3b1ec9ea8a387f35\nCompiled on #66-Ubuntu SMP Fri Jan 20 14:29:49 UTC 2023&quot;">buildInfo</a></li>
+    title="buildInfo = &quot;Revision 1e5f2b61bbfc3a204e9d4ba092ad127a3a2e683c\nCompiled on #66-Ubuntu SMP Fri Jan 20 14:29:49 UTC 2023&quot;">buildInfo</a></li>
   <li><a class="reference" href="#c"
     title="c = 100'i8">c</a></li>
   <li><a class="reference" href="#debug"
@@ -483,18 +519,18 @@ window.addEventListener('DOMContentLoaded', main);
     title="lastFour = 4">lastFour</a></li>
   <li><a class="reference" href="#lastOne"
     title="lastOne = 1">lastOne</a></li>
-  <li><a class="reference" href="#loc%60gensym8"
-    title="loc`gensym8 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;,
-               line: 187, column: 7)">loc`gensym8</a></li>
-  <li><a class="reference" href="#loc%60gensym10"
-    title="loc`gensym10 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;,
-                line: 190, column: 9)">loc`gensym10</a></li>
-  <li><a class="reference" href="#loc%60gensym12"
-    title="loc`gensym12 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;,
-                line: 195, column: 9)">loc`gensym12</a></li>
-  <li><a class="reference" href="#loc%60gensym30"
-    title="loc`gensym30 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/procedures.nim&quot;,
-                line: 220, column: 6)">loc`gensym30</a></li>
+  <li><a class="reference" href="#loc%60gensym13"
+    title="loc`gensym13 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;,
+                line: 202, column: 7)">loc`gensym13</a></li>
+  <li><a class="reference" href="#loc%60gensym15"
+    title="loc`gensym15 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;,
+                line: 205, column: 9)">loc`gensym15</a></li>
+  <li><a class="reference" href="#loc%60gensym17"
+    title="loc`gensym17 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;,
+                line: 210, column: 9)">loc`gensym17</a></li>
+  <li><a class="reference" href="#loc%60gensym44"
+    title="loc`gensym44 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/templateMacros.nim&quot;,
+                line: 22, column: 6)">loc`gensym44</a></li>
   <li><a class="reference" href="#m"
     title="m = 1000000000.0">m</a></li>
   <li><a class="reference" href="#n"
@@ -517,14 +553,14 @@ window.addEventListener('DOMContentLoaded', main);
     title="o = 0b00000000000000000000000001010101">o</a></li>
   <li><a class="reference" href="#p"
     title="p = 0o000000000123">p</a></li>
-  <li><a class="reference" href="#ploc%60gensym8"
-    title="ploc`gensym8 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(187, 8)&quot;">ploc`gensym8</a></li>
-  <li><a class="reference" href="#ploc%60gensym10"
-    title="ploc`gensym10 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(190, 10)&quot;">ploc`gensym10</a></li>
-  <li><a class="reference" href="#ploc%60gensym12"
-    title="ploc`gensym12 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(195, 10)&quot;">ploc`gensym12</a></li>
-  <li><a class="reference" href="#ploc%60gensym30"
-    title="ploc`gensym30 = &quot;/home/poop/git/foss/nim/yolowurl/modules/procedures.nim(220, 7)&quot;">ploc`gensym30</a></li>
+  <li><a class="reference" href="#ploc%60gensym13"
+    title="ploc`gensym13 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(202, 8)&quot;">ploc`gensym13</a></li>
+  <li><a class="reference" href="#ploc%60gensym15"
+    title="ploc`gensym15 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(205, 10)&quot;">ploc`gensym15</a></li>
+  <li><a class="reference" href="#ploc%60gensym17"
+    title="ploc`gensym17 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(210, 10)&quot;">ploc`gensym17</a></li>
+  <li><a class="reference" href="#ploc%60gensym44"
+    title="ploc`gensym44 = &quot;/home/poop/git/foss/nim/yolowurl/modules/templateMacros.nim(22, 7)&quot;">ploc`gensym44</a></li>
   <li><a class="reference" href="#poop3"
     title="poop3 = &quot;flush&quot;">poop3</a></li>
   <li><a class="reference" href="#tmpfile"
@@ -590,6 +626,11 @@ window.addEventListener('DOMContentLoaded', main);
     title="dIdIpOoP(self: IPoop): string">dIdIpOoP(self: IPoop): string</a></li>
 
   </ul>
+  <ul class="simple nested-toc-section">doubleFloat
+      <li><a class="reference" href="#doubleFloat%2Cfloat"
+    title="doubleFloat(x: float): float">doubleFloat(x: float): float</a></li>
+
+  </ul>
   <ul class="simple nested-toc-section">eko
       <li><a class="reference" href="#eko%2Cstring"
     title="eko(this = &quot;Default value&quot;): void">eko(this = &quot;Default value&quot;): void</a></li>
@@ -608,6 +649,11 @@ window.addEventListener('DOMContentLoaded', main);
   <ul class="simple nested-toc-section">ekoGroups
       <li><a class="reference" href="#ekoGroups%2Cint%2Cint%2Cstring%2Cchar"
     title="ekoGroups(a, b: int; c: string; d: char): void">ekoGroups(a, b: int; c: string; d: char): void</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">fieldsPrint
+      <li><a class="reference" href="#fieldsPrint%2CT%2CT"
+    title="fieldsPrint[T: distinct tuple | object](first, second: T)">fieldsPrint[T: distinct tuple | object](first, second: T)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">foo
@@ -645,11 +691,6 @@ window.addEventListener('DOMContentLoaded', main);
     title="newLit(x: int): Literal">newLit(x: int): Literal</a></li>
 
   </ul>
-  <ul class="simple nested-toc-section">newNode
-      <li><a class="reference" href="#newNode%2CT"
-    title="newNode[T](data: T): BinaryTree[T]">newNode[T](data: T): BinaryTree[T]</a></li>
-
-  </ul>
   <ul class="simple nested-toc-section">newPlus
       <li><a class="reference" href="#newPlus%2CExpression%2CExpression"
     title="newPlus(a, b: Expression): PlusExpr">newPlus(a, b: Expression): PlusExpr</a></li>
@@ -678,6 +719,11 @@ window.addEventListener('DOMContentLoaded', main);
   <ul class="simple nested-toc-section">positiveOrNegative
       <li><a class="reference" href="#positiveOrNegative%2Cint"
     title="positiveOrNegative(num: int): string">positiveOrNegative(num: int): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printFields
+      <li><a class="reference" href="#printFields%2CT"
+    title="printFields[T: RecordType](rec: T)">printFields[T: RecordType](rec: T)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">prv
@@ -710,6 +756,11 @@ window.addEventListener('DOMContentLoaded', main);
     title="runFn(a: string; fn: proc (x: string): string): string">runFn(a: string; fn: proc (x: string): string): string</a></li>
 
   </ul>
+  <ul class="simple nested-toc-section">somethingStupid
+      <li><a class="reference" href="#somethingStupid"
+    title="somethingStupid(): auto">somethingStupid(): auto</a></li>
+
+  </ul>
   <ul class="simple nested-toc-section">str
       <li><a class="reference" href="#str%2Cstring"
     title="str(s: string): string">str(s: string): string</a></li>
@@ -728,6 +779,11 @@ window.addEventListener('DOMContentLoaded', main);
   <ul class="simple nested-toc-section">withArrParam
       <li><a class="reference" href="#withArrParam%2Carray%5BI%2CT%5D"
     title="withArrParam[I, T](a: array[I, T]): string">withArrParam[I, T](a: array[I, T]): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">writeAccessToG
+      <li><a class="reference" href="#writeAccessToG"
+    title="writeAccessToG(): var int">writeAccessToG(): var int</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">writeLines
@@ -780,9 +836,9 @@ window.addEventListener('DOMContentLoaded', main);
     title="countTo(n: int): int">countTo(n: int): int</a></li>
 
   </ul>
-  <ul class="simple nested-toc-section">preorder
-      <li><a class="reference" href="#preorder.i%2CBinaryTree%5BT%5D"
-    title="preorder[T](root: BinaryTree[T]): T">preorder[T](root: BinaryTree[T]): T</a></li>
+  <ul class="simple nested-toc-section">mycount
+      <li><a class="reference" href="#mycount.i%2Cint%2Cint"
+    title="mycount(a, b: int): int">mycount(a, b: int): int</a></li>
 
   </ul>
 
@@ -794,6 +850,11 @@ window.addEventListener('DOMContentLoaded', main);
       <ul class="simple nested-toc-section">get
       <li><a class="reference" href="#get.c%2COption%5BT%5D"
     title="get[T](x: Option[T]): T">get[T](x: Option[T]): T</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">toBool
+      <li><a class="reference" href="#toBool.c%2Cint"
+    title="toBool(x: int): bool">toBool(x: int): bool</a></li>
 
   </ul>
 
@@ -835,6 +896,8 @@ window.addEventListener('DOMContentLoaded', main);
 <li>dont import any of them directly, theres some compiler magic to makem work</li>
 </ul>
 
+<h1><a class="toc-backref" id="variables-and-globals" href="#variables-and-globals">variables and globals</a></h1><p>creating variables &amp; other assignment operators catchall for global keywords/procs/types/etc not specified in other files </p>
+
 <h1><a class="toc-backref" id="exception-stuff-debugging-documentation-and-testing" href="#exception-stuff-debugging-documentation-and-testing">exception stuff, debugging, documentation and testing</a></h1><ul class="simple"><li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L292">sys mod src excellent doc example</a></li>
 <li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/devel/tests/test_nimscript.nims">nimscript test file</a></li>
 <li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim">system exceptions</a> for you to extend from</li>
@@ -861,7 +924,7 @@ window.addEventListener('DOMContentLoaded', main);
 <span class="Identifier">iam</span><span class="Operator">.</span><span class="Identifier">repr</span> <span class="Comment">## \</span>
   <span class="Comment">## prints to stdout</span></pre>
 <h1><a class="toc-backref" id="ordinals-and-structured-types" href="#ordinals-and-structured-types">ordinals and structured types</a></h1><p>structured: arrays, sequences, tuples, objects sets</p>
-<ul class="simple"><li>tuples and objects are in typeStructured</li>
+<ul class="simple"><li>tuples and objects are in tupleObjectTable</li>
 <li>can hold multiple values and have unlimited levels of nesting</li>
 </ul>
 <p>ordinals: enums, integers, char, bool, subranges</p>
@@ -871,14 +934,33 @@ window.addEventListener('DOMContentLoaded', main);
 <p>arrays: array, openArray, UncheckedArray, varargs</p>
 <p>set: base type can be any ordinal type </p>
 
-<h1><a class="toc-backref" id="tuples-amp-objects" href="#tuples-amp-objects">tuples &amp; objects</a></h1><p>heterogenous storage containers of named fields of any type</p>
+<h1><a class="toc-backref" id="routines" href="#routines">routines</a></h1><p>routine: a symbol of kind proc, func, method, iterator, macro, template, converter</p>
+<ul class="simple"><li>converters are covered in globalVariables i think</li>
+</ul>
+
+<h1><a class="toc-backref" id="tuples-amp-objects-amp-tables" href="#tuples-amp-objects-amp-tables">tuples &amp; objects &amp; tables</a></h1><p>heterogenous storage containers of named fields of any type</p>
 <p>tuples</p>
 <ul class="simple"><li>lexical order of fields with few abstractions</li>
-<li>are equivalent if the order &amp; type of fields match</li>
+<li>structurally equivalent if the order &amp; type of fields match</li>
 </ul>
 <p>objects</p>
 <ul class="simple"><li>complex tuples without lexical ordering (lol my definition)</li>
-<li>are structurally equivalent unless ref'embed</li>
+<li>provide inheritance &amp; hidden fields &gt; tuples</li>
+<li>nominally equivalent</li>
+</ul>
+<p>table</p>
+<ul class="simple"><li>syntactic sugar for an array constructor</li>
+<li>{&quot;k&quot;: &quot;v&quot;} == [(&quot;k&quot;, &quot;v&quot;)]</li>
+</ul>
+<p>skipped</p>
+<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/manual.html#generics-symbol-lookup-in-generics">symbol lookups in generics</a></li>
+<li>^ mixin statement</li>
+<li>^ bind statement</li>
+<li>^ delegating bind statements</li>
+</ul>
+
+<h1><a class="toc-backref" id="templates-and-macros" href="#templates-and-macros">templates and macros</a></h1><p>pretty much skipped the entire section on templates</p>
+<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/manual.html#templates">start here</a></li>
 </ul>
 
 <h1><a class="toc-backref" id="enable-new-functionality-without-adding-new-keywords-to-the-language" href="#enable-new-functionality-without-adding-new-keywords-to-the-language">enable new functionality without adding new keywords to the language</a></h1><ul class="simple"><li>syntax: {.pragma1, pragma2:val, etc.}</li>
@@ -905,17 +987,6 @@ window.addEventListener('DOMContentLoaded', main);
 </div>
 <div id="BigMoney">
 <dt><pre><a href="yolowurl.html#BigMoney"><span class="Identifier">BigMoney</span></a> <span class="Other">=</span> <span class="Identifier">int</span></pre></dt>
-<dd>
-
-
-
-</dd>
-</div>
-<div id="BinaryTree">
-<dt><pre><a href="yolowurl.html#BinaryTree"><span class="Identifier">BinaryTree</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
-  <span class="Identifier">le</span><span class="Other">,</span> <span class="Identifier">ri</span><span class="Other">:</span> <a href="yolowurl.html#BinaryTree"><span class="Identifier">BinaryTree</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span>
-  <span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">T</span>
-</pre></dt>
 <dd>
 
 
@@ -995,6 +1066,14 @@ especially things like custom types may need additional abbreviations to describ
 </div>
 <div id="IsOn">
 <dt><pre><span class="Identifier">IsOn</span> <span class="Other">=</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">int8</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="LearningError">
+<dt><pre><span class="Identifier">LearningError</span> <span class="Other">=</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">CatchableError</span></pre></dt>
 <dd>
 
 
@@ -1155,6 +1234,14 @@ especially things like custom types may need additional abbreviations to describ
 
 </dd>
 </div>
+<div id="OtherRecord">
+<dt><pre><span class="Identifier">OtherRecord</span> <span class="Other">=</span> <span class="Keyword">tuple</span><span class="Other">[</span><span class="Identifier">wtf</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 <div id="PeopleOfAmerica">
 <dt><pre><span class="Identifier">PeopleOfAmerica</span> {.<span class="Identifier">pure</span>.} <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">coders</span> <span class="Other">=</span> <span class="StringLit">&quot;think i am&quot;</span><span class="Other">,</span> <span class="Identifier">teachers</span> <span class="Other">=</span> <span class="StringLit">&quot;pretend to be&quot;</span><span class="Other">,</span> <span class="Identifier">farmers</span> <span class="Other">=</span> <span class="StringLit">&quot;prefer to be&quot;</span><span class="Other">,</span>
@@ -1191,6 +1278,14 @@ especially things like custom types may need additional abbreviations to describ
   <span class="Identifier">u</span><span class="Other">:</span> <span class="Identifier">bool</span>
   <span class="Identifier">times</span><span class="Other">:</span> <span class="Identifier">int</span>
 </pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="RecordType">
+<dt><pre><span class="Identifier">RecordType</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">typeof</span> <span class="Identifier">myRecord</span><span class="Other">)</span> <span class="Keyword">or</span> <span class="Keyword">object</span> <span class="Operator">|</span> <span class="Keyword">tuple</span></pre></dt>
 <dd>
 
 
@@ -1348,8 +1443,8 @@ especially things like custom types may need additional abbreviations to describ
 
 </dd>
 </div>
-<div id="alreadyExecuted`gensym14">
-<dt><pre><span class="Identifier">alreadyExecuted`gensym14</span> <span class="Other">=</span> <span class="Identifier">false</span></pre></dt>
+<div id="alreadyExecuted`gensym20">
+<dt><pre><span class="Identifier">alreadyExecuted`gensym20</span> <span class="Other">=</span> <span class="Identifier">false</span></pre></dt>
 <dd>
 
 
@@ -1438,8 +1533,32 @@ especially things like custom types may need additional abbreviations to describ
 
 </dd>
 </div>
+<div id="finishedCorrect">
+<dt><pre><span class="Identifier">finishedCorrect</span> <span class="Other">=</span> <span class="Identifier">mycount</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="finishedIncorrect">
+<dt><pre><span class="Identifier">finishedIncorrect</span> <span class="Other">=</span> <span class="Identifier">mycount</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 <div id="fruits">
 <dt><pre><span class="Identifier">fruits</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="gg">
+<dt><pre><span class="Identifier">gg</span> <span class="Other">=</span> <span class="DecNumber">0</span></pre></dt>
 <dd>
 
 
@@ -1574,8 +1693,32 @@ especially things like custom types may need additional abbreviations to describ
 
 </dd>
 </div>
+<div id="myInt">
+<dt><pre><span class="Identifier">myInt</span> <span class="Other">=</span> <span class="DecNumber">10</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 <div id="myobj">
 <dt><pre><span class="Identifier">myobj</span> <span class="Other">=</span> <a href="yolowurl.html#SomeObj"><span class="Identifier">SomeObj</span></a><span class="Other">(</span><span class="Identifier">pub</span><span class="Other">:</span> <span class="StringLit">&quot;pub field&quot;</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="myRecord">
+<dt><pre><span class="Identifier">myRecord</span><span class="Other">:</span> <span class="Keyword">tuple</span><span class="Other">[</span><span class="Identifier">wtf</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">wtf</span><span class="Other">:</span> <span class="StringLit">&quot;yo&quot;</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="myTable">
+<dt><pre><span class="Identifier">myTable</span> <span class="Other">=</span> <span class="Other">[</span><span class="Other">(</span><span class="StringLit">&quot;fname&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;noah&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="StringLit">&quot;lname&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;hall&quot;</span><span class="Other">)</span><span class="Other">]</span></pre></dt>
 <dd>
 
 
@@ -1608,6 +1751,14 @@ especially things like custom types may need additional abbreviations to describ
 </div>
 <div id="num7">
 <dt><pre><span class="Identifier">num7</span> <span class="Other">=</span> <span class="DecNumber">5</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="numCase">
+<dt><pre><span class="Identifier">numCase</span> <span class="Other">=</span> <span class="FloatNumber">50.345</span></pre></dt>
 <dd>
 
 
@@ -1726,6 +1877,18 @@ especially things like custom types may need additional abbreviations to describ
 
 </dd>
 </div>
+<div id="stupidChar">
+<dt><pre><span class="Identifier">stupidChar</span> <span class="Other">=</span> <span class="Keyword">block</span><span class="Other">:</span>
+  <span class="Keyword">var</span> <span class="Identifier">dumbChar</span> <span class="Other">=</span> <span class="CharLit">'a'</span>
+  <span class="Keyword">if</span> <span class="Identifier">contains</span><span class="Other">(</span><span class="Other">{</span><span class="CharLit">'a'</span><span class="Other">,</span> <span class="CharLit">'b'</span><span class="Other">,</span> <span class="CharLit">'c'</span><span class="Other">}</span><span class="Other">,</span> <span class="Identifier">dumbChar</span><span class="Other">)</span><span class="Other">:</span>
+    <span class="Identifier">echo</span> <span class="Other">[</span><span class="StringLit">&quot;dumbChar is in alphabeta &quot;</span><span class="Other">,</span> <span class="Identifier">dumbChar</span><span class="Other">]</span>
+  <span class="Identifier">ord</span><span class="Other">(</span><span class="Identifier">dumbChar</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 <div id="thisRange">
 <dt><pre><span class="Identifier">thisRange</span><span class="Other">:</span> <span class="Identifier">range</span><span class="Other">[</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="DecNumber">5</span><span class="Other">]</span></pre></dt>
 <dd>
@@ -1736,6 +1899,22 @@ especially things like custom types may need additional abbreviations to describ
 </div>
 <div id="typeSupportBlah">
 <dt><pre><span class="Identifier">typeSupportBlah</span> <span class="Other">=</span> <span class="StringLit">&quot;halb&quot;</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="utherRecord">
+<dt><pre><span class="Identifier">utherRecord</span><span class="Other">:</span> <span class="Identifier">OtherRecord</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">wtf</span><span class="Other">:</span> <span class="StringLit">&quot;yo2&quot;</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="whichVerse">
+<dt><pre><span class="Identifier">whichVerse</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;twitter verse&quot;</span></pre></dt>
 <dd>
 
 
@@ -1771,7 +1950,7 @@ especially things like custom types may need additional abbreviations to describ
 
 </dd>
 </div>
-<div id="aa_2">
+<div id="aa">
 <dt><pre><span class="Identifier">aa</span> <span class="Other">=</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">hasValue</span><span class="Other">:</span> <span class="DecNumber">true</span><span class="Other">,</span> <span class="Identifier">value</span><span class="Other">:</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
 <dd>
 
@@ -1795,7 +1974,7 @@ this is not included in docs because its not exported
 
 </dd>
 </div>
-<div id="bb_2">
+<div id="bb">
 <dt><pre><span class="Identifier">bb</span> <span class="Other">=</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">hasValue</span><span class="Other">:</span> <span class="DecNumber">true</span><span class="Other">,</span> <span class="Identifier">value</span><span class="Other">:</span> <span class="DecNumber">2</span><span class="Other">)</span></pre></dt>
 <dd>
 
@@ -1805,6 +1984,17 @@ this is not included in docs because its not exported
 </div>
 <div id="bizRating">
 <dt><pre><span class="Other">(</span><a href="#bizRating"><span class="Identifier">bizRating</span></a><span class="Other">,</span> <span class="Identifier">devRating</span><span class="Other">,</span> <span class="Identifier">opsRating</span><span class="Other">)</span> <span class="Other">=</span> <span class="Identifier">bizDevOps</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="divBy0">
+<dt><pre><span class="Identifier">divBy0</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Keyword">try</span><span class="Other">:</span>
+  <span class="DecNumber">4</span> <span class="Operator">/</span> <span class="DecNumber">0</span>
+<span class="Keyword">except</span><span class="Other">:</span>
+  <span class="FloatNumber">-1.0</span></pre></dt>
 <dd>
 
 
@@ -1821,6 +2011,14 @@ this is not included in docs because its not exported
 </div>
 <div id="everyonepoop">
 <dt><pre><span class="Identifier">everyonepoop</span> <span class="Other">=</span> <span class="Identifier">upoop</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="first">
+<dt><pre><span class="Other">(</span><a href="#first"><span class="Identifier">first</span></a><span class="Other">,</span> <span class="Operator">__436210859</span><span class="Other">,</span> <span class="Identifier">third</span><span class="Other">)</span> <span class="Other">=</span> <span class="Identifier">bizDevOps</span></pre></dt>
 <dd>
 
 
@@ -1957,16 +2155,16 @@ this is not included in docs because its not exported
 
 </dd>
 </div>
-<div id="theyAskedNickely`gensym32">
-<dt><pre><span class="Identifier">theyAskedNickely`gensym32</span> <span class="Other">=</span> <span class="Identifier">true</span></pre></dt>
+<div id="theyAskedNickely`gensym46">
+<dt><pre><span class="Identifier">theyAskedNickely`gensym46</span> <span class="Other">=</span> <span class="Identifier">true</span></pre></dt>
 <dd>
 
 
 
 </dd>
 </div>
-<div id="theyAskedNickely`gensym33">
-<dt><pre><span class="Identifier">theyAskedNickely`gensym33</span> <span class="Other">=</span> <span class="Identifier">false</span></pre></dt>
+<div id="theyAskedNickely`gensym47">
+<dt><pre><span class="Identifier">theyAskedNickely`gensym47</span> <span class="Other">=</span> <span class="Identifier">false</span></pre></dt>
 <dd>
 
 
@@ -2083,7 +2281,7 @@ this is not included in docs because its not exported
 </dd>
 </div>
 <div id="buildInfo">
-<dt><pre><span class="Identifier">buildInfo</span> <span class="Other">=</span> <span class="StringLit">&quot;Revision 491ba4654b250598660ca5af3b1ec9ea8a387f35\nCompiled on #66-Ubuntu SMP Fri Jan 20 14:29:49 UTC 2023&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">buildInfo</span> <span class="Other">=</span> <span class="StringLit">&quot;Revision 1e5f2b61bbfc3a204e9d4ba092ad127a3a2e683c\nCompiled on #66-Ubuntu SMP Fri Jan 20 14:29:49 UTC 2023&quot;</span></pre></dt>
 <dd>
 
 
@@ -2178,36 +2376,36 @@ this is not included in docs because its not exported
 
 </dd>
 </div>
-<div id="loc`gensym8">
-<dt><pre><span class="Identifier">loc`gensym8</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;</span><span class="Other">,</span>
-               <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">187</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">7</span><span class="Other">)</span></pre></dt>
+<div id="loc`gensym13">
+<dt><pre><span class="Identifier">loc`gensym13</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;</span><span class="Other">,</span>
+                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">202</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">7</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 
 </dd>
 </div>
-<div id="loc`gensym10">
-<dt><pre><span class="Identifier">loc`gensym10</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;</span><span class="Other">,</span>
-                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">190</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
+<div id="loc`gensym15">
+<dt><pre><span class="Identifier">loc`gensym15</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;</span><span class="Other">,</span>
+                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">205</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 
 </dd>
 </div>
-<div id="loc`gensym12">
-<dt><pre><span class="Identifier">loc`gensym12</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;</span><span class="Other">,</span>
-                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">195</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
+<div id="loc`gensym17">
+<dt><pre><span class="Identifier">loc`gensym17</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim&quot;</span><span class="Other">,</span>
+                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">210</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 
 </dd>
 </div>
-<div id="loc`gensym30">
-<dt><pre><span class="Identifier">loc`gensym30</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/procedures.nim&quot;</span><span class="Other">,</span>
-                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">220</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">6</span><span class="Other">)</span></pre></dt>
+<div id="loc`gensym44">
+<dt><pre><span class="Identifier">loc`gensym44</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/templateMacros.nim&quot;</span><span class="Other">,</span>
+                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">22</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">6</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -2302,32 +2500,32 @@ this is not included in docs because its not exported
 
 </dd>
 </div>
-<div id="ploc`gensym8">
-<dt><pre><span class="Identifier">ploc`gensym8</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(187, 8)&quot;</span></pre></dt>
+<div id="ploc`gensym13">
+<dt><pre><span class="Identifier">ploc`gensym13</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(202, 8)&quot;</span></pre></dt>
 <dd>
 
 
 
 </dd>
 </div>
-<div id="ploc`gensym10">
-<dt><pre><span class="Identifier">ploc`gensym10</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(190, 10)&quot;</span></pre></dt>
+<div id="ploc`gensym15">
+<dt><pre><span class="Identifier">ploc`gensym15</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(205, 10)&quot;</span></pre></dt>
 <dd>
 
 
 
 </dd>
 </div>
-<div id="ploc`gensym12">
-<dt><pre><span class="Identifier">ploc`gensym12</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(195, 10)&quot;</span></pre></dt>
+<div id="ploc`gensym17">
+<dt><pre><span class="Identifier">ploc`gensym17</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingTestingDocs.nim(210, 10)&quot;</span></pre></dt>
 <dd>
 
 
 
 </dd>
 </div>
-<div id="ploc`gensym30">
-<dt><pre><span class="Identifier">ploc`gensym30</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/procedures.nim(220, 7)&quot;</span></pre></dt>
+<div id="ploc`gensym44">
+<dt><pre><span class="Identifier">ploc`gensym44</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/templateMacros.nim(22, 7)&quot;</span></pre></dt>
 <dd>
 
 
@@ -2444,6 +2642,14 @@ this is not included in docs because its not exported
 
 </dd>
 </div>
+<div id="doubleFloat,float">
+<dt><pre><span class="Keyword">proc</span> <a href="#doubleFloat%2Cfloat"><span class="Identifier">doubleFloat</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 <div id="eko,string">
 <dt><pre><span class="Keyword">proc</span> <a href="#eko%2Cstring"><span class="Identifier">eko</span></a><span class="Other">(</span><span class="Identifier">this</span> <span class="Other">=</span> <span class="StringLit">&quot;Default value&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
@@ -2470,6 +2676,14 @@ this is not included in docs because its not exported
 </div>
 <div id="ekoGroups,int,int,string,char">
 <dt><pre><span class="Keyword">proc</span> <a href="#ekoGroups%2Cint%2Cint%2Cstring%2Cchar"><span class="Identifier">ekoGroups</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">c</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">char</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="fieldsPrint,T,T">
+<dt><pre><span class="Keyword">proc</span> <a href="#fieldsPrint%2CT%2CT"><span class="Identifier">fieldsPrint</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">:</span> <span class="Keyword">distinct</span> <span class="Keyword">tuple</span> <span class="Operator">|</span> <span class="Keyword">object</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">first</span><span class="Other">,</span> <span class="Identifier">second</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -2532,14 +2746,6 @@ this is not included in docs because its not exported
 
 </dd>
 </div>
-<div id="newNode,T">
-<dt><pre><span class="Keyword">proc</span> <a href="#newNode%2CT"><span class="Identifier">newNode</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <a href="yolowurl.html#BinaryTree"><span class="Identifier">BinaryTree</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span></pre></dt>
-<dd>
-
-
-
-</dd>
-</div>
 <div id="newPlus,Expression,Expression">
 <dt><pre><span class="Keyword">proc</span> <a href="#newPlus%2CExpression%2CExpression"><span class="Identifier">newPlus</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">Expression</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">PlusExpr</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
@@ -2582,6 +2788,14 @@ this is not included in docs because its not exported
 </div>
 <div id="positiveOrNegative,int">
 <dt><pre><span class="Keyword">proc</span> <a href="#positiveOrNegative%2Cint"><span class="Identifier">positiveOrNegative</span></a><span class="Other">(</span><span class="Identifier">num</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="printFields,T">
+<dt><pre><span class="Keyword">proc</span> <a href="#printFields%2CT"><span class="Identifier">printFields</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">:</span> <span class="Identifier">RecordType</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">rec</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -2637,6 +2851,14 @@ this is not included in docs because its not exported
 
 </dd>
 </div>
+<div id="somethingStupid">
+<dt><pre><span class="Keyword">proc</span> <a href="#somethingStupid"><span class="Identifier">somethingStupid</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 <div id="str,string">
 <dt><pre><span class="Keyword">proc</span> <a href="#str%2Cstring"><span class="Identifier">str</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
@@ -2663,6 +2885,14 @@ this is not included in docs because its not exported
 </div>
 <div id="withArrParam,array[I,T]">
 <dt><pre><span class="Keyword">proc</span> <a href="#withArrParam%2Carray%5BI%2CT%5D"><span class="Identifier">withArrParam</span></a><span class="Other">[</span><span class="Identifier">I</span><span class="Other">,</span> <span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="Identifier">I</span><span class="Other">,</span> <span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="writeAccessToG">
+<dt><pre><span class="Keyword">proc</span> <a href="#writeAccessToG"><span class="Identifier">writeAccessToG</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">int</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 
@@ -2759,8 +2989,8 @@ this is not included in docs because its not exported
 
 </dd>
 </div>
-<div id="preorder.i,BinaryTree[T]">
-<dt><pre><span class="Keyword">iterator</span> <a href="#preorder.i%2CBinaryTree%5BT%5D"><span class="Identifier">preorder</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">root</span><span class="Other">:</span> <a href="yolowurl.html#BinaryTree"><span class="Identifier">BinaryTree</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
+<div id="mycount.i,int,int">
+<dt><pre><span class="Keyword">iterator</span> <a href="#mycount.i%2Cint%2Cint"><span class="Identifier">mycount</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> {.<span class="Identifier">closure</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 
@@ -2774,6 +3004,14 @@ this is not included in docs because its not exported
 <dl class="item">
 <div id="get.c,Option[T]">
 <dt><pre><span class="Keyword">converter</span> <a href="#get.c%2COption%5BT%5D"><span class="Identifier">get</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="toBool.c,int">
+<dt><pre><span class="Keyword">converter</span> <a href="#toBool.c%2Cint"><span class="Identifier">toBool</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 
@@ -2819,7 +3057,7 @@ this is not included in docs because its not exported
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-11 21:12:10 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-12 04:33:10 UTC</small>
       </div>
     </div>
   </div>

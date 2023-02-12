@@ -256,5 +256,6 @@ include modules/[
   routines,
   tupleObjectTable,
   osIoFiles,
+  templateMacros,
   pragmas
 ]

@@ -22,18 +22,6 @@ echo "############################ skipped list"
 # TypeOfMode something to do with proc/iter invocations
 # asm assembler statements enabled direct embedding of assemlber code in nim code
 
-echo "############################ macros"
-#[
-  I basically skipped everything related to macros
-  I should have captured everything in this file (which is what im doing now)
-]#
-
-#[
-  # stuff
-    ForLoopStmt
-    NimNode
-    instantiationInfo
-]#
 
 echo "############################ effect system"
 #[
