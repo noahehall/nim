@@ -17,6 +17,11 @@
 ## - syntactic sugar for an array constructor
 ## - {"k": "v"} == [("k", "v")]
 ##
+## skipped
+## - [symbol lookups in generics](https://nim-lang.org/docs/manual.html#generics-symbol-lookup-in-generics)
+## - ^ mixin statement
+## - ^ bind statement
+## - ^ delegating bind statements
 #[
   ref/pter:
     . and [] always def-ref, i.e. return the value and not the ref

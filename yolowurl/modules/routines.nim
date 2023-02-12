@@ -71,11 +71,11 @@ var num7 = 5
 debugEcho mutate num7, num7.mutate, mutate(num7)
 
 # you can return a var indicating the caller can mutate the return
-var g = 0
+var gg = 0
 proc writeAccessToG(): var int =
-  result = g
+  result = gg
 writeAccessToG() = 6
-echo "g == 6 ", g == 6
+echo "g == 6 ", gg == 6
 
 # noSideEffect pragma: statically ensures there are no side effects
 # see func
