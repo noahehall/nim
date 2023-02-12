@@ -115,6 +115,18 @@ echo "############################ Exceptions "
 # @see https://nim-lang.org/docs/system.html#Exception
 # @see https://nim-lang.org/docs/manual.html#exception-handling-exception-hierarchy
 
+# inherit from a specific error (e.g. ValueError)
+# or from abstract CatchableError or Defect
+# refrain from using Exception (docs might be old?)
+type LearningError = object of CatchableError
+
+block howlong:
+  try:
+    if 24 div 12 == 2:
+      raise newException(LearningError, "its been a long time")
+  except LearningError as e:
+    echo e.msg & " but i finally found the time"
+
 echo "############################ raise "
 # throw an exception
 # system.Exception provides the interface
@@ -159,12 +171,15 @@ echo "############################ try/catch/finally "
 if true:
   try:
     let f: File = open "this file doesnt exist"
-
-  except OverflowDefect:
+  except OverflowDefect, ArithmeticDefect: # catch multiple types
     echo "wrong error type"
-  except ValueError:
-    echo "cmd dude you know what kind of error this is"
+  except ValueError as e:
+    echo "you can access the current exception if assigned: ", e.msg
   # except IOError:
+  except KeyError:
+    # explicitly convert the currentException to a type
+    let e = (ref IOError)(getCurrentException())
+    echo "wrong error type: ", e.msg
   except:
     echo "unknown exception! this is bad code"
     let
@@ -176,6 +191,12 @@ if true:
     echo "Glad we survived this horrible day"
     echo "if you didnt catch the err in an except"
     echo "this will be the last line before exiting"
+
+# can be an expression
+# the try + except must all be of the same type
+# if theres a finally, it must return void
+let divBy0: float = try: 4 / 0 except: -1.0
+echo "oops! ", divBy0
 
 
 echo "############################ assert"
