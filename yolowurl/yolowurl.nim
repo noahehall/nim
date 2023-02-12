@@ -16,7 +16,7 @@
     - ../nimscript for nim scripting
     - ../backends for compilation (todo currently its in compiler_blah_blah too)
 
-  road to code: syntax finale: https://nim-lang.org/docs/manual.html#generics
+  road to code: syntax finale: https://nim-lang.org/docs/manual.html#special-types
     - https://nim-lang.org/docs/destructors.html
 
   review:

@@ -3,7 +3,11 @@
 ##
 ## pretty much skipped the entire section on templates
 ## - [start here](https://nim-lang.org/docs/manual.html#templates)
+## - ^ continue until you get to macros
 ##
+## pretty much skipped the entire section on macros
+## - [start here](https://nim-lang.org/docs/manual.html#macros)
+## - ^ continue until you get to SpecialTypes
 ##
 echo "############################ template"
 # simple form of a macro
