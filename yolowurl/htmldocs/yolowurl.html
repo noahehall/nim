@@ -99,17 +99,33 @@ window.addEventListener('DOMContentLoaded', main);
   </div>
   <ul class="simple simple-toc" id="toc-list">
 <li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax_toc" href="#yolo-wurlcolon-basic-nim-syntax">yolo wurl: basic nim syntax</a></li>
-<ul class="simple"><li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax-the-road-to-code_toc" href="#yolo-wurlcolon-basic-nim-syntax-the-road-to-code">the road to code</a></li>
+<ul class="simple"><li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax-tldr_toc" href="#yolo-wurlcolon-basic-nim-syntax-tldr">TLDR</a></li>
+<li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax-useful-links_toc" href="#yolo-wurlcolon-basic-nim-syntax-useful-links">useful links</a></li>
+<li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax-the-road-to-code_toc" href="#yolo-wurlcolon-basic-nim-syntax-the-road-to-code">the road to code</a></li>
 <li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax-std-library_toc" href="#yolo-wurlcolon-basic-nim-syntax-std-library">std library</a></li>
 <li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax-style-guide-amp-best-practices_toc" href="#yolo-wurlcolon-basic-nim-syntax-style-guide-amp-best-practices">style guide &amp; best practices</a></li>
 <li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax-modules_toc" href="#yolo-wurlcolon-basic-nim-syntax-modules">modules</a></li>
 <li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax-import_toc" href="#yolo-wurlcolon-basic-nim-syntax-import">import</a></li>
 <li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax-includecolon_toc" href="#yolo-wurlcolon-basic-nim-syntax-includecolon">include:</a></li>
 <li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax-export_toc" href="#yolo-wurlcolon-basic-nim-syntax-export">export</a></li>
-</ul><li><a class="reference" id="variables-and-globals_toc" href="#variables-and-globals">variables and globals</a></li>
-<li><a class="reference" id="exception-stuff-debugging-documentation_toc" href="#exception-stuff-debugging-documentation">exception stuff, debugging, documentation</a></li>
-<li><a class="reference" id="top-level-docs-are-for-the-module_toc" href="#top-level-docs-are-for-the-module">top level docs are for the module</a></li>
-<ul class="simple"><li><a class="reference" id="top-level-docs-are-for-the-module-some-copypasta-from-nim-source_toc" href="#top-level-docs-are-for-the-module-some-copypasta-from-nim-source">some copypasta from nim source</a></li>
+<li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax-packages_toc" href="#yolo-wurlcolon-basic-nim-syntax-packages">packages</a></li>
+<li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax-operators_toc" href="#yolo-wurlcolon-basic-nim-syntax-operators">operators</a></li>
+<li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax-keywords_toc" href="#yolo-wurlcolon-basic-nim-syntax-keywords">keywords</a></li>
+<li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax-statements_toc" href="#yolo-wurlcolon-basic-nim-syntax-statements">statements</a></li>
+<li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax-expressions_toc" href="#yolo-wurlcolon-basic-nim-syntax-expressions">expressions</a></li>
+</ul><li><a class="reference" id="visibility_toc" href="#visibility">visibility</a></li>
+<li><a class="reference" id="variables-and-globals_toc" href="#variables-and-globals">variables and globals</a></li>
+<li><a class="reference" id="exception-handling-debugging-todo-documentation_toc" href="#exception-handling-debugging-todo-documentation">exception handling, debugging (todo), documentation</a></li>
+<ul class="simple"><li><a class="reference" id="exception-handling-debugging-todo-documentation-tldr_toc" href="#exception-handling-debugging-todo-documentation-tldr">TLDR</a></li>
+<li><a class="reference" id="exception-handling-debugging-todo-documentation-exception-handling_toc" href="#exception-handling-debugging-todo-documentation-exception-handling">Exception Handling</a></li>
+<li><a class="reference" id="exception-handling-debugging-todo-documentation-defect-types_toc" href="#exception-handling-debugging-todo-documentation-defect-types">Defect types</a></li>
+<li><a class="reference" id="exception-handling-debugging-todo-documentation-error-exception-types_toc" href="#exception-handling-debugging-todo-documentation-error-exception-types">Error (exception) types</a></li>
+<li><a class="reference" id="exception-handling-debugging-todo-documentation-documentation_toc" href="#exception-handling-debugging-todo-documentation-documentation">Documentation</a></li>
+<li><a class="reference" id="exception-handling-debugging-todo-documentation-doc-syntax_toc" href="#exception-handling-debugging-todo-documentation-doc-syntax">doc syntax</a></li>
+</ul><li><a class="reference" id="block-slash-do_toc" href="#block-slash-do">block / do</a></li>
+<ul class="simple"><li><a class="reference" id="block-slash-do-tldr_toc" href="#block-slash-do-tldr">TLDR</a></li>
+<li><a class="reference" id="block-slash-do-do-blocks_toc" href="#block-slash-do-do-blocks">do blocks</a></li>
+<li><a class="reference" id="block-slash-do-once-blocks_toc" href="#block-slash-do-once-blocks">once blocks</a></li>
 </ul><li><a class="reference" id="ordinals-and-structured-types_toc" href="#ordinals-and-structured-types">ordinals and structured types</a></li>
 <li><a class="reference" id="routines_toc" href="#routines">routines</a></li>
 <li><a class="reference" id="tuples-amp-objects-amp-tables_toc" href="#tuples-amp-objects-amp-tables">tuples &amp; objects &amp; tables</a></li>
@@ -505,7 +521,7 @@ except:
   <li><a class="reference" href="#b"
     title="b = 100">b</a></li>
   <li><a class="reference" href="#buildInfo"
-    title="buildInfo = &quot;Revision d337e832e3b1c0db2ad0c9b52118508561842b46\nCompiled on #66-Ubuntu SMP Fri Jan 20 14:29:49 UTC 2023&quot;">buildInfo</a></li>
+    title="buildInfo = &quot;Revision 28f11e295d3e3ce5d43c72410946b1a14a3f3519\nCompiled on #66-Ubuntu SMP Fri Jan 20 14:29:49 UTC 2023&quot;">buildInfo</a></li>
   <li><a class="reference" href="#c"
     title="c = 100'i8">c</a></li>
   <li><a class="reference" href="#debug"
@@ -530,13 +546,13 @@ except:
     title="lastOne = 1">lastOne</a></li>
   <li><a class="reference" href="#loc%60gensym10"
     title="loc`gensym10 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingDocs.nim&quot;,
-                line: 199, column: 7)">loc`gensym10</a></li>
+                line: 180, column: 7)">loc`gensym10</a></li>
   <li><a class="reference" href="#loc%60gensym12"
     title="loc`gensym12 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingDocs.nim&quot;,
-                line: 202, column: 9)">loc`gensym12</a></li>
+                line: 183, column: 9)">loc`gensym12</a></li>
   <li><a class="reference" href="#loc%60gensym14"
     title="loc`gensym14 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingDocs.nim&quot;,
-                line: 207, column: 9)">loc`gensym14</a></li>
+                line: 188, column: 9)">loc`gensym14</a></li>
   <li><a class="reference" href="#loc%60gensym45"
     title="loc`gensym45 = (filename: &quot;/home/poop/git/foss/nim/yolowurl/modules/templateMacros.nim&quot;,
                 line: 26, column: 6)">loc`gensym45</a></li>
@@ -563,11 +579,11 @@ except:
   <li><a class="reference" href="#p"
     title="p = 0o000000000123">p</a></li>
   <li><a class="reference" href="#ploc%60gensym10"
-    title="ploc`gensym10 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingDocs.nim(199, 8)&quot;">ploc`gensym10</a></li>
+    title="ploc`gensym10 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingDocs.nim(180, 8)&quot;">ploc`gensym10</a></li>
   <li><a class="reference" href="#ploc%60gensym12"
-    title="ploc`gensym12 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingDocs.nim(202, 10)&quot;">ploc`gensym12</a></li>
+    title="ploc`gensym12 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingDocs.nim(183, 10)&quot;">ploc`gensym12</a></li>
   <li><a class="reference" href="#ploc%60gensym14"
-    title="ploc`gensym14 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingDocs.nim(207, 10)&quot;">ploc`gensym14</a></li>
+    title="ploc`gensym14 = &quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingDocs.nim(188, 10)&quot;">ploc`gensym14</a></li>
   <li><a class="reference" href="#ploc%60gensym45"
     title="ploc`gensym45 = &quot;/home/poop/git/foss/nim/yolowurl/modules/templateMacros.nim(26, 7)&quot;">ploc`gensym45</a></li>
   <li><a class="reference" href="#poop3"
@@ -911,13 +927,13 @@ except:
   <p class="module-desc">
 <h1><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax" href="#yolo-wurlcolon-basic-nim-syntax">yolo wurl: basic nim syntax</a></h1><table class="docinfo" frame="void" rules="none"><col class="docinfo-name" /><col class="docinfo-content" /><tbody valign="top"><tr><th class="docinfo-name">Authors:</th><td>noah</td></tr>
 <tr><th class="docinfo-name">Org:</th><td>personal</td></tr>
-</tbody></table><p>TLDR</p>
-<ul class="simple"><li>only uses the implicitly imported system, threads and channel built_int module (and their imports)</li>
+</tbody></table>
+<h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-tldr" href="#yolo-wurlcolon-basic-nim-syntax-tldr">TLDR</a></h2><ul class="simple"><li>only uses the implicitly imported system, threads and channel built_int module (and their imports)</li>
 <li>dont import any of them directly, theres some compiler magic to makem work</li>
 <li><a class="reference external" href="https://nim-lang.org/docs/manual.html#special-types">my bookmark</a></li>
 </ul>
-<p>useful links</p>
-<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/system.html">nim system module</a></li>
+
+<h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-useful-links" href="#yolo-wurlcolon-basic-nim-syntax-useful-links">useful links</a></h2><ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/system.html">nim system module</a></li>
 <li><a class="reference external" href="https://github.com/noahehall/nim/tree/develop/deepdives">deep dives dir to dive deep</a></li>
 <li><a class="reference external" href="https://github.com/noahehall/nim/tree/develop/nimscript">nim script for scripting nim</a></li>
 <li><a class="reference external" href="https://github.com/noahehall/nim/tree/develop/backends">backends, but most isnt there yet</a></li>
@@ -968,14 +984,13 @@ except:
 </li>
 </ul>
 
-<h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-std-library" href="#yolo-wurlcolon-basic-nim-syntax-std-library">std library</a></h2><blockquote><p><ul class="simple"><li>pure libraries: do not depend on external <em>.dll/lib</em>.so binary</li>
+<h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-std-library" href="#yolo-wurlcolon-basic-nim-syntax-std-library">std library</a></h2><ul class="simple"><li>pure libraries: do not depend on external <em>.dll/lib</em>.so binary</li>
 <li>impure libraries: !pure libraries</li>
 <li>wrapper libraries: impure low level interfaces to a C library</li>
 </ul>
-</p></blockquote>
 
-<h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-style-guide-amp-best-practices" href="#yolo-wurlcolon-basic-nim-syntax-style-guide-amp-best-practices">style guide &amp; best practices</a></h2><dl class="docutils"><dt>idiomatic nim (from docs/styleguide),</dt>
-<dd><ul class="simple"><li>always qualify the imports from std, e.g. std/os and std/[os, posix]</li>
+<h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-style-guide-amp-best-practices" href="#yolo-wurlcolon-basic-nim-syntax-style-guide-amp-best-practices">style guide &amp; best practices</a></h2><p>idiomatic nim (from docs/styleguide),</p>
+<ul class="simple"><li>always qualify the imports from std, e.g. std/os and std/[os, posix]</li>
 <li>any tuple/proc/type signature longer than 1 line should have their parameters aligned with the one above it</li>
 <li>cast &gt; type conversion to force the compiler to reinterpret the bit pattern (docs)</li>
 <li>check the styleguide for naming conventions (theres bunches), the idea is to make it easy to <tt class="docutils literal"><span class="pre"><span class="Identifier">guess</span> <span class="Identifier">the</span> <span class="Identifier">procedure</span></span></tt></li>
@@ -1014,13 +1029,11 @@ except:
 <li>use typeof x and not type x</li>
 <li>X.y &gt; x[].y for accessing ref/ptr objects (docs: x[].y highly discouraged)</li>
 </ul>
-</dd>
-<dt>borrowed from somewhere else (e.g. status auditor docs)</dt>
-<dd><ul class="simple"><li>MACRO_CASE for external constants (status) (permitted in styleguide but not preferred)</li>
+<p>borrowed from somewhere else (e.g. status auditor docs)</p>
+<ul class="simple"><li>MACRO_CASE for external constants (status) (permitted in styleguide but not preferred)</li>
 </ul>
-</dd>
-<dt>my preferences thus far</dt>
-<dd><ul class="simple"><li>strive for parantheseless code, remember echo f 1, f 2 == echo(f(1), f(2)) and not echo(f(1, f(2)))</li>
+<p>my preferences thus far</p>
+<ul class="simple"><li>strive for parantheseless code, remember echo f 1, f 2 == echo(f(1), f(2)) and not echo(f(1, f(2)))</li>
 <li>keep it as sugary as possible</li>
 <li>prefer fn x,y over x.fn y over fn(x, y) unless it conflicts with the context<ul class="simple"><li>e.g. pref x.fn y,z when working with objects</li>
 <li>e.g. pref fn x,y when working with procs</li>
@@ -1036,8 +1049,6 @@ except:
 <li>always compile with --panics:on (manual: smaller binaries + optimizations)</li>
 <li>dont use any unsafe language features or disable runtime checks (manual: removes possibility of unchecked runtime errs)</li>
 </ul>
-</dd>
-</dl>
 
 <h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-modules" href="#yolo-wurlcolon-basic-nim-syntax-modules">modules</a></h2><ul class="simple"><li>generally 1 file == 1 module</li>
 <li>include can split 1 module == 1..X files</li>
@@ -1089,32 +1100,165 @@ except:
 </li>
 </ul>
 
+<h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-packages" href="#yolo-wurlcolon-basic-nim-syntax-packages">packages</a></h2><ul class="simple"><li>a file named identifier.nimble creates a package<ul class="simple"><li>all sibling/descendent identifier.nim files become modules of that package</li>
+</ul>
+</li>
+</ul>
+
+<h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-operators" href="#yolo-wurlcolon-basic-nim-syntax-operators">operators</a></h2><ul class="simple"><li>precedence determined by its first character</li>
+<li>are just overloaded procs, e.g. proc <tt class="docutils literal"><span class="pre"><span class="Operator">+</span></span></tt>(....) and can be invoked just like procs</li>
+<li>infix: a + b must receive 2 args</li>
+<li>prefix: + a must receive 1 arg</li>
+<li>postfix: dont exist in nim</li>
+<li>not is always a unary operator: a not b == a(not b) AND NOT (a) not (b)</li>
+</ul>
+<pre class="listing"><span class="Comment"># think this is all of the std ops</span>
+<span class="Operator">=</span>     <span class="Operator">+</span>     <span class="Operator">-</span>     <span class="Operator">*</span>     <span class="Operator">/</span>     <span class="Operator">&lt;</span>     <span class="Operator">&gt;</span>
+<span class="Operator">@</span>     <span class="Operator">$</span>     <span class="Operator">~</span>     <span class="Operator">&amp;</span>     <span class="Operator">%</span>     <span class="Operator">|</span>
+<span class="Operator">!</span>     <span class="Operator">?</span>     <span class="Operator">^</span>     <span class="Operator">.</span>     <span class="Punctuation">:</span>     <span class="Operator">\</span>
+<span class="Keyword">and</span> <span class="Keyword">or</span> <span class="Keyword">not</span> <span class="Keyword">xor</span> <span class="Keyword">shl</span> <span class="Keyword">shr</span> <span class="Keyword">div</span> <span class="Keyword">mod</span> <span class="Keyword">in</span> <span class="Keyword">notin</span> <span class="Keyword">is</span> <span class="Keyword">isnot</span> <span class="Keyword">of</span> <span class="Keyword">as</span> <span class="Keyword">from</span>
+
+<span class="Comment"># bool</span>
+  <span class="Keyword">not</span><span class="Punctuation">,</span> <span class="Keyword">and</span><span class="Punctuation">,</span> <span class="Keyword">or</span><span class="Punctuation">,</span> <span class="Keyword">xor</span><span class="Punctuation">,</span> <span class="Operator">&lt;</span><span class="Punctuation">,</span> <span class="Operator">&lt;=</span><span class="Punctuation">,</span> <span class="Operator">&gt;</span><span class="Punctuation">,</span> <span class="Operator">&gt;=</span><span class="Punctuation">,</span> <span class="Operator">!=</span><span class="Punctuation">,</span> <span class="Operator">==</span>
+<span class="Comment"># bool (shortcircuit)</span>
+  <span class="Keyword">and</span> <span class="Keyword">or</span>
+<span class="Comment"># char</span>
+  <span class="Operator">==</span><span class="Punctuation">,</span> <span class="Operator">&lt;</span><span class="Punctuation">,</span> <span class="Operator">&lt;=</span><span class="Punctuation">,</span> <span class="Operator">&gt;</span><span class="Punctuation">,</span> <span class="Operator">&gt;=</span>
+<span class="Comment"># integer bitwise</span>
+  <span class="Keyword">and</span> <span class="Keyword">or</span> <span class="Keyword">xor</span> <span class="Keyword">not</span> <span class="Keyword">shl</span> <span class="Keyword">shr</span>
+<span class="Comment"># integer division</span>
+  <span class="Keyword">div</span>
+<span class="Comment"># modulo</span>
+  <span class="Keyword">mod</span>
+<span class="Comment"># assignment</span>
+<span class="Comment"># - value semantics: copied on assignment, all types have value semantics</span>
+<span class="Comment"># - ref semantics: referenced on assignment, anything with ref keyword</span>
+  <span class="Operator">=</span></pre>
+<h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-keywords" href="#yolo-wurlcolon-basic-nim-syntax-keywords">keywords</a></h2><ul class="simple"><li>return<ul class="simple"><li>without an expression is shorthand for return result</li>
+</ul>
+</li>
+<li>result<ul class="simple"><li>implicit return variable</li>
+<li>initialized with procs default value, for ref types it will be nil (may require manual init)</li>
+<li>its idiomatic nim to mutate it</li>
+</ul>
+</li>
+<li>discard<ul class="simple"><li>use a proc for its side effects but ignore its return value</li>
+</ul>
+</li>
+</ul>
+
+<h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-statements" href="#yolo-wurlcolon-basic-nim-syntax-statements">statements</a></h2><ul class="simple"><li>simple statements<ul class="simple"><li>cant contain other statements unless separated with a semicolon</li>
+<li>e.g. assignment, invocations, and using return</li>
+</ul>
+</li>
+<li>complex statements<ul class="simple"><li>can contain other statements</li>
+<li>must always be indented except for single complex statements</li>
+<li>e.g. if, when, for, while</li>
+</ul>
+</li>
+</ul>
+
+<h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-expressions" href="#yolo-wurlcolon-basic-nim-syntax-expressions">expressions</a></h2><ul class="simple"><li>result in a value</li>
+<li>indentation can occur after operators, open parantheiss and commas</li>
+<li>paranthesis and semicolins allow you to embed statements where expressions are expected</li>
+</ul>
+
+<h1><a class="toc-backref" id="visibility" href="#visibility">visibility</a></h1><ul class="simple"><li>var: local or global depending on scope,</li>
+<li>force local scope vars to global via {.global.} pragma</li>
+<li>export via symbols via poop* and it will be visible to client modules</li>
+<li>scopes: all blocks (ifs, loops, procs, etc) introduce a closure EXCEPT when statements</li>
+</ul>
+
 <h1><a class="toc-backref" id="variables-and-globals" href="#variables-and-globals">variables and globals</a></h1><p>creating variables &amp; other assignment operators catchall for global keywords/procs/types/etc not specified in other files </p>
 
-<h1><a class="toc-backref" id="exception-stuff-debugging-documentation" href="#exception-stuff-debugging-documentation">exception stuff, debugging, documentation</a></h1><ul class="simple"><li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim">system exceptions</a> for you to extend from</li>
+<h1><a class="toc-backref" id="exception-handling-debugging-todo-documentation" href="#exception-handling-debugging-todo-documentation">exception handling, debugging (todo), documentation</a></h1>
+<h2><a class="toc-backref" id="exception-handling-debugging-todo-documentation-tldr" href="#exception-handling-debugging-todo-documentation-tldr">TLDR</a></h2><ul class="simple"><li>all custom exceptions should ref a specific error/CatchableERror/Defect/and lastly Exception</li>
+<li>Exception is the base type for CatachableError (exceptions), Defect (non catchable)</li>
 </ul>
 
-<h1><a class="toc-backref" id="top-level-docs-are-for-the-module" href="#top-level-docs-are-for-the-module">top level docs are for the module</a></h1><ul class="simple"><li>the === creates an underline and must be same length as whatever its underlining</li>
-<li>be sure to use empty ## for line breaks so it looks good in the html thats output</li>
-<li>it appears to accept some (not all) markdown syntax ;)</li>
-<li>haha it <a class="reference external" href="https://docutils.sourceforge.io/docs/user/rst/quickref.html">check reStructured text docs</a> for whats accepted</li>
+<h2><a class="toc-backref" id="exception-handling-debugging-todo-documentation-exception-handling" href="#exception-handling-debugging-todo-documentation-exception-handling">Exception Handling</a></h2><ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/manual.html#exception-handling-exception-hierarchy">exception hierarchy doc</a></li>
+<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim">system exceptions you can extend from</a></li>
+<li><a class="reference external" href="https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling">status exception handling docs</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/segfaults.html">segfaults module</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/system.html#Defect">defect doc</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/system.html#Exception">exception doc</a></li>
+<li>interesting stuff<ul class="simple"><li>getStackTrace() only works for debug builds</li>
+<li>getStackTrace(e) of a specific exception</li>
+<li>getStackTraceEntries() doesnt work for the js backend</li>
+<li>getStackTraceEntries(e) of a specific exception</li>
+</ul>
+</li>
 </ul>
 
-<h2><a class="toc-backref" id="top-level-docs-are-for-the-module-some-copypasta-from-nim-source" href="#top-level-docs-are-for-the-module-some-copypasta-from-nim-source">some copypasta from nim source</a></h2><p>the -- creates a new section (h2?), should be same length as the line above it</p>
-<ul class="simple"><li>see also * <a class="reference external" href="#low,openArray[T]">low(openArray)</a>  creates a #fragment</li>
+<h2><a class="toc-backref" id="exception-handling-debugging-todo-documentation-defect-types" href="#exception-handling-debugging-todo-documentation-defect-types">Defect types</a></h2><ul class="simple"><li>AccessViolationDefect invalid memory access</li>
+<li>ArithmeticDefect any kin dof arithmetic error</li>
+<li>AssertionDefect assertion returns false</li>
+<li>DeadThreadDefect sending a msg to a dead thread</li>
+<li>Defect abstract type representing all uncatchable errors (anything mappable to a quit/trap/exit operation)</li>
+<li>DivByZeroDefect int div by 0</li>
+<li>FieldDefect field is not accessible because its discriminants value does not fit</li>
+<li>FloatDivByZeroDefect  float div by 0</li>
+<li>FloatInexactDefect operation cant be represented with infinite precision, e.g. 2.0/3.0, log(1.1)</li>
+<li>FloatingPointDefect base type for floating point defects</li>
+<li>FloatInvalidOpDefect invalid ops according to IEEE, e.g. 0.0/0.0</li>
+<li>FloatOverflowDefect  stackoverflow.com</li>
+<li>FloatUnderflowDefect stackunderflow.com</li>
+<li>IndexDefect  array index out of bounds</li>
+<li>NilAccessDefect dereferences of nil pointers (only raised when segfaults is imported)</li>
+<li>ObjectAssignmentDefect object being assigned to its parent object</li>
+<li>ObjectConversionDefect converting to an incompatible type</li>
+<li>OutOfMemDefect failed to allocate memory</li>
+<li>OverflowDefect runtime integer stackoverflows.com, results too big for the provided bits</li>
+<li>RangeDefect range check error</li>
+<li>ReraiseDefect if there is no exception to reraise</li>
+<li>StackOverflowDefect when the hardware used for a subroutine stackoverflows.com</li>
 </ul>
-<pre class="listing"><span class="Keyword">var</span> <span class="Identifier">poop</span> <span class="Operator">=</span> <span class="Identifier">soup</span> <span class="Keyword">is</span> <span class="Identifier">inside</span> <span class="Identifier">a</span> <span class="Identifier">code</span> <span class="Keyword">block</span>
-<span class="Identifier">so</span> <span class="Identifier">am</span> <span class="Identifier">I</span> <span class="Identifier">because</span> <span class="Identifier">I</span> <span class="Identifier">indented</span> <span class="DecNumber">1</span> <span class="Identifier">space</span></pre><p>i am outside of a code block</p>
-<p>you can use multiline doc blocks with ##[ stuf here ]##</p>
+
+<h2><a class="toc-backref" id="exception-handling-debugging-todo-documentation-error-exception-types" href="#exception-handling-debugging-todo-documentation-error-exception-types">Error (exception) types</a></h2><ul class="simple"><li>CatchableError abstract type for all catchable exceptions</li>
+<li>EOFError occurred</li>
+<li>IOError occcurred</li>
+<li>KeyError key cannot be found in a table/set/strtabs</li>
+<li>LibraryError dynamic library doesnt load</li>
+<li>OSError operating system service failure</li>
+<li>ResourceExhaustedError when resource request cant be fulfilled</li>
+<li>ValueError string/object conversion</li>
+</ul>
+
+<h2><a class="toc-backref" id="exception-handling-debugging-todo-documentation-documentation" href="#exception-handling-debugging-todo-documentation-documentation">Documentation</a></h2><ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/system.html#runnableExamples%2Cstring%2Cuntyped">embedding runnable examples</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/docgen.html">docgen</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/drnim.html">drnim</a></li>
+<li><a class="reference external" href="https://docutils.sourceforge.io/docs/user/rst/quickref.html">use this restructuredText wiki</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/rst.html">nim reStructuredText &amp; markdown</a></li>
+</ul>
+
+<h2><a class="toc-backref" id="exception-handling-debugging-todo-documentation-doc-syntax" href="#exception-handling-debugging-todo-documentation-doc-syntax">doc syntax</a></h2><ul class="simple"><li>starting a line with ## creates a title that appears in the left sidebar</li>
+<li>=== creates an underline</li>
+<li>--- creates a subtitle and appears undearneath the previous title in the sidebar</li>
+<li>both --- and === need to be the same length of whatever they're underlining</li>
+<li><a class="reference external" href="#low,openArray[T]">low(openArray)</a>  creates an html #fragment</li>
+<li>starting a line with .. code-block:: Nim creates a codeblock for stuff indented beneath it</li>
+</ul>
 
 <p><strong class="examples_text">Example:</strong></p>
-<pre class="listing"><span class="Comment">## ignored in release/debug, however during docgen:</span>
+<pre class="listing"><span class="Comment">## ignored in release/debug, but not during docgen:</span>
 <span class="Comment">## - will aggregate all into a separate module, compile, test</span>
-<span class="Comment">## - ensure only exported symbols exist</span>
-<span class="Keyword">var</span> <span class="Identifier">iam</span><span class="Punctuation">:</span> <span class="Identifier">GoodApplications</span> <span class="Operator">=</span> <span class="Identifier">GoodApplications</span><span class="Punctuation">(</span><span class="Identifier">pubfield</span><span class="Punctuation">:</span> <span class="StringLit">&quot;yes u are&quot;</span><span class="Punctuation">,</span> <span class="Identifier">prvfield</span><span class="Punctuation">:</span> <span class="StringLit">&quot;I know I am&quot;</span><span class="Punctuation">)</span> <span class="Comment">## \</span>
+<span class="Comment">## - also ensures only exported symbols exist</span>
+<span class="Keyword">var</span> <span class="Identifier">iam</span> <span class="Operator">=</span> <span class="Identifier">GoodApplications</span><span class="Punctuation">(</span><span class="Identifier">pubfield</span><span class="Punctuation">:</span> <span class="StringLit">&quot;yes u are&quot;</span><span class="Punctuation">,</span> <span class="Identifier">prvfield</span><span class="Punctuation">:</span> <span class="StringLit">&quot;I know I am&quot;</span><span class="Punctuation">)</span> <span class="Comment">## \</span>
   <span class="Comment">## example of creating a good application</span>
-<span class="Identifier">iam</span><span class="Operator">.</span><span class="Identifier">repr</span> <span class="Comment">## \</span>
-  <span class="Comment">## prints to stdout</span></pre>
+<span class="Identifier">repr</span> <span class="Identifier">iam</span></pre>
+<h1><a class="toc-backref" id="block-slash-do" href="#block-slash-do">block / do</a></h1>
+<h2><a class="toc-backref" id="block-slash-do-tldr" href="#block-slash-do-tldr">TLDR</a></h2><ul class="simple"><li>blocks have a () syntax but we skipped it as its not idiomatic nim in this context</li>
+<li>scope starts after the : symbol, and ends when the indentention returns to previous level</li>
+<li>named blocks have similar usescases to javascript</li>
+<li>like most other things, blocks can be expressions and assigned to a var</li>
+</ul>
+
+<h2><a class="toc-backref" id="block-slash-do-do-blocks" href="#block-slash-do-do-blocks">do blocks</a></h2><ul class="simple"><li>you should probably read the docs on do blocks</li>
+</ul>
+
+<h2><a class="toc-backref" id="block-slash-do-once-blocks" href="#block-slash-do-once-blocks">once blocks</a></h2><ul class="simple"><li>are executed once, the first time their seen by the compiler</li>
+</ul>
+
 <h1><a class="toc-backref" id="ordinals-and-structured-types" href="#ordinals-and-structured-types">ordinals and structured types</a></h1><p>structured: arrays, sequences, tuples, objects sets</p>
 <ul class="simple"><li>tuples and objects are in tupleObjectTable</li>
 <li>can hold multiple values and have unlimited levels of nesting</li>
@@ -2253,7 +2397,7 @@ this is not included in docs because its not exported
 <dt><pre><a href="yolowurl.html#goodcode"><span class="Identifier">goodcode</span></a> <span class="Other">=</span> <span class="StringLit">&quot;isdocumented&quot;</span></pre></dt>
 <dd>
 
-<tt class="docutils literal"><span class="pre"><span class="Identifier">goodcode</span></span></tt> should be self documenting, but sometimes good naming conventions arent enuff notice how we are aligning this shiz to the right
+<tt class="docutils literal"><span class="pre"><span class="Identifier">goodcode</span></span></tt> should be self documenting, but sometimes naming conventions arent enuff
 
 </dd>
 </div>
@@ -2352,6 +2496,7 @@ this is not included in docs because its not exported
 <dd>
 
 
+is in the global scope
 
 </dd>
 </div>
@@ -2489,7 +2634,7 @@ this is not included in docs because its not exported
 </dd>
 </div>
 <div id="buildInfo">
-<dt><pre><span class="Identifier">buildInfo</span> <span class="Other">=</span> <span class="StringLit">&quot;Revision d337e832e3b1c0db2ad0c9b52118508561842b46\nCompiled on #66-Ubuntu SMP Fri Jan 20 14:29:49 UTC 2023&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">buildInfo</span> <span class="Other">=</span> <span class="StringLit">&quot;Revision 28f11e295d3e3ce5d43c72410946b1a14a3f3519\nCompiled on #66-Ubuntu SMP Fri Jan 20 14:29:49 UTC 2023&quot;</span></pre></dt>
 <dd>
 
 
@@ -2586,7 +2731,7 @@ this is not included in docs because its not exported
 </div>
 <div id="loc`gensym10">
 <dt><pre><span class="Identifier">loc`gensym10</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingDocs.nim&quot;</span><span class="Other">,</span>
-                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">199</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">7</span><span class="Other">)</span></pre></dt>
+                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">180</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">7</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -2595,7 +2740,7 @@ this is not included in docs because its not exported
 </div>
 <div id="loc`gensym12">
 <dt><pre><span class="Identifier">loc`gensym12</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingDocs.nim&quot;</span><span class="Other">,</span>
-                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">202</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
+                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">183</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -2604,7 +2749,7 @@ this is not included in docs because its not exported
 </div>
 <div id="loc`gensym14">
 <dt><pre><span class="Identifier">loc`gensym14</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingDocs.nim&quot;</span><span class="Other">,</span>
-                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">207</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
+                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">188</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -2709,7 +2854,7 @@ this is not included in docs because its not exported
 </dd>
 </div>
 <div id="ploc`gensym10">
-<dt><pre><span class="Identifier">ploc`gensym10</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingDocs.nim(199, 8)&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">ploc`gensym10</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingDocs.nim(180, 8)&quot;</span></pre></dt>
 <dd>
 
 
@@ -2717,7 +2862,7 @@ this is not included in docs because its not exported
 </dd>
 </div>
 <div id="ploc`gensym12">
-<dt><pre><span class="Identifier">ploc`gensym12</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingDocs.nim(202, 10)&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">ploc`gensym12</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingDocs.nim(183, 10)&quot;</span></pre></dt>
 <dd>
 
 
@@ -2725,7 +2870,7 @@ this is not included in docs because its not exported
 </dd>
 </div>
 <div id="ploc`gensym14">
-<dt><pre><span class="Identifier">ploc`gensym14</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingDocs.nim(207, 10)&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">ploc`gensym14</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/yolowurl/modules/exceptionHandlingDocs.nim(188, 10)&quot;</span></pre></dt>
 <dd>
 
 
@@ -3281,7 +3426,7 @@ this is not included in docs because its not exported
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-12 15:09:07 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-12 18:44:46 UTC</small>
       </div>
     </div>
   </div>

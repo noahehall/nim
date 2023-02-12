@@ -1,57 +1,83 @@
 ##
-## exception stuff, debugging, documentation
-## =====================================================
-##
-## - [system exceptions](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim) for you to extend from
-##
+## exception handling, debugging (todo), documentation
+## ===================================================
 
-#[
-  @see
+##[
+## TLDR
+- all custom exceptions should ref a specific error/CatchableERror/Defect/and lastly Exception
+- Exception is the base type for CatachableError (exceptions), Defect (non catchable)
+- raise keyword the only way to raise (throw) an exception
+  - system.Exception provides the interface
+  - have to be allocated on the heap (var) because their lifetime is unknown
 
-    - https://nim-lang.org/docs/docgen.html
-    - https://nim-lang.org/docs/drnim.html
-    - https://nim-lang.org/docs/segfaults.html
-    - https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling
-    - https://nim-lang.org/docs/rst.html (also see the restructured docs link somewhere in this file)
+## Exception Handling
+- [exception hierarchy doc](https://nim-lang.org/docs/manual.html#exception-handling-exception-hierarchy)
+- [system exceptions you can extend from](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim)
+- [status exception handling docs](https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling)
+- [segfaults module](https://nim-lang.org/docs/segfaults.html)
+- [defect doc](https://nim-lang.org/docs/system.html#Defect)
+- [exception doc](https://nim-lang.org/docs/system.html#Exception)
 
-  interesting stuff
-    getStackTrace() only works for debug builds
-    getStackTrace(e) of a specific exception
-    getStackTraceEntries() doesnt work for the js backend
-    getStackTraceEntries(e) of a specific exception
-    runnableExamples embed copypasta in documentation, @see https://nim-lang.org/docs/system.html#runnableExamples%2Cstring%2Cuntyped
+- interesting stuff
+  - getStackTrace() only works for debug builds
+  - getStackTrace(e) of a specific exception
+  - getStackTraceEntries() doesnt work for the js backend
+  - getStackTraceEntries(e) of a specific exception
 
-]#
+## Defect types
+- AccessViolationDefect invalid memory access
+- ArithmeticDefect any kin dof arithmetic error
+- AssertionDefect assertion returns false
+- DeadThreadDefect sending a msg to a dead thread
+- Defect abstract type representing all uncatchable errors (anything mappable to a quit/trap/exit operation)
+- DivByZeroDefect int div by 0
+- FieldDefect field is not accessible because its discriminants value does not fit
+- FloatDivByZeroDefect  float div by 0
+- FloatInexactDefect operation cant be represented with infinite precision, e.g. 2.0/3.0, log(1.1)
+- FloatingPointDefect base type for floating point defects
+- FloatInvalidOpDefect invalid ops according to IEEE, e.g. 0.0/0.0
+- FloatOverflowDefect  stackoverflow.com
+- FloatUnderflowDefect stackunderflow.com
+- IndexDefect  array index out of bounds
+- NilAccessDefect dereferences of nil pointers (only raised when segfaults is imported)
+- ObjectAssignmentDefect object being assigned to its parent object
+- ObjectConversionDefect converting to an incompatible type
+- OutOfMemDefect failed to allocate memory
+- OverflowDefect runtime integer stackoverflows.com, results too big for the provided bits
+- RangeDefect range check error
+- ReraiseDefect if there is no exception to reraise
+- StackOverflowDefect when the hardware used for a subroutine stackoverflows.com
+
+## Error (exception) types
+- CatchableError abstract type for all catchable exceptions
+- EOFError occurred
+- IOError occcurred
+- KeyError key cannot be found in a table/set/strtabs
+- LibraryError dynamic library doesnt load
+- OSError operating system service failure
+- ResourceExhaustedError when resource request cant be fulfilled
+- ValueError string/object conversion
+
+## Documentation
+- [embedding runnable examples](https://nim-lang.org/docs/system.html#runnableExamples%2Cstring%2Cuntyped)
+- [docgen](https://nim-lang.org/docs/docgen.html)
+- [drnim](https://nim-lang.org/docs/drnim.html)
+- [use this restructuredText wiki](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
+- [nim reStructuredText & markdown](https://nim-lang.org/docs/rst.html)
+
+## doc syntax
+- starting a line with ## creates a title that appears in the left sidebar
+- === creates an underline
+- --- creates a subtitle and appears undearneath the previous title in the sidebar
+- both --- and === need to be the same length of whatever they're underlining
+- `low(openArray) <#low,openArray[T]>`_  creates an html #fragment
+- starting a line with .. code-block:: Nim creates a codeblock for stuff indented beneath it
+
+]##
 
 echo "############################ documentation: src code"
-##
-## top level docs are for the module
-## =================================
-##
-## - the === creates an underline and must be same length as whatever its underlining
-## - be sure to use empty ## for line breaks so it looks good in the html thats output
-## - it appears to accept some (not all) markdown syntax ;)
-## - haha it [check reStructured text docs](https://docutils.sourceforge.io/docs/user/rst/quickref.html) for whats accepted
-##
-## some copypasta from nim source
-## --------------------------------
-## the -- creates a new section (h2?), should be same length as the line above it
-## - see also * `low(openArray) <#low,openArray[T]>`_  creates a #fragment
-##
-## .. code-block:: Nim
-##  var poop = soup is inside a code block
-##  so am I because I indented 1 space
-##
-## i am outside of a code block
-##
-## you can use multiline doc blocks with ##[ stuf here ]##
-
-
-##
-let goodcode* = "isdocumented"  ## `goodcode` should be self documenting, but sometimes good naming
+let goodcode* = "isdocumented"  ## `goodcode` should be self documenting, but sometimes naming
                                 ## conventions arent enuff
-                                ## notice how we are aligning this shiz to the right
-
 let badcode = "ishardtomaintain"  ## this is not included in docs because its not exported
 
 
@@ -64,57 +90,15 @@ type GoodApplications* = object
 echo "############################ documentation: runnableExamples"
 
 runnableExamples:
-  ## ignored in release/debug, however during docgen:
+  ## ignored in release/debug, but not during docgen:
   ## - will aggregate all into a separate module, compile, test
-  ## - ensure only exported symbols exist
-  var iam: GoodApplications = GoodApplications(pubfield: "yes u are", prvfield: "I know I am") ## \
+  ## - also ensures only exported symbols exist
+  var iam = GoodApplications(pubfield: "yes u are", prvfield: "I know I am") ## \
     ## example of creating a good application
-  iam.repr ## \
-    ## prints to stdout
+  repr iam
 
-
-echo "############################ Defects "
-# AccessViolationDefect invalid memory access
-# ArithmeticDefect any kin dof arithmetic error
-# AssertionDefect assertion returns false
-# DeadThreadDefect sending a msg to a dead thread
-# Defect abstract type representing all uncatchable errors (anything mappable to a quit/trap/exit operation)
-# DivByZeroDefect int div by 0
-# FieldDefect field is not accessible because its discriminants value does not fit
-# FloatDivByZeroDefect  float div by 0
-# FloatInexactDefect operation cant be represented with infinite precision, e.g. 2.0/3.0, log(1.1)
-# FloatingPointDefect base type for floating point defects
-# FloatInvalidOpDefect invalid ops according to IEEE, e.g. 0.0/0.0
-# FloatOverflowDefect  stackoverflow.com
-# FloatUnderflowDefect stackunderflow.com
-# IndexDefect  array index out of bounds
-# NilAccessDefect dereferences of nil pointers (only raised when segfaults is imported)
-# ObjectAssignmentDefect object being assigned to its parent object
-# ObjectConversionDefect converting to an incompatible type
-# OutOfMemDefect failed to allocate memory
-# OverflowDefect runtime integer stackoverflows.com, results too big for the provided bits
-# RangeDefect range check error
-# ReraiseDefect if there is no exception to reraise
-# StackOverflowDefect when the hardware used for a subroutine stackoverflows.com
-
-echo "############################ error (exception) types "
-# CatchableError abstract type for all catchable exceptions
-# EOFError end of file
-# IOError occcurred
-# KeyError key cannot be found in a table/set/strtabs
-# LibraryError dynamic library doesnt load
-# OSError operating system service failure
-# ResourceExhaustedError when resource request cant be fulfilled
-# ValueError string/object conversion
 
 echo "############################ Exceptions "
-# all custom exceptions should ref Exception
-# @see https://nim-lang.org/docs/system.html#Exception
-# @see https://nim-lang.org/docs/manual.html#exception-handling-exception-hierarchy
-# Exception > CatachableError, Defect (non catchable)
-# you should inherit from a specific error (e.g. ValueError) instead of Exception
-# or from the abstract CatchableError or Defect
-# refrain from using Exception (docs might be old?)
 type LearningError = object of CatchableError
 
 block howlong:
@@ -125,10 +109,6 @@ block howlong:
     echo e.msg & " but i finally found the time"
 
 echo "############################ raise "
-# the only way to raise (throw) an exception
-# system.Exception provides the interface
-# have to be allocated on the heap (var) because their lifetime is unknown
-
 proc neverThrows(): string {.raises: [].} =
   result = "dont compile if I can raise any error"
 echo neverThrows()
@@ -207,7 +187,7 @@ when isMainModule:
   assert true == true
 
 echo "############################ debugger"
-# Todo, find the debugger[ api] in the docs somewhere
+# Todo, find the debugger apiin the docs somewhere
 # PFrame runtime frame of the callstack, part of the debugger api
 
 

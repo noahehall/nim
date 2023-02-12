@@ -6,9 +6,12 @@
   - [cross compile applications](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
   - [cross platform scripts](https://nim-lang.org/docs/nims.html#benefits)
   - [documentation is a first class citizen](https://nim-lang.org/docs/docgen.html)
+    - [with first class support for reStructured text](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
   - [testing is a first class citizen](https://nim-lang.github.io/Nim/testament.html)
   - [spidermans uncle](https://nim-lang.org/docs/tut3.html)
 - tldr
+  - [vscode code-runner cmd for both nimscript and nim files](https://github.com/noahehall/theBookOfNoah/blob/master/vscode.settings.jsonc#L185)
+  - [shell fns for nim, nimble and choosenim](https://github.com/noahehall/theBookOfNoah/blob/master/linux/bash_cli_fns/nimlang.sh)
   - [hello world](./yolowurl/)
   - [deep dives](./deepdives/)
   - [nimscript](./nimscript/nimscript.nims)
@@ -26,6 +29,7 @@
 - [checkout status opensource theyve already built bunch of things you'll need for nirv](https://github.com/status-im)
 - [skipped most of the section on cross compilation](https://nim-lang.org/docs/nimc.html#crossminuscompilation-for-windows)
 - [pacman devkitpro for nix](https://github.com/devkitPro/pacman/releases)
+  - forgot why this is here but its mentioned in the docs for something
 - [dll generation](https://nim-lang.org/docs/nimc.html#dll-generation)
 - [optmizing string handling](https://nim-lang.org/docs/nimc.html#optimizing-for-nim-optimizing-string-handling)
 - https://nim-by-example.github.io/bitsets/

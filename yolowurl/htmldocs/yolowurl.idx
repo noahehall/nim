@@ -274,6 +274,8 @@ blockRunner	yolowurl.html#blockRunner.t,bool,untyped	yolowurl: blockRunner(pleas
 theyAskedNickely`gensym47	yolowurl.html#theyAskedNickely`gensym47	yolowurl: theyAskedNickely`gensym47	
 theyAskedNickely`gensym48	yolowurl.html#theyAskedNickely`gensym48	yolowurl: theyAskedNickely`gensym48	
 yolo wurl: basic nim syntax	yolowurl.html#yolo-wurlcolon-basic-nim-syntax	 yolo wurl: basic nim syntax	
+TLDR	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-tldr	  TLDR	
+useful links	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-useful-links	  useful links	
 the road to code	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-the-road-to-code	  the road to code	
 std library	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-std-library	  std library	
 style guide &amp; best practices	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-style-guide-amp-best-practices	  style guide &amp; best practices	
@@ -281,10 +283,24 @@ modules	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-modules	  modules
 import	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-import	  import	
 include:	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-includecolon	  include:	
 export	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-export	  export	
+packages	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-packages	  packages	
+operators	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-operators	  operators	
+keywords	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-keywords	  keywords	
+statements	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-statements	  statements	
+expressions	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-expressions	  expressions	
+visibility	yolowurl.html#visibility	 visibility	
 variables and globals	yolowurl.html#variables-and-globals	 variables and globals	
-exception stuff, debugging, documentation	yolowurl.html#exception-stuff-debugging-documentation	 exception stuff, debugging, documentation	
-top level docs are for the module	yolowurl.html#top-level-docs-are-for-the-module	 top level docs are for the module	
-some copypasta from nim source	yolowurl.html#top-level-docs-are-for-the-module-some-copypasta-from-nim-source	  some copypasta from nim source	
+exception handling, debugging (todo), documentation	yolowurl.html#exception-handling-debugging-todo-documentation	 exception handling, debugging (todo), documentation	
+TLDR	yolowurl.html#exception-handling-debugging-todo-documentation-tldr	  TLDR	
+Exception Handling	yolowurl.html#exception-handling-debugging-todo-documentation-exception-handling	  Exception Handling	
+Defect types	yolowurl.html#exception-handling-debugging-todo-documentation-defect-types	  Defect types	
+Error (exception) types	yolowurl.html#exception-handling-debugging-todo-documentation-error-exception-types	  Error (exception) types	
+Documentation	yolowurl.html#exception-handling-debugging-todo-documentation-documentation	  Documentation	
+doc syntax	yolowurl.html#exception-handling-debugging-todo-documentation-doc-syntax	  doc syntax	
+block / do	yolowurl.html#block-slash-do	 block / do	
+TLDR	yolowurl.html#block-slash-do-tldr	  TLDR	
+do blocks	yolowurl.html#block-slash-do-do-blocks	  do blocks	
+once blocks	yolowurl.html#block-slash-do-once-blocks	  once blocks	
 ordinals and structured types	yolowurl.html#ordinals-and-structured-types	 ordinals and structured types	
 routines	yolowurl.html#routines	 routines	
 tuples &amp; objects &amp; tables	yolowurl.html#tuples-amp-objects-amp-tables	 tuples &amp; objects &amp; tables	

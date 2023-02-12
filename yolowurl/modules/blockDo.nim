@@ -1,14 +1,33 @@
+## block / do
+## ==========
+
+##[
+TLDR
+----
+- blocks have a () syntax but we skipped it as its not idiomatic nim in this context
+- scope starts after the : symbol, and ends when the indentention returns to previous level
+- named blocks have similar usescases to javascript
+- like most other things, blocks can be expressions and assigned to a var
+
+do blocks
+---------
+- you should probably read the docs on do blocks
+
+once blocks
+-----------
+- are executed once, the first time their seen by the compiler
+]##
 
 echo "############################ block"
-# theres a () syntax but we skipped it as its not idiomatic nim in this context
-# introducing a new scope
-let sniper = "scope parent"
-block:
-  let sniper = "scope private"
-  echo sniper
-echo sniper
 
-# break out of nested loops
+let sniper = "scope parent" ## \
+  ## is in the global scope
+block: ## \
+  ## creates new scope
+  let sniper = "scope private" ## local
+  echo sniper
+echo sniper ## global scoped
+
 block poop:
   var count = 0
   while true:
@@ -16,10 +35,9 @@ block poop:
       while count < 5:
         echo "I took ", count, " poops"
         count += 1
-        if count > 2: # dont want to take too many
+        if count > 2: ## dont want to take too many
           break poop
 
-# like ifs and whens, blocks can also be expressions
 var stupidChar = block:
   var dumbChar = 'a'
   if dumbChar in {'a', 'b', 'c'}:
@@ -28,7 +46,7 @@ var stupidChar = block:
 echo "im running out of silly examples ", ord(stupidChar) == ord(true)
 
 echo "############################ do"
-# you have to read the docs on this one
+
 echo do:
   "this ting"
 
