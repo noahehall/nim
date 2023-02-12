@@ -44,6 +44,8 @@ echo "############################ documentation: src code"
 ##
 ## i am outside of a code block
 ##
+## you can use multiline doc blocks with ##[ stuf here ]##
+
 
 ##
 let goodcode* = "isdocumented"  ## `goodcode` should be self documenting, but sometimes good naming

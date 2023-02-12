@@ -75,6 +75,7 @@
 - [presto: rest api from status-im built on chronos](https://github.com/status-im/nim-presto)
 - [scorper: micro webframework built on chronos](https://github.com/bung87/scorper)
 - [valido: string validators & sanitizers](https://github.com/openpeep/valido)
+- [karaxnim: SPA framework, syntax is a bit verbose but looks dope](https://github.com/karaxnim/karax)
 
 ## Could be useful
 
