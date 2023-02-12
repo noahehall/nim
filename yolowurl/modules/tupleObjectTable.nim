@@ -388,13 +388,19 @@ type
 echo "############################ generics"
 # parameterize procs, iterators or types
 # parameterized: Thing[T]
-# restricted Thing[T: x or y]
-
+# static constrained: Thing[T: x or y] will resolve to x or y staticlly, and remain so at runtime
+# ^ i.e. a var Z cant change between x & y after semantic resolution phase
 
 # generic procs
 proc wtf[T](a: T): auto =
-  result = "wtf " & $a
+  # the is operator is useful for type specialization within generic code
+  if T is SomeNumber: result = "wtf is this num " & $a
+  elif T is string: result = "wtf is this string " & $a
+  else: result = "wtf is this thing " & $typeof a
+
 echo wtf "yo"
+echo wtf 2
+echo wtf ("tup", "el")
 
 # generic proc method call syntax
 proc foo[T](i: T) =
@@ -403,28 +409,39 @@ var ii: int
 # ii.foo[int]() # Error: expression 'foo(i)' has no type (or is ambiguous)
 ii.foo[:int]() # Success
 
-# copied from docs
-# generic types
-type
-  BinaryTree*[T] = ref object # BinaryTree is a generic type with
-                              # generic param `T`
-    le, ri: BinaryTree[T]     # left and right subtrees; may be nil
-    data: T                   # the data stored in a node
-proc newNode*[T](data: T): BinaryTree[T] =
-  # constructor for a node
-  new(result)
-  result.data = data
 
-# copied from docs
-# generic iterator
-iterator preorder*[T](root: BinaryTree[T]): T =
-  # Preorder traversal of a binary tree.
-  # This uses an explicit stack (which is more efficient than
-  # a recursive iterator factory).
-  var stack: seq[BinaryTree[T]] = @[root]
-  while stack.len > Natural:
-    var n = stack.pop()
-    while n != nil:
-      yield n.data
-      add(stack, n.ri)  # push right subtree onto the stack
-      n = n.le          # and follow the left pointer
+echo "############################ type classes"
+# @see https://nim-lang.org/docs/manual.html#generics-type-classes
+# @see https://nim-lang.org/docs/manual.html#generics-implicit-generics
+# pseudo type that can be used to match via the is operator
+# object, tuple, enum, proc, ref, ptr, var, distinct, array, set, seq auto
+# in addition, every generic type creates a type class of the same name
+
+# even tho myRecord is tuple, it doesnt extend from tuple
+# so we have to add typeof myRecord explicitly to RecordType
+var myRecord: tuple[wtf: string] = (wtf: "yo")
+
+# this matches against tuple, we dont need to add it to the RecordType
+type OtherRecord = tuple
+  wtf: string
+
+# from docs
+# create a type class that will match all tuple and object types
+type RecordType = (typeof myRecord) or object | tuple # or and | are interchangable
+# an implicitly generic procedure:
+# each param is bound ONCE to a concrete subtype of T (object|tupe|myRecord)
+proc printFields[T: RecordType](rec: T) = # same as printFields(rec: RecordType)
+  for key, value in fieldPairs(rec):
+    echo key, " = ", value
+
+var utherRecord: OtherRecord = (wtf: "yo2")
+
+printFields(myRecord)
+printFields(utherRecord)
+
+# bind many types use distinct to enable params to bind to ANY of the concrete subtypes of T
+# T can be pulled out like before into a type declaration
+# without the distinct both first and second would HAVE to be of the same type, because it binds once
+proc fieldsPrint[T: distinct tuple | object](first, second: T) =
+  if typeof first is typeof second: echo "got two of the same"
+  else: echo "got a tuple and object"

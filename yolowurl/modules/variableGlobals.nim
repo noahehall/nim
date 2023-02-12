@@ -3,16 +3,9 @@
 ## =====================
 ##
 ## creating variables & other assignment operators
-## catchall for global keywords/procs/etc not specified in other files
+## catchall for global keywords/procs/types/etc not specified in other files
 ##
-
-
 #[
-  additional global operators, procs, etc
-  only captured the unusual/interesting globals
-  everything else is likely in another file
-
-
   @see
     - https://nim-lang.org/docs/system.html#8 are all on this page somewhere
     - https://nim-lang.org/docs/typeinfo.html
