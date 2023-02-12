@@ -6,6 +6,7 @@
   - [cross compile applications](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
   - [cross platform scripts](https://nim-lang.org/docs/nims.html#benefits)
   - [documentation is a first class citizen](https://nim-lang.org/docs/docgen.html)
+  - [testing is a first class citizen](https://nim-lang.github.io/Nim/testament.html)
   - [spidermans uncle](https://nim-lang.org/docs/tut3.html)
 - tldr
   - [hello world](./yolowurl/)

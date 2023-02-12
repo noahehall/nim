@@ -1,21 +1,16 @@
 ##
-## exception stuff, debugging, documentation and testing
+## exception stuff, debugging, documentation
 ## =====================================================
 ##
-## - [sys mod src excellent doc example](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L292)
-## - [nimscript test file](https://github.com/nim-lang/Nim/blob/devel/tests/test_nimscript.nims)
 ## - [system exceptions](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim) for you to extend from
 ##
 
 #[
   @see
-    - https://github.com/status-im/nim-testutils/tree/master/testutils/fuzzing
-    - https://nim-lang.org/docs/assertions.html
+
     - https://nim-lang.org/docs/docgen.html
     - https://nim-lang.org/docs/drnim.html
     - https://nim-lang.org/docs/segfaults.html
-    - https://nim-lang.org/docs/testament.html (preferred std testing tool)
-    - https://nim-lang.org/docs/unittest.html (use testament instead)
     - https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling
     - https://nim-lang.org/docs/rst.html (also see the restructured docs link somewhere in this file)
 

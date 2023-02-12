@@ -271,7 +271,7 @@ include modules/[
   variableGlobals,
   typeSimple,
   ifWhenCase,
-  exceptionHandlingTestingDocs,
+  exceptionHandlingDocs,
   loops,
   blockDo,
   ordinalStructured,
