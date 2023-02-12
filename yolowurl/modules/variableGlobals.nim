@@ -45,6 +45,11 @@ echo(`let`) # stropping enables keywords as identifiers
 var autoInt: auto = 7
 echo "autoInt labeled auto but its type is ", $type(autoInt)
 
+echo "############################ static"
+# todo: find a better place to put this
+# static anything represents a compile time entity, whether variable, block or type restriction
+# static Thing[MaxLen: static int, T] <-- find this one in the docs
+# ^ static[T] meta type representing all values that can be evaluated at compile time
 static:
   echo "explicitly requires compile-time execution, not just simple expressions"
 

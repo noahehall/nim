@@ -1,5 +1,5 @@
 ##
-## tuples & objects
+## tuples & objects & tables
 ## ================
 ##
 ## heterogenous storage containers of named fields of any type
@@ -35,7 +35,7 @@
 
 ]#
 
-echo "############################ tuple fixed length"
+echo "############################ tables"
 # {key, val}.newOrderedTable
 # empty table is {:} in contrast to a set which is {}
 # the order of (key,val) are preserved to support ordered dicts
@@ -389,8 +389,7 @@ echo "############################ generics"
 # parameterize procs, iterators or types
 # parameterized: Thing[T]
 # restricted Thing[T: x or y]
-# static Thing[MaxLen: static int, T] <-- find this one in the docs
-# ^ static[T] meta type representing all values that can be evaluated at compile time
+
 
 # generic procs
 proc wtf[T](a: T): auto =
