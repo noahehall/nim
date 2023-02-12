@@ -23,6 +23,7 @@
   {.effects.} check the docs: will output all inferred effects (e.g. exceptions) up to this point
   {.exportc: "or-use-this-specific-name".}
   {.exportc.} disable proc name mangling when compiled
+  {.global.} turns a locally scoped var into a global, e.g. var x: string {.global.} = "global"
   {.hint[POOP]:on/off.} can also be set via cli flags
   {.inheritable.} # check the docs: create alternative RootObj
   {.inject.} dunno, something to do with symbol visibility

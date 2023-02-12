@@ -125,6 +125,20 @@ echo "int(4.9) div int(2.0) === ", int(num5) div int(num3)
 echo "remainder of 5 / 2: ", 5 mod 2
 echo "(x).clamp(y, z) is faster than max(y, min(z, x)) ", 2.clamp(1, 3)
 
+var globalint = 2
+var globalfloat = 2.5
+
+# stay away from blah% operators in practice @see https://nim-lang.org/docs/manual.html#types-preminusdefined-integer-types
+# % are mainly for backwards compatibility with previous nim versions
+echo "can use blah% w/ generally any operator. ints are suppose to cast to uint before operation but doesnt seem to work"
+echo "10 %% 3 = ", 10 %% 3
+echo "3 *% -3 = ", 3 *% -3
+echo "3 +% -3 = ", 3 +% -3
+echo "3 <=% -3 = ", 3 <=% -3
+echo "can use blah= w/ generally any operator to mutate in place "
+echo "*= will multiply in place and return void for ints/floats, lol remember those errors we kept getting in the beginning?"
+
+
 echo "############################ hexadecimal"
 const
   n = 0x123
@@ -157,6 +171,7 @@ echo "############################ strings"
 # to intrepret unicode, you need to import the unicode module
 # addQuoted escapes and quotes y:string then appends to x:string
 # addEscapedChar escapes y:char then appends to x:string
+# in general procs tha work for strings work for chars
 
 var msg: string = "yolo"
 echo msg & " wurl" # concat and return new string
@@ -173,3 +188,9 @@ echo poop6, flush, multiline
 echo "cmp a, z ", cmp("a", "z")
 echo "cmp z, a ", cmp("z", "a")
 echo "cmp a, a ", cmp("a", "a")
+
+var globalstring = "before"
+globalstring &= "appends in place, returns void"
+echo "before ", globalstring
+
+echo globalstring & "appends char or string and returns new string"

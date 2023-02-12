@@ -39,14 +39,24 @@ var autoInt: auto = 7
 echo "autoInt labeled auto but its type is ", $type(autoInt)
 
 echo "############################ static"
-# todo: find a better place to put this
-# static anything represents a compile time entity, whether variable, block or type restriction
-# static Thing[MaxLen: static int, T] <-- find this one in the docs
-# ^ static[T] meta type representing all values that can be evaluated at compile time
+# static represents a compile time entity, whether variable, block or type restriction
+# static[T] meta type representing all values that can be evaluated at compile time
+# all static params are treated as generic params, thus may lead to code bloat (see generics)
+
 static:
   echo "explicitly requires compile-time execution, not just simple expressions"
 
-echo "############################ variable support"
+# docs copypasta didnt work, @see https://nim-lang.org/docs/manual.html#special-types-static-t
+proc meaningOfLife(question: static string): auto =
+  var theNumber {.global.} = 42
+  return theNumber
+echo meaningOfLife("what is it")
+
+
+echo "############################ variable logic"
+# shallow(blah) marks blah as shallow for optimization, subsequent assignments  wont deep copy
+# shallowCopy(x, y) copies y into x
+
 # checks whether x can be compiled without any semantic error.
 # useful to verify whether a type supports some operation:
 when compiles(3 + 4):
@@ -191,81 +201,11 @@ block myBlock:
 
 # eval executes a block of code at compile time
 # eval(myBlock) # dunno @see https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L2816
-echo "############################ global collections/sequences"
-# overload contains proc for custom in logic
-# shallow(blah) marks blah as shallow for optimization, subsequent assignments  wont deep copy
-# shallowCopy(x, y) copies y into x
 
-echo "seq[int] contains 6 ", @[5,6,7].contains(6)
-echo "(1..3) contains 2 ", (1..3).contains(2)
-echo "is a in arr[char] ", 'a' in ['a', 'b', 'c']
-echo "99 notin {1,2,3} ", 99 notin {1,2,3}
-echo "index of b in [a,b,c] ", ['a','b', 'c'].find('b')
-echo "index of 4 in @[1..8] ", @[1,2,3,4,5,6,7,8].find 4
-echo ""
 
 echo "############################ a word on operators"
 echo "anything like `xBLAH=` can be written `xBLAH =`"
 echo "the former enables you to define/overload operators via 'proc `poop=`[bloop](soop): doop = toot'"
-
-echo "############################ global operators dunno"
-# x =copy y
-# x =destroy y Generic destructor implementation
-# x =sink y Generic sink implementation
-# x =trace y Generic trace implementation
-
-echo "############################ global operators numbers"
-# stay away from blah% operators in practice @see https://nim-lang.org/docs/manual.html#types-preminusdefined-integer-types
-# % are mainly for backwards compatibility with previous nim versions
-
-var globalint = 2
-var globalfloat = 2.5
-
-echo "can use blah% w/ generally any operator. ints are suppose to cast to uint before operation but doesnt seem to work"
-echo "10 %% 3 = ", 10 %% 3
-echo "3 *% -3 = ", 3 *% -3
-echo "3 +% -3 = ", 3 +% -3
-echo "3 <=% -3 = ", 3 <=% -3
-echo "can use blah= w/ generally any operator to mutate in place "
-echo "*= will multiply in place and return void for ints/floats, lol remember those errors we kept getting in the beginning?"
-
-
-echo "############################ global operators string/char"
-
-var globalstring = "before"
-globalstring &= "appends in place, returns void"
-echo "before ", globalstring
-
-echo globalstring & "appends char or string and returns new string"
-
-echo "############################ global operators seqs"
-# @ converts [x..y, type] into seq[type] efficiently
-# converting an openArray into a seq is not as efficient as it copies all elements
-var globalseq = @[1,2,3]
-
-echo "concat 2 seq, copies both returns new", globalseq & @[4,5,6]
-echo "copy seq then append a single el and return new seq ", globalSeq & 4
-echo "copy seq then prepend a single el and return new seq ", 0 & globalseq
-
-echo "############################ global operators sets"
-
-var globalset1 = {1,2,3}
-var globalset2 = {2,4,6}
-echo "intersection of {1,2,3} and {2,4,6} = ", globalset1 * globalset2
-echo "union of {1,2,3} and {2,4,6} = ", globalset1 + globalset2
-echo "difference of {1,2,3} and {2,4,6} = ", globalset1 - globalset2
-echo "is {1,2,3} a subset of {1,2,3} ", globalset1 <= {1,2,3}
-echo "is {1,2,3} a strict subset of y ", globalset1 < {1,2,3}
-echo "the cardinality of {1,2,3} is ", card globalset1
-
-var globalset11 = deepCopy globalset1
-globalset11.excl({2})
-echo "remove {2} from {1,2,3} ", globalset11
-
-echo "############################ global operators ordinal"
-var globalarr = [1,0,0,4]
-globalarr[1..2] = @[2,3]
-echo "inplace mutation [1,0,0,4][1..2]= @[2,3] should be ", globalarr
 
 
 echo "############################ type casts"

@@ -5,6 +5,9 @@
 ## structured: arrays, sequences, tuples, objects sets
 ## - tuples and objects are in tupleObjectTable
 ## - can hold multiple values and have unlimited levels of nesting
+## - two groups: collections and containers
+## - e.g. objects, tuples are containers of fields
+## - e.g. sequences, arrays are collections of items
 ##
 ## ordinals: enums, integers, char, bool, subranges
 ## - integers, chars and bool are in typeSimple
@@ -158,6 +161,14 @@ var me = "noAH"
 me[0 .. 1] = "NO"
 echo "change first 2 els ", me
 
+# @ converts [x..y, type] into seq[type] efficiently
+# converting an openArray into a seq is not as efficient as it copies all elements
+var globalseq = @[1,2,3]
+
+echo "concat 2 seq, copies both returns new", globalseq & @[4,5,6]
+echo "copy seq then append a single el and return new seq ", globalSeq & 4
+echo "copy seq then prepend a single el and return new seq ", 0 & globalseq
+
 echo "############################ enums"
 # A variable of an enum can only be assigned one of the enum's specified values
 # enum values are usually a set of ordered symbols, internally mapped to an integer (0-based)
@@ -207,7 +218,6 @@ echo level        # --> [on, fastBlink, slowBlink, off]
 echo low(level)   # --> north
 echo len(level)   # --> 4
 echo high(level)  # --> west
-
 
 echo "############################ range"
 # range of values from an ordinal/flaoting-point type
@@ -289,3 +299,30 @@ echo "toNum {D}: ", toNum({D})
 echo "toNum {A,C}: ", toNum({A, C})
 echo "toFlags 0: ", toFlags(0)
 echo "toFlags 7: ", toFlags(7)
+
+
+var globalset1 = {1,2,3}
+var globalset2 = {2,4,6}
+echo "intersection of {1,2,3} and {2,4,6} = ", globalset1 * globalset2
+echo "union of {1,2,3} and {2,4,6} = ", globalset1 + globalset2
+echo "difference of {1,2,3} and {2,4,6} = ", globalset1 - globalset2
+echo "is {1,2,3} a subset of {1,2,3} ", globalset1 <= {1,2,3}
+echo "is {1,2,3} a strict subset of y ", globalset1 < {1,2,3}
+echo "the cardinality of {1,2,3} is ", card globalset1
+
+var globalset11 = deepCopy globalset1
+globalset11.excl({2})
+echo "remove {2} from {1,2,3} ", globalset11
+
+
+echo "############################ general logic"
+echo "seq[int] contains 6 ", @[5,6,7].contains(6)
+echo "(1..3) contains 2 ", (1..3).contains(2)
+echo "is a in arr[char] ", 'a' in ['a', 'b', 'c']
+echo "99 notin {1,2,3} ", 99 notin {1,2,3}
+echo "index of b in [a,b,c] ", ['a','b', 'c'].find('b')
+echo "index of 4 in @[1..8] ", @[1,2,3,4,5,6,7,8].find 4
+
+var globalarr = [1,0,0,4]
+globalarr[1..2] = @[2,3]
+echo "inplace mutation [1,0,0,4][1..2]= @[2,3] should be ", globalarr

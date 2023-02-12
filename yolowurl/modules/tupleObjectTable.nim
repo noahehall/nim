@@ -215,6 +215,10 @@ echo "############################ type bound operators"
 # @see https://nim-lang.org/docs/manual.html#procedures-type-bound-operators
 # a proc or func whose name starts with = but isnt an operator
 # unrelated to propertie setters which end in = despite syntax similarities
+# x =copy y
+# x =destroy y Generic destructor implementation
+# x =sink y Generic sink implementation
+# x =trace y Generic trace implementation
 
 echo "############################ ref"
 # see inheritance
@@ -395,6 +399,7 @@ echo "############################ generics"
 # parameterized: Thing[T]
 # static constrained: Thing[T: x or y] will resolve to x or y staticlly, and remain so at runtime
 # ^ i.e. a var Z cant change between x & y after semantic resolution phase
+# generic params are compiled separately for each unique value/combination of such
 
 # generic procs
 proc wtf[T](a: T): auto =
