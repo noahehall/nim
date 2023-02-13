@@ -19,12 +19,14 @@ internal links
 - [backends, but most isnt there yet](https://github.com/noahehall/nim/tree/develop/backends)
 
 ## useful links
+- [anything written by peter](https://peterme.net/)
 - [nim by example](nim-by-example.github.io)
 - [nimlang api design](https://nim-lang.org/docs/apis.html)
 - [nimlang manual](https://nim-lang.org/docs/manual.html)
 - [official nimlang tut1 (theres 3)](https://nim-lang.org/docs/tut1.html)
 - [reStructured Text cheatsheet](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
 - [status auditor docs](https://status-im.github.io/nim-style-guide/00_introduction.html)
+- [system modules source code](https://github.com/nim-lang/Nim/tree/version-1-6/lib/system)
 - [system source code](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L1)
 - [yolowurl source examples](https://github.com/noahehall/nim/tree/develop/yolowurl/modules)
 

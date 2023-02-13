@@ -17,5 +17,4 @@
     - https://nim-lang.org/docs/rdstdin.html
     - https://nim-lang.org/docs/selectors.html
     - https://nim-lang.org/docs/terminal.html
-    - https://nim-lang.org/docs/logging.html
 ]#
