@@ -290,6 +290,19 @@ statements	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-statements	  statements
 expressions	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-expressions	  expressions	
 visibility	yolowurl.html#visibility	 visibility	
 variables and globals	yolowurl.html#variables-and-globals	 variables and globals	
+TLDR	yolowurl.html#variables-and-globals-tldr	  TLDR	
+var	yolowurl.html#variables-and-globals-var	  var	
+let	yolowurl.html#variables-and-globals-let	  let	
+const	yolowurl.html#variables-and-globals-const	  const	
+static	yolowurl.html#variables-and-globals-static	  static	
+eval	yolowurl.html#variables-and-globals-eval	  eval	
+stropping	yolowurl.html#variables-and-globals-stropping	  stropping	
+auto	yolowurl.html#variables-and-globals-auto	  auto	
+type casts	yolowurl.html#variables-and-globals-type-casts	  type casts	
+type coercions	yolowurl.html#variables-and-globals-type-coercions	  type coercions	
+type inspection	yolowurl.html#variables-and-globals-type-inspection	  type inspection	
+echo/repr	yolowurl.html#variables-and-globals-echoslashrepr	  echo/repr	
+simple types	yolowurl.html#simple-types	 simple types	
 branching: if when case	yolowurl.html#branchingcolon-if-when-case	 branching: if when case	
 TLDR	yolowurl.html#branchingcolon-if-when-case-tldr	  TLDR	
 todos	yolowurl.html#branchingcolon-if-when-case-todos	  todos	
