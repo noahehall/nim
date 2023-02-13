@@ -7,7 +7,6 @@
 - didnt finish this section, come back later
 
 todos
-- finish this section
 - [io](https://nim-lang.org/docs/io.html)
 - [check the nitch source code for good examples](https://github.com/unxsh/nitch)
 - [check the nimgrep source code for good examples](https://github.com/nim-lang/Nim/blob/devel/tools/nimgrep.nim)
@@ -18,12 +17,58 @@ todos
 - macros.getProjectPath()
 - getCurrentDir proc
 
+## FileMode
+- when opening a file
+.. code-block:: Nim
+  FileMode = enum
+    fmRead,                   ## Open the file for read access only.
+    fmWrite,                  ## Open the file for write access only.
+                              ## If the file does not exist, it will be
+                              ## created. Existing files will be cleared!
+    fmReadWrite,              ## Open the file for read and write access.
+                              ## If the file does not exist, it will be
+                              ## created. Existing files will be cleared!
+    fmReadWriteExisting,      ## Open the file for read and write access.
+                              ## If the file does not exist, it will not be
+                              ## created. The existing file will not be cleared.
+    fmAppend                   ## Open the file for writing only; append data
+                              ## at the end.
 ]##
 
 echo "############################ io"
-# no clue why we need to add the dir
-# not that way in system.nim
-# ^ its because vscode pwd is /nim and not /nim/yolowurl
+# stderr stream
+# stdin stream
+# stdout stream
+# close a file
+# endOfFile returns bool
+# flushFile buffer down the toilet
+# getFileHandle of the file f; useful for platform specific logic; use getOsFileHandle instead
+# getFilePos of the file pointer that is reading from file f
+# getFileSize in bytes
+# getOsFileHandle of file f; only useful for platform specific logic
+# open a file from a filehandle/string with a given fileMode (defaults readonly); doesnt throw
+# readAll data from a file stream; raises IO exception/errors if current file pos not index 0
+# readBuffer
+# readBytes
+# readChar
+# readChars
+# readFile use staticRead when used within a compile time macro
+# readLine
+# readLines should always provide 2 arguments
+# reopen for redirecting std[in/out/err] file variables
+# setFilePos
+# setInheritable
+# setStdIoUnbuffered
+# write
+# writeBuffer
+# writeBytes
+# writeChars
+# writeFile
+# writeLine
+# lines iterate over any line in file f
+# stdmsg expands to stdout/err depending on useStdoutAsStdmsg switch
+
+
 let entireFile = readFile "yolowurl/yolowurl.md"
 echo "file has ", len entireFile, " characters"
 

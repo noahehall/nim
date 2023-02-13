@@ -8,6 +8,7 @@ TLDR
 - scope starts after the : symbol, and ends when the indentention returns to previous level
 - named blocks have similar usescases to javascript
 - like most other things, blocks can be expressions and assigned to a var
+- see loopIterator.nim for closureScope blocks
 
 do blocks
 ---------

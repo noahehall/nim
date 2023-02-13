@@ -10,6 +10,9 @@
     - https://nim-lang.org/docs/nimc.html
     - https://nim-lang.org/docs/packaging.html
 
+  todos
+    useStdoutAsStdmsg @see https://nim-lang.org/docs/io.html#stdmsg.t
+
   nim CMD OPTS FILE ARGS
     nim --fullhelp see all cmd line opts
     nim --listCmd

@@ -1,368 +1,372 @@
-poop1	yolowurl.html#poop1	yolowurl: poop1	
-poop2	yolowurl.html#poop2	yolowurl: poop2	
-poop3	yolowurl.html#poop3	yolowurl: poop3	
-fac4	yolowurl.html#fac4	yolowurl: fac4	
-`let`	yolowurl.html#let	yolowurl: let	
-autoInt	yolowurl.html#autoInt	yolowurl: autoInt	
-meaningOfLife	yolowurl.html#meaningOfLife,staticstring	yolowurl: meaningOfLife(question: static string): auto	
-typeSupportBlah	yolowurl.html#typeSupportBlah	yolowurl: typeSupportBlah	
-d33pcopy	yolowurl.html#d33pcopy	yolowurl: d33pcopy	
-myInt	yolowurl.html#myInt	yolowurl: myInt	
-doubleFloat	yolowurl.html#doubleFloat,float	yolowurl: doubleFloat(x: float): float	
-Option	yolowurl.html#Option	yolowurl: Option	
-aa	yolowurl.html#aa	yolowurl: aa	
-bb	yolowurl.html#bb	yolowurl: bb	
-get	yolowurl.html#get.c,Option[T]	yolowurl: get[T](x: Option[T]): T	
-toBool	yolowurl.html#toBool.c,int	yolowurl: toBool(x: int): bool	
-somevar	yolowurl.html#somevar	yolowurl: somevar	
-othervar	yolowurl.html#othervar	yolowurl: othervar	
-MyType	yolowurl.html#MyType	yolowurl: MyType	
-instance	yolowurl.html#instance	yolowurl: instance	
-xxx	yolowurl.html#xxx	yolowurl: xxx	
-y	yolowurl.html#y	yolowurl: y	
-z	yolowurl.html#z	yolowurl: z	
-x1	yolowurl.html#x1	yolowurl: x1	
-y1	yolowurl.html#y1	yolowurl: y1	
-z1	yolowurl.html#z1	yolowurl: z1	
-sum	yolowurl.html#sum	yolowurl: sum	
-b	yolowurl.html#b	yolowurl: b	
-c	yolowurl.html#c	yolowurl: c	
-negint	yolowurl.html#negint	yolowurl: negint	
-num0	yolowurl.html#num0	yolowurl: num0	
-num1	yolowurl.html#num1	yolowurl: num1	
-num2	yolowurl.html#num2	yolowurl: num2	
-amilliamilliamilli	yolowurl.html#amilliamilliamilli	yolowurl: amilliamilliamilli	
-e	yolowurl.html#e	yolowurl: e	
-f	yolowurl.html#f	yolowurl: f	
-num3	yolowurl.html#num3	yolowurl: num3	
-num4	yolowurl.html#num4	yolowurl: num4	
-num5	yolowurl.html#num5	yolowurl: num5	
-g	yolowurl.html#g	yolowurl: g	
-h	yolowurl.html#h	yolowurl: h	
-i	yolowurl.html#i	yolowurl: i	
-l	yolowurl.html#l	yolowurl: l	
-m	yolowurl.html#m	yolowurl: m	
-globalint	yolowurl.html#globalint	yolowurl: globalint	
-globalfloat	yolowurl.html#globalfloat	yolowurl: globalfloat	
-n	yolowurl.html#n	yolowurl: n	
-o	yolowurl.html#o	yolowurl: o	
-p	yolowurl.html#p	yolowurl: p	
-msg	yolowurl.html#msg	yolowurl: msg	
-poop6	yolowurl.html#poop6	yolowurl: poop6	
-flush	yolowurl.html#flush	yolowurl: flush	
-multiline	yolowurl.html#multiline	yolowurl: multiline	
-globalstring	yolowurl.html#globalstring	yolowurl: globalstring	
-whichVerse	yolowurl.html#whichVerse	yolowurl: whichVerse	
-numCase	yolowurl.html#numCase	yolowurl: numCase	
-positiveOrNegative	yolowurl.html#positiveOrNegative,int	yolowurl: positiveOrNegative(num: int): string	
-goodcode	yolowurl.html#goodcode	yolowurl: goodcode	
-badcode	yolowurl.html#badcode	yolowurl: badcode	
-GoodApplications	yolowurl.html#GoodApplications	yolowurl: GoodApplications	
-LearningError	yolowurl.html#LearningError	yolowurl: LearningError	
-neverThrows	yolowurl.html#neverThrows	yolowurl: neverThrows(): string	
-maybeThrows	yolowurl.html#maybeThrows,int	yolowurl: maybeThrows(x: int): int	
-err	yolowurl.html#err	yolowurl: err	
-divBy0	yolowurl.html#divBy0	yolowurl: divBy0	
-somethingStupid	yolowurl.html#somethingStupid	yolowurl: somethingStupid(): auto	
-loc`gensym10	yolowurl.html#loc`gensym10	yolowurl: loc`gensym10	
-ploc`gensym10	yolowurl.html#ploc`gensym10	yolowurl: ploc`gensym10	
-loc`gensym12	yolowurl.html#loc`gensym12	yolowurl: loc`gensym12	
-ploc`gensym12	yolowurl.html#ploc`gensym12	yolowurl: ploc`gensym12	
-loc`gensym14	yolowurl.html#loc`gensym14	yolowurl: loc`gensym14	
-ploc`gensym14	yolowurl.html#ploc`gensym14	yolowurl: ploc`gensym14	
-`...`	yolowurl.html#....i,T,T	yolowurl: `...`[T](a: T; b: T): T	
-countTo	yolowurl.html#countTo.i,int	yolowurl: countTo(n: int): int	
-mycount	yolowurl.html#mycount.i,int,int	yolowurl: mycount(a, b: int): int	
-finishedIncorrect	yolowurl.html#finishedIncorrect	yolowurl: finishedIncorrect	
-finishedCorrect	yolowurl.html#finishedCorrect	yolowurl: finishedCorrect	
-intArr	yolowurl.html#intArr	yolowurl: intArr	
-num6	yolowurl.html#num6	yolowurl: num6	
-sniper	yolowurl.html#sniper	yolowurl: sniper	
-stupidChar	yolowurl.html#stupidChar	yolowurl: stupidChar	
-alreadyExecuted`gensym17	yolowurl.html#alreadyExecuted`gensym17	yolowurl: alreadyExecuted`gensym17	
-nums	yolowurl.html#nums	yolowurl: nums	
-nums4	yolowurl.html#nums4	yolowurl: nums4	
-rangeArr	yolowurl.html#rangeArr	yolowurl: rangeArr	
-smun	yolowurl.html#smun	yolowurl: smun	
-emptyArr	yolowurl.html#emptyArr	yolowurl: emptyArr	
-arrayWithRange	yolowurl.html#arrayWithRange	yolowurl: arrayWithRange	
-withArrParam	yolowurl.html#withArrParam,array[I,T]	yolowurl: withArrParam[I, T](a: array[I, T]): string	
-breakfast	yolowurl.html#breakfast	TimeToEat.breakfast	
-lunch	yolowurl.html#lunch	TimeToEat.lunch	
-dinner	yolowurl.html#dinner	TimeToEat.dinner	
-sweettooth	yolowurl.html#sweettooth	TimeToEat.sweettooth	
-TimeToEat	yolowurl.html#TimeToEat	yolowurl: TimeToEat	
-proteinshake	yolowurl.html#proteinshake	WhatToEat.proteinshake	
-ramen	yolowurl.html#ramen	WhatToEat.ramen	
-ramentWithMeet	yolowurl.html#ramentWithMeet	WhatToEat.ramentWithMeet	
-pnutbutteryjelly	yolowurl.html#pnutbutteryjelly	WhatToEat.pnutbutteryjelly	
-WhatToEat	yolowurl.html#WhatToEat	yolowurl: WhatToEat	
-Eating	yolowurl.html#Eating	yolowurl: Eating	
-WeeklyFoodTracker	yolowurl.html#WeeklyFoodTracker	yolowurl: WeeklyFoodTracker	
-MonthlyFoodTracker	yolowurl.html#MonthlyFoodTracker	yolowurl: MonthlyFoodTracker	
-onSundayIAte	yolowurl.html#onSundayIAte	yolowurl: onSundayIAte	
-lastWeek	yolowurl.html#lastWeek	yolowurl: lastWeek	
-poops	yolowurl.html#poops	yolowurl: poops	
-spoop	yolowurl.html#spoop	yolowurl: spoop	
-emptySeq	yolowurl.html#emptySeq	yolowurl: emptySeq	
-seqEmpty	yolowurl.html#seqEmpty	yolowurl: seqEmpty	
-me	yolowurl.html#me	yolowurl: me	
-globalseq	yolowurl.html#globalseq	yolowurl: globalseq	
-democrats	yolowurl.html#democrats	GangsOfAmerica.democrats	
-republicans	yolowurl.html#republicans	GangsOfAmerica.republicans	
-politicians	yolowurl.html#politicians	GangsOfAmerica.politicians	
-GangsOfAmerica	yolowurl.html#GangsOfAmerica	yolowurl: GangsOfAmerica	
-PeopleOfAmerica	yolowurl.html#PeopleOfAmerica	yolowurl: PeopleOfAmerica	
-AA	yolowurl.html#AA_2	ExplicitEnum.AA	
-BB	yolowurl.html#BB_2	ExplicitEnum.BB	
-ExplicitEnum	yolowurl.html#ExplicitEnum	yolowurl: ExplicitEnum	
-north	yolowurl.html#north	Direction.north	
-east	yolowurl.html#east	Direction.east	
-south	yolowurl.html#south	Direction.south	
-west	yolowurl.html#west	Direction.west	
-Direction	yolowurl.html#Direction	yolowurl: Direction	
-off	yolowurl.html#off	BlinkLights.off	
-on	yolowurl.html#on	BlinkLights.on	
-slowBlink	yolowurl.html#slowBlink	BlinkLights.slowBlink	
-mediumBlink	yolowurl.html#mediumBlink	BlinkLights.mediumBlink	
-fastBlink	yolowurl.html#fastBlink	BlinkLights.fastBlink	
-BlinkLights	yolowurl.html#BlinkLights	yolowurl: BlinkLights	
-LevelSetting	yolowurl.html#LevelSetting	yolowurl: LevelSetting	
-level	yolowurl.html#level	yolowurl: level	
-lastFour	yolowurl.html#lastFour	yolowurl: lastFour	
-lastOne	yolowurl.html#lastOne	yolowurl: lastOne	
-MySubrange	yolowurl.html#MySubrange	yolowurl: MySubrange	
-thisRange	yolowurl.html#thisRange	yolowurl: thisRange	
-a	yolowurl.html#a	yolowurl: a	
-bbb	yolowurl.html#bbb	yolowurl: bbb	
-Opts	yolowurl.html#Opts	yolowurl: Opts	
-IsOn	yolowurl.html#IsOn	yolowurl: IsOn	
-simpleOpts	yolowurl.html#simpleOpts	yolowurl: simpleOpts	
-onn	yolowurl.html#onn	yolowurl: onn	
-offf	yolowurl.html#offf	yolowurl: offf	
-flags	yolowurl.html#flags	yolowurl: flags	
-MyFlag	yolowurl.html#MyFlag	yolowurl: MyFlag	
-MyFlags	yolowurl.html#MyFlags	yolowurl: MyFlags	
-toNum	yolowurl.html#toNum,MyFlags	yolowurl: toNum(f: MyFlags): int	
-toFlags	yolowurl.html#toFlags,int	yolowurl: toFlags(v: int): MyFlags	
-globalset1	yolowurl.html#globalset1	yolowurl: globalset1	
-globalset2	yolowurl.html#globalset2	yolowurl: globalset2	
-globalset11	yolowurl.html#globalset11	yolowurl: globalset11	
-globalarr	yolowurl.html#globalarr	yolowurl: globalarr	
-pubfn	yolowurl.html#pubfn	yolowurl: pubfn(): void	
-eko	yolowurl.html#eko,string	yolowurl: eko(this = &quot;Default value&quot;): void	
-ekoGroups	yolowurl.html#ekoGroups,int,int,string,char	yolowurl: ekoGroups(a, b: int; c: string; d: char): void	
-passedByValue	yolowurl.html#passedByValue,string	yolowurl: passedByValue(x: string): void	
-xx	yolowurl.html#xx	yolowurl: xx	
-copyThenMutateValue	yolowurl.html#copyThenMutateValue,string	yolowurl: copyThenMutateValue(x: string): void	
-zz	yolowurl.html#zz	yolowurl: zz	
-passedByReference	yolowurl.html#passedByReference,string	yolowurl: passedByReference(yy: var string): void	
-redurn	yolowurl.html#redurn,string	yolowurl: redurn(this: string): string	
-mutate	yolowurl.html#mutate,int	yolowurl: mutate(this: var int): int	
-num7	yolowurl.html#num7	yolowurl: num7	
-gg	yolowurl.html#gg	yolowurl: gg	
-writeAccessToG	yolowurl.html#writeAccessToG	yolowurl: writeAccessToG(): var int	
-add5	yolowurl.html#add5,int	yolowurl: add5(num: int): int	
-allInts	yolowurl.html#allInts,int,int,int	yolowurl: allInts(x, y, z: int): int	
-str	yolowurl.html#str,string	yolowurl: str(s: string): string	
-`***`	yolowurl.html#***,int	yolowurl: `***`(i: int): auto	
-greet	yolowurl.html#greet,string	yolowurl: greet(name: string): string	
-bye	yolowurl.html#bye,string	yolowurl: bye(name: string): string	
-communicate	yolowurl.html#communicate,proc(string),string	yolowurl: communicate(greeting: proc (x: string): string; name: string)	
-fruits	yolowurl.html#fruits	yolowurl: fruits	
-capitals	yolowurl.html#capitals	yolowurl: capitals	
-openArraySize	yolowurl.html#openArraySize,openArray[string]	yolowurl: openArraySize(oa: openArray[string]): int	
-eko_all	yolowurl.html#eko_all,varargs[string]	yolowurl: eko_all(s: varargs[string])	
-eko_anything	yolowurl.html#eko_anything,varargs[string,]	yolowurl: eko_anything(s: varargs[string, `$`])	
-poop	yolowurl.html#poop	yolowurl: poop(): string	
-runFn	yolowurl.html#runFn,string,proc(string)	yolowurl: runFn(a: string; fn: proc (x: string): string): string	
-myTable	yolowurl.html#myTable	yolowurl: myTable	
-NirvStack	yolowurl.html#NirvStack	yolowurl: NirvStack	
-StackNirv	yolowurl.html#StackNirv	yolowurl: StackNirv	
-hardCoreStack	yolowurl.html#hardCoreStack	yolowurl: hardCoreStack	
-newCoreStack	yolowurl.html#newCoreStack	yolowurl: newCoreStack	
-js	yolowurl.html#js	yolowurl: js	
-sj	yolowurl.html#sj	yolowurl: sj	
-bizDevOps	yolowurl.html#bizDevOps	yolowurl: bizDevOps	
-bizRating	yolowurl.html#bizRating	yolowurl: bizRating	
-first	yolowurl.html#first	yolowurl: first	
-aaa	yolowurl.html#aaa	yolowurl: aaa	
-BigMoney	yolowurl.html#BigMoney	yolowurl: BigMoney	
-StrOrInt	yolowurl.html#StrOrInt	yolowurl: StrOrInt	
-thizString	yolowurl.html#thizString	yolowurl: thizString	
-thisInt	yolowurl.html#thisInt	yolowurl: thisInt	
-BiggerMoney	yolowurl.html#BiggerMoney	yolowurl: BiggerMoney	
-BiggestMoney	yolowurl.html#BiggestMoney	yolowurl: BiggestMoney	
-PrivatePoop	yolowurl.html#PrivatePoop	yolowurl: PrivatePoop	
-PublicPoop	yolowurl.html#PublicPoop	yolowurl: PublicPoop	
-ipoop	yolowurl.html#ipoop	yolowurl: ipoop	
-upoop	yolowurl.html#upoop	yolowurl: upoop	
-everyonepoop	yolowurl.html#everyonepoop	yolowurl: everyonepoop	
-Someone	yolowurl.html#Someone	yolowurl: Someone	
-noah	yolowurl.html#noah	yolowurl: noah	
-you	yolowurl.html#you	yolowurl: you	
-SomeObj	yolowurl.html#SomeObj	yolowurl: SomeObj	
-prv=	yolowurl.html#prv=,SomeObj,string	yolowurl: prv=(x: var SomeObj; v: string)	
-prv	yolowurl.html#prv,SomeObj	yolowurl: prv(x: SomeObj): string	
-myobj	yolowurl.html#myobj	yolowurl: myobj	
-Vector	yolowurl.html#Vector	yolowurl: Vector	
-`[]=`	yolowurl.html#[]=,Vector,int,float	yolowurl: `[]=`(v: var Vector; i: int; value: float)	
-`[]`	yolowurl.html#[],Vector,int	yolowurl: `[]`(v: Vector; i: int): float	
-people	yolowurl.html#people	yolowurl: people	
-SomeoneRef	yolowurl.html#SomeoneRef	yolowurl: SomeoneRef	
-OrRefObject	yolowurl.html#OrRefObject	yolowurl: OrRefObject	
-people2	yolowurl.html#people2	yolowurl: people2	
-WhoPoop	yolowurl.html#WhoPoop	yolowurl: WhoPoop	
-YouPoop	yolowurl.html#YouPoop	yolowurl: YouPoop	
-IPoop	yolowurl.html#IPoop_2	yolowurl: IPoop	
-did_i_poop	yolowurl.html#did_i_poop,WhoPoop	yolowurl: did_i_poop(self: WhoPoop): string	
-didipoop	yolowurl.html#didipoop,YouPoop	yolowurl: didipoop(self: YouPoop): string	
-dIdIpOoP	yolowurl.html#dIdIpOoP,IPoop	yolowurl: dIdIpOoP(self: IPoop): string	
-sherlockpoops	yolowurl.html#sherlockpoops	yolowurl: sherlockpoops	
-Expression	yolowurl.html#Expression	yolowurl: Expression	
-Literal	yolowurl.html#Literal	yolowurl: Literal	
-PlusExpr	yolowurl.html#PlusExpr	yolowurl: PlusExpr	
-eval	yolowurl.html#eval.e,Expression	yolowurl: eval(e: Expression): int	
-eval	yolowurl.html#eval.e,Literal	yolowurl: eval(e: Literal): int	
-eval	yolowurl.html#eval.e,PlusExpr	yolowurl: eval(e: PlusExpr): int	
-newLit	yolowurl.html#newLit,int	yolowurl: newLit(x: int): Literal	
-newPlus	yolowurl.html#newPlus,Expression,Expression	yolowurl: newPlus(a, b: Expression): PlusExpr	
-Thing	yolowurl.html#Thing	yolowurl: Thing	
-Unit	yolowurl.html#Unit	yolowurl: Unit	
-collide	yolowurl.html#collide.e,Thing,Thing	yolowurl: collide(a, b: Thing)	
-collide	yolowurl.html#collide.e,Thing,Unit	yolowurl: collide(a: Thing; b: Unit)	
-collide	yolowurl.html#collide.e,Unit,Thing	yolowurl: collide(a: Unit; b: Thing)	
-aaaa	yolowurl.html#aaaa	yolowurl: aaaa	
-bbbb	yolowurl.html#bbbb	yolowurl: bbbb	
-nkInt	yolowurl.html#nkInt	NodeKind.nkInt	
-nkFloat	yolowurl.html#nkFloat	NodeKind.nkFloat	
-nkString	yolowurl.html#nkString	NodeKind.nkString	
-nkAdd	yolowurl.html#nkAdd	NodeKind.nkAdd	
-nkSub	yolowurl.html#nkSub	NodeKind.nkSub	
-nkIf	yolowurl.html#nkIf	NodeKind.nkIf	
-NodeKind	yolowurl.html#NodeKind	yolowurl: NodeKind	
-Node2	yolowurl.html#Node2	yolowurl: Node2	
-myFloat	yolowurl.html#myFloat	yolowurl: myFloat	
-Node	yolowurl.html#Node	yolowurl: Node	
-Sym	yolowurl.html#Sym	yolowurl: Sym	
-wtf	yolowurl.html#wtf,T	yolowurl: wtf[T](a: T): auto	
-foo	yolowurl.html#foo,T	yolowurl: foo[T](i: T)	
-ii	yolowurl.html#ii	yolowurl: ii	
-myRecord	yolowurl.html#myRecord	yolowurl: myRecord	
-OtherRecord	yolowurl.html#OtherRecord	yolowurl: OtherRecord	
-RecordType	yolowurl.html#RecordType	yolowurl: RecordType	
-printFields	yolowurl.html#printFields,T	yolowurl: printFields[T: RecordType](rec: T)	
-utherRecord	yolowurl.html#utherRecord	yolowurl: utherRecord	
-fieldsPrint	yolowurl.html#fieldsPrint,T,T	yolowurl: fieldsPrint[T: distinct tuple | object](first, second: T)	
-declareVariableWithType	yolowurl.html#declareVariableWithType.t,typedesc,typedesc	yolowurl: declareVariableWithType(T: typedesc; value: T:type)	
-x`gensym40	yolowurl.html#x`gensym40	yolowurl: x`gensym40	
-entireFile	yolowurl.html#entireFile	yolowurl: entireFile	
-readFile	yolowurl.html#readFile	yolowurl: readFile(): string	
-tmpfile	yolowurl.html#tmpfile	yolowurl: tmpfile	
-writeLines	yolowurl.html#writeLines,seq[string]	yolowurl: writeLines(s: seq[string]): void	
-buildInfo	yolowurl.html#buildInfo	yolowurl: buildInfo	
-`!=`	yolowurl.html#!=.t,untyped,untyped	yolowurl: `!=`(a, b: untyped): untyped	
-loc`gensym45	yolowurl.html#loc`gensym45	yolowurl: loc`gensym45	
-ploc`gensym45	yolowurl.html#ploc`gensym45	yolowurl: ploc`gensym45	
-debug	yolowurl.html#debug	yolowurl: debug	
-xy	yolowurl.html#xy	yolowurl: xy	
-log_eager	yolowurl.html#log_eager,string	yolowurl: log_eager(msg: string)	
-log_lazy	yolowurl.html#log_lazy.t,string	yolowurl: log_lazy(msg: string)	
-blockRunner	yolowurl.html#blockRunner.t,bool,untyped	yolowurl: blockRunner(please: bool; body: untyped): void	
-theyAskedNickely`gensym47	yolowurl.html#theyAskedNickely`gensym47	yolowurl: theyAskedNickely`gensym47	
-theyAskedNickely`gensym48	yolowurl.html#theyAskedNickely`gensym48	yolowurl: theyAskedNickely`gensym48	
-yolo wurl: basic nim syntax	yolowurl.html#yolo-wurlcolon-basic-nim-syntax	 yolo wurl: basic nim syntax	
-TLDR	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-tldr	  TLDR	
-useful links	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-useful-links	  useful links	
-the road to code	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-the-road-to-code	  the road to code	
-std library	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-std-library	  std library	
-style guide &amp; best practices	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-style-guide-amp-best-practices	  style guide &amp; best practices	
-modules	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-modules	  modules	
-import	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-import	  import	
-include:	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-includecolon	  include:	
-export	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-export	  export	
-packages	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-packages	  packages	
-operators	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-operators	  operators	
-keywords	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-keywords	  keywords	
-statements	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-statements	  statements	
-expressions	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-expressions	  expressions	
-visibility	yolowurl.html#visibility	 visibility	
-variables and globals	yolowurl.html#variables-and-globals	 variables and globals	
-TLDR	yolowurl.html#variables-and-globals-tldr	  TLDR	
-var	yolowurl.html#variables-and-globals-var	  var	
-let	yolowurl.html#variables-and-globals-let	  let	
-const	yolowurl.html#variables-and-globals-const	  const	
-static	yolowurl.html#variables-and-globals-static	  static	
-eval	yolowurl.html#variables-and-globals-eval	  eval	
-stropping	yolowurl.html#variables-and-globals-stropping	  stropping	
-auto	yolowurl.html#variables-and-globals-auto	  auto	
-type casts	yolowurl.html#variables-and-globals-type-casts	  type casts	
-type coercions	yolowurl.html#variables-and-globals-type-coercions	  type coercions	
-type inspection	yolowurl.html#variables-and-globals-type-inspection	  type inspection	
-echo/repr	yolowurl.html#variables-and-globals-echoslashrepr	  echo/repr	
-simple types	yolowurl.html#simple-types	 simple types	
-branching: if when case	yolowurl.html#branchingcolon-if-when-case	 branching: if when case	
-TLDR	yolowurl.html#branchingcolon-if-when-case-tldr	  TLDR	
-todos	yolowurl.html#branchingcolon-if-when-case-todos	  todos	
-when	yolowurl.html#branchingcolon-if-when-case-when	  when	
-case	yolowurl.html#branchingcolon-if-when-case-case	  case	
-exception handling, debugging (todo), documentation	yolowurl.html#exception-handling-debugging-todo-documentation	 exception handling, debugging (todo), documentation	
-TLDR	yolowurl.html#exception-handling-debugging-todo-documentation-tldr	  TLDR	
-Exception Handling	yolowurl.html#exception-handling-debugging-todo-documentation-exception-handling	  Exception Handling	
-Defect types	yolowurl.html#exception-handling-debugging-todo-documentation-defect-types	  Defect types	
-Error (exception) types	yolowurl.html#exception-handling-debugging-todo-documentation-error-exception-types	  Error (exception) types	
-doc syntax	yolowurl.html#exception-handling-debugging-todo-documentation-doc-syntax	  doc syntax	
-loops and iterators	yolowurl.html#loops-and-iterators	 loops and iterators	
-TLDR	yolowurl.html#loops-and-iterators-tldr	  TLDR	
-todos	yolowurl.html#loops-and-iterators-todos	  todos	
-links	yolowurl.html#loops-and-iterators-links	  links	
-loop/iterator related procs	yolowurl.html#loops-and-iterators-loopslashiterator-related-procs	  loop/iterator related procs	
-iterators	yolowurl.html#loops-and-iterators-iterators	  iterators	
-blocks	yolowurl.html#blocks	 blocks	
-TLDR	yolowurl.html#blocks-tldr	  TLDR	
-do blocks	yolowurl.html#blocks-do-blocks	  do blocks	
-once blocks	yolowurl.html#blocks-once-blocks	  once blocks	
-ordinals and structured	yolowurl.html#ordinals-and-structured	 ordinals and structured	
-TLDR	yolowurl.html#ordinals-and-structured-tldr	  TLDR	
-links	yolowurl.html#ordinals-and-structured-links	  links	
-arrays	yolowurl.html#ordinals-and-structured-arrays	  arrays	
-set	yolowurl.html#ordinals-and-structured-set	  set	
-sequence	yolowurl.html#ordinals-and-structured-sequence	  sequence	
-enum	yolowurl.html#ordinals-and-structured-enum	  enum	
-range	yolowurl.html#ordinals-and-structured-range	  range	
-slice	yolowurl.html#ordinals-and-structured-slice	  slice	
-ordinals/structured interface	yolowurl.html#ordinals-and-structured-ordinalsslashstructured-interface	  ordinals/structured interface	
-routines	yolowurl.html#routines	 routines	
-TLDR	yolowurl.html#routines-tldr	  TLDR	
-procedures	yolowurl.html#routines-procedures	  procedures	
-openArray	yolowurl.html#routines-openarray	  openArray	
-varargs	yolowurl.html#routines-varargs	  varargs	
-funcs	yolowurl.html#routines-funcs	  funcs	
-closures	yolowurl.html#routines-closures	  closures	
-anonymous procs	yolowurl.html#routines-anonymous-procs	  anonymous procs	
-tuples, objects and tables	yolowurl.html#tuples-objects-and-tables	 tuples, objects and tables	
-TLDR	yolowurl.html#tuples-objects-and-tables-tldr	  TLDR	
-tuples	yolowurl.html#tuples-objects-and-tables-tuples	  tuples	
-objects	yolowurl.html#tuples-objects-and-tables-objects	  objects	
-type aliases	yolowurl.html#tuples-objects-and-tables-type-aliases	  type aliases	
-type aliases (distinct)	yolowurl.html#tuples-objects-and-tables-type-aliases-distinct	  type aliases (distinct)	
-table	yolowurl.html#tuples-objects-and-tables-table	  table	
-ref	yolowurl.html#tuples-objects-and-tables-ref	  ref	
-ptr	yolowurl.html#tuples-objects-and-tables-ptr	  ptr	
-ref/pter procs	yolowurl.html#tuples-objects-and-tables-refslashpter-procs	  ref/pter procs	
-inheritance (ref/ptr)	yolowurl.html#tuples-objects-and-tables-inheritance-refslashptr	  inheritance (ref/ptr)	
-dynamic dispatch	yolowurl.html#tuples-objects-and-tables-dynamic-dispatch	  dynamic dispatch	
-multi-methods	yolowurl.html#tuples-objects-and-tables-multiminusmethods	  multi-methods	
-metatypes	yolowurl.html#tuples-objects-and-tables-metatypes	  metatypes	
-type bound operators	yolowurl.html#tuples-objects-and-tables-type-bound-operators	  type bound operators	
-variants	yolowurl.html#tuples-objects-and-tables-variants	  variants	
-recursive types	yolowurl.html#tuples-objects-and-tables-recursive-types	  recursive types	
-type classes	yolowurl.html#tuples-objects-and-tables-type-classes	  type classes	
-typedesc	yolowurl.html#tuples-objects-and-tables-typedesc	  typedesc	
-os, io and files	yolowurl.html#os-io-and-files	 os, io and files	
-TLDR	yolowurl.html#os-io-and-files-tldr	  TLDR	
-os/io/file procs i think these are todo	yolowurl.html#os-io-and-files-osslashioslashfile-procs-i-think-these-are-todo	  os/io/file procs i think these are todo	
-templates and macros	yolowurl.html#templates-and-macros	 templates and macros	
-TLDR	yolowurl.html#templates-and-macros-tldr	  TLDR	
-pragmas	yolowurl.html#pragmas	 pragmas	
-TLDR	yolowurl.html#pragmas-tldr	  TLDR	
+nimTitle	yolowurl	yolowurl.html	module yolowurl		0
+nim	poop1	yolowurl.html#poop1	var poop1		129
+nim	poop2	yolowurl.html#poop2	let poop2		130
+nim	poop3	yolowurl.html#poop3	const poop3		131
+nim	fac4	yolowurl.html#fac4	const fac4		136
+nim	`let`	yolowurl.html#let	let `let`		141
+nim	autoInt	yolowurl.html#autoInt	var autoInt		144
+nim	meaningOfLife	yolowurl.html#meaningOfLife,staticstring	proc meaningOfLife(question: static string): auto		152
+nim	typeSupportBlah	yolowurl.html#typeSupportBlah	var typeSupportBlah		168
+nim	d33pcopy	yolowurl.html#d33pcopy	var d33pcopy		184
+nim	myInt	yolowurl.html#myInt	var myInt		260
+nim	doubleFloat	yolowurl.html#doubleFloat,float	proc doubleFloat(x: float): float		262
+nim	Option	yolowurl.html#Option	object Option		272
+nim	aa	yolowurl.html#aa	let aa		278
+nim	bb	yolowurl.html#bb	let bb		279
+nim	get	yolowurl.html#get.c,Option[T]	converter get[T](x: Option[T]): T		282
+nim	toBool	yolowurl.html#toBool.c,int	converter toBool(x: int): bool		289
+nim	somevar	yolowurl.html#somevar	var somevar		294
+nim	othervar	yolowurl.html#othervar	var othervar		295
+nim	MyType	yolowurl.html#MyType	type MyType		301
+nim	instance	yolowurl.html#instance	var instance		302
+nim	xxx	yolowurl.html#xxx	let xxx		108
+nim	y	yolowurl.html#y	let y		109
+nim	z	yolowurl.html#z	let z		110
+nim	x1	yolowurl.html#x1	let x1		115
+nim	y1	yolowurl.html#y1	let y1		116
+nim	z1	yolowurl.html#z1	let z1		117
+nim	sum	yolowurl.html#sum	let sum		118
+nim	b	yolowurl.html#b	const b		122
+nim	c	yolowurl.html#c	const c		123
+nim	negint	yolowurl.html#negint	const negint		124
+nim	num0	yolowurl.html#num0	const num0		125
+nim	num1	yolowurl.html#num1	const num1		126
+nim	num2	yolowurl.html#num2	const num2		127
+nim	amilliamilliamilli	yolowurl.html#amilliamilliamilli	const amilliamilliamilli		128
+nim	e	yolowurl.html#e	const e		133
+nim	f	yolowurl.html#f	const f		134
+nim	num3	yolowurl.html#num3	const num3		141
+nim	num4	yolowurl.html#num4	const num4		142
+nim	num5	yolowurl.html#num5	const num5		143
+nim	g	yolowurl.html#g	const g		144
+nim	h	yolowurl.html#h	const h		145
+nim	i	yolowurl.html#i	const i		146
+nim	l	yolowurl.html#l	const l		147
+nim	m	yolowurl.html#m	const m		148
+nim	globalint	yolowurl.html#globalint	var globalint		156
+nim	globalfloat	yolowurl.html#globalfloat	var globalfloat		157
+nim	n	yolowurl.html#n	const n		170
+nim	o	yolowurl.html#o	const o		174
+nim	p	yolowurl.html#p	const p		178
+nim	msg	yolowurl.html#msg	var msg		185
+nim	poop6	yolowurl.html#poop6	let poop6		190
+nim	flush	yolowurl.html#flush	let flush		191
+nim	multiline	yolowurl.html#multiline	let multiline		192
+nim	globalstring	yolowurl.html#globalstring	var globalstring		201
+nim	whichVerse	yolowurl.html#whichVerse	var whichVerse		52
+nim	numCase	yolowurl.html#numCase	var numCase		65
+nim	positiveOrNegative	yolowurl.html#positiveOrNegative,int	proc positiveOrNegative(num: int): string		82
+nim	goodcode	yolowurl.html#goodcode	let goodcode		84
+nim	badcode	yolowurl.html#badcode	let badcode		86
+nim	GoodApplications	yolowurl.html#GoodApplications	object GoodApplications		89
+nim	LearningError	yolowurl.html#LearningError	object LearningError		107
+nim	neverThrows	yolowurl.html#neverThrows	proc neverThrows(): string		117
+nim	maybeThrows	yolowurl.html#maybeThrows,int	proc maybeThrows(x: int): int		121
+nim	err	yolowurl.html#err	var err		126
+nim	divBy0	yolowurl.html#divBy0	let divBy0		162
+nim	somethingStupid	yolowurl.html#somethingStupid	proc somethingStupid(): auto		171
+nim	loc`gensym26	yolowurl.html#loc`gensym26	const loc`gensym26		51
+nim	ploc`gensym26	yolowurl.html#ploc`gensym26	const ploc`gensym26		52
+nim	loc`gensym28	yolowurl.html#loc`gensym28	const loc`gensym28		51
+nim	ploc`gensym28	yolowurl.html#ploc`gensym28	const ploc`gensym28		52
+nim	loc`gensym30	yolowurl.html#loc`gensym30	const loc`gensym30		51
+nim	ploc`gensym30	yolowurl.html#ploc`gensym30	const ploc`gensym30		52
+nim	`...`	yolowurl.html#....i,T,T	iterator `...`[T](a: T; b: T): T		43
+nim	countTo	yolowurl.html#countTo.i,int	iterator countTo(n: int): int		52
+nim	mycount	yolowurl.html#mycount.i,int,int	iterator mycount(a, b: int): int		69
+nim	finishedIncorrect	yolowurl.html#finishedIncorrect	var finishedIncorrect		76
+nim	finishedCorrect	yolowurl.html#finishedCorrect	var finishedCorrect		81
+nim	intArr	yolowurl.html#intArr	let intArr		102
+nim	num6	yolowurl.html#num6	var num6		107
+nim	sniper	yolowurl.html#sniper	let sniper		24
+nim	stupidChar	yolowurl.html#stupidChar	var stupidChar		42
+nim	alreadyExecuted`gensym33	yolowurl.html#alreadyExecuted`gensym33	var alreadyExecuted`gensym33		2582
+nim	nums	yolowurl.html#nums	var nums		134
+nim	nums4	yolowurl.html#nums4	var nums4		135
+nim	rangeArr	yolowurl.html#rangeArr	var rangeArr		136
+nim	smun	yolowurl.html#smun	var smun		137
+nim	emptyArr	yolowurl.html#emptyArr	var emptyArr		138
+nim	arrayWithRange	yolowurl.html#arrayWithRange	var arrayWithRange		141
+nim	withArrParam	yolowurl.html#withArrParam,array[I,T]	proc withArrParam[I, T](a: array[I, T]): string		143
+nim	breakfast	yolowurl.html#breakfast	TimeToEat.breakfast		151
+nim	lunch	yolowurl.html#lunch	TimeToEat.lunch		151
+nim	dinner	yolowurl.html#dinner	TimeToEat.dinner		151
+nim	sweettooth	yolowurl.html#sweettooth	TimeToEat.sweettooth		151
+nim	TimeToEat	yolowurl.html#TimeToEat	enum TimeToEat		151
+nim	proteinshake	yolowurl.html#proteinshake	WhatToEat.proteinshake		153
+nim	ramen	yolowurl.html#ramen	WhatToEat.ramen		153
+nim	ramentWithMeet	yolowurl.html#ramentWithMeet	WhatToEat.ramentWithMeet		153
+nim	pnutbutteryjelly	yolowurl.html#pnutbutteryjelly	WhatToEat.pnutbutteryjelly		153
+nim	WhatToEat	yolowurl.html#WhatToEat	enum WhatToEat		153
+nim	Eating	yolowurl.html#Eating	type Eating		155
+nim	WeeklyFoodTracker	yolowurl.html#WeeklyFoodTracker	type WeeklyFoodTracker		156
+nim	MonthlyFoodTracker	yolowurl.html#MonthlyFoodTracker	type MonthlyFoodTracker		157
+nim	onSundayIAte	yolowurl.html#onSundayIAte	var onSundayIAte		159
+nim	lastWeek	yolowurl.html#lastWeek	var lastWeek		168
+nim	poops	yolowurl.html#poops	var poops		177
+nim	spoop	yolowurl.html#spoop	var spoop		178
+nim	emptySeq	yolowurl.html#emptySeq	var emptySeq		179
+nim	seqEmpty	yolowurl.html#seqEmpty	var seqEmpty		180
+nim	me	yolowurl.html#me	var me		191
+nim	globalseq	yolowurl.html#globalseq	var globalseq		196
+nim	democrats	yolowurl.html#democrats	GangsOfAmerica.democrats		203
+nim	republicans	yolowurl.html#republicans	GangsOfAmerica.republicans		203
+nim	politicians	yolowurl.html#politicians	GangsOfAmerica.politicians		203
+nim	GangsOfAmerica	yolowurl.html#GangsOfAmerica	enum GangsOfAmerica		203
+nim	PeopleOfAmerica	yolowurl.html#PeopleOfAmerica	enum PeopleOfAmerica		207
+nim	AA	yolowurl.html#AA_2	ExplicitEnum.AA		211
+nim	BB	yolowurl.html#BB_2	ExplicitEnum.BB		211
+nim	ExplicitEnum	yolowurl.html#ExplicitEnum	enum ExplicitEnum		211
+nim	north	yolowurl.html#north	Direction.north		230
+nim	east	yolowurl.html#east	Direction.east		230
+nim	south	yolowurl.html#south	Direction.south		230
+nim	west	yolowurl.html#west	Direction.west		230
+nim	Direction	yolowurl.html#Direction	enum Direction		230
+nim	off	yolowurl.html#off	BlinkLights.off		232
+nim	on	yolowurl.html#on	BlinkLights.on		232
+nim	slowBlink	yolowurl.html#slowBlink	BlinkLights.slowBlink		232
+nim	mediumBlink	yolowurl.html#mediumBlink	BlinkLights.mediumBlink		232
+nim	fastBlink	yolowurl.html#fastBlink	BlinkLights.fastBlink		232
+nim	BlinkLights	yolowurl.html#BlinkLights	enum BlinkLights		232
+nim	LevelSetting	yolowurl.html#LevelSetting	type LevelSetting		234
+nim	level	yolowurl.html#level	var level		236
+nim	lastFour	yolowurl.html#lastFour	const lastFour		247
+nim	lastOne	yolowurl.html#lastOne	const lastOne		248
+nim	MySubrange	yolowurl.html#MySubrange	type MySubrange		253
+nim	thisRange	yolowurl.html#thisRange	var thisRange		256
+nim	a	yolowurl.html#a	var a		268
+nim	bbb	yolowurl.html#bbb	var bbb		269
+nim	Opts	yolowurl.html#Opts	type Opts		277
+nim	IsOn	yolowurl.html#IsOn	type IsOn		278
+nim	simpleOpts	yolowurl.html#simpleOpts	let simpleOpts		280
+nim	onn	yolowurl.html#onn	let onn		281
+nim	offf	yolowurl.html#offf	let offf		282
+nim	flags	yolowurl.html#flags	let flags		283
+nim	MyFlag	yolowurl.html#MyFlag	enum MyFlag		288
+nim	MyFlags	yolowurl.html#MyFlags	type MyFlags		293
+nim	toNum	yolowurl.html#toNum,MyFlags	proc toNum(f: MyFlags): int		295
+nim	toFlags	yolowurl.html#toFlags,int	proc toFlags(v: int): MyFlags		296
+nim	globalset1	yolowurl.html#globalset1	var globalset1		306
+nim	globalset2	yolowurl.html#globalset2	var globalset2		307
+nim	globalset11	yolowurl.html#globalset11	var globalset11		315
+nim	globalarr	yolowurl.html#globalarr	var globalarr		328
+nim	pubfn	yolowurl.html#pubfn	proc pubfn(): void		55
+nim	eko	yolowurl.html#eko,string	proc eko(this = "Default value"): void		59
+nim	ekoGroups	yolowurl.html#ekoGroups,int,int,string,char	proc ekoGroups(a, b: int; c: string; d: char): void		66
+nim	passedByValue	yolowurl.html#passedByValue,string	proc passedByValue(x: string): void		73
+nim	xx	yolowurl.html#xx	let xx		77
+nim	copyThenMutateValue	yolowurl.html#copyThenMutateValue,string	proc copyThenMutateValue(x: string): void		81
+nim	zz	yolowurl.html#zz	var zz		88
+nim	passedByReference	yolowurl.html#passedByReference,string	proc passedByReference(yy: var string): void		89
+nim	redurn	yolowurl.html#redurn,string	proc redurn(this: string): string		94
+nim	mutate	yolowurl.html#mutate,int	proc mutate(this: var int): int		99
+nim	num7	yolowurl.html#num7	var num7		104
+nim	gg	yolowurl.html#gg	var gg		108
+nim	writeAccessToG	yolowurl.html#writeAccessToG	proc writeAccessToG(): var int		109
+nim	add5	yolowurl.html#add5,int	proc add5(num: int): int		116
+nim	allInts	yolowurl.html#allInts,int,int,int	proc allInts(x, y, z: int): int		123
+nim	str	yolowurl.html#str,string	proc str(s: string): string		136
+nim	`***`	yolowurl.html#***,int	proc `***`(i: int): auto		141
+nim	greet	yolowurl.html#greet,string	proc greet(name: string): string		151
+nim	bye	yolowurl.html#bye,string	proc bye(name: string): string		153
+nim	communicate	yolowurl.html#communicate,proc(string),string	proc communicate(greeting: proc (x: string): string; name: string)		155
+nim	fruits	yolowurl.html#fruits	var fruits		163
+nim	capitals	yolowurl.html#capitals	var capitals		164
+nim	openArraySize	yolowurl.html#openArraySize,openArray[string]	proc openArraySize(oa: openArray[string]): int		170
+nim	eko_all	yolowurl.html#eko_all,varargs[string]	proc eko_all(s: varargs[string])		182
+nim	eko_anything	yolowurl.html#eko_anything,varargs[string,]	proc eko_anything(s: varargs[string, `$`])		191
+nim	poop	yolowurl.html#poop	proc poop(): string		197
+nim	runFn	yolowurl.html#runFn,string,proc(string)	proc runFn(a: string; fn: proc (x: string): string): string		205
+nim	myTable	yolowurl.html#myTable	var myTable		147
+nim	NirvStack	yolowurl.html#NirvStack	tuple NirvStack		156
+nim	StackNirv	yolowurl.html#StackNirv	tuple StackNirv		160
+nim	hardCoreStack	yolowurl.html#hardCoreStack	var hardCoreStack		163
+nim	newCoreStack	yolowurl.html#newCoreStack	var newCoreStack		165
+nim	js	yolowurl.html#js	let js		168
+nim	sj	yolowurl.html#sj	var sj		171
+nim	bizDevOps	yolowurl.html#bizDevOps	var bizDevOps		176
+nim	bizRating	yolowurl.html#bizRating	let bizRating		181
+nim	first	yolowurl.html#first	let first		183
+nim	aaa	yolowurl.html#aaa	let aaa		188
+nim	BigMoney	yolowurl.html#BigMoney	type BigMoney		197
+nim	StrOrInt	yolowurl.html#StrOrInt	type StrOrInt		200
+nim	thizString	yolowurl.html#thizString	let thizString		201
+nim	thisInt	yolowurl.html#thisInt	let thisInt		202
+nim	BiggerMoney	yolowurl.html#BiggerMoney	type BiggerMoney		208
+nim	BiggestMoney	yolowurl.html#BiggestMoney	type BiggestMoney		209
+nim	PrivatePoop	yolowurl.html#PrivatePoop	object PrivatePoop		217
+nim	PublicPoop	yolowurl.html#PublicPoop	object PublicPoop		220
+nim	ipoop	yolowurl.html#ipoop	let ipoop		223
+nim	upoop	yolowurl.html#upoop	let upoop		224
+nim	everyonepoop	yolowurl.html#everyonepoop	let everyonepoop		225
+nim	Someone	yolowurl.html#Someone	object Someone		231
+nim	noah	yolowurl.html#noah	var noah		235
+nim	you	yolowurl.html#you	let you		240
+nim	SomeObj	yolowurl.html#SomeObj	object SomeObj		248
+nim	prv=	yolowurl.html#prv=,SomeObj,string	proc prv=(x: var SomeObj; v: string)		253
+nim	prv	yolowurl.html#prv,SomeObj	proc prv(x: SomeObj): string		255
+nim	myobj	yolowurl.html#myobj	var myobj		257
+nim	Vector	yolowurl.html#Vector	object Vector		265
+nim	`[]=`	yolowurl.html#[]=,Vector,int,float	proc `[]=`(v: var Vector; i: int; value: float)		269
+nim	`[]`	yolowurl.html#[],Vector,int	proc `[]`(v: Vector; i: int): float		276
+nim	people	yolowurl.html#people	let people		291
+nim	SomeoneRef	yolowurl.html#SomeoneRef	type SomeoneRef		298
+nim	OrRefObject	yolowurl.html#OrRefObject	type OrRefObject		299
+nim	people2	yolowurl.html#people2	let people2		301
+nim	WhoPoop	yolowurl.html#WhoPoop	type WhoPoop		313
+nim	YouPoop	yolowurl.html#YouPoop	type YouPoop		315
+nim	IPoop	yolowurl.html#IPoop_2	type IPoop		316
+nim	did_i_poop	yolowurl.html#did_i_poop,WhoPoop	proc did_i_poop(self: WhoPoop): string		319
+nim	didipoop	yolowurl.html#didipoop,YouPoop	proc didipoop(self: YouPoop): string		321
+nim	dIdIpOoP	yolowurl.html#dIdIpOoP,IPoop	proc dIdIpOoP(self: IPoop): string		323
+nim	sherlockpoops	yolowurl.html#sherlockpoops	var sherlockpoops		330
+nim	Expression	yolowurl.html#Expression	type Expression		344
+nim	Literal	yolowurl.html#Literal	type Literal		345
+nim	PlusExpr	yolowurl.html#PlusExpr	type PlusExpr		347
+nim	eval	yolowurl.html#eval.e,Expression	method eval(e: Expression): int		351
+nim	eval	yolowurl.html#eval.e,Literal	method eval(e: Literal): int		355
+nim	eval	yolowurl.html#eval.e,PlusExpr	method eval(e: PlusExpr): int		356
+nim	newLit	yolowurl.html#newLit,int	proc newLit(x: int): Literal		358
+nim	newPlus	yolowurl.html#newPlus,Expression,Expression	proc newPlus(a, b: Expression): PlusExpr		359
+nim	Thing	yolowurl.html#Thing	type Thing		367
+nim	Unit	yolowurl.html#Unit	type Unit		368
+nim	collide	yolowurl.html#collide.e,Thing,Thing	method collide(a, b: Thing)		371
+nim	collide	yolowurl.html#collide.e,Thing,Unit	method collide(a: Thing; b: Unit)		374
+nim	collide	yolowurl.html#collide.e,Unit,Thing	method collide(a: Unit; b: Thing)		377
+nim	aaaa	yolowurl.html#aaaa	var aaaa		380
+nim	bbbb	yolowurl.html#bbbb	var bbbb		380
+nim	nkInt	yolowurl.html#nkInt	NodeKind.nkInt		391
+nim	nkFloat	yolowurl.html#nkFloat	NodeKind.nkFloat		391
+nim	nkString	yolowurl.html#nkString	NodeKind.nkString		391
+nim	nkAdd	yolowurl.html#nkAdd	NodeKind.nkAdd		391
+nim	nkSub	yolowurl.html#nkSub	NodeKind.nkSub		391
+nim	nkIf	yolowurl.html#nkIf	NodeKind.nkIf		391
+nim	NodeKind	yolowurl.html#NodeKind	enum NodeKind		391
+nim	Node2	yolowurl.html#Node2	type Node2		398
+nim	myFloat	yolowurl.html#myFloat	var myFloat		408
+nim	Node	yolowurl.html#Node	type Node		418
+nim	Sym	yolowurl.html#Sym	object Sym		422
+nim	wtf	yolowurl.html#wtf,T	proc wtf[T](a: T): auto		436
+nim	foo	yolowurl.html#foo,T	proc foo[T](i: T)		447
+nim	ii	yolowurl.html#ii	var ii		449
+nim	myRecord	yolowurl.html#myRecord	var myRecord		457
+nim	OtherRecord	yolowurl.html#OtherRecord	tuple OtherRecord		460
+nim	RecordType	yolowurl.html#RecordType	type RecordType		465
+nim	printFields	yolowurl.html#printFields,T	proc printFields[T: RecordType](rec: T)		468
+nim	utherRecord	yolowurl.html#utherRecord	var utherRecord		472
+nim	fieldsPrint	yolowurl.html#fieldsPrint,T,T	proc fieldsPrint[T: distinct tuple | object](first, second: T)		480
+nim	declareVariableWithType	yolowurl.html#declareVariableWithType.t,typedesc,typedesc	template declareVariableWithType(T: typedesc; value: T:type)		486
+nim	x`gensym185	yolowurl.html#x`gensym185	var x`gensym185		487
+nim	entireFile	yolowurl.html#entireFile	let entireFile		72
+nim	readFile	yolowurl.html#readFile	proc readFile(): string		80
+nim	tmpfile	yolowurl.html#tmpfile	const tmpfile		87
+nim	writeLines	yolowurl.html#writeLines,seq[string]	proc writeLines(s: seq[string]): void		92
+nim	buildInfo	yolowurl.html#buildInfo	const buildInfo		108
+nim	`!=`	yolowurl.html#!=.t,untyped,untyped	template `!=`(a, b: untyped): untyped		27
+nim	loc`gensym190	yolowurl.html#loc`gensym190	const loc`gensym190		51
+nim	ploc`gensym190	yolowurl.html#ploc`gensym190	const ploc`gensym190		52
+nim	debug	yolowurl.html#debug	const debug		35
+nim	xy	yolowurl.html#xy	var xy		36
+nim	log_eager	yolowurl.html#log_eager,string	proc log_eager(msg: string)		38
+nim	log_lazy	yolowurl.html#log_lazy.t,string	template log_lazy(msg: string)		42
+nim	blockRunner	yolowurl.html#blockRunner.t,bool,untyped	template blockRunner(please: bool; body: untyped): void		51
+nim	theyAskedNickely`gensym192	yolowurl.html#theyAskedNickely`gensym192	let theyAskedNickely`gensym192		52
+nim	theyAskedNickely`gensym193	yolowurl.html#theyAskedNickely`gensym193	let theyAskedNickely`gensym193		52
+nimgrp	collide	yolowurl.html#collide-methods-all	method		371
+nimgrp	eval	yolowurl.html#eval-methods-all	method		351
+heading	yolo wurl: basic nim syntax	yolowurl.html#yolo-wurlcolon-basic-nim-syntax	 yolo wurl: basic nim syntax		0
+heading	TLDR	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-tldr	  TLDR		0
+heading	useful links	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-useful-links	  useful links		0
+heading	the road to code	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-the-road-to-code	  the road to code		0
+heading	std library	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-std-library	  std library		0
+heading	style guide & best practices	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-style-guide-amp-best-practices	  style guide &amp; best practices		0
+heading	modules	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-modules	  modules		0
+heading	import	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-import	  import		0
+heading	include:	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-includecolon	  include:		0
+heading	export	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-export	  export		0
+heading	packages	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-packages	  packages		0
+heading	operators	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-operators	  operators		0
+heading	keywords	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-keywords	  keywords		0
+heading	statements	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-statements	  statements		0
+heading	expressions	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-expressions	  expressions		0
+heading	visibility	yolowurl.html#visibility	 visibility		0
+heading	variables and globals	yolowurl.html#variables-and-globals	 variables and globals		0
+heading	TLDR	yolowurl.html#variables-and-globals-tldr	  TLDR		0
+heading	var	yolowurl.html#variables-and-globals-var	  var		0
+heading	let	yolowurl.html#variables-and-globals-let	  let		0
+heading	const	yolowurl.html#variables-and-globals-const	  const		0
+heading	static	yolowurl.html#variables-and-globals-static	  static		0
+heading	eval	yolowurl.html#variables-and-globals-eval	  eval		0
+heading	stropping	yolowurl.html#variables-and-globals-stropping	  stropping		0
+heading	auto	yolowurl.html#variables-and-globals-auto	  auto		0
+heading	type casts	yolowurl.html#variables-and-globals-type-casts	  type casts		0
+heading	type coercions	yolowurl.html#variables-and-globals-type-coercions	  type coercions		0
+heading	type inspection	yolowurl.html#variables-and-globals-type-inspection	  type inspection		0
+heading	echo/repr	yolowurl.html#variables-and-globals-echoslashrepr	  echo/repr		0
+heading	simple types	yolowurl.html#simple-types	 simple types		0
+heading	branching: if when case	yolowurl.html#branchingcolon-if-when-case	 branching: if when case		0
+heading	TLDR	yolowurl.html#branchingcolon-if-when-case-tldr	  TLDR		0
+heading	todos	yolowurl.html#branchingcolon-if-when-case-todos	  todos		0
+heading	when	yolowurl.html#branchingcolon-if-when-case-when	  when		0
+heading	case	yolowurl.html#branchingcolon-if-when-case-case	  case		0
+heading	exception handling, debugging (todo), documentation	yolowurl.html#exception-handling-debugging-todo-documentation	 exception handling, debugging (todo), documentation		0
+heading	TLDR	yolowurl.html#exception-handling-debugging-todo-documentation-tldr	  TLDR		0
+heading	Exception Handling	yolowurl.html#exception-handling-debugging-todo-documentation-exception-handling	  Exception Handling		0
+heading	Defect types	yolowurl.html#exception-handling-debugging-todo-documentation-defect-types	  Defect types		0
+heading	Error (exception) types	yolowurl.html#exception-handling-debugging-todo-documentation-error-exception-types	  Error (exception) types		0
+heading	doc syntax	yolowurl.html#exception-handling-debugging-todo-documentation-doc-syntax	  doc syntax		0
+heading	loops and iterators	yolowurl.html#loops-and-iterators	 loops and iterators		0
+heading	TLDR	yolowurl.html#loops-and-iterators-tldr	  TLDR		0
+heading	todos	yolowurl.html#loops-and-iterators-todos	  todos		0
+heading	links	yolowurl.html#loops-and-iterators-links	  links		0
+heading	loop/iterator related procs	yolowurl.html#loops-and-iterators-loopslashiterator-related-procs	  loop/iterator related procs		0
+heading	iterators	yolowurl.html#loops-and-iterators-iterators	  iterators		0
+heading	blocks	yolowurl.html#blocks	 blocks		0
+heading	TLDR	yolowurl.html#blocks-tldr	  TLDR		0
+heading	do blocks	yolowurl.html#blocks-do-blocks	  do blocks		0
+heading	once blocks	yolowurl.html#blocks-once-blocks	  once blocks		0
+heading	ordinals and structured	yolowurl.html#ordinals-and-structured	 ordinals and structured		0
+heading	TLDR	yolowurl.html#ordinals-and-structured-tldr	  TLDR		0
+heading	links	yolowurl.html#ordinals-and-structured-links	  links		0
+heading	arrays	yolowurl.html#ordinals-and-structured-arrays	  arrays		0
+heading	set	yolowurl.html#ordinals-and-structured-set	  set		0
+heading	sequence	yolowurl.html#ordinals-and-structured-sequence	  sequence		0
+heading	enum	yolowurl.html#ordinals-and-structured-enum	  enum		0
+heading	range	yolowurl.html#ordinals-and-structured-range	  range		0
+heading	slice	yolowurl.html#ordinals-and-structured-slice	  slice		0
+heading	ordinals/structured interface	yolowurl.html#ordinals-and-structured-ordinalsslashstructured-interface	  ordinals/structured interface		0
+heading	routines	yolowurl.html#routines	 routines		0
+heading	TLDR	yolowurl.html#routines-tldr	  TLDR		0
+heading	procedures	yolowurl.html#routines-procedures	  procedures		0
+heading	openArray	yolowurl.html#routines-openarray	  openArray		0
+heading	varargs	yolowurl.html#routines-varargs	  varargs		0
+heading	funcs	yolowurl.html#routines-funcs	  funcs		0
+heading	closures	yolowurl.html#routines-closures	  closures		0
+heading	anonymous procs	yolowurl.html#routines-anonymous-procs	  anonymous procs		0
+heading	tuples, objects and tables	yolowurl.html#tuples-objects-and-tables	 tuples, objects and tables		0
+heading	TLDR	yolowurl.html#tuples-objects-and-tables-tldr	  TLDR		0
+heading	tuples	yolowurl.html#tuples-objects-and-tables-tuples	  tuples		0
+heading	objects	yolowurl.html#tuples-objects-and-tables-objects	  objects		0
+heading	type aliases	yolowurl.html#tuples-objects-and-tables-type-aliases	  type aliases		0
+heading	type aliases (distinct)	yolowurl.html#tuples-objects-and-tables-type-aliases-distinct	  type aliases (distinct)		0
+heading	table	yolowurl.html#tuples-objects-and-tables-table	  table		0
+heading	ref	yolowurl.html#tuples-objects-and-tables-ref	  ref		0
+heading	ptr	yolowurl.html#tuples-objects-and-tables-ptr	  ptr		0
+heading	ref/pter procs	yolowurl.html#tuples-objects-and-tables-refslashpter-procs	  ref/pter procs		0
+heading	inheritance (ref/ptr)	yolowurl.html#tuples-objects-and-tables-inheritance-refslashptr	  inheritance (ref/ptr)		0
+heading	dynamic dispatch	yolowurl.html#tuples-objects-and-tables-dynamic-dispatch	  dynamic dispatch		0
+heading	multi-methods	yolowurl.html#tuples-objects-and-tables-multiminusmethods	  multi-methods		0
+heading	metatypes	yolowurl.html#tuples-objects-and-tables-metatypes	  metatypes		0
+heading	type bound operators	yolowurl.html#tuples-objects-and-tables-type-bound-operators	  type bound operators		0
+heading	variants	yolowurl.html#tuples-objects-and-tables-variants	  variants		0
+heading	recursive types	yolowurl.html#tuples-objects-and-tables-recursive-types	  recursive types		0
+heading	type classes	yolowurl.html#tuples-objects-and-tables-type-classes	  type classes		0
+heading	typedesc	yolowurl.html#tuples-objects-and-tables-typedesc	  typedesc		0
+heading	os, io and files	yolowurl.html#os-io-and-files	 os, io and files		0
+heading	TLDR	yolowurl.html#os-io-and-files-tldr	  TLDR		0
+heading	os/io/file procs i think these are todo	yolowurl.html#os-io-and-files-osslashioslashfile-procs-i-think-these-are-todo	  os/io/file procs i think these are todo		0
+heading	FileMode	yolowurl.html#os-io-and-files-filemode	  FileMode		0
+heading	templates and macros	yolowurl.html#templates-and-macros	 templates and macros		0
+heading	TLDR	yolowurl.html#templates-and-macros-tldr	  TLDR		0
+heading	pragmas	yolowurl.html#pragmas	 pragmas		0
+heading	TLDR	yolowurl.html#pragmas-tldr	  TLDR		0
