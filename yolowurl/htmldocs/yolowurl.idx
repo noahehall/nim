@@ -256,6 +256,7 @@ utherRecord	yolowurl.html#utherRecord	yolowurl: utherRecord
 fieldsPrint	yolowurl.html#fieldsPrint,T,T	yolowurl: fieldsPrint[T: distinct tuple | object](first, second: T)	
 declareVariableWithType	yolowurl.html#declareVariableWithType.t,typedesc,typedesc	yolowurl: declareVariableWithType(T: typedesc; value: T:type)	
 x`gensym41	yolowurl.html#x`gensym41	yolowurl: x`gensym41	
+srcPath	yolowurl.html#srcPath	yolowurl: srcPath	
 yoloWurlReadme	yolowurl.html#yoloWurlReadme	yolowurl: yoloWurlReadme	
 entireFile	yolowurl.html#entireFile	yolowurl: entireFile	
 first5Lines	yolowurl.html#first5Lines	yolowurl: first5Lines	
@@ -264,15 +265,15 @@ tmpfile	yolowurl.html#tmpfile	yolowurl: tmpfile
 writeLines	yolowurl.html#writeLines,seq[string]	yolowurl: writeLines(s: seq[string]): void	
 buildInfo	yolowurl.html#buildInfo	yolowurl: buildInfo	
 `!=`	yolowurl.html#!=.t,untyped,untyped	yolowurl: `!=`(a, b: untyped): untyped	
-loc`gensym48	yolowurl.html#loc`gensym48	yolowurl: loc`gensym48	
-ploc`gensym48	yolowurl.html#ploc`gensym48	yolowurl: ploc`gensym48	
+loc`gensym49	yolowurl.html#loc`gensym49	yolowurl: loc`gensym49	
+ploc`gensym49	yolowurl.html#ploc`gensym49	yolowurl: ploc`gensym49	
 debug	yolowurl.html#debug	yolowurl: debug	
 xy	yolowurl.html#xy	yolowurl: xy	
 log_eager	yolowurl.html#log_eager,string	yolowurl: log_eager(msg: string)	
 log_lazy	yolowurl.html#log_lazy.t,string	yolowurl: log_lazy(msg: string)	
 blockRunner	yolowurl.html#blockRunner.t,bool,untyped	yolowurl: blockRunner(please: bool; body: untyped): void	
-theyAskedNickely`gensym50	yolowurl.html#theyAskedNickely`gensym50	yolowurl: theyAskedNickely`gensym50	
 theyAskedNickely`gensym51	yolowurl.html#theyAskedNickely`gensym51	yolowurl: theyAskedNickely`gensym51	
+theyAskedNickely`gensym52	yolowurl.html#theyAskedNickely`gensym52	yolowurl: theyAskedNickely`gensym52	
 yolo wurl: basic nim syntax	yolowurl.html#yolo-wurlcolon-basic-nim-syntax	 yolo wurl: basic nim syntax	
 TLDR	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-tldr	  TLDR	
 useful links	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-useful-links	  useful links	
@@ -372,7 +373,6 @@ type classes	yolowurl.html#tuples-objects-and-tables-type-classes	  type classes
 typedesc	yolowurl.html#tuples-objects-and-tables-typedesc	  typedesc	
 os, io	yolowurl.html#os-io	 os, io	
 TLDR	yolowurl.html#os-io-tldr	  TLDR	
-os/io/file procs i think these are todo	yolowurl.html#os-io-osslashioslashfile-procs-i-think-these-are-todo	  os/io/file procs i think these are todo	
 os vars/procs/etc	yolowurl.html#os-io-os-varsslashprocsslashetc	  os vars/procs/etc	
 io vars/procs/etc	yolowurl.html#os-io-io-varsslashprocsslashetc	  io vars/procs/etc	
 templates and macros	yolowurl.html#templates-and-macros	 templates and macros	
