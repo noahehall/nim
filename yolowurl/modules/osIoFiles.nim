@@ -2,7 +2,7 @@
 ## os, io and files
 ## ================
 
-#[
+##[
 ## TLDR
 - didnt finish this section, come back later
 
@@ -17,13 +17,7 @@ todos
 - macros.getProjectPath()
 - getCurrentDir proc
 
-]#
-
-
-type MessageWhatev = ref object of RootObj
-  iam: string
-
-var someMsg: MessageWhatev = MessageWhatev(iam: "lost in learning nim, but slowing starting to understand")
+]##
 
 echo "############################ io"
 # no clue why we need to add the dir

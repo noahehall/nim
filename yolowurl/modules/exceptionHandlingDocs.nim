@@ -10,14 +10,24 @@
   - system.Exception provides the interface
   - have to be allocated on the heap (var) because their lifetime is unknown
 
-## Exception Handling
-- [exception hierarchy doc](https://nim-lang.org/docs/manual.html#exception-handling-exception-hierarchy)
-- [system exceptions you can extend from](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim)
-- [status exception handling docs](https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling)
-- [segfaults module](https://nim-lang.org/docs/segfaults.html)
-- [defect doc](https://nim-lang.org/docs/system.html#Defect)
-- [exception doc](https://nim-lang.org/docs/system.html#Exception)
+todos
+- reread the assertion docs and capture the info
 
+links
+- [assertions](https://nim-lang.org/docs/assertions.html)
+- [defect doc](https://nim-lang.org/docs/system.html#Defect)
+- [docgen](https://nim-lang.org/docs/docgen.html)
+- [drnim](https://nim-lang.org/docs/drnim.html)
+- [embedding runnable examples](https://nim-lang.org/docs/system.html#runnableExamples%2Cstring%2Cuntyped)
+- [exception doc](https://nim-lang.org/docs/system.html#Exception)
+- [exception hierarchy doc](https://nim-lang.org/docs/manual.html#exception-handling-exception-hierarchy)
+- [nim reStructuredText & markdown](https://nim-lang.org/docs/rst.html)
+- [segfaults module](https://nim-lang.org/docs/segfaults.html)
+- [status exception handling docs](https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling)
+- [system exceptions you can extend from](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim)
+- [use this restructuredText wiki](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
+
+## Exception Handling
 - interesting stuff
   - getStackTrace() only works for debug builds
   - getStackTrace(e) of a specific exception
@@ -57,13 +67,6 @@
 - OSError operating system service failure
 - ResourceExhaustedError when resource request cant be fulfilled
 - ValueError string/object conversion
-
-## Documentation
-- [embedding runnable examples](https://nim-lang.org/docs/system.html#runnableExamples%2Cstring%2Cuntyped)
-- [docgen](https://nim-lang.org/docs/docgen.html)
-- [drnim](https://nim-lang.org/docs/drnim.html)
-- [use this restructuredText wiki](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
-- [nim reStructuredText & markdown](https://nim-lang.org/docs/rst.html)
 
 ## doc syntax
 - starting a line with ## creates a title that appears in the left sidebar

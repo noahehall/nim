@@ -256,8 +256,6 @@ utherRecord	yolowurl.html#utherRecord	yolowurl: utherRecord
 fieldsPrint	yolowurl.html#fieldsPrint,T,T	yolowurl: fieldsPrint[T: distinct tuple | object](first, second: T)	
 declareVariableWithType	yolowurl.html#declareVariableWithType.t,typedesc,typedesc	yolowurl: declareVariableWithType(T: typedesc; value: T:type)	
 x`gensym40	yolowurl.html#x`gensym40	yolowurl: x`gensym40	
-MessageWhatev	yolowurl.html#MessageWhatev	yolowurl: MessageWhatev	
-someMsg	yolowurl.html#someMsg	yolowurl: someMsg	
 entireFile	yolowurl.html#entireFile	yolowurl: entireFile	
 readFile	yolowurl.html#readFile	yolowurl: readFile(): string	
 tmpfile	yolowurl.html#tmpfile	yolowurl: tmpfile	
@@ -313,7 +311,6 @@ TLDR	yolowurl.html#exception-handling-debugging-todo-documentation-tldr	  TLDR
 Exception Handling	yolowurl.html#exception-handling-debugging-todo-documentation-exception-handling	  Exception Handling	
 Defect types	yolowurl.html#exception-handling-debugging-todo-documentation-defect-types	  Defect types	
 Error (exception) types	yolowurl.html#exception-handling-debugging-todo-documentation-error-exception-types	  Error (exception) types	
-Documentation	yolowurl.html#exception-handling-debugging-todo-documentation-documentation	  Documentation	
 doc syntax	yolowurl.html#exception-handling-debugging-todo-documentation-doc-syntax	  doc syntax	
 loops and iterators	yolowurl.html#loops-and-iterators	 loops and iterators	
 TLDR	yolowurl.html#loops-and-iterators-tldr	  TLDR	
@@ -363,6 +360,8 @@ recursive types	yolowurl.html#tuples-objects-and-tables-recursive-types	  recurs
 type classes	yolowurl.html#tuples-objects-and-tables-type-classes	  type classes	
 typedesc	yolowurl.html#tuples-objects-and-tables-typedesc	  typedesc	
 os, io and files	yolowurl.html#os-io-and-files	 os, io and files	
+TLDR	yolowurl.html#os-io-and-files-tldr	  TLDR	
+os/io/file procs i think these are todo	yolowurl.html#os-io-and-files-osslashioslashfile-procs-i-think-these-are-todo	  os/io/file procs i think these are todo	
 templates and macros	yolowurl.html#templates-and-macros	 templates and macros	
 TLDR	yolowurl.html#templates-and-macros-tldr	  TLDR	
 pragmas	yolowurl.html#pragmas	 pragmas	
