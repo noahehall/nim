@@ -19,6 +19,9 @@ todos
   outOfMemHook (var) override default behavior: write err msg then terminate (see docs for example)
   unhandledExceptionHook (var) override default behavior: write err msg then terminate
   localRaiseHook: same as globalRaiseHook but on a thread local level
+    globalRaiseHook (var) influence exception handling on a global level
+    ^ if not nil, every raise statement calls this hook
+    ^ if returns false, exception is caught and does not propagate
 
 links
 - [assertions](https://nim-lang.org/docs/assertions.html)

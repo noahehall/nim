@@ -16,9 +16,6 @@ todos
   # probably need a memory_mgmt.nim file
   # skipped everything in this section
   # but they look intersting
-  globalRaiseHook (var) influence exception handling on a global level
-  ^ if not nil, every raise statement calls this hook
-  ^ if returns false, exception is caught and does not propagate
   addAndFetch doesnt have a description
   copyMem copies content from memory at source to memory at dest
   compileOption(x[, y]) check if a switch is active and/or its value at compile time

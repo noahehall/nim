@@ -7,7 +7,7 @@
     - https://nim-lang.org/docs/channels_builtin.html (system)
     - https://nim-lang.org/docs/coro.html
     - https://nim-lang.org/docs/manual_experimental.html#parallel-amp-spawn
-    - https://nim-lang.org/docs/streams.html
+    - https://nim-lang.org/docs/streams.html # probably should be in os/io
     - https://nim-lang.org/docs/threadpool.html
     - https://nim-lang.org/docs/threads.html (system)
     - https://peterme.net/asynchronous-programming-in-nim.html
