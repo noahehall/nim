@@ -20,6 +20,7 @@ internal links
 
 ## useful links
 - [nim by example](nim-by-example.github.io)
+- [nimlang api design](https://nim-lang.org/docs/apis.html)
 - [nimlang manual](https://nim-lang.org/docs/manual.html)
 - [official nimlang tut1 (theres 3)](https://nim-lang.org/docs/tut1.html)
 - [reStructured Text cheatsheet](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
@@ -74,7 +75,7 @@ internal links
 
 ## style guide & best practices
 
-idiomatic nim (from docs/styleguide),
+idiomatic nim (from docs/styleguide)
 - always qualify the imports from std, e.g. std/os and std/[os, posix]
 - any tuple/proc/type signature longer than 1 line should have their parameters aligned with the one above it
 - cast > type conversion to force the compiler to reinterpret the bit pattern (docs)
@@ -131,6 +132,7 @@ my preferences thus far
 - refrain from using blah% operators they tend to be legacy, see https://github.com/nirv-ai/docs/issues/50
 - always compile with --panics:on (manual: smaller binaries + optimizations)
 - dont use any unsafe language features or disable runtime checks (manual: removes possibility of unchecked runtime errs)
+- follow nimlangs API naming scheme
 
 ## modules
 - generally 1 file == 1 module
