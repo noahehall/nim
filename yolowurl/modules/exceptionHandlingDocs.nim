@@ -9,6 +9,7 @@
 - raise keyword the only way to raise (throw) an exception
   - system.Exception provides the interface
   - have to be allocated on the heap (var) because their lifetime is unknown
+- i think docgen pretty prints the code in the html; so thats cool
 
 todos
 - reread the assertion docs and capture the info

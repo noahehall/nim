@@ -79,7 +79,7 @@ intArr	yolowurl.html#intArr	yolowurl: intArr
 num6	yolowurl.html#num6	yolowurl: num6	
 sniper	yolowurl.html#sniper	yolowurl: sniper	
 stupidChar	yolowurl.html#stupidChar	yolowurl: stupidChar	
-alreadyExecuted`gensym17	yolowurl.html#alreadyExecuted`gensym17	yolowurl: alreadyExecuted`gensym17	
+alreadyExecuted`gensym18	yolowurl.html#alreadyExecuted`gensym18	yolowurl: alreadyExecuted`gensym18	
 nums	yolowurl.html#nums	yolowurl: nums	
 nums4	yolowurl.html#nums4	yolowurl: nums4	
 rangeArr	yolowurl.html#rangeArr	yolowurl: rangeArr	
@@ -255,22 +255,24 @@ printFields	yolowurl.html#printFields,T	yolowurl: printFields[T: RecordType](rec
 utherRecord	yolowurl.html#utherRecord	yolowurl: utherRecord	
 fieldsPrint	yolowurl.html#fieldsPrint,T,T	yolowurl: fieldsPrint[T: distinct tuple | object](first, second: T)	
 declareVariableWithType	yolowurl.html#declareVariableWithType.t,typedesc,typedesc	yolowurl: declareVariableWithType(T: typedesc; value: T:type)	
-x`gensym40	yolowurl.html#x`gensym40	yolowurl: x`gensym40	
+x`gensym41	yolowurl.html#x`gensym41	yolowurl: x`gensym41	
+yoloWurlReadme	yolowurl.html#yoloWurlReadme	yolowurl: yoloWurlReadme	
 entireFile	yolowurl.html#entireFile	yolowurl: entireFile	
+first5Lines	yolowurl.html#first5Lines	yolowurl: first5Lines	
 readFile	yolowurl.html#readFile	yolowurl: readFile(): string	
 tmpfile	yolowurl.html#tmpfile	yolowurl: tmpfile	
 writeLines	yolowurl.html#writeLines,seq[string]	yolowurl: writeLines(s: seq[string]): void	
 buildInfo	yolowurl.html#buildInfo	yolowurl: buildInfo	
 `!=`	yolowurl.html#!=.t,untyped,untyped	yolowurl: `!=`(a, b: untyped): untyped	
-loc`gensym45	yolowurl.html#loc`gensym45	yolowurl: loc`gensym45	
-ploc`gensym45	yolowurl.html#ploc`gensym45	yolowurl: ploc`gensym45	
+loc`gensym48	yolowurl.html#loc`gensym48	yolowurl: loc`gensym48	
+ploc`gensym48	yolowurl.html#ploc`gensym48	yolowurl: ploc`gensym48	
 debug	yolowurl.html#debug	yolowurl: debug	
 xy	yolowurl.html#xy	yolowurl: xy	
 log_eager	yolowurl.html#log_eager,string	yolowurl: log_eager(msg: string)	
 log_lazy	yolowurl.html#log_lazy.t,string	yolowurl: log_lazy(msg: string)	
 blockRunner	yolowurl.html#blockRunner.t,bool,untyped	yolowurl: blockRunner(please: bool; body: untyped): void	
-theyAskedNickely`gensym47	yolowurl.html#theyAskedNickely`gensym47	yolowurl: theyAskedNickely`gensym47	
-theyAskedNickely`gensym48	yolowurl.html#theyAskedNickely`gensym48	yolowurl: theyAskedNickely`gensym48	
+theyAskedNickely`gensym50	yolowurl.html#theyAskedNickely`gensym50	yolowurl: theyAskedNickely`gensym50	
+theyAskedNickely`gensym51	yolowurl.html#theyAskedNickely`gensym51	yolowurl: theyAskedNickely`gensym51	
 yolo wurl: basic nim syntax	yolowurl.html#yolo-wurlcolon-basic-nim-syntax	 yolo wurl: basic nim syntax	
 TLDR	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-tldr	  TLDR	
 useful links	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-useful-links	  useful links	
@@ -368,11 +370,11 @@ variants	yolowurl.html#tuples-objects-and-tables-variants	  variants
 recursive types	yolowurl.html#tuples-objects-and-tables-recursive-types	  recursive types	
 type classes	yolowurl.html#tuples-objects-and-tables-type-classes	  type classes	
 typedesc	yolowurl.html#tuples-objects-and-tables-typedesc	  typedesc	
-os, io and files	yolowurl.html#os-io-and-files	 os, io and files	
-TLDR	yolowurl.html#os-io-and-files-tldr	  TLDR	
-os/io/file procs i think these are todo	yolowurl.html#os-io-and-files-osslashioslashfile-procs-i-think-these-are-todo	  os/io/file procs i think these are todo	
-os vars/procs/etc	yolowurl.html#os-io-and-files-os-varsslashprocsslashetc	  os vars/procs/etc	
-io vars/procs/etc	yolowurl.html#os-io-and-files-io-varsslashprocsslashetc	  io vars/procs/etc	
+os, io	yolowurl.html#os-io	 os, io	
+TLDR	yolowurl.html#os-io-tldr	  TLDR	
+os/io/file procs i think these are todo	yolowurl.html#os-io-osslashioslashfile-procs-i-think-these-are-todo	  os/io/file procs i think these are todo	
+os vars/procs/etc	yolowurl.html#os-io-os-varsslashprocsslashetc	  os vars/procs/etc	
+io vars/procs/etc	yolowurl.html#os-io-io-varsslashprocsslashetc	  io vars/procs/etc	
 templates and macros	yolowurl.html#templates-and-macros	 templates and macros	
 TLDR	yolowurl.html#templates-and-macros-tldr	  TLDR	
 pragmas	yolowurl.html#pragmas	 pragmas	

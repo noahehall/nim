@@ -1,6 +1,6 @@
 ##
-## os, io and files
-## ================
+## os, io
+## ======
 
 ##[
 ## TLDR
@@ -27,7 +27,7 @@ todos
     # "i386", "alpha", "powerpc", "powerpc64",
     # "powerpc64el", "sparc", "amd64", "mips",
     # "mipsel", "arm", "arm64", "mips64", "mips64el", "riscv32", "riscv64"
-  # hostOS (const)
+  hostOS (const)
     # "windows", "macosx", "linux", "netbsd",
     # "freebsd", "openbsd", "solaris", "aix", "haiku", "standalone"
 
@@ -62,53 +62,69 @@ echo "my process has X bytes of total memory ", getTotalMem()
 # number of bytes owned by the process and hold data
 echo "my process is using X bytes of memory ", getOccupiedMem()
 
-echo "############################ io"
-# stderr stream
-# stdin stream
-# stdout stream
-# close a file
-# endOfFile returns bool
+echo "############################ files: io"
 # flushFile buffer down the toilet
-# getFileHandle of the file f; useful for platform specific logic; use getOsFileHandle instead
-# getFilePos of the file pointer that is reading from file f
-# getFileSize in bytes
-# getOsFileHandle of file f; only useful for platform specific logic
+# lines iterate over any line in file f
 # open a file from a filehandle/string with a given fileMode (defaults readonly); doesnt throw
 # readAll data from a file stream; raises IO exception/errors if current file pos not index 0
-# readBuffer
-# readBytes
-# readChar
-# readChars
-# readFile use staticRead when used within a compile time macro
-# readLine
+# readBuffer/Bytes/Chars/Line
+# readChar shouldnt be used in perf critical code
 # readLines should always provide 2 arguments
 # reopen for redirecting std[in/out/err] file variables
 # setFilePos
 # setInheritable
 # setStdIoUnbuffered
-# write
-# writeBuffer
-# writeBytes
-# writeChars
-# writeFile
-# writeLine
-# lines iterate over any line in file f
+# slurp alias for staticRead
+# staticRead compile-time readFile for easy resource embedding, e.g. const myResource = staticRead"mydatafile.bin"
+# stderr stream
+# stdin stream
 # stdmsg expands to stdout/err depending on useStdoutAsStdmsg switch
+# stdout stream
+# write
+# writeBuffer/Bytes/Chars/File/Line
+
+const yoloWurlReadme = "yolowurl/yolowurl.md"
+
+let entireFile = try: readFile yoloWurlReadme except: "" ## \
+  ## calls readAll then closes the file afterwards
+  ## raises IO exception on err
+  ## use staticRead instead for compiletime
+if entireFile.len is Positive:
+  echo "file has ", len entireFile, " characters"
 
 
-let entireFile = readFile "yolowurl/yolowurl.md"
-echo "file has ", len entireFile, " characters"
+let first5Lines = try: readLines yoloWurlReadme, 5 except: @[] ## \
+  ## raises IO exception on err, EOF if N > lines in file
+  ## lines must be delimited by LF/CRLF
+  ## available at compiletime
+for line in first5Lines: echo "say my line: ", line
 
-echo "whats your name: "
-# echo "hello: ", readLine(stdin) disabled cuz it stops code runner
-
-# you need to open a file to read line by line
-# notice the dope bash-like syntax
 proc readFile: string =
-  let f = open "yolowurl/yolowurl.md"
-  defer: close f # <-- make sure to close the file object
+  let f = open yoloWurlReadme ## \
+    ## open string, fMode = fmRead, bufSize = -1: File
+    ## open File; string/filehandle; fmode = fmRead: bool
+    ## can pass bufSize whenever you pass a string
+  defer: close f ## \
+    ## make sure to close the file object
+  echo "i started to read when I was ", getFilePos f
+  echo "first line in file is: ", readline f
+  echo if endOfFile f: "game over" else: "hooked on phonics worked for me"
+  echo "we need to get a handle on this file ", getFileHAndle f ## \
+    ## returns the C library's handle on the file
+  echo "so instead use ", getOsFileHandle f ## \
+    ## useful for platform specific logic
+    ## perhaps always use getOsFileHandle, dunno
+  echo "but wasnt good until i turned ", getFilePos f
+  echo "reading so much I gained ", getFileSize f, " in bytes"
   result = readline f
-echo "first line of file is ", readFile()
+echo "the current line in file is ", readFile()
+
+try:
+  for line in yoloWurlReadme.lines: echo "loop over line: ", line ## \
+    ## append .lines to the string/File
+    ## else it loops over the filename (not the content)
+    ## raises IOError if file doesnt exist
+except: echo "maybe file doesnt exist?"
 
 # upsert a file
 const tmpfile = "/tmp/yolowurl.txt"
@@ -123,13 +139,16 @@ proc writeLines(s: seq[string]): void =
 writeLines @["first line", "Second line"]
 echo readFile tmpfile
 
+echo "############################ stdin/out/err: io"
+
+echo "whats your name: "
+# echo "hello: ", readLine(stdin) disabled cuz it stops code runner
+
 echo "############################ exec related"
 
 # gorge alias for staticExec
 # gorgeEx similar to gorge but returns tuple(result, exitCode)
 # staticExec external process at compiletime and return its output (stdout + stderr)
-# slurp alias for staticRead
-# staticRead compile-time readFile for easy resource embedding, e.g. const myResource = staticRead"mydatafile.bin"
 
 # docs
 const buildInfo = "Revision " & staticExec("git rev-parse HEAD") &

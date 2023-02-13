@@ -1,2 +1,6 @@
 - modules: I attemped to group things by my expected search patterns
 - yolowurl.nim: simply includes each module/\*.nim
+- this is just another line
+- line another just is this
+- i just need some more content for playing around with nim
+- i now have atleast 5 lines

@@ -114,7 +114,7 @@ idiomatic nim (from docs/styleguide)
 - type identifiers/consts/pure enums use PascalCase, all other (including pure enums) use camelCase
 - use a..b unless a .. ^b has an operator (docs, styleguide)
 - use include to split large modules into distinct files (docs)
-- use Natural range to guard against negative numbers (e.g. in loops) (docs)
+- use Natural/Positive (docs) e.g. if Blah is Positive
 - use procs > (macros/templates/iterators/convertors) unless necessary (styleguide)
 - use result(its optimized) > return (only for control flow) > last statement expression (stylguide) (FYI status prefers last statement)
 - use sets (e.g. as flags) > integers that have to be or'ed (docs)

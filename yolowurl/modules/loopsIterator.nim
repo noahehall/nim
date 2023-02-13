@@ -109,5 +109,9 @@ for i in low(intArr) .. high(intArr):
 echo "############################ while"
 var num6 = 0
 while num6 < 10: # break, continue work as expected
-  echo "num6 is ", num6
+  echo "inc num6 is ", num6
   inc num6
+
+while num6 > Natural.low:
+  echo "dec num 6 is ", num6
+  dec num6
