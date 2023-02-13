@@ -62,7 +62,7 @@ echo "my process has X bytes of total memory ", getTotalMem()
 # number of bytes owned by the process and hold data
 echo "my process is using X bytes of memory ", getOccupiedMem()
 
-echo "############################ files: io"
+echo "############################ files "
 # flushFile buffer down the toilet
 # lines iterate over any line in file f
 # open a file from a filehandle/string with a given fileMode (defaults readonly); doesnt throw
@@ -139,18 +139,22 @@ proc writeLines(s: seq[string]): void =
 writeLines @["first line", "Second line"]
 echo readFile tmpfile
 
-echo "############################ stdin/out/err: io"
+echo "############################ stdin/out/err "
 
 echo "whats your name: "
 # echo "hello: ", readLine(stdin) disabled cuz it stops code runner
+
+writeLine stdout, "equivalent to an echo"; flushFile stdout
+writeLine stderr, "but i only see red"; flushFile stderr
 
 echo "############################ exec related"
 
 # gorge alias for staticExec
 # gorgeEx similar to gorge but returns tuple(result, exitCode)
-# staticExec external process at compiletime and return its output (stdout + stderr)
 
 # docs
 const buildInfo = "Revision " & staticExec("git rev-parse HEAD") &
-                  "\nCompiled on " & staticExec("uname -v")
+                  "\nCompiled on " & staticExec("uname -v") ## \
+                  ## compile time only
+                  ## returns stdout + stderr
 echo "build info: ", buildInfo
