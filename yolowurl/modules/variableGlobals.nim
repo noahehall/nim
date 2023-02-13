@@ -1,7 +1,7 @@
 ##
 ## variables and globals
 ## =====================
-##
+
 ## creating variables & other assignment operators
 ## catchall for global keywords/procs/types/etc not specified in other files
 ##
