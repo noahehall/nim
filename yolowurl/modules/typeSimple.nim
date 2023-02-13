@@ -2,7 +2,7 @@
 ## simple types
 ## ============
 
-#[
+##[
 ## TLDR
 - Conversion between int and int32 or int64 must be explicit except for string literals.
 - stay away from [blah% operators in practice](https://nim-lang.org/docs/manual.html#types-preminusdefined-integer-types)
@@ -73,10 +73,12 @@ links
 - BackwardsIndex alias for distinct int, see range docs
 - float (alias for float64|BiggestFloat) === processors fastest type
 - float: float32 (C Float), 64 (C Double)
+- Inf float64 infinity
 - int (signed), 32bit/64bit depending on system
 - int === same size as pointer (platform word size), bitwidth depends on architecture
 - int8,16,32,64 - 8 = +-127, 16 = +-~32k, 32 = +-~2.1billion, BiggestInt alias for int64
 - Natural alias for range[0, ..high(int): useful for documentation/debugging/guards
+- NegInf !inf
 - PFloat32 alias for ptr float32
 - PFloat64 alias for ptr float64
 - PInt32 alias for ptr int32
@@ -99,9 +101,7 @@ links
 - T or F	Boolean or
 - T xor F	Boolean xor (exclusive or)
 - not T	Boolean not
-]#
-
-
+]##
 
 echo "############################ char"
 let
@@ -180,6 +180,10 @@ const
 echo "############################ byte"
 
 echo "############################ bool"
+# off (const) alias for false
+echo "off is an alias for ", $off
+# on (const)
+echo "on is an alias for ", $on
 
 echo "############################ strings"
 var msg: string = "yolo"

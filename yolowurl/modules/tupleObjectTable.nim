@@ -17,6 +17,7 @@ todo
 - find {.inheritable.} for introducing new object roots
 - object variants (reread the docs, couldnt get working)
 - probably should reread the typedesc docs
+- blah.reset an object to its default value
 
 links
 - [distinct type aliases](https://nim-lang.org/docs/manual.html#types-distinct-type)

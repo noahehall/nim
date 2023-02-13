@@ -8,6 +8,9 @@
 
 ## todos
 - [nim by example: closure iterators](https://nim-by-example.github.io/for_iterators/)
+.. code-block:: Nim
+  # bunch of todos
+  iterToProc
 
 ## links
 - [iterators](https://nim-lang.org/docs/iterators.html)

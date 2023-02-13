@@ -10,6 +10,10 @@ todos
 - [io](https://nim-lang.org/docs/io.html)
 - [check the nitch source code for good examples](https://github.com/unxsh/nitch)
 - [check the nimgrep source code for good examples](https://github.com/nim-lang/Nim/blob/devel/tools/nimgrep.nim)
+.. code-block:: Nim
+  # bunch of todos
+  cpuEndian
+  cpuRelax
 
 ## os/io/file procs i think these are todo
 - currentSourcePath() @see https://nim-lang.org/docs/system.html#currentSourcePath.t
@@ -17,23 +21,46 @@ todos
 - macros.getProjectPath()
 - getCurrentDir proc
 
-## FileMode
-- when opening a file
+## os vars/procs/etc
+.. code-block:: Nim
+  hostCPU (const)
+    # "i386", "alpha", "powerpc", "powerpc64",
+    # "powerpc64el", "sparc", "amd64", "mips",
+    # "mipsel", "arm", "arm64", "mips64", "mips64el", "riscv32", "riscv64"
+  # hostOS (const)
+    # "windows", "macosx", "linux", "netbsd",
+    # "freebsd", "openbsd", "solaris", "aix", "haiku", "standalone"
+
+## io vars/procs/etc
 .. code-block:: Nim
   FileMode = enum
-    fmRead,                   ## Open the file for read access only.
-    fmWrite,                  ## Open the file for write access only.
-                              ## If the file does not exist, it will be
-                              ## created. Existing files will be cleared!
-    fmReadWrite,              ## Open the file for read and write access.
-                              ## If the file does not exist, it will be
-                              ## created. Existing files will be cleared!
-    fmReadWriteExisting,      ## Open the file for read and write access.
-                              ## If the file does not exist, it will not be
-                              ## created. The existing file will not be cleared.
-    fmAppend                   ## Open the file for writing only; append data
-                              ## at the end.
+    fmRead,                   # Open the file for read access only.
+    fmWrite,                  # Open the file for write access only.
+                              # If the file does not exist, it will be
+                              # created. Existing files will be cleared!
+    fmReadWrite,              # Open the file for read and write access.
+                              # If the file does not exist, it will be
+                              # created. Existing files will be cleared!
+    fmReadWriteExisting,      # Open the file for read and write access.
+                              # If the file does not exist, it will not be
+                              # created. The existing file will not be cleared.
+    fmAppend                  # Open the file for writing only; append data at the end.
 ]##
+
+echo "############################ os"
+echo "my hostCPU is " & hostCPU
+echo "my hostOS is " & hostOS
+
+
+# number of bytes owned by the process, but do not hold any meaningful data
+echo "my process has X bytes of free memory ", getFreeMem()
+
+# amount of memory i suppose, doesnt have description
+echo "my process has X bytes of max memory ", getMaxMem()
+echo "my process has X bytes of total memory ", getTotalMem()
+
+# number of bytes owned by the process and hold data
+echo "my process is using X bytes of memory ", getOccupiedMem()
 
 echo "############################ io"
 # stderr stream

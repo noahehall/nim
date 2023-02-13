@@ -8,20 +8,20 @@
 - anything like `BLAH=` can be written `BLAH =`
   - the former enables you to define/overload operators via 'proc `poop=`[bloop](soop): doop = toot'
 - converts are listed here because their purpose is implicit type coercion
+- additional type features are covered in tupleObjectTable.nim
 
 todos
 - [couldnt get eval to work](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L2816)
 .. code-block:: Nim
+  # probably need a memory_mgmt.nim file
   # skipped everything in this section
   # but they look intersting
   globalRaiseHook (var) influence exception handling on a global level
   ^ if not nil, every raise statement calls this hook
   ^ if returns false, exception is caught and does not propagate
   addAndFetch doesnt have a description
-  compileOption(x[, y]) check if a switch is active and/or its value at compile time
   copyMem copies content from memory at source to memory at dest
-  cpuEndian
-  cpuRelax
+  compileOption(x[, y]) check if a switch is active and/or its value at compile time
   create allocates a new memory block with atleast T.sizeof * size bytes
   createShared allocates new memory block on the shared heap with atleast T.sizeof * bytes
   createSharedU allocates new memory block on the shared heap with atleast T.sizeof * bytes
@@ -30,7 +30,6 @@ todos
   deallocHeap frees the thread local heap
   deallocShared frees the mem allocated with allocShared, allocShared0 or reallocShared
   equalMem compares size bytes of mem blocks a and b
-  errorMessageWriter (var) called instead of stdmsg.write when printing stacktrace
   freeShared frees the mem allocated with createShared, createSharedU, or resizeShared
   GC_disable()
   GC_disableMarkAndSweep()
@@ -41,23 +40,15 @@ todos
   getAllocStats():
   getFrame():
   getFrameState():
-  Inf
   isNotForeign returns true if x belongs to the calling thread
-  iterToProc
   moveMem copies content from memory at source to memory at dest
-  NegInf
-  onUnhandledException (var) override default behavior: write stacktrace to stderr then quit(1)
-  outOfMemHook (var) override default behavior: write err msg then terminate (see docs for example)
   prepareMutation string literals in ARC/ORC mode are copy on write, this must be called before mutating them
   rawEnv retrieve the raw env pointer of a closure
   rawProc retrieve the raw proc pointer of closer X
-  reset an object to its default value
   resize a memory block
   resizeShared
   setControlCHook proc to run when program is ctrlc'ed
   sizeof blah in bytes
-  unhandledExceptionHook (var) override default behavior: write err msg then terminate
-  localRaiseHook: same as globalRaiseHook but on a thread local level
 
 links
 - [system vars](https://nim-lang.org/docs/system.html#8)
@@ -191,12 +182,6 @@ echo "the default seq[int] value is ", $ seq[int].default
 
 
 echo "############################ interesting globals"
-# hostCPU (const) "i386", "alpha", "powerpc", "powerpc64", "powerpc64el", "sparc", "amd64", "mips", "mipsel", "arm", "arm64", "mips64", "mips64el", "riscv32", "riscv64"
-echo "my hostCPU is " & hostCPU
-
-# hostOS (const) "windows", "macosx", "linux", "netbsd", "freebsd", "openbsd", "solaris", "aix", "haiku", "standalone"
-echo "my hostOS is " & hostOS
-
 # appType (const) console|gui|lib
 echo "app type is " & appType
 
@@ -214,27 +199,11 @@ echo "am i the main module? ", $isMainModule
 echo "does NimVersion = NimMajor.NimMinor.NimPatch? ",
   $NimVersion, " = ", $NimMajor, ".", $NimMinor, ".", $NimPatch
 
-# off (const) alias for false
-echo "off is an alias for ", $off
-
-# on (const)
-echo "on is an alias for ", $on
-
 # QuitFailure (const) failure value passed to quit
 echo "on failure I call quit with ", $QuitFailure
 
 # QuitSuccess (const)
 echo "on success i call quit with ", $QuitSuccess
-
-# number of bytes owned by the process, but do not hold any meaningful data
-echo "my process has X bytes of free memory ", getFreeMem()
-
-# amount of memory i suppose, doesnt have description
-echo "my process has X bytes of max memory ", getMaxMem()
-echo "my process has X bytes of total memory ", getTotalMem()
-
-# number of bytes owned by the process and hold data
-echo "my process is using X bytes of memory ", getOccupiedMem()
 
 # efficiently retrieve a tuple of all local variables
 echo "locally defined vars are those not in a global scope ", locals()
@@ -245,16 +214,8 @@ block superPrivateScope:
 # shorthand for echo(msg); quit(code)
 echo "quit the program with quit(n) or quit(msg, n)"
 
-echo "############################ global vars"
-# labeled var because they are anonymous procs
-
 echo "############################ global let"
 # nimvm: bool true in Nim VM context and false otherwise; valid for when expressions
-
-echo "############################ global const"
-block myBlock:
-  var mysTring = "just a block"
-  echo myString
 
 echo "############################ type casts"
 var myInt = 10

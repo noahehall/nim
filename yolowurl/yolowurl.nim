@@ -10,6 +10,10 @@
 ## TLDR
 - only uses the implicitly imported system, threads and channel built_int module (and their imports)
 - dont import any of them directly, theres some compiler magic to makem work
+- in general [the source code](https://github.com/noahehall/nim/tree/develop/yolowurl/modules) has multiple examples
+  - we dont use runnableExamples because we want to run on the cmd line & in vscode
+  - however real code should use runnableExamples for docs
+- newer nim versions seems to be getting more strict/better at catching programmer errors
 
 internal links
 - [my bookmark](https://nim-lang.org/docs/manual.html#special-types)
