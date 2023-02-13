@@ -1,3 +1,4 @@
+##
 ## yolo wurl: basic nim syntax
 ## ===========================
 ## :Authors:
@@ -6,18 +7,24 @@
 ##  personal
 
 ##[
-TLDR
-----
+## TLDR
 - only uses the implicitly imported system, threads and channel built_int module (and their imports)
 - dont import any of them directly, theres some compiler magic to makem work
-- [my bookmark](https://nim-lang.org/docs/manual.html#special-types)
 
-useful links
-------------
+internal links
+- [my bookmark](https://nim-lang.org/docs/manual.html#special-types)
 - [nim system module](https://nim-lang.org/docs/system.html)
 - [deep dives dir to dive deep](https://github.com/noahehall/nim/tree/develop/deepdives)
 - [nim script for scripting nim](https://github.com/noahehall/nim/tree/develop/nimscript)
 - [backends, but most isnt there yet](https://github.com/noahehall/nim/tree/develop/backends)
+
+## useful links
+- [nim by example](nim-by-example.github.io)
+- [nimlang manual](https://nim-lang.org/docs/manual.html)
+- [official nimlang tut1 (theres 3)](https://nim-lang.org/docs/tut1.html)
+- [status auditor docs](https://status-im.github.io/nim-style-guide/00_introduction.html)
+- [system source code](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L1)
+- [yolowurl source examples](https://github.com/noahehall/nim/tree/develop/yolowurl/modules)
 
 ## the road to code
 - need to review
@@ -25,15 +32,15 @@ useful links
   - likely need to do a bunchy of recategorization
   - focus on os related stuff first so we can get back to nirv
   - ensure deepdives dir does not contain any system/basic info, and truly dives deep
-    - like need to do a bunch of recategorization
+    - likely need to do a bunch of recategorization
     - focus on os related stuff so we can get back to nirv
   - somehow we've skipped a bunch of stuff (maybe there in deepdives as links?)
     - effect tracking system
     - regex
     - tasks
     - didnt appreciate the semicolons usefulness in grouping statements
-    - cant get too far in nim without readin through the nimble github readme
-    - rework all of these weird comments to use docgen
+    - cant get too far in nim without reading through the nimble github readme
+    - rework all of these weird comments to use doc comments
   - finally 3: https://nim-lang.org/docs/backends.html
     - you need to have some code ready so your not just copypasting documentation
   - nim package directory: get familiar with what exists https://nimble.directory/
@@ -87,7 +94,7 @@ idiomatic nim (from docs/styleguide),
 - object variants > inheritance for simple types; no type conversion required (docs)
 - prefer """string literals""" that start with new line, i.e. the """ first should be on its own line
 - prefer let > var for runtime vars that dont change
-- prefer testament > unittests with dir structura /tests/somecategory/tsomefile.nim
+- prefer testament > unittests with dir structur like root/tests/somecategory/tsomefile.nim (testament source maybe?)
 - procs that mutate data should be prefixed with 'm' (styleguide)
 - procs that return a transformed copy of soemthing should be in past particle (e.g. pooped) (styleguide)
 - run initialization logic as toplevel module statements, e.g. init data (docs)
@@ -100,7 +107,7 @@ idiomatic nim (from docs/styleguide),
 - use include to split large modules into distinct files (docs)
 - use Natural range to guard against negative numbers (e.g. in loops) (docs)
 - use procs > (macros/templates/iterators/convertors) unless necessary (styleguide)
-- use result(its optimized) > return (for control flow) > last statement expression (stylguide) (status prefers last statement)
+- use result(its optimized) > return (only for control flow) > last statement expression (stylguide) (FYI status prefers last statement)
 - use sets (e.g. as flags) > integers that have to be or'ed (docs)
 - use status push > raises convention to help track unfound errs (docs + status)
 - use typeof x and not type x
@@ -137,42 +144,58 @@ my preferences thus far
   - everything else must be qualified (c.b | d.b) if signatures are ambiguous
 
 ## import
-- only allowed at the top level
 - top-level symbols marked * from another module
+- are only allowed at the top level
 - looks in the current dir relative to the imported file and uses the first match
 - else traverses up the nim PATH for the first match
-- @see https://nim-lang.org/docs/nimc.html#compiler-usage-search-path-handling
-  - import math # everything
-  - import std/math # import math specifically from the std library
-  - import mySubdir/thirdFile
-  - import myOtherSubdir / [fourthFile, fifthFile]
-  - import thisThing except thiz,thaz,thoz
-  - import thisThing as thingThis
-  - import this/thing/here, "that/is/in/this/sub/dir" # identifier is stil here.poop
-  - import "this/valid dir name/but invalid for nim/someMod" # someMod.poop
-  - import pkg/someNimblePkg # use pkg to import a nimble pkg
-  - from thisThing import this, thaz, thoz # can invoke this,that,thot without qualifying
-  - from thisThing import nil # force symbol qualification, e.g. thisThing.blah()
-  - from thisThing as thingThis import nil # even with an alias
+  - [checkout the search path docs](https://nim-lang.org/docs/nimc.html#compiler-usage-search-path-handling)
+  .. code-block:: Nim
+    import math # everything
+    import std/math # import math specifically from the std library
+    import mySubdir/thirdFile
+    import myOtherSubdir / [fourthFile, fifthFile]
+    import thisThing except thiz,thaz,thoz
+    import thisThing as thingThis
+    import this/thing/here, "that/is/in/this/sub/dir" # identifier is stil here.poop
+    import "this/valid dir name/but invalid for nim/someMod" # someMod.poop
+    import pkg/someNimblePkg # use pkg to import a nimble pkg
+    from thisThing import this, thaz, thoz # can invoke this,that,thot without qualifying
+    from thisThing import nil # force symbol qualification, e.g. thisThing.blah()
+    from thisThing as thingThis import nil # even with an alias
 
 ## include:
 - a file as part of this module
 - can be used outside of the top level, e.g. scoped to a block/proc
 - becareful with too many includes, its difficult to debug when running the main file
 - line numbers dont point to specific included files, but to the composite file
-- examples
-  - include xA,xB,xC
+- example include for yolowurl.nim
+.. code-block:: Nim
+  include modules/[
+    variableGlobals,
+    typeSimple,
+    ifWhenCase,
+    exceptionHandlingDocs,
+    loopsIterator,
+    blocks,
+    ordinalStructured,
+    routines,
+    tupleObjectTable,
+    osIoFiles,
+    templateMacros,
+    pragmas
+  ]
 
 ## export
 - enables forwarding this modules dependencies onto downstream modules
 - thus downstream modules dont need to import their dependencies' depencencies
-- examples
-  - export poop # all turds are exported
-  - export boop except soup, doup, loop
+- example exports
+.. code-block:: Nim
+  export poop # all turds are exported
+  export boop except soup, doup, loop
 
 ## packages
 - a file named identifier.nimble creates a package
-  - all sibling/descendent identifier.nim files become modules of that package
+- all sibling/descendent identifier.nim files become modules of that package
 
 ## operators
 - precedence determined by its first character
@@ -243,8 +266,8 @@ include modules/[
   typeSimple,
   ifWhenCase,
   exceptionHandlingDocs,
-  loops,
-  blockDo,
+  loopsIterator,
+  blocks,
   ordinalStructured,
   routines,
   tupleObjectTable,

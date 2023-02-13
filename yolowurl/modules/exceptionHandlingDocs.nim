@@ -72,6 +72,8 @@
 - both --- and === need to be the same length of whatever they're underlining
 - `low(openArray) <#low,openArray[T]>`_  creates an html #fragment
 - starting a line with .. code-block:: Nim creates a codeblock for stuff indented beneath it
+- include another doc file .. include:: ./system_overview.rst
+- [^ check how it looks](https://raw.githubusercontent.com/nim-lang/Nim/version-1-6/lib/system_overview.rst)
 
 ]##
 

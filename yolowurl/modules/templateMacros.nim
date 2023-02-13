@@ -1,14 +1,20 @@
 ## templates and macros
 ## ====================
-##
-## pretty much skipped the entire section on templates
-## - [start here](https://nim-lang.org/docs/manual.html#templates)
-## - ^ continue until you get to macros
-##
-## pretty much skipped the entire section on macros
-## - [start here](https://nim-lang.org/docs/manual.html#macros)
-## - ^ continue until you get to SpecialTypes
-##
+
+
+##[
+## TLDR
+- pretty much skipped the entire section on templates, and definitely on macros
+- come back later
+
+todos
+- [templates](https://nim-lang.org/docs/manual.html#templates)
+  - continue until you get to macros, lol then keep going
+- [macros](https://nim-lang.org/docs/manual.html#macros)
+  - ^ continue until you get to SpecialTypes
+
+]##
+
 echo "############################ template"
 # simple form of a macro
 # @see https://nim-lang.org/docs/manual.html#overload-resolution-lazy-type-resolution-for-untyped

@@ -1,51 +1,149 @@
 ##
-## tuples & objects & tables
-## =========================
-##
-## heterogenous storage containers of named fields of any type
-##
+## tuples, objects and tables
+## ==========================
+
+##[
+## TLDR
+- heterogenous containers of named fields of any type
+
+todo
+- [symbol lookups in generics](https://nim-lang.org/docs/manual.html#generics-symbol-lookup-in-generics)
+  - mixin statement
+  - bind statement
+  - delegating bind statements
+- in general everything about tables
+- metatype examples
+- type bound operator examples (and should probably reread those docs)
+- find {.inheritable.} for introducing new object roots
+- object variants (reread the docs, couldnt get working)
+- probably should reread the typedesc docs
+
+links
+- [distinct type aliases](https://nim-lang.org/docs/manual.html#types-distinct-type)
+- [type bound operators](https://nim-lang.org/docs/manual.html#procedures-type-bound-operators)
+- [inheritance](https://nim-lang.org/docs/manual.html#type-relations)
+- [type classes](https://nim-lang.org/docs/manual.html#generics-type-classes
+- [implicit generics](https://nim-lang.org/docs/manual.html#generics-implicit-generics)
+
 ## tuples
-## - lexical order of fields with few abstractions
-## - structurally equivalent if the order & type of fields match
-##
+- lexical order of fields with few abstractions
+- structurally equivalent if the order & field types match
+- similar to objects sans inheritance, + unpacking + more dynamic + fields always public
+- structural equality check
+  - tuples of diff types are == if fields have same type, name and order
+  - anonymous tuples are compatible with tuples with field names if type matches
+- instantiation must match order of fields in signature
+- instantiation doesnt require field names
+- field access by name/index (const int)
+
 ## objects
-## - complex tuples without lexical ordering (lol my definition)
-## - provide inheritance & hidden fields > tuples
-## - nominally equivalent
-##
+- complex tuples without lexical ordering (lol my definition)
+- provide inheritance & hidden fields > tuples
+- nominally equivalent
+- enum and object types may only be defined within a type statement.
+- traced by the garbage collector, no need to free them when allocated
+- each object type has a constructor
+- when instantiated unspecified fields receive the field types default value
+- only private fields require exported get/setters
+
+## type aliases
+- are identical & auto cast to their base
+
+## type aliases (distinct)
+- a type derived from a base type but incompatible with its base type
+- i.e. does not create inheritance with its base type but is expected to match its structure
+  - you can {.borrow.} fields/procs/etc from the base type
+  - else you must explicity redefine everything
+- base and distinct can be cast to eachother
+
 ## table
-## - syntactic sugar for an array constructor
-## - {"k": "v"} == [("k", "v")]
-##
-## skipped
-## - [symbol lookups in generics](https://nim-lang.org/docs/manual.html#generics-symbol-lookup-in-generics)
-## - ^ mixin statement
-## - ^ bind statement
-## - ^ delegating bind statements
-#[
-  ref/pter:
-    . and [] always def-ref, i.e. return the value and not the ref
-    . access tuple/object
-    [] arr/seq/string
-    new(T) object of type T and return a traced ref, when T is a ref the result type will be T, else ref T
-    new[T](a) object of type T and return a trace reference to it in a
-    new[T](a; finalizer) same as before, but this time finalizer is called a is gc'ed
-    isNil generally more efficient than == nil
+- syntactic sugar for an array constructor
+- {"k": "v"} == [("k", "v")]
+- {key, val}.newOrderedTable
+- empty table is {:} in contrast to a set which is {}
+- the order of (key,val) are preserved to support ordered dicts
+- can be a const which requires a minimal amount of memory
 
-  procs
-    of i.e. instanceof
-    as
-    in notin is isnot
-    isNil(x) sometimes more efficient than == nil
+## ref
+- generic traced pointer type mem is gc'ed on heap
+- generally you should always use ref objects with inheritance
+- non-ref objects truncate subclass fields on = assignment
+- since objs are value types, composition is as efficient as inheritance
+- dont have to label ref objects as var in proc signatures to mutate them
 
-]#
+## ptr
+- generic untraced pointer type
+- untraced references (are unsafe), pointing to manually managed memory locations
+- required when accessing hardware/low-level ops
+
+## ref/pter procs
+- . and [] always def-ref, i.e. return the value and not the ref
+- . access tuple/object
+- new(T) object of type T and return a traced ref, when T is a ref the result type will be T, else ref T
+- new[T](a) object of type T and return a trace reference to it in a
+- new[T](a; finalizer) same as before, but this time finalizer is called a is gc'ed
+- of i.e. instanceof creates a single layer of inheritance between types
+- as
+- in notin is isnot
+- isNil(x) sometimes more efficient than == nil
+
+## inheritance (ref/ptr)
+- introduce many-to-one relationships: many instances point to the same heap
+- reference equality check
+- base types should ref RootObj/a type that does
+  - else they are implictly `final`
+  - RootRef is a reference to RootObj (root of nims object hierachy, like javascripts object)
+- objects can be self-referencing
+- use the [] operator when logging the object (see strutils)
+
+## dynamic dispatch
+- generally only required with ref/ptr objects
+- use method whenever an object has an inherited subtype only known at runtime
+
+## multi-methods
+- occurs when multiple overloaded procs exist with different signatures
+- however they are still ambiguous because of inheritance
+- you have to use --multimethods:on when compiling
+
+## metatypes
+- untyped lookup symbols & perform type resolution after the expression is interpreted & checked
+  - i.e. expression is lazily resolved to its value (for templates)
+  - use to pass a block of statements
+- typed: semantic checker evaluates and transforms args before expression is interprted & checked
+  - an expression that is [eagerly] resolved to its value (for templates)
+  - i.e. whenever u set a type in a signature its resolved immediately
+- typedesc a type description
+- void absence of any type, generally used as proc return type
+
+## type bound operators
+- a proc or func whose name starts with = but isnt an operator
+- unrelated to propertie setters which end in = despite syntax similarities
+  - x =copy y
+  - x =destroy y Generic destructor implementation
+  - x =sink y Generic sink implementation
+  - x =trace y Generic trace implementation
+
+## variants
+- preferred over an object hierarchy with multiple levels
+- when simple variants (based on some discriminate field) will suffice
+
+## recursive types
+- objects, tuples and ref objects that recursively depend on each other
+- must be declared within a single type section
+
+## type classes
+- pseudo type that can be used to match via the is operator
+- object, tuple, enum, proc, ref, ptr, var, distinct, array, set, seq auto
+- in addition, every generic type creates a type class of the same name
+
+## typedesc
+- since nim treats the names of types as regular values in certain contexts in the compilation phase
+- typedesc is a generic type for all types denoting the type class of all types
+- procs using typedesc params are implicitly generic
+
+]##
 
 echo "############################ tables"
-# {key, val}.newOrderedTable
-# empty table is {:} in contrast to a set which is {}
-# the order of (key,val) are preserved to support ordered dicts
-# can be a const which requires a minimal amounbt of memory
-
 var myTable = {"fname": "noah", "lname": "hall"}
 echo "my name is: ", $myTable
 # TODO: find this in the docs somewhere, this seems a bit rediculouos
@@ -53,14 +151,6 @@ echo "my firstname is: ", $myTable[0][1]
 
 
 echo "############################ tuple fixed length"
-# similar to objects sans inheritance, + unpacking + more dynamic + fields always public
-# structural equality check
-# ^ tuples of diff types are == if fields have same type, name and order
-# ^ anonymous tuples are compatible with tuples with field names if type matches
-# instantiation must match order of fields in signature
-# instantiation doesnt require field names
-# field access by name/index (const int)
-
 type
   # object syntax
   NirvStack = tuple
@@ -84,7 +174,7 @@ debugEcho "you are ", js[0] & $sj.wha & $sj.t
 
 # tuples dont need their type declared separately
 var bizDevOps: tuple[biz: string, dev: string, ops: string] =
-  ("intermediate", "senior", "intermediate")
+  ("intermediate", "senior", "beginner")
 echo "rate yourself on bizDevOps: ", bizDevOps
 
 # tuples can be destructured (unpacked)
@@ -103,7 +193,6 @@ for i, (x, c) in aaa:
 
 
 echo "############################ type aliases"
-# type aliases are identical & auto cast to their base
 type
   BigMoney* = int # <- can be used wherever int is expected
 echo 4 + BigMoney(2000)
@@ -113,38 +202,20 @@ let thizString: StrOrInt = "1"
 let thisInt: StrOrInt = 1
 
 echo "could be a string or an int ", thizString, thisInt
-echo "############################ type aliases distinct"
-# @see https://nim-lang.org/docs/manual.html#types-distinct-type
-# a type derived from a base type but incompatible with its base type
-# i.e. does not create inheritance with its base type but is expected to match its structure
-# ^ you can borrow fields/procs/etc from the base type
-# ^ else you must explicity redefine everything
-# base and distinct can be cast to eachother
 
+echo "############################ type aliases distinct"
 type
   BiggerMoney = distinct BigMoney
   BiggestMoney {.borrow: `.`.} = distinct BigMoney # borrows all procs
 # echo 10 + FkUMoney(100) # type mismatch
 
 echo "############################ metatypes"
-# untyped  lookup symbols & perform type resolution after the expression is interpreted & checked
-# ^ i.e. expression is lazily resolved to its value (for templates)
-# ^ use to pass a block of statements
-# typed: semantic checker evaluates and transforms args before expression is interprted & checked
-# ^ an expression that is [eagerly] resolved to its value (for templates)
-# ^ i.e. whenever u set a type in a signature its resolved immediately
-# typedesc a type description
-# void absence of any type, generally used as proc return type
+# todo
 
 echo "############################ object"
-# Enumeration and object types may only be defined within a type statement.
-# note the placement of * for visibility outside of the module
-# traced by the garbage collector, no need to free them when allocated
-# each object type has a construct,
-# when instantiated unspecified fields receive the field types default value
 type
   PrivatePoop = object
-    i*: bool # field is visible
+    i*: bool # field i dont think is visible because the type isnt
     times: int
   PublicPoop* = object # <-- type is visible
     u: bool
@@ -155,7 +226,6 @@ let everyonepoop = upoop # deep copy
 echo "did ", ipoop
 echo "or did ", upoop
 echo "does ", everyonepoop
-
 
 type
   Someone* = object
@@ -212,21 +282,10 @@ proc `[]`* (v: Vector, i: int): float =
   else: assert(false)
 
 echo "############################ type bound operators"
-# @see https://nim-lang.org/docs/manual.html#procedures-type-bound-operators
-# a proc or func whose name starts with = but isnt an operator
-# unrelated to propertie setters which end in = despite syntax similarities
-# x =copy y
-# x =destroy y Generic destructor implementation
-# x =sink y Generic sink implementation
-# x =trace y Generic trace implementation
+# todo
 
 echo "############################ ref"
 # see inheritance
-# generic traced pointer type mem is gc'ed on heap
-# generally you should always use ref objects with inheritance
-# non-ref objects truncate subclass fields on = assignment
-# since objs are value types, composition is as efficient as inheritance
-# dont have to label ref objects as var in proc signatures to mutate them
 
 # Someone isnt Ref, but people instance is
 let people: ref Someone = new(Someone)
@@ -244,28 +303,13 @@ let people2 = SomeoneRef(name: "npc",
   age: 1)
 
 echo "############################ ptr"
-# see inheritance
-# generic untraced pointer type
-# untraced references (are unsafe), pointing to manually managed memory locations
-# required when accessing hardware/low-level ops
+# todo
 
 echo "############################ nil"
 # if a ref/ptr points to nothing, its value is nil
 # thus use in comparison to prove not nil
 
 echo "############################ inheritance: ref / ptr"
-# @see https://nim-lang.org/docs/manual.html#type-relations
-# introduce many-to-one relationships: many instances point to the same heap
-# reference equality check
-# of creates a single layer of inheritance between types
-# base types should ref RootObj/a type that does
-# ^ RootRef is a reference to RootObj
-# ^ is the root of nims object hierachy, like javascripts object
-# ^ else they are implictly `final`
-# ^ TODO: find {.inheritable.} for introducing new object roots
-# objects can be self-referencing
-# use the [] operator when logging the object (see strutils)
-
 type WhoPoop = ref object of RootObj
     name: string
 type YouPoop = ref object of WhoPoop
@@ -295,9 +339,6 @@ if sherlockpoops[0] of YouPoop: echo "filthy animal" else: echo "snobby bourgeoi
 echo "is sherlockpoops[0] nil? ", isNil(sherlockpoops[0])
 
 echo "############################ dynamic dispatch"
-# generally only required with ref objects
-# use method whenever an object has an inherited subtype only known at runtime
-
 # copied from docs
 type
   Expression = ref object of RootObj ## abstract base class for an expression
@@ -322,10 +363,6 @@ echo eval(newPlus(newPlus(newLit(1), newLit(2)), newLit(4)))
 # you can force call the base method via procCall someMethod(a,b)
 
 echo "############################ multi-methods"
-# occurs when multiple overloaded procs exist with different signatures
-# however they are still ambiguous because of inheritance
-# you have to use --multimethods:on when compiling
-
 type
   Thing = ref object of RootObj
   Unit = ref object of Thing
@@ -348,10 +385,6 @@ new bbbb
 collide(aaaa, bbbb) # output: 2
 
 echo "############################ variants"
-# preferred over an object hierarchy with multiple levels
-# when simple variants (based on some discriminate field) will suffice
-# this is something you'll need to study up on
-
 # copied from docs
 # This is an example how an abstract syntax tree could be modelled in Nim
 type
@@ -380,9 +413,6 @@ echo "my float is: ", myFloat.repr
 
 
 echo "############################ recursive types"
-# objects, tuples and ref objects that recursively depend on each other
-# must be declared within a single type section
-
 # copied from docs
 type
   Node = ref object  # a reference to an object with the following field:
@@ -422,12 +452,6 @@ ii.foo[:int]() # Success
 
 
 echo "############################ type classes"
-# @see https://nim-lang.org/docs/manual.html#generics-type-classes
-# @see https://nim-lang.org/docs/manual.html#generics-implicit-generics
-# pseudo type that can be used to match via the is operator
-# object, tuple, enum, proc, ref, ptr, var, distinct, array, set, seq auto
-# in addition, every generic type creates a type class of the same name
-
 # even tho myRecord is tuple, it doesnt extend from tuple
 # so we have to add typeof myRecord explicitly to RecordType
 var myRecord: tuple[wtf: string] = (wtf: "yo")
@@ -458,10 +482,6 @@ proc fieldsPrint[T: distinct tuple | object](first, second: T) =
   else: echo "got a tuple and object"
 
 echo "############################ typedesc"
-# since nim treats the names of types as regular values in certain contexts in the compilation phase
-# typedesc is a generic type for all types denoting the type class of all types
-# procs using typedesc params are implicitly generic
-
 # docs
 template declareVariableWithType(T: typedesc, value: T) =
   var x: T = value

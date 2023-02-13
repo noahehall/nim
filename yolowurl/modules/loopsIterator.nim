@@ -1,31 +1,44 @@
+## loops and iterators
+## ===================
 
-#[
-  @see
-    - https://nim-lang.org/docs/iterators.html
+##[
+## TLDR
+- iterators are included, as their only used with loops
+- for loops can iterator over any iterator
 
+## todos
+- [nim by example: closure iterators](https://nim-by-example.github.io/for_iterators/)
 
-  procs/ops/etc
-    finished determine if a first class iterator has finished
-    closureScope @see https://nim-lang.org/docs/system.html#%7C%7C.i%2CS%2CT%2Cstaticstring
+## links
+- [iterators](https://nim-lang.org/docs/iterators.html)
+- [iterator tut](https://nim-by-example.github.io/for_iterators/)
+- [closureScope](https://nim-lang.org/docs/system.html#%7C%7C.i%2CS%2CT%2Cstaticstring)
+- [status iterator docs](https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#iterators)
 
-]#
+## loop/iterator related procs
+- finished determine if a first class iterator has finished
+- countup  == `..` == `..<` (zero index countup)
+- countdown  == `..^` == `..^1` (zero index countdown)
+- items for i blah.items:
+- pairs for i,z blah.pairs:
+- low(blah) .. high(blah)
+
+## iterators
+- inlined at the callsite when compiled
+  - do not have the overhead from function calling
+  - prone to code bloat
+  - useful for defining custom loops on complex objects
+- can be used as operators if you enclose the name in back ticks
+- can be wrapped in a proc with the same name to accumulate the result and return it as a seq
+- distinction with procs
+  - can only be called from loops
+  - uses yield instead of return keyword
+  - doesnt have an implicit result
+  - dont support recursion
+  - cant be forward declared
+]##
 
 echo "############################ iterators "
-# inlined at the callsite when compiled
-# ^ do not have the overhead from function calling
-# ^ prone to code bloat
-# ^ useful for defining custom loops on complex objects
-# can be used as operators if you enclose the name in back ticks
-# can be wrapped in a proc with the same name to accumulate the result and return it as a seq
-# distinction with procs
-# ^ can only be called from loops
-# ^ uses yield instead of return keyword
-# ^ doesnt have an implicit result
-# ^ dont support recursion
-# ^ cant be forward declared
-# @see https://nim-by-example.github.io/for_iterators/
-# @see https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#iterators
-
 # iterable[T] an expression that yeilds T
 iterator `...`*[T](a: T, b: T): T =
   var res: T = a
@@ -36,7 +49,6 @@ iterator `...`*[T](a: T, b: T): T =
 for i in 0...5:
   echo "useless iterator ", i
 
-
 iterator countTo(n: int): int =
   var i = 0
   while i <= n:
@@ -44,15 +56,6 @@ iterator countTo(n: int): int =
     inc i
 for i in countTo(5):
   echo i
-
-# iterator: closures
-# basically javascript yield
-# have state and can be resumed
-# @see https://nim-by-example.github.io/for_iterators/
-
-# std count iterators
-# countup == .. == ..< (zero index countup)
-# countdown == ..^ == ..^1 (zero index countdown)
 
 # std collection iterators
 # items/mitems : mutable/immutable, just the value

@@ -290,6 +290,11 @@ statements	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-statements	  statements
 expressions	yolowurl.html#yolo-wurlcolon-basic-nim-syntax-expressions	  expressions	
 visibility	yolowurl.html#visibility	 visibility	
 variables and globals	yolowurl.html#variables-and-globals	 variables and globals	
+branching: if when case	yolowurl.html#branchingcolon-if-when-case	 branching: if when case	
+TLDR	yolowurl.html#branchingcolon-if-when-case-tldr	  TLDR	
+todos	yolowurl.html#branchingcolon-if-when-case-todos	  todos	
+when	yolowurl.html#branchingcolon-if-when-case-when	  when	
+case	yolowurl.html#branchingcolon-if-when-case-case	  case	
 exception handling, debugging (todo), documentation	yolowurl.html#exception-handling-debugging-todo-documentation	 exception handling, debugging (todo), documentation	
 TLDR	yolowurl.html#exception-handling-debugging-todo-documentation-tldr	  TLDR	
 Exception Handling	yolowurl.html#exception-handling-debugging-todo-documentation-exception-handling	  Exception Handling	
@@ -297,12 +302,55 @@ Defect types	yolowurl.html#exception-handling-debugging-todo-documentation-defec
 Error (exception) types	yolowurl.html#exception-handling-debugging-todo-documentation-error-exception-types	  Error (exception) types	
 Documentation	yolowurl.html#exception-handling-debugging-todo-documentation-documentation	  Documentation	
 doc syntax	yolowurl.html#exception-handling-debugging-todo-documentation-doc-syntax	  doc syntax	
-block / do	yolowurl.html#block-slash-do	 block / do	
-TLDR	yolowurl.html#block-slash-do-tldr	  TLDR	
-do blocks	yolowurl.html#block-slash-do-do-blocks	  do blocks	
-once blocks	yolowurl.html#block-slash-do-once-blocks	  once blocks	
-ordinals and structured types	yolowurl.html#ordinals-and-structured-types	 ordinals and structured types	
+loops and iterators	yolowurl.html#loops-and-iterators	 loops and iterators	
+TLDR	yolowurl.html#loops-and-iterators-tldr	  TLDR	
+todos	yolowurl.html#loops-and-iterators-todos	  todos	
+links	yolowurl.html#loops-and-iterators-links	  links	
+loop/iterator related procs	yolowurl.html#loops-and-iterators-loopslashiterator-related-procs	  loop/iterator related procs	
+iterators	yolowurl.html#loops-and-iterators-iterators	  iterators	
+blocks	yolowurl.html#blocks	 blocks	
+TLDR	yolowurl.html#blocks-tldr	  TLDR	
+do blocks	yolowurl.html#blocks-do-blocks	  do blocks	
+once blocks	yolowurl.html#blocks-once-blocks	  once blocks	
+ordinals and structured	yolowurl.html#ordinals-and-structured	 ordinals and structured	
+TLDR	yolowurl.html#ordinals-and-structured-tldr	  TLDR	
+links	yolowurl.html#ordinals-and-structured-links	  links	
+arrays	yolowurl.html#ordinals-and-structured-arrays	  arrays	
+set	yolowurl.html#ordinals-and-structured-set	  set	
+sequence	yolowurl.html#ordinals-and-structured-sequence	  sequence	
+enum	yolowurl.html#ordinals-and-structured-enum	  enum	
+range	yolowurl.html#ordinals-and-structured-range	  range	
+slice	yolowurl.html#ordinals-and-structured-slice	  slice	
+ordinals/structured interface	yolowurl.html#ordinals-and-structured-ordinalsslashstructured-interface	  ordinals/structured interface	
 routines	yolowurl.html#routines	 routines	
-tuples &amp; objects &amp; tables	yolowurl.html#tuples-amp-objects-amp-tables	 tuples &amp; objects &amp; tables	
+TLDR	yolowurl.html#routines-tldr	  TLDR	
+procedures	yolowurl.html#routines-procedures	  procedures	
+openArray	yolowurl.html#routines-openarray	  openArray	
+varargs	yolowurl.html#routines-varargs	  varargs	
+funcs	yolowurl.html#routines-funcs	  funcs	
+closures	yolowurl.html#routines-closures	  closures	
+anonymous procs	yolowurl.html#routines-anonymous-procs	  anonymous procs	
+tuples, objects and tables	yolowurl.html#tuples-objects-and-tables	 tuples, objects and tables	
+TLDR	yolowurl.html#tuples-objects-and-tables-tldr	  TLDR	
+tuples	yolowurl.html#tuples-objects-and-tables-tuples	  tuples	
+objects	yolowurl.html#tuples-objects-and-tables-objects	  objects	
+type aliases	yolowurl.html#tuples-objects-and-tables-type-aliases	  type aliases	
+type aliases (distinct)	yolowurl.html#tuples-objects-and-tables-type-aliases-distinct	  type aliases (distinct)	
+table	yolowurl.html#tuples-objects-and-tables-table	  table	
+ref	yolowurl.html#tuples-objects-and-tables-ref	  ref	
+ptr	yolowurl.html#tuples-objects-and-tables-ptr	  ptr	
+ref/pter procs	yolowurl.html#tuples-objects-and-tables-refslashpter-procs	  ref/pter procs	
+inheritance (ref/ptr)	yolowurl.html#tuples-objects-and-tables-inheritance-refslashptr	  inheritance (ref/ptr)	
+dynamic dispatch	yolowurl.html#tuples-objects-and-tables-dynamic-dispatch	  dynamic dispatch	
+multi-methods	yolowurl.html#tuples-objects-and-tables-multiminusmethods	  multi-methods	
+metatypes	yolowurl.html#tuples-objects-and-tables-metatypes	  metatypes	
+type bound operators	yolowurl.html#tuples-objects-and-tables-type-bound-operators	  type bound operators	
+variants	yolowurl.html#tuples-objects-and-tables-variants	  variants	
+recursive types	yolowurl.html#tuples-objects-and-tables-recursive-types	  recursive types	
+type classes	yolowurl.html#tuples-objects-and-tables-type-classes	  type classes	
+typedesc	yolowurl.html#tuples-objects-and-tables-typedesc	  typedesc	
+os, io and files	yolowurl.html#os-io-and-files	 os, io and files	
 templates and macros	yolowurl.html#templates-and-macros	 templates and macros	
-enable new functionality without adding new keywords to the language	yolowurl.html#enable-new-functionality-without-adding-new-keywords-to-the-language	 enable new functionality without adding new keywords to the language	
+TLDR	yolowurl.html#templates-and-macros-tldr	  TLDR	
+pragmas	yolowurl.html#pragmas	 pragmas	
+TLDR	yolowurl.html#pragmas-tldr	  TLDR	

@@ -1,13 +1,21 @@
+##
+## os, io and files
+## ================
 
 #[
-  @see
-    - https://nim-lang.org/docs/io.html
+## TLDR
+- didnt finish this section, come back later
 
-  procs/ops/etc
-    currentSourcePath() @see https://nim-lang.org/docs/system.html#currentSourcePath.t
-    os.parentDir()
-    macros.getProjectPath()
-    getCurrentDir proc
+todos
+- finish this section
+- [io](https://nim-lang.org/docs/io.html)
+- [check the nitch source code for good examples](https://github.com/unxsh/nitch)
+
+## os/io/file procs i think these are todo
+- currentSourcePath() @see https://nim-lang.org/docs/system.html#currentSourcePath.t
+- os.parentDir()
+- macros.getProjectPath()
+- getCurrentDir proc
 
 ]#
 

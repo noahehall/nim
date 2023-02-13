@@ -36,7 +36,7 @@
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/inclrtl.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/nimhcr.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/osalloc.nim
-/home/poop/git/foss/nim/yolowurl/modules/loops.nim
+/home/poop/git/foss/nim/yolowurl/modules/loopsIterator.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/fatal.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/cgprocs.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/gc.nim
@@ -46,7 +46,7 @@
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/dyncalls.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/cellseqs_v1.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/repr_impl.nim
-/home/poop/git/foss/nim/yolowurl/modules/blockDo.nim
+/home/poop/git/foss/nim/yolowurl/modules/blocks.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/threads.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/exceptions.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/repr.nim

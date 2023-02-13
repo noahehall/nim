@@ -1,10 +1,32 @@
-#[
-  todos
-    likely @see https://nim-lang.org/docs/system.html#likely.t%2Cbool
-    unlikely @see https://nim-lang.org/docs/system.html#unlikely.t%2Cbool
-]#
+## branching: if when case
+## =======================
+
+##[
+## TLDR
+- new scopes are introduced immediately aftered the keywords (e.g. if, elif, etc)
+  - except for when statements/expressions
+- use whens for completely removing sections of code at compile time
+- all can be used as expressions and the result assigned to a var
+
+## todos
+- [likely](https://nim-lang.org/docs/system.html#likely.t%2Cbool)
+- [unlikely](https://nim-lang.org/docs/system.html#unlikely.t%2Cbool)
+
+## when
+- a compile time if statement
+- the condition MUST be a constant expression
+- does not open a new scope
+- only the first truthy value is compiled
+
+## case
+- similar to if, but represents a multi-branch selection
+- only use strings, ordinal types and integers
+  - ints/ordinals can also use ranges
+  - the `of` part must match the value type
+- can also use elif, else branches
+]##
+
 echo "############################ if"
-# new scopes are introduced immediately aftered the if,elif,else keywords
 if not false: echo "true": else: echo "false"
 
 # difficult to read, but note the placement of :
@@ -17,10 +39,6 @@ elif "poop" == "boob": echo "boobs arent poops"
 else: echo false
 
 echo "############################ when"
-# a compile time if statement
-# the condition MUST be a constant expression
-# does not open a new scope
-# only the first truthy value is compiled
 when system.hostOS == "windows":
   echo "running on Windows!"
 elif system.hostOS == "linux":
@@ -44,8 +62,6 @@ else:
   echo "I must be running after compilation via an executable"
 
 echo "############################ case expressions"
-# similar to if, but represents a multi-branch selection
-# can use strings, ordinal types and integers, ints/ordinals can also use ranges
 var numCase = 50.345
 echo case numCase
   of 2: "of 2 satisifes float 2.0" # ofs must a constant expression
