@@ -1,13 +1,20 @@
-#[
-  subset of nim that can be evaluated by nims builtin VM
-  @see
-    - https://nim-lang.org/docs/nims.html
-    - https://nim-lang.org/docs/nimscript.html
-    - https://nim-lang.org/docs/tasks.html
-    - https://github.com/kaushalmodi/nim_config/blob/master/config.nims (example script)
-    - https://github.com/nim-lang/Nim/blob/devel/tests/test_nimscript.nims (compatibility tests)
-    - https://github.com/nim-lang/nimble#creating-packages (with nimscript for nimble integration)
-    - https://nim-lang.org/docs/os.html
+##
+## nimscript
+## =========
+
+##[
+## TLDR
+- subset of nim that can be evaluated by nims builtin VM
+
+links
+- [nims intro](https://nim-lang.org/docs/nims.html)
+- [nimscript spec](https://nim-lang.org/docs/nimscript.html)
+- [example nims config](https://github.com/kaushalmodi/nim_config/blob/master/config.nims)
+
+todos
+- [tasks](https://nim-lang.org/docs/tasks.html)
+- [creating pkgs with nimscript & nimble](https://github.com/nim-lang/nimble#creating-packages)
+- https://nim-lang.org/docs/os.html
 
   usecase: configs (see compiler for --skip flags)
   nim will automatically process .nims configs in the following order (later overrides previous)
@@ -33,7 +40,7 @@
     - var T args (rely on ptr operations) thus may have bugs too
     - multimethods not available
     - random.randomize() you must pass an int64 as a seed
-]#
+]##
 
 echo "############################ config"
 # you can set switches via 2 syntax
