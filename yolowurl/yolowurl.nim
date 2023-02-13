@@ -186,7 +186,7 @@ my preferences thus far
     ordinalStructured,
     routines,
     tupleObjectTable,
-    osIoFiles,
+    osIo,
     templateMacros,
     pragmas
   ]
@@ -277,7 +277,7 @@ include modules/[
   ordinalStructured,
   routines,
   tupleObjectTable,
-  osIoFiles,
+  osIo,
   templateMacros,
   pragmas
 ]
