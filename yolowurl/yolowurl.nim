@@ -23,6 +23,7 @@ internal links
 - [nim by example](nim-by-example.github.io)
 - [nimlang api design](https://nim-lang.org/docs/apis.html)
 - [nimlang manual](https://nim-lang.org/docs/manual.html)
+- [nimlang tools dir](https://github.com/nim-lang/Nim/tree/devel/tools)
 - [official nimlang tut1 (theres 3)](https://nim-lang.org/docs/tut1.html)
 - [reStructured Text cheatsheet](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
 - [status auditor docs](https://status-im.github.io/nim-style-guide/00_introduction.html)

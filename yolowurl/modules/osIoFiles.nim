@@ -10,6 +10,7 @@ todos
 - finish this section
 - [io](https://nim-lang.org/docs/io.html)
 - [check the nitch source code for good examples](https://github.com/unxsh/nitch)
+- [check the nimgrep source code for good examples](https://github.com/nim-lang/Nim/blob/devel/tools/nimgrep.nim)
 
 ## os/io/file procs i think these are todo
 - currentSourcePath() @see https://nim-lang.org/docs/system.html#currentSourcePath.t
