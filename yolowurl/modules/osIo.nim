@@ -140,8 +140,10 @@ echo "############################ stdin/out/err "
 echo "whats your name: "
 # echo "hello: ", readLine(stdin) disabled cuz it stops code runner
 
-stdout.writeLine "equivalent to an echo"; flushFile stdout
-stderr.writeLine "but i only see red"; flushFile stderr
+stdout.writeLine "equivalent to an echo"
+flushFile stdout
+stderr.writeLine "but i only see red"
+flushFile stderr
 
 echo "############################ exec related"
 
