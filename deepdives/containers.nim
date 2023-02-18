@@ -1,17 +1,7 @@
 #[
   @see
-    - https://nim-lang.org/docs/critbits.html
-    - https://nim-lang.org/docs/deques.html
-    - https://nim-lang.org/docs/enumerate.html
-    - https://nim-lang.org/docs/heapqueue.html
     - https://nim-lang.org/docs/enumutils.html
-    - https://nim-lang.org/docs/intsets.html
-    - https://nim-lang.org/docs/lists.html
     - https://nim-lang.org/docs/options.html
-    - https://nim-lang.org/docs/packedsets.html
-    - https://nim-lang.org/docs/sequtils.html
-    - https://nim-lang.org/docs/sets.html
-    - https://nim-lang.org/docs/sharedlist.html
     - https://nim-lang.org/docs/sharedtables.html
     - https://nim-lang.org/docs/strtabs.html
     - https://nim-lang.org/docs/tables.html

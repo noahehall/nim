@@ -13,7 +13,8 @@ links
   - [parse utils](https://nim-lang.org/docs/parseutils.html)
   - [str scans](https://nim-lang.org/docs/strscans.html)
   - [str utils](https://nim-lang.org/docs/strutils.html)
-- other
+  - [critbit sorted strings](https://nim-lang.org/docs/critbits.html)
+- niche
   - [cstr utils](https://nim-lang.org/docs/cstrutils.html)
   - [ropes (very long strings)](https://nim-lang.org/docs/ropes.html)
   - [str (high perf) basics](https://nim-lang.org/docs/strbasics.html)
