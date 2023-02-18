@@ -229,6 +229,7 @@ echo "############################ scripts: tasks"
 # now whats a task? lol for that we'll have to search the docs
 # technically its a template which creates a proc named blahTask
 # but why do you need a task, and not just a proc? no fkn clue
+# ahh you should also read the nimble docs on this one
 
 task poop, "with this description":
   ## a task with a description is public
