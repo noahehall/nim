@@ -5,7 +5,7 @@
 
 ##[
 TLDR
-- this module deepends on sugar, start there first
+- this module will heavily use sugar, start there first
 
 links
 - high impact
@@ -18,4 +18,5 @@ links
   - [int sets](https://nim-lang.org/docs/intsets.html)
   - [packed (sparse bit) sets](https://nim-lang.org/docs/packedsets.html)
 ]##
+
 import std/[sequtils]

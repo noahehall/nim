@@ -93,7 +93,7 @@
   - succ(x[, n]) returns the n'th successor of x
   - toOpenArray not defined in js targets
 - mutable ops
-  - add	y to container x
+  - add	y to collection x
   - dec(x, n)	decrements x by n; n is an integer
   - dec(x)	decrements x by one
   - del	O(1) delete item at index, doesn't preserve the order
@@ -113,6 +113,7 @@
   - len	Return the length
   - low(x) lowest possible value/index
   - varargsLen the number of variadic arguments in x
+  - in/notin
 - set procs
   - a - b	Difference
   - A - B	difference of two sets (A without B's elements)
