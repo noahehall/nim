@@ -1,84 +1,69 @@
-#[
-  @see
-    - https://nim-lang.org/docs/cstrutils.html
-    - https://nim-lang.org/docs/dollars.html (system)
-    - https://nim-lang.org/docs/parseutils.html
-    - https://nim-lang.org/docs/ropes.html
-    - https://nim-lang.org/docs/strbasics.html
-    - https://nim-lang.org/docs/strformat.html
-    - https://nim-lang.org/docs/strmisc.html
-    - https://nim-lang.org/docs/strscans.html
-    - https://nim-lang.org/docs/strutils.html
-    - https://nim-lang.org/docs/unicode.html
-    - https://nim-lang.org/docs/unidecode.html
-    - https://nim-lang.org/docs/wordwrap.html
-]#
+##
+## strings deepdive
+## =====================
+## deeper than system, diving into the standard library
 
-#[
-  # basics
-  & = concat, is overloaded when strformat is imported
-  $ = toString
-]#
+##[
+## TLDR
+- since strings utilize many seq procs, start with sequtils
+
+links
+- high impact
+  - [str format](https://nim-lang.org/docs/strformat.html)
+  - [parse utils](https://nim-lang.org/docs/parseutils.html)
+  - [str scans](https://nim-lang.org/docs/strscans.html)
+  - [str utils](https://nim-lang.org/docs/strutils.html)
+- other
+  - [cstr utils](https://nim-lang.org/docs/cstrutils.html)
+  - [ropes (very long strings)](https://nim-lang.org/docs/ropes.html)
+  - [str (high perf) basics](https://nim-lang.org/docs/strbasics.html)
+  - [str misc](https://nim-lang.org/docs/strmisc.html)
+  - [unicode](https://nim-lang.org/docs/unicode.html)
+  - [unidecode](https://nim-lang.org/docs/unidecode.html)
+  - [word wrap](https://nim-lang.org/docs/wordwrap.html)
+  - [encodings](https://nim-lang.org/docs/encodings.html)
+]##
 
 import std/[strutils, strformat]
 
 let
-  str1 = "pooper scooper"
-  str2 = """
-    long
-    string
-    literal
-    nothing\i\s
-    \s\es\ca\pe\d
-    """
-  str3 = r"raw string\tliteral"
-  str4 = "\r\rstring\t\n\rstring"
-  char1 = 'a'
+  oneline = "this is a one line string"
+  multiline = "this is a\nmultiline string"
 
-echo "############################  dollars (system)"
-# $ === toString
-echo $1 & $2, " concats to 12"
 
 echo "############################  strutils"
-echo str1.split
-echo str1.toUpperAscii
-echo str1.repeat(5)
-echo str2.strip.splitLines
+echo oneline.split
+echo oneline.toUpperAscii
+echo oneline.repeat(5)
+echo multiline.strip.splitLines
 
 # % is like &
-echo "$1 $2" % ["index1", "index2"]
-echo "$# $#" % ["get first", "then get next"]
-echo "$hello $world" % ["hello", "yolo", "world", "wurl"]
-echo "the number is ", parseInt("10")
+# echo "$1 $2" % ["index1", "index2"]
+# echo "$# $#" % ["get first", "then get next"]
+# echo "$hello $world" % ["hello", "yolo", "world", "wurl"]
+# echo "the number is ", parseInt("10")
 
-echo "############################  strformat"
-# fmt doesnt interprate literal escape sequeqnces
-echo fmt"{str1}\n\n\n{str2}\n\n\n{str3}\n\n\n{str4}"
-# & does intrepret literal escape sequences
-echo &"{str1}\n\n\n{str2}\n\n\n{str3}\n\n\n{str4}"
-# this is also how you can concat different types
-let
-  a = [1,2]
-  b = @[1,2]
-  c = 'c'
-  d = "dee"
+# echo "############################  strformat"
+# # fmt doesnt interprate literal escape sequeqnces
+# echo fmt"{str1}\n\n\n{str2}\n\n\n{str3}\n\n\n{str4}"
+# # & does intrepret literal escape sequences
+# echo &"{str1}\n\n\n{str2}\n\n\n{str3}\n\n\n{str4}"
+# # this is also how you can concat different types
+# let
+#   a = [1,2]
+#   b = @[1,2]
+#   c = 'c'
+#   d = "dee"
 
-echo &"{a} {b} {c} {d}"
+# echo &"{a} {b} {c} {d}"
 
-echo "############################  use cases"
+# echo "############################  use cases"
 # formatting objects
-type
-  Nirv = object
-    paths, strats, actions: bool
-var nirv = Nirv(paths: true, strats: true, actions: true)
-echo "we need better $ " & $nirv
-echo "we need better % $1 " % [$nirv]
-echo &"we need better & {nirv}"
-echo &"we need better & {$nirv}"
-
-# overload dollars to modify the Nirv toString
-proc `$`(self: Nirv): string =
-  &"paths = {self.paths}, strats = {self.strats}, actions = {self.actions}"
-echo "we need better `$` " & $nirv
-echo &"[original] we need better & {nirv}"
-echo &"[overloadded] we need better & {$nirv}"
+# type
+#   Nirv = object
+#     paths, strats, actions: bool
+# var nirv = Nirv(paths: true, strats: true, actions: true)
+# echo "we need better $ " & $nirv
+# echo "we need better % $1 " % [$nirv]
+# echo &"we need better & {nirv}"
+# echo &"we need better & {$nirv}"

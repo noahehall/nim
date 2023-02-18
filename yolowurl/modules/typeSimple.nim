@@ -49,6 +49,7 @@ links
 - s.add(c)	Add character to the string
 - $	Convert various types to string
 - substr
+- in/notin are for checking if chars are/notin a string
 
 ## number procs
 - and	Bitwise and	&
@@ -186,10 +187,24 @@ echo "off is an alias for ", $off
 echo "on is an alias for ", $on
 
 echo "############################ strings"
+let
+  str1 = "pooper scooper"
+  str2 = """
+    long
+    string
+    literal
+    nothing\i\s
+    \s\es\ca\pe\d
+    """
+  str3 = r"raw string\tliteral"
+  str4 = "\r\rstring\t\n\rstring"
+  char1 = 'a'
+
 var msg: string = "yolo"
 echo msg & " wurl" # concat and return new string
 msg.add(" wurl") # modifies the string in place
 echo msg, "has length ", len msg
+echo if 'y' in msg: "y in yolo" else: "must be a different universe"
 let
   poop6 = "flush\n\n\n\n\n\nescapes are interpreted"
   flush = r"raw string, escapes arent interpreted"

@@ -241,6 +241,13 @@ echo noah
 let you = Someone(name:"not noah", bday:"dunno", age: 19)
 debugEcho you
 
+# overload dollars for custom toString
+proc `$`(self: Someone): string =
+  "my name is, " & self.name & " and i was born on " & self.bday
+
+echo $you
+
+
 echo "############################ Properties: object getter/setters"
 # public fields can ignore this section
 # private fields (without *) are not publically visible
