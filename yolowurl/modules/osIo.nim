@@ -15,11 +15,6 @@ todos
   cpuEndian
   cpuRelax
 
-## os/io/file procs i think these are todo
-- currentSourcePath() @see https://nim-lang.org/docs/system.html#currentSourcePath.t
-- os.parentDir()
-- macros.getProjectPath()
-- getCurrentDir proc
 
 ## os vars/procs/etc
 .. code-block:: Nim
@@ -50,17 +45,18 @@ todos
 echo "############################ os"
 echo "my hostCPU is " & hostCPU
 echo "my hostOS is " & hostOS
+echo "where the fk am i: dont know cuz currentSourcePath() throws err "
+const srcPath = currentSourcePath()
+echo "well if you read the docs you'll see it only works at compile time:  ", srcPAth
 
+echo "my process has X bytes of free memory ", getFreeMem() ## \
+  ## number of bytes owned by the process, but do not hold any meaningful data
 
-# number of bytes owned by the process, but do not hold any meaningful data
-echo "my process has X bytes of free memory ", getFreeMem()
-
-# amount of memory i suppose, doesnt have description
 echo "my process has X bytes of max memory ", getMaxMem()
 echo "my process has X bytes of total memory ", getTotalMem()
 
-# number of bytes owned by the process and hold data
-echo "my process is using X bytes of memory ", getOccupiedMem()
+echo "my process is using X bytes of memory ", getOccupiedMem() ## \
+  ## number of bytes owned by the process and hold data
 
 echo "############################ files "
 # flushFile buffer down the toilet
@@ -76,10 +72,6 @@ echo "############################ files "
 # setStdIoUnbuffered
 # slurp alias for staticRead
 # staticRead compile-time readFile for easy resource embedding, e.g. const myResource = staticRead"mydatafile.bin"
-# stderr stream
-# stdin stream
-# stdmsg expands to stdout/err depending on useStdoutAsStdmsg switch
-# stdout stream
 # write
 # writeBuffer/Bytes/Chars/File/Line
 
@@ -140,12 +132,18 @@ writeLines @["first line", "Second line"]
 echo readFile tmpfile
 
 echo "############################ stdin/out/err "
+# stderr stream
+# stdin stream
+# stdmsg expands to stdout/err depending on useStdoutAsStdmsg switch
+# stdout stream
 
 echo "whats your name: "
 # echo "hello: ", readLine(stdin) disabled cuz it stops code runner
 
-writeLine stdout, "equivalent to an echo"; flushFile stdout
-writeLine stderr, "but i only see red"; flushFile stderr
+stdout.writeLine "equivalent to an echo"
+flushFile stdout
+stderr.writeLine "but i only see red"
+flushFile stderr
 
 echo "############################ exec related"
 

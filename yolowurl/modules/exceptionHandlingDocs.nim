@@ -33,6 +33,7 @@ links
 - [exception doc](https://nim-lang.org/docs/system.html#Exception)
 - [exception hierarchy doc](https://nim-lang.org/docs/manual.html#exception-handling-exception-hierarchy)
 - [nim reStructuredText & markdown](https://nim-lang.org/docs/rst.html)
+- [nimscript compatibility tests](https://github.com/nim-lang/Nim/blob/devel/tests/test_nimscript.nims)
 - [segfaults module](https://nim-lang.org/docs/segfaults.html)
 - [status exception handling docs](https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling)
 - [system exceptions you can extend from](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim)

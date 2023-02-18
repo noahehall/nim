@@ -1,0 +1,4 @@
+# lol neither of these remove the diff from github
+# but both work on the cli (sans icdiff)
+**/htmldocs/** binary
+**/htmldocs/** -diff
