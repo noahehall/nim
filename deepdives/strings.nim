@@ -1,11 +1,12 @@
 ##
 ## strings deepdive
 ## ================
+## [bookmark](https://nim-lang.org/docs/strformat.html)
 
 ##[
 ## TLDR
 - since strings utilize many seq procs, start with sequtils
-- see regex.nim for regex
+- see regex.nim for regex & related modules
 
 links
 - high impact
@@ -23,6 +24,7 @@ links
   - [word wrap](https://nim-lang.org/docs/wordwrap.html)
   - [encodings](https://nim-lang.org/docs/encodings.html)
   - [edit distance](https://nim-lang.org/docs/editdistance.html)
+  - [punycode](https://nim-lang.org/docs/punycode.html)
 ]##
 
 import std/[strutils, strformat]

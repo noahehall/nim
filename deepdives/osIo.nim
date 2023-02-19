@@ -1,6 +1,9 @@
 #[
 
   @see
+    - https://nim-lang.org/docs/lib.html#pure-libraries-generic-operating-system-services
+    - https://nim-lang.org/docs/lib.html#impure-libraries-generic-operating-system-services
+    - https://nim-lang.org/docs/lib.html#wrappers-unix-specific
     - https://nim-lang.org/docs/asyncfile.html
     - https://nim-lang.org/docs/browsers.html
     - https://nim-lang.org/docs/cpuinfo.html

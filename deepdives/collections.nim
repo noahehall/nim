@@ -1,13 +1,12 @@
 ##
 ## collections deep dive
 ## =====================
+## [bookmark](https://nim-lang.org/docs/sets.html)
 
 ##[
 TLDR
 - this module will heavily use sugar, start there first
-- bookmark: https://nim-lang.org/docs/sets.html
-- completed
-  - sequtils
+
 
 links
 - high impact
