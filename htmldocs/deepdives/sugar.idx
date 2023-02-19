@@ -1,0 +1,8 @@
+runFn	deepdives/sugar.html#runFn,string,	sugar: runFn(x: string; fn: (string) -&gt; string): string	
+myLambda	deepdives/sugar.html#myLambda	sugar: myLambda	
+myProc	deepdives/sugar.html#myProc,string	sugar: myProc(s: string): string	
+myRange	deepdives/sugar.html#myRange	sugar: myRange	
+mySeq	deepdives/sugar.html#mySeq	sugar: mySeq	
+myHashSet	deepdives/sugar.html#myHashSet	sugar: myHashSet	
+myTable	deepdives/sugar.html#myTable	sugar: myTable	
+sugar deep dive	deepdives/sugar.html#sugar-deep-dive	 sugar deep dive	

@@ -1,0 +1,6 @@
+immutable	deepdives/collections.html#immutable	collections: immutable	
+mutable	deepdives/collections.html#mutable	collections: mutable	
+mutated	deepdives/collections.html#mutated	collections: mutated	
+echoMutated	deepdives/collections.html#echoMutated	collections: echoMutated(): void	
+collections deep dive	deepdives/collections.html#collections-deep-dive	 collections deep dive	
+seq procs	deepdives/collections.html#collections-deep-dive-seq-procs	  seq procs	

@@ -9,14 +9,17 @@
     - [with first class support for reStructured text](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
   - [testing is a first class citizen](https://nim-lang.github.io/Nim/testament.html)
   - [spidermans uncle](https://nim-lang.org/docs/tut3.html)
-- tldr
-  - [vscode code-runner cmd for both nimscript and nim files](https://github.com/noahehall/theBookOfNoah/blob/master/vscode.settings.jsonc#L185)
-  - [shell fns for nim, nimble and choosenim](https://github.com/noahehall/theBookOfNoah/blob/master/linux/bash_cli_fns/nimlang.sh)
-  - [hello world](./yolowurl/)
-  - [deep dives](./deepdives/)
-  - [nimscript](./nimscript/nimscript.nims)
-  - [community repos](./community/README.md)
-  - [backends](./backends/)
+
+## links
+
+- [html docs](/htmldocs/main.html)
+- [vscode code-runner cmd for both nimscript and nim files](https://github.com/noahehall/theBookOfNoah/blob/master/vscode.settings.jsonc#L185)
+- [shell fns for nim, nimble and choosenim](https://github.com/noahehall/theBookOfNoah/blob/master/linux/bash_cli_fns/nimlang.sh)
+- [hello world](./yolowurl/)
+- [deep dives](./deepdives/)
+- [nimscript](./nimscript/nimscript.nims)
+- [community repos](./community/README.md)
+- [backends](./backends/)
 
 ## Todos
 

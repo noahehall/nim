@@ -1,10 +1,6 @@
 ##
 ## yolo wurl: basic nim syntax
 ## ===========================
-## :Authors:
-##  noah
-## :Org:
-##  personal
 
 ##[
 ## TLDR
