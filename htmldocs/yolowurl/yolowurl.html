@@ -614,7 +614,7 @@ except:
   <li><a class="reference" href="#b"
     title="b = 100">b</a></li>
   <li><a class="reference" href="#buildInfo"
-    title="buildInfo = &quot;Revision d52b76b158ae20e5ad6476f9d6e34b7d28118703\nCompiled on #33~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Jan 30 17:03:34 UTC 2&quot;">buildInfo</a></li>
+    title="buildInfo = &quot;Revision 1c16d13aebb5690934eb9473b69bf018f7630ebb\nCompiled on #33~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Jan 30 17:03:34 UTC 2&quot;">buildInfo</a></li>
   <li><a class="reference" href="#c"
     title="c = 100'i8">c</a></li>
   <li><a class="reference" href="#debug"
@@ -1121,9 +1121,6 @@ except:
 <li>MyCustomError should follow the hierarchy defiend in system.Exception (docs)</li>
 <li>never raise an exception without a msg, and never for control flow (docs maybe?)</li>
 <li>object variants &gt; inheritance for simple types; no type conversion required (docs)</li>
-<li>prefer &quot;&quot;&quot;string literals&quot;&quot;&quot; that start with new line, i.e. the &quot;&quot;&quot; first should be on its own line</li>
-<li>prefer let &gt; var for runtime vars that dont change</li>
-<li>prefer testament &gt; unittests with dir structur like root/tests/somecategory/tsomefile.nim (testament source maybe?)</li>
 <li>procs that mutate data should be prefixed with 'm' (styleguide)</li>
 <li>procs that return a transformed copy of soemthing should be in past particle (e.g. pooped) (styleguide)</li>
 <li>run initialization logic as toplevel module statements, e.g. init data (docs)</li>
@@ -1132,15 +1129,19 @@ except:
 <li>the main type idenfier shouldn not have a Obj|Ref|Ptr suffix (styleguide)</li>
 <li>type &gt; cast operator cuz type preserves the bit pattern (docs)</li>
 <li>type identifiers/consts/pure enums use PascalCase, all other (including pure enums) use camelCase</li>
+<li>use &quot;&quot;&quot;string literals&quot;&quot;&quot; that start with new line, i.e. the &quot;&quot;&quot; first should be on its own line</li>
 <li>use a..b unless a .. ^b has an operator (docs, styleguide)</li>
+<li>use collect macro &gt; map and filter (docs)</li>
 <li>use include to split large modules into distinct files (docs)</li>
+<li>use let &gt; var for runtime vars that dont change</li>
 <li>use Natural/Positive (docs) e.g. if Blah is Positive</li>
 <li>use procs &gt; (macros/templates/iterators/convertors) unless necessary (styleguide)</li>
 <li>use result(its optimized) &gt; return (only for control flow) &gt; last statement expression (stylguide) (FYI status prefers last statement)</li>
 <li>use sets (e.g. as flags) &gt; integers that have to be or'ed (docs)</li>
 <li>use status push &gt; raises convention to help track unfound errs (docs + status)</li>
-<li>use typeof x and not type x</li>
-<li>X.y &gt; x[].y for accessing ref/ptr objects (docs: x[].y highly discouraged)</li>
+<li>use testament &gt; unittests with dir structur like root/tests/somecategory/tsomefile.nim (testament source maybe?)</li>
+<li>use typeof x and not type x (docs)</li>
+<li>use X.y &gt; x[].y for accessing ref/ptr objects (docs: x[].y highly discouraged)</li>
 </ul>
 <p>borrowed from somewhere else (e.g. status auditor docs)</p>
 <ul class="simple"><li>MACRO_CASE for external constants (status) (permitted in styleguide but not preferred)</li>
@@ -1162,6 +1163,7 @@ except:
 <li>always compile with --panics:on (manual: smaller binaries + optimizations)</li>
 <li>dont use any unsafe language features or disable runtime checks (manual: removes possibility of unchecked runtime errs)</li>
 <li>follow nimlangs API naming scheme</li>
+<li>use blahIt variants for an even more terse syntax</li>
 </ul>
 
 <h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-modules" href="#yolo-wurlcolon-basic-nim-syntax-modules">modules</a></h2><ul class="simple"><li>generally 1 file == 1 module</li>
@@ -3458,7 +3460,7 @@ is in the global scope
 </dd>
 </div>
 <div id="buildInfo">
-<dt><pre><span class="Identifier">buildInfo</span> <span class="Other">=</span> <span class="StringLit">&quot;Revision d52b76b158ae20e5ad6476f9d6e34b7d28118703\nCompiled on #33~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Jan 30 17:03:34 UTC 2&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">buildInfo</span> <span class="Other">=</span> <span class="StringLit">&quot;Revision 1c16d13aebb5690934eb9473b69bf018f7630ebb\nCompiled on #33~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Jan 30 17:03:34 UTC 2&quot;</span></pre></dt>
 <dd>
 
 
@@ -4258,7 +4260,7 @@ compile time only returns stdout + stderr
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-19 12:00:57 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-19 14:51:20 UTC</small>
       </div>
     </div>
   </div>

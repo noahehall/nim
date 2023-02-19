@@ -6,10 +6,13 @@
 ## - [testament src](https://github.com/nim-lang/Nim/tree/devel/testament)
 
 ##[
-## is this gonna work?
-  @see
-- https://nim-lang.org/docs/testament.html (preferred std testing tool)
-- https://github.com/status-im/nim-testutils/tree/master/testutils/fuzzing
-- https://nim-lang.org/docs/unittest.html (use testament instead)
-- https://nim-lang.org/docs/assertions.html
+TLDR
+- eventually will contain stuff about tests
+
+todos
+- [testament: preferred testing tool](https://nim-lang.org/docs/testament.html)
+- [status fuzz testing tool](https://github.com/status-im/nim-testutils/tree/master/testutils/fuzzing)
+- [unit tests](https://nim-lang.org/docs/unittest.html)
+- [assertions](https://nim-lang.org/docs/assertions.html)
+
 ]##

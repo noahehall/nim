@@ -55,7 +55,25 @@ digraph main {
 "std/sequtils" -> "std/macros";
 "deepdives/collections" -> "std/sequtils";
 "deepdives/collections" -> "std/sugar";
+"std/strutils" -> "std/parseutils";
+"std/strutils" -> "std/math";
+"std/strutils" -> "std/algorithm";
+"std/enumutils" -> "std/macros";
+"std/typetraits" -> "std/private/since";
+"std/typetraits" -> "std/macros";
+"std/enumutils" -> "std/typetraits";
+"std/strutils" -> "std/enumutils";
+"std/strutils" -> "std/unicode";
+"std/strutils" -> "std/private/since";
+"std/strutils" -> "std/private/strimpl";
+"std/strformat" -> "std/macros";
+"std/strformat" -> "std/parseutils";
+"std/strformat" -> "std/unicode";
+"std/strformat" -> "std/strutils";
+"deepdives/strings" -> "std/strutils";
+"deepdives/strings" -> "std/strformat";
 "main" -> "yolowurl/yolowurl";
 "main" -> "deepdives/sugar";
 "main" -> "deepdives/collections";
+"main" -> "deepdives/strings";
 }

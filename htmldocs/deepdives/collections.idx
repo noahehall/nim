@@ -1,6 +1,8 @@
 immutable	deepdives/collections.html#immutable	collections: immutable	
+seq2d	deepdives/collections.html#seq2d	collections: seq2d	
+zipped	deepdives/collections.html#zipped	collections: zipped	
 mutable	deepdives/collections.html#mutable	collections: mutable	
 mutated	deepdives/collections.html#mutated	collections: mutated	
 echoMutated	deepdives/collections.html#echoMutated	collections: echoMutated(): void	
 collections deep dive	deepdives/collections.html#collections-deep-dive	 collections deep dive	
-seq procs	deepdives/collections.html#collections-deep-dive-seq-procs	  seq procs	
+additional info	deepdives/collections.html#collections-deep-dive-additional-info	  additional info	

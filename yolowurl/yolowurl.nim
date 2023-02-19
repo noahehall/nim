@@ -97,9 +97,6 @@ idiomatic nim (from docs/styleguide)
 - MyCustomError should follow the hierarchy defiend in system.Exception (docs)
 - never raise an exception without a msg, and never for control flow (docs maybe?)
 - object variants > inheritance for simple types; no type conversion required (docs)
-- prefer """string literals""" that start with new line, i.e. the """ first should be on its own line
-- prefer let > var for runtime vars that dont change
-- prefer testament > unittests with dir structur like root/tests/somecategory/tsomefile.nim (testament source maybe?)
 - procs that mutate data should be prefixed with 'm' (styleguide)
 - procs that return a transformed copy of soemthing should be in past particle (e.g. pooped) (styleguide)
 - run initialization logic as toplevel module statements, e.g. init data (docs)
@@ -108,15 +105,19 @@ idiomatic nim (from docs/styleguide)
 - the main type idenfier shouldn not have a Obj|Ref|Ptr suffix (styleguide)
 - type > cast operator cuz type preserves the bit pattern (docs)
 - type identifiers/consts/pure enums use PascalCase, all other (including pure enums) use camelCase
+- use """string literals""" that start with new line, i.e. the """ first should be on its own line
 - use a..b unless a .. ^b has an operator (docs, styleguide)
+- use collect macro > map and filter (docs)
 - use include to split large modules into distinct files (docs)
+- use let > var for runtime vars that dont change
 - use Natural/Positive (docs) e.g. if Blah is Positive
 - use procs > (macros/templates/iterators/convertors) unless necessary (styleguide)
 - use result(its optimized) > return (only for control flow) > last statement expression (stylguide) (FYI status prefers last statement)
 - use sets (e.g. as flags) > integers that have to be or'ed (docs)
 - use status push > raises convention to help track unfound errs (docs + status)
-- use typeof x and not type x
-- X.y > x[].y for accessing ref/ptr objects (docs: x[].y highly discouraged)
+- use testament > unittests with dir structur like root/tests/somecategory/tsomefile.nim (testament source maybe?)
+- use typeof x and not type x (docs)
+- use X.y > x[].y for accessing ref/ptr objects (docs: x[].y highly discouraged)
 
 borrowed from somewhere else (e.g. status auditor docs)
 - MACRO_CASE for external constants (status) (permitted in styleguide but not preferred)
@@ -136,6 +137,7 @@ my preferences thus far
 - always compile with --panics:on (manual: smaller binaries + optimizations)
 - dont use any unsafe language features or disable runtime checks (manual: removes possibility of unchecked runtime errs)
 - follow nimlangs API naming scheme
+- use blahIt variants for an even more terse syntax
 
 ## modules
 - generally 1 file == 1 module

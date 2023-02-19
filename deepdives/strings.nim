@@ -1,7 +1,6 @@
 ##
 ## strings deepdive
-## =====================
-## deeper than system, diving into the standard library
+## ================
 
 ##[
 ## TLDR
@@ -14,15 +13,17 @@ links
   - [str scans](https://nim-lang.org/docs/strscans.html)
   - [str utils](https://nim-lang.org/docs/strutils.html)
   - [critbit sorted strings](https://nim-lang.org/docs/critbits.html)
+  - [pegs](https://nim-lang.org/docs/pegs.html)
 - niche
   - [cstr utils](https://nim-lang.org/docs/cstrutils.html)
   - [ropes (very long strings)](https://nim-lang.org/docs/ropes.html)
   - [str (high perf) basics](https://nim-lang.org/docs/strbasics.html)
   - [str misc](https://nim-lang.org/docs/strmisc.html)
   - [unicode](https://nim-lang.org/docs/unicode.html)
-  - [unidecode](https://nim-lang.org/docs/unidecode.html)
+  - [unicode decode](https://nim-lang.org/docs/unidecode.html)
   - [word wrap](https://nim-lang.org/docs/wordwrap.html)
   - [encodings](https://nim-lang.org/docs/encodings.html)
+  - [edit distance](https://nim-lang.org/docs/editdistance.html)
 ]##
 
 import std/[strutils, strformat]

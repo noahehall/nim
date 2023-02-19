@@ -16,4 +16,5 @@ import
   deepdives/[
     sugar,
     collections,
+    strings,
   ]

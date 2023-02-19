@@ -197,6 +197,7 @@ assert "a" == $'a' # has to be of same type
 
 # is always turned on regardless of --assertions flag
 doAssert 1 < 2, "failure msg"
+# doAssertRaises(IndexDefect): # declare exceptions the codeblock raises
 
 # true if the module is compiled as the main file
 # useful for embedding tests within the module

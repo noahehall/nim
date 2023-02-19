@@ -1,52 +1,88 @@
 ##
 ## collections deep dive
 ## =====================
-## everything you need to work with collections of items
 
 ##[
 TLDR
 - this module will heavily use sugar, start there first
-- bookmark: https://nim-lang.org/docs/sequtils.html#delete%2Cseq%5BT%5D%2CSlice%5Bint%5D
+- bookmark: https://nim-lang.org/docs/sets.html
+- completed
+  - sequtils
 
 links
 - high impact
-  - [seq (seq, strings, array) utils](https://nim-lang.org/docs/sequtils.html)
   - [double ended queue](https://nim-lang.org/docs/deques.html)
   - [enumarate any seq](https://nim-lang.org/docs/enumerate.html)
-  - [heapqueue](https://nim-lang.org/docs/heapqueue.html)
   - [hash sets](https://nim-lang.org/docs/sets.html)
-  - [packed (sparse bit) sets](https://nim-lang.org/docs/packedsets.html)
+  - [heapqueue](https://nim-lang.org/docs/heapqueue.html)
   - [int sets](https://nim-lang.org/docs/intsets.html)
+  - [packed (sparse bit) sets](https://nim-lang.org/docs/packedsets.html)
+  - [seq (seq, strings, array) utils](https://nim-lang.org/docs/sequtils.html)
+  - [set utils](https://nim-lang.org/docs/setutils.html)
 - niche
 
 
-## seq procs
+## additional info
 - toSeq(blah) transforms any iterable into a sequence
-- all
-- any
-- apply a proc to every item
+- newSeqWith useful for creating 2 dimensional sequences
+- some procs have an it variant for even more succintness
+  - allIt
+  - anyIt
+  - applyIt
+  - countIt
+  - filterIt
+  - keepItIf
+  - mapIt
 ]##
 
 import std/[sequtils, sugar]
 
-echo "############################ immutable sequtils"
-const immutable = toSeq(1..10)
+echo "############################ pure sequtils"
+const
+  immutable = toSeq(1..10)
+  seq2d = newSeqWith(3, toSeq(1..5)) # @[@[1,2,3,4,5].repeat 3]
+  zipped = @[("opt1", 'a'), ("opt2", 'b'), ("opt3", 'c')]
+
+echo "newSeqWith ", seq2d
 echo "all items?  ", immutable.all x => x < 11
+echo "allIt is even cooler ", immutable.allIt it < 11
 echo "any item? ", immutable.any x => x == 10
-echo "concat ", concat(immutable, immutable, immutable)
+echo "concat ", concat immutable, immutable, immutable
+echo "distribute == !concat: ", concat(immutable, immutable, immutable).distribute 3
 echo "duplicate ", immutable.cycle 3
-echo "deduplicate accepts isSorted second param for faster algo ", deduplicate(immutable.cycle 3)
+echo "deduplicate accepts isSorted 2nd param for faster algo ", deduplicate(immutable.cycle 3)
 echo "occurance ", immutable.count 1
+echo "map ", immutable.map x => x * 2
+echo "index with largest value: ", maxIndex immutable
+echo "index with smallest value: ", minIndex immutable
+echo "repeat: ", 5.repeat 5
+echo "unzip: ", unzip zipped
+echo "zip: ", @["opt1", "opt2", "opt3"].zip @['a', 'b', 'c']
+echo "mapLiterals to a diff type ", [0.1, 0.2].mapLiterals int
+echo "fold left template requires a and b ", immutable.foldl a + b
+echo "fold right template requires a and b ", immutable.foldr a + b
+
+# hmm thought these would be 55 + 45, but instead its "55" concat "45"
+echo "fold left/right accepts an initial value ", immutable.foldl a + b, 45
+
+echo "filter ", immutable.filter x => x > 5
+for n in immutable.filter x => x > 9:
+  echo "filter can be iterated " & $n
 
 
-echo "############################ mutable sequtils"
+echo "############################ impure sequtils"
 var mutable = toSeq(1..10)
 var mutated: string
 proc echoMutated(): void = echo "seq: ", $mutable, "str: ", $mutated
 
 echoMutated()
 
-mutable.apply x => x * x
-echoMutated()
-mutable.apply x => mutated.addInt x # mutates the string instead
-echoMutated()
+mutable.apply x => x * x; echoMutated() ## \
+  ## mutates its operand
+mutable.apply x => mutated.addInt x; echoMutated() ## \
+  ## mutates the string instead
+mutable.delete 2..3; echoMutated() ## \
+  ## inclusive from..to
+mutable.insert @[3,2,1], 1; echoMutated() ## \
+  ## default is to unshift at 0 and can be omitted
+mutable.keepIf x => x > 0; echoMutated()

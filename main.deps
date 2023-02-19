@@ -33,6 +33,14 @@
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/pure/algorithm.nim
 /home/poop/git/foss/nim/deepdives/collections.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/pure/collections/sequtils.nim
+/home/poop/git/foss/nim/deepdives/strings.nim
+/home/poop/.choosenim/toolchains/nim-1.6.10/lib/pure/strutils.nim
+/home/poop/.choosenim/toolchains/nim-1.6.10/lib/pure/parseutils.nim
+/home/poop/.choosenim/toolchains/nim-1.6.10/lib/std/enumutils.nim
+/home/poop/.choosenim/toolchains/nim-1.6.10/lib/pure/typetraits.nim
+/home/poop/.choosenim/toolchains/nim-1.6.10/lib/pure/unicode.nim
+/home/poop/.choosenim/toolchains/nim-1.6.10/lib/std/private/strimpl.nim
+/home/poop/.choosenim/toolchains/nim-1.6.10/lib/pure/strformat.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/arithmetics.nim
 /home/poop/git/foss/nim/yolowurl/modules/ifWhenCase.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/comparisons.nim
@@ -44,6 +52,7 @@
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/cellsets.nim
 /home/poop/git/foss/nim/yolowurl/modules/blocks.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/chcks.nim
+/home/poop/.choosenim/toolchains/nim-1.6.10/lib/pure/includes/unicode_ranges.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/bitmasks.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/syslocks.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/alloc.nim

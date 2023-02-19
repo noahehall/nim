@@ -12,6 +12,8 @@
 
 ## links
 
+internal
+
 - [html docs](/htmldocs/main.html)
 - [vscode code-runner cmd for both nimscript and nim files](https://github.com/noahehall/theBookOfNoah/blob/master/vscode.settings.jsonc#L185)
 - [shell fns for nim, nimble and choosenim](https://github.com/noahehall/theBookOfNoah/blob/master/linux/bash_cli_fns/nimlang.sh)
@@ -20,6 +22,16 @@
 - [nimscript](./nimscript/nimscript.nims)
 - [community repos](./community/README.md)
 - [backends](./backends/)
+
+nimlang
+
+- [std library](https://nim-lang.org/docs/lib.html)
+- [api design](https://nim-lang.org/docs/apis.html)
+- [system module](https://nim-lang.org/docs/system.html)
+
+interwebs
+
+- [PEGs vs CFGs](https://stackoverflow.com/questions/5501074/what-are-the-differences-between-pegs-and-cfgs)
 
 ## Todos
 

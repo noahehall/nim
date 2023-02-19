@@ -371,6 +371,7 @@ echo eval(newPlus(newPlus(newLit(1), newLit(2)), newLit(4)))
 # you can force call the base method via procCall someMethod(a,b)
 
 echo "############################ multi-methods"
+# copied from docs
 type
   Thing = ref object of RootObj
   Unit = ref object of Thing
@@ -388,7 +389,7 @@ method collide(a: Unit, b: Thing) {.inline.} =
 var aaaa, bbbb: Unit
 new aaaa
 new bbbb
-# there both Units, but collide doesnt have an over specifically for that
+# there both Units, but collide doesnt have an overload specifically for that
 # so which will be used? type preference occurs from left -> right
 collide(aaaa, bbbb) # output: 2
 
