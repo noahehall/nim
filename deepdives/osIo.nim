@@ -1,5 +1,5 @@
 #[
-
+- your going to need strutils, sequtils, sugar and strformat
   @see
     - https://nim-lang.org/docs/lib.html#pure-libraries-generic-operating-system-services
     - https://nim-lang.org/docs/lib.html#impure-libraries-generic-operating-system-services
@@ -13,11 +13,11 @@
     - https://nim-lang.org/docs/osproc.html
     - https://nim-lang.org/docs/packaging.html
     - https://nim-lang.org/docs/parsecfg.html
-    - https://nim-lang.org/docs/parsecsv.html
     - https://nim-lang.org/docs/parseopt.html
     - https://nim-lang.org/docs/posix_utils.html
     - https://nim-lang.org/docs/posix.html
     - https://nim-lang.org/docs/rdstdin.html
     - https://nim-lang.org/docs/selectors.html
     - https://nim-lang.org/docs/terminal.html
+    - https://nim-lang.org/docs/logging.html
 ]#

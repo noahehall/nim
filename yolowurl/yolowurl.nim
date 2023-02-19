@@ -10,6 +10,9 @@
   - we dont use runnableExamples because we want to run on the cmd line & in vscode
   - however real code should use runnableExamples for docs
 - newer nim versions seems to be getting more strict/better at catching programmer errors
+- you should expect everything in nim is heavily overloaded
+  - hence only simple syntax is shown
+  - but each proc to accepts a variable number of args
 
 internal links
 - [my bookmark](https://nim-lang.org/docs/manual.html#special-types)
@@ -108,6 +111,7 @@ idiomatic nim (from docs/styleguide)
 - use """string literals""" that start with new line, i.e. the """ first should be on its own line
 - use a..b unless a .. ^b has an operator (docs, styleguide)
 - use collect macro > map and filter (docs)
+- use fmt"{expr}" > &"{expr} (docs) unless you need escapes (me)
 - use include to split large modules into distinct files (docs)
 - use let > var for runtime vars that dont change
 - use Natural/Positive (docs) e.g. if Blah is Positive

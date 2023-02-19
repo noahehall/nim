@@ -2,7 +2,13 @@
 
 - my adventures in nim
 - all files are executable
-- alot of nodejs devs are moving to/incorporating rust/go in their stack; I chose nim for (many, but definitely these) two (lol) reasons
+- recommended ramp up
+  - super basics: yolowurl, sugar, collections, strings, containers
+  - basics: maths, tasks, osIo, tests,
+
+## for javascript appdevs
+
+- alot of nodejs devs are moving to/incorporating rust/go in their stack; you should prefer nim for (many, but definitely these) these reasons
   - [cross compile applications](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
   - [cross platform scripts](https://nim-lang.org/docs/nims.html#benefits)
   - [documentation is a first class citizen](https://nim-lang.org/docs/docgen.html)
@@ -14,7 +20,7 @@
 
 internal
 
-- [html docs](/htmldocs/main.html)
+- [open html docs in your browser](/htmldocs/main.html)
 - [vscode code-runner cmd for both nimscript and nim files](https://github.com/noahehall/theBookOfNoah/blob/master/vscode.settings.jsonc#L185)
 - [shell fns for nim, nimble and choosenim](https://github.com/noahehall/theBookOfNoah/blob/master/linux/bash_cli_fns/nimlang.sh)
 - [hello world](./yolowurl/)

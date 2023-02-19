@@ -6,10 +6,11 @@
     - https://nim-lang.org/docs/marshal.html
     - https://nim-lang.org/docs/parsejson.html
     - https://nim-lang.org/docs/varints.html
-    - https://nim-lang.org/docs/logging.html
     - https://nim-lang.org/docs/parsexml.html (and html)
     - https://nim-lang.org/docs/xmlparser.html (and html)
     - https://nim-lang.org/docs/xmltree.html (and html)
+    - https://nim-lang.org/docs/parsecsv.html
+    - https://nim-lang.org/docs/parseutils.html
 
   before using marshal for json @see # @see https://stackoverflow.com/questions/26191114/how-to-convert-object-to-json-in-nim
 ]#

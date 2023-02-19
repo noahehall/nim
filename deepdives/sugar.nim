@@ -45,6 +45,7 @@ echo runFn("hall", myProc)
 # macro collect(init, body: untyped): untyped
 # ^ add values to seqs/sets/tables
 # you can pass an init value, e.g. collect(blah): ...
+# recommended over map & filter/etc
 const myRange = 1..10
 
 const mySeq = collect:

@@ -1,4 +1,8 @@
 oneline	deepdives/strings.html#oneline	strings: oneline	
 multiline	deepdives/strings.html#multiline	strings: multiline	
+mutated	deepdives/strings.html#mutated	strings: mutated	
+echoMutated	deepdives/strings.html#echoMutated	strings: echoMutated(): void	
 strings deepdive	deepdives/strings.html#strings-deepdive	 strings deepdive	
 TLDR	deepdives/strings.html#strings-deepdive-tldr	  TLDR	
+strformat	deepdives/strings.html#strings-deepdive-strformat	  strformat	
+strutils	deepdives/strings.html#strings-deepdive-strutils	  strutils	
