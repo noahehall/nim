@@ -9,6 +9,7 @@
   - the former enables you to define/overload operators via 'proc `poop=`[bloop](soop): doop = toot'
 - converts are listed here because their purpose is implicit type coercion
 - additional type features are covered in tupleObjectTable.nim
+- you can call clear on pretty much anything
 
 todos
 - [couldnt get eval to work](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L2816)
@@ -138,9 +139,10 @@ static:
 
 # docs copypasta didnt work, @see https://nim-lang.org/docs/manual.html#special-types-static-t
 proc meaningOfLife(question: static string): auto =
-  var theNumber {.global.} = 42
-  return theNumber
-echo meaningOfLife("what is it")
+  var what {.global.} = 42
+  result = question
+const theAnswer = meaningOfLife("what is it")
+# echo theAnswer, "the meaning of life is ", $what lol dunno what should be a global?
 
 
 echo "############################ variable logic"

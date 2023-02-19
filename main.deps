@@ -41,6 +41,7 @@
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/std/enumutils.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/pure/typetraits.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/std/private/strimpl.nim
+/home/poop/git/foss/nim/deepdives/containers.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/arithmetics.nim
 /home/poop/git/foss/nim/yolowurl/modules/ifWhenCase.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/comparisons.nim

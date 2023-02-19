@@ -104,8 +104,8 @@ echo fmt"{oneline.cmpIgnoreCase oneline.toUpperAscii=}"
 echo fmt"{oneline.contains oneline[1..3]=}"
 echo fmt"{oneline.count 'o'=}"
 echo fmt"{multiline.countLines=}"
-echo fmt"escape errors on \s", "dunn\t\no".escape.unescape
 
+echo fmt"""\s is an invalid character: {"dunn\t\no".escape.unescape=}"""
 echo fmt"""case sensitive {oneline.find "string"=}"""
 echo fmt"""case sensitive {oneline.rfind "string"=}"""
 echo fmt"""{oneline.endsWith "string"=}"""

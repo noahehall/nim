@@ -6,7 +6,8 @@
 ##[
 TLDR
 - this module will heavily use sugar, start there first
-
+- lists are kept in lists.nim
+- i put table like stuff in containers
 
 links
 - high impact
@@ -18,6 +19,7 @@ links
   - [packed (sparse bit) sets](https://nim-lang.org/docs/packedsets.html)
   - [seq (seq, strings, array) utils](https://nim-lang.org/docs/sequtils.html)
   - [set utils](https://nim-lang.org/docs/setutils.html)
+  - [options](https://nim-lang.org/docs/options.html)
 - niche
 
 
@@ -85,3 +87,11 @@ mutable.delete 2..3; echoMutated() ## \
 mutable.insert @[3,2,1], 1; echoMutated() ## \
   ## default is to unshift at 0 and can be omitted
 mutable.keepIf x => x > 0; echoMutated()
+
+echo "############################ sets"
+# efficient hash set and ordered hash set
+# store any value that can be hashed and dont contain duplicates
+# use cases
+# remove dupes from a container
+# membership testing
+# math ops on two sets, e.g. unions, intersection, etc

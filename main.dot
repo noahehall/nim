@@ -74,8 +74,14 @@ digraph main {
 "std/strformat" -> "std/strutils";
 "deepdives/strings" -> "std/strformat";
 "deepdives/strings" -> "std/strutils";
+"deepdives/containers" -> "std/sugar";
+"deepdives/containers" -> "std/strformat";
+"deepdives/containers" -> "std/strutils";
+"deepdives/containers" -> "std/sequtils";
+"deepdives/containers" -> "std/tables";
 "main" -> "yolowurl/yolowurl";
 "main" -> "deepdives/sugar";
 "main" -> "deepdives/collections";
 "main" -> "deepdives/strings";
+"main" -> "deepdives/containers";
 }

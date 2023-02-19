@@ -3,8 +3,8 @@
 - my adventures in nim
 - all files are executable
 - recommended ramp up
-  - super basics: yolowurl, sugar, collections, strings, containers
-  - basics: maths, tasks, osIo, tests,
+  - super basics: yolowurl, sugar, collections, strings, containers, datetime, data, maths
+  - basics: tasks, osIo, tests,
 
 ## for javascript appdevs
 

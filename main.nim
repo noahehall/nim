@@ -8,7 +8,7 @@
 
 ##[
 TLDR
-- everything I should know about nim
+- everything I should know about nim but likely have forgotten
 ]##
 
 import
@@ -17,4 +17,5 @@ import
     sugar,
     collections,
     strings,
+    containers,
   ]
