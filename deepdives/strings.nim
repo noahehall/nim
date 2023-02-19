@@ -5,15 +5,14 @@
 ##[
 ## TLDR
 - since strings utilize many seq procs, start with sequtils
+- see regex.nim for regex
 
 links
 - high impact
   - [str format](https://nim-lang.org/docs/strformat.html)
   - [parse utils](https://nim-lang.org/docs/parseutils.html)
-  - [str scans](https://nim-lang.org/docs/strscans.html)
   - [str utils](https://nim-lang.org/docs/strutils.html)
   - [critbit sorted strings](https://nim-lang.org/docs/critbits.html)
-  - [pegs](https://nim-lang.org/docs/pegs.html)
 - niche
   - [cstr utils](https://nim-lang.org/docs/cstrutils.html)
   - [ropes (very long strings)](https://nim-lang.org/docs/ropes.html)
