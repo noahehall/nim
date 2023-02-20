@@ -5,14 +5,14 @@
 
 ##[
 TLDR
-- syntactic sugar based on nims macro system
+- includes algorithm + everything sort related (todo)
 - -> sugar for type defs
 - => sugar for procs
 
 links
 - [sugar](https://nim-lang.org/docs/sugar.html)
 - [with](https://nim-lang.org/docs/with.html)
-- [algorithms](https://nim-lang.org/docs/algorithm.html)
+- [algorithm](https://nim-lang.org/docs/algorithm.html)
 
 todos
 - macro capture(locals: varargs[typed]; body: untyped): untyped
@@ -21,7 +21,8 @@ todos
 - macro dumpToString(x: untyped): string
 - macro dup[T](arg: T; calls: varargs[untyped]): T
   - echo for debugging expressions, prints the expression textual representation
-- algorithms link
+- std/algorithm
+  - then review all the sort procs for each datatype (they all depend on algo)
 ]##
 
 
