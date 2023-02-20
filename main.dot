@@ -83,6 +83,8 @@ digraph main {
 "deepdives/containers" -> "std/tables";
 "deepdives/lists" -> "std/sugar";
 "deepdives/lists" -> "std/sequtils";
+"deepdives/datetime" -> "std/sugar";
+"deepdives/datetime" -> "std/strformat";
 "main" -> "yolowurl/yolowurl";
 "main" -> "deepdives/sugar";
 "main" -> "deepdives/collections";

@@ -100,6 +100,11 @@ window.addEventListener('DOMContentLoaded', main);
   <ul class="simple simple-toc" id="toc-list">
 <li><a class="reference" id="datetime_toc" href="#datetime">datetime</a></li>
 <ul class="simple"><li><a class="reference" id="datetime-tldr_toc" href="#datetime-tldr">TLDR</a></li>
+<li><a class="reference" id="datetime-time-format-strings_toc" href="#datetime-time-format-strings">time format strings</a></li>
+<li><a class="reference" id="datetime-time-duration-see-types_toc" href="#datetime-time-duration-see-types">time Duration (see types)</a></li>
+<li><a class="reference" id="datetime-time-timeinterval-see-types_toc" href="#datetime-time-timeinterval-see-types">time TimeInterval ( see types)</a></li>
+<li><a class="reference" id="datetime-times-types_toc" href="#datetime-times-types">times types</a></li>
+<li><a class="reference" id="datetime-time-exceptions_toc" href="#datetime-time-exceptions">time exceptions</a></li>
 </ul>
 </ul>
 
@@ -111,14 +116,135 @@ window.addEventListener('DOMContentLoaded', main);
   <p class="module-desc">
 <h1><a class="toc-backref" id="datetime" href="#datetime">datetime</a></h1><p><a class="reference external" href="https://nim-lang.org/docs/times.html">bookmark</a></p>
 
-<h2><a class="toc-backref" id="datetime-tldr" href="#datetime-tldr">TLDR</a></h2><ul class="simple"><li>dunno yet</li>
+<h2><a class="toc-backref" id="datetime-tldr" href="#datetime-tldr">TLDR</a></h2><ul class="simple"><li>supports nanosecond resolution, but getTime() depends on platform &amp; backend</li>
+<li>use monotimes when measuring durations with high precision</li>
+<li>use time Duration &gt; time TimeInterval unless support for months/years required</li>
 </ul>
-<dl class="docutils"><dt>links</dt>
-<dd><ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/times.html">date &amp; times</a></li>
+<p>links</p>
+<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/times.html">date &amp; times</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/monotimes.html">mono times</a></li>
 </ul>
-</dd>
-</dl>
+
+<h2><a class="toc-backref" id="datetime-time-format-strings" href="#datetime-time-format-strings">time format strings</a></h2><ul class="simple"><li>design<ul class="simple"><li>x atleast 1 digit</li>
+<li>xx always 2 digits</li>
+<li>xxx abbreviation</li>
+<li>xxxx full</li>
+</ul>
+</li>
+<li>d 1/04/2012 -&gt; 1</li>
+<li>dd 1/04/2012 -&gt; 01</li>
+<li>ddd Saturday -&gt; Sat</li>
+<li>dddd Saturday -&gt; Saturday</li>
+<li>h am/pm hr</li>
+<li>H military hr</li>
+<li>m minutes</li>
+<li>M month</li>
+<li>s seconds</li>
+<li>t A(m) or P(m)</li>
+<li>yy year</li>
+<li>yyyy year 0 padded</li>
+<li>YYYY uint no padding</li>
+<li>uuuu int 0 padded</li>
+<li>UUUU int no padding</li>
+<li>z utc offset e.g. +7/-7</li>
+<li>zz utc offset + leading 0 e.g. +07<ul class="simple"><li>zzz +07:12</li>
+<li>zzzz +07:12:21</li>
+<li>ZZZ +0712</li>
+<li>ZZZZ 071221</li>
+</ul>
+</li>
+<li>g AD/BC</li>
+<li>fff milliseconds</li>
+<li>ffffff microseconds</li>
+<li>fffffffff nanoseconds</li>
+</ul>
+
+<h2><a class="toc-backref" id="datetime-time-duration-see-types" href="#datetime-time-duration-see-types">time Duration (see types)</a></h2><ul class="simple"><li>more performant than timeinterval</li>
+<li>stored as [nano]seconds and always normalized (1hr == 60min)</li>
+<li>1 day = 86400 seconds<ul class="simple"><li>careful when calcuting 1 day:<ul class="simple"><li>a single timezone can have multiple UTC offsets (daylight saving)</li>
+<li>thus parsing 2 dates in this context and diffing may === 25 hours</li>
+<li>this limitation doest exist in TimeInterval</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h2><a class="toc-backref" id="datetime-time-timeinterval-see-types" href="#datetime-time-timeinterval-see-types">time TimeInterval ( see types)</a></h2><ul class="simple"><li>stored as fields of calendar units to support leap years</li>
+<li>more robust than timeinterval as it supports timezone</li>
+</ul>
+
+<h2><a class="toc-backref" id="datetime-times-types" href="#datetime-times-types">times types</a></h2><ul class="simple"><li>DateTime object[enum &amp; int &amp; bool &amp; range]<ul class="simple"><li>enums: WeekDay, Timezone</li>
+<li>ranges: [Nanosecond, Second,Minute, Hour, Yearday]Range</li>
+<li>int: [monthday, month]Zero, year, utcOffset</li>
+<li>bool: isDist</li>
+<li>FYI<ul class="simple"><li>leap seconds are supported but not surfaced</li>
+<li>you likely want this for human readable stuff</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DateTimeLocal object[array[range, string]]<ul class="simple"><li>range: month/day enum</li>
+</ul>
+</li>
+<li>Duration object[seconds:int &amp; nanosecond:range]<ul class="simple"><li>FYI<ul class="simple"><li>you likely want this for calculations</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DurationParts array[FixedTimeUnit, int]</li>
+<li>FixedTimeUnit rnage[Nanoseconds .. Weeks]<ul class="simple"><li>FYI<ul class="simple"><li>units of time that can be represented by a Duration</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>HourRange 0 .. 23</li>
+<li>MinuteRange 0 .. 59</li>
+<li>Month enum(int, string) january = 1</li>
+<li>MonthdayRange 1 .. 31</li>
+<li>NanosecondRange 0 .. bunch of 9s</li>
+<li>SecondRange 0 .. 60<ul class="simple"><li>FYI<ul class="simple"><li>60 included for leap second, but isnt surfaced in a DateTime</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Time object[seconds:int &amp; nanosecond: range]<ul class="simple"><li>FYI<ul class="simple"><li>a point in time, like a birthday you forgot</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TimeFormat object[patterns, formatStr]</li>
+<li>TimeInterval object[int]<ul class="simple"><li>(nano,micro,milli)seconds</li>
+<li>seconds, minutes, hours, days weeks, months ,years</li>
+<li>FYI<ul class="simple"><li>non-fixed duration of time</li>
+<li>add/sub from a DateTime/Time</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TimeIntervalParts  array[TimeUnit, int]</li>
+<li>TimeUnit enum (see TimeInterval)</li>
+<li>Timezone object(proc &amp; string)<ul class="simple"><li>name</li>
+<li>zonedTimeFromTimeImpl</li>
+<li>zonedTimeFromAdjTimeImpl</li>
+<li>FYI<ul class="simple"><li>uses the systems local time or UTC</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>WeekDay enum d(Mon-Sun) -&gt; fullname</li>
+<li>YeardayRange 0 .. 365</li>
+<li>ZonedTime object[Time &amp; int &amp; bool]<ul class="simple"><li>FYI<ul class="simple"><li>point in time with an associated UTC ffset and DST flag</li>
+<li>only used for implementing timezones</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h2><a class="toc-backref" id="datetime-time-exceptions" href="#datetime-time-exceptions">time exceptions</a></h2><ul class="simple"><li>TimeFormatParseError: invalid input string</li>
+<li>TimeParseError: invalid TimeFormat</li>
+</ul>
 </p>
   
   </div>
@@ -128,7 +254,7 @@ window.addEventListener('DOMContentLoaded', main);
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-20 11:42:56 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-20 13:07:59 UTC</small>
       </div>
     </div>
   </div>
