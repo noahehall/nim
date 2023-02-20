@@ -28,7 +28,6 @@
 internal
 
 - [open html docs in your browser](/htmldocs/main.html)
-  - TODO: if you output rst then it will be viewable on github
 - [vscode code-runner cmd for both nimscript and nim files](https://github.com/noahehall/theBookOfNoah/blob/master/vscode.settings.jsonc#L185)
 - [shell fns for nim, nimble and choosenim](https://github.com/noahehall/theBookOfNoah/blob/master/linux/bash_cli_fns/nimlang.sh)
 - [hello world](./yolowurl/)
