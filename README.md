@@ -21,8 +21,8 @@
 - 1: strings, containers, lists
 - 2: datetime, maths, algorithms, tasks, tests
 - 3: osIo, crypto, regex, compiler_backends_cfgs, nimscript dir
-- 4: data > memory_immutability, parallelism_concurrency > servers, html
-- 5: dbs
+- 4: data > parallelism_concurrency > servers, html
+- 5: pragmas, dbs > memory_immutability
 
 ## links
 
@@ -57,9 +57,9 @@ interwebs
 ### quickies
 
 - [check how getTime handles os checks](https://github.com/nim-lang/Nim/blob/version-1-6/lib/pure/times.nim#L897)
-- may need to rethink the limited use of runnableExamples
-  - proc invocations dont show up in docs
-  - however runnableExamples are doconly and dont execute when compiled
+- rethink using runnableExamples as docgen doesnt surface proc invocations with doc comments
+  - runnableExamples are doconly and dont execute when compiled thus conflict with the goal of this repo, but having useful generated docs is just as important
+    - need to resolve this before we rework the examples
 - [skipped most of the section on cross compilation](https://nim-lang.org/docs/nimc.html#crossminuscompilation-for-windows)
 - [checkout status opensource theyve already built bunch of things you'll need for nirv](https://github.com/status-im)
 

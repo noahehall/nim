@@ -101,23 +101,29 @@ window.addEventListener('DOMContentLoaded', main);
 <li><a class="reference" id="datetime_toc" href="#datetime">datetime</a></li>
 <ul class="simple"><li><a class="reference" id="datetime-tldr_toc" href="#datetime-tldr">TLDR</a></li>
 <li><a class="reference" id="datetime-time-format-strings_toc" href="#datetime-time-format-strings">time format strings</a></li>
+<li><a class="reference" id="datetime-time_toc" href="#datetime-time">time</a></li>
 <li><a class="reference" id="datetime-time-duration-see-types_toc" href="#datetime-time-duration-see-types">time Duration (see types)</a></li>
 <li><a class="reference" id="datetime-time-timeinterval-see-types_toc" href="#datetime-time-timeinterval-see-types">time TimeInterval (see types)</a></li>
 <li><a class="reference" id="datetime-times-types_toc" href="#datetime-times-types">times types</a></li>
 <li><a class="reference" id="datetime-time-exceptions_toc" href="#datetime-time-exceptions">time exceptions</a></li>
+<li><a class="reference" id="datetime-time-procs_toc" href="#datetime-time-procs">time procs</a></li>
 </ul><li>
   <a class="reference reference-toplevel" href="#9" id="59">Lets</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#bday"
     title="bday = dateTime(1969, mJan, 1, 0, 0, 0, 0, utc())">bday</a></li>
-  <li><a class="reference" href="#clockoutin"
-    title="clockoutin = initTimeInterval(0, 0, 0, 0, 0, 8, 0, 0, 0, 0)">clockoutin</a></li>
-  <li><a class="reference" href="#halfhour"
-    title="halfhour = initDuration(0, 0, 0, 0, 30, 0, 0, 0)">halfhour</a></li>
+  <li><a class="reference" href="#dailycoding"
+    title="dailycoding = initDuration(0, 0, 0, 0, 0, 16, 0, 0)">dailycoding</a></li>
+  <li><a class="reference" href="#fdate"
+    title="fdate = initTimeFormat(&quot;yyyy-MM-dd&quot;)">fdate</a></li>
+  <li><a class="reference" href="#ftime"
+    title="ftime = initTimeFormat(&quot;yyyy-MM-dd\'T\'HH:mm:sszzz&quot;)">ftime</a></li>
   <li><a class="reference" href="#hour"
     title="hour = hours(1)">hour</a></li>
-  <li><a class="reference" href="#timeformat"
-    title="timeformat = initTimeFormat(&quot;yyyy-MM-dd&quot;)">timeformat</a></li>
+  <li><a class="reference" href="#relaxing"
+    title="relaxing = initTimeInterval(0, 0, 0, 0, 240, 4, 0, 0, 0, 0)">relaxing</a></li>
+  <li><a class="reference" href="#sometime"
+    title="sometime = initTime(0, 0)">sometime</a></li>
 
   </ul>
 </li>
@@ -133,19 +139,30 @@ window.addEventListener('DOMContentLoaded', main);
 <h1><a class="toc-backref" id="datetime" href="#datetime">datetime</a></h1><p><a class="reference external" href="https://nim-lang.org/docs/times.html#getDayOfWeek%2CMonthdayRange%2CMonth%2Cint">bookmark</a></p>
 
 <h2><a class="toc-backref" id="datetime-tldr" href="#datetime-tldr">TLDR</a></h2><ul class="simple"><li>supports nanosecond resolution, but getTime() depends on platform &amp; backend</li>
-<li>use monotimes when measuring durations with high precision</li>
-<li>use time Duration &gt; time TimeInterval unless support for months/years required</li>
-<li>looks like all time procs are runtime only (no consts)</li>
+<li>use monotimes when measuring durations with high precision, else cpuTime</li>
+<li>use time Duration when you need units of time, e.g. days/years/etc</li>
+<li>use time TimeInterval when you need to consider timezones in calculations</li>
 <li>all the expected arithmetic operators are available<ul class="simple"><li>div integer div for durations</li>
 <li>&lt; &gt; logical stuff works as expected</li>
 </ul>
 </li>
 <li>durations can be negative; Use abs(a) &lt; abs(b) to compare the absolute duration.</li>
-<li>cpuTime() is useful for benchmarking</li>
+<li>generally<ul class="simple"><li>datetimes are singular e.g. month</li>
+<li>intervals are plural e.g. months</li>
+</ul>
+</li>
 </ul>
 <p>links</p>
 <ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/times.html">date &amp; times</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/monotimes.html">mono times</a></li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Tz_database">timezone names, but any unambiguous string can be used</a></li>
+</ul>
+<p>skipped</p>
+<ul class="simple"><li>time<ul class="simple"><li>high, low</li>
+<li>newTimezone</li>
+<li>zonedTimeFromAdjTime, zonedTimeFromTime</li>
+</ul>
+</li>
 </ul>
 
 <h2><a class="toc-backref" id="datetime-time-format-strings" href="#datetime-time-format-strings">time format strings</a></h2><ul class="simple"><li>design<ul class="simple"><li>x atleast 1 digit</li>
@@ -183,6 +200,15 @@ window.addEventListener('DOMContentLoaded', main);
 <li>fffffffff nanoseconds</li>
 </ul>
 
+<h2><a class="toc-backref" id="datetime-time" href="#datetime-time">time</a></h2><ul class="simple"><li>2 groups<ul class="simple"><li>datetime</li>
+<li>durations &amp; timeintervals<ul class="simple"><li>duration</li>
+<li>intervals: only useful for calculations with timezones</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
 <h2><a class="toc-backref" id="datetime-time-duration-see-types" href="#datetime-time-duration-see-types">time Duration (see types)</a></h2><ul class="simple"><li>more performant than timeinterval</li>
 <li>stored as [nano]seconds and always normalized (1hr == 60min)</li>
 <li>1 day = 86400 seconds<ul class="simple"><li>careful when calcuting 1 day:<ul class="simple"><li>a single timezone can have multiple UTC offsets (daylight saving)</li>
@@ -196,20 +222,12 @@ window.addEventListener('DOMContentLoaded', main);
 </ul>
 
 <h2><a class="toc-backref" id="datetime-time-timeinterval-see-types" href="#datetime-time-timeinterval-see-types">time TimeInterval (see types)</a></h2><ul class="simple"><li>stored as fields of calendar units to support leap years</li>
-<li>more robust than timeinterval as it supports timezone</li>
 </ul>
 
 <h2><a class="toc-backref" id="datetime-times-types" href="#datetime-times-types">times types</a></h2><ul class="simple"><li>DateTime object[enum &amp; int &amp; bool &amp; range]<ul class="simple"><li>leap seconds are supported but not surfaced</li>
-<li>you likely want this for human readable stuff</li>
-<li>enums: WeekDay, Timezone</li>
-<li>ranges: [Nanosecond, Second,Minute, Hour, Yearday]Range</li>
-<li>int: [monthday, month]Zero, year, utcOffset</li>
-<li>bool: isDist</li>
 </ul>
 </li>
-<li>DateTimeLocal object[array[range, string]]<ul class="simple"><li>range: month/day enum</li>
-</ul>
-</li>
+<li>DateTimeLocal object[array[range, string]]</li>
 <li>Duration object[seconds:int &amp; nanosecond:range]<ul class="simple"><li>you likely want this for calculations</li>
 </ul>
 </li>
@@ -231,16 +249,11 @@ window.addEventListener('DOMContentLoaded', main);
 <li>TimeFormat object[patterns, formatStr]</li>
 <li>TimeInterval object[int]<ul class="simple"><li>non-fixed duration of time</li>
 <li>add/sub from a DateTime/Time</li>
-<li>(nano,micro,milli)seconds</li>
-<li>seconds, minutes, hours, days weeks, months ,years</li>
 </ul>
 </li>
 <li>TimeIntervalParts  array[TimeUnit, int]</li>
 <li>TimeUnit enum (see TimeInterval)</li>
 <li>Timezone object(proc &amp; string)<ul class="simple"><li>uses the systems local time or UTC</li>
-<li>name</li>
-<li>zonedTimeFromTimeImpl</li>
-<li>zonedTimeFromAdjTimeImpl</li>
 </ul>
 </li>
 <li>WeekDay enum d(Mon-Sun) -&gt; fullname</li>
@@ -257,6 +270,12 @@ window.addEventListener('DOMContentLoaded', main);
 <h2><a class="toc-backref" id="datetime-time-exceptions" href="#datetime-time-exceptions">time exceptions</a></h2><ul class="simple"><li>TimeFormatParseError: invalid input string</li>
 <li>TimeParseError: invalid TimeFormat</li>
 </ul>
+
+<h2><a class="toc-backref" id="datetime-time-procs" href="#datetime-time-procs">time procs</a></h2><ul class="simple"><li>cpuTime() is useful for benchmarking</li>
+<li>utc/local convert to/from eachother; shorthand for (dt|time).inZone(utc|local())</li>
+<li>isDst true if daily saving time is in effect (not for js backend)</li>
+<li>isLeapDay true if datetime is leapday, e.g. feb29 in year 2000, affects time offset calculations</li>
+</ul>
 </p>
   <div class="section" id="9">
 <h1><a class="toc-backref" href="#9">Lets</a></h1>
@@ -266,23 +285,34 @@ window.addEventListener('DOMContentLoaded', main);
 <dd>
 
 
-year, month, day, hour, minutes, seconds, nano, timezone (local/utc())
+year, month, monthday, hour, minute, second, nanosecond, zone <a class="reference external" href="">local|utc</a> weekday, yearday, isDst, monthdayZero, monthZero, timezone, utcOffset Month: mJan .. mDec Weekday: dMon .. dSun initDateTime is deprecated
 
 </dd>
 </div>
-<div id="clockoutin">
-<dt><pre><span class="Identifier">clockoutin</span> <span class="Other">=</span> <span class="Identifier">initTimeInterval</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">8</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
+<div id="dailycoding">
+<dt><pre><span class="Identifier">dailycoding</span> <span class="Other">=</span> <span class="Identifier">initDuration</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">16</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
+nanoseconds, microseconds, milliseconds, seconds, minutes, hours, days, weeks normalized to: seconds, nanosecond
 
 </dd>
 </div>
-<div id="halfhour">
-<dt><pre><span class="Identifier">halfhour</span> <span class="Other">=</span> <span class="Identifier">initDuration</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">30</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
+<div id="fdate">
+<dt><pre><span class="Identifier">fdate</span> <span class="Other">=</span> <span class="Identifier">initTimeFormat</span><span class="Other">(</span><span class="StringLit">&quot;yyyy-MM-dd&quot;</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
+for parsing &amp; formatting dates
+
+</dd>
+</div>
+<div id="ftime">
+<dt><pre><span class="Identifier">ftime</span> <span class="Other">=</span> <span class="Identifier">initTimeFormat</span><span class="Other">(</span><span class="StringLit">&quot;yyyy-MM-dd\'T\'HH:mm:sszzz&quot;</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+for parsing &amp; formatting times
 
 </dd>
 </div>
@@ -290,15 +320,25 @@ year, month, day, hour, minutes, seconds, nano, timezone (local/utc())
 <dt><pre><span class="Identifier">hour</span> <span class="Other">=</span> <span class="Identifier">hours</span><span class="Other">(</span><span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
 <dd>
 
-
+shorthand for initTimeInterval
 
 </dd>
 </div>
-<div id="timeformat">
-<dt><pre><span class="Identifier">timeformat</span> <span class="Other">=</span> <span class="Identifier">initTimeFormat</span><span class="Other">(</span><span class="StringLit">&quot;yyyy-MM-dd&quot;</span><span class="Other">)</span></pre></dt>
+<div id="relaxing">
+<dt><pre><span class="Identifier">relaxing</span> <span class="Other">=</span> <span class="Identifier">initTimeInterval</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">240</span><span class="Other">,</span> <span class="DecNumber">4</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
+years, months, weeks, days, hours, minutes, seconds, milliseconds, microseconds, nanoseconds never normalized: hours 24 != days 1 slower arithmetics due to requirement timezone
+
+</dd>
+</div>
+<div id="sometime">
+<dt><pre><span class="Identifier">sometime</span> <span class="Other">=</span> <span class="Identifier">initTime</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+create time from a unix timestamp, nanosecond
 
 </dd>
 </div>
@@ -312,7 +352,7 @@ year, month, day, hour, minutes, seconds, nano, timezone (local/utc())
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-20 16:24:58 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-21 01:00:10 UTC</small>
       </div>
     </div>
   </div>
