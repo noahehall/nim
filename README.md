@@ -1,14 +1,6 @@
 # nim
 
 - my adventures in nim
-- recommended ramp up
-  - 0: tuts links > yolowurl > sugar > collections
-    - TODO: find where all the links are and bring them into this file
-  - 1: strings, containers, lists
-  - 2: datetime, maths, algorithms, tasks, tests
-  - 3: osIo, crypto, regex, compiler_backends_cfgs, nimscript dir
-  - 4: data > memory_immutability, parallelism_concurrency > servers, html
-  - 5: dbs
 
 ## for javascript appdevs
 
@@ -21,6 +13,16 @@
   - [first class support for postgres, mysql](https://nim-lang.org/docs/lib.html#impure-libraries-database-support)
     - [including a generic ODBC wrapper for other dbs](https://nim-lang.org/docs/db_odbc.html)
   - [spidermans uncle](https://nim-lang.org/docs/tut3.html)
+
+## recommended ramp up
+
+- 0: tuts links > yolowurl > sugar > collections
+  - TODO: find where all the links are and bring them into this file
+- 1: strings, containers, lists
+- 2: datetime, maths, algorithms, tasks, tests
+- 3: osIo, crypto, regex, compiler_backends_cfgs, nimscript dir
+- 4: data > memory_immutability, parallelism_concurrency > servers, html
+- 5: dbs
 
 ## links
 

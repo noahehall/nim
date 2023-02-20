@@ -1,7 +1,7 @@
 ##
 ## strings
 ## =======
-## prolly should checkout critbits next
+## [bookmark](https://nim-lang.org/docs/critbits.html)
 
 ##[
 ## TLDR

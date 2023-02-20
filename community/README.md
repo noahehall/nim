@@ -86,3 +86,4 @@
 ## should try again
 
 - [moe: vim like editor that didnt work on the first try](https://github.com/fox0430/moe)
+  - user error: requires nim >= 1.6.2

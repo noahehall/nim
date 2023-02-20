@@ -8,7 +8,7 @@
 
 ##[
 TLDR
-- everything I should know about nim but likely have forgotten
+- everything I should know about nim
 ]##
 
 import
