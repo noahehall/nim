@@ -3,20 +3,24 @@
 - my adventures in nim
 - all files are executable
 - recommended ramp up
-  - 1: yolowurl, sugar, collections, strings, containers, datetime, data
-  - 2: lists, maths, algorithms, tasks, tests
+  - 0: tuts links > yolowurl > sugar > collections
+    - TODO: find where all the links are and bring them into this file
+  - 1: strings, containers, datetime, lists
+  - 2: maths, algorithms, tasks, tests
   - 3: osIo, crypto, regex, compiler_backends_cfgs, nimscript dir
-  - 4: memory_immutability, parallelism_concurrency, servers, html
+  - 4: data > memory_immutability, parallelism_concurrency > servers, html
   - 5: dbs
 
 ## for javascript appdevs
 
-- alot of nodejs devs are moving to/incorporating rust/go in their stack; you should prefer nim for (many, but definitely these) these reasons
+- alot of nodejs devs are moving to/incorporating rust/go in their stack; you should prefer nim for (many, but definitely) these reasons
   - [cross compile applications](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
   - [cross platform scripts](https://nim-lang.org/docs/nims.html#benefits)
   - [documentation is a first class citizen](https://nim-lang.org/docs/docgen.html)
     - [with first class support for reStructured text](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
   - [testing is a first class citizen](https://nim-lang.github.io/Nim/testament.html)
+  - [first class support for postgres, mysql](https://nim-lang.org/docs/lib.html#impure-libraries-database-support)
+    - [including a generic ODBC wrapper for other dbs](https://nim-lang.org/docs/db_odbc.html)
   - [spidermans uncle](https://nim-lang.org/docs/tut3.html)
 
 ## links
