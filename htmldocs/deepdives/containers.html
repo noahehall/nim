@@ -101,12 +101,66 @@ window.addEventListener('DOMContentLoaded', main);
 <li><a class="reference" id="containers-deepdive_toc" href="#containers-deepdive">containers deepdive</a></li>
 <ul class="simple"><li><a class="reference" id="containers-deepdive-tables_toc" href="#containers-deepdive-tables">tables</a></li>
 </ul><li>
+  <a class="reference reference-toplevel" href="#7" id="57">Types</a>
+  <ul class="simple simple-toc-section">
+      <li><a class="reference" href="#User"
+    title="User = object
+  name: string
+  uid: int">User</a></li>
+
+  </ul>
+</li>
+<li>
   <a class="reference reference-toplevel" href="#8" id="58">Vars</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#mCountTable"
+      <li><a class="reference" href="#hc%60gensym114"
+    title="hc`gensym114: Hash">hc`gensym114</a></li>
+  <li><a class="reference" href="#hc%60gensym116"
+    title="hc`gensym116: Hash">hc`gensym116</a></li>
+  <li><a class="reference" href="#i"
+    title="i: string = &quot;puy&quot;">i</a></li>
+  <li><a class="reference" href="#index%60gensym114"
+    title="index`gensym114 = rawGet(t, 1, hc`gensym114)">index`gensym114</a></li>
+  <li><a class="reference" href="#index%60gensym116"
+    title="index`gensym116 = rawGet(t, 521, hc`gensym116)">index`gensym116</a></li>
+  <li><a class="reference" href="#mCountTable"
     title="mCountTable = countTable">mCountTable</a></li>
   <li><a class="reference" href="#mutated"
     title="mutated = hashTable">mutated</a></li>
+  <li><a class="reference" href="#t"
+    title="t = initTable(32)">t</a></li>
+
+  </ul>
+</li>
+<li>
+  <a class="reference reference-toplevel" href="#9" id="59">Lets</a>
+  <ul class="simple simple-toc-section">
+      <li><a class="reference" href="#hasKey%60gensym114"
+    title="hasKey`gensym114 =
+  0 &lt;= index`gensym114">hasKey`gensym114</a></li>
+  <li><a class="reference" href="#hasKey%60gensym116"
+    title="hasKey`gensym116 =
+  0 &lt;= index`gensym116">hasKey`gensym116</a></li>
+  <li><a class="reference" href="#keys"
+    title="keys =
+  var collectResult_1627396932 = newSeq(Natural(0))
+  for k in keys(mutated):
+    add(collectResult_1627396932, k)
+  collectResult_1627396932">keys</a></li>
+  <li><a class="reference" href="#keyValues"
+    title="keyValues =
+  var collectResult_1627397422 = newSeq(Natural(0))
+  for k, v in pairs(mutated):
+    add(collectResult_1627397422, (k, v))
+  collectResult_1627397422">keyValues</a></li>
+  <li><a class="reference" href="#u"
+    title="u = User(name: &quot;Hello&quot;, uid: 99)">u</a></li>
+  <li><a class="reference" href="#values"
+    title="values =
+  var collectResult_1627397177 = newSeq(Natural(0))
+  for k in values(mutated):
+    add(collectResult_1627397177, k)
+  collectResult_1627397177">values</a></li>
 
   </ul>
 </li>
@@ -155,15 +209,16 @@ window.addEventListener('DOMContentLoaded', main);
   <div id="tocRoot"></div>
   
   <p class="module-desc">
-<h1><a class="toc-backref" id="containers-deepdive" href="#containers-deepdive">containers deepdive</a></h1><p><a class="reference external" href="https://nim-lang.org/docs/tables.html#pop%2COrderedTableRef%5BA%2CB%5D%2CA%2CB">bookmark</a></p>
+<h1><a class="toc-backref" id="containers-deepdive" href="#containers-deepdive">containers deepdive</a></h1><p><a class="reference external" href="https://nim-lang.org/docs/strtabs.html">bookmark</a></p>
 TLDR<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/tables.html#basic-usage-hashing">custom types as table keys require hashing</a></li>
 <li>checkout data.nim for additional stuff</li>
 <li>you may need sugar, sequtils and strutils for effectively working with tables</li>
+<li>check sugar.nim for sorting with std/algorithm</li>
 <li>generally all table types have the same interface; CountTables have a bit more</li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/commit/5498415f3b44048739c9b7116638824713d9c1df">the commit for indexBy, scroll down for tests</a></li>
 </ul>
 <p>todos</p>
-<ul class="simple"><li>tables<ul class="simple"><li>indexBy, newTableFrom</li>
+<ul class="simple"><li>tables<ul class="simple"><li><a class="reference external" href="https://github.com/nim-lang/Nim/commit/5498415f3b44048739c9b7116638824713d9c1df">the commit for indexBy, scroll down for tests</a></li>
+<li>newTableFrom</li>
 </ul>
 </li>
 </ul>
@@ -194,9 +249,65 @@ TLDR<ul class="simple"><li><a class="reference external" href="https://nim-lang.
 </li>
 </ul>
 </p>
-  <div class="section" id="8">
+  <div class="section" id="7">
+<h1><a class="toc-backref" href="#7">Types</a></h1>
+<dl class="item">
+<div id="User">
+<dt><pre><span class="Identifier">User</span> <span class="Other">=</span> <span class="Keyword">object</span>
+  <span class="Identifier">name</span><span class="Other">:</span> <span class="Identifier">string</span>
+  <span class="Identifier">uid</span><span class="Other">:</span> <span class="Identifier">int</span>
+</pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+
+</dl></div>
+<div class="section" id="8">
 <h1><a class="toc-backref" href="#8">Vars</a></h1>
 <dl class="item">
+<div id="hc`gensym114">
+<dt><pre><span class="Identifier">hc`gensym114</span><span class="Other">:</span> <span class="Identifier">Hash</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="hc`gensym116">
+<dt><pre><span class="Identifier">hc`gensym116</span><span class="Other">:</span> <span class="Identifier">Hash</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="i">
+<dt><pre><span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;puy&quot;</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="index`gensym114">
+<dt><pre><span class="Identifier">index`gensym114</span> <span class="Other">=</span> <span class="Identifier">rawGet</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">,</span> <span class="DecNumber">1</span><span class="Other">,</span> <span class="Identifier">hc`gensym114</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="index`gensym116">
+<dt><pre><span class="Identifier">index`gensym116</span> <span class="Other">=</span> <span class="Identifier">rawGet</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">,</span> <span class="DecNumber">521</span><span class="Other">,</span> <span class="Identifier">hc`gensym116</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 <div id="mCountTable">
 <dt><pre><span class="Identifier">mCountTable</span> <span class="Other">=</span> <span class="Identifier">countTable</span></pre></dt>
 <dd>
@@ -207,6 +318,81 @@ TLDR<ul class="simple"><li><a class="reference external" href="https://nim-lang.
 </div>
 <div id="mutated">
 <dt><pre><span class="Identifier">mutated</span> <span class="Other">=</span> <span class="Identifier">hashTable</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="t">
+<dt><pre><span class="Identifier">t</span> <span class="Other">=</span> <span class="Identifier">initTable</span><span class="Other">(</span><span class="DecNumber">32</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+
+</dl></div>
+<div class="section" id="9">
+<h1><a class="toc-backref" href="#9">Lets</a></h1>
+<dl class="item">
+<div id="hasKey`gensym114">
+<dt><pre><span class="Identifier">hasKey`gensym114</span> <span class="Other">=</span>
+  <span class="DecNumber">0</span> <span class="Operator">&lt;=</span> <span class="Identifier">index`gensym114</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="hasKey`gensym116">
+<dt><pre><span class="Identifier">hasKey`gensym116</span> <span class="Other">=</span>
+  <span class="DecNumber">0</span> <span class="Operator">&lt;=</span> <span class="Identifier">index`gensym116</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="keys">
+<dt><pre><span class="Identifier">keys</span> <span class="Other">=</span>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_1627396932</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">for</span> <span class="Identifier">k</span> <span class="Keyword">in</span> <span class="Identifier">keys</span><span class="Other">(</span><span class="Identifier">mutated</span><span class="Other">)</span><span class="Other">:</span>
+    <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_1627396932</span><span class="Other">,</span> <span class="Identifier">k</span><span class="Other">)</span>
+  <span class="Identifier">collectResult_1627396932</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="keyValues">
+<dt><pre><span class="Identifier">keyValues</span> <span class="Other">=</span>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_1627397422</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">for</span> <span class="Identifier">k</span><span class="Other">,</span> <span class="Identifier">v</span> <span class="Keyword">in</span> <span class="Identifier">pairs</span><span class="Other">(</span><span class="Identifier">mutated</span><span class="Other">)</span><span class="Other">:</span>
+    <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_1627397422</span><span class="Other">,</span> <span class="Other">(</span><span class="Identifier">k</span><span class="Other">,</span> <span class="Identifier">v</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Identifier">collectResult_1627397422</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="u">
+<dt><pre><span class="Identifier">u</span> <span class="Other">=</span> <span class="Identifier">User</span><span class="Other">(</span><span class="Identifier">name</span><span class="Other">:</span> <span class="StringLit">&quot;Hello&quot;</span><span class="Other">,</span> <span class="Identifier">uid</span><span class="Other">:</span> <span class="DecNumber">99</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="values">
+<dt><pre><span class="Identifier">values</span> <span class="Other">=</span>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_1627397177</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">for</span> <span class="Identifier">k</span> <span class="Keyword">in</span> <span class="Identifier">values</span><span class="Other">(</span><span class="Identifier">mutated</span><span class="Other">)</span><span class="Other">:</span>
+    <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_1627397177</span><span class="Other">,</span> <span class="Identifier">k</span><span class="Other">)</span>
+  <span class="Identifier">collectResult_1627397177</span></pre></dt>
 <dd>
 
 
@@ -284,7 +470,7 @@ TLDR<ul class="simple"><li><a class="reference external" href="https://nim-lang.
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-20 00:43:33 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-20 03:19:30 UTC</small>
       </div>
     </div>
   </div>

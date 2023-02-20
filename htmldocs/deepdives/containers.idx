@@ -5,5 +5,18 @@ countTable	deepdives/containers.html#countTable	containers: countTable
 mutated	deepdives/containers.html#mutated	containers: mutated	
 mCountTable	deepdives/containers.html#mCountTable	containers: mCountTable	
 echoMutated	deepdives/containers.html#echoMutated	containers: echoMutated(): void	
+i	deepdives/containers.html#i	containers: i	
+keys	deepdives/containers.html#keys	containers: keys	
+values	deepdives/containers.html#values	containers: values	
+keyValues	deepdives/containers.html#keyValues	containers: keyValues	
+User	deepdives/containers.html#User	containers: User	
+t	deepdives/containers.html#t	containers: t	
+u	deepdives/containers.html#u	containers: u	
+hc`gensym114	deepdives/containers.html#hc`gensym114	containers: hc`gensym114	
+index`gensym114	deepdives/containers.html#index`gensym114	containers: index`gensym114	
+hasKey`gensym114	deepdives/containers.html#hasKey`gensym114	containers: hasKey`gensym114	
+hc`gensym116	deepdives/containers.html#hc`gensym116	containers: hc`gensym116	
+index`gensym116	deepdives/containers.html#index`gensym116	containers: index`gensym116	
+hasKey`gensym116	deepdives/containers.html#hasKey`gensym116	containers: hasKey`gensym116	
 containers deepdive	deepdives/containers.html#containers-deepdive	 containers deepdive	
 tables	deepdives/containers.html#containers-deepdive-tables	  tables	

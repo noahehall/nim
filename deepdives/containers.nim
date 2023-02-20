@@ -1,7 +1,7 @@
 ##
 ## containers deepdive
 ## ===================
-## [bookmark](https://nim-lang.org/docs/tables.html#pop%2COrderedTableRef%5BA%2CB%5D%2CA%2CB)
+## [bookmark](https://nim-lang.org/docs/strtabs.html)
 
 ##[
 TLDR
@@ -47,8 +47,8 @@ import std/tables
 const
   baseTable = {"fname": "noah", "lname": "hall"}
   hashTable = baseTable.toTable # newTable
-  orderededTable = baseTable.toOrderedTable # newOrderedTable
-  countTable = "pooperscooper".toCountTable # newCountTable
+  orderededTable = baseTable.toOrderedTable # [('a', 5), ('b', 9)].toOrderedTable
+  countTable = "pooperscooper".toCountTable # anyOpenArrayLikeThing.toCountTable
 
 
 echo "############################ pure tables"
@@ -80,3 +80,37 @@ echoMutated()
 
 var i: string = "puy"
 echo fmt"""returns bool, moves value to blah {i=} -> ${mutated.pop "nope", i=} -> {i=}"""
+echo fmt"""alias for pop {i=} -> ${mutated.take "epon", i=} -> {i=}"""
+
+let keys = collect:
+  for k in mutated.keys: k
+echo fmt"collect mutated.[m]keys: {keys=}"
+
+let values = collect:
+  for k in mutated.values: k
+echo fmt"collect mutated.[m]values: {values=}"
+
+let keyValues = collect:
+  for k, v in mutated.pairs: (k, v)
+echo fmt"collect mutated.[m]pairs: {keyValues=}"
+
+type
+  User = object
+    name: string
+    uid: int
+
+var t = initTable[int, User]()
+let u = User(name: "Hello", uid: 99)
+t[1] = u
+
+t.withValue(1, value):
+  ## block is executed only if `key` in `t`
+  ## to modify value it must be a ref/ptr
+  value.name = "Nim"
+  value.uid = 1314
+
+t.withValue(521, value):
+  doAssert false
+do:
+  # block is executed when `key` not in `t`
+  t[1314] = User(name: "exist", uid: 521)
