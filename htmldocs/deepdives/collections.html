@@ -103,7 +103,9 @@ window.addEventListener('DOMContentLoaded', main);
 </ul><li>
   <a class="reference reference-toplevel" href="#8" id="58">Vars</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#mutable"
+      <li><a class="reference" href="#mstringset"
+    title="mstringset = stringSet1">mstringset</a></li>
+  <li><a class="reference" href="#mutable"
     title="mutable =
   type
     OutType`gensym64 = typeof(items(1 .. 10))
@@ -118,6 +120,8 @@ window.addEventListener('DOMContentLoaded', main);
     result`gensym64">mutable</a></li>
   <li><a class="reference" href="#mutated"
     title="mutated: string">mutated</a></li>
+  <li><a class="reference" href="#x"
+    title="x = stringSet1">x</a></li>
 
   </ul>
 </li>
@@ -160,6 +164,11 @@ window.addEventListener('DOMContentLoaded', main);
     title="echoMutated(): void">echoMutated(): void</a></li>
 
   </ul>
+  <ul class="simple nested-toc-section">echoMutatedSet
+      <li><a class="reference" href="#echoMutatedSet"
+    title="echoMutatedSet(): void">echoMutatedSet(): void</a></li>
+
+  </ul>
 
   </ul>
 </li>
@@ -172,14 +181,13 @@ window.addEventListener('DOMContentLoaded', main);
   <div id="tocRoot"></div>
   
   <p class="module-desc">
-<h1><a class="toc-backref" id="collections-deep-dive" href="#collections-deep-dive">collections deep dive</a></h1><p><a class="reference external" href="https://nim-lang.org/docs/sets.html#%3C%3D%2CHashSet%5BA%5D%2CHashSet%5BA%5D">bookmark</a></p>
+<h1><a class="toc-backref" id="collections-deep-dive" href="#collections-deep-dive">collections deep dive</a></h1><p><a class="reference external" href="https://nim-lang.org/docs/packedsets.html">bookmark</a></p>
 TLDR<ul class="simple"><li>this module will heavily use sugar &amp; strformat</li>
 <li>lists/queues are kept in lists.nim</li>
 <li>table like stuff in containers</li>
 </ul>
 <p>links</p>
-<ul class="simple"><li>high impact<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/enumerate.html">enumarate any seq</a></li>
-<li><a class="reference external" href="https://nim-lang.org/docs/intsets.html">int sets</a></li>
+<ul class="simple"><li>high impact<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/intsets.html">int sets</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/sets.html">ordered +/ hash sets</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/packedsets.html">packed (sparse bit) sets</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/sequtils.html">seq (seq, strings, array) utils</a></li>
@@ -204,7 +212,8 @@ TLDR<ul class="simple"><li>this module will heavily use sugar &amp; strformat</l
 </li>
 <li>sets<ul class="simple"><li>efficient hash set and ordered hash set</li>
 <li>values can be any hashable type, unlike system.set which only accept ordinals</li>
-<li>types<ul class="simple"><li>HashSet[A]</li>
+<li>like most things, has items and pairs iterator</li>
+<li>types: all of the init like procs are no longer necessary<ul class="simple"><li>HashSet[A]</li>
 <li>OrderedSet[A]</li>
 <li>SomeSet[A] = HashSet|OrderedSet[A]</li>
 </ul>
@@ -216,6 +225,14 @@ TLDR<ul class="simple"><li>this module will heavily use sugar &amp; strformat</l
   <div class="section" id="8">
 <h1><a class="toc-backref" href="#8">Vars</a></h1>
 <dl class="item">
+<div id="mstringset">
+<dt><pre><span class="Identifier">mstringset</span> <span class="Other">=</span> <span class="Identifier">stringSet1</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 <div id="mutable">
 <dt><pre><span class="Identifier">mutable</span> <span class="Other">=</span>
   <span class="Keyword">type</span>
@@ -237,6 +254,14 @@ TLDR<ul class="simple"><li>this module will heavily use sugar &amp; strformat</l
 </div>
 <div id="mutated">
 <dt><pre><span class="Identifier">mutated</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="x">
+<dt><pre><span class="Identifier">x</span> <span class="Other">=</span> <span class="Identifier">stringSet1</span></pre></dt>
 <dd>
 
 
@@ -285,7 +310,7 @@ TLDR<ul class="simple"><li>this module will heavily use sugar &amp; strformat</l
                      <span class="Other">(</span><span class="DecNumber">842678414</span><span class="Other">,</span> <span class="StringLit">&quot;ay&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">counter</span><span class="Other">:</span> <span class="DecNumber">4</span><span class="Other">)</span></pre></dt>
 <dd>
 
-
+string|array|seq
 
 </dd>
 </div>
@@ -322,6 +347,14 @@ TLDR<ul class="simple"><li>this module will heavily use sugar &amp; strformat</l
 
 </dd>
 </div>
+<div id="echoMutatedSet">
+<dt><pre><span class="Keyword">proc</span> <a href="#echoMutatedSet"><span class="Identifier">echoMutatedSet</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 
 </dl></div>
 
@@ -332,7 +365,7 @@ TLDR<ul class="simple"><li>this module will heavily use sugar &amp; strformat</l
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-20 04:21:21 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-20 11:02:27 UTC</small>
       </div>
     </div>
   </div>

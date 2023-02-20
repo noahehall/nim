@@ -1,7 +1,7 @@
 ##
 ## collections deep dive
 ## =====================
-## [bookmark](https://nim-lang.org/docs/sets.html#%3C%3D%2CHashSet%5BA%5D%2CHashSet%5BA%5D)
+## [bookmark](https://nim-lang.org/docs/packedsets.html)
 
 ##[
 TLDR
@@ -11,7 +11,6 @@ TLDR
 
 links
 - high impact
-  - [enumarate any seq](https://nim-lang.org/docs/enumerate.html)
   - [int sets](https://nim-lang.org/docs/intsets.html)
   - [ordered +/ hash sets](https://nim-lang.org/docs/sets.html)
   - [packed (sparse bit) sets](https://nim-lang.org/docs/packedsets.html)
@@ -35,7 +34,8 @@ links
 - sets
   - efficient hash set and ordered hash set
   - values can be any hashable type, unlike system.set which only accept ordinals
-  - types
+  - like most things, has items and pairs iterator
+  - types: all of the init like procs are no longer necessary
     - HashSet[A]
     - OrderedSet[A]
     - SomeSet[A] = HashSet|OrderedSet[A]
@@ -72,7 +72,7 @@ echo "mapLiterals to a diff type ", [0.1, 0.2].mapLiterals int
 echo "fold left template requires a and b ", immutable.foldl a + b
 echo "fold right template requires a and b ", immutable.foldr a + b
 
-# hmm thought this would be 55 + 45, but instead its "55" concat "45"
+# hmm thought this would be 55 + 45, but instead its "55" + "45"
 echo "fold left/right accepts an initial value ", immutable.foldl a + b, 45
 
 echo "filter ", immutable.filter x => x > 5
@@ -101,7 +101,7 @@ echo "############################ sets"
 import std/sets
 
 const
-  stringSet1 = toHashSet ["ay", "bee", "see", "dee"]
+  stringSet1 = toHashSet ["ay", "bee", "see", "dee"] ## string|array|seq
   stringSet2 = toHashSet ["dee","ee", "ehf", "gee", "aych"]
   floatSet = toOrderedSet [1.0, 3.0, 2.0, 4.0]
 
@@ -111,5 +111,32 @@ echo fmt"alias for intersection {stringset1 * stringset2=}"
 echo fmt"alias for union {stringset1 + stringset2=}"
 echo fmt"alias for symmetricDifference {stringset1 -+- stringset2=}"
 echo fmt"alias for difference {stringset1 - stringset2=}"
-echo fmt"order matters {stringset2 - stringset1=}"
+echo fmt"{stringset2 - stringset1=}"
+echo fmt"{stringset1 <= stringset1=}"
+echo fmt"{stringset1 == stringset1=}"
+echo fmt"{(stringset1 * stringset2) < stringset1=}"
+echo fmt"{stringset1.disjoint stringset2=}"
+echo fmt"{stringset1.card=}"
+echo fmt"{stringset1.len=}"
+echo fmt"{stringset1.hash=}"
+echo fmt"""{"ay" in stringset1=}"""
+echo fmt"""{"yo" in stringset2=}"""
+echo fmt"""{stringset1.contains "son"=}"""
+
+var x = stringSet1
+echo fmt"""requires a var to use [] getter {x["ay"]=}"""
+echo fmt"{stringset1.map(x => x[^1])=}"
+
+
 echo "############################ sets impure"
+
+var mstringset = stringSet1
+proc echoMutatedSet(): void = echo "strset: ", $mstringset
+
+echo fmt"""true if item existed {mstringset.containsOrIncl "poop"=}"""; echoMutatedSet()
+echo fmt"""{mstringset.containsOrIncl "poop"=}"""; echoMutatedSet()
+echo fmt"""true if item missing {mstringset.missingOrExcl "poop"=}"""; echoMutatedSet()
+echo fmt"""{mstringset.missingOrExcl "poop"=}"""; echoMutatedSet()
+echo fmt"""silently removes key/hashset {{mstringset.excl "poop"}}"""
+echo fmt"""adds key/hash if missing {{mstringset.incl "soup"}}"""
+echo fmt"""pop an arbitrary item, throws on empty set {mstringset.pop=}"""

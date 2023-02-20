@@ -5,7 +5,7 @@
 
 ##[
 TLDR
-- [custom types as table keys require hashing](https://nim-lang.org/docs/tables.html#basic-usage-hashing)
+- [custom types as keys require hash + == procs](https://nim-lang.org/docs/tables.html#basic-usage-hashing)
 - checkout data.nim for additional stuff
 - you may need sugar, sequtils and strutils for effectively working with tables
 - check sugar.nim for sorting with std/algorithm

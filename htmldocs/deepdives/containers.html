@@ -143,24 +143,24 @@ window.addEventListener('DOMContentLoaded', main);
   0 &lt;= index`gensym116">hasKey`gensym116</a></li>
   <li><a class="reference" href="#keys"
     title="keys =
-  var collectResult_1627396931 = newSeq(Natural(0))
+  var collectResult_1627396897 = newSeq(Natural(0))
   for k in keys(mutated):
-    add(collectResult_1627396931, k)
-  collectResult_1627396931">keys</a></li>
+    add(collectResult_1627396897, k)
+  collectResult_1627396897">keys</a></li>
   <li><a class="reference" href="#keyValues"
     title="keyValues =
-  var collectResult_1627397421 = newSeq(Natural(0))
+  var collectResult_1627397387 = newSeq(Natural(0))
   for k, v in pairs(mutated):
-    add(collectResult_1627397421, (k, v))
-  collectResult_1627397421">keyValues</a></li>
+    add(collectResult_1627397387, (k, v))
+  collectResult_1627397387">keyValues</a></li>
   <li><a class="reference" href="#u"
     title="u = User(name: &quot;Hello&quot;, uid: 99)">u</a></li>
   <li><a class="reference" href="#values"
     title="values =
-  var collectResult_1627397176 = newSeq(Natural(0))
+  var collectResult_1627397142 = newSeq(Natural(0))
   for k in values(mutated):
-    add(collectResult_1627397176, k)
-  collectResult_1627397176">values</a></li>
+    add(collectResult_1627397142, k)
+  collectResult_1627397142">values</a></li>
 
   </ul>
 </li>
@@ -210,7 +210,7 @@ window.addEventListener('DOMContentLoaded', main);
   
   <p class="module-desc">
 <h1><a class="toc-backref" id="containers-deepdive" href="#containers-deepdive">containers deepdive</a></h1><p><a class="reference external" href="https://nim-lang.org/docs/strtabs.html">bookmark</a></p>
-TLDR<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/tables.html#basic-usage-hashing">custom types as table keys require hashing</a></li>
+TLDR<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/tables.html#basic-usage-hashing">custom types as keys require hash + == procs</a></li>
 <li>checkout data.nim for additional stuff</li>
 <li>you may need sugar, sequtils and strutils for effectively working with tables</li>
 <li>check sugar.nim for sorting with std/algorithm</li>
@@ -357,10 +357,10 @@ TLDR<ul class="simple"><li><a class="reference external" href="https://nim-lang.
 </div>
 <div id="keys">
 <dt><pre><span class="Identifier">keys</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">collectResult_1627396931</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_1627396897</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
   <span class="Keyword">for</span> <span class="Identifier">k</span> <span class="Keyword">in</span> <span class="Identifier">keys</span><span class="Other">(</span><span class="Identifier">mutated</span><span class="Other">)</span><span class="Other">:</span>
-    <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_1627396931</span><span class="Other">,</span> <span class="Identifier">k</span><span class="Other">)</span>
-  <span class="Identifier">collectResult_1627396931</span></pre></dt>
+    <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_1627396897</span><span class="Other">,</span> <span class="Identifier">k</span><span class="Other">)</span>
+  <span class="Identifier">collectResult_1627396897</span></pre></dt>
 <dd>
 
 
@@ -369,10 +369,10 @@ TLDR<ul class="simple"><li><a class="reference external" href="https://nim-lang.
 </div>
 <div id="keyValues">
 <dt><pre><span class="Identifier">keyValues</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">collectResult_1627397421</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_1627397387</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
   <span class="Keyword">for</span> <span class="Identifier">k</span><span class="Other">,</span> <span class="Identifier">v</span> <span class="Keyword">in</span> <span class="Identifier">pairs</span><span class="Other">(</span><span class="Identifier">mutated</span><span class="Other">)</span><span class="Other">:</span>
-    <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_1627397421</span><span class="Other">,</span> <span class="Other">(</span><span class="Identifier">k</span><span class="Other">,</span> <span class="Identifier">v</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">collectResult_1627397421</span></pre></dt>
+    <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_1627397387</span><span class="Other">,</span> <span class="Other">(</span><span class="Identifier">k</span><span class="Other">,</span> <span class="Identifier">v</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Identifier">collectResult_1627397387</span></pre></dt>
 <dd>
 
 
@@ -389,10 +389,10 @@ TLDR<ul class="simple"><li><a class="reference external" href="https://nim-lang.
 </div>
 <div id="values">
 <dt><pre><span class="Identifier">values</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">collectResult_1627397176</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_1627397142</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
   <span class="Keyword">for</span> <span class="Identifier">k</span> <span class="Keyword">in</span> <span class="Identifier">values</span><span class="Other">(</span><span class="Identifier">mutated</span><span class="Other">)</span><span class="Other">:</span>
-    <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_1627397176</span><span class="Other">,</span> <span class="Identifier">k</span><span class="Other">)</span>
-  <span class="Identifier">collectResult_1627397176</span></pre></dt>
+    <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_1627397142</span><span class="Other">,</span> <span class="Identifier">k</span><span class="Other">)</span>
+  <span class="Identifier">collectResult_1627397142</span></pre></dt>
 <dd>
 
 
@@ -470,7 +470,7 @@ TLDR<ul class="simple"><li><a class="reference external" href="https://nim-lang.
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-20 04:21:21 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-20 11:02:27 UTC</small>
       </div>
     </div>
   </div>
