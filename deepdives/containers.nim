@@ -13,7 +13,7 @@ TLDR
 todos
 - tables
   - [the commit for indexBy, scroll down for tests](https://github.com/nim-lang/Nim/commit/5498415f3b44048739c9b7116638824713d9c1df)
-  - newTableFrom
+  - newTableFrom, sort (still havent looked algorithms)
 
 links
 - high impact
@@ -76,3 +76,6 @@ mCountTable.merge countTable; echoMutated()
 echo fmt"""{mutated.mgetOrPut "some", "thing"=}"""
 echo fmt"""returns bool, inserts on false {mutated.hasKeyOrPut "nope", "yup"=}"""
 echoMutated()
+
+var i: string = "puy"
+echo fmt"""returns bool, moves value to blah {i=} -> ${mutated.pop "nope", i=} -> {i=}"""

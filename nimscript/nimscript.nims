@@ -1,6 +1,7 @@
 ##
 ## nimscript
 ## =========
+## [bookmark](https://github.com/nim-lang/nimble#readme)
 
 ##[
 ## TLDR
@@ -10,6 +11,7 @@ links
 - [nims intro](https://nim-lang.org/docs/nims.html)
 - [nimscript spec](https://nim-lang.org/docs/nimscript.html)
 - [example nims config](https://github.com/kaushalmodi/nim_config/blob/master/config.nims)
+- [nimble](https://github.com/nim-lang/nimble#readme)
 
 todos
 - [tasks](https://nim-lang.org/docs/tasks.html)

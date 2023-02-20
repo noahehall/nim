@@ -1,7 +1,7 @@
 ##
 ## sugar deep dive
 ## ===============
-## keeping nim sweet
+## [bookmark](https://nim-lang.org/docs/algorithm.html)
 
 ##[
 TLDR

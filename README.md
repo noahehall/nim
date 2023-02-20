@@ -3,8 +3,11 @@
 - my adventures in nim
 - all files are executable
 - recommended ramp up
-  - super basics: yolowurl, sugar, collections, strings, containers, datetime, data, maths
-  - basics: tasks, osIo, tests,
+  - 1: yolowurl, sugar, collections, strings, containers, datetime, data
+  - 2: lists, maths, algorithms, tasks, tests
+  - 3: osIo, crypto, regex, compiler_backends_cfgs, nimscript dir
+  - 4: memory_immutability, parallelism_concurrency, servers, html
+  - 5: dbs
 
 ## for javascript appdevs
 
