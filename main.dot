@@ -51,12 +51,6 @@ digraph main {
 "std/tables" -> "std/algorithm";
 "deepdives/sugar" -> "std/tables";
 "deepdives/sugar" -> "std/algorithm";
-"std/sequtils" -> "std/private/since";
-"std/sequtils" -> "std/macros";
-"deepdives/collections" -> "std/sequtils";
-"deepdives/collections" -> "std/sugar";
-"deepdives/strings" -> "std/sugar";
-"deepdives/strings" -> "std/sequtils";
 "std/strformat" -> "std/macros";
 "std/strformat" -> "std/parseutils";
 "std/strformat" -> "std/unicode";
@@ -72,6 +66,14 @@ digraph main {
 "std/strutils" -> "std/private/since";
 "std/strutils" -> "std/private/strimpl";
 "std/strformat" -> "std/strutils";
+"deepdives/collections" -> "std/sugar";
+"deepdives/collections" -> "std/strformat";
+"std/sequtils" -> "std/private/since";
+"std/sequtils" -> "std/macros";
+"deepdives/collections" -> "std/sequtils";
+"deepdives/collections" -> "std/sets";
+"deepdives/strings" -> "std/sugar";
+"deepdives/strings" -> "std/sequtils";
 "deepdives/strings" -> "std/strformat";
 "deepdives/strings" -> "std/strutils";
 "deepdives/containers" -> "std/sugar";
@@ -79,9 +81,13 @@ digraph main {
 "deepdives/containers" -> "std/strutils";
 "deepdives/containers" -> "std/sequtils";
 "deepdives/containers" -> "std/tables";
+"deepdives/lists" -> "std/sugar";
+"deepdives/lists" -> "std/sequtils";
 "main" -> "yolowurl/yolowurl";
 "main" -> "deepdives/sugar";
 "main" -> "deepdives/collections";
 "main" -> "deepdives/strings";
 "main" -> "deepdives/containers";
+"main" -> "deepdives/lists";
+"main" -> "deepdives/datetime";
 }

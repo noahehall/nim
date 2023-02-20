@@ -1,5 +1,6 @@
 #[
   @see
+    - [options](https://nim-lang.org/docs/options.html)
     - https://nim-lang.org/docs/json.html
     - https://nim-by-example.github.io/json/
     - https://nim-lang.org/docs/jsonutils.html

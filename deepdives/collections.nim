@@ -1,46 +1,57 @@
 ##
 ## collections deep dive
 ## =====================
-## [bookmark](https://nim-lang.org/docs/sets.html)
+## [bookmark](https://nim-lang.org/docs/sets.html#%3C%3D%2CHashSet%5BA%5D%2CHashSet%5BA%5D)
 
 ##[
 TLDR
-- this module will heavily use sugar, start there first
+- this module will heavily use sugar & strformat
 - lists/queues are kept in lists.nim
-- i put table like stuff in containers
+- table like stuff in containers
 
 links
 - high impact
   - [enumarate any seq](https://nim-lang.org/docs/enumerate.html)
-  - [hash sets](https://nim-lang.org/docs/sets.html)
   - [int sets](https://nim-lang.org/docs/intsets.html)
+  - [ordered +/ hash sets](https://nim-lang.org/docs/sets.html)
   - [packed (sparse bit) sets](https://nim-lang.org/docs/packedsets.html)
   - [seq (seq, strings, array) utils](https://nim-lang.org/docs/sequtils.html)
   - [set utils](https://nim-lang.org/docs/setutils.html)
-  - [options](https://nim-lang.org/docs/options.html)
 - niche
 
 
 ## additional info
-- toSeq(blah) transforms any iterable into a sequence
-- newSeqWith useful for creating 2 dimensional sequences
-- some procs have an it variant for even more succintness
-  - allIt
-  - anyIt
-  - applyIt
-  - countIt
-  - filterIt
-  - keepItIf
-  - mapIt
+- seqs
+  - toSeq(blah) transforms any iterable into a sequence
+  - newSeqWith useful for creating 2 dimensional sequences
+  - some procs have an it variant for even more succintness
+    - allIt
+    - anyIt
+    - applyIt
+    - countIt
+    - filterIt
+    - keepItIf
+    - mapIt
+- sets
+  - efficient hash set and ordered hash set
+  - values can be any hashable type, unlike system.set which only accept ordinals
+  - types
+    - HashSet[A]
+    - OrderedSet[A]
+    - SomeSet[A] = HashSet|OrderedSet[A]
 ]##
 
-import std/[sequtils, sugar]
+import std/[sugar, strformat]
 
-echo "############################ pure sequtils"
+echo "############################ sequtils"
+import std/[sequtils]
+
 const
   immutable = toSeq(1..10)
   seq2d = newSeqWith(3, toSeq(1..5)) # @[@[1,2,3,4,5].repeat 3]
   zipped = @[("opt1", 'a'), ("opt2", 'b'), ("opt3", 'c')]
+
+echo "############################ pure sequtils"
 
 echo "newSeqWith ", seq2d
 echo "all items?  ", immutable.all x => x < 11
@@ -61,7 +72,7 @@ echo "mapLiterals to a diff type ", [0.1, 0.2].mapLiterals int
 echo "fold left template requires a and b ", immutable.foldl a + b
 echo "fold right template requires a and b ", immutable.foldr a + b
 
-# hmm thought these would be 55 + 45, but instead its "55" concat "45"
+# hmm thought this would be 55 + 45, but instead its "55" concat "45"
 echo "fold left/right accepts an initial value ", immutable.foldl a + b, 45
 
 echo "filter ", immutable.filter x => x > 5
@@ -87,9 +98,18 @@ mutable.insert @[3,2,1], 1; echoMutated() ## \
 mutable.keepIf x => x > 0; echoMutated()
 
 echo "############################ sets"
-# efficient hash set and ordered hash set
-# store any value that can be hashed and dont contain duplicates
-# use cases
-# remove dupes from a container
-# membership testing
-# math ops on two sets, e.g. unions, intersection, etc
+import std/sets
+
+const
+  stringSet1 = toHashSet ["ay", "bee", "see", "dee"]
+  stringSet2 = toHashSet ["dee","ee", "ehf", "gee", "aych"]
+  floatSet = toOrderedSet [1.0, 3.0, 2.0, 4.0]
+
+echo "############################ sets pure"
+
+echo fmt"alias for intersection {stringset1 * stringset2=}"
+echo fmt"alias for union {stringset1 + stringset2=}"
+echo fmt"alias for symmetricDifference {stringset1 -+- stringset2=}"
+echo fmt"alias for difference {stringset1 - stringset2=}"
+echo fmt"order matters {stringset2 - stringset1=}"
+echo "############################ sets impure"

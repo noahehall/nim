@@ -4,5 +4,8 @@ zipped	deepdives/collections.html#zipped	collections: zipped
 mutable	deepdives/collections.html#mutable	collections: mutable	
 mutated	deepdives/collections.html#mutated	collections: mutated	
 echoMutated	deepdives/collections.html#echoMutated	collections: echoMutated(): void	
+stringSet1	deepdives/collections.html#stringSet1	collections: stringSet1	
+stringSet2	deepdives/collections.html#stringSet2	collections: stringSet2	
+floatSet	deepdives/collections.html#floatSet	collections: floatSet	
 collections deep dive	deepdives/collections.html#collections-deep-dive	 collections deep dive	
 additional info	deepdives/collections.html#collections-deep-dive-additional-info	  additional info	

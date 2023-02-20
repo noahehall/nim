@@ -108,11 +108,11 @@ window.addEventListener('DOMContentLoaded', main);
   type
     OutType`gensym64 = typeof(items(1 .. 10))
   block:
-    let :tmp_1442842429 = 1 .. 10
-    s2_1442842430(): untyped
+    let :tmp_1442842430 = 1 .. 10
+    s2_1442842431(): untyped
     var i`gensym64 = 0
-    var result`gensym64 = newSeq(len(:tmp_1442842429))
-    for it`gensym64 in items(:tmp_1442842429):
+    var result`gensym64 = newSeq(len(:tmp_1442842430))
+    for it`gensym64 in items(:tmp_1442842430):
       result`gensym64[i`gensym64] = it`gensym64
       i`gensym64 += 1
     result`gensym64">mutable</a></li>
@@ -124,10 +124,29 @@ window.addEventListener('DOMContentLoaded', main);
 <li>
   <a class="reference reference-toplevel" href="#10" id="60">Consts</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#immutable"
+      <li><a class="reference" href="#floatSet"
+    title="floatSet = (data: [(0, 0, 0.0), (0, 0, 0.0), (0, 0, 0.0), (0, 0, 0.0),
+                   (0, 0, 0.0), (1275112959902613477, -1, 4.0), (0, 0, 0.0),
+                   (0, 0, 0.0), (763060220102561848, 5, 2.0), (0, 0, 0.0),
+                   (0, 0, 0.0), (0, 0, 0.0), (0, 0, 0.0),
+                   (-6846494141122270755, 8, 3.0),
+                   (4154412677857139934, 13, 1.0), (0, 0, 0.0)], counter: 4,
+            first: 14, last: 5)">floatSet</a></li>
+  <li><a class="reference" href="#immutable"
     title="immutable = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">immutable</a></li>
   <li><a class="reference" href="#seq2d"
     title="seq2d = [[1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]]">seq2d</a></li>
+  <li><a class="reference" href="#stringSet1"
+    title="stringSet1 = (data: [(2988173616, &quot;bee&quot;), (0, &quot;&quot;), (0, &quot;&quot;), (0, &quot;&quot;), (0, &quot;&quot;),
+                     (0, &quot;&quot;), (0, &quot;&quot;), (0, &quot;&quot;), (4068491112, &quot;see&quot;), (0, &quot;&quot;),
+                     (2680953434, &quot;dee&quot;), (0, &quot;&quot;), (0, &quot;&quot;), (0, &quot;&quot;),
+                     (842678414, &quot;ay&quot;), (0, &quot;&quot;)], counter: 4)">stringSet1</a></li>
+  <li><a class="reference" href="#stringSet2"
+    title="stringSet2 = (data: [(1723068688, &quot;aych&quot;), (0, &quot;&quot;), (0, &quot;&quot;), (0, &quot;&quot;),
+                     (3983621332, &quot;ee&quot;), (554258517, &quot;ehf&quot;), (0, &quot;&quot;), (0, &quot;&quot;),
+                     (0, &quot;&quot;), (0, &quot;&quot;), (2680953434, &quot;dee&quot;),
+                     (1035373066, &quot;gee&quot;), (0, &quot;&quot;), (0, &quot;&quot;), (0, &quot;&quot;), (0, &quot;&quot;)],
+              counter: 5)">stringSet2</a></li>
   <li><a class="reference" href="#zipped"
     title="zipped = [(&quot;opt1&quot;, 'a'), (&quot;opt2&quot;, 'b'), (&quot;opt3&quot;, 'c')]">zipped</a></li>
 
@@ -153,27 +172,24 @@ window.addEventListener('DOMContentLoaded', main);
   <div id="tocRoot"></div>
   
   <p class="module-desc">
-<h1><a class="toc-backref" id="collections-deep-dive" href="#collections-deep-dive">collections deep dive</a></h1><p><a class="reference external" href="https://nim-lang.org/docs/sets.html">bookmark</a></p>
-TLDR<ul class="simple"><li>this module will heavily use sugar, start there first</li>
-<li>lists are kept in lists.nim</li>
-<li>i put table like stuff in containers</li>
+<h1><a class="toc-backref" id="collections-deep-dive" href="#collections-deep-dive">collections deep dive</a></h1><p><a class="reference external" href="https://nim-lang.org/docs/sets.html#%3C%3D%2CHashSet%5BA%5D%2CHashSet%5BA%5D">bookmark</a></p>
+TLDR<ul class="simple"><li>this module will heavily use sugar &amp; strformat</li>
+<li>lists/queues are kept in lists.nim</li>
+<li>table like stuff in containers</li>
 </ul>
 <p>links</p>
-<ul class="simple"><li>high impact<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/deques.html">double ended queue</a></li>
-<li><a class="reference external" href="https://nim-lang.org/docs/enumerate.html">enumarate any seq</a></li>
-<li><a class="reference external" href="https://nim-lang.org/docs/sets.html">hash sets</a></li>
-<li><a class="reference external" href="https://nim-lang.org/docs/heapqueue.html">heapqueue</a></li>
+<ul class="simple"><li>high impact<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/enumerate.html">enumarate any seq</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/intsets.html">int sets</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/sets.html">ordered +/ hash sets</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/packedsets.html">packed (sparse bit) sets</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/sequtils.html">seq (seq, strings, array) utils</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/setutils.html">set utils</a></li>
-<li><a class="reference external" href="https://nim-lang.org/docs/options.html">options</a></li>
 </ul>
 </li>
 <li>niche</li>
 </ul>
 
-<h2><a class="toc-backref" id="collections-deep-dive-additional-info" href="#collections-deep-dive-additional-info">additional info</a></h2><ul class="simple"><li>toSeq(blah) transforms any iterable into a sequence</li>
+<h2><a class="toc-backref" id="collections-deep-dive-additional-info" href="#collections-deep-dive-additional-info">additional info</a></h2><ul class="simple"><li>seqs<ul class="simple"><li>toSeq(blah) transforms any iterable into a sequence</li>
 <li>newSeqWith useful for creating 2 dimensional sequences</li>
 <li>some procs have an it variant for even more succintness<ul class="simple"><li>allIt</li>
 <li>anyIt</li>
@@ -182,6 +198,17 @@ TLDR<ul class="simple"><li>this module will heavily use sugar, start there first
 <li>filterIt</li>
 <li>keepItIf</li>
 <li>mapIt</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>sets<ul class="simple"><li>efficient hash set and ordered hash set</li>
+<li>values can be any hashable type, unlike system.set which only accept ordinals</li>
+<li>types<ul class="simple"><li>HashSet[A]</li>
+<li>OrderedSet[A]</li>
+<li>SomeSet[A] = HashSet|OrderedSet[A]</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -194,11 +221,11 @@ TLDR<ul class="simple"><li>this module will heavily use sugar, start there first
   <span class="Keyword">type</span>
     <span class="Identifier">OutType`gensym64</span> <span class="Other">=</span> <span class="Identifier">typeof</span><span class="Other">(</span><span class="Identifier">items</span><span class="Other">(</span><span class="DecNumber">1</span> <span class="Operator">..</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">)</span>
   <span class="Keyword">block</span><span class="Other">:</span>
-    <span class="Keyword">let</span> <span class="Operator">:tmp_1442842429</span> <span class="Other">=</span> <span class="DecNumber">1</span> <span class="Operator">..</span> <span class="DecNumber">10</span>
-    <span class="Keyword">template</span> <a href="#mutable"><span class="Identifier">s2_1442842430</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span>
+    <span class="Keyword">let</span> <span class="Operator">:tmp_1442842430</span> <span class="Other">=</span> <span class="DecNumber">1</span> <span class="Operator">..</span> <span class="DecNumber">10</span>
+    <span class="Keyword">template</span> <a href="#mutable"><span class="Identifier">s2_1442842431</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span>
     <span class="Keyword">var</span> <span class="Identifier">i`gensym64</span> <span class="Other">=</span> <span class="DecNumber">0</span>
-    <span class="Keyword">var</span> <span class="Identifier">result`gensym64</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">len</span><span class="Other">(</span><span class="Operator">:tmp_1442842429</span><span class="Other">)</span><span class="Other">)</span>
-    <span class="Keyword">for</span> <span class="Identifier">it`gensym64</span> <span class="Keyword">in</span> <span class="Identifier">items</span><span class="Other">(</span><span class="Operator">:tmp_1442842429</span><span class="Other">)</span><span class="Other">:</span>
+    <span class="Keyword">var</span> <span class="Identifier">result`gensym64</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">len</span><span class="Other">(</span><span class="Operator">:tmp_1442842430</span><span class="Other">)</span><span class="Other">)</span>
+    <span class="Keyword">for</span> <span class="Identifier">it`gensym64</span> <span class="Keyword">in</span> <span class="Identifier">items</span><span class="Other">(</span><span class="Operator">:tmp_1442842430</span><span class="Other">)</span><span class="Other">:</span>
       <span class="Identifier">result`gensym64</span><span class="Other">[</span><span class="Identifier">i`gensym64</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">it`gensym64</span>
       <span class="Identifier">i`gensym64</span> <span class="Operator">+=</span> <span class="DecNumber">1</span>
     <span class="Identifier">result`gensym64</span></pre></dt>
@@ -221,6 +248,20 @@ TLDR<ul class="simple"><li>this module will heavily use sugar, start there first
 <div class="section" id="10">
 <h1><a class="toc-backref" href="#10">Consts</a></h1>
 <dl class="item">
+<div id="floatSet">
+<dt><pre><span class="Identifier">floatSet</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">data</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">,</span>
+                   <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">1275112959902613477</span><span class="Other">,</span> <span class="DecNumber">-1</span><span class="Other">,</span> <span class="FloatNumber">4.0</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">,</span>
+                   <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">763060220102561848</span><span class="Other">,</span> <span class="DecNumber">5</span><span class="Other">,</span> <span class="FloatNumber">2.0</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">,</span>
+                   <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">,</span>
+                   <span class="Other">(</span><span class="DecNumber">-6846494141122270755</span><span class="Other">,</span> <span class="DecNumber">8</span><span class="Other">,</span> <span class="FloatNumber">3.0</span><span class="Other">)</span><span class="Other">,</span>
+                   <span class="Other">(</span><span class="DecNumber">4154412677857139934</span><span class="Other">,</span> <span class="DecNumber">13</span><span class="Other">,</span> <span class="FloatNumber">1.0</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">counter</span><span class="Other">:</span> <span class="DecNumber">4</span><span class="Other">,</span>
+            <span class="Identifier">first</span><span class="Other">:</span> <span class="DecNumber">14</span><span class="Other">,</span> <span class="Identifier">last</span><span class="Other">:</span> <span class="DecNumber">5</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
 <div id="immutable">
 <dt><pre><span class="Identifier">immutable</span> <span class="Other">=</span> <span class="Other">[</span><span class="DecNumber">1</span><span class="Other">,</span> <span class="DecNumber">2</span><span class="Other">,</span> <span class="DecNumber">3</span><span class="Other">,</span> <span class="DecNumber">4</span><span class="Other">,</span> <span class="DecNumber">5</span><span class="Other">,</span> <span class="DecNumber">6</span><span class="Other">,</span> <span class="DecNumber">7</span><span class="Other">,</span> <span class="DecNumber">8</span><span class="Other">,</span> <span class="DecNumber">9</span><span class="Other">,</span> <span class="DecNumber">10</span><span class="Other">]</span></pre></dt>
 <dd>
@@ -231,6 +272,29 @@ TLDR<ul class="simple"><li>this module will heavily use sugar, start there first
 </div>
 <div id="seq2d">
 <dt><pre><span class="Identifier">seq2d</span> <span class="Other">=</span> <span class="Other">[</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">,</span> <span class="DecNumber">2</span><span class="Other">,</span> <span class="DecNumber">3</span><span class="Other">,</span> <span class="DecNumber">4</span><span class="Other">,</span> <span class="DecNumber">5</span><span class="Other">]</span><span class="Other">,</span> <span class="Other">[</span><span class="DecNumber">1</span><span class="Other">,</span> <span class="DecNumber">2</span><span class="Other">,</span> <span class="DecNumber">3</span><span class="Other">,</span> <span class="DecNumber">4</span><span class="Other">,</span> <span class="DecNumber">5</span><span class="Other">]</span><span class="Other">,</span> <span class="Other">[</span><span class="DecNumber">1</span><span class="Other">,</span> <span class="DecNumber">2</span><span class="Other">,</span> <span class="DecNumber">3</span><span class="Other">,</span> <span class="DecNumber">4</span><span class="Other">,</span> <span class="DecNumber">5</span><span class="Other">]</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="stringSet1">
+<dt><pre><span class="Identifier">stringSet1</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">data</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">(</span><span class="DecNumber">2988173616</span><span class="Other">,</span> <span class="StringLit">&quot;bee&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span>
+                     <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">4068491112</span><span class="Other">,</span> <span class="StringLit">&quot;see&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span>
+                     <span class="Other">(</span><span class="DecNumber">2680953434</span><span class="Other">,</span> <span class="StringLit">&quot;dee&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span>
+                     <span class="Other">(</span><span class="DecNumber">842678414</span><span class="Other">,</span> <span class="StringLit">&quot;ay&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">counter</span><span class="Other">:</span> <span class="DecNumber">4</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="stringSet2">
+<dt><pre><span class="Identifier">stringSet2</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">data</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">(</span><span class="DecNumber">1723068688</span><span class="Other">,</span> <span class="StringLit">&quot;aych&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span>
+                     <span class="Other">(</span><span class="DecNumber">3983621332</span><span class="Other">,</span> <span class="StringLit">&quot;ee&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">554258517</span><span class="Other">,</span> <span class="StringLit">&quot;ehf&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span>
+                     <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">2680953434</span><span class="Other">,</span> <span class="StringLit">&quot;dee&quot;</span><span class="Other">)</span><span class="Other">,</span>
+                     <span class="Other">(</span><span class="DecNumber">1035373066</span><span class="Other">,</span> <span class="StringLit">&quot;gee&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">]</span><span class="Other">,</span>
+              <span class="Identifier">counter</span><span class="Other">:</span> <span class="DecNumber">5</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -268,7 +332,7 @@ TLDR<ul class="simple"><li>this module will heavily use sugar, start there first
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-20 03:19:29 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-20 04:21:21 UTC</small>
       </div>
     </div>
   </div>

@@ -149,7 +149,7 @@ echo "############################ tables"
 var myTable = {"fname": "noah", "lname": "hall"}
 echo "my name is: ", $myTable
 # TODO: find this in the docs somewhere, this seems a bit rediculouos
-# ^ lol you can get the key via blah["key"] with hashtables
+# ^ lol you can get the value via blah["key"] with hashtables
 # @see https://nim-lang.org/docs/tables.html
 echo "my firstname is: ", myTable[0][1]
 

@@ -98,10 +98,10 @@ window.addEventListener('DOMContentLoaded', main);
     </select>
   </div>
   <ul class="simple simple-toc" id="toc-list">
-<li><a class="reference" id="strings-deepdive_toc" href="#strings-deepdive">strings deepdive</a></li>
-<ul class="simple"><li><a class="reference" id="strings-deepdive-tldr_toc" href="#strings-deepdive-tldr">TLDR</a></li>
-<li><a class="reference" id="strings-deepdive-strformat_toc" href="#strings-deepdive-strformat">strformat</a></li>
-<li><a class="reference" id="strings-deepdive-strutils_toc" href="#strings-deepdive-strutils">strutils</a></li>
+<li><a class="reference" id="strings_toc" href="#strings">strings</a></li>
+<ul class="simple"><li><a class="reference" id="strings-tldr_toc" href="#strings-tldr">TLDR</a></li>
+<li><a class="reference" id="strings-strformat_toc" href="#strings-strformat">strformat</a></li>
+<li><a class="reference" id="strings-strutils_toc" href="#strings-strutils">strutils</a></li>
 </ul><li>
   <a class="reference reference-toplevel" href="#8" id="58">Vars</a>
   <ul class="simple simple-toc-section">
@@ -140,14 +140,15 @@ window.addEventListener('DOMContentLoaded', main);
   <div id="tocRoot"></div>
   
   <p class="module-desc">
-<h1><a class="toc-backref" id="strings-deepdive" href="#strings-deepdive">strings deepdive</a></h1><p>prolly should checkout critbits next</p>
+<h1><a class="toc-backref" id="strings" href="#strings">strings</a></h1><p>prolly should checkout critbits next</p>
 
-<h2><a class="toc-backref" id="strings-deepdive-tldr" href="#strings-deepdive-tldr">TLDR</a></h2><ul class="simple"><li>this file requires sequtils &amp; sugar</li>
+<h2><a class="toc-backref" id="strings-tldr" href="#strings-tldr">TLDR</a></h2><ul class="simple"><li>this file requires sequtils &amp; sugar</li>
 <li>see regex.nim for regex &amp; related modules</li>
 <li>see data.nim for additional string</li>
 <li>generally any proc that accepts a string, also accepts a char, and sometimes set[char]</li>
 </ul>
 <p>todos/skipped</p>
+<p>skipped</p>
 <ul class="simple"><li>strutils<ul class="simple"><li>BinaryPrefixMode, FloatFormatMode, SkipTable, addSep, align[left,right]</li>
 <li>center, cmpIgnoreStyle, dedent, indent, indentation, unindent</li>
 <li>nimIdentNormalize, validIdentifier</li>
@@ -182,7 +183,7 @@ window.addEventListener('DOMContentLoaded', main);
 </li>
 </ul>
 
-<h2><a class="toc-backref" id="strings-deepdive-strformat" href="#strings-deepdive-strformat">strformat</a></h2><ul class="simple"><li>simply importing strformat enhances the system &amp; operator</li>
+<h2><a class="toc-backref" id="strings-strformat" href="#strings-strformat">strformat</a></h2><ul class="simple"><li>simply importing strformat enhances the system &amp; operator</li>
 <li>doesnt interprate literal escapes like &amp; does e.g. fmt&quot;{str1}nnn&quot;</li>
 <li>fmt syntax: [[fill]align][sign][#][0][minimumwidth][.precision][type]<ul class="simple"><li>3 align flags: &gt; &lt; ^</li>
 <li>3 sign flags for numbers: + - (space)</li>
@@ -196,7 +197,7 @@ window.addEventListener('DOMContentLoaded', main);
 </li>
 </ul>
 
-<h2><a class="toc-backref" id="strings-deepdive-strutils" href="#strings-deepdive-strutils">strutils</a></h2><ul class="simple"><li>AllChars (and related) useful for creating inverted sets to check for invalid chars in a string</li>
+<h2><a class="toc-backref" id="strings-strutils" href="#strings-strutils">strutils</a></h2><ul class="simple"><li>AllChars (and related) useful for creating inverted sets to check for invalid chars in a string</li>
 <li>% used for index/named replacement</li>
 <li>stripLineEnd is useful conjunction with osproc.execCmdEx</li>
 <li>skipped type conversion procs; check skipped for the ones we skipped</li>
@@ -259,7 +260,7 @@ window.addEventListener('DOMContentLoaded', main);
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-20 03:19:30 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-20 04:21:21 UTC</small>
       </div>
     </div>
   </div>
