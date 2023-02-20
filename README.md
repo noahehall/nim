@@ -1,7 +1,6 @@
 # nim
 
 - my adventures in nim
-- all files are executable
 - recommended ramp up
   - 0: tuts links > yolowurl > sugar > collections
     - TODO: find where all the links are and bring them into this file
@@ -27,7 +26,6 @@
 
 internal
 
-- [open html docs in your browser](/htmldocs/main.html)
 - [vscode code-runner cmd for both nimscript and nim files](https://github.com/noahehall/theBookOfNoah/blob/master/vscode.settings.jsonc#L185)
 - [shell fns for nim, nimble and choosenim](https://github.com/noahehall/theBookOfNoah/blob/master/linux/bash_cli_fns/nimlang.sh)
 - [hello world](./yolowurl/)

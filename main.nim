@@ -9,6 +9,8 @@
 ##[
 TLDR
 - everything I should know about nim but likely have forgotten
+- [hello world](https://github.com/noahehall/nim/tree/develop/yolowurl/modules)
+- [deep dives](https://github.com/noahehall/nim/tree/develop/deepdives)
 ]##
 
 import
