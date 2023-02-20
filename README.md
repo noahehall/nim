@@ -54,12 +54,21 @@ interwebs
 
 ---
 
-- [checkout status opensource theyve already built bunch of things you'll need for nirv](https://github.com/status-im)
+### quickies
+
+- [check how getTime handles os checks](https://github.com/nim-lang/Nim/blob/version-1-6/lib/pure/times.nim#L897)
+- may need to rethink the limited use of runnableExamples
+  - proc invocations dont show up in docs
+  - however runnableExamples are doconly and dont execute when compiled
 - [skipped most of the section on cross compilation](https://nim-lang.org/docs/nimc.html#crossminuscompilation-for-windows)
+- [checkout status opensource theyve already built bunch of things you'll need for nirv](https://github.com/status-im)
+
+### move these to a source file
+
+- [optmizing string handling](https://nim-lang.org/docs/nimc.html#optimizing-for-nim-optimizing-string-handling)
 - [pacman devkitpro for nix](https://github.com/devkitPro/pacman/releases)
   - forgot why this is here but its mentioned in the docs for something
 - [dll generation](https://nim-lang.org/docs/nimc.html#dll-generation)
-- [optmizing string handling](https://nim-lang.org/docs/nimc.html#optimizing-for-nim-optimizing-string-handling)
 - https://nim-by-example.github.io/bitsets/
 - https://nim-by-example.github.io/macros/
 - https://nim-lang.org/docs/atomics.html

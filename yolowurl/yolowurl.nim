@@ -112,6 +112,8 @@ idiomatic nim (from docs/styleguide)
 - use a..b unless a .. ^b has an operator (docs, styleguide)
 - use collect macro > map and filter (docs)
 - use fmt"{expr}" > &"{expr} (docs) unless you need escapes (me)
+- use getMonoTime | cpuTime > now for benchmarking (docs)
+- use getTime > epochTime for epoch (docs)
 - use include to split large modules into distinct files (docs)
 - use let > var for runtime vars that dont change
 - use Natural/Positive (docs) e.g. if Blah is Positive

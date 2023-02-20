@@ -44,6 +44,9 @@
 /home/poop/git/foss/nim/deepdives/containers.nim
 /home/poop/git/foss/nim/deepdives/lists.nim
 /home/poop/git/foss/nim/deepdives/datetime.nim
+/home/poop/.choosenim/toolchains/nim-1.6.10/lib/pure/times.nim
+/home/poop/.choosenim/toolchains/nim-1.6.10/lib/pure/options.nim
+/home/poop/.choosenim/toolchains/nim-1.6.10/lib/posix/posix.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/arithmetics.nim
 /home/poop/git/foss/nim/yolowurl/modules/ifWhenCase.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/comparisons.nim
@@ -71,6 +74,7 @@
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/strmantle.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/channels_builtin.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/dyncalls.nim
+/home/poop/.choosenim/toolchains/nim-1.6.10/lib/posix/posix_linux_amd64.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/cellseqs_v1.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/repr_impl.nim
 /home/poop/git/foss/nim/yolowurl/modules/loopsIterator.nim
@@ -99,4 +103,5 @@
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/setops.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/assign.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/pure/collections/hashcommon.nim
+/home/poop/.choosenim/toolchains/nim-1.6.10/lib/posix/posix_linux_amd64_consts.nim
 /home/poop/.choosenim/toolchains/nim-1.6.10/lib/system/mmdisp.nim

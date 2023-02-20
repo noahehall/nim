@@ -85,6 +85,13 @@ digraph main {
 "deepdives/lists" -> "std/sequtils";
 "deepdives/datetime" -> "std/sugar";
 "deepdives/datetime" -> "std/strformat";
+"std/options" -> "std/typetraits";
+"std/times" -> "std/strutils";
+"std/times" -> "std/math";
+"std/times" -> "std/options";
+"std/times" -> "std/private/since";
+"std/times" -> "std/posix";
+"deepdives/datetime" -> "std/times";
 "main" -> "yolowurl/yolowurl";
 "main" -> "deepdives/sugar";
 "main" -> "deepdives/collections";
