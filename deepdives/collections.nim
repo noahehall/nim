@@ -6,15 +6,13 @@
 ##[
 TLDR
 - this module will heavily use sugar, start there first
-- lists are kept in lists.nim
+- lists/queues are kept in lists.nim
 - i put table like stuff in containers
 
 links
 - high impact
-  - [double ended queue](https://nim-lang.org/docs/deques.html)
   - [enumarate any seq](https://nim-lang.org/docs/enumerate.html)
   - [hash sets](https://nim-lang.org/docs/sets.html)
-  - [heapqueue](https://nim-lang.org/docs/heapqueue.html)
   - [int sets](https://nim-lang.org/docs/intsets.html)
   - [packed (sparse bit) sets](https://nim-lang.org/docs/packedsets.html)
   - [seq (seq, strings, array) utils](https://nim-lang.org/docs/sequtils.html)

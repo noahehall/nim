@@ -5,8 +5,8 @@
 - recommended ramp up
   - 0: tuts links > yolowurl > sugar > collections
     - TODO: find where all the links are and bring them into this file
-  - 1: strings, containers, datetime, lists
-  - 2: maths, algorithms, tasks, tests
+  - 1: strings, containers, lists
+  - 2: datetime, maths, algorithms, tasks, tests
   - 3: osIo, crypto, regex, compiler_backends_cfgs, nimscript dir
   - 4: data > memory_immutability, parallelism_concurrency > servers, html
   - 5: dbs

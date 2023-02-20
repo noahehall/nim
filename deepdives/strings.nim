@@ -1,6 +1,6 @@
 ##
-## strings deepdive
-## ================
+## strings
+## =======
 ## prolly should checkout critbits next
 
 ##[
@@ -11,6 +11,7 @@
 - generally any proc that accepts a string, also accepts a char, and sometimes set[char]
 todos/skipped
 
+skipped
 - strutils
   - BinaryPrefixMode, FloatFormatMode, SkipTable, addSep, align[left,right]
   - center, cmpIgnoreStyle, dedent, indent, indentation, unindent
