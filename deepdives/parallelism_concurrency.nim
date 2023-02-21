@@ -3,6 +3,7 @@
     - https://github.com/status-im/nim-chronos/
     - https://nim-lang.org/docs/asyncdispatch.html
     - https://nim-lang.org/docs/asyncfutures.html
+    - https://nim-lang.org/docs/asyncfile.html
     - https://nim-lang.org/docs/asyncstreams.html
     - https://nim-lang.org/docs/channels_builtin.html (system)
     - https://nim-lang.org/docs/coro.html

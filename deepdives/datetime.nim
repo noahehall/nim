@@ -1,7 +1,7 @@
 ##
 ## datetime
 ## ========
-## [bookmark](https://nim-lang.org/docs/times.html#getDayOfWeek%2CMonthdayRange%2CMonth%2Cint)
+## [bookmark](https://nim-lang.org/docs/monotimes.html)
 
 ##[
 ## TLDR

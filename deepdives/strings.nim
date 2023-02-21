@@ -1,7 +1,7 @@
 ##
 ## strings
 ## =======
-## [bookmark](https://nim-lang.org/docs/critbits.html)
+## [bookmark](https://nim-lang.org/docs/uri.html)
 
 ##[
 ## TLDR
@@ -30,6 +30,7 @@ links
   - [str format](https://nim-lang.org/docs/strformat.html)
   - [str utils](https://nim-lang.org/docs/strutils.html)
   - [critbit sorted strings](https://nim-lang.org/docs/critbits.html)
+  - [uri parsing](https://nim-lang.org/docs/uri.html)
 - niche
   - [cstr utils](https://nim-lang.org/docs/cstrutils.html)
   - [ropes (very long strings)](https://nim-lang.org/docs/ropes.html)
