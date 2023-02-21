@@ -125,9 +125,9 @@ echo fmt"{isRootDir tmpdir=}"
 
 
 echo fmt"""{cmpPaths "pAtH", "PaTh"=}"""
-echo fmt"""{"concat/thisDir/notthisone" /../ "with/this/dir"=}"""
+echo fmt"""normalizes (not concats) {"concat/thisDir/notthisone" /../ "with/this/dir"=}"""
 echo fmt"""{"concat" /../ "with/this/dir"=}"""
-echo fmt"""{"join" / "multiple" / "paths"=}"""
+echo fmt"""normalizes (not joins) {"join" / "multiple" / "paths"=}"""
 echo fmt"""{joinPath "one/three", "../two", "three"=}"""
 echo fmt"""{normalizedPath "//p//o/oo/p"=}"""
 echo "############################ os dirs"

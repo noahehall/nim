@@ -9,7 +9,7 @@
 - see regex.nim for regex & related modules
 - see data.nim for additional string
 - generally any proc that accepts a string, also accepts a char, and sometimes set[char]
-todos/skipped
+
 
 skipped
 - strutils
@@ -47,6 +47,9 @@ links
 ## strformat
 - simply importing strformat enhances the system & operator
 - doesnt interprate literal escapes like & does e.g. fmt"{str1}\n\n\n"
+- escape works with these [char](https://nim-lang.org/docs/manual.html#lexical-analysis-character-literals) and [string](https://nim-lang.org/docs/manual.html#lexical-analysis-string-literals) literals
+  - for others use a hex/decimal char/string
+  - if an API returns a string regex containing `\s` im sure theres something in regex.nim that can help
 - fmt syntax: [[fill]align][sign][#][0][minimumwidth][.precision][type]
   - 3 align flags: > < ^
   - 3 sign flags for numbers: + - (space)
@@ -55,7 +58,6 @@ links
   - [as is fmt expressions](https://nim-lang.org/docs/strformat.html#expressions)
   - [shiz gets crazy](https://nim-lang.org/docs/strformat.html#implementation-details)
   - [flags for fmt](https://nim-lang.org/docs/strformat.html#standard-format-specifiers-for-strings-integers-and-floats)
-
 ## strutils
 - AllChars (and related) useful for creating inverted sets to check for invalid chars in a string
 - % used for index/named replacement

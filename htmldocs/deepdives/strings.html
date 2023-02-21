@@ -147,7 +147,6 @@ window.addEventListener('DOMContentLoaded', main);
 <li>see data.nim for additional string</li>
 <li>generally any proc that accepts a string, also accepts a char, and sometimes set[char]</li>
 </ul>
-<p>todos/skipped</p>
 <p>skipped</p>
 <ul class="simple"><li>strutils<ul class="simple"><li>BinaryPrefixMode, FloatFormatMode, SkipTable, addSep, align[left,right]</li>
 <li>center, cmpIgnoreStyle, dedent, indent, indentation, unindent</li>
@@ -186,6 +185,10 @@ window.addEventListener('DOMContentLoaded', main);
 
 <h2><a class="toc-backref" id="strings-strformat" href="#strings-strformat">strformat</a></h2><ul class="simple"><li>simply importing strformat enhances the system &amp; operator</li>
 <li>doesnt interprate literal escapes like &amp; does e.g. fmt&quot;{str1}nnn&quot;</li>
+<li>escape works with these <a class="reference external" href="https://nim-lang.org/docs/manual.html#lexical-analysis-character-literals">char</a> and <a class="reference external" href="https://nim-lang.org/docs/manual.html#lexical-analysis-string-literals">string</a> literals<ul class="simple"><li>for others use a hex/decimal char/string</li>
+<li>if an API returns a string regex containing <tt class="docutils literal"><span class="pre"><span class="Operator">\</span><span class="Identifier">s</span></span></tt> im sure theres something in regex.nim that can help</li>
+</ul>
+</li>
 <li>fmt syntax: [[fill]align][sign][#][0][minimumwidth][.precision][type]<ul class="simple"><li>3 align flags: &gt; &lt; ^</li>
 <li>3 sign flags for numbers: + - (space)</li>
 <li>additional flags exist specifically for integers &amp; floats</li>
@@ -261,7 +264,7 @@ window.addEventListener('DOMContentLoaded', main);
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-21 09:23:12 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-21 16:37:32 UTC</small>
       </div>
     </div>
   </div>
