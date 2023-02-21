@@ -39,6 +39,11 @@
 - [http auth](https://github.com/FedericoCeratto/nim-httpauth)
 - [color and util tools for nim](https://github.com/qqtop/NimCx)
 
+## orgs with opensource projects
+
+- [status-im](https://github.com/orgs/status-im/repositories?q=&type=all&language=nim&sort=)
+- [waku](https://github.com/orgs/waku-org/repositories?q=&type=all&language=nim&sort=)
+
 ## must haves
 
 ### choosenim

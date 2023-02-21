@@ -58,6 +58,7 @@ links
   - [as is fmt expressions](https://nim-lang.org/docs/strformat.html#expressions)
   - [shiz gets crazy](https://nim-lang.org/docs/strformat.html#implementation-details)
   - [flags for fmt](https://nim-lang.org/docs/strformat.html#standard-format-specifiers-for-strings-integers-and-floats)
+
 ## strutils
 - AllChars (and related) useful for creating inverted sets to check for invalid chars in a string
 - % used for index/named replacement
