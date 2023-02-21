@@ -77,6 +77,7 @@
 - [valido: string validators & sanitizers](https://github.com/openpeep/valido)
 - [karaxnim: SPA framework, syntax is a bit verbose but looks dope](https://github.com/karaxnim/karax)
 - [nitch: neofetch alternative](https://github.com/unxsh/nitch)
+- [nimterlingua: compiletime i18](https://github.com/juancarlospaco/nim-nimterlingua)
 
 ## Could be useful
 

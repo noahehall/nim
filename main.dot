@@ -90,6 +90,17 @@ digraph main {
 "std/times" -> "std/private/since";
 "std/times" -> "std/posix";
 "deepdives/datetime" -> "std/times";
+"deepdives/osIo" -> "std/sugar";
+"deepdives/osIo" -> "std/strformat";
+"deepdives/osIo" -> "std/strutils";
+"deepdives/osIo" -> "std/sequtils";
+"std/os" -> "std/private/since";
+"std/pathnorm" -> "std/osseps";
+"std/os" -> "std/strutils";
+"std/os" -> "std/pathnorm";
+"std/os" -> "std/posix";
+"std/os" -> "std/times";
+"deepdives/osIo" -> "std/os";
 "main" -> "yolowurl/yolowurl";
 "main" -> "deepdives/sugar";
 "main" -> "deepdives/collections";

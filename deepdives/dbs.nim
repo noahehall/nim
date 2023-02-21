@@ -9,6 +9,7 @@
     - https://nim-lang.org/docs/mysql.html
     - https://nim-lang.org/docs/odbcsql.html
     - https://nim-lang.org/docs/parsesql.html
+    - https://nim-lang.org/docs/varints.html
 
   before using marshal for json @see https://stackoverflow.com/questions/26191114/how-to-convert-object-to-json-in-nim
 ]#

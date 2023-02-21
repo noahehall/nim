@@ -14,7 +14,6 @@
     - https://nim-lang.org/docs/parseutils.html
     - https://nim-lang.org/docs/logging.html
     - https://nim-lang.org/docs/parsecfg.html
-    - https://nim-lang.org/docs/parseopt.html
     - https://nim-lang.org/docs/memfiles.html
   before using marshal for json @see # @see https://stackoverflow.com/questions/26191114/how-to-convert-object-to-json-in-nim
 ]#

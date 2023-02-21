@@ -1,2 +1,13 @@
+tmpdir	deepdives/osIo.html#tmpdir	osIo: tmpdir	
+dirtmp	deepdives/osIo.html#dirtmp	osIo: dirtmp	
+fossdir	deepdives/osIo.html#fossdir	osIo: fossdir	
+dotpath	deepdives/osIo.html#dotpath	osIo: dotpath	
+relpath	deepdives/osIo.html#relpath	osIo: relpath	
+somefile	deepdives/osIo.html#somefile	osIo: somefile	
+md	deepdives/osIo.html#md	osIo: md	
+txt	deepdives/osIo.html#txt	osIo: txt	
 os and i/o	deepdives/osIo.html#os-and-islasho	 os and i/o	
 TLDR	deepdives/osIo.html#os-and-islasho-tldr	  TLDR	
+os types	deepdives/osIo.html#os-and-islasho-os-types	  os types	
+os consts	deepdives/osIo.html#os-and-islasho-os-consts	  os consts	
+os procs	deepdives/osIo.html#os-and-islasho-os-procs	  os procs	
