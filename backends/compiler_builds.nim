@@ -185,6 +185,7 @@
     CC sets compiler when --cc:env is used
 
   skipped
+    --app:lib something to do with generating dynamic libraries (grep os docs)
     --cincludes:DIR
     --clib:LIBNAME
     --clibdir:DIR

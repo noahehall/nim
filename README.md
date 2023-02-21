@@ -12,6 +12,7 @@
   - [testing is a first class citizen](https://nim-lang.github.io/Nim/testament.html)
   - [first class support for postgres, mysql](https://nim-lang.org/docs/lib.html#impure-libraries-database-support)
     - [including a generic ODBC wrapper for other dbs](https://nim-lang.org/docs/db_odbc.html)
+  - [future proof design philisophy](https://www.youtube.com/watch?v=aDi50K_Id_k)
   - [spidermans uncle](https://nim-lang.org/docs/tut3.html)
 
 ## recommended ramp up

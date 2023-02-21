@@ -115,7 +115,6 @@ idiomatic nim (from docs/styleguide)
 - use getMonoTime | cpuTime > now for benchmarking (docs)
 - use getTime > epochTime for epoch (docs)
 - use include to split large modules into distinct files (docs)
-- use let > var for runtime vars that dont change
 - use Natural/Positive (docs) e.g. if Blah is Positive
 - use procs > (macros/templates/iterators/convertors) unless necessary (styleguide)
 - use result(its optimized) > return (only for control flow) > last statement expression (stylguide) (FYI status prefers last statement)
@@ -124,6 +123,7 @@ idiomatic nim (from docs/styleguide)
 - use testament > unittests with dir structur like root/tests/somecategory/tsomefile.nim (testament source maybe?)
 - use typeof x and not type x (docs)
 - use X.y > x[].y for accessing ref/ptr objects (docs: x[].y highly discouraged)
+- use parseopt module > os.parseCmdLine unless specifically required (docs)
 
 borrowed from somewhere else (e.g. status auditor docs)
 - MACRO_CASE for external constants (status) (permitted in styleguide but not preferred)
@@ -142,8 +142,8 @@ my preferences thus far
 - refrain from using blah% operators they tend to be legacy, see https://github.com/nirv-ai/docs/issues/50
 - always compile with --panics:on (manual: smaller binaries + optimizations)
 - dont use any unsafe language features or disable runtime checks (manual: removes possibility of unchecked runtime errs)
-- follow nimlangs API naming scheme
-- use blahIt variants for an even more terse syntax
+- follow nimlangs API naming scheme for naming things needing nice names like nims nomenclature
+- use blahIt variants for an even more terse syntax (which stdlib has the it variants?)
 
 ## modules
 - generally 1 file == 1 module

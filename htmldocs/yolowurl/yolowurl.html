@@ -614,7 +614,7 @@ except:
   <li><a class="reference" href="#b"
     title="b = 100">b</a></li>
   <li><a class="reference" href="#buildInfo"
-    title="buildInfo = &quot;Revision 0b8411cdda28b83277580f0098d1328893a1f972\nCompiled on #33~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Jan 30 17:03:34 UTC 2&quot;">buildInfo</a></li>
+    title="buildInfo = &quot;Revision ec50428e9e1681132787f84fd185693696ee5396\nCompiled on #33~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Jan 30 17:03:34 UTC 2&quot;">buildInfo</a></li>
   <li><a class="reference" href="#c"
     title="c = 100'i8">c</a></li>
   <li><a class="reference" href="#debug"
@@ -1142,7 +1142,6 @@ except:
 <li>use getMonoTime | cpuTime &gt; now for benchmarking (docs)</li>
 <li>use getTime &gt; epochTime for epoch (docs)</li>
 <li>use include to split large modules into distinct files (docs)</li>
-<li>use let &gt; var for runtime vars that dont change</li>
 <li>use Natural/Positive (docs) e.g. if Blah is Positive</li>
 <li>use procs &gt; (macros/templates/iterators/convertors) unless necessary (styleguide)</li>
 <li>use result(its optimized) &gt; return (only for control flow) &gt; last statement expression (stylguide) (FYI status prefers last statement)</li>
@@ -1151,6 +1150,7 @@ except:
 <li>use testament &gt; unittests with dir structur like root/tests/somecategory/tsomefile.nim (testament source maybe?)</li>
 <li>use typeof x and not type x (docs)</li>
 <li>use X.y &gt; x[].y for accessing ref/ptr objects (docs: x[].y highly discouraged)</li>
+<li>use parseopt module &gt; os.parseCmdLine unless specifically required (docs)</li>
 </ul>
 <p>borrowed from somewhere else (e.g. status auditor docs)</p>
 <ul class="simple"><li>MACRO_CASE for external constants (status) (permitted in styleguide but not preferred)</li>
@@ -1171,8 +1171,8 @@ except:
 <li>refrain from using blah% operators they tend to be legacy, see <a class="reference external" href="https://github.com/nirv-ai/docs/issues/50">https://github.com/nirv-ai/docs/issues/50</a></li>
 <li>always compile with --panics:on (manual: smaller binaries + optimizations)</li>
 <li>dont use any unsafe language features or disable runtime checks (manual: removes possibility of unchecked runtime errs)</li>
-<li>follow nimlangs API naming scheme</li>
-<li>use blahIt variants for an even more terse syntax</li>
+<li>follow nimlangs API naming scheme for naming things needing nice names like nims nomenclature</li>
+<li>use blahIt variants for an even more terse syntax (which stdlib has the it variants?)</li>
 </ul>
 
 <h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-modules" href="#yolo-wurlcolon-basic-nim-syntax-modules">modules</a></h2><ul class="simple"><li>generally 1 file == 1 module</li>
@@ -3474,7 +3474,7 @@ is in the global scope
 </dd>
 </div>
 <div id="buildInfo">
-<dt><pre><span class="Identifier">buildInfo</span> <span class="Other">=</span> <span class="StringLit">&quot;Revision 0b8411cdda28b83277580f0098d1328893a1f972\nCompiled on #33~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Jan 30 17:03:34 UTC 2&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">buildInfo</span> <span class="Other">=</span> <span class="StringLit">&quot;Revision ec50428e9e1681132787f84fd185693696ee5396\nCompiled on #33~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Jan 30 17:03:34 UTC 2&quot;</span></pre></dt>
 <dd>
 
 
@@ -4282,7 +4282,7 @@ compile time only returns stdout + stderr
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-21 16:37:32 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-21 19:54:27 UTC</small>
       </div>
     </div>
   </div>
