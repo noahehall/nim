@@ -100,6 +100,7 @@ window.addEventListener('DOMContentLoaded', main);
   <ul class="simple simple-toc" id="toc-list">
 <li><a class="reference" id="os-and-islasho_toc" href="#os-and-islasho">os and i/o</a></li>
 <ul class="simple"><li><a class="reference" id="os-and-islasho-tldr_toc" href="#os-and-islasho-tldr">TLDR</a></li>
+<li><a class="reference" id="os-and-islasho-os-exceptions_toc" href="#os-and-islasho-os-exceptions">os exceptions</a></li>
 <li><a class="reference" id="os-and-islasho-os-types_toc" href="#os-and-islasho-os-types">os types</a></li>
 <li><a class="reference" id="os-and-islasho-os-consts_toc" href="#os-and-islasho-os-consts">os consts</a></li>
 <li><a class="reference" id="os-and-islasho-os-procs_toc" href="#os-and-islasho-os-procs">os procs</a></li>
@@ -111,9 +112,11 @@ window.addEventListener('DOMContentLoaded', main);
   <li><a class="reference" href="#dotpath"
     title="dotpath = &quot;./par/sibl/nephew&quot;">dotpath</a></li>
   <li><a class="reference" href="#fossdir"
-    title="fossdir = &quot;~/git/foss&quot;">fossdir</a></li>
+    title="fossdir = &quot;~/git/foss/&quot;">fossdir</a></li>
   <li><a class="reference" href="#md"
     title="md = &quot;md&quot;">md</a></li>
+  <li><a class="reference" href="#readme"
+    title="readme = &quot;README.md&quot;">readme</a></li>
   <li><a class="reference" href="#relpath"
     title="relpath = &quot;par/sibl/niece&quot;">relpath</a></li>
   <li><a class="reference" href="#somefile"
@@ -136,20 +139,33 @@ window.addEventListener('DOMContentLoaded', main);
   <p class="module-desc">
 <h1><a class="toc-backref" id="os-and-islasho" href="#os-and-islasho">os and i/o</a></h1><p><a class="reference external" href="https://nim-lang.org/docs/os.html#fileExists%2Cstring">bookmark</a></p>
 
-<h2><a class="toc-backref" id="os-and-islasho-tldr" href="#os-and-islasho-tldr">TLDR</a></h2><ul class="simple"><li>generally you should check when defined(posix/etc)<ul class="simple"><li>posix<ul class="simple"><li>filepaths are case sensitive</li>
+<h2><a class="toc-backref" id="os-and-islasho-tldr" href="#os-and-islasho-tldr">TLDR</a></h2><ul class="simple"><li>if a proc accepts a filename (string), it likely accepts a File/Filehandle</li>
+<li>generally you should check when defined(posix/etc)<ul class="simple"><li>posix<ul class="simple"><li>admin: root</li>
+<li>cachedir: XDG_CACHE_HOME | HOME / .cache [/ app] (etc for other dir types)</li>
 <li>dest paths inherit <a class="reference external" href="https://www.baeldung.com/linux/new-files-dirs-default-permission">user default perms</a></li>
 <li>dir symlinks copied as symlinks to dest</li>
+<li>file creation time may actually be last modified time</li>
 <li>file symlinks are followed (by default) then copied to dest</li>
+<li>path considered hidden if prefixed with '.'{1}</li>
+<li>paths are case sensitive</li>
 <li>permissions copied after file/dir is copied and could lead to race conditions</li>
+<li>tempdir: TMPDIR | TEMP | TMP | TEMPDIR</li>
 </ul>
 </li>
-<li>windows<ul class="simple"><li>filepaths are case insensitive</li>
+<li>windows<ul class="simple"><li>admin: admin local group</li>
+<li>cachedir: LOCALAPPDATA [/ app / cache] (etc for other dir types)</li>
 <li>dest paths inherit source paths attributes</li>
 <li>dir &amp; file symlinks are skipped</li>
+<li>network paths are considered absolute</li>
+<li>path considered hidden if file existsw and hidden attribute set</li>
+<li>paths are case insensitive</li>
 <li>require evelated privs for sym/hardlinks</li>
+<li>tempdir: calls windows GetTempPath</li>
 </ul>
 </li>
-<li>OSX</li>
+<li>OSX<ul class="simple"><li>cachedir: XDG_CACHE_HOME | HOME / .cache [/app] (etc for other dir types)</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -174,6 +190,9 @@ window.addEventListener('DOMContentLoaded', main);
 <ul class="simple"><li>os<ul class="simple"><li>DynlibFormat, ExeExt[s], ScriptExt</li>
 </ul>
 </li>
+</ul>
+
+<h2><a class="toc-backref" id="os-and-islasho-os-exceptions" href="#os-and-islasho-os-exceptions">os exceptions</a></h2><ul class="simple"><li>OSError e.g. file not found, incorrect perms</li>
 </ul>
 
 <h2><a class="toc-backref" id="os-and-islasho-os-types" href="#os-and-islasho-os-types">os types</a></h2><ul class="simple"><li>CopyFlag[enum] symlink handling</li>
@@ -227,7 +246,7 @@ only returns parameters, not the executable (see getAppFilename)</p>
 </dd>
 </div>
 <div id="fossdir">
-<dt><pre><span class="Identifier">fossdir</span> <span class="Other">=</span> <span class="StringLit">&quot;~/git/foss&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">fossdir</span> <span class="Other">=</span> <span class="StringLit">&quot;~/git/foss/&quot;</span></pre></dt>
 <dd>
 
 
@@ -236,6 +255,14 @@ only returns parameters, not the executable (see getAppFilename)</p>
 </div>
 <div id="md">
 <dt><pre><span class="Identifier">md</span> <span class="Other">=</span> <span class="StringLit">&quot;md&quot;</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="readme">
+<dt><pre><span class="Identifier">readme</span> <span class="Other">=</span> <span class="StringLit">&quot;README.md&quot;</span></pre></dt>
 <dd>
 
 
@@ -284,7 +311,7 @@ only returns parameters, not the executable (see getAppFilename)</p>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-21 06:27:14 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-21 09:23:13 UTC</small>
       </div>
     </div>
   </div>

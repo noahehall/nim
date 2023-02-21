@@ -67,7 +67,8 @@ interwebs
     - for now 99% of procs are only visible in source
 - [skipped most of the section on cross compilation](https://nim-lang.org/docs/nimc.html#crossminuscompilation-for-windows)
 - [checkout status opensource theyve already built bunch of things you'll need for nirv](https://github.com/status-im)
-- safe to assume I skipped anything windows specific
+- you should review compile_backends.nim again stuff should be alot clearer now
+- you should review yolowurl again shizz a lot clearer now
 
 ### move these to a source file
 

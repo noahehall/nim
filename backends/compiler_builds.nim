@@ -12,7 +12,8 @@
 
 
   todos
-    useStdoutAsStdmsg @see https://nim-lang.org/docs/io.html#stdmsg.t
+    - review this entire file again, shiz alot clearer now
+    - useStdoutAsStdmsg @see https://nim-lang.org/docs/io.html#stdmsg.t
 
   nim CMD OPTS FILE ARGS
     nim --fullhelp see all cmd line opts
@@ -72,7 +73,7 @@
       --define:memProfiler memory profile for the native GC
       --define:uClibc use uClibc instead of libc
       --define:nimStrictDelete throws if indexed passed to a delete operator is out of bounds
-
+      --define:tempDir=poop override path returned in os.getTempDir()
 
     output OPTS
       --asm produce assembler code
@@ -107,6 +108,7 @@
       --NimblePath:PATH add a path for Nimble support
       --noNimblePath deactivate the Nimble path
       --path/-p:PATH add path to search paths
+
 
     configuration file hierarchy & precedence
     file.nim passed to compile/run becomes the $project file name
@@ -216,7 +218,7 @@
     -d:nimThreadStackGuard
     -d:nimThreadStackSize
     -d:noSignalHandler @see https://nim-lang.org/docs/nimc.html#signal-handling-in-nim
-    -d:tempDir
+
     -d:useFork
     -d:useNimRtl
     -d:useShPath
