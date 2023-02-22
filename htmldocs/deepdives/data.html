@@ -99,46 +99,8 @@ window.addEventListener('DOMContentLoaded', main);
   </div>
   <ul class="simple simple-toc" id="toc-list">
 <li><a class="reference" id="working-with-data_toc" href="#working-with-data">working with data</a></li>
-<li>
-  <a class="reference reference-toplevel" href="#7" id="57">Types</a>
-  <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#Stringified_2"
-    title="Stringified = object
-  k1: string
-  k2: int
-  k3: seq[int]">Stringified</a></li>
-
-  </ul>
-</li>
-<li>
-  <a class="reference reference-toplevel" href="#9" id="59">Lets</a>
-  <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#jiggy"
-    title="jiggy = `%`([(&quot;k1&quot;, `%`(v1)), (&quot;k2&quot;, `%`(v2)), (&quot;k3&quot;, `%`(20))])">jiggy</a></li>
-  <li><a class="reference" href="#nimTypes"
-    title="nimTypes = to(parsed, Stringified)">nimTypes</a></li>
-  <li><a class="reference" href="#parsed"
-    title="parsed = parseJson stringified, false, false">parsed</a></li>
-  <li><a class="reference" href="#v1"
-    title="v1 = &quot;value 1&quot;">v1</a></li>
-  <li><a class="reference" href="#v2"
-    title="v2 = &quot;value 2&quot;">v2</a></li>
-
-  </ul>
-</li>
-<li>
-  <a class="reference reference-toplevel" href="#10" id="60">Consts</a>
-  <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#stringified"
-    title="stringified = &quot;&quot;&quot;{
-  &quot;k1&quot;: &quot;v1&quot;,
-  &quot;k2&quot;: 20,
-  &quot;k3&quot;: [1, 2, 3]
-  }&quot;&quot;&quot;">stringified</a></li>
-
-  </ul>
-</li>
-
+<ul class="simple"><li><a class="reference" id="working-with-data-json_toc" href="#working-with-data-json">json</a></li>
+</ul>
 </ul>
 
   </div>
@@ -151,116 +113,31 @@ class="link-seesrc" target="_blank">Source</a>
   <div id="tocRoot"></div>
   
   <p class="module-desc">
-<h1><a class="toc-backref" id="working-with-data" href="#working-with-data">working with data</a></h1><p><a class="reference external" href="https://nim-lang.org/docs/osproc.html">bookmark</a></p>
+<h1><a class="toc-backref" id="working-with-data" href="#working-with-data">working with data</a></h1><p><a class="reference external" href="https://nim-lang.org/docs/json.html">bookmark</a></p>
+TLDR<ul class="simple"><li><a class="reference external" href="https://stackoverflow.com/questions/26191114/how-to-convert-object-to-json-in-nim">see dom96s response to this question before using marshal to parse json</a></li>
+</ul>
+<p>links</p>
+<ul class="simple"><li>high impact<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/parsecsv.html">csv parser</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/xmlparser.html">ht/xml parser</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/xmltree.html">ht/xml tree</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/parsexml.html">ht/xml</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/parsejson.html">json parser</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/jsonutils.html">json utils</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/json.html">json</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/logging.html">logging</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/marshal.html">marshal</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/memfiles.html">mem files</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/parsecfg.html">parse cfg</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/parseutils.html">parse utils</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/varints.html">var ints</a></li>
+</ul>
+</li>
+</ul>
+
+<h2><a class="toc-backref" id="working-with-data-json" href="#working-with-data-json">json</a></h2><ul class="simple"><li>parsejson auto imported by json, but can also be imported explicitly</li>
+</ul>
 </p>
-  <div class="section" id="7">
-<h1><a class="toc-backref" href="#7">Types</a></h1>
-<dl class="item">
-<div id="Stringified_2">
-<dt><pre><span class="Identifier">Stringified</span> <span class="Other">=</span> <span class="Keyword">object</span>
-  <span class="Identifier">k1</span><span class="Other">:</span> <span class="Identifier">string</span>
-  <span class="Identifier">k2</span><span class="Other">:</span> <span class="Identifier">int</span>
-  <span class="Identifier">k3</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span>
-</pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/data.nim#L58"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/data.nim#L58" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-
-</dl></div>
-<div class="section" id="9">
-<h1><a class="toc-backref" href="#9">Lets</a></h1>
-<dl class="item">
-<div id="jiggy">
-<dt><pre><span class="Identifier">jiggy</span> <span class="Other">=</span> <span class="Other">`</span><span class="Operator">%</span><span class="Other">`</span><span class="Other">(</span><span class="Other">[</span><span class="Other">(</span><span class="StringLit">&quot;k1&quot;</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">%</span><span class="Other">`</span><span class="Other">(</span><span class="Identifier">v1</span><span class="Other">)</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="StringLit">&quot;k2&quot;</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">%</span><span class="Other">`</span><span class="Other">(</span><span class="Identifier">v2</span><span class="Other">)</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="StringLit">&quot;k3&quot;</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">%</span><span class="Other">`</span><span class="Other">(</span><span class="DecNumber">20</span><span class="Other">)</span><span class="Other">)</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/data.nim#L38"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/data.nim#L38" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="nimTypes">
-<dt><pre><span class="Identifier">nimTypes</span> <span class="Other">=</span> <span class="Identifier">to</span><span class="Other">(</span><span class="Identifier">parsed</span><span class="Other">,</span> <span class="Identifier">Stringified</span><span class="Other">)</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/data.nim#L62"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/data.nim#L62" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="parsed">
-<dt><pre><span class="Identifier">parsed</span> <span class="Other">=</span> <span class="Identifier">parseJson</span> <span class="Identifier">stringified</span><span class="Other">,</span> <span class="Identifier">false</span><span class="Other">,</span> <span class="Identifier">false</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/data.nim#L50"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/data.nim#L50" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="v1">
-<dt><pre><span class="Identifier">v1</span> <span class="Other">=</span> <span class="StringLit">&quot;value 1&quot;</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/data.nim#L34"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/data.nim#L34" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="v2">
-<dt><pre><span class="Identifier">v2</span> <span class="Other">=</span> <span class="StringLit">&quot;value 2&quot;</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/data.nim#L35"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/data.nim#L35" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-
-</dl></div>
-<div class="section" id="10">
-<h1><a class="toc-backref" href="#10">Consts</a></h1>
-<dl class="item">
-<div id="stringified">
-<dt><pre><span class="Identifier">stringified</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;&quot;{
-  &quot;k1&quot;: &quot;v1&quot;,
-  &quot;k2&quot;: 20,
-  &quot;k3&quot;: [1, 2, 3]
-  }&quot;&quot;&quot;</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/data.nim#L45"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/data.nim#L45" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-
-</dl></div>
-
+  
   </div>
 </div>
 
@@ -268,7 +145,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-22 02:54:09 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-22 04:32:23 UTC</small>
       </div>
     </div>
   </div>

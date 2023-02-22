@@ -10,7 +10,9 @@
 TLDR
 - everything I should know about nim
 - you should always check the nim docs for the full syntax
-- while we keep the html docs updated, you should focus on reading the source code
+- the htmldocs dont surface everything in the source code (we arent using runnableExamples)
+  - click the source link at the top of any file
+  - or clone and run root/main.nim
 ]##
 
 import

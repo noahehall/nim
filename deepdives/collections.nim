@@ -1,13 +1,14 @@
 ##
 ## collections deep dive
 ## =====================
-## [bookmark](https://nim-lang.org/docs/packedsets.html)
+## [bookmark](https://nim-lang.org/docs/options.html)
 
 ##[
 TLDR
 - this module will heavily use sugar & strformat
 - lists/queues are kept in lists.nim
 - table like stuff in containers
+- options are included in this file
 
 links
 - high impact
@@ -16,6 +17,7 @@ links
   - [packed (sparse bit) sets](https://nim-lang.org/docs/packedsets.html)
   - [seq (seq, strings, array) utils](https://nim-lang.org/docs/sequtils.html)
   - [set utils](https://nim-lang.org/docs/setutils.html)
+  - [options](https://nim-lang.org/docs/options.html)
 - niche
 
 
