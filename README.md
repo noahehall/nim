@@ -69,14 +69,6 @@ interwebs
 ### quickies
 
 - [check how getTime handles os checks](https://github.com/nim-lang/Nim/blob/version-1-6/lib/pure/times.nim#L897)
-- rethink using runnableExamples as docgen doesnt surface proc invocations with doc comments
-  - runnableExamples are doconly and dont execute when compiled thus conflict with the goal of this repo being executable
-    - likely should embed everything in runnableExamples to have useful docs
-      - nahh the `fmt"{blah=}"` is too sweet
-      - plus runnableExamples doesnt catch errors
-      - TODO: add sourcepath to nim_docs in nimlang.sh to easily jump to source code
-    - need to resolve this before we transition back to nirv
-    - for now 99% of procs are only visible in source
 - [skipped most of the section on cross compilation](https://nim-lang.org/docs/nimc.html#crossminuscompilation-for-windows)
 - [checkout status opensource theyve already built bunch of things you'll need for nirv](https://github.com/status-im)
 - you should review compile_backends.nim again stuff should be alot clearer now
