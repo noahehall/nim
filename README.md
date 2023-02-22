@@ -20,8 +20,16 @@
 
 ## recommended ramp up
 
+> runnableExamples is rarely used, as this repo is meant to be [executable](./main.nim)
+
 - 0: tuts links > yolowurl > sugar > collections
-  - TODO: find where all the links are and bring them into this file
+  - [flaviut: nim by example](https://nim-by-example.github.io/)
+  - [miran: nim basics](https://narimiran.github.io/nim-basics/)
+  - [adambard: learn x in y minutes](https://learnxinyminutes.com/docs/nim/)
+  - [nim for typescript](https://github.com/nim-lang/Nim/wiki/Nim-for-TypeScript-Programmers)
+  - [peter: nim blog](https://peterme.net/tags/nim.html)
+  - [official nim tutorial](https://nim-lang.org/docs/tut1.html)
+  - [nim manual](https://nim-lang.org/docs/manual.html)
 - 1: strings, containers, lists, datetime, maths, algorithms, crypto, regex,
 - 2: osIo, data, tests
 - 3: backends dir, nimscript dir
