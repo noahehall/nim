@@ -5,15 +5,15 @@
 
 ##[
 ## TLDR
-- includes algorithm + everything sort related (todo)
-- -> sugar for type defs
-- => sugar for procs
+- the sweetest nim syntax
+
 
 ## links
 - [sugar](https://nim-lang.org/docs/sugar.html)
 - [with](https://nim-lang.org/docs/with.html)
 - [algorithm](https://nim-lang.org/docs/algorithm.html)
 - [enumarate any collection](https://nim-lang.org/docs/enumerate.html)
+- [fusion package](https://github.com/nim-lang/fusion)
 
 ## todos
 - macro capture(locals: varargs[typed]; body: untyped): untyped
@@ -24,6 +24,17 @@
   - echo for debugging expressions, prints the expression textual representation
 - std/algorithm
   - then review all the sort procs for each datatype (they all depend on algo)
+
+## fusion
+
+- nim_b_add fusion
+
+## sugar
+
+sugar procs
+-----------
+- -> for type defs in proc signatures
+- => for lambdas
 ]##
 
 

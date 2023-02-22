@@ -27,14 +27,35 @@
 - the initBlah procs arent necessary as their initialized by default
   - use {...}.toBlah or newBlah(...) instead
 - custom types require an overloaded hash and == proc before being use as keys in a table
-- types: each has a blahRef variant
+
+table types
+-----------
+- each has a blahRef variant
   - CountTable[A] tracks the occurrences of each key
   - OrderedTable[A; B] preserves the insertion order of keys
   - Table[A; B] regular dictionary
 - == check returns true if both/neither are nil and
-  - count: content + count
-  - ordered: content + order
-  - table:  content
+  - count: content + count identical
+  - ordered: content + order identical
+  - table: content identical
+
+
+## options
+
+option exceptions
+-----------------
+- UnpackDefect when getting a value that doesnt exist cant be caught
+
+option types
+------------
+- Option[T] either T or the default value for T
+
+option procs
+------------
+- isSome thing there
+- isNone is nil
+- get the value or raise UnpackDefect
+
 ]##
 
 import std/[sugar, strformat, strutils, sequtils]
@@ -43,10 +64,10 @@ echo "############################ tables"
 import std/tables
 
 const
-  baseTable = {"fname": "noah", "lname": "hall"}
-  hashTable = baseTable.toTable # newTable
-  orderededTable = baseTable.toOrderedTable # [('a', 5), ('b', 9)].toOrderedTable
-  countTable = "pooperscooper".toCountTable # anyOpenArrayLikeThing.toCountTable
+  baseTable = {"fname": "noah", "lname": "hall"} ## system table
+  hashTable = baseTable.toTable ## newTable
+  orderededTable = baseTable.toOrderedTable ## [('a', 5), ('b', 9)].toOrderedTable
+  countTable = "pooperscooper".toCountTable ## anyOpenArrayLikeThing.toCountTable
 
 
 echo "############################ pure tables"

@@ -31,7 +31,6 @@
   - [official nim wiki](https://github.com/nim-lang/Nim/wiki)
   - [official nim tutorial](https://nim-lang.org/docs/tut1.html)
   - [official nim manual](https://nim-lang.org/docs/manual.html)
-  - [ctrl f nim](https://nim-lang.github.io/fusion/theindex.html)
 - 1: strings, containers, lists, datetime, maths, crypto, regex,
 - 2: osIo, data, tests
 - 3: parallelism_concurrency, memory_immutability > servers, dbs
@@ -57,6 +56,8 @@ nimlang
 - [std library](https://nim-lang.org/docs/lib.html)
 - [api design](https://nim-lang.org/docs/apis.html)
 - [system module](https://nim-lang.org/docs/system.html)
+- [fusion docs](https://github.com/nim-lang/fusion)
+  - [ctrl f it](https://nim-lang.github.io/fusion/theindex.html)
 
 interwebs
 

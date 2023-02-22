@@ -124,6 +124,7 @@ idiomatic nim (from docs/styleguide)
 - use typeof x and not type x (docs)
 - use X.y > x[].y for accessing ref/ptr objects (docs: x[].y highly discouraged)
 - use parseopt module > os.parseCmdLine unless specifically required (docs)
+- use std/options > nil for dealing with optional values (docs)
 
 borrowed from somewhere else (e.g. status auditor docs)
 - MACRO_CASE for external constants (status) (permitted in styleguide but not preferred)
