@@ -1,7 +1,7 @@
 ##
 ## working with data
 ## =================
-## [bookmark](https://nim-lang.org/docs/json.html#add%2CJsonNode%2CJsonNode)
+## [bookmark](https://nim-lang.org/docs/logging.html)
 
 ##[
 TLDR
@@ -12,7 +12,6 @@ TLDR
 links
 - high impact
   - [csv parser](https://nim-lang.org/docs/parsecsv.html)
-  - [json parser](https://nim-lang.org/docs/parsejson.html)
   - [json utils](https://nim-lang.org/docs/jsonutils.html)
   - [json](https://nim-lang.org/docs/json.html)
   - [logging](https://nim-lang.org/docs/logging.html)
@@ -21,6 +20,7 @@ links
   - [parse cfg](https://nim-lang.org/docs/parsecfg.html)
   - [parse utils](https://nim-lang.org/docs/parseutils.html)
 - niche
+  - [json parser](https://nim-lang.org/docs/parsejson.html)
   - [ht/xml parser](https://nim-lang.org/docs/xmlparser.html)
   - [ht/xml tree](https://nim-lang.org/docs/xmltree.html)
   - [ht/xml](https://nim-lang.org/docs/parsexml.html)
@@ -137,10 +137,10 @@ echo "############################ json impure"
 # toUgly is faster than pretty/$ but requires a var
 
 var
-  reqData = %* { "tupac": {"quotes": ["dreams are for real"]}} ## dynamic: instantiate json node
+  reqData = %* { "tupac": {"quotes": ["dreams are for real"]}} ## \
+    ## dynamic: instantiate json node
 
 proc echoReqData: void = echo fmt"{reqData=}"
-
 echoReqData()
 
 reqData["andreas"] = %* {"quotes": [
@@ -149,9 +149,8 @@ reqData["andreas"] = %* {"quotes": [
 echoReqData()
 
 reqData{"noah", "quotes"} = %* ["poop"]; echoReqData()
-
 reqData{"noah", "quotes"}.add newJString("soup"); echoReqData()
-
 reqData.add "greg", newJObject(); echoReqData()
-
 reqData.delete "noah"; echoReqData()
+
+echo "############################ logging "

@@ -11,9 +11,9 @@
   - we dont use runnableExamples because we want to run on the cmd line & in vscode
   - however real code should use runnableExamples for docs
 - newer nim versions seems to be getting more strict/better at catching programmer errors
+  - this repo uses nim 1.6.10
 - you should expect everything in nim is heavily overloaded
-  - hence only simple syntax is shown
-  - but each proc to accepts a variable number of args
+  - hence only simple syntax is shown and shouldnt be considered comprehensive in any form
 
 ## useful links
 - [nim system module](https://nim-lang.org/docs/system.html)
@@ -36,15 +36,10 @@
     - tasks
     - didnt appreciate the semicolons usefulness in grouping statements
     - cant get too far in nim without reading through the nimble github readme
-    - rework all of these weird comments to use doc comments
   - finally 3: https://nim-lang.org/docs/backends.html
     - you need to have some code ready so your not just copypasting documentation
   - nim package directory: get familiar with what exists https://nimble.directory/
-  - nim in action
-    - reading: finished this like a year ago, it was super old then away
-    - copying pg40 custom array ranges
-    - have to finish copying this book as it provides real world examples and guidance
-
+  - nim in action: copy all your notes starting from pg 40
 - eventually: rather start coding and swing back to these later
   - [destructors and move symantics](https://nim-lang.org/docs/destructors.html)
   - [experimental](https://nim-lang.org/docs/manual_experimental.html)
