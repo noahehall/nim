@@ -1,6 +1,7 @@
 ##
 ## yolo wurl: basic nim syntax
 ## ===========================
+## [bookmark](https://nim-lang.org/docs/manual.html#special-types)
 
 ##[
 ## TLDR
@@ -14,25 +15,12 @@
   - hence only simple syntax is shown
   - but each proc to accepts a variable number of args
 
-internal links
-- [my bookmark](https://nim-lang.org/docs/manual.html#special-types)
-- [nim system module](https://nim-lang.org/docs/system.html)
-- [deep dives dir to dive deep](https://github.com/noahehall/nim/tree/develop/deepdives)
-- [nim script for scripting nim](https://github.com/noahehall/nim/tree/develop/nimscript)
-- [backends, but most isnt there yet](https://github.com/noahehall/nim/tree/develop/backends)
-
 ## useful links
-- [anything written by peter](https://peterme.net/)
-- [nim by example](nim-by-example.github.io)
+- [nim system module](https://nim-lang.org/docs/system.html)
 - [nimlang api design](https://nim-lang.org/docs/apis.html)
 - [nimlang manual](https://nim-lang.org/docs/manual.html)
 - [nimlang tools dir](https://github.com/nim-lang/Nim/tree/devel/tools)
-- [official nimlang tut1 (theres 3)](https://nim-lang.org/docs/tut1.html)
-- [reStructured Text cheatsheet](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
 - [status auditor docs](https://status-im.github.io/nim-style-guide/00_introduction.html)
-- [system modules source code](https://github.com/nim-lang/Nim/tree/version-1-6/lib/system)
-- [system source code](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L1)
-- [yolowurl source examples](https://github.com/noahehall/nim/tree/develop/yolowurl/modules)
 
 ## the road to code
 - need to review

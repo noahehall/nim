@@ -43,6 +43,9 @@
     - havent read this one, but its new; i like new
   - [community packages](./community/README.md)
   - [fusion package](https://github.com/nim-lang/fusion)
+  - [system source code](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L1)
+  - [system modules source code](https://github.com/nim-lang/Nim/tree/version-1-6/lib/system)
+  - [reStructured Text cheatsheet](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
   - [my projects](./projects/README.md)
 
 ## links
