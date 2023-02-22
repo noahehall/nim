@@ -94,6 +94,7 @@ digraph main {
 "deepdives/osIo" -> "std/strformat";
 "deepdives/osIo" -> "std/strutils";
 "deepdives/osIo" -> "std/sequtils";
+"deepdives/osIo" -> "std/tables";
 "std/os" -> "std/private/since";
 "std/pathnorm" -> "std/osseps";
 "std/os" -> "std/strutils";

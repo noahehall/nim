@@ -51,6 +51,7 @@ echo runFn("hall", myProc)
 const myRange = 1..10
 
 const mySeq = collect:
+  ## oneliner from os docs: collect(for k in walkDir("dirA"): k.path).join(" ")
   ## collect things into a sequence
   for i in myRange: i
 echo "sugary seq: " & $mySeq

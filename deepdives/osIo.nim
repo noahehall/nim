@@ -5,8 +5,9 @@
 
 ##[
 ## TLDR
-- if a proc accepts a filename (string), it likely accepts a File/Filehandle
-- generally you should check when defined(posix/linux/etc)
+- if a proc accepts a filename (string), it may also accept a File/Filehandle
+- generally you should check when defined(posix/linux/etc) and use unixToNativePath
+  - extremely relevant if your app supports disparate systems
   - posix
     - admin: root
     - cachedir: XDG_CACHE_HOME | HOME / .cache [/ app] (etc for other dir types)
@@ -18,7 +19,7 @@
     - osLastError works like $?
     - paramCount not defined when generating dynamic libraries (See --app:lib)
     - parseCmdLine splits on whitespace outside of quotes (use parseopt module instead)
-    - path considered hidden if prefixed with '.'{1}
+    - path considered hidden based solely on the path string
     - paths are case sensitive
     - permissions are copied after file/dir is -> could lead to race conditions
     - permissions can be set without following symlinks if lchmod is avail and doesnt err
@@ -33,7 +34,7 @@
     - network paths are considered absolute
     - osLastError works like windows i guess
     - parseCmdLine is overly complex (use parseopt module instead)
-    - path considered hidden if file existsw and hidden attribute set
+    - path considered hidden if file exists and hidden attribute set
     - paths are case insensitive
     - relativePath requires startpath & basepath args with same roots
     - removeFile errors ignores read-only attribute
@@ -107,11 +108,13 @@ skipped
 - raiseOsError
 ]##
 
-import std/[sugar, strformat, strutils, sequtils]
+import std/[sugar, strformat, strutils, sequtils, tables]
 
 echo "############################ os"
 
 import std/os
+
+var i: int
 
 const
   tmpdir = "/tmp/nim"
@@ -144,6 +147,8 @@ echo fmt"{tmpDir.relativePath fossDir.expandTilde=}"
 echo fmt"like js lastIndexOf {searchExtPos readme=}"
 echo fmt"{splitPath fossdir=}"
 echo fmt"{splitPath fossdir[0..^2]=}"
+echo fmt"{unixToNativePath fossdir=}"
+
 
 echo fmt"""{cmpPaths "pAtH", "PaTh"=}"""
 echo fmt"""{"concat/thisDir/notthisone" /../ "with/this/dir"=}"""
@@ -159,14 +164,32 @@ echo "############################ os dirs"
 # copyDir src, dest
 # moveDir src, dest
 # setCurrentDir tothis
+# walkDirs walkDir but accepts a pattern
+# walkPattern walkDirs + walkFiles
+
 echo fmt"{getCurrentDir()=}"
 echo fmt"{getCacheDir()=}"
 echo fmt"{getConfigDir()=}"
 echo fmt"{getTempDir()=}"
 echo fmt"i.e. expandTilde ~ {getHomeDir()=}"
 echo fmt"shifts path {tailDir fossdir=}"
+
+echo fmt"{fossdir.parentDirs.toSeq=}"
+echo fmt"{parentDirs(fossdir, true).toSeq=}"
+
 for dir in [tmpdir, dirtmp]: createDir dir; echo fmt"{dir} {dirExists dir=}"; removeDir dir
 
+let hiddenFiles = collect:
+  for k in getHomeDir().walkDir:
+    if k.path.isHidden: k.path.lastPathPart
+echo fmt"filtered collect getHomeDir().walkdir {hiddenFiles=}"
+
+i = 0
+let hiddenFilesRec = collect:
+  for v in getHomeDir().walkDirRec:
+    if i > 10: break else: i += 1
+    if v.isHidden: v.lastPathPart
+echo fmt"filtered collect getHomeDir().walkdirRec {hiddenFilesRec=}"
 
 echo "############################ os files"
 # copyFile src, dest, options
@@ -174,6 +197,7 @@ echo "############################ os files"
 # removeFile
 # tryRemoveFile
 # setLastModificationTime fname, times
+# walkFiles walkDir but accepts a pattern
 
 echo fmt"{fileExists getCurrentDir() / somefile.addFileExt md=}"
 echo fmt"{addFileExt someFile, md=}"
@@ -190,6 +214,7 @@ echo fmt"{sameFile readme, readme=}"
 echo fmt"{sameFileContent readme, readme=}"
 echo fmt"{splitFile readme=}"
 echo fmt"{readme.absolutePath.splitFile=}"
+
 
 echo "############################ os permissions/user"
 # copyFileWithPermissions src, dest, ignorePermErrs = true, options
@@ -209,6 +234,12 @@ echo fmt"""{existsEnv "woobidedoobide"=}"""
 echo fmt"""{getEnv "woobidedoobide", "poop"=}"""
 "ENV_PUTTED".putEnv "1"
 echo fmt"""ENV_PUTTED.putEnv "1" -> {getEnv "ENV_PUTTED"=}"""
+
+let env = collect:
+  ## should probably be a strtabs
+  for k,v in envPairs():
+    if "poop" notin v and v == $1: {k: v}
+echo fmt"filtered collect envPairs() {env=}"
 
 echo "############################ os exec/cmds/process"
 # exitStatusLikeShell status

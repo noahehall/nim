@@ -1,3 +1,4 @@
+i	deepdives/osIo.html#i	osIo: i	
 tmpdir	deepdives/osIo.html#tmpdir	osIo: tmpdir	
 dirtmp	deepdives/osIo.html#dirtmp	osIo: dirtmp	
 fossdir	deepdives/osIo.html#fossdir	osIo: fossdir	
@@ -7,6 +8,9 @@ somefile	deepdives/osIo.html#somefile	osIo: somefile
 md	deepdives/osIo.html#md	osIo: md	
 readme	deepdives/osIo.html#readme	osIo: readme	
 txt	deepdives/osIo.html#txt	osIo: txt	
+hiddenFiles	deepdives/osIo.html#hiddenFiles	osIo: hiddenFiles	
+hiddenFilesRec	deepdives/osIo.html#hiddenFilesRec	osIo: hiddenFilesRec	
+env	deepdives/osIo.html#env	osIo: env	
 os and i/o	deepdives/osIo.html#os-and-islasho	 os and i/o	
 TLDR	deepdives/osIo.html#os-and-islasho-tldr	  TLDR	
 os exceptions	deepdives/osIo.html#os-and-islasho-os-exceptions	  os exceptions	

@@ -1,10 +1,12 @@
 # nim
 
 - my adventures in nim
+- hopefully a useful cheatsheet for my fellow nOobs
 
-## for javascript appdevs
+## for javascript appdevs & bizdevops teams
 
-- alot of nodejs devs are moving to/incorporating rust/go in their stack; you should prefer nim for (many, but definitely) these reasons
+- fullstack is a first principle for us, nim redefines what that means
+- many nodejs devs are moving to/incorporating rust/go in their stack; you should prefer nim for (many, but definitely) these reasons
   - [cross compile applications](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
   - [cross platform scripts](https://nim-lang.org/docs/nims.html#benefits)
   - [documentation is a first class citizen](https://nim-lang.org/docs/docgen.html)
@@ -13,6 +15,7 @@
   - [first class support for postgres, mysql](https://nim-lang.org/docs/lib.html#impure-libraries-database-support)
     - [including a generic ODBC wrapper for other dbs](https://nim-lang.org/docs/db_odbc.html)
   - [future proof design philisophy](https://www.youtube.com/watch?v=aDi50K_Id_k)
+  - [various pragmas to customize, restrict and enhance the compiler and runtime](https://nim-lang.github.io/Nim/manual.html#pragmas)
   - [spidermans uncle](https://nim-lang.org/docs/tut3.html)
 
 ## recommended ramp up
