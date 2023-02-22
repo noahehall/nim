@@ -1,7 +1,7 @@
 ##
 ## sugar deep dive
 ## ===============
-## [bookmark](https://nim-lang.org/docs/algorithm.html)
+## [bookmark](https://github.com/nim-lang/fusion)
 
 ##[
 ## TLDR

@@ -44,16 +44,16 @@ table types
 
 option exceptions
 -----------------
-- UnpackDefect when getting a value that doesnt exist cant be caught
+- UnpackDefect when getting a value that doesnt exist
 
 option types
 ------------
-- Option[T] either T or the default value for T
+- Option[T]
 
 option procs
 ------------
 - isSome thing there
-- isNone is nil
+- isNone nil
 - get the value or raise UnpackDefect
 
 ]##
