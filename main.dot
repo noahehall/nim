@@ -108,6 +108,7 @@ digraph main {
 "deepdives/data" -> "std/strutils";
 "deepdives/data" -> "std/sequtils";
 "deepdives/data" -> "std/options";
+"deepdives/data" -> "std/tables";
 "std/streams" -> "std/private/since";
 "std/lexbase" -> "std/strutils";
 "std/lexbase" -> "std/streams";

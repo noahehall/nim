@@ -5,6 +5,8 @@
 
 ## for javascript appdevs & bizdevops teams
 
+> a language should scale like math: the same notation describes the lowest and highest layers - Andreas
+
 - fullstack is a first principle for us, nim redefines what that means
 - many nodejs devs are moving to/incorporating rust/go in their stack; you should prefer nim for (many, but definitely) these reasons
   - [cross compile applications](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
