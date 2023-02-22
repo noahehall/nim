@@ -1,12 +1,16 @@
 ##
 ## working with data
 ## =================
-## [bookmark](https://nim-lang.org/docs/json.html)
+## [bookmark](https://nim-lang.org/docs/json.html#creating-json)
 
 ##[
 TLDR
 - [see dom96s response to this question before using marshal to parse json](https://stackoverflow.com/questions/26191114/how-to-convert-object-to-json-in-nim)
 - json imports parsejson module; no need to import it twice
+  - [] field axor, throws if key not found
+  - {} field axor, nil if key not found
+- use std/option for keys when marshalling a JsonNode to a custom type
+- use `somekey` for somekey thats a reserved nim identifier
 
 links
 - high impact
@@ -31,7 +35,7 @@ links
 
 json types
 ----------
-- JsonNode
+- JsonNode object variant representing any json type
 - JObject
 - JArray
 - JString
@@ -40,14 +44,36 @@ json types
 - JBool
 - JNull
 
+json procs
+----------
+- kind get json node type
+- parseJson parses json string into a json node
+- getInt(defaultValue)
+- getFloat(defaultValue)
+- getStr(defaultValue)
+- getBool(defaultValue)
+- to marshal a JsonNode to custom type
 ]##
 
-import std/[sugar, strutils, sequtils]
+import std/[sugar, strutils, sequtils, options]
 
 echo "############################ json"
-# let
-#   v1 = "value 1"
-#   v2 = "value 2"
+
+import std/json
+const
+  apiResponse = """{
+    "body": "404 not found",
+    "headers": {
+        "Content-Type": "text/xml",
+        "Vary": "Accept-Encoding",
+        "Scheme": "https"
+        "Host": "www.poop.com"
+        "Status": "404"
+        "Method": "Get"
+      }
+    }"""
+  v1 = "value 1"
+  v2 = "value 2"
 
 # # %* operator creates jsonNodes
 # let jiggy = %* {
