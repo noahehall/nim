@@ -13,6 +13,8 @@ links
   - [ht/xml parser](https://nim-lang.org/docs/xmlparser.html)
   - [ht/xml tree](https://nim-lang.org/docs/xmltree.html)
   - [ht/xml](https://nim-lang.org/docs/parsexml.html)
+  - [html generator](https://nim-lang.org/docs/htmlgen.html)
+  - [html parser](https://nim-lang.org/docs/htmlparser.html)
   - [json parser](https://nim-lang.org/docs/parsejson.html)
   - [json utils](https://nim-lang.org/docs/jsonutils.html)
   - [json](https://nim-lang.org/docs/json.html)
@@ -23,6 +25,8 @@ links
   - [parse utils](https://nim-lang.org/docs/parseutils.html)
   - [var ints](https://nim-lang.org/docs/varints.html)
 
+todos
+- figure out a logical split of this file, cant have all these links in here
 
 ## json
 - parsejson auto imported by json, but can also be imported explicitly

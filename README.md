@@ -26,15 +26,21 @@
   - [flaviut: nim by example](https://nim-by-example.github.io/)
   - [miran: nim basics](https://narimiran.github.io/nim-basics/)
   - [adambard: learn x in y minutes](https://learnxinyminutes.com/docs/nim/)
-  - [nim for typescript](https://github.com/nim-lang/Nim/wiki/Nim-for-TypeScript-Programmers)
   - [peter: nim blog](https://peterme.net/tags/nim.html)
+  - [official nim blog](https://nim-lang.org/blog.html)
+  - [official nim wiki](https://github.com/nim-lang/Nim/wiki)
   - [official nim tutorial](https://nim-lang.org/docs/tut1.html)
-  - [nim manual](https://nim-lang.org/docs/manual.html)
-- 1: strings, containers, lists, datetime, maths, algorithms, crypto, regex,
+  - [official nim manual](https://nim-lang.org/docs/manual.html)
+- 1: strings, containers, lists, datetime, maths, crypto, regex,
 - 2: osIo, data, tests
 - 3: backends dir, nimscript dir
-- 4: parallelism_concurrency, memory_immutability > servers, html, dbs
-- 5: pragmas
+- 4: parallelism_concurrency, memory_immutability > servers, dbs
+- 5: pragmas, macros
+- 6: books
+  - [nim in action](https://www.manning.com/books/nim-in-action)
+    - despite being released in 2017, its still highly relevant
+  - [mastering nim](https://nim-lang.org/blog/2022/06/29/mastering-nim.html)
+    - havent read this one, but its new; i like new
 
 ## links
 

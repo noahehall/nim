@@ -1,15 +1,12 @@
 ##
 ## containers deepdive
 ## ===================
-## [bookmark](https://nim-lang.org/docs/strtabs.html)
+## [bookmark](https://nim-lang.org/docs/options.html)
 
 ##[
 TLDR
 - [custom types as keys require hash + == procs](https://nim-lang.org/docs/tables.html#basic-usage-hashing)
-- checkout data.nim for additional stuff
-- you may need sugar, sequtils and strutils for effectively working with tables
-- check sugar.nim for sorting with std/algorithm
-- generally all table types have the same interface; CountTables have a bit more
+- generally all table types have the same interface; CountTables a bit more
 
 todos
 - tables
@@ -21,6 +18,7 @@ links
   - [tables aka dictionary](https://nim-lang.org/docs/tables.html)
   - [string tables](https://nim-lang.org/docs/strtabs.html)
   - [enum utils](https://nim-lang.org/docs/enumutils.html)
+  - [options](https://nim-lang.org/docs/options.html)
 - niche
   - [shared tables](https://nim-lang.org/docs/sharedtables.html)
 
