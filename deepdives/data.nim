@@ -10,7 +10,7 @@ TLDR
   - [] field axor, throws if key not found
   - {} field axor, nil if key not found
 - use std/option for keys when marshalling a JsonNode to a custom type
-- use `somekey` for somekey thats a reserved nim identifier
+- use `somekey` for some key thats some reserved nim keyword
 
 links
 - high impact

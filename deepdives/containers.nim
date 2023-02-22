@@ -1,7 +1,7 @@
 ##
 ## containers deepdive
 ## ===================
-## [bookmark](https://nim-lang.org/docs/options.html)
+## [bookmark](https://nim-lang.org/docs/strtabs.html)
 
 ##[
 ## TLDR
