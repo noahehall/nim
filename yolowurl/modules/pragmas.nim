@@ -13,7 +13,7 @@
   - [additional features](https://nim-lang.org/docs/nimc.html#additional-features)
 
 .. code-block:: Nim
-  {.acyclic.} # dunno read the docs
+  {.acyclic.}
   {.async.} # this fn is asynchronous and can use the await keyword
   {.base.} # for methods, to associate fns with a base type. see inheritance
   {.bycopy|byref.} # label a proc arg

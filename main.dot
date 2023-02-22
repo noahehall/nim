@@ -104,6 +104,7 @@ digraph main {
 "std/os" -> "std/times";
 "deepdives/osIo" -> "std/os";
 "deepdives/data" -> "std/sugar";
+"deepdives/data" -> "std/strformat";
 "deepdives/data" -> "std/strutils";
 "deepdives/data" -> "std/sequtils";
 "deepdives/data" -> "std/options";

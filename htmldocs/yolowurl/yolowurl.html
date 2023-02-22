@@ -616,7 +616,7 @@ except:
   <li><a class="reference" href="#b"
     title="b = 100">b</a></li>
   <li><a class="reference" href="#buildInfo"
-    title="buildInfo = &quot;Revision 8fa819b624de7c28c8bfd95a6f556fbffa6a96a7\nCompiled on #33~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Jan 30 17:03:34 UTC 2&quot;">buildInfo</a></li>
+    title="buildInfo = &quot;Revision ed3d8c005135474e473f1f79d8e7052db23cf651\nCompiled on #33~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Jan 30 17:03:34 UTC 2&quot;">buildInfo</a></li>
   <li><a class="reference" href="#c"
     title="c = 100'i8">c</a></li>
   <li><a class="reference" href="#debug"
@@ -1030,7 +1030,8 @@ class="link-seesrc" target="_blank">Source</a>
   <div id="tocRoot"></div>
   
   <p class="module-desc">
-<h1><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax" href="#yolo-wurlcolon-basic-nim-syntax">yolo wurl: basic nim syntax</a></h1>
+<h1><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax" href="#yolo-wurlcolon-basic-nim-syntax">yolo wurl: basic nim syntax</a></h1><p><a class="reference external" href="https://nim-lang.org/docs/manual.html#special-types">bookmark</a></p>
+
 <h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-tldr" href="#yolo-wurlcolon-basic-nim-syntax-tldr">TLDR</a></h2><ul class="simple"><li>only uses the implicitly imported system, threads and channel built_int module (and their imports)</li>
 <li>dont import any of them directly, theres some compiler magic to makem work</li>
 <li>in general <a class="reference external" href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules">the source code</a> has multiple examples<ul class="simple"><li>we dont use runnableExamples because we want to run on the cmd line &amp; in vscode</li>
@@ -1043,25 +1044,12 @@ class="link-seesrc" target="_blank">Source</a>
 </ul>
 </li>
 </ul>
-<p>internal links</p>
-<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/manual.html#special-types">my bookmark</a></li>
-<li><a class="reference external" href="https://nim-lang.org/docs/system.html">nim system module</a></li>
-<li><a class="reference external" href="https://github.com/noahehall/nim/tree/develop/deepdives">deep dives dir to dive deep</a></li>
-<li><a class="reference external" href="https://github.com/noahehall/nim/tree/develop/nimscript">nim script for scripting nim</a></li>
-<li><a class="reference external" href="https://github.com/noahehall/nim/tree/develop/backends">backends, but most isnt there yet</a></li>
-</ul>
 
-<h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-useful-links" href="#yolo-wurlcolon-basic-nim-syntax-useful-links">useful links</a></h2><ul class="simple"><li><a class="reference external" href="https://peterme.net/">anything written by peter</a></li>
-<li><a class="reference external" href="nim-by-example.github.io">nim by example</a></li>
+<h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-useful-links" href="#yolo-wurlcolon-basic-nim-syntax-useful-links">useful links</a></h2><ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/system.html">nim system module</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/apis.html">nimlang api design</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/manual.html">nimlang manual</a></li>
 <li><a class="reference external" href="https://github.com/nim-lang/Nim/tree/devel/tools">nimlang tools dir</a></li>
-<li><a class="reference external" href="https://nim-lang.org/docs/tut1.html">official nimlang tut1 (theres 3)</a></li>
-<li><a class="reference external" href="https://docutils.sourceforge.io/docs/user/rst/quickref.html">reStructured Text cheatsheet</a></li>
 <li><a class="reference external" href="https://status-im.github.io/nim-style-guide/00_introduction.html">status auditor docs</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/tree/version-1-6/lib/system">system modules source code</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L1">system source code</a></li>
-<li><a class="reference external" href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules">yolowurl source examples</a></li>
 </ul>
 
 <h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-the-road-to-code" href="#yolo-wurlcolon-basic-nim-syntax-the-road-to-code">the road to code</a></h2><ul class="simple"><li>need to review<ul class="simple"><li>go through modules @see links and ensure you have captured relevant info in each file</li>
@@ -2089,7 +2077,7 @@ class="link-seesrc" target="_blank">Source</a>
 </ul>
 </li>
 </ul>
-<pre class="listing"><span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">acyclic</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># dunno read the docs</span>
+<pre class="listing"><span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">acyclic</span><span class="Operator">.</span><span class="Punctuation">}</span>
 <span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">async</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># this fn is asynchronous and can use the await keyword</span>
 <span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">base</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># for methods, to associate fns with a base type. see inheritance</span>
 <span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">bycopy</span><span class="Operator">|</span><span class="Identifier">byref</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># label a proc arg</span>
@@ -2388,9 +2376,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L429"
+href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L430"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L429" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L430" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -2414,9 +2402,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L409"
+href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L410"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L409" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L410" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -2427,9 +2415,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L402"
+href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L403"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L402" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L403" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -2485,9 +2473,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L471"
+href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L472"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L471" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L472" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -2555,9 +2543,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L476"
+href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L477"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L476" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L477" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -2637,9 +2625,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L433"
+href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L434"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L433" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L434" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3072,9 +3060,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L460"
+href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L461"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L460" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L461" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3144,9 +3132,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L419"
+href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L420"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L419" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L420" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3180,9 +3168,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L468"
+href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L469"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L468" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L469" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3460,9 +3448,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L483"
+href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L484"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L483" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L484" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3484,9 +3472,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L498"
+href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L499"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L498" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L499" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4109,7 +4097,7 @@ class="link-seesrc" target="_blank">Source</a>
 </dd>
 </div>
 <div id="buildInfo">
-<dt><pre><span class="Identifier">buildInfo</span> <span class="Other">=</span> <span class="StringLit">&quot;Revision 8fa819b624de7c28c8bfd95a6f556fbffa6a96a7\nCompiled on #33~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Jan 30 17:03:34 UTC 2&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">buildInfo</span> <span class="Other">=</span> <span class="StringLit">&quot;Revision ed3d8c005135474e473f1f79d8e7052db23cf651\nCompiled on #33~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Jan 30 17:03:34 UTC 2&quot;</span></pre></dt>
 <dd>
 
 
@@ -4736,9 +4724,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L491"
+href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L492"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L491" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L492" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4748,9 +4736,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L458"
+href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L459"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L458" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L459" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4916,9 +4904,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L479"
+href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L480"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L479" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L480" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -5085,9 +5073,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L447"
+href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L448"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L447" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L448" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -5273,9 +5261,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L497"
+href="https://github.com/noahehall/nim/tree/develop/yolowurl/modules/tupleObjectTable.nim#L498"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L497" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/yolowurl/modules/tupleObjectTable.nim#L498" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -5301,7 +5289,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-22 17:06:09 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-22 18:44:03 UTC</small>
       </div>
     </div>
   </div>

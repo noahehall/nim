@@ -7,10 +7,7 @@
 TLDR
 - [see dom96s response to this question before using marshal to parse json](https://stackoverflow.com/questions/26191114/how-to-convert-object-to-json-in-nim)
 - json imports parsejson module; no need to import it twice
-  - [] field axor, throws if key not found
-  - {} field axor, nil if key not found
-- use std/option for keys when marshalling a JsonNode to a custom type
-- use `somekey` for some key thats some reserved nim keyword
+
 
 links
 - high impact
@@ -36,73 +33,90 @@ links
 
 ## json
 
+- [] field axor, throws if not found
+- {} field axor, nil/default value if not found; works?.like?.es6 operator
+- for JObject, key ordering is preserved
+- use std/option for keys when marshalling a JsonNode to a custom type
+- use `somekey` for some key thats some reserved nim keyword
+
 json types
 ----------
-- JsonNode object variant representing any json type
-- JObject
-- JArray
-- JString
-- JInt
-- JFloat
-- JBool
-- JNull
+- JsonNodeObj base type
+- JsonNode ref JsonNodeObj object variant representing any json type
+- JsonNodeKind enum
+  - all have a newJBlah constructor
+  - JArray seq[JsonNode]
+  - JBool bool
+  - JFloat float
+  - JInt BiggestInt
+  - JNull nil
+  - JObject OrderedTable[string, JsonNode]
+  - JString string
 
 json procs
 ----------
 - kind get json node type
-- parseJson parses json string into a json node
+- parseJson parses string into a json node
 - getInt(defaultValue)
 - getFloat(defaultValue)
 - getStr(defaultValue)
 - getBool(defaultValue)
-- to marshal a JsonNode to custom type
+- to unmarshal a JsonNode to an arbitrary type
 ]##
 
-import std/[sugar, strutils, sequtils, options]
+import std/[sugar, strformat, strutils, sequtils, options]
 
-echo "############################ json"
+echo "############################ json pure"
 
 import std/json
+
+type
+  Headers = object
+    `Content-Type`, Vary, Scheme, Host, Method: string
+    `X-Vault-Token`: Option[string]
+    Status: int
+  ResponseType = object
+    body: seq[string]
+    headers: Headers
+
 const
-  apiResponse = """{
-    "body": "404 not found",
+  response = """{
+    "body": ["nim", "lang"],
     "headers": {
-        "Content-Type": "text/xml",
+        "Content-Type": "application/json",
         "Vary": "Accept-Encoding",
-        "Scheme": "https"
-        "Host": "www.poop.com"
-        "Status": "404"
+        "Scheme": "https",
+        "Host": "www.poop.com",
+        "Status": 200,
         "Method": "Get"
       }
     }"""
-  v1 = "value 1"
-  v2 = "value 2"
 
-# # %* operator creates jsonNodes
-# let jiggy = %* {
-#   "k1": v1,
-#   "k2": v2,
-#   "k3": 20
-#   }
-# echo "gettin ", $jiggy, " wit it"
+let
+  resJson = response.parseJson ## dynamic: string -> json node
+  resType = resJson.to ResponseType # fully typed: json node -> arbitrary type
 
-# const stringified = """{
-#   "k1": "v1",
-#   "k2": 20,
-#   "k3": [1, 2, 3]
-#   }"""
-# let parsed = parseJson stringified
-# # get[Str,Int,Float,Bool] converts json types to nim types
-# echo "k1 is ", parsed["k1"].getStr
-# echo "k3 is ", parsed["k3"][1].getInt
+echo fmt"{resJson.kind=}"
+echo fmt"{resJson=}"
+echo fmt"{resType=}"
 
-# # dealing with APIs is like in scala
-# # you have to fully type the expected response
-# type
-#   Stringified = object
-#     k1: string
-#     k2: int
-#     k3: seq[int]
+
+echo fmt"""{resJson["body"][0].getStr=}"""
+echo fmt"""{resJson["body"].to seq[string]=}"""
+echo fmt"""{resJson["headers"]["Status"].getInt=}"""
+echo fmt"""{resJson\{"headers","Status"\}.getInt=}"""
+echo fmt"""curlies return default value {resJson\{"doesntexist"\}.getFloat=}"""
+echo fmt"""e.g. empty string {resJson["headers"]\{"X-Vault-Token"\}.getStr=}"""
+
+
+
 # let nimTypes = to(parsed, Stringified)
 # # now you can access the fields with standard nim syntax
 # echo "sequence is ", nimTypes.k3
+
+echo "############################ json impure"
+
+var
+  reqData = %* {"name": "Tupac", "quotes": ["Dreams are for real"]} ## dynamic: instantiate json node
+
+echo fmt"{reqData=}"

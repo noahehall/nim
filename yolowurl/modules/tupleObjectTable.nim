@@ -396,6 +396,7 @@ new bbbb
 collide(aaaa, bbbb) # output: 2
 
 echo "############################ variants"
+# better example @see https://nim-lang.org/docs/json.html#JsonNodeObj
 # copied from docs
 # This is an example how an abstract syntax tree could be modelled in Nim
 type
