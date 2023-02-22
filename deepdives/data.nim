@@ -6,15 +6,11 @@
 ##[
 TLDR
 - [see dom96s response to this question before using marshal to parse json](https://stackoverflow.com/questions/26191114/how-to-convert-object-to-json-in-nim)
+- parsejson auto imported by json, no need to import it twice
 
 links
 - high impact
   - [csv parser](https://nim-lang.org/docs/parsecsv.html)
-  - [ht/xml parser](https://nim-lang.org/docs/xmlparser.html)
-  - [ht/xml tree](https://nim-lang.org/docs/xmltree.html)
-  - [ht/xml](https://nim-lang.org/docs/parsexml.html)
-  - [html generator](https://nim-lang.org/docs/htmlgen.html)
-  - [html parser](https://nim-lang.org/docs/htmlparser.html)
   - [json parser](https://nim-lang.org/docs/parsejson.html)
   - [json utils](https://nim-lang.org/docs/jsonutils.html)
   - [json](https://nim-lang.org/docs/json.html)
@@ -23,23 +19,26 @@ links
   - [mem files](https://nim-lang.org/docs/memfiles.html)
   - [parse cfg](https://nim-lang.org/docs/parsecfg.html)
   - [parse utils](https://nim-lang.org/docs/parseutils.html)
+- niche
+  - [ht/xml parser](https://nim-lang.org/docs/xmlparser.html)
+  - [ht/xml tree](https://nim-lang.org/docs/xmltree.html)
+  - [ht/xml](https://nim-lang.org/docs/parsexml.html)
+  - [html generator](https://nim-lang.org/docs/htmlgen.html)
+  - [html parser](https://nim-lang.org/docs/htmlparser.html)
   - [var ints](https://nim-lang.org/docs/varints.html)
 
 todos
 - figure out a logical split of this file, cant have all these links in here
 
 ## json
-- parsejson auto imported by json, but can also be imported explicitly
+
+
+
 ]##
 
-# import std/[
-#   json,
-#   jsonutils,
-#   marshal # they say not to use this for json
-#   # parsejson auto imported by json, but can be imported explicitly
-# ]
+import std/[sugar, strutils, sequtils]
 
-# echo "############################ json"
+echo "############################ json"
 # let
 #   v1 = "value 1"
 #   v2 = "value 2"
