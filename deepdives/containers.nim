@@ -49,13 +49,22 @@ option exceptions
 
 option types
 ------------
-- Option[T]
+- Option[T] some/none
+- Some[T]
+- None[T]
 
 option procs
 ------------
 - isSome thing there
 - isNone nil
 - get the value or raise UnpackDefect
+- filter returns Some/None depending on supplied lambda
+- flatMap map for chaining
+- flatten remove one level of a nested Option
+
+options operators
+-----------------
+- == true if both are none/equal values
 
 ]##
 
@@ -82,6 +91,20 @@ echo fmt"""{hashTable.contains "fname"=}"""
 echo fmt"""{hashTable.hasKey "fname"=}"""
 echo fmt"""{"fname" in hashTable=}"""
 
+
+let keys = collect:
+  for k in hashTable.keys: k
+echo fmt"collect hashTable.[m]keys: {keys=}"
+
+let values = collect:
+  for k in hashTable.values: k
+echo fmt"collect hashTable.[m]values: {values=}"
+
+let keyValues = collect:
+  for k, v in hashTable.pairs: (k, v)
+echo fmt"collect hashTable.[m]pairs: {keyValues=}"
+
+
 echo "############################ impure tables"
 var
   mutated = hashTable
@@ -101,18 +124,6 @@ echoMutated()
 var i: string = "puy"
 echo fmt"""returns bool, moves value to blah {i=} -> ${mutated.pop "nope", i=} -> {i=}"""
 echo fmt"""alias for pop {i=} -> ${mutated.take "epon", i=} -> {i=}"""
-
-let keys = collect:
-  for k in mutated.keys: k
-echo fmt"collect mutated.[m]keys: {keys=}"
-
-let values = collect:
-  for k in mutated.values: k
-echo fmt"collect mutated.[m]values: {values=}"
-
-let keyValues = collect:
-  for k, v in mutated.pairs: (k, v)
-echo fmt"collect mutated.[m]pairs: {keyValues=}"
 
 type
   User = object
@@ -134,3 +145,25 @@ t.withValue(521, value):
 do:
   # block is executed when `key` not in `t`
   t[1314] = User(name: "exist", uid: 521)
+
+echo "############################ options"
+# option[SomeType](nil) convert SomeType to an option
+import std/options
+
+const something = (x: string) => (if x == "thing": some("some" & x) else: none(string)) ## \
+  ## converts a thing to something
+
+const
+  maybe = some("thing") ## optional string
+  nothing = none(string) ## optional string
+
+echo fmt"{maybe=}"
+echo fmt"{nothing.isNone=}"
+echo fmt"{maybe.isSome=}"
+echo fmt"always isSome first {maybe.get=}"
+echo fmt"prefer get {maybe.unsafeGet=}"
+echo fmt"{nothing.get(maybe.get)=}"
+echo fmt"{maybe.filter(x => x.len == 1_000_000)=}"
+echo fmt"will mutate if nothings returned {maybe.map(x => x & x)=}"
+echo fmt"{maybe.flatMap(something)=}"
+echo fmt"{some(maybe).flatten=}"

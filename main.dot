@@ -81,9 +81,10 @@ digraph main {
 "deepdives/containers" -> "std/strutils";
 "deepdives/containers" -> "std/sequtils";
 "deepdives/containers" -> "std/tables";
+"std/options" -> "std/typetraits";
+"deepdives/containers" -> "std/options";
 "deepdives/datetime" -> "std/sugar";
 "deepdives/datetime" -> "std/strformat";
-"std/options" -> "std/typetraits";
 "std/times" -> "std/strutils";
 "std/times" -> "std/math";
 "std/times" -> "std/options";

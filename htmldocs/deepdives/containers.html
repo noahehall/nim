@@ -108,6 +108,7 @@ window.addEventListener('DOMContentLoaded', main);
 <li><a class="reference" id="containers-deepdive-option-exceptions_toc" href="#containers-deepdive-option-exceptions">option exceptions</a></li>
 <li><a class="reference" id="containers-deepdive-option-types_toc" href="#containers-deepdive-option-types">option types</a></li>
 <li><a class="reference" id="containers-deepdive-option-procs_toc" href="#containers-deepdive-option-procs">option procs</a></li>
+<li><a class="reference" id="containers-deepdive-options-operators_toc" href="#containers-deepdive-options-operators">options operators</a></li>
 </ul><li>
   <a class="reference reference-toplevel" href="#7" id="57">Types</a>
   <ul class="simple simple-toc-section">
@@ -121,16 +122,16 @@ window.addEventListener('DOMContentLoaded', main);
 <li>
   <a class="reference reference-toplevel" href="#8" id="58">Vars</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#hc%60gensym114"
+      <li><a class="reference" href="#hc%60gensym112"
+    title="hc`gensym112: Hash">hc`gensym112</a></li>
+  <li><a class="reference" href="#hc%60gensym114"
     title="hc`gensym114: Hash">hc`gensym114</a></li>
-  <li><a class="reference" href="#hc%60gensym116"
-    title="hc`gensym116: Hash">hc`gensym116</a></li>
   <li><a class="reference" href="#i"
     title="i: string = &quot;puy&quot;">i</a></li>
+  <li><a class="reference" href="#index%60gensym112"
+    title="index`gensym112 = rawGet(t, 1, hc`gensym112)">index`gensym112</a></li>
   <li><a class="reference" href="#index%60gensym114"
-    title="index`gensym114 = rawGet(t, 1, hc`gensym114)">index`gensym114</a></li>
-  <li><a class="reference" href="#index%60gensym116"
-    title="index`gensym116 = rawGet(t, 521, hc`gensym116)">index`gensym116</a></li>
+    title="index`gensym114 = rawGet(t, 521, hc`gensym114)">index`gensym114</a></li>
   <li><a class="reference" href="#mCountTable"
     title="mCountTable = countTable">mCountTable</a></li>
   <li><a class="reference" href="#mutated"
@@ -143,32 +144,32 @@ window.addEventListener('DOMContentLoaded', main);
 <li>
   <a class="reference reference-toplevel" href="#9" id="59">Lets</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#hasKey%60gensym114"
+      <li><a class="reference" href="#hasKey%60gensym112"
+    title="hasKey`gensym112 =
+  0 &lt;= index`gensym112">hasKey`gensym112</a></li>
+  <li><a class="reference" href="#hasKey%60gensym114"
     title="hasKey`gensym114 =
   0 &lt;= index`gensym114">hasKey`gensym114</a></li>
-  <li><a class="reference" href="#hasKey%60gensym116"
-    title="hasKey`gensym116 =
-  0 &lt;= index`gensym116">hasKey`gensym116</a></li>
   <li><a class="reference" href="#keys"
     title="keys =
-  var collectResult_1627396897 = newSeq(Natural(0))
-  for k in keys(mutated):
-    add(collectResult_1627396897, k)
-  collectResult_1627396897">keys</a></li>
+  var collectResult_1627393933 = newSeq(Natural(0))
+  for k in keys(hashTable):
+    add(collectResult_1627393933, k)
+  collectResult_1627393933">keys</a></li>
   <li><a class="reference" href="#keyValues"
     title="keyValues =
-  var collectResult_1627397387 = newSeq(Natural(0))
-  for k, v in pairs(mutated):
-    add(collectResult_1627397387, (k, v))
-  collectResult_1627397387">keyValues</a></li>
+  var collectResult_1627394423 = newSeq(Natural(0))
+  for k, v in pairs(hashTable):
+    add(collectResult_1627394423, (k, v))
+  collectResult_1627394423">keyValues</a></li>
   <li><a class="reference" href="#u"
     title="u = User(name: &quot;Hello&quot;, uid: 99)">u</a></li>
   <li><a class="reference" href="#values"
     title="values =
-  var collectResult_1627397142 = newSeq(Natural(0))
-  for k in values(mutated):
-    add(collectResult_1627397142, k)
-  collectResult_1627397142">values</a></li>
+  var collectResult_1627394178 = newSeq(Natural(0))
+  for k in values(hashTable):
+    add(collectResult_1627394178, k)
+  collectResult_1627394178">values</a></li>
 
   </ul>
 </li>
@@ -188,12 +189,18 @@ window.addEventListener('DOMContentLoaded', main);
     title="hashTable = (data: [(0, &quot;&quot;, &quot;&quot;), (0, &quot;&quot;, &quot;&quot;), (2350561362, &quot;lname&quot;, &quot;hall&quot;),
                     (3368835387, &quot;fname&quot;, &quot;noah&quot;), (0, &quot;&quot;, &quot;&quot;), (0, &quot;&quot;, &quot;&quot;),
                     (0, &quot;&quot;, &quot;&quot;), (0, &quot;&quot;, &quot;&quot;)], counter: 2)">hashTable</a></li>
+  <li><a class="reference" href="#maybe"
+    title="maybe = (val: &quot;thing&quot;, has: true)">maybe</a></li>
+  <li><a class="reference" href="#nothing"
+    title="nothing = (val: &quot;&quot;, has: false)">nothing</a></li>
   <li><a class="reference" href="#orderededTable"
     title="orderededTable = (data: [(0, 0, &quot;&quot;, &quot;&quot;), (0, 0, &quot;&quot;, &quot;&quot;),
                          (2350561362, -1, &quot;lname&quot;, &quot;hall&quot;),
                          (3368835387, 2, &quot;fname&quot;, &quot;noah&quot;), (0, 0, &quot;&quot;, &quot;&quot;),
                          (0, 0, &quot;&quot;, &quot;&quot;), (0, 0, &quot;&quot;, &quot;&quot;), (0, 0, &quot;&quot;, &quot;&quot;)],
                   counter: 2, first: 3, last: 2)">orderededTable</a></li>
+  <li><a class="reference" href="#something"
+    title="something = :anonymous">something</a></li>
 
   </ul>
 </li>
@@ -267,12 +274,20 @@ class="link-seesrc" target="_blank">Source</a>
 <h2><a class="toc-backref" id="containers-deepdive-option-exceptions" href="#containers-deepdive-option-exceptions">option exceptions</a></h2><ul class="simple"><li>UnpackDefect when getting a value that doesnt exist</li>
 </ul>
 
-<h2><a class="toc-backref" id="containers-deepdive-option-types" href="#containers-deepdive-option-types">option types</a></h2><ul class="simple"><li>Option[T]</li>
+<h2><a class="toc-backref" id="containers-deepdive-option-types" href="#containers-deepdive-option-types">option types</a></h2><ul class="simple"><li>Option[T] some/none</li>
+<li>Some[T]</li>
+<li>None[T]</li>
 </ul>
 
 <h2><a class="toc-backref" id="containers-deepdive-option-procs" href="#containers-deepdive-option-procs">option procs</a></h2><ul class="simple"><li>isSome thing there</li>
 <li>isNone nil</li>
 <li>get the value or raise UnpackDefect</li>
+<li>filter returns Some/None depending on supplied lambda</li>
+<li>flatMap map for chaining</li>
+<li>flatten remove one level of a nested Option</li>
+</ul>
+
+<h2><a class="toc-backref" id="containers-deepdive-options-operators" href="#containers-deepdive-options-operators">options operators</a></h2><ul class="simple"><li>== true if both are none/equal values</li>
 </ul>
 </p>
   <div class="section" id="7">
@@ -287,9 +302,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L118"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L129"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L118" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L129" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -298,8 +313,8 @@ class="link-seesrc" target="_blank">Source</a>
 <div class="section" id="8">
 <h1><a class="toc-backref" href="#8">Vars</a></h1>
 <dl class="item">
-<div id="hc`gensym114">
-<dt><pre><span class="Identifier">hc`gensym114</span><span class="Other">:</span> <span class="Identifier">Hash</span></pre></dt>
+<div id="hc`gensym112">
+<dt><pre><span class="Identifier">hc`gensym112</span><span class="Other">:</span> <span class="Identifier">Hash</span></pre></dt>
 <dd>
 
 
@@ -310,8 +325,8 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="hc`gensym116">
-<dt><pre><span class="Identifier">hc`gensym116</span><span class="Other">:</span> <span class="Identifier">Hash</span></pre></dt>
+<div id="hc`gensym114">
+<dt><pre><span class="Identifier">hc`gensym114</span><span class="Other">:</span> <span class="Identifier">Hash</span></pre></dt>
 <dd>
 
 
@@ -328,14 +343,14 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L101"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L124"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L101" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L124" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="index`gensym114">
-<dt><pre><span class="Identifier">index`gensym114</span> <span class="Other">=</span> <span class="Identifier">rawGet</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">,</span> <span class="DecNumber">1</span><span class="Other">,</span> <span class="Identifier">hc`gensym114</span><span class="Other">)</span></pre></dt>
+<div id="index`gensym112">
+<dt><pre><span class="Identifier">index`gensym112</span> <span class="Other">=</span> <span class="Identifier">rawGet</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">,</span> <span class="DecNumber">1</span><span class="Other">,</span> <span class="Identifier">hc`gensym112</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -346,8 +361,8 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="index`gensym116">
-<dt><pre><span class="Identifier">index`gensym116</span> <span class="Other">=</span> <span class="Identifier">rawGet</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">,</span> <span class="DecNumber">521</span><span class="Other">,</span> <span class="Identifier">hc`gensym116</span><span class="Other">)</span></pre></dt>
+<div id="index`gensym114">
+<dt><pre><span class="Identifier">index`gensym114</span> <span class="Other">=</span> <span class="Identifier">rawGet</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">,</span> <span class="DecNumber">521</span><span class="Other">,</span> <span class="Identifier">hc`gensym114</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -364,9 +379,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L88"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L111"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L88" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L111" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -376,9 +391,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L87"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L110"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L87" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L110" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -388,9 +403,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L122"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L133"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L122" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L133" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -399,9 +414,9 @@ class="link-seesrc" target="_blank">Source</a>
 <div class="section" id="9">
 <h1><a class="toc-backref" href="#9">Lets</a></h1>
 <dl class="item">
-<div id="hasKey`gensym114">
-<dt><pre><span class="Identifier">hasKey`gensym114</span> <span class="Other">=</span>
-  <span class="DecNumber">0</span> <span class="Operator">&lt;=</span> <span class="Identifier">index`gensym114</span></pre></dt>
+<div id="hasKey`gensym112">
+<dt><pre><span class="Identifier">hasKey`gensym112</span> <span class="Other">=</span>
+  <span class="DecNumber">0</span> <span class="Operator">&lt;=</span> <span class="Identifier">index`gensym112</span></pre></dt>
 <dd>
 
 
@@ -412,9 +427,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="hasKey`gensym116">
-<dt><pre><span class="Identifier">hasKey`gensym116</span> <span class="Other">=</span>
-  <span class="DecNumber">0</span> <span class="Operator">&lt;=</span> <span class="Identifier">index`gensym116</span></pre></dt>
+<div id="hasKey`gensym114">
+<dt><pre><span class="Identifier">hasKey`gensym114</span> <span class="Other">=</span>
+  <span class="DecNumber">0</span> <span class="Operator">&lt;=</span> <span class="Identifier">index`gensym114</span></pre></dt>
 <dd>
 
 
@@ -427,33 +442,33 @@ class="link-seesrc" target="_blank">Source</a>
 </div>
 <div id="keys">
 <dt><pre><span class="Identifier">keys</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">collectResult_1627396897</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Keyword">for</span> <span class="Identifier">k</span> <span class="Keyword">in</span> <span class="Identifier">keys</span><span class="Other">(</span><span class="Identifier">mutated</span><span class="Other">)</span><span class="Other">:</span>
-    <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_1627396897</span><span class="Other">,</span> <span class="Identifier">k</span><span class="Other">)</span>
-  <span class="Identifier">collectResult_1627396897</span></pre></dt>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_1627393933</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">for</span> <span class="Identifier">k</span> <span class="Keyword">in</span> <span class="Identifier">keys</span><span class="Other">(</span><span class="Identifier">hashTable</span><span class="Other">)</span><span class="Other">:</span>
+    <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_1627393933</span><span class="Other">,</span> <span class="Identifier">k</span><span class="Other">)</span>
+  <span class="Identifier">collectResult_1627393933</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L105"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L95"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L105" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L95" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
 <div id="keyValues">
 <dt><pre><span class="Identifier">keyValues</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">collectResult_1627397387</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Keyword">for</span> <span class="Identifier">k</span><span class="Other">,</span> <span class="Identifier">v</span> <span class="Keyword">in</span> <span class="Identifier">pairs</span><span class="Other">(</span><span class="Identifier">mutated</span><span class="Other">)</span><span class="Other">:</span>
-    <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_1627397387</span><span class="Other">,</span> <span class="Other">(</span><span class="Identifier">k</span><span class="Other">,</span> <span class="Identifier">v</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">collectResult_1627397387</span></pre></dt>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_1627394423</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">for</span> <span class="Identifier">k</span><span class="Other">,</span> <span class="Identifier">v</span> <span class="Keyword">in</span> <span class="Identifier">pairs</span><span class="Other">(</span><span class="Identifier">hashTable</span><span class="Other">)</span><span class="Other">:</span>
+    <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_1627394423</span><span class="Other">,</span> <span class="Other">(</span><span class="Identifier">k</span><span class="Other">,</span> <span class="Identifier">v</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Identifier">collectResult_1627394423</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L113"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L103"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L113" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L103" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -463,25 +478,25 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L123"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L134"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L123" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L134" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
 <div id="values">
 <dt><pre><span class="Identifier">values</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">collectResult_1627397142</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Keyword">for</span> <span class="Identifier">k</span> <span class="Keyword">in</span> <span class="Identifier">values</span><span class="Other">(</span><span class="Identifier">mutated</span><span class="Other">)</span><span class="Other">:</span>
-    <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_1627397142</span><span class="Other">,</span> <span class="Identifier">k</span><span class="Other">)</span>
-  <span class="Identifier">collectResult_1627397142</span></pre></dt>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_1627394178</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">for</span> <span class="Identifier">k</span> <span class="Keyword">in</span> <span class="Identifier">values</span><span class="Other">(</span><span class="Identifier">hashTable</span><span class="Other">)</span><span class="Other">:</span>
+    <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_1627394178</span><span class="Other">,</span> <span class="Identifier">k</span><span class="Other">)</span>
+  <span class="Identifier">collectResult_1627394178</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L109"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L99"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L109" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L99" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -496,9 +511,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 system table
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L68"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L77"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L68" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L77" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -513,9 +528,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 anyOpenArrayLikeThing.toCountTable
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L71"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L80"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L71" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L80" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -527,9 +542,33 @@ class="link-seesrc" target="_blank">Source</a>
 
 newTable
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L69"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L78"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L69" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L78" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="maybe">
+<dt><pre><span class="Identifier">maybe</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">val</span><span class="Other">:</span> <span class="StringLit">&quot;thing&quot;</span><span class="Other">,</span> <span class="Identifier">has</span><span class="Other">:</span> <span class="DecNumber">true</span><span class="Other">)</span></pre></dt>
+<dd>
+
+optional string
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L157"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L157" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="nothing">
+<dt><pre><span class="Identifier">nothing</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">val</span><span class="Other">:</span> <span class="StringLit">&quot;&quot;</span><span class="Other">,</span> <span class="Identifier">has</span><span class="Other">:</span> <span class="DecNumber">false</span><span class="Other">)</span></pre></dt>
+<dd>
+
+optional string
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L158"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L158" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -543,9 +582,22 @@ class="link-seesrc" target="_blank">Source</a>
 
 [('a', 5), ('b', 9)].toOrderedTable
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L70"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L79"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L70" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L79" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="something">
+<dt><pre><span class="Identifier">something</span> <span class="Other">=</span> <span class="Operator">:anonymous</span></pre></dt>
+<dd>
+
+
+converts a thing to something
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L153"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L153" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -560,9 +612,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L89"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/containers.nim#L112"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L89" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/containers.nim#L112" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -576,7 +628,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-22 16:06:10 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-22 17:06:09 UTC</small>
       </div>
     </div>
   </div>
