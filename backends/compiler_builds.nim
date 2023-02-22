@@ -1,5 +1,6 @@
 #[
   @see
+    - https://github.com/nim-lang/Nim/tree/devel/config
     - https://nim-lang.org/docs/asyncjs.html (js)
     - https://nim-lang.org/docs/backends.html
     - https://nim-lang.org/docs/dom.html (js)
