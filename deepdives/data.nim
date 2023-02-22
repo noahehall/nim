@@ -30,6 +30,9 @@ links
   - [html generator](https://nim-lang.org/docs/htmlgen.html)
   - [html parser](https://nim-lang.org/docs/htmlparser.html)
   - [var ints](https://nim-lang.org/docs/varints.html)
+  - [fusion htmlparser](https://nim-lang.github.io/fusion/src/fusion/htmlparser.html)
+  - [fusion ht/xml parser](https://nim-lang.github.io/fusion/src/fusion/htmlparser/parsexml.html)
+  - [fusion ht/xml tree](https://nim-lang.github.io/fusion/src/fusion/htmlparser/xmltree.html)
 
 ## json
 

@@ -16,7 +16,7 @@
   - [seq (seq, strings, array) utils](https://nim-lang.org/docs/sequtils.html)
   - [set utils](https://nim-lang.org/docs/setutils.html)
 - niche
-
+  - [fusion pointers](https://nim-lang.github.io/fusion/src/fusion/pointers.html)
 
 ## seqs
 - toSeq(blah) transforms any iterable into a sequence

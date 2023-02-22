@@ -14,6 +14,7 @@
     - https://nim-lang.org/docs/threads.html (system)
     - https://peterme.net/asynchronous-programming-in-nim.html
     - https://nim-lang.org/docs/system.html#%7C%7C.i%2CS%2CT%2Cstaticstring parallel loop operator
+    - [fusion pools](https://nim-lang.github.io/fusion/src/fusion/pools.html)
 
   thread related stuff requires --threads:on
 

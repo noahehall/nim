@@ -42,6 +42,7 @@
   - [mastering nim](https://nim-lang.org/blog/2022/06/29/mastering-nim.html)
     - havent read this one, but its new; i like new
   - [community packages](./community/README.md)
+  - [fusion package](https://github.com/nim-lang/fusion)
   - [my projects](./projects/README.md)
 
 ## links

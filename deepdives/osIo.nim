@@ -49,6 +49,9 @@
 - high impact
   - [basic os utils](https://nim-lang.org/docs/os.html)
   - [distro detection & os pkg manager](https://nim-lang.org/docs/distros.html)
+  - [fusion file permissions](https://nim-lang.github.io/fusion/src/fusion/filepermissions.html)
+  - [fusion io utils](https://nim-lang.github.io/fusion/src/fusion/ioutils.html)
+  - [fusion scripting](https://nim-lang.github.io/fusion/src/fusion/scripting.html)
   - [get cpu/cors info](https://nim-lang.org/docs/cpuinfo.html)
   - [i/o multiplexing](https://nim-lang.org/docs/selectors.html)
   - [nim cmd line parser](https://nim-lang.org/docs/parseopt.html)

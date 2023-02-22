@@ -19,6 +19,7 @@
   - [string tables](https://nim-lang.org/docs/strtabs.html)
   - [enum utils](https://nim-lang.org/docs/enumutils.html)
   - [options](https://nim-lang.org/docs/options.html)
+  - [fusion btree tables](https://nim-lang.github.io/fusion/src/fusion/btreetables.html)
 - niche
   - [shared tables](https://nim-lang.org/docs/sharedtables.html)
 

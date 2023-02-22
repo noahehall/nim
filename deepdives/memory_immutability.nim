@@ -3,6 +3,7 @@
   @see https://nim-lang.org/1.6.0/gc.html
   @see https://github.com/Z3Prover/z3
   @see https://nim-lang.org/docs/drnim.html
+  - [fusion smart pointers](https://nim-lang.github.io/fusion/src/fusion/smartptrs.html)
 
   Stack allocated (value semantics)
     - plain objects
