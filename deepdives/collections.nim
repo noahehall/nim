@@ -4,11 +4,11 @@
 ## [bookmark](https://nim-lang.org/docs/packedsets.html)
 
 ##[
-TLDR
+## TLDR
 - lists/queues are kept in lists.nim
 - table like stuff in containers
 
-links
+## links
 - high impact
   - [int sets](https://nim-lang.org/docs/intsets.html)
   - [ordered +/ hash sets](https://nim-lang.org/docs/sets.html)
@@ -18,26 +18,26 @@ links
 - niche
 
 
-## additional info
-- seqs
-  - toSeq(blah) transforms any iterable into a sequence
-  - newSeqWith useful for creating 2 dimensional sequences
-  - some procs have an it variant for even more succintness
-    - allIt
-    - anyIt
-    - applyIt
-    - countIt
-    - filterIt
-    - keepItIf
-    - mapIt
-- sets
-  - efficient hash set and ordered hash set
-  - values can be any hashable type, unlike system.set which only accept ordinals
-  - like most things, has items and pairs iterator
-  - types: all of the init like procs are no longer necessary
-    - HashSet[A]
-    - OrderedSet[A]
-    - SomeSet[A] = HashSet|OrderedSet[A]
+## seqs
+- toSeq(blah) transforms any iterable into a sequence
+- newSeqWith useful for creating 2 dimensional sequences
+- some procs have an it variant for even more succintness
+  - allIt
+  - anyIt
+  - applyIt
+  - countIt
+  - filterIt
+  - keepItIf
+  - mapIt
+
+## sets
+- efficient hash set and ordered hash set
+- values can be any hashable type, unlike system.set which only accept ordinals
+- like most things, has items and pairs iterator
+- types: all of the init like procs are no longer necessary
+  - HashSet[A]
+  - OrderedSet[A]
+  - SomeSet[A] = HashSet|OrderedSet[A]
 ]##
 
 import std/[sugar, strformat]

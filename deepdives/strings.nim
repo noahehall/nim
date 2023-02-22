@@ -10,7 +10,7 @@
 - generally any proc that accepts a string, also accepts a char, and sometimes set[char]
 
 
-skipped
+## todos
 - strutils
   - BinaryPrefixMode, FloatFormatMode, SkipTable, addSep, align[left,right]
   - center, cmpIgnoreStyle, dedent, indent, indentation, unindent
@@ -24,7 +24,7 @@ skipped
   - to[Bin,Hex,Oct,Octal]
   - trimZeros,
 
-links
+## links
 - high impact
   - [str format](https://nim-lang.org/docs/strformat.html)
   - [str utils](https://nim-lang.org/docs/strutils.html)

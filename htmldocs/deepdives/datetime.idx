@@ -7,8 +7,11 @@ relaxing	deepdives/datetime.html#relaxing	datetime: relaxing
 hour	deepdives/datetime.html#hour	datetime: hour	
 datetime	deepdives/datetime.html#datetime	 datetime	
 TLDR	deepdives/datetime.html#datetime-tldr	  TLDR	
-time format strings	deepdives/datetime.html#datetime-time-format-strings	  time format strings	
+links	deepdives/datetime.html#datetime-links	  links	
+todos	deepdives/datetime.html#datetime-todos	  todos	
 time	deepdives/datetime.html#datetime-time	  time	
+time format strings	deepdives/datetime.html#datetime-time-format-strings	  time format strings	
+time design	deepdives/datetime.html#datetime-time-design	  time design	
 time Duration (see types)	deepdives/datetime.html#datetime-time-duration-see-types	  time Duration (see types)	
 time TimeInterval (see types)	deepdives/datetime.html#datetime-time-timeinterval-see-types	  time TimeInterval (see types)	
 times types	deepdives/datetime.html#datetime-times-types	  times types	

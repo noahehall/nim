@@ -6,7 +6,7 @@
 ##[
 TLDR
 - [see dom96s response to this question before using marshal to parse json](https://stackoverflow.com/questions/26191114/how-to-convert-object-to-json-in-nim)
-- parsejson auto imported by json, no need to import it twice
+- json imports parsejson module; no need to import it twice
 
 links
 - high impact
@@ -27,12 +27,18 @@ links
   - [html parser](https://nim-lang.org/docs/htmlparser.html)
   - [var ints](https://nim-lang.org/docs/varints.html)
 
-todos
-- figure out a logical split of this file, cant have all these links in here
-
 ## json
 
-
+json types
+----------
+- JsonNode
+- JObject
+- JArray
+- JString
+- JInt
+- JFloat
+- JBool
+- JNull
 
 ]##
 

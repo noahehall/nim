@@ -4,18 +4,18 @@
 ## [bookmark](https://nim-lang.org/docs/algorithm.html)
 
 ##[
-TLDR
+## TLDR
 - includes algorithm + everything sort related (todo)
 - -> sugar for type defs
 - => sugar for procs
 
-links
+## links
 - [sugar](https://nim-lang.org/docs/sugar.html)
 - [with](https://nim-lang.org/docs/with.html)
 - [algorithm](https://nim-lang.org/docs/algorithm.html)
 - [enumarate any collection](https://nim-lang.org/docs/enumerate.html)
 
-todos
+## todos
 - macro capture(locals: varargs[typed]; body: untyped): untyped
   - capture local variables for use in a closure
 - macro dump(x: untyped): untyped

@@ -100,6 +100,7 @@ window.addEventListener('DOMContentLoaded', main);
   <ul class="simple simple-toc" id="toc-list">
 <li><a class="reference" id="working-with-data_toc" href="#working-with-data">working with data</a></li>
 <ul class="simple"><li><a class="reference" id="working-with-data-json_toc" href="#working-with-data-json">json</a></li>
+<li><a class="reference" id="working-with-data-json-types_toc" href="#working-with-data-json-types">json types</a></li>
 </ul>
 </ul>
 
@@ -115,14 +116,10 @@ class="link-seesrc" target="_blank">Source</a>
   <p class="module-desc">
 <h1><a class="toc-backref" id="working-with-data" href="#working-with-data">working with data</a></h1><p><a class="reference external" href="https://nim-lang.org/docs/json.html">bookmark</a></p>
 TLDR<ul class="simple"><li><a class="reference external" href="https://stackoverflow.com/questions/26191114/how-to-convert-object-to-json-in-nim">see dom96s response to this question before using marshal to parse json</a></li>
+<li>json imports parsejson module; no need to import it twice</li>
 </ul>
 <p>links</p>
 <ul class="simple"><li>high impact<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/parsecsv.html">csv parser</a></li>
-<li><a class="reference external" href="https://nim-lang.org/docs/xmlparser.html">ht/xml parser</a></li>
-<li><a class="reference external" href="https://nim-lang.org/docs/xmltree.html">ht/xml tree</a></li>
-<li><a class="reference external" href="https://nim-lang.org/docs/parsexml.html">ht/xml</a></li>
-<li><a class="reference external" href="https://nim-lang.org/docs/htmlgen.html">html generator</a></li>
-<li><a class="reference external" href="https://nim-lang.org/docs/htmlparser.html">html parser</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/parsejson.html">json parser</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/jsonutils.html">json utils</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/json.html">json</a></li>
@@ -131,15 +128,27 @@ TLDR<ul class="simple"><li><a class="reference external" href="https://stackover
 <li><a class="reference external" href="https://nim-lang.org/docs/memfiles.html">mem files</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/parsecfg.html">parse cfg</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/parseutils.html">parse utils</a></li>
+</ul>
+</li>
+<li>niche<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/xmlparser.html">ht/xml parser</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/xmltree.html">ht/xml tree</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/parsexml.html">ht/xml</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/htmlgen.html">html generator</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/htmlparser.html">html parser</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/varints.html">var ints</a></li>
 </ul>
 </li>
 </ul>
-<p>todos</p>
-<ul class="simple"><li>figure out a logical split of this file, cant have all these links in here</li>
-</ul>
 
-<h2><a class="toc-backref" id="working-with-data-json" href="#working-with-data-json">json</a></h2><ul class="simple"><li>parsejson auto imported by json, but can also be imported explicitly</li>
+<h2><a class="toc-backref" id="working-with-data-json" href="#working-with-data-json">json</a></h2>
+<h2><a class="toc-backref" id="working-with-data-json-types" href="#working-with-data-json-types">json types</a></h2><ul class="simple"><li>JsonNode</li>
+<li>JObject</li>
+<li>JArray</li>
+<li>JString</li>
+<li>JInt</li>
+<li>JFloat</li>
+<li>JBool</li>
+<li>JNull</li>
 </ul>
 </p>
   
@@ -150,7 +159,7 @@ TLDR<ul class="simple"><li><a class="reference external" href="https://stackover
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-22 12:50:56 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-22 14:26:54 UTC</small>
       </div>
     </div>
   </div>

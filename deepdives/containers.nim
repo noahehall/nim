@@ -4,16 +4,16 @@
 ## [bookmark](https://nim-lang.org/docs/options.html)
 
 ##[
-TLDR
+## TLDR
 - [custom types as keys require hash + == procs](https://nim-lang.org/docs/tables.html#basic-usage-hashing)
 - generally all table types have the same interface; CountTables a bit more
 
-todos
+## todos
 - tables
   - [the commit for indexBy, scroll down for tests](https://github.com/nim-lang/Nim/commit/5498415f3b44048739c9b7116638824713d9c1df)
   - newTableFrom
 
-links
+## links
 - high impact
   - [tables aka dictionary](https://nim-lang.org/docs/tables.html)
   - [string tables](https://nim-lang.org/docs/strtabs.html)

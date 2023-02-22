@@ -11,7 +11,7 @@
   - have to be allocated on the heap (var) because their lifetime is unknown
 - i think docgen pretty prints the code in the html; so thats cool
 
-todos
+## todos
 - reread the assertion docs and capture the info
 .. code-block:: Nim
   # bunch of todos
@@ -24,7 +24,7 @@ todos
     ^ if not nil, every raise statement calls this hook
     ^ if returns false, exception is caught and does not propagate
 
-links
+## links
 - [assertions](https://nim-lang.org/docs/assertions.html)
 - [defect doc](https://nim-lang.org/docs/system.html#Defect)
 - [docgen](https://nim-lang.org/docs/docgen.html)
@@ -46,7 +46,8 @@ links
   - getStackTraceEntries() doesnt work for the js backend
   - getStackTraceEntries(e) of a specific exception
 
-## Defect types
+Defect types
+------------
 - AccessViolationDefect invalid memory access
 - ArithmeticDefect any kin dof arithmetic error
 - AssertionDefect assertion returns false
@@ -70,7 +71,8 @@ links
 - ReraiseDefect if there is no exception to reraise
 - StackOverflowDefect when the hardware used for a subroutine stackoverflows.com
 
-## Error (exception) types
+Error (exception) types
+-----------------------
 - CatchableError abstract type for all catchable exceptions
 - EOFError occurred
 - IOError occcurred
@@ -80,7 +82,7 @@ links
 - ResourceExhaustedError when resource request cant be fulfilled
 - ValueError string/object conversion
 
-## doc syntax
+## documentation
 - starting a line with ## creates a title that appears in the left sidebar
 - === creates an underline
 - --- creates a subtitle and appears undearneath the previous title in the sidebar

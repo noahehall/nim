@@ -17,18 +17,21 @@
   - datetimes are singular e.g. month
   - intervals are plural e.g. months
 
-links
+## links
 - [date & times](https://nim-lang.org/docs/times.html)
 - [mono times](https://nim-lang.org/docs/monotimes.html)
 - [timezone names, but any unambiguous string can be used](https://en.wikipedia.org/wiki/Tz_database)
 
-skipped
+## todos
 - time
   - high, low
   - newTimezone
   - zonedTimeFromAdjTime, zonedTimeFromTime
 
-## time format strings
+## time
+
+time format strings
+-------------------
 - design
   - x atleast 1 digit
   - xx always 2 digits
@@ -61,14 +64,16 @@ skipped
 - ffffff microseconds
 - fffffffff nanoseconds
 
-## time
+time design
+-----------
 - 2 groups
   - datetime
   - durations & timeintervals
     - duration
     - intervals: only useful for calculations with timezones
 
-## time Duration (see types)
+time Duration (see types)
+-------------------------
 - more performant than timeinterval
 - stored as [nano]seconds and always normalized (1hr == 60min)
 - 1 day = 86400 seconds
@@ -78,10 +83,12 @@ skipped
     - this limitation doest exist in TimeInterval
 - int.unit works, e.g. 1.years/months/seconds/etc
 
-## time TimeInterval (see types)
+time TimeInterval (see types)
+-----------------------------
 - stored as fields of calendar units to support leap years
 
-## times types
+times types
+-----------
 - DateTime object[enum & int & bool & range]
   - leap seconds are supported but not surfaced
 - DateTimeLocal object[array[range, string]]
@@ -115,11 +122,13 @@ skipped
 - DurationZero tuple(seconds: 0, nanosecond: 0)
   - useful for comparing against durations
 
-## time exceptions
+time exceptions
+---------------
 - TimeFormatParseError: invalid input string
 - TimeParseError: invalid TimeFormat
 
-## time procs
+time procs
+----------
 - cpuTime() is useful for benchmarking
 - utc/local convert to/from eachother; shorthand for (dt|time).inZone(utc|local())
 - isDst true if daily saving time is in effect (not for js backend)

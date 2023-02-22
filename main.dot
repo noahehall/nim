@@ -102,6 +102,9 @@ digraph main {
 "std/os" -> "std/posix";
 "std/os" -> "std/times";
 "deepdives/osIo" -> "std/os";
+"deepdives/data" -> "std/sugar";
+"deepdives/data" -> "std/strutils";
+"deepdives/data" -> "std/sequtils";
 "main" -> "yolowurl/yolowurl";
 "main" -> "deepdives/sugar";
 "main" -> "deepdives/collections";

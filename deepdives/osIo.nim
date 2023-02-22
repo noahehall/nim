@@ -45,7 +45,7 @@
     - i think OSX should align with posix sans whatever follows
     - cachedir: XDG_CACHE_HOME | HOME / .cache [/app] (etc for other dir types)
 
-links
+## links
 - high impact
   - [basic os utils](https://nim-lang.org/docs/os.html)
   - [distro detection & os pkg manager](https://nim-lang.org/docs/distros.html)
@@ -60,15 +60,19 @@ links
   - [open users browser](https://nim-lang.org/docs/browsers.html)
   - [raw posix interface]https://nim-lang.org/docs/posix.html
 
-skipped
+## todos
 - os
   - DynlibFormat, ExeExt[s], ScriptExt
 
 
-## os exceptions
+## os
+
+os exceptions
+-------------
 - OSError e.g. file not found, incorrect perms
 
-## os types
+os types
+--------
 - CopyFlag[enum] symlink handling
 - DeviceId[int32]
 - FileId[int64]
@@ -81,7 +85,8 @@ skipped
 - WriteDirEffect[object] write to a dir
 - WriteEnvEffect[object] write to ram
 
-## os consts
+os consts
+---------
 - AltSep '/'
 - CurDir '.'
 - DirSep '/'
@@ -93,7 +98,8 @@ skipped
 - ParDir ".."
 - PathSep ';'
 
-## os procs
+os procs
+--------
 - copyFile dest parentDir must exist; overwrites but preserves perms
 - execShellCmd blocks until finished
 - createDir mkdir -p
