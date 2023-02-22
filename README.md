@@ -31,16 +31,19 @@
   - [official nim wiki](https://github.com/nim-lang/Nim/wiki)
   - [official nim tutorial](https://nim-lang.org/docs/tut1.html)
   - [official nim manual](https://nim-lang.org/docs/manual.html)
+  - [ctrl f nim](https://nim-lang.github.io/fusion/theindex.html)
 - 1: strings, containers, lists, datetime, maths, crypto, regex,
 - 2: osIo, data, tests
-- 3: backends dir, nimscript dir
-- 4: parallelism_concurrency, memory_immutability > servers, dbs
+- 3: parallelism_concurrency, memory_immutability > servers, dbs
+- 4: backends dir, nimscript dir
 - 5: pragmas, macros
-- 6: books
+- 6: books/code
   - [nim in action](https://www.manning.com/books/nim-in-action)
     - despite being released in 2017, its still highly relevant
   - [mastering nim](https://nim-lang.org/blog/2022/06/29/mastering-nim.html)
     - havent read this one, but its new; i like new
+  - [community packages](./community/README.md)
+  - [my projects](./projects/README.md)
 
 ## links
 
@@ -48,11 +51,6 @@ internal
 
 - [vscode code-runner cmd for both nimscript and nim files](https://github.com/noahehall/theBookOfNoah/blob/master/vscode.settings.jsonc#L185)
 - [shell fns for nim, nimble and choosenim](https://github.com/noahehall/theBookOfNoah/blob/master/linux/bash_cli_fns/nimlang.sh)
-- [hello world](./yolowurl/)
-- [deep dives](./deepdives/)
-- [nimscript](./nimscript/nimscript.nims)
-- [community repos](./community/README.md)
-- [backends](./backends/)
 
 nimlang
 
@@ -68,7 +66,6 @@ interwebs
 
 - there are some basic stuff in deepdives that should actually be in yolowurl
   - ensure deepdives goes beyond the basics
-- [you can grep for specifics here](https://nim-lang.github.io/fusion/theindex.html)
 
 ---
 
