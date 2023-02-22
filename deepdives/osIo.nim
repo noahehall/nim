@@ -1,7 +1,7 @@
 ##
 ## os and i/o
 ## ==========
-## [bookmark](https://nim-lang.org/docs/os.html#unixToNativePath%2Cstring%2Cstring)
+## [bookmark](https://nim-lang.org/docs/osproc.html)
 
 ##[
 ## TLDR

@@ -1,5 +1,6 @@
 #[
   @see
+    - [tasks](https://nim-lang.org/docs/tasks.html)
     - https://github.com/status-im/nim-chronos/
     - https://nim-lang.org/docs/asyncdispatch.html
     - https://nim-lang.org/docs/asyncfutures.html

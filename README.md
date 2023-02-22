@@ -23,7 +23,7 @@
 - 0: tuts links > yolowurl > sugar > collections
   - TODO: find where all the links are and bring them into this file
 - 1: strings, containers, lists, datetime, maths, algorithms, crypto, regex,
-- 2: osIo, tasks, tests, data
+- 2: osIo, data, tests
 - 3: backends dir, nimscript dir
 - 4: parallelism_concurrency, memory_immutability > servers, html, dbs
 - 5: pragmas
