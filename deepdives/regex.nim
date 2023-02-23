@@ -13,6 +13,8 @@ links
 - intros
   - [pcre specification](https://perldoc.perl.org/perlre)
   - [EBNF wikipedia](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form)
+- examples
+  - [nimgrep source code](https://github.com/nim-lang/Nim/blob/devel/tools/nimgrep.nim)
 - high impact
   - [peg matching](https://nim-lang.org/docs/pegs.html)
   - [regex pcre wrapper](https://nim-lang.org/docs/re.html)
@@ -22,6 +24,7 @@ links
   - [perl compatible regex](https://nim-lang.org/docs/pcre.html)
 
 todos
+-----
 - re
   - study the expression: no clue what this means
 

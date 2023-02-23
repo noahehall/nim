@@ -102,6 +102,8 @@ window.addEventListener('DOMContentLoaded', main);
 <ul class="simple"><li><a class="reference" id="os-and-islasho-tldr_toc" href="#os-and-islasho-tldr">TLDR</a></li>
 <li><a class="reference" id="os-and-islasho-links_toc" href="#os-and-islasho-links">links</a></li>
 <li><a class="reference" id="os-and-islasho-todos_toc" href="#os-and-islasho-todos">todos</a></li>
+<li><a class="reference" id="os-and-islasho-system_toc" href="#os-and-islasho-system">system</a></li>
+<li><a class="reference" id="os-and-islasho-varsslashprocsslashetc_toc" href="#os-and-islasho-varsslashprocsslashetc">vars/procs/etc</a></li>
 <li><a class="reference" id="os-and-islasho-os_toc" href="#os-and-islasho-os">os</a></li>
 <li><a class="reference" id="os-and-islasho-os-exceptions_toc" href="#os-and-islasho-os-exceptions">os exceptions</a></li>
 <li><a class="reference" id="os-and-islasho-os-types_toc" href="#os-and-islasho-os-types">os types</a></li>
@@ -120,24 +122,37 @@ window.addEventListener('DOMContentLoaded', main);
 <li>
   <a class="reference reference-toplevel" href="#9" id="59">Lets</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#env"
+      <li><a class="reference" href="#entireFile"
+    title="entireFile = try:
+  readFile helloworldReadme
+except:
+  &quot;&quot;                         ## \
+                             ## calls readAll then closes the file afterwards
+                             ## raises IO exception on err
+                             ## use staticRead instead for compiletime">entireFile</a></li>
+  <li><a class="reference" href="#env"
     title="env =
-  var collectResult_2332033937 = initTable(32)
+  var collectResult_2315256798 = initTable(32)
   ## should probably be a strtabs
   for k, v in envPairs():
     if not contains(v, &quot;poop&quot;) and v == &quot;1&quot;:
-      collectResult_2332033937[k] = v
-  collectResult_2332033937">env</a></li>
+      collectResult_2315256798[k] = v
+  collectResult_2315256798">env</a></li>
+  <li><a class="reference" href="#first5Lines"
+    title="first5Lines = try:
+  readLines helloworldReadme, 5
+except:
+  @[]">first5Lines</a></li>
   <li><a class="reference" href="#hiddenFiles"
     title="hiddenFiles =
-  var collectResult_2332033416 = newSeq(Natural(0))
+  var collectResult_2315256221 = newSeq(Natural(0))
   for k in walkDir(getHomeDir(), false, false):
     if isHidden(k.path):
-      add(collectResult_2332033416, lastPathPart(k.path))
-  collectResult_2332033416">hiddenFiles</a></li>
+      add(collectResult_2315256221, lastPathPart(k.path))
+  collectResult_2315256221">hiddenFiles</a></li>
   <li><a class="reference" href="#hiddenFilesRec"
     title="hiddenFilesRec =
-  var collectResult_2332033437 = newSeq(Natural(0))
+  var collectResult_2315256242 = newSeq(Natural(0))
   for v in walkDirRec(getHomeDir(), {pcFile}, {pcDir}, false, false):
     if (
       10 &lt; i):
@@ -145,20 +160,24 @@ window.addEventListener('DOMContentLoaded', main);
     else:
       i += 1
     if isHidden(v):
-      add(collectResult_2332033437, lastPathPart(v))
-  collectResult_2332033437">hiddenFilesRec</a></li>
+      add(collectResult_2315256242, lastPathPart(v))
+  collectResult_2315256242">hiddenFilesRec</a></li>
 
   </ul>
 </li>
 <li>
   <a class="reference reference-toplevel" href="#10" id="60">Consts</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#dirtmp"
+      <li><a class="reference" href="#buildInfo"
+    title="buildInfo = &quot;Revision 54f3c4c5ffd34be78056ba66672b6f9f270217d8\nCompiled on #33~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Jan 30 17:03:34 UTC 2&quot;">buildInfo</a></li>
+  <li><a class="reference" href="#dirtmp"
     title="dirtmp = &quot;/tmp/min&quot;">dirtmp</a></li>
   <li><a class="reference" href="#dotpath"
     title="dotpath = &quot;./par/sibl/nephew&quot;">dotpath</a></li>
   <li><a class="reference" href="#fossdir"
     title="fossdir = &quot;~/git/foss/&quot;">fossdir</a></li>
+  <li><a class="reference" href="#helloworldReadme"
+    title="helloworldReadme = &quot;helloworld/helloworld.md&quot;">helloworldReadme</a></li>
   <li><a class="reference" href="#md"
     title="md = &quot;md&quot;">md</a></li>
   <li><a class="reference" href="#readme"
@@ -167,10 +186,30 @@ window.addEventListener('DOMContentLoaded', main);
     title="relpath = &quot;par/sibl/niece&quot;">relpath</a></li>
   <li><a class="reference" href="#somefile"
     title="somefile = &quot;README&quot;">somefile</a></li>
+  <li><a class="reference" href="#srcPath"
+    title="srcPath = &quot;/home/poop/git/foss/nim/deepdives/osIo.nim&quot;">srcPath</a></li>
   <li><a class="reference" href="#tmpdir"
     title="tmpdir = &quot;/tmp/nim&quot;">tmpdir</a></li>
+  <li><a class="reference" href="#tmpfile"
+    title="tmpfile = &quot;/tmp/helloworld.txt&quot;">tmpfile</a></li>
   <li><a class="reference" href="#txt"
     title="txt = &quot;txt&quot;">txt</a></li>
+
+  </ul>
+</li>
+<li>
+  <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
+  <ul class="simple simple-toc-section">
+      <ul class="simple nested-toc-section">readFile
+      <li><a class="reference" href="#readFile"
+    title="readFile(): string">readFile(): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">writeLines
+      <li><a class="reference" href="#writeLines%2Cseq%5Bstring%5D"
+    title="writeLines(s: seq[string]): void">writeLines(s: seq[string]): void</a></li>
+
+  </ul>
 
   </ul>
 </li>
@@ -189,7 +228,8 @@ class="link-seesrc" target="_blank">Source</a>
   <p class="module-desc">
 <h1><a class="toc-backref" id="os-and-islasho" href="#os-and-islasho">os and i/o</a></h1><p><a class="reference external" href="https://nim-lang.org/docs/osproc.html">bookmark</a></p>
 
-<h2><a class="toc-backref" id="os-and-islasho-tldr" href="#os-and-islasho-tldr">TLDR</a></h2><ul class="simple"><li>if a proc accepts a filename (string), it may also accept a File/Filehandle</li>
+<h2><a class="toc-backref" id="os-and-islasho-tldr" href="#os-and-islasho-tldr">TLDR</a></h2><ul class="simple"><li>system os/io is included in this file</li>
+<li>if a proc accepts a filename (string), it may also accept a File/Filehandle</li>
 <li>generally you should check when defined(posix/linux/etc) and use unixToNativePath<ul class="simple"><li>extremely relevant if your app supports disparate systems</li>
 <li>posix<ul class="simple"><li>admin: root</li>
 <li>cachedir: XDG_CACHE_HOME | HOME / .cache [/ app] (etc for other dir types)</li>
@@ -234,7 +274,10 @@ class="link-seesrc" target="_blank">Source</a>
 </li>
 </ul>
 
-<h2><a class="toc-backref" id="os-and-islasho-links" href="#os-and-islasho-links">links</a></h2><ul class="simple"><li>high impact<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/os.html">basic os utils</a></li>
+<h2><a class="toc-backref" id="os-and-islasho-links" href="#os-and-islasho-links">links</a></h2><ul class="simple"><li>examples<ul class="simple"><li><a class="reference external" href="https://github.com/unxsh/nitch">nitch source code</a></li>
+</ul>
+</li>
+<li>high impact<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/os.html">basic os utils</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/distros.html">distro detection &amp; os pkg manager</a></li>
 <li><a class="reference external" href="https://nim-lang.github.io/fusion/src/fusion/filepermissions.html">fusion file permissions</a></li>
 <li><a class="reference external" href="https://nim-lang.github.io/fusion/src/fusion/ioutils.html">fusion io utils</a></li>
@@ -245,6 +288,7 @@ class="link-seesrc" target="_blank">Source</a>
 <li><a class="reference external" href="https://nim-lang.org/docs/posix_utils.html">posix wrapper</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/osproc.html">process exec &amp; comms</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/rdstdin.html">read stdin</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/io.html">system io</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/terminal.html">terminal</a></li>
 </ul>
 </li>
@@ -254,9 +298,29 @@ class="link-seesrc" target="_blank">Source</a>
 </li>
 </ul>
 
-<h2><a class="toc-backref" id="os-and-islasho-todos" href="#os-and-islasho-todos">todos</a></h2><ul class="simple"><li>os<ul class="simple"><li>DynlibFormat, ExeExt[s], ScriptExt</li>
+<h2><a class="toc-backref" id="os-and-islasho-todos" href="#os-and-islasho-todos">todos</a></h2><ul class="simple"><li>cpuEndian</li>
+<li>cpuRelax</li>
+<li>DynlibFormat, ExeExt[s], ScriptExt</li>
+</ul>
+
+<h2><a class="toc-backref" id="os-and-islasho-system" href="#os-and-islasho-system">system</a></h2>
+<h2><a class="toc-backref" id="os-and-islasho-varsslashprocsslashetc" href="#os-and-islasho-varsslashprocsslashetc">vars/procs/etc</a></h2><ul class="simple"><li>hostCPU<ul class="simple"><li>&quot;i386&quot;, &quot;alpha&quot;, &quot;powerpc&quot;, &quot;powerpc64&quot;,</li>
+<li>&quot;powerpc64el&quot;, &quot;sparc&quot;, &quot;amd64&quot;, &quot;mips&quot;,</li>
+<li>&quot;mipsel&quot;, &quot;arm&quot;, &quot;arm64&quot;, &quot;mips64&quot;, &quot;mips64el&quot;, &quot;riscv32&quot;, &quot;riscv64&quot;</li>
 </ul>
 </li>
+<li>hostOS<ul class="simple"><li>&quot;windows&quot;, &quot;macosx&quot;, &quot;linux&quot;, &quot;netbsd&quot;,</li>
+<li>&quot;freebsd&quot;, &quot;openbsd&quot;, &quot;solaris&quot;, &quot;aix&quot;, &quot;haiku&quot;, &quot;standalone&quot;</li>
+</ul>
+</li>
+<li>FileMode = enum<ul class="simple"><li>fmRead only</li>
+<li>fmWrite only</li>
+<li>fmReadWrite both</li>
+<li>fmReadWriteExisting same but doesnt create file</li>
+<li>fmAppend append</li>
+</ul>
+</li>
+<li>getFreeMem  number of bytes owned by the process, but do not hold any meaningful data</li>
 </ul>
 
 <h2><a class="toc-backref" id="os-and-islasho-os" href="#os-and-islasho-os">os</a></h2>
@@ -326,9 +390,9 @@ not defined when generating a dynamic library</p>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L142"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L179"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L142" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L179" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -337,44 +401,77 @@ class="link-seesrc" target="_blank">Source</a>
 <div class="section" id="9">
 <h1><a class="toc-backref" href="#9">Lets</a></h1>
 <dl class="item">
-<div id="env">
-<dt><pre><span class="Identifier">env</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">collectResult_2332033937</span> <span class="Other">=</span> <span class="Identifier">initTable</span><span class="Other">(</span><span class="DecNumber">32</span><span class="Other">)</span>
-  <span class="Comment">## should probably be a strtabs</span>
-  <span class="Keyword">for</span> <span class="Identifier">k</span><span class="Other">,</span> <span class="Identifier">v</span> <span class="Keyword">in</span> <span class="Identifier">envPairs</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span>
-    <span class="Keyword">if</span> <span class="Identifier">not</span> <span class="Identifier">contains</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">,</span> <span class="StringLit">&quot;poop&quot;</span><span class="Other">)</span> <span class="Identifier">and</span> <span class="Identifier">v</span> <span class="Operator">==</span> <span class="StringLit">&quot;1&quot;</span><span class="Other">:</span>
-      <span class="Identifier">collectResult_2332033937</span><span class="Other">[</span><span class="Identifier">k</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">v</span>
-  <span class="Identifier">collectResult_2332033937</span></pre></dt>
+<div id="entireFile">
+<dt><pre><span class="Identifier">entireFile</span> <span class="Other">=</span> <span class="Keyword">try</span><span class="Other">:</span>
+  <span class="Identifier">readFile</span> <span class="Identifier">helloworldReadme</span>
+<span class="Keyword">except</span><span class="Other">:</span>
+  <span class="StringLit">&quot;&quot;</span>                         <span class="Comment">## \</span>
+                             <span class="Comment">## calls readAll then closes the file afterwards</span>
+                             <span class="Comment">## raises IO exception on err</span>
+                             <span class="Comment">## use staticRead instead for compiletime</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L263"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L299"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L263" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L299" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="env">
+<dt><pre><span class="Identifier">env</span> <span class="Other">=</span>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_2315256798</span> <span class="Other">=</span> <span class="Identifier">initTable</span><span class="Other">(</span><span class="DecNumber">32</span><span class="Other">)</span>
+  <span class="Comment">## should probably be a strtabs</span>
+  <span class="Keyword">for</span> <span class="Identifier">k</span><span class="Other">,</span> <span class="Identifier">v</span> <span class="Keyword">in</span> <span class="Identifier">envPairs</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span>
+    <span class="Keyword">if</span> <span class="Identifier">not</span> <span class="Identifier">contains</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">,</span> <span class="StringLit">&quot;poop&quot;</span><span class="Other">)</span> <span class="Identifier">and</span> <span class="Identifier">v</span> <span class="Operator">==</span> <span class="StringLit">&quot;1&quot;</span><span class="Other">:</span>
+      <span class="Identifier">collectResult_2315256798</span><span class="Other">[</span><span class="Identifier">k</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">v</span>
+  <span class="Identifier">collectResult_2315256798</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L372"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L372" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="first5Lines">
+<dt><pre><span class="Identifier">first5Lines</span> <span class="Other">=</span> <span class="Keyword">try</span><span class="Other">:</span>
+  <span class="Identifier">readLines</span> <span class="Identifier">helloworldReadme</span><span class="Other">,</span> <span class="DecNumber">5</span>
+<span class="Keyword">except</span><span class="Other">:</span>
+  <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L307"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L307" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
 <div id="hiddenFiles">
 <dt><pre><span class="Identifier">hiddenFiles</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">collectResult_2332033416</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_2315256221</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
   <span class="Keyword">for</span> <span class="Identifier">k</span> <span class="Keyword">in</span> <span class="Identifier">walkDir</span><span class="Other">(</span><span class="Identifier">getHomeDir</span><span class="Other">(</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">false</span><span class="Other">,</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span>
     <span class="Keyword">if</span> <span class="Identifier">isHidden</span><span class="Other">(</span><span class="Identifier">k</span><span class="Other">.</span><span class="Identifier">path</span><span class="Other">)</span><span class="Other">:</span>
-      <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_2332033416</span><span class="Other">,</span> <span class="Identifier">lastPathPart</span><span class="Other">(</span><span class="Identifier">k</span><span class="Other">.</span><span class="Identifier">path</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">collectResult_2332033416</span></pre></dt>
+      <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_2315256221</span><span class="Other">,</span> <span class="Identifier">lastPathPart</span><span class="Other">(</span><span class="Identifier">k</span><span class="Other">.</span><span class="Identifier">path</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Identifier">collectResult_2315256221</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L207"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L244"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L207" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L244" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
 <div id="hiddenFilesRec">
 <dt><pre><span class="Identifier">hiddenFilesRec</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">collectResult_2332033437</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_2315256242</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
   <span class="Keyword">for</span> <span class="Identifier">v</span> <span class="Keyword">in</span> <span class="Identifier">walkDirRec</span><span class="Other">(</span><span class="Identifier">getHomeDir</span><span class="Other">(</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">{</span><span class="Identifier">pcFile</span><span class="Other">}</span><span class="Other">,</span> <span class="Other">{</span><span class="Identifier">pcDir</span><span class="Other">}</span><span class="Other">,</span> <span class="Identifier">false</span><span class="Other">,</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span>
     <span class="Keyword">if</span> <span class="Other">(</span>
       <span class="DecNumber">10</span> <span class="Operator">&lt;</span> <span class="Identifier">i</span><span class="Other">)</span><span class="Other">:</span>
@@ -382,15 +479,15 @@ class="link-seesrc" target="_blank">Source</a>
     <span class="Keyword">else</span><span class="Other">:</span>
       <span class="Identifier">i</span> <span class="Operator">+=</span> <span class="DecNumber">1</span>
     <span class="Keyword">if</span> <span class="Identifier">isHidden</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">)</span><span class="Other">:</span>
-      <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_2332033437</span><span class="Other">,</span> <span class="Identifier">lastPathPart</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">collectResult_2332033437</span></pre></dt>
+      <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_2315256242</span><span class="Other">,</span> <span class="Identifier">lastPathPart</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Identifier">collectResult_2315256242</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L213"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L250"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L213" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L250" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -399,15 +496,28 @@ class="link-seesrc" target="_blank">Source</a>
 <div class="section" id="10">
 <h1><a class="toc-backref" href="#10">Consts</a></h1>
 <dl class="item">
+<div id="buildInfo">
+<dt><pre><span class="Identifier">buildInfo</span> <span class="Other">=</span> <span class="StringLit">&quot;Revision 54f3c4c5ffd34be78056ba66672b6f9f270217d8\nCompiled on #33~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Jan 30 17:03:34 UTC 2&quot;</span></pre></dt>
+<dd>
+
+
+compile time only returns stdout + stderr
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L431"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L431" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
 <div id="dirtmp">
 <dt><pre><span class="Identifier">dirtmp</span> <span class="Other">=</span> <span class="StringLit">&quot;/tmp/min&quot;</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L146"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L183"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L146" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L183" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -417,9 +527,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L148"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L185"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L148" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L185" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -429,9 +539,21 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L147"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L184"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L147" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L184" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="helloworldReadme">
+<dt><pre><span class="Identifier">helloworldReadme</span> <span class="Other">=</span> <span class="StringLit">&quot;helloworld/helloworld.md&quot;</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L297"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L297" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -441,9 +563,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L151"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L188"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L151" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L188" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -453,9 +575,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L152"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L189"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L152" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L189" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -465,9 +587,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L149"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L186"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L149" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L186" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -477,9 +599,21 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L150"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L187"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L150" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L187" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="srcPath">
+<dt><pre><span class="Identifier">srcPath</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/deepdives/osIo.nim&quot;</span></pre></dt>
+<dd>
+
+compile time only
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L164"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L164" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -489,9 +623,21 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L145"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L182"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L145" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L182" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="tmpfile">
+<dt><pre><span class="Identifier">tmpfile</span> <span class="Other">=</span> <span class="StringLit">&quot;/tmp/helloworld.txt&quot;</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L341"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L341" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -501,9 +647,38 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L153"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L190"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L153" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L190" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+
+</dl></div>
+<div class="section" id="12">
+<h1><a class="toc-backref" href="#12">Procs</a></h1>
+<dl class="item">
+<div id="readFile">
+<dt><pre><span class="Keyword">proc</span> <a href="#readFile"><span class="Identifier">readFile</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">EOFError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L313"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L313" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="writeLines,seq[string]">
+<dt><pre><span class="Keyword">proc</span> <a href="#writeLines%2Cseq%5Bstring%5D"><span class="Identifier">writeLines</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L346"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L346" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -517,7 +692,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-23 16:43:51 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-23 20:59:29 UTC</small>
       </div>
     </div>
   </div>

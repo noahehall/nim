@@ -262,14 +262,6 @@ utherRecord	helloworld/helloworld.html#utherRecord	helloworld: utherRecord
 fieldsPrint	helloworld/helloworld.html#fieldsPrint,T,T	helloworld: fieldsPrint[T: distinct tuple | object](first, second: T)	
 declareVariableWithType	helloworld/helloworld.html#declareVariableWithType.t,typedesc,typedesc	helloworld: declareVariableWithType(T: typedesc; value: T:type)	
 x`gensym40	helloworld/helloworld.html#x`gensym40	helloworld: x`gensym40	
-srcPath	helloworld/helloworld.html#srcPath	helloworld: srcPath	
-helloworldReadme	helloworld/helloworld.html#helloworldReadme	helloworld: helloworldReadme	
-entireFile	helloworld/helloworld.html#entireFile	helloworld: entireFile	
-first5Lines	helloworld/helloworld.html#first5Lines	helloworld: first5Lines	
-readFile	helloworld/helloworld.html#readFile	helloworld: readFile(): string	
-tmpfile	helloworld/helloworld.html#tmpfile	helloworld: tmpfile	
-writeLines	helloworld/helloworld.html#writeLines,seq[string]	helloworld: writeLines(s: seq[string]): void	
-buildInfo	helloworld/helloworld.html#buildInfo	helloworld: buildInfo	
 yolo wurl: basic nim syntax	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax	 yolo wurl: basic nim syntax	
 TLDR	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-tldr	  TLDR	
 useful links	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-useful-links	  useful links	
@@ -378,9 +370,3 @@ variants	helloworld/helloworld.html#tuples-objects-and-tables-variants	  variant
 recursive types	helloworld/helloworld.html#tuples-objects-and-tables-recursive-types	  recursive types	
 type classes	helloworld/helloworld.html#tuples-objects-and-tables-type-classes	  type classes	
 typedesc	helloworld/helloworld.html#tuples-objects-and-tables-typedesc	  typedesc	
-os, io	helloworld/helloworld.html#os-io	 os, io	
-TLDR	helloworld/helloworld.html#os-io-tldr	  TLDR	
-links	helloworld/helloworld.html#os-io-links	  links	
-todos	helloworld/helloworld.html#os-io-todos	  todos	
-os vars/procs/etc	helloworld/helloworld.html#os-io-os-varsslashprocsslashetc	  os vars/procs/etc	
-io vars/procs/etc	helloworld/helloworld.html#os-io-io-varsslashprocsslashetc	  io vars/procs/etc	

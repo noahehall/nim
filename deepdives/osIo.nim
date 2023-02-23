@@ -5,6 +5,7 @@
 
 ##[
 ## TLDR
+- system os/io is included in this file
 - if a proc accepts a filename (string), it may also accept a File/Filehandle
 - generally you should check when defined(posix/linux/etc) and use unixToNativePath
   - extremely relevant if your app supports disparate systems
@@ -45,7 +46,10 @@
     - i think OSX should align with posix sans whatever follows
     - cachedir: XDG_CACHE_HOME | HOME / .cache [/app] (etc for other dir types)
 
-## links
+links
+-----
+- examples
+  - [nitch source code](https://github.com/unxsh/nitch)
 - high impact
   - [basic os utils](https://nim-lang.org/docs/os.html)
   - [distro detection & os pkg manager](https://nim-lang.org/docs/distros.html)
@@ -58,16 +62,37 @@
   - [posix wrapper](https://nim-lang.org/docs/posix_utils.html)
   - [process exec & comms](https://nim-lang.org/docs/osproc.html)
   - [read stdin](https://nim-lang.org/docs/rdstdin.html)
+  - [system io](https://nim-lang.org/docs/io.html)
   - [terminal](https://nim-lang.org/docs/terminal.html)
 - niche
   - [open users browser](https://nim-lang.org/docs/browsers.html)
   - [raw posix interface]https://nim-lang.org/docs/posix.html
 
-## todos
-- os
-  - DynlibFormat, ExeExt[s], ScriptExt
+todos
+-----
+- cpuEndian
+- cpuRelax
+- DynlibFormat, ExeExt[s], ScriptExt
 
 
+## system
+
+vars/procs/etc
+--------------
+- hostCPU
+  - "i386", "alpha", "powerpc", "powerpc64",
+  - "powerpc64el", "sparc", "amd64", "mips",
+  - "mipsel", "arm", "arm64", "mips64", "mips64el", "riscv32", "riscv64"
+- hostOS
+  - "windows", "macosx", "linux", "netbsd",
+  - "freebsd", "openbsd", "solaris", "aix", "haiku", "standalone"
+- FileMode = enum
+  - fmRead only
+  - fmWrite only
+  - fmReadWrite both
+  - fmReadWriteExisting same but doesnt create file
+  - fmAppend append
+- getFreeMem  number of bytes owned by the process, but do not hold any meaningful data
 ## os
 
 os exceptions
@@ -135,6 +160,18 @@ osproc types
 
 import std/[sugar, strformat, strutils, sequtils, tables]
 
+echo "############################ system"
+const srcPath = currentSourcePath() ## compile time only
+
+echo fmt"{hostCPU=}"
+echo fmt"{hostOS=}"
+echo fmt"{getFreeMem()=}"
+echo "my process has X bytes of max memory ", getMaxMem()
+echo "my process has X bytes of total memory ", getTotalMem()
+
+echo "my process is using X bytes of memory ", getOccupiedMem() ## \
+  ## number of bytes owned by the process and hold data
+  ##
 echo "############################ os"
 
 import std/os
@@ -216,13 +253,28 @@ let hiddenFilesRec = collect:
     if v.isHidden: v.lastPathPart
 echo fmt"filtered collect getHomeDir().walkdirRec {hiddenFilesRec=}"
 
-echo "############################ os files"
+echo "############################ os/system files"
 # copyFile src, dest, options
 # copyFileToDir src, dest, options
+# flushFile buffer down the toilet
+# lines iterate over any line in file f
+# open a file from a filehandle/string with a given fileMode (defaults readonly); doesnt throw
+# readAll data from a file stream; raises IO exception/errors if current file pos not index 0
+# readBuffer/Bytes/Chars/Line
+# readChar shouldnt be used in perf critical code
+# readLines should always provide 2 arguments
 # removeFile
-# tryRemoveFile
+# reopen for redirecting std[in/out/err] file variables
+# setFilePos
+# setInheritable
 # setLastModificationTime fname, times
+# setStdIoUnbuffered
+# slurp alias for staticRead
+# staticRead compile-time readFile for easy resource embedding, e.g. const myResource = staticRead"mydatafile.bin"
+# tryRemoveFile
 # walkFiles walkDir but accepts a pattern
+# write
+# writeBuffer/Bytes/Chars/File/Line
 
 echo fmt"{fileExists getCurrentDir() / somefile.addFileExt md=}"
 echo fmt"{addFileExt someFile, md=}"
@@ -240,6 +292,63 @@ echo fmt"{sameFileContent readme, readme=}"
 echo fmt"{splitFile readme=}"
 echo fmt"{readme.absolutePath.splitFile=}"
 
+
+
+const helloworldReadme = "helloworld/helloworld.md"
+
+let entireFile = try: readFile helloworldReadme except: "" ## \
+  ## calls readAll then closes the file afterwards
+  ## raises IO exception on err
+  ## use staticRead instead for compiletime
+if entireFile.len is Positive:
+  echo "file has ", len entireFile, " characters"
+
+
+let first5Lines = try: readLines helloworldReadme, 5 except: @[] ## \
+  ## raises IO exception on err, EOF if N > lines in file
+  ## lines must be delimited by LF/CRLF
+  ## available at compiletime
+for line in first5Lines: echo "say my line: ", line
+
+proc readFile: string =
+  let f = open helloworldReadme ## \
+    ## open string, fMode = fmRead, bufSize = -1: File
+    ## open File; string/filehandle; fmode = fmRead: bool
+    ## can pass bufSize whenever you pass a string
+  defer: close f ## \
+    ## make sure to close the file object
+  echo "i started to read when I was ", getFilePos f
+  echo "first line in file is: ", readline f
+  echo if endOfFile f: "game over" else: "hooked on phonics worked for me"
+  echo "we need to get a handle on this file ", getFileHAndle f ## \
+    ## returns the C library's handle on the file
+  echo "so instead use ", getOsFileHandle f ## \
+    ## useful for platform specific logic
+    ## perhaps always use getOsFileHandle, dunno
+  echo "but wasnt good until i turned ", getFilePos f
+  echo "reading so much I gained ", getFileSize f, " in bytes"
+  result = readline f
+echo "the current line in file is ", readFile()
+
+try:
+  for line in helloworldReadme.lines: echo "loop over line: ", line ## \
+    ## append .lines to the string/File
+    ## else it loops over the filename (not the content)
+    ## raises IOError if file doesnt exist
+except: echo "maybe file doesnt exist?"
+
+# upsert a file
+const tmpfile = "/tmp/helloworld.txt"
+writeFile tmpfile, "a luv letter to nim"
+echo readFile tmpfile
+
+# overwrite an existing file
+proc writeLines(s: seq[string]): void =
+  let f = tmpfile.open(fmWrite) # open for writing
+  defer: close f
+  for i, l in s: f.writeLine l
+writeLines @["first line", "Second line"]
+echo readFile tmpfile
 
 echo "############################ os permissions/user"
 # copyFileWithPermissions src, dest, ignorePermErrs = true, options
@@ -266,13 +375,20 @@ let env = collect:
     if "poop" notin v and v == $1: {k: v}
 echo fmt"filtered collect envPairs() {env=}"
 
-echo "############################ os exec/cmds/process"
+echo "############################ os/system exec/cmds/process"
 # exitStatusLikeShell status
+# gorge alias for staticExec
+# gorgeEx similar to gorge but returns tuple(result, exitCode)
 # quoteShell string
+# quoteShellCommand [argX, argY...]
 # quoteShellPosix string
 # quoteShellWindows string
-# quoteShellCommand [argX, argY...]
 # sleep inMilliseconds
+# stderr stream
+# stdin stream
+# stdmsg expands to stdout/err depending on useStdoutAsStdmsg switch
+# stdout stream
+
 when declared commandLineParams: echo fmt"{commandLineParams()}" else: discard ## \
   ## only returns parameters, not the executable (see getAppFilename)
 
@@ -302,6 +418,21 @@ echo fmt"nim/nimble at compiletime {getCurrentCompilerExe()=}"
 
 echo fmt"""{findExe "nim"=}"""
 
+
+# echo "whats your name: "
+# echo "hello: ", readLine(stdin) disabled cuz it stops code runner
+
+stdout.writeLine "equivalent to an echo"
+flushFile stdout
+stderr.writeLine "but i only see red"
+flushFile stderr
+
+# docs
+const buildInfo = "Revision " & staticExec("git rev-parse HEAD") &
+                  "\nCompiled on " & staticExec("uname -v") ## \
+                  ## compile time only
+                  ## returns stdout + stderr
+echo "build info: ", buildInfo
 echo "############################ osproc "
 
 import std/osproc
