@@ -233,5 +233,6 @@ digraph main {
 "main" -> "deepdives/osIo";
 "main" -> "deepdives/data";
 "main" -> "deepdives/asyncParMem";
+"main" -> "deepdives/regex";
 "main" -> "backends/compiler_builds";
 }

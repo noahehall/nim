@@ -65,10 +65,6 @@ nimlang
 - [fusion docs](https://github.com/nim-lang/fusion)
   - [ctrl f it](https://nim-lang.github.io/fusion/theindex.html)
 
-interwebs
-
-- [PEGs vs CFGs](https://stackoverflow.com/questions/5501074/what-are-the-differences-between-pegs-and-cfgs)
-
 ## Todos
 
 - there are some basic stuff in deepdives that should actually be in yolowurl

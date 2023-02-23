@@ -25,7 +25,8 @@ import
     datetime,
     osIo,
     data,
-    asyncParMem
+    asyncParMem,
+    regex
   ],
   backends/[
     compiler_builds
