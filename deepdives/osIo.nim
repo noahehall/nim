@@ -1,7 +1,7 @@
 ##
 ## os and i/o
 ## ==========
-## [bookmark](https://nim-lang.org/docs/osproc.html)
+## [bookmark](https://nim-lang.org/docs/parseopt.html#nimshortnoval-and-nimlongnoval)
 
 ##[
 ## TLDR
@@ -65,7 +65,7 @@ links
   - [fusion scripting](https://nim-lang.github.io/fusion/src/fusion/scripting.html)
   - [get cpu/cors info](https://nim-lang.org/docs/cpuinfo.html)
   - [i/o multiplexing](https://nim-lang.org/docs/selectors.html)
-  - [nim cmd line parser](https://nim-lang.org/docs/parseopt.html)
+  - [parse cmdline opts](https://nim-lang.org/docs/parseopt.html)
   - [posix wrapper](https://nim-lang.org/docs/posix_utils.html)
   - [process exec & comms](https://nim-lang.org/docs/osproc.html)
   - [read stdin](https://nim-lang.org/docs/rdstdin.html)
@@ -199,6 +199,50 @@ osproc procs
 osproc iterators
 ----------------
 - lines of process invoked with startProcess
+
+## parseopt
+- parsing cmd line args
+
+parseopt syntax
+---------------
+- short opt: single dash e.g. -a -a:1 -a=1
+  - -a:1 = (kind: cmdShortOption, key: a, val: 1)
+  - by default -abc = 3 short options each having value ""
+    - providing shortNoVal to initOptParser with any value changes this behavior
+    - -abc becomes a=bc
+- long opt: double dash e.g. --a --a:1 --a
+  - --a:1 = (kind: cmdLongOption, key: a, val: 1)
+  - by default --a b c becomes 1 option and 2 args
+    - providing longNoVal initOptParser with any value changes this behavior
+    - --a b c becomes --a=b arg c
+- cmd args: anything not prefixed with - or following --\s
+  - e.g. -- 1 2 3 results in 3 cmd arguments
+  - -- a = (kind: cmdArgument, key: a)
+- values: anything after the first : or = e.g. -a:1 -a::1 -a=:1 equals 1 and :1, respectively
+
+parseopt types
+--------------
+- CmdLineKind enum
+  - cmdEnd nothing else exists
+  - cmdShortOption -blah
+  - cmdLongOption --blah
+  - cmdArgument blah or -- blah
+- OptParser object to collect short, long options and cmd arguments
+  - pos int
+  - inShortState bool
+  - allowWhitespaceAfterColon bool
+  - shortNoVal set[char] short options with optional values
+  - longNoVal seq[string] long options with optional values
+  - cmds seq[string] whitespace delimated strings
+  - idx int
+  - kind CmdLineKind
+  - (key, val) of short, long or cmds depending on kind
+
+parseopt procs
+--------------
+- initOptParser
+- next
+
 ]##
 
 import std/[sugar, strformat, strutils, sequtils, tables]
@@ -494,3 +538,38 @@ if "type docker".execShellCmd == 0:
   echo fmt"""{execProcess("docker run --rm hello-world")[0 .. 17]=}"""
   echo fmt"""{execProcess("docker", args=["ps"], options=\{poUsePath\})=}"""
 else: echo "you dont have docker installed"
+
+echo "############################ parseopt "
+
+import std/parseopt
+
+const
+  myOpts = "-ab12 -c=3 -d:4 --e f 5 6 --g:7 --h=8 -i::9 -j:=10 --k==11 --l=:12" ## \
+    ## sample options
+  myOptsArgSpace = myOpts & " arg1 arg2" ## \
+    ## sample options with arguments
+  myOptsArgDash = myOpts & " -- arg1 arg2" ## \
+    ## sample options with arguments after double dash
+
+var
+  cmdxOpts = initOptParser(myOptsArgSpace)
+  cmdyOpts = initOptParser(myOptsArgDash)
+  cmdzOpts = initOptParser(myOptsArgDash, shortNoVal = {'x', 'y'}, longNoVal = @["ex", "why"])
+
+proc printToken(kind: CmdLineKind, key: string, val: string) =
+  ## copied from docs
+  case kind
+  of cmdEnd: doAssert(false)  # Doesn't happen with getopt()
+  of cmdShortOption, cmdLongOption:
+      echo fmt"long/short option {key=} {val=}"
+  of cmdArgument:
+    echo fmt"cmd arg {key=} "
+
+echo "\n\n", fmt"{cmdxOpts=}"
+for kind, key, val in cmdxOpts.getopt(): printToken(kind, key, val)
+
+echo "\n\n", fmt"{cmdyOpts=}"
+for kind, key, val in cmdyOpts.getopt(): printToken(kind, key, val)
+
+echo "\n\n", fmt"{cmdzOpts=}"
+for kind, key, val in cmdzOpts.getopt(): printToken(kind, key, val)

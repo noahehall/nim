@@ -169,7 +169,7 @@ include
 export
 ------
 - enables forwarding this modules dependencies onto downstream modules
-- thus downstream modules dont need to import their dependencies' depencencies
+  - thus importers dont need to import their dependencies' depencencies
 - example exports
 .. code-block:: Nim
   export poop # all turds are exported

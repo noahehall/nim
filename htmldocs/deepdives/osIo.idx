@@ -22,6 +22,13 @@ buildInfo	deepdives/osIo.html#buildInfo	osIo: buildInfo
 someCmd	deepdives/osIo.html#someCmd	osIo: someCmd	
 someCmdArg	deepdives/osIo.html#someCmdArg	osIo: someCmdArg	
 myEnv	deepdives/osIo.html#myEnv	osIo: myEnv	
+myOpts	deepdives/osIo.html#myOpts	osIo: myOpts	
+myOptsArgSpace	deepdives/osIo.html#myOptsArgSpace	osIo: myOptsArgSpace	
+myOptsArgDash	deepdives/osIo.html#myOptsArgDash	osIo: myOptsArgDash	
+cmdxOpts	deepdives/osIo.html#cmdxOpts	osIo: cmdxOpts	
+cmdyOpts	deepdives/osIo.html#cmdyOpts	osIo: cmdyOpts	
+cmdzOpts	deepdives/osIo.html#cmdzOpts	osIo: cmdzOpts	
+printToken	deepdives/osIo.html#printToken,CmdLineKind,string,string	osIo: printToken(kind: CmdLineKind; key: string; val: string)	
 os and i/o	deepdives/osIo.html#os-and-islasho	 os and i/o	
 TLDR	deepdives/osIo.html#os-and-islasho-tldr	  TLDR	
 links	deepdives/osIo.html#os-and-islasho-links	  links	
@@ -37,3 +44,7 @@ osproc	deepdives/osIo.html#os-and-islasho-osproc	  osproc
 osproc types	deepdives/osIo.html#os-and-islasho-osproc-types	  osproc types	
 osproc procs	deepdives/osIo.html#os-and-islasho-osproc-procs	  osproc procs	
 osproc iterators	deepdives/osIo.html#os-and-islasho-osproc-iterators	  osproc iterators	
+parseopt	deepdives/osIo.html#os-and-islasho-parseopt	  parseopt	
+parseopt syntax	deepdives/osIo.html#os-and-islasho-parseopt-syntax	  parseopt syntax	
+parseopt types	deepdives/osIo.html#os-and-islasho-parseopt-types	  parseopt types	
+parseopt procs	deepdives/osIo.html#os-and-islasho-parseopt-procs	  parseopt procs	
