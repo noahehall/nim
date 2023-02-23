@@ -92,6 +92,8 @@ vars/procs/etc
   - fmReadWriteExisting same but doesnt create file
   - fmAppend append
 - getFreeMem  number of bytes owned by the process, but do not hold any meaningful data
+
+
 ## os
 
 os exceptions
@@ -430,6 +432,7 @@ const buildInfo = "Revision " & staticExec("git rev-parse HEAD") &
                   ## compile time only
                   ## returns stdout + stderr
 echo "build info: ", buildInfo
+
 echo "############################ osproc "
 
 import std/osproc

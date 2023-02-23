@@ -7,9 +7,11 @@
 - pretty much skipped the entire section on templates, and definitely on macros
 
 todos
+-----
 - [macros](https://nim-lang.org/docs/manual.html#macros)
   - ^ continue until you get to SpecialTypes
 - [macro tut](https://nim-lang.org/docs/tut3.html)
+- [fusion astdsl](https://nim-lang.github.io/fusion/src/fusion/astdsl.html)
 
 ## templates
 - simple form of a macro

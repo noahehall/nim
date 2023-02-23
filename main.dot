@@ -211,6 +211,7 @@ digraph main {
 "deepdives/datetime" -> "std/sugar";
 "deepdives/datetime" -> "std/strformat";
 "deepdives/datetime" -> "std/times";
+"deepdives/maths" -> "std/math";
 "deepdives/osIo" -> "std/sugar";
 "deepdives/osIo" -> "std/strformat";
 "deepdives/osIo" -> "std/strutils";
@@ -249,6 +250,7 @@ digraph main {
 "main" -> "deepdives/containers";
 "main" -> "deepdives/data";
 "main" -> "deepdives/datetime";
+"main" -> "deepdives/maths";
 "main" -> "deepdives/osIo";
 "main" -> "deepdives/pragmasEffects";
 "main" -> "deepdives/regex";

@@ -1,16 +1,24 @@
-#[
-  @see
-    - https://nim-lang.org/docs/base64.html
-    - https://nim-lang.org/docs/hashes.html
-    - https://nim-lang.org/docs/md5.html
-    - https://nim-lang.org/docs/mersenne.html
-    - https://nim-lang.org/docs/oids.html
-    - https://nim-lang.org/docs/openssl.html
-    - https://nim-lang.org/docs/random.html
-    - https://nim-lang.org/docs/sha1.html
-    - https://nim-lang.org/docs/sysrand.html
-]#
+##
+## cryptography
+## ============
+## [bookmark](https://nim-lang.org/docs/osproc.html)
 
+##[
+## TLDR
+- random shouldnt be used for cryptographic purposes
+- mersenne is deprecated; use random instead
 
-echo "############################ random"
-# dont use for cryptographic purposes
+links
+-----
+- high impact
+  - [base64 en/decoder](https://nim-lang.org/docs/base64.html)
+  - [efficient hashing](https://nim-lang.org/docs/hashes.html))
+  - [md5 checksums](https://nim-lang.org/docs/md5.html)
+  - [globally distributed unique IDs](https://nim-lang.org/docs/oids.html)
+  - [openssl](https://nim-lang.org/docs/openssl.html)
+  - [random number generator](https://nim-lang.org/docs/random.html)
+  - [sha-1](https://nim-lang.org/docs/sha1.html)
+  - [random sys number generator](https://nim-lang.org/docs/sysrand.html)
+- nitche
+  - [mersenne](https://nim-lang.org/docs/mersenne.html)
+]##
