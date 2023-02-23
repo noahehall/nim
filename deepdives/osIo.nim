@@ -115,6 +115,22 @@ os procs
 - osLastError $?
 - newOsError errorCode determines the msg as retrieved by osErrorMsg, get code via osLastError
 - raiseOsError
+
+
+## osproc
+- advanced cmd execution & process communication
+
+osproc types
+------------
+- Process ref of an os proces
+- ProcessOption enum that can be passed to startProcess
+  - poEchoCmd before executing
+  - poUsePath to find cmd
+  - poEvalCommand without quoting
+  - poStdErrToStdOut 2>&1
+  - poParentStreams use parent stream
+  - poInteractive optimize buffer handling for UI applications
+  - poDaemon execute cmd in background
 ]##
 
 import std/[sugar, strformat, strutils, sequtils, tables]

@@ -1,7 +1,7 @@
 ##
 ## working with data
 ## =================
-## [bookmark](https://nim-lang.org/docs/logging.html)
+## [bookmark](https://nim-lang.org/docs/parsecfg.html)
 
 ##[
 TLDR
