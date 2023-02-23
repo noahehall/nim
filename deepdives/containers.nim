@@ -1,7 +1,7 @@
 ##
 ## containers deepdive
 ## ===================
-## [bookmark](https://nim-lang.org/docs/strtabs.html)
+## [bookmark](https://nim-lang.github.io/fusion/src/fusion/btreetables.html)
 
 ##[
 ## TLDR
@@ -11,16 +11,15 @@
 ## todos
 - tables
   - [the commit for indexBy, scroll down for tests](https://github.com/nim-lang/Nim/commit/5498415f3b44048739c9b7116638824713d9c1df)
-  - newTableFrom
 
 ## links
 - high impact
   - [tables aka dictionary](https://nim-lang.org/docs/tables.html)
   - [string tables](https://nim-lang.org/docs/strtabs.html)
-  - [enum utils](https://nim-lang.org/docs/enumutils.html)
   - [options](https://nim-lang.org/docs/options.html)
   - [fusion btree tables](https://nim-lang.github.io/fusion/src/fusion/btreetables.html)
 - niche
+  - [enum utils](https://nim-lang.org/docs/enumutils.html)
   - [shared tables](https://nim-lang.org/docs/sharedtables.html)
 
 
@@ -66,11 +65,31 @@ options operators
 -----------------
 - == true if both are none/equal values
 
+## strtabs
+- efficient string to string hash table supporting case/style in/sensitive
+  - style insenstive: ignores _ and case
+  - case is/not sensitive does what you think
+- particularly powerful as values can be retrieved from ram if $key not found
+
+strtab types
+------------
+- FormatFlag enum
+  - useEnvironment value for $key if not found
+  - useEmpty string as default $key value
+  - useKey for value if not found in env/table
+- StringTableMode enum
+  - modeCase[In]Sensitive
+  - modeStyleInsensitive
+- StringTableObj
+- StringTableRef
+
 ]##
 
 import std/[sugar, strformat, strutils, sequtils]
 
 echo "############################ tables"
+# newTableFrom
+
 import std/tables
 
 const
@@ -102,17 +121,8 @@ echo fmt"collect hashTable.[m]values: {values=}"
 
 let keyValues = collect:
   for k, v in hashTable.pairs: (k, v)
-echo fmt"collect hashTable.[m]pairs: {keyValues=}"
-
-
-echo "############################ impure tables"
-var
-  mutated = hashTable
-  mCountTable = countTable
-proc echoMutated(): void = echo "table: ", mutated, " count: ", mcountTable
-echoMutated()
-
-mutated["middle"] = "slime"; echomutated()
+echo fmt"collect hashTable.[m]pairs: {keyValues= ## \
+      ## mode required wh
 mutated.del "middle"; echoMutated()
 mCountTable.inc 'p'; echoMutated()
 mCountTable.merge countTable; echoMutated()
@@ -167,3 +177,31 @@ echo fmt"{maybe.filter(x => x.len == 1_000_000)=}"
 echo fmt"will mutate if nothings returned {maybe.map(x => x & x)=}"
 echo fmt"{maybe.flatMap(something)=}"
 echo fmt"{some(maybe).flatten=}"
+
+echo "############################ strtabs"
+# len, keys, pairs, values
+
+import std/strtabs
+
+let
+  authnz = {
+    "ROLE": "USER",
+    "TRUSTED": "0",
+    }.newStringTable modeCaseSensitive ## \
+      ## also accepts a tuple[varargs] of keyX,valY, ...
+
+echo fmt"{authnz.mode=}"
+echo fmt"key % obj -> $ROLE $TRUSTED" % authnz
+
+echo fmt"""{"ROLE" in authnz=}"""
+echo fmt"""{"RoLe" notin authnz=}"""
+echo fmt"""{authnz.hasKey "poop"=}"""
+echo fmt"""{authnz.getOrDefault "RoLe", "ANON"=}"""
+
+
+echo "############################ strtabs impure"
+# del
+#
+var newUser = newStringTable(modeCaseSensitive)
+
+proc echoUser: void = echo fmt"{newUser=}"

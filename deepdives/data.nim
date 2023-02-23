@@ -1,13 +1,11 @@
 ##
 ## working with data
 ## =================
-## [bookmark](https://nim-lang.org/docs/logging.html)
+## [bookmark](https://nim-lang.org/docs/jsonutils.html)
 
 ##[
 TLDR
 - [see dom96s response to this question before using marshal to parse json](https://stackoverflow.com/questions/26191114/how-to-convert-object-to-json-in-nim)
-- json imports parsejson module; no need to import it twice
-
 
 links
 - high impact
@@ -33,13 +31,15 @@ links
 
 ## json
 
+- json imports parsejson module; no need to import it twice
 - [] field axor, throws if not found
 - {} field axor, nil/default value if not found; works?.like?.es6 operator
-  - IMO use this over [] {"cuz", "u", "can", "do", "this"} to dig into an obj
+  - IMO use this over [] {"cuz", "u", "can", "do", "this"} {to: {dig:{ into: {an: obj }}}
 - JObject preserves key ordering
-- use std/option for keys when marshalling a JsonNode to a custom type
+- use std/option for maybe keys when marshalling a JsonNode to a custom type
 - use `somekey` for some key thats some reserved nim keyword
 - %* doesnt support heterogeneous arrays, sets in objects, or not nil annotations
+- may require importing the underlying stdlib (e.g. tables)/jsonutils for serializing complex types
 
 json types
 ----------
@@ -75,6 +75,7 @@ import std/[sugar, strformat, strutils, sequtils, options, tables]
 echo "############################ json "
 # items/keys/mitems/mpairs/pairs
 # parseJsonFragments
+
 import std/json
 
 type
@@ -152,5 +153,3 @@ reqData{"noah", "quotes"} = %* ["poop"]; echoReqData()
 reqData{"noah", "quotes"}.add newJString("soup"); echoReqData()
 reqData.add "greg", newJObject(); echoReqData()
 reqData.delete "noah"; echoReqData()
-
-echo "############################ logging "
