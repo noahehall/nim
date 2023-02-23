@@ -4,19 +4,21 @@
 ##[
 ## TLDR
 - iterators are included, as their only used with loops
-- for loops can iterator over any iterator
+  - the parallel iterator is in asyncParMem
+- for loops can iterate over any iterator
 
-## todos
-- [nim by example: closure iterators](https://nim-by-example.github.io/for_iterators/)
-.. code-block:: Nim
-  # bunch of todos
-  iterToProc
 
-## links
+links
+-----
 - [iterators](https://nim-lang.org/docs/iterators.html)
 - [iterator tut](https://nim-by-example.github.io/for_iterators/)
 - [closureScope](https://nim-lang.org/docs/system.html#%7C%7C.i%2CS%2CT%2Cstaticstring)
 - [status iterator docs](https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#iterators)
+
+todos
+-----
+- [nim by example: closure iterators](https://nim-by-example.github.io/for_iterators/)
+- iterToProc
 
 ## loop/iterator related procs
 - finished determine if a first class iterator has finished

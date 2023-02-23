@@ -8,6 +8,7 @@
 - enums are in ordinalStructured.nim
 
 todo
+----
 - [symbol lookups in generics](https://nim-lang.org/docs/manual.html#generics-symbol-lookup-in-generics)
   - mixin statement
   - bind statement
@@ -21,6 +22,7 @@ todo
 - blah.reset an object to its default value
 
 links
+-----
 - [distinct type aliases](https://nim-lang.org/docs/manual.html#types-distinct-type)
 - [type bound operators](https://nim-lang.org/docs/manual.html#procedures-type-bound-operators)
 - [inheritance](https://nim-lang.org/docs/manual.html#type-relations)
@@ -126,8 +128,7 @@ links
   - x =trace y Generic trace implementation
 
 ## variants
-- preferred over an object hierarchy with multiple levels
-- when simple variants (based on some discriminate field) will suffice
+- preferred over an object hierarchy with multiple levels when simple variants suffice
 
 ## recursive types
 - objects, tuples and ref objects that recursively depend on each other

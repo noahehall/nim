@@ -52,3 +52,21 @@ IOEffect
 - TimeEffect
 - WriteIOEffect
 ]##
+
+
+echo "############################ push/pop pragma"
+# @see https://nim-lang.org/docs/manual.html#pragmas-push-and-pop-pragmas
+# this (im-status) trick prohibits procs from throwing defects, but allows errors
+# compiler will throw if its analysis determines a proc can throw a defect, helps u debug
+
+# all procs after this line will have this pragma
+# first line of your file
+{.push raises:[Defect]}
+
+# your
+# code
+# here
+
+# all procs after this line will have the previous push removed
+# last line of your file
+{.pop.}

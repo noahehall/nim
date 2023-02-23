@@ -276,18 +276,23 @@ useful links	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-useful-l
 todos	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-todos	  todos	
 std library	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-std-library	  std library	
 style guide &amp; best practices	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-style-guide-amp-best-practices	  style guide &amp; best practices	
+idiomatic nim	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-idiomatic-nim	  idiomatic nim	
+my preferences	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-my-preferences	  my preferences	
 modules	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-modules	  modules	
 import	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-import	  import	
-include:	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-includecolon	  include:	
+include	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-include	  include	
 export	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-export	  export	
 packages	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-packages	  packages	
+syntax	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-syntax	  syntax	
 operators	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-operators	  operators	
 keywords	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-keywords	  keywords	
 statements	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-statements	  statements	
 expressions	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-expressions	  expressions	
-visibility	helloworld/helloworld.html#visibility	 visibility	
+visibility	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-visibility	  visibility	
 variables and globals	helloworld/helloworld.html#variables-and-globals	 variables and globals	
 TLDR	helloworld/helloworld.html#variables-and-globals-tldr	  TLDR	
+var/global todos	helloworld/helloworld.html#variables-and-globals-varslashglobal-todos	  var/global todos	
+var/global links	helloworld/helloworld.html#variables-and-globals-varslashglobal-links	  var/global links	
 var	helloworld/helloworld.html#variables-and-globals-var	  var	
 let	helloworld/helloworld.html#variables-and-globals-let	  let	
 const	helloworld/helloworld.html#variables-and-globals-const	  const	
@@ -301,6 +306,7 @@ type inspection	helloworld/helloworld.html#variables-and-globals-type-inspection
 echo/repr	helloworld/helloworld.html#variables-and-globals-echoslashrepr	  echo/repr	
 simple types	helloworld/helloworld.html#simple-types	 simple types	
 TLDR	helloworld/helloworld.html#simple-types-tldr	  TLDR	
+links	helloworld/helloworld.html#simple-types-links	  links	
 string	helloworld/helloworld.html#simple-types-string	  string	
 char	helloworld/helloworld.html#simple-types-char	  char	
 byte	helloworld/helloworld.html#simple-types-byte	  byte	
@@ -311,7 +317,7 @@ number types	helloworld/helloworld.html#simple-types-number-types	  number types
 misc procs	helloworld/helloworld.html#simple-types-misc-procs	  misc procs	
 branching: if when case	helloworld/helloworld.html#branchingcolon-if-when-case	 branching: if when case	
 TLDR	helloworld/helloworld.html#branchingcolon-if-when-case-tldr	  TLDR	
-todos	helloworld/helloworld.html#branchingcolon-if-when-case-todos	  todos	
+branching todos	helloworld/helloworld.html#branchingcolon-if-when-case-branching-todos	  branching todos	
 when	helloworld/helloworld.html#branchingcolon-if-when-case-when	  when	
 case	helloworld/helloworld.html#branchingcolon-if-when-case-case	  case	
 exception handling, debugging (todo), documentation	helloworld/helloworld.html#exception-handling-debugging-todo-documentation	 exception handling, debugging (todo), documentation	
@@ -324,8 +330,8 @@ Error (exception) types	helloworld/helloworld.html#exception-handling-debugging-
 documentation	helloworld/helloworld.html#exception-handling-debugging-todo-documentation-documentation	  documentation	
 loops and iterators	helloworld/helloworld.html#loops-and-iterators	 loops and iterators	
 TLDR	helloworld/helloworld.html#loops-and-iterators-tldr	  TLDR	
-todos	helloworld/helloworld.html#loops-and-iterators-todos	  todos	
 links	helloworld/helloworld.html#loops-and-iterators-links	  links	
+todos	helloworld/helloworld.html#loops-and-iterators-todos	  todos	
 loop/iterator related procs	helloworld/helloworld.html#loops-and-iterators-loopslashiterator-related-procs	  loop/iterator related procs	
 iterators	helloworld/helloworld.html#loops-and-iterators-iterators	  iterators	
 blocks	helloworld/helloworld.html#blocks	 blocks	
@@ -344,6 +350,7 @@ slice	helloworld/helloworld.html#ordinals-and-structured-slice	  slice
 ordinals/structured interface	helloworld/helloworld.html#ordinals-and-structured-ordinalsslashstructured-interface	  ordinals/structured interface	
 routines	helloworld/helloworld.html#routines	 routines	
 TLDR	helloworld/helloworld.html#routines-tldr	  TLDR	
+todos	helloworld/helloworld.html#routines-todos	  todos	
 procedures	helloworld/helloworld.html#routines-procedures	  procedures	
 openArray	helloworld/helloworld.html#routines-openarray	  openArray	
 varargs	helloworld/helloworld.html#routines-varargs	  varargs	
@@ -352,6 +359,8 @@ closures	helloworld/helloworld.html#routines-closures	  closures
 anonymous procs	helloworld/helloworld.html#routines-anonymous-procs	  anonymous procs	
 tuples, objects and tables	helloworld/helloworld.html#tuples-objects-and-tables	 tuples, objects and tables	
 TLDR	helloworld/helloworld.html#tuples-objects-and-tables-tldr	  TLDR	
+todo	helloworld/helloworld.html#tuples-objects-and-tables-todo	  todo	
+links	helloworld/helloworld.html#tuples-objects-and-tables-links	  links	
 tuples	helloworld/helloworld.html#tuples-objects-and-tables-tuples	  tuples	
 objects	helloworld/helloworld.html#tuples-objects-and-tables-objects	  objects	
 type aliases	helloworld/helloworld.html#tuples-objects-and-tables-type-aliases	  type aliases	
@@ -371,5 +380,7 @@ type classes	helloworld/helloworld.html#tuples-objects-and-tables-type-classes	 
 typedesc	helloworld/helloworld.html#tuples-objects-and-tables-typedesc	  typedesc	
 os, io	helloworld/helloworld.html#os-io	 os, io	
 TLDR	helloworld/helloworld.html#os-io-tldr	  TLDR	
+links	helloworld/helloworld.html#os-io-links	  links	
+todos	helloworld/helloworld.html#os-io-todos	  todos	
 os vars/procs/etc	helloworld/helloworld.html#os-io-os-varsslashprocsslashetc	  os vars/procs/etc	
 io vars/procs/etc	helloworld/helloworld.html#os-io-io-varsslashprocsslashetc	  io vars/procs/etc	

@@ -8,7 +8,8 @@
 - use whens for completely removing sections of code at compile time
 - all can be used as expressions and the result assigned to a var
 
-## todos
+branching todos
+---------------
 - [likely](https://nim-lang.org/docs/system.html#likely.t%2Cbool)
 - [unlikely](https://nim-lang.org/docs/system.html#unlikely.t%2Cbool)
 

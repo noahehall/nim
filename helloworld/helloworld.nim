@@ -7,7 +7,7 @@
 ## TLDR
 - only uses the implicitly imported system;
   - dont import (system, threads, channel) directly, theres some compiler magic to makem work
-  - threads, channels, templates, macros, effects and pragmas are in deepdives
+  - threads, channels, templates, macros, effects, pragmas and tests are in deepdives
 - in general [the source code](https://github.com/noahehall/nim/tree/develop/helloworld/modules) has multiple examples
   - we dont use runnableExamples because we want to run on the cmd line & in vscode
   - however real code should use runnableExamples for docs
@@ -45,22 +45,23 @@ todos
 
 ## style guide & best practices
 
-idiomatic nim (from docs/styleguide)
-- always qualify the imports from std, e.g. std/os and std/[os, posix]
-- any tuple/proc/type signature longer than 1 line should have their parameters aligned with the one above it
+idiomatic nim
+-------------
+- always qualify the imports from std, e.g. std/os and std/[os, posix] (styleguide?)
+- any tuple/proc/type signature longer than 1 line should have their parameters aligned with the one above it (styleguide)
 - cast > type conversion to force the compiler to reinterpret the bit pattern (docs)
-- check the styleguide for naming conventions (theres bunches), the idea is to make it easy to `guess the procedure`
+- follow nims api conventions (theres bunches), the idea is to make it easy to `guess the procedure` (naming scheme?)
 - composition > inheritance is often the better design (docs)
 - declare as var > proc var params when modifying global vars (docs)
-- dont align the = across subsequent lines like you see java apps
-- dont prefix getters/setters with `get/setBlah` unless the it has side effects, or the cost is not O(1)
+- dont align the = across subsequent lines like you see java apps (styleguide)
+- dont prefix getters/setters with `get/setBlah` unless the it has side effects, or cost > O(1) (styleguide)
 - exceptions/defects types should always have an Error|Defect suffix (styleguide)
 - identifiers should use subjectVerb not verbSubject (lol this ones gonna hurt) (styleguide)
 - impure enum members should always have a prefix (e.g. abbr of the enum name) (styleguide)
 - in general stay away from MACRO_CASE naming conventions, no matter what it is (styleguide)
 - keep lines <= 80  with 2 spaces for indentation (styleguide)
 - module names are generally long to be descriptive (docs)
-- multi-line invocations should continue on the same column as the open paranthesis
+- multi-line invocations should continue on the same column as the open paranthesis (styleguide)
 - MyCustomError should follow the hierarchy defiend in system.Exception (docs)
 - never raise an exception without a msg, and never for control flow (docs maybe?)
 - object variants > inheritance for simple types; no type conversion required (docs)
@@ -93,7 +94,8 @@ idiomatic nim (from docs/styleguide)
 borrowed from somewhere else (e.g. status auditor docs)
 - MACRO_CASE for external constants (status) (permitted in styleguide but not preferred)
 
-my preferences thus far
+my preferences
+--------------
 - strive for parantheseless code, remember echo f 1, f 2 == echo(f(1), f(2)) and not echo(f(1, f(2)))
 - keep it as sugary as possible
 - prefer fn x,y over x.fn y over fn(x, y) unless it conflicts with the context
@@ -122,7 +124,8 @@ my preferences thus far
   - procs/iterators are overloaded, so no ambiguity
   - everything else must be qualified (c.b | d.b) if signatures are ambiguous
 
-## import
+import
+------
 - top-level symbols marked * from another module
 - are only allowed at the top level
 - looks in the current dir relative to the imported file and uses the first match
@@ -142,7 +145,8 @@ my preferences thus far
     from thisThing import nil # force symbol qualification, e.g. thisThing.blah()
     from thisThing as thingThis import nil # even with an alias
 
-## include:
+include
+-------
 - a file as part of this module
 - can be used outside of the top level, e.g. scoped to a block/proc
 - becareful with too many includes, its difficult to debug when running the main file
@@ -162,7 +166,8 @@ my preferences thus far
     osIo
   ]
 
-## export
+export
+------
 - enables forwarding this modules dependencies onto downstream modules
 - thus downstream modules dont need to import their dependencies' depencencies
 - example exports
@@ -174,7 +179,10 @@ my preferences thus far
 - a file named identifier.nimble creates a package
 - all sibling/descendent identifier.nim files become modules of that package
 
-## operators
+## syntax
+
+operators
+---------
 - precedence determined by its first character
 - are just overloaded procs, e.g. proc `+`(....) and can be invoked just like procs
 - infix: a + b must receive 2 args
@@ -205,7 +213,8 @@ my preferences thus far
   # - ref semantics: referenced on assignment, anything with ref keyword
     =
 
-## keywords
+keywords
+--------
 - return
   - without an expression is shorthand for return result
 - result
@@ -215,7 +224,8 @@ my preferences thus far
 - discard
   - use a proc for its side effects but ignore its return value
 
-## statements
+statements
+----------
 - simple statements
   - cant contain other statements unless separated with a semicolon
   - e.g. assignment, invocations, and using return
@@ -224,12 +234,14 @@ my preferences thus far
   - must always be indented except for single complex statements
   - e.g. if, when, for, while
 
-## expressions
+expressions
+-----------
 - result in a value
 - indentation can occur after operators, open parantheiss and commas
 - paranthesis and semicolins allow you to embed statements where expressions are expected
 
-# visibility
+visibility
+----------
 - var: local or global depending on scope,
 - force local scope vars to global via {.global.} pragma
 - export via symbols via poop* and it will be visible to client modules

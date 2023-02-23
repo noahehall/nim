@@ -4,16 +4,17 @@
 
 ##[
 ## TLDR
-- didnt finish this section, come back later
+
+links
+-----
+- [system io](https://nim-lang.org/docs/io.html)
+- [nitch source code](https://github.com/unxsh/nitch)
+- [nimgrep source code](https://github.com/nim-lang/Nim/blob/devel/tools/nimgrep.nim)
 
 todos
-- [io](https://nim-lang.org/docs/io.html)
-- [check the nitch source code for good examples](https://github.com/unxsh/nitch)
-- [check the nimgrep source code for good examples](https://github.com/nim-lang/Nim/blob/devel/tools/nimgrep.nim)
-.. code-block:: Nim
-  # bunch of todos
-  cpuEndian
-  cpuRelax
+-----
+- cpuEndian
+- cpuRelax
 
 
 ## os vars/procs/etc

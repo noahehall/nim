@@ -25,7 +25,8 @@
   - UncheckedArray[T] array with no bounds checking for implmenting customized flexibly sized arrays
   - varargs[T] an openarray paramter that accepts a variable number of args in a procedure
 
-## links
+links
+-----
 - [nim by example: arrays](https://nim-by-example.github.io/arrays/)
 
 ## arrays

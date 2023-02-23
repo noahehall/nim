@@ -6,11 +6,11 @@
 ## - [testament src](https://github.com/nim-lang/Nim/tree/devel/testament)
 
 ##[
-TLDR
+## TLDR
 - dunno yet
 
 todos
-- [assertions](https://nim-lang.org/docs/assertions.html)
+-----
 - [dr nim](https://nim-lang.org/docs/drnim.html)
 - [status fuzz testing tool](https://github.com/status-im/nim-testutils/tree/master/testutils/fuzzing)
 - [testament: preferred testing tool](https://nim-lang.org/docs/testament.html)

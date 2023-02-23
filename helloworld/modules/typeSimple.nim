@@ -8,9 +8,10 @@
 - stay away from [blah% operators in practice](https://nim-lang.org/docs/manual.html#types-preminusdefined-integer-types)
   - % are mainly for backwards compatibility with previous nim versions
 - generally procs that work for strings work for chars
-- generally strings can use any seq proc for manipulation (but see strutils)
+- generally strings can use any seq proc for manipulation
 
 links
+-----
 - [wide strings](https://nim-lang.org/docs/widestrs.html)
 - [dollars](https://nim-lang.org/docs/dollars.html)
 

@@ -11,7 +11,8 @@
   - have to be allocated on the heap (var) because their lifetime is unknown
 - i think docgen pretty prints the code in the html; so thats cool
 
-## todos
+todos
+-----
 - reread the assertion docs and capture the info
 .. code-block:: Nim
   # bunch of todos
@@ -211,21 +212,3 @@ when isMainModule:
 echo "############################ debugger"
 # Todo, find the debugger apiin the docs somewhere
 # PFrame runtime frame of the callstack, part of the debugger api
-
-
-echo "############################ push/pop pragma"
-# @see https://nim-lang.org/docs/manual.html#pragmas-push-and-pop-pragmas
-# this (im-status) trick prohibits procs from throwing defects, but allows errors
-# compiler will throw if its analysis determines a proc can throw a defect, helps u debug
-
-# all procs after this line will have this pragma
-# first line of your file
-{.push raises:[Defect]}
-
-# your
-# code
-# here
-
-# all procs after this line will have the previous push removed
-# last line of your file
-{.pop.}

@@ -2,8 +2,7 @@
 ## ======
 
 ##[
-TLDR
-----
+## TLDR
 - blocks have a () syntax but we skipped it as its not idiomatic nim in this context
 - scope starts after the : symbol, and ends when the indentention returns to previous level
 - named blocks have similar usescases to javascript

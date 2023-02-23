@@ -5,17 +5,18 @@
 ##[
 ## TLDR
 - routine: a symbol of kind proc, func, method, iterator, macro, template, converter
-  - converters are covered in globalVariables.nim i think
-  - templates in templateMacros.nim
-  - iterators in loopsIterators.nim
-  - lambdas in deepdives/sugar.nim
+- converters are covered in globalVariables.nim i think
+  - templates in templateMacros
+  - iterators in loopsIterators
+  - lambdas in sugar
 
-- todos
-  - [offsetOf](https://nim-lang.org/docs/system.html#offsetOf.t%2Ctypedesc%5BT%5D%2Cuntyped)
-  - [rangeCheck(cond)](https://nim-lang.org/docs/system.html#rangeCheck.t)
-  - [forward directions, couldnt get it to compile](https://nim-lang.org/docs/manual.html#var-return-type-future-directions)
-  - [read the status docs on this one](https://nimbus.guide/auditors-book/02.1.4_closure_iterators.html)
-    - something to do with long lived ref objects & unreclaimable memory
+todos
+-----
+- [offsetOf](https://nim-lang.org/docs/system.html#offsetOf.t%2Ctypedesc%5BT%5D%2Cuntyped)
+- [rangeCheck(cond)](https://nim-lang.org/docs/system.html#rangeCheck.t)
+- [forward directions, couldnt get it to compile](https://nim-lang.org/docs/manual.html#var-return-type-future-directions)
+- [read the status docs on this one](https://nimbus.guide/auditors-book/02.1.4_closure_iterators.html)
+  - something to do with long lived ref objects & unreclaimable memory
 
 ## procedures
 - returning things: (cant contain a yield statement)

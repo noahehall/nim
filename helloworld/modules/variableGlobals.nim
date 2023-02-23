@@ -11,7 +11,8 @@
 - additional type features are covered in tupleObjectTable.nim
 - you can call clear on pretty much anything
 
-todos
+var/global todos
+----------------
 - [couldnt get eval to work](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L2816)
 .. code-block:: Nim
   # probably need a memory_mgmt.nim file
@@ -48,7 +49,8 @@ todos
   setControlCHook proc to run when program is ctrlc'ed
   sizeof blah in bytes
 
-links
+var/global links
+----------------
 - [system vars](https://nim-lang.org/docs/system.html#8)
 - [typeinfo](https://nim-lang.org/docs/typeinfo.html)
 - [converters](https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#converter)
@@ -120,22 +122,21 @@ let poop2 = "hello"
 const poop3 = "flush"
 
 # docs
-# computes fac(4) at compile time:
-# notice the use of semi colins to have multiple statements on a single line
-const fac4 = (var x = 1; for i in 1..4: x *= i; x)
+const fac4 = (var x = 1; for i in 1..4: x *= i; x) ## \
+  ## notice the use of semi colins to have multiple statements on a single line
 
 echo poop1, poop2, poop3, fac4
 
-# stropping
 let `let` = "stropping"
-echo(`let`) # stropping enables keywords as identifiers
+echo(`let`) ## stropping enables keywords as identifiers
 
-var autoInt: auto = 7
+var autoInt: auto = 7 ## type inference, relevant for proc return type
 echo "autoInt labeled auto but its type is ", $type(autoInt)
 
 echo "############################ static"
 static:
-  echo "explicitly requires compile-time execution"
+  ## explicitly requires compile-time execution
+  echo "at compile time"
 
 # docs copypasta didnt work, @see https://nim-lang.org/docs/manual.html#special-types-static-t
 proc meaningOfLife(question: static string): auto =
@@ -149,29 +150,29 @@ echo "############################ variable logic"
 # shallow(blah) marks blah as shallow for optimization, subsequent assignments  wont deep copy
 # shallowCopy(x, y) copies y into x
 
-# checks whether x can be compiled without any semantic error.
-# useful to verify whether a type supports some operation:
 when compiles(3 + 4):
+  ## checks whether x can be compiled without any semantic error.
+  ## useful to verify whether a type supports some operation:
   echo "'+' for integers is available at compile time"
 
-# whether x is declared at compile time
 var typeSupportBlah = "halb"
 when declared typeSupportBlah:
+  ## whether x is declared at compile time
   echo "blah is declared at compile time"
 
 when not declared thisDoesntExist:
   echo "some thing doesnt exist at compile time"
 
-# checks currenty scope at compile time
 when declaredInScope typeSupportBlah:
+  ## checks current scope at compile time
   echo "blah is declared in scope at compile time"
 
-# checks whether something is defined at compile time
 when defined typeSupportBlah:
+  ## checks whether something is defined at compile time
   echo "something is defined at compile time"
 
-# if gc:arc|orc you have to enable via --deepcopy:on
-var d33pcopy: string
+var d33pcopy: string ## \
+  ## if gc:arc|orc you have to enable via --deepcopy:on
 d33pcopy.deepCopy typeSupportBlah
 echo "deep copy of some other thing ", d33pcopy
 
@@ -238,10 +239,10 @@ type Option[T] = object
 let aa = Option[int](hasValue: true, value: 1)
 let bb = Option[int](hasValue: true, value: 2)
 
-# create an implicit conversion
 converter get[T](x: Option[T]): T =
+  ## create an implicit conversion for Option[T]
+  ## now Option[int] + Option[int] works
   x.value
-# aa and bb are implicitly converted to ints, and can use the + operator
 echo "adding two options ", aa + bb
 
 # copied from docs
