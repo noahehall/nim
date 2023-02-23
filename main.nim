@@ -18,15 +18,15 @@ TLDR
 import
   # yolowurl/yolowurl,
   deepdives/[
-    sugar,
+    asyncParMem,
     collections,
-    strings,
     containers,
+    data,
     datetime,
     osIo,
-    data,
-    asyncParMem,
-    regex
+    regex,
+    strings,
+    sugar,
   ],
   backends/[
     compiler_builds

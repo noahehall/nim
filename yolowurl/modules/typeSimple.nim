@@ -198,6 +198,7 @@ let
     """
   str3 = r"raw string\tliteral"
   str4 = "\r\rstring\t\n\rstring"
+  str5 = "hex \x02"
   char1 = 'a'
 
 var msg: string = "yolo"

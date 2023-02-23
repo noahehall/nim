@@ -34,6 +34,7 @@ TLDR
 
 links
 - intros
+  - [chris: understanding mmap (video)](https://www.youtube.com/watch?v=8hVLcyBkSXY)
   - [gc docs](https://nim-lang.org/1.6.0/gc.html)
   - [memory mgmt intro](https://nimbus.guide/auditors-book/02.2.3_memory_management_gc.html)
   - [parallel & spawn intro](https://nim-lang.org/docs/manual_experimental.html#parallel-amp-spawn)
@@ -54,7 +55,6 @@ links
   - [streams](https://nim-lang.org/docs/streams.html)
   - [tasks](https://nim-lang.org/docs/tasks.html)
   - [thread pool](https://nim-lang.org/docs/threadpool.html)
-
 
 
 ## threadpool
