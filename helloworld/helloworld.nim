@@ -5,7 +5,7 @@
 
 ##[
 ## TLDR
-- only uses the implicitly imported system;
+- only uses the implicitly imported system
   - dont import (system, threads, channel) directly, theres some compiler magic to makem work
   - threads, channels, templates, macros, effects, pragmas, os, io and tests are in deepdives
 - in general [the source code](https://github.com/noahehall/nim/tree/develop/helloworld/modules) has multiple examples

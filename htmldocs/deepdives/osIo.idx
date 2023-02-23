@@ -19,6 +19,9 @@ tmpfile	deepdives/osIo.html#tmpfile	osIo: tmpfile
 writeLines	deepdives/osIo.html#writeLines,seq[string]	osIo: writeLines(s: seq[string]): void	
 env	deepdives/osIo.html#env	osIo: env	
 buildInfo	deepdives/osIo.html#buildInfo	osIo: buildInfo	
+someCmd	deepdives/osIo.html#someCmd	osIo: someCmd	
+someCmdArg	deepdives/osIo.html#someCmdArg	osIo: someCmdArg	
+myEnv	deepdives/osIo.html#myEnv	osIo: myEnv	
 os and i/o	deepdives/osIo.html#os-and-islasho	 os and i/o	
 TLDR	deepdives/osIo.html#os-and-islasho-tldr	  TLDR	
 links	deepdives/osIo.html#os-and-islasho-links	  links	
@@ -32,3 +35,5 @@ os consts	deepdives/osIo.html#os-and-islasho-os-consts	  os consts
 os procs	deepdives/osIo.html#os-and-islasho-os-procs	  os procs	
 osproc	deepdives/osIo.html#os-and-islasho-osproc	  osproc	
 osproc types	deepdives/osIo.html#os-and-islasho-osproc-types	  osproc types	
+osproc procs	deepdives/osIo.html#os-and-islasho-osproc-procs	  osproc procs	
+osproc iterators	deepdives/osIo.html#os-and-islasho-osproc-iterators	  osproc iterators	

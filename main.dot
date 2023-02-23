@@ -230,6 +230,7 @@ digraph main {
 "std/osproc" -> "std/posix";
 "std/osproc" -> "std/times";
 "deepdives/osIo" -> "std/osproc";
+"deepdives/osIo" -> "std/strtabs";
 "deepdives/regex" -> "std/sugar";
 "deepdives/regex" -> "std/strformat";
 "std/re" -> "std/pcre";

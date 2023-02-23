@@ -44,6 +44,14 @@
   - OSX
     - i think OSX should align with posix sans whatever follows
     - cachedir: XDG_CACHE_HOME | HOME / .cache [/app] (etc for other dir types)
+- osproc
+  - calling close before a process has finished may result in zombies and pty leaks
+  - generally
+    - process streams/filehandles shouldnt be closed directly, but the process itself
+    - cmd accepting ENV arg uses the parent process by default
+    - cmd accepting workingDir arg uses the current dir by default
+  - poUsePath > poEvalCommand for portability and let nim escape cmd args correctly
+  - refrain from using waitForExit for processes w/out poParemtStreams for fear of deadlocks
 
 links
 -----
@@ -144,19 +152,53 @@ os procs
 
 
 ## osproc
-- advanced cmd execution & process communication
+- advanced cmd execution & (background) process communication
 
 osproc types
 ------------
 - Process ref of an os proces
 - ProcessOption enum that can be passed to startProcess
   - poEchoCmd before executing
-  - poUsePath to find cmd
-  - poEvalCommand without quoting
+  - poUsePath to find cmd like this "cmd", args=["as", "array"]
+  - poEvalCommand without quoting using system shell like this "cmd args inline"
   - poStdErrToStdOut 2>&1
   - poParentStreams use parent stream
   - poInteractive optimize buffer handling for UI applications
   - poDaemon execute cmd in background
+- poDemon: [the best podcast on chartable](https://chartable.com/podcasts/podemons-podcast)
+
+osproc procs
+------------
+- close forcibly terminates the process and cleanup related handles
+- countProcessors cpuinfo.countProcessors
+- errorHandle of a process for reading
+- errorStream of a process for reading; doesnt support peak/write/setOption
+- peekableErrorStream of a process
+- execCmd returns $?; std0,1,2 inherited from parent
+- execCmdEx returns (output, $?); blocks if input.len > OS max pipe buffer size
+  - particularly useful as you can set ENV, working dir, and data via stdin in one go
+- execProcess use PoUsePath for args[] syntax
+- execProcesses in parallel
+- hasData checks process
+- inputHandle of a process
+- inputStream of a process
+- kill a process via SIGKILL on posix, terminate() on windows
+- outputHandle of a process; doesnt support peek/write/setOption
+- peekableErrorStream of a process
+- peekableOutputStream of a process
+- peekExitCode -1 if still running, else the actual exit code
+- processID of a process
+- readLines of bg process invoked with startProcess
+- resume a process
+- running true if process is running
+- startProcess in background
+- suspend a process
+- stop a process on posix via SIGTERM, windows via TerminateProcess()
+- waitForExit of process and return $?
+
+osproc iterators
+----------------
+- lines of process invoked with startProcess
 ]##
 
 import std/[sugar, strformat, strutils, sequtils, tables]
@@ -172,7 +214,7 @@ echo "my process has X bytes of total memory ", getTotalMem()
 
 echo "my process is using X bytes of memory ", getOccupiedMem() ## \
   ## number of bytes owned by the process and hold data
-  ##
+
 echo "############################ os"
 
 import std/os
@@ -433,6 +475,22 @@ const buildInfo = "Revision " & staticExec("git rev-parse HEAD") &
                   ## returns stdout + stderr
 echo "build info: ", buildInfo
 
+
 echo "############################ osproc "
 
-import std/osproc
+import std/[osproc,strtabs] ## \
+  ## strtabs required to pass ENV to execCmdEx
+
+let
+  someCmd = "whoami"
+  someCmdArg = someCmd & " $FILE"
+  myEnv = newStringTable({"FILE": "/var/log/wtmp"})
+
+echo fmt"{execCmd someCmd=}"
+echo fmt"{execCmdEx someCmd=}"
+echo fmt"{execCmdEx(someCmdArg, env=myEnv)=}"""
+
+if "type docker".execShellCmd == 0:
+  echo fmt"""{execProcess("docker run --rm hello-world")[0 .. 17]=}"""
+  echo fmt"""{execProcess("docker", args=["ps"], options=\{poUsePath\})=}"""
+else: echo "you dont have docker installed"

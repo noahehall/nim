@@ -61,6 +61,7 @@ tutorials
 - [adambard: learn x in y minutes](https://learnxinyminutes.com/docs/nim/)
 - [flaviut: nim by example](https://nim-by-example.github.io/)
 - [miran: nim basics](https://narimiran.github.io/nim-basics/)
+- [status: auditor docs](https://status-im.github.io/nim-style-guide/00_introduction.html)
 - [official nim tutorial](https://nim-lang.org/docs/tut1.html)
 - [official nim wiki](https://github.com/nim-lang/Nim/wiki)
 
