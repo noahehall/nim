@@ -16,7 +16,7 @@ TLDR
 ]##
 
 import
-  # yolowurl/yolowurl,
+  helloworld/helloworld,
   deepdives/[
     asyncParMem,
     collections,
@@ -24,9 +24,11 @@ import
     data,
     datetime,
     osIo,
+    pragmasEffects,
     regex,
     strings,
     sugar,
+    templateMacros,
   ],
   backends/[
     compiler_builds

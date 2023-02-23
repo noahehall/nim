@@ -16,5 +16,6 @@ todos
 - [testament: preferred testing tool](https://nim-lang.org/docs/testament.html)
 - [unit tests](https://nim-lang.org/docs/unittest.html)
 - [Z3 proof engine](https://github.com/Z3Prover/z3)
+- [profiling and debugging](https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html)
 
 ]##

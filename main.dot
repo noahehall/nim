@@ -217,6 +217,18 @@ digraph main {
 "deepdives/osIo" -> "std/sequtils";
 "deepdives/osIo" -> "std/tables";
 "deepdives/osIo" -> "std/os";
+"std/streamwrapper" -> "std/deques";
+"std/streamwrapper" -> "std/streams";
+"std/osproc" -> "std/strutils";
+"std/osproc" -> "std/os";
+"std/osproc" -> "std/strtabs";
+"std/osproc" -> "std/streams";
+"std/osproc" -> "std/cpuinfo";
+"std/osproc" -> "std/streamwrapper";
+"std/osproc" -> "std/private/since";
+"std/osproc" -> "std/posix";
+"std/osproc" -> "std/times";
+"deepdives/osIo" -> "std/osproc";
 "deepdives/regex" -> "std/sugar";
 "deepdives/regex" -> "std/strformat";
 "std/re" -> "std/pcre";
@@ -231,14 +243,17 @@ digraph main {
 "deepdives/sugar" -> "std/sets";
 "deepdives/sugar" -> "std/tables";
 "deepdives/sugar" -> "std/algorithm";
+"main" -> "helloworld/helloworld";
 "main" -> "deepdives/asyncParMem";
 "main" -> "deepdives/collections";
 "main" -> "deepdives/containers";
 "main" -> "deepdives/data";
 "main" -> "deepdives/datetime";
 "main" -> "deepdives/osIo";
+"main" -> "deepdives/pragmasEffects";
 "main" -> "deepdives/regex";
 "main" -> "deepdives/strings";
 "main" -> "deepdives/sugar";
+"main" -> "deepdives/templateMacros";
 "main" -> "backends/compiler_builds";
 }

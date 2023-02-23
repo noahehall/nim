@@ -24,7 +24,7 @@
 
 > runnableExamples is rarely used, as this repo is meant to be [executable](./main.nim)
 
-- 0: tuts links > yolowurl > sugar > collections
+- 0: tuts links > helloworld > sugar > collections
   - [flaviut: nim by example](https://nim-by-example.github.io/)
   - [miran: nim basics](https://narimiran.github.io/nim-basics/)
   - [adambard: learn x in y minutes](https://learnxinyminutes.com/docs/nim/)
@@ -37,7 +37,7 @@
 - 2: osIo, data, tests
 - 3: asyncParMem > servers, dbs
 - 4: backends dir, nimscript dir
-- 5: pragmas, macros
+- 5: pragmasEffects, templateMacros
 - 6: books/code
   - [nim in action](https://www.manning.com/books/nim-in-action)
     - despite being released in 2017, its still highly relevant
@@ -67,9 +67,6 @@ nimlang
 
 ## Todos
 
-- there are some basic stuff in deepdives that should actually be in yolowurl
-  - ensure deepdives goes beyond the basics
-
 ---
 
 ### quickies
@@ -78,39 +75,6 @@ nimlang
 - [skipped most of the section on cross compilation](https://nim-lang.org/docs/nimc.html#crossminuscompilation-for-windows)
 - [checkout status opensource theyve already built bunch of things you'll need for nirv](https://github.com/status-im)
 - you should review compile_backends.nim again stuff should be alot clearer now
-- you should review yolowurl again shizz a lot clearer now
-
-### move these to a source file
-
 - [optmizing string handling](https://nim-lang.org/docs/nimc.html#optimizing-for-nim-optimizing-string-handling)
 - [pacman devkitpro for nix](https://github.com/devkitPro/pacman/releases)
   - forgot why this is here but its mentioned in the docs for something
-- [dll generation](https://nim-lang.org/docs/nimc.html#dll-generation)
-- https://nim-by-example.github.io/bitsets/
-- https://nim-by-example.github.io/macros/
-- https://nim-lang.org/docs/atomics.html
-- https://nim-lang.org/docs/bitops.html
-- https://nim-lang.org/docs/cgi.html
-- https://nim-lang.org/docs/colors.html
-- https://nim-lang.org/docs/complex.html
-- https://nim-lang.org/docs/dynlib.html
-- https://nim-lang.org/docs/editdistance.html
-- https://nim-lang.org/docs/encodings.html
-- https://nim-lang.org/docs/endians.html
-- https://nim-lang.org/docs/highlite.html
-- https://nim-lang.org/docs/lexbase.html
-- https://nim-lang.org/docs/locks.html
-- https://nim-lang.org/docs/macrocache.html
-- https://nim-lang.org/docs/macros.html
-- https://nim-lang.org/docs/nimc.html#nim-for-embedded-systems
-- https://nim-lang.org/docs/punycode.html
-- https://nim-lang.org/docs/rlocks.html
-- https://nim-lang.org/docs/rst.html
-- https://nim-lang.org/docs/rstast.html
-- https://nim-lang.org/docs/rstgen.html
-- https://nim-lang.org/docs/tut1.html#sets-bit-fields
-- https://nim-lang.org/docs/tut2.html#templates-examplecolon-lifting-procs
-- https://nim-lang.org/docs/typeinfo.html
-- https://nim-lang.org/docs/typetraits.html
-- https://nim-lang.org/docs/volatile.html
-- https://nim-lang.org/docs/segfaults.html

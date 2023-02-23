@@ -75,9 +75,9 @@ echo "############################ files "
 # write
 # writeBuffer/Bytes/Chars/File/Line
 
-const yoloWurlReadme = "yolowurl/yolowurl.md"
+const helloworldReadme = "helloworld/helloworld.md"
 
-let entireFile = try: readFile yoloWurlReadme except: "" ## \
+let entireFile = try: readFile helloworldReadme except: "" ## \
   ## calls readAll then closes the file afterwards
   ## raises IO exception on err
   ## use staticRead instead for compiletime
@@ -85,14 +85,14 @@ if entireFile.len is Positive:
   echo "file has ", len entireFile, " characters"
 
 
-let first5Lines = try: readLines yoloWurlReadme, 5 except: @[] ## \
+let first5Lines = try: readLines helloworldReadme, 5 except: @[] ## \
   ## raises IO exception on err, EOF if N > lines in file
   ## lines must be delimited by LF/CRLF
   ## available at compiletime
 for line in first5Lines: echo "say my line: ", line
 
 proc readFile: string =
-  let f = open yoloWurlReadme ## \
+  let f = open helloworldReadme ## \
     ## open string, fMode = fmRead, bufSize = -1: File
     ## open File; string/filehandle; fmode = fmRead: bool
     ## can pass bufSize whenever you pass a string
@@ -112,14 +112,14 @@ proc readFile: string =
 echo "the current line in file is ", readFile()
 
 try:
-  for line in yoloWurlReadme.lines: echo "loop over line: ", line ## \
+  for line in helloworldReadme.lines: echo "loop over line: ", line ## \
     ## append .lines to the string/File
     ## else it loops over the filename (not the content)
     ## raises IOError if file doesnt exist
 except: echo "maybe file doesnt exist?"
 
 # upsert a file
-const tmpfile = "/tmp/yolowurl.txt"
+const tmpfile = "/tmp/helloworld.txt"
 writeFile tmpfile, "a luv letter to nim"
 echo readFile tmpfile
 

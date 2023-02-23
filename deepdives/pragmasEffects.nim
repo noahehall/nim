@@ -8,10 +8,13 @@
 - enable new functionality without adding new keywords to the language
 - syntax: {.pragma1, pragma2:val, etc.}
 
-- todo
-  - [skipped everything starting here](https://nim-lang.org/docs/manual.html#pragmas)
-  - [additional features](https://nim-lang.org/docs/nimc.html#additional-features)
+todo
+- [skipped everything starting here](https://nim-lang.org/docs/manual.html#pragmas)
+- [additional features](https://nim-lang.org/docs/nimc.html#additional-features)
+- [effect system](https://nim-lang.org/docs/manual.html#effect-system)
+- [experimental](https://nim-lang.org/docs/manual_experimental.html)
 
+## pragmas
 .. code-block:: Nim
   {.acyclic.}
   {.async.} # this fn is asynchronous and can use the await keyword
@@ -37,4 +40,15 @@
   {.thread.} # informs the compiler this fn is meant for execution on a new thread
   {.threadvar.} # informs the compiler this var should be local to a thread
   {.warning[POOP]:on/off.} #  can also be set via cli flags
+
+## effects
+
+effect types
+------------
+IOEffect
+- ExecIOEffect executing IO operation
+- ReadIOEffect describes a read IO operation
+- RootEffect custom effects should inherit from this
+- TimeEffect
+- WriteIOEffect
 ]##

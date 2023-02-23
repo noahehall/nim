@@ -1,0 +1,375 @@
+poop1	helloworld/helloworld.html#poop1	helloworld: poop1	
+poop2	helloworld/helloworld.html#poop2	helloworld: poop2	
+poop3	helloworld/helloworld.html#poop3	helloworld: poop3	
+fac4	helloworld/helloworld.html#fac4	helloworld: fac4	
+`let`	helloworld/helloworld.html#let	helloworld: let	
+autoInt	helloworld/helloworld.html#autoInt	helloworld: autoInt	
+meaningOfLife	helloworld/helloworld.html#meaningOfLife,staticstring	helloworld: meaningOfLife(question: static string): auto	
+theAnswer	helloworld/helloworld.html#theAnswer	helloworld: theAnswer	
+typeSupportBlah	helloworld/helloworld.html#typeSupportBlah	helloworld: typeSupportBlah	
+d33pcopy	helloworld/helloworld.html#d33pcopy	helloworld: d33pcopy	
+myInt	helloworld/helloworld.html#myInt	helloworld: myInt	
+doubleFloat	helloworld/helloworld.html#doubleFloat,float	helloworld: doubleFloat(x: float): float	
+Option	helloworld/helloworld.html#Option	helloworld: Option	
+aa	helloworld/helloworld.html#aa	helloworld: aa	
+bb	helloworld/helloworld.html#bb	helloworld: bb	
+get	helloworld/helloworld.html#get.c,Option[T]	helloworld: get[T](x: Option[T]): T	
+toBool	helloworld/helloworld.html#toBool.c,int	helloworld: toBool(x: int): bool	
+somevar	helloworld/helloworld.html#somevar	helloworld: somevar	
+othervar	helloworld/helloworld.html#othervar	helloworld: othervar	
+MyType	helloworld/helloworld.html#MyType	helloworld: MyType	
+instance	helloworld/helloworld.html#instance	helloworld: instance	
+xxx	helloworld/helloworld.html#xxx	helloworld: xxx	
+y	helloworld/helloworld.html#y	helloworld: y	
+z	helloworld/helloworld.html#z	helloworld: z	
+x1	helloworld/helloworld.html#x1	helloworld: x1	
+y1	helloworld/helloworld.html#y1	helloworld: y1	
+z1	helloworld/helloworld.html#z1	helloworld: z1	
+sum	helloworld/helloworld.html#sum	helloworld: sum	
+b	helloworld/helloworld.html#b	helloworld: b	
+c	helloworld/helloworld.html#c	helloworld: c	
+negint	helloworld/helloworld.html#negint	helloworld: negint	
+num0	helloworld/helloworld.html#num0	helloworld: num0	
+num1	helloworld/helloworld.html#num1	helloworld: num1	
+num2	helloworld/helloworld.html#num2	helloworld: num2	
+amilliamilliamilli	helloworld/helloworld.html#amilliamilliamilli	helloworld: amilliamilliamilli	
+e	helloworld/helloworld.html#e	helloworld: e	
+f	helloworld/helloworld.html#f	helloworld: f	
+num3	helloworld/helloworld.html#num3	helloworld: num3	
+num4	helloworld/helloworld.html#num4	helloworld: num4	
+num5	helloworld/helloworld.html#num5	helloworld: num5	
+g	helloworld/helloworld.html#g	helloworld: g	
+h	helloworld/helloworld.html#h	helloworld: h	
+i	helloworld/helloworld.html#i	helloworld: i	
+l	helloworld/helloworld.html#l	helloworld: l	
+m	helloworld/helloworld.html#m	helloworld: m	
+globalint	helloworld/helloworld.html#globalint	helloworld: globalint	
+globalfloat	helloworld/helloworld.html#globalfloat	helloworld: globalfloat	
+n	helloworld/helloworld.html#n	helloworld: n	
+o	helloworld/helloworld.html#o	helloworld: o	
+p	helloworld/helloworld.html#p	helloworld: p	
+str1	helloworld/helloworld.html#str1	helloworld: str1	
+str2	helloworld/helloworld.html#str2	helloworld: str2	
+str3	helloworld/helloworld.html#str3	helloworld: str3	
+str4	helloworld/helloworld.html#str4	helloworld: str4	
+str5	helloworld/helloworld.html#str5	helloworld: str5	
+char1	helloworld/helloworld.html#char1	helloworld: char1	
+msg	helloworld/helloworld.html#msg	helloworld: msg	
+poop6	helloworld/helloworld.html#poop6	helloworld: poop6	
+flush	helloworld/helloworld.html#flush	helloworld: flush	
+multiline	helloworld/helloworld.html#multiline	helloworld: multiline	
+globalstring	helloworld/helloworld.html#globalstring	helloworld: globalstring	
+whichVerse	helloworld/helloworld.html#whichVerse	helloworld: whichVerse	
+numCase	helloworld/helloworld.html#numCase	helloworld: numCase	
+positiveOrNegative	helloworld/helloworld.html#positiveOrNegative,int	helloworld: positiveOrNegative(num: int): string	
+goodcode	helloworld/helloworld.html#goodcode	helloworld: goodcode	
+badcode	helloworld/helloworld.html#badcode	helloworld: badcode	
+GoodApplications	helloworld/helloworld.html#GoodApplications	helloworld: GoodApplications	
+LearningError	helloworld/helloworld.html#LearningError	helloworld: LearningError	
+neverThrows	helloworld/helloworld.html#neverThrows	helloworld: neverThrows(): string	
+maybeThrows	helloworld/helloworld.html#maybeThrows,int	helloworld: maybeThrows(x: int): int	
+err	helloworld/helloworld.html#err	helloworld: err	
+divBy0	helloworld/helloworld.html#divBy0	helloworld: divBy0	
+somethingStupid	helloworld/helloworld.html#somethingStupid	helloworld: somethingStupid(): auto	
+loc`gensym11	helloworld/helloworld.html#loc`gensym11	helloworld: loc`gensym11	
+ploc`gensym11	helloworld/helloworld.html#ploc`gensym11	helloworld: ploc`gensym11	
+loc`gensym13	helloworld/helloworld.html#loc`gensym13	helloworld: loc`gensym13	
+ploc`gensym13	helloworld/helloworld.html#ploc`gensym13	helloworld: ploc`gensym13	
+`...`	helloworld/helloworld.html#....i,T,T	helloworld: `...`[T](a: T; b: T): T	
+countTo	helloworld/helloworld.html#countTo.i,int	helloworld: countTo(n: int): int	
+mycount	helloworld/helloworld.html#mycount.i,int,int	helloworld: mycount(a, b: int): int	
+finishedIncorrect	helloworld/helloworld.html#finishedIncorrect	helloworld: finishedIncorrect	
+finishedCorrect	helloworld/helloworld.html#finishedCorrect	helloworld: finishedCorrect	
+intArr	helloworld/helloworld.html#intArr	helloworld: intArr	
+num6	helloworld/helloworld.html#num6	helloworld: num6	
+sniper	helloworld/helloworld.html#sniper	helloworld: sniper	
+stupidChar	helloworld/helloworld.html#stupidChar	helloworld: stupidChar	
+alreadyExecuted`gensym17	helloworld/helloworld.html#alreadyExecuted`gensym17	helloworld: alreadyExecuted`gensym17	
+nums	helloworld/helloworld.html#nums	helloworld: nums	
+nums4	helloworld/helloworld.html#nums4	helloworld: nums4	
+rangeArr	helloworld/helloworld.html#rangeArr	helloworld: rangeArr	
+smun	helloworld/helloworld.html#smun	helloworld: smun	
+emptyArr	helloworld/helloworld.html#emptyArr	helloworld: emptyArr	
+arrayWithRange	helloworld/helloworld.html#arrayWithRange	helloworld: arrayWithRange	
+withArrParam	helloworld/helloworld.html#withArrParam,array[I,T]	helloworld: withArrParam[I, T](a: array[I, T]): string	
+breakfast	helloworld/helloworld.html#breakfast	TimeToEat.breakfast	
+lunch	helloworld/helloworld.html#lunch	TimeToEat.lunch	
+dinner	helloworld/helloworld.html#dinner	TimeToEat.dinner	
+sweettooth	helloworld/helloworld.html#sweettooth	TimeToEat.sweettooth	
+TimeToEat	helloworld/helloworld.html#TimeToEat	helloworld: TimeToEat	
+proteinshake	helloworld/helloworld.html#proteinshake	WhatToEat.proteinshake	
+ramen	helloworld/helloworld.html#ramen	WhatToEat.ramen	
+ramentWithMeet	helloworld/helloworld.html#ramentWithMeet	WhatToEat.ramentWithMeet	
+pnutbutteryjelly	helloworld/helloworld.html#pnutbutteryjelly	WhatToEat.pnutbutteryjelly	
+WhatToEat	helloworld/helloworld.html#WhatToEat	helloworld: WhatToEat	
+Eating	helloworld/helloworld.html#Eating	helloworld: Eating	
+WeeklyFoodTracker	helloworld/helloworld.html#WeeklyFoodTracker	helloworld: WeeklyFoodTracker	
+MonthlyFoodTracker	helloworld/helloworld.html#MonthlyFoodTracker	helloworld: MonthlyFoodTracker	
+onSundayIAte	helloworld/helloworld.html#onSundayIAte	helloworld: onSundayIAte	
+lastWeek	helloworld/helloworld.html#lastWeek	helloworld: lastWeek	
+poops	helloworld/helloworld.html#poops	helloworld: poops	
+spoop	helloworld/helloworld.html#spoop	helloworld: spoop	
+emptySeq	helloworld/helloworld.html#emptySeq	helloworld: emptySeq	
+seqEmpty	helloworld/helloworld.html#seqEmpty	helloworld: seqEmpty	
+me	helloworld/helloworld.html#me	helloworld: me	
+globalseq	helloworld/helloworld.html#globalseq	helloworld: globalseq	
+democrats	helloworld/helloworld.html#democrats	GangsOfAmerica.democrats	
+republicans	helloworld/helloworld.html#republicans	GangsOfAmerica.republicans	
+politicians	helloworld/helloworld.html#politicians	GangsOfAmerica.politicians	
+GangsOfAmerica	helloworld/helloworld.html#GangsOfAmerica	helloworld: GangsOfAmerica	
+PeopleOfAmerica	helloworld/helloworld.html#PeopleOfAmerica	helloworld: PeopleOfAmerica	
+AA	helloworld/helloworld.html#AA_2	ExplicitEnum.AA	
+BB	helloworld/helloworld.html#BB_2	ExplicitEnum.BB	
+ExplicitEnum	helloworld/helloworld.html#ExplicitEnum	helloworld: ExplicitEnum	
+north	helloworld/helloworld.html#north	Direction.north	
+east	helloworld/helloworld.html#east	Direction.east	
+south	helloworld/helloworld.html#south	Direction.south	
+west	helloworld/helloworld.html#west	Direction.west	
+Direction	helloworld/helloworld.html#Direction	helloworld: Direction	
+off	helloworld/helloworld.html#off	BlinkLights.off	
+on	helloworld/helloworld.html#on	BlinkLights.on	
+slowBlink	helloworld/helloworld.html#slowBlink	BlinkLights.slowBlink	
+mediumBlink	helloworld/helloworld.html#mediumBlink	BlinkLights.mediumBlink	
+fastBlink	helloworld/helloworld.html#fastBlink	BlinkLights.fastBlink	
+BlinkLights	helloworld/helloworld.html#BlinkLights	helloworld: BlinkLights	
+LevelSetting	helloworld/helloworld.html#LevelSetting	helloworld: LevelSetting	
+level	helloworld/helloworld.html#level	helloworld: level	
+lastFour	helloworld/helloworld.html#lastFour	helloworld: lastFour	
+lastOne	helloworld/helloworld.html#lastOne	helloworld: lastOne	
+MySubrange	helloworld/helloworld.html#MySubrange	helloworld: MySubrange	
+thisRange	helloworld/helloworld.html#thisRange	helloworld: thisRange	
+a	helloworld/helloworld.html#a	helloworld: a	
+bbb	helloworld/helloworld.html#bbb	helloworld: bbb	
+Opts	helloworld/helloworld.html#Opts	helloworld: Opts	
+IsOn	helloworld/helloworld.html#IsOn	helloworld: IsOn	
+simpleOpts	helloworld/helloworld.html#simpleOpts	helloworld: simpleOpts	
+onn	helloworld/helloworld.html#onn	helloworld: onn	
+offf	helloworld/helloworld.html#offf	helloworld: offf	
+flags	helloworld/helloworld.html#flags	helloworld: flags	
+MyFlag	helloworld/helloworld.html#MyFlag	helloworld: MyFlag	
+MyFlags	helloworld/helloworld.html#MyFlags	helloworld: MyFlags	
+toNum	helloworld/helloworld.html#toNum,MyFlags	helloworld: toNum(f: MyFlags): int	
+toFlags	helloworld/helloworld.html#toFlags,int	helloworld: toFlags(v: int): MyFlags	
+globalset1	helloworld/helloworld.html#globalset1	helloworld: globalset1	
+globalset2	helloworld/helloworld.html#globalset2	helloworld: globalset2	
+globalset11	helloworld/helloworld.html#globalset11	helloworld: globalset11	
+globalarr	helloworld/helloworld.html#globalarr	helloworld: globalarr	
+pubfn	helloworld/helloworld.html#pubfn	helloworld: pubfn(): void	
+eko	helloworld/helloworld.html#eko,string	helloworld: eko(this = &quot;Default value&quot;): void	
+ekoGroups	helloworld/helloworld.html#ekoGroups,int,int,string,char	helloworld: ekoGroups(a, b: int; c: string; d: char): void	
+passedByValue	helloworld/helloworld.html#passedByValue,string	helloworld: passedByValue(x: string): void	
+xx	helloworld/helloworld.html#xx	helloworld: xx	
+copyThenMutateValue	helloworld/helloworld.html#copyThenMutateValue,string	helloworld: copyThenMutateValue(x: string): void	
+zz	helloworld/helloworld.html#zz	helloworld: zz	
+passedByReference	helloworld/helloworld.html#passedByReference,string	helloworld: passedByReference(yy: var string): void	
+redurn	helloworld/helloworld.html#redurn,string	helloworld: redurn(this: string): string	
+mutate	helloworld/helloworld.html#mutate,int	helloworld: mutate(this: var int): int	
+num7	helloworld/helloworld.html#num7	helloworld: num7	
+gg	helloworld/helloworld.html#gg	helloworld: gg	
+writeAccessToG	helloworld/helloworld.html#writeAccessToG	helloworld: writeAccessToG(): var int	
+add5	helloworld/helloworld.html#add5,int	helloworld: add5(num: int): int	
+allInts	helloworld/helloworld.html#allInts,int,int,int	helloworld: allInts(x, y, z: int): int	
+str	helloworld/helloworld.html#str,string	helloworld: str(s: string): string	
+`***`	helloworld/helloworld.html#***,int	helloworld: `***`(i: int): auto	
+greet	helloworld/helloworld.html#greet,string	helloworld: greet(name: string): string	
+bye	helloworld/helloworld.html#bye,string	helloworld: bye(name: string): string	
+communicate	helloworld/helloworld.html#communicate,proc(string),string	helloworld: communicate(greeting: proc (x: string): string; name: string)	
+fruits	helloworld/helloworld.html#fruits	helloworld: fruits	
+capitals	helloworld/helloworld.html#capitals	helloworld: capitals	
+openArraySize	helloworld/helloworld.html#openArraySize,openArray[string]	helloworld: openArraySize(oa: openArray[string]): int	
+eko_all	helloworld/helloworld.html#eko_all,varargs[string]	helloworld: eko_all(s: varargs[string])	
+eko_anything	helloworld/helloworld.html#eko_anything,varargs[string,]	helloworld: eko_anything(s: varargs[string, `$`])	
+poop	helloworld/helloworld.html#poop	helloworld: poop(): string	
+runFn	helloworld/helloworld.html#runFn,string,proc(string)	helloworld: runFn(a: string; fn: proc (x: string): string): string	
+myTable	helloworld/helloworld.html#myTable	helloworld: myTable	
+NirvStack	helloworld/helloworld.html#NirvStack	helloworld: NirvStack	
+StackNirv	helloworld/helloworld.html#StackNirv	helloworld: StackNirv	
+hardCoreStack	helloworld/helloworld.html#hardCoreStack	helloworld: hardCoreStack	
+newCoreStack	helloworld/helloworld.html#newCoreStack	helloworld: newCoreStack	
+js	helloworld/helloworld.html#js	helloworld: js	
+sj	helloworld/helloworld.html#sj	helloworld: sj	
+bizDevOps	helloworld/helloworld.html#bizDevOps	helloworld: bizDevOps	
+bizRating	helloworld/helloworld.html#bizRating	helloworld: bizRating	
+first	helloworld/helloworld.html#first	helloworld: first	
+aaa	helloworld/helloworld.html#aaa	helloworld: aaa	
+BigMoney	helloworld/helloworld.html#BigMoney	helloworld: BigMoney	
+StrOrInt	helloworld/helloworld.html#StrOrInt	helloworld: StrOrInt	
+thizString	helloworld/helloworld.html#thizString	helloworld: thizString	
+thisInt	helloworld/helloworld.html#thisInt	helloworld: thisInt	
+BiggerMoney	helloworld/helloworld.html#BiggerMoney	helloworld: BiggerMoney	
+BiggestMoney	helloworld/helloworld.html#BiggestMoney	helloworld: BiggestMoney	
+PrivatePoop	helloworld/helloworld.html#PrivatePoop	helloworld: PrivatePoop	
+PublicPoop	helloworld/helloworld.html#PublicPoop	helloworld: PublicPoop	
+ipoop	helloworld/helloworld.html#ipoop	helloworld: ipoop	
+upoop	helloworld/helloworld.html#upoop	helloworld: upoop	
+everyonepoop	helloworld/helloworld.html#everyonepoop	helloworld: everyonepoop	
+Someone	helloworld/helloworld.html#Someone	helloworld: Someone	
+noah	helloworld/helloworld.html#noah	helloworld: noah	
+you	helloworld/helloworld.html#you	helloworld: you	
+`$`	helloworld/helloworld.html#$,Someone	helloworld: `$`(self: Someone): string	
+SomeObj	helloworld/helloworld.html#SomeObj	helloworld: SomeObj	
+prv=	helloworld/helloworld.html#prv=,SomeObj,string	helloworld: prv=(x: var SomeObj; v: string)	
+prv	helloworld/helloworld.html#prv,SomeObj	helloworld: prv(x: SomeObj): string	
+myobj	helloworld/helloworld.html#myobj	helloworld: myobj	
+Vector	helloworld/helloworld.html#Vector	helloworld: Vector	
+`[]=`	helloworld/helloworld.html#[]=,Vector,int,float	helloworld: `[]=`(v: var Vector; i: int; value: float)	
+`[]`	helloworld/helloworld.html#[],Vector,int	helloworld: `[]`(v: Vector; i: int): float	
+people	helloworld/helloworld.html#people	helloworld: people	
+SomeoneRef	helloworld/helloworld.html#SomeoneRef	helloworld: SomeoneRef	
+OrRefObject	helloworld/helloworld.html#OrRefObject	helloworld: OrRefObject	
+people2	helloworld/helloworld.html#people2	helloworld: people2	
+WhoPoop	helloworld/helloworld.html#WhoPoop	helloworld: WhoPoop	
+YouPoop	helloworld/helloworld.html#YouPoop	helloworld: YouPoop	
+IPoop	helloworld/helloworld.html#IPoop_2	helloworld: IPoop	
+did_i_poop	helloworld/helloworld.html#did_i_poop,WhoPoop	helloworld: did_i_poop(self: WhoPoop): string	
+didipoop	helloworld/helloworld.html#didipoop,YouPoop	helloworld: didipoop(self: YouPoop): string	
+dIdIpOoP	helloworld/helloworld.html#dIdIpOoP,IPoop	helloworld: dIdIpOoP(self: IPoop): string	
+sherlockpoops	helloworld/helloworld.html#sherlockpoops	helloworld: sherlockpoops	
+Expression	helloworld/helloworld.html#Expression	helloworld: Expression	
+Literal	helloworld/helloworld.html#Literal	helloworld: Literal	
+PlusExpr	helloworld/helloworld.html#PlusExpr	helloworld: PlusExpr	
+eval	helloworld/helloworld.html#eval.e,Expression	helloworld: eval(e: Expression): int	
+eval	helloworld/helloworld.html#eval.e,Literal	helloworld: eval(e: Literal): int	
+eval	helloworld/helloworld.html#eval.e,PlusExpr	helloworld: eval(e: PlusExpr): int	
+newLit	helloworld/helloworld.html#newLit,int	helloworld: newLit(x: int): Literal	
+newPlus	helloworld/helloworld.html#newPlus,Expression,Expression	helloworld: newPlus(a, b: Expression): PlusExpr	
+Thing	helloworld/helloworld.html#Thing	helloworld: Thing	
+Unit	helloworld/helloworld.html#Unit	helloworld: Unit	
+collide	helloworld/helloworld.html#collide.e,Thing,Thing	helloworld: collide(a, b: Thing)	
+collide	helloworld/helloworld.html#collide.e,Thing,Unit	helloworld: collide(a: Thing; b: Unit)	
+collide	helloworld/helloworld.html#collide.e,Unit,Thing	helloworld: collide(a: Unit; b: Thing)	
+aaaa	helloworld/helloworld.html#aaaa	helloworld: aaaa	
+bbbb	helloworld/helloworld.html#bbbb	helloworld: bbbb	
+nkInt	helloworld/helloworld.html#nkInt	NodeKind.nkInt	
+nkFloat	helloworld/helloworld.html#nkFloat	NodeKind.nkFloat	
+nkString	helloworld/helloworld.html#nkString	NodeKind.nkString	
+nkAdd	helloworld/helloworld.html#nkAdd	NodeKind.nkAdd	
+nkSub	helloworld/helloworld.html#nkSub	NodeKind.nkSub	
+nkIf	helloworld/helloworld.html#nkIf	NodeKind.nkIf	
+NodeKind	helloworld/helloworld.html#NodeKind	helloworld: NodeKind	
+Node2	helloworld/helloworld.html#Node2	helloworld: Node2	
+myFloat	helloworld/helloworld.html#myFloat	helloworld: myFloat	
+Node	helloworld/helloworld.html#Node	helloworld: Node	
+Sym	helloworld/helloworld.html#Sym	helloworld: Sym	
+wtf	helloworld/helloworld.html#wtf,T	helloworld: wtf[T](a: T): auto	
+foo	helloworld/helloworld.html#foo,T	helloworld: foo[T](i: T)	
+ii	helloworld/helloworld.html#ii	helloworld: ii	
+myRecord	helloworld/helloworld.html#myRecord	helloworld: myRecord	
+OtherRecord	helloworld/helloworld.html#OtherRecord	helloworld: OtherRecord	
+RecordType	helloworld/helloworld.html#RecordType	helloworld: RecordType	
+printFields	helloworld/helloworld.html#printFields,T	helloworld: printFields[T: RecordType](rec: T)	
+utherRecord	helloworld/helloworld.html#utherRecord	helloworld: utherRecord	
+fieldsPrint	helloworld/helloworld.html#fieldsPrint,T,T	helloworld: fieldsPrint[T: distinct tuple | object](first, second: T)	
+declareVariableWithType	helloworld/helloworld.html#declareVariableWithType.t,typedesc,typedesc	helloworld: declareVariableWithType(T: typedesc; value: T:type)	
+x`gensym40	helloworld/helloworld.html#x`gensym40	helloworld: x`gensym40	
+srcPath	helloworld/helloworld.html#srcPath	helloworld: srcPath	
+helloworldReadme	helloworld/helloworld.html#helloworldReadme	helloworld: helloworldReadme	
+entireFile	helloworld/helloworld.html#entireFile	helloworld: entireFile	
+first5Lines	helloworld/helloworld.html#first5Lines	helloworld: first5Lines	
+readFile	helloworld/helloworld.html#readFile	helloworld: readFile(): string	
+tmpfile	helloworld/helloworld.html#tmpfile	helloworld: tmpfile	
+writeLines	helloworld/helloworld.html#writeLines,seq[string]	helloworld: writeLines(s: seq[string]): void	
+buildInfo	helloworld/helloworld.html#buildInfo	helloworld: buildInfo	
+yolo wurl: basic nim syntax	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax	 yolo wurl: basic nim syntax	
+TLDR	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-tldr	  TLDR	
+useful links	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-useful-links	  useful links	
+todos	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-todos	  todos	
+std library	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-std-library	  std library	
+style guide &amp; best practices	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-style-guide-amp-best-practices	  style guide &amp; best practices	
+modules	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-modules	  modules	
+import	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-import	  import	
+include:	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-includecolon	  include:	
+export	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-export	  export	
+packages	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-packages	  packages	
+operators	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-operators	  operators	
+keywords	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-keywords	  keywords	
+statements	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-statements	  statements	
+expressions	helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-expressions	  expressions	
+visibility	helloworld/helloworld.html#visibility	 visibility	
+variables and globals	helloworld/helloworld.html#variables-and-globals	 variables and globals	
+TLDR	helloworld/helloworld.html#variables-and-globals-tldr	  TLDR	
+var	helloworld/helloworld.html#variables-and-globals-var	  var	
+let	helloworld/helloworld.html#variables-and-globals-let	  let	
+const	helloworld/helloworld.html#variables-and-globals-const	  const	
+static	helloworld/helloworld.html#variables-and-globals-static	  static	
+eval	helloworld/helloworld.html#variables-and-globals-eval	  eval	
+stropping	helloworld/helloworld.html#variables-and-globals-stropping	  stropping	
+auto	helloworld/helloworld.html#variables-and-globals-auto	  auto	
+type casts	helloworld/helloworld.html#variables-and-globals-type-casts	  type casts	
+type coercions	helloworld/helloworld.html#variables-and-globals-type-coercions	  type coercions	
+type inspection	helloworld/helloworld.html#variables-and-globals-type-inspection	  type inspection	
+echo/repr	helloworld/helloworld.html#variables-and-globals-echoslashrepr	  echo/repr	
+simple types	helloworld/helloworld.html#simple-types	 simple types	
+TLDR	helloworld/helloworld.html#simple-types-tldr	  TLDR	
+string	helloworld/helloworld.html#simple-types-string	  string	
+char	helloworld/helloworld.html#simple-types-char	  char	
+byte	helloworld/helloworld.html#simple-types-byte	  byte	
+bool	helloworld/helloworld.html#simple-types-bool	  bool	
+string/char procs	helloworld/helloworld.html#simple-types-stringslashchar-procs	  string/char procs	
+number procs	helloworld/helloworld.html#simple-types-number-procs	  number procs	
+number types	helloworld/helloworld.html#simple-types-number-types	  number types	
+misc procs	helloworld/helloworld.html#simple-types-misc-procs	  misc procs	
+branching: if when case	helloworld/helloworld.html#branchingcolon-if-when-case	 branching: if when case	
+TLDR	helloworld/helloworld.html#branchingcolon-if-when-case-tldr	  TLDR	
+todos	helloworld/helloworld.html#branchingcolon-if-when-case-todos	  todos	
+when	helloworld/helloworld.html#branchingcolon-if-when-case-when	  when	
+case	helloworld/helloworld.html#branchingcolon-if-when-case-case	  case	
+exception handling, debugging (todo), documentation	helloworld/helloworld.html#exception-handling-debugging-todo-documentation	 exception handling, debugging (todo), documentation	
+TLDR	helloworld/helloworld.html#exception-handling-debugging-todo-documentation-tldr	  TLDR	
+todos	helloworld/helloworld.html#exception-handling-debugging-todo-documentation-todos	  todos	
+links	helloworld/helloworld.html#exception-handling-debugging-todo-documentation-links	  links	
+Exception Handling	helloworld/helloworld.html#exception-handling-debugging-todo-documentation-exception-handling	  Exception Handling	
+Defect types	helloworld/helloworld.html#exception-handling-debugging-todo-documentation-defect-types	  Defect types	
+Error (exception) types	helloworld/helloworld.html#exception-handling-debugging-todo-documentation-error-exception-types	  Error (exception) types	
+documentation	helloworld/helloworld.html#exception-handling-debugging-todo-documentation-documentation	  documentation	
+loops and iterators	helloworld/helloworld.html#loops-and-iterators	 loops and iterators	
+TLDR	helloworld/helloworld.html#loops-and-iterators-tldr	  TLDR	
+todos	helloworld/helloworld.html#loops-and-iterators-todos	  todos	
+links	helloworld/helloworld.html#loops-and-iterators-links	  links	
+loop/iterator related procs	helloworld/helloworld.html#loops-and-iterators-loopslashiterator-related-procs	  loop/iterator related procs	
+iterators	helloworld/helloworld.html#loops-and-iterators-iterators	  iterators	
+blocks	helloworld/helloworld.html#blocks	 blocks	
+TLDR	helloworld/helloworld.html#blocks-tldr	  TLDR	
+do blocks	helloworld/helloworld.html#blocks-do-blocks	  do blocks	
+once blocks	helloworld/helloworld.html#blocks-once-blocks	  once blocks	
+ordinals and structured	helloworld/helloworld.html#ordinals-and-structured	 ordinals and structured	
+TLDR	helloworld/helloworld.html#ordinals-and-structured-tldr	  TLDR	
+links	helloworld/helloworld.html#ordinals-and-structured-links	  links	
+arrays	helloworld/helloworld.html#ordinals-and-structured-arrays	  arrays	
+set	helloworld/helloworld.html#ordinals-and-structured-set	  set	
+sequence	helloworld/helloworld.html#ordinals-and-structured-sequence	  sequence	
+enum	helloworld/helloworld.html#ordinals-and-structured-enum	  enum	
+range	helloworld/helloworld.html#ordinals-and-structured-range	  range	
+slice	helloworld/helloworld.html#ordinals-and-structured-slice	  slice	
+ordinals/structured interface	helloworld/helloworld.html#ordinals-and-structured-ordinalsslashstructured-interface	  ordinals/structured interface	
+routines	helloworld/helloworld.html#routines	 routines	
+TLDR	helloworld/helloworld.html#routines-tldr	  TLDR	
+procedures	helloworld/helloworld.html#routines-procedures	  procedures	
+openArray	helloworld/helloworld.html#routines-openarray	  openArray	
+varargs	helloworld/helloworld.html#routines-varargs	  varargs	
+funcs	helloworld/helloworld.html#routines-funcs	  funcs	
+closures	helloworld/helloworld.html#routines-closures	  closures	
+anonymous procs	helloworld/helloworld.html#routines-anonymous-procs	  anonymous procs	
+tuples, objects and tables	helloworld/helloworld.html#tuples-objects-and-tables	 tuples, objects and tables	
+TLDR	helloworld/helloworld.html#tuples-objects-and-tables-tldr	  TLDR	
+tuples	helloworld/helloworld.html#tuples-objects-and-tables-tuples	  tuples	
+objects	helloworld/helloworld.html#tuples-objects-and-tables-objects	  objects	
+type aliases	helloworld/helloworld.html#tuples-objects-and-tables-type-aliases	  type aliases	
+type aliases (distinct)	helloworld/helloworld.html#tuples-objects-and-tables-type-aliases-distinct	  type aliases (distinct)	
+table	helloworld/helloworld.html#tuples-objects-and-tables-table	  table	
+ref	helloworld/helloworld.html#tuples-objects-and-tables-ref	  ref	
+ptr	helloworld/helloworld.html#tuples-objects-and-tables-ptr	  ptr	
+ref/pter procs	helloworld/helloworld.html#tuples-objects-and-tables-refslashpter-procs	  ref/pter procs	
+inheritance (ref/ptr)	helloworld/helloworld.html#tuples-objects-and-tables-inheritance-refslashptr	  inheritance (ref/ptr)	
+dynamic dispatch	helloworld/helloworld.html#tuples-objects-and-tables-dynamic-dispatch	  dynamic dispatch	
+multi-methods	helloworld/helloworld.html#tuples-objects-and-tables-multiminusmethods	  multi-methods	
+metatypes	helloworld/helloworld.html#tuples-objects-and-tables-metatypes	  metatypes	
+type bound operators	helloworld/helloworld.html#tuples-objects-and-tables-type-bound-operators	  type bound operators	
+variants	helloworld/helloworld.html#tuples-objects-and-tables-variants	  variants	
+recursive types	helloworld/helloworld.html#tuples-objects-and-tables-recursive-types	  recursive types	
+type classes	helloworld/helloworld.html#tuples-objects-and-tables-type-classes	  type classes	
+typedesc	helloworld/helloworld.html#tuples-objects-and-tables-typedesc	  typedesc	
+os, io	helloworld/helloworld.html#os-io	 os, io	
+TLDR	helloworld/helloworld.html#os-io-tldr	  TLDR	
+os vars/procs/etc	helloworld/helloworld.html#os-io-os-varsslashprocsslashetc	  os vars/procs/etc	
+io vars/procs/etc	helloworld/helloworld.html#os-io-io-varsslashprocsslashetc	  io vars/procs/etc	

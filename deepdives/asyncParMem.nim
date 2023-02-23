@@ -33,12 +33,15 @@ TLDR
   - flag `-d:useMalloc` to bypass TLSF allocator and use malloc/free
 
 links
+-----
 - intros
   - [chris: understanding mmap (video)](https://www.youtube.com/watch?v=8hVLcyBkSXY)
   - [gc docs](https://nim-lang.org/1.6.0/gc.html)
   - [memory mgmt intro](https://nimbus.guide/auditors-book/02.2.3_memory_management_gc.html)
   - [parallel & spawn intro](https://nim-lang.org/docs/manual_experimental.html#parallel-amp-spawn)
   - [peter: async in nim intro](https://peterme.net/asynchronous-programming-in-nim.html)
+  - [memory management](https://nim-lang.org/docs/mm.html)
+  - [destructors and move symantics](https://nim-lang.org/docs/destructors.html)
 - system
   - [system channels](https://nim-lang.org/docs/channels_builtin.html)
   - [system par loop iterator](https://nim-lang.org/docs/system.html#%7C%7C.i%2CS%2CT%2Cstaticstring)

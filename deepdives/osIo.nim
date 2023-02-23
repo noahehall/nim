@@ -301,3 +301,7 @@ echo fmt"compiled osIo.nim {getAppFilename()=}"
 echo fmt"nim/nimble at compiletime {getCurrentCompilerExe()=}"
 
 echo fmt"""{findExe "nim"=}"""
+
+echo "############################ osproc "
+
+import std/osproc

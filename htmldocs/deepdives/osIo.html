@@ -107,6 +107,8 @@ window.addEventListener('DOMContentLoaded', main);
 <li><a class="reference" id="os-and-islasho-os-types_toc" href="#os-and-islasho-os-types">os types</a></li>
 <li><a class="reference" id="os-and-islasho-os-consts_toc" href="#os-and-islasho-os-consts">os consts</a></li>
 <li><a class="reference" id="os-and-islasho-os-procs_toc" href="#os-and-islasho-os-procs">os procs</a></li>
+<li><a class="reference" id="os-and-islasho-osproc_toc" href="#os-and-islasho-osproc">osproc</a></li>
+<li><a class="reference" id="os-and-islasho-osproc-types_toc" href="#os-and-islasho-osproc-types">osproc types</a></li>
 </ul><li>
   <a class="reference reference-toplevel" href="#8" id="58">Vars</a>
   <ul class="simple simple-toc-section">
@@ -120,22 +122,22 @@ window.addEventListener('DOMContentLoaded', main);
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#env"
     title="env =
-  var collectResult_2147484562 = initTable(32)
+  var collectResult_2332033937 = initTable(32)
   ## should probably be a strtabs
   for k, v in envPairs():
     if not contains(v, &quot;poop&quot;) and v == &quot;1&quot;:
-      collectResult_2147484562[k] = v
-  collectResult_2147484562">env</a></li>
+      collectResult_2332033937[k] = v
+  collectResult_2332033937">env</a></li>
   <li><a class="reference" href="#hiddenFiles"
     title="hiddenFiles =
-  var collectResult_2147484041 = newSeq(Natural(0))
+  var collectResult_2332033416 = newSeq(Natural(0))
   for k in walkDir(getHomeDir(), false, false):
     if isHidden(k.path):
-      add(collectResult_2147484041, lastPathPart(k.path))
-  collectResult_2147484041">hiddenFiles</a></li>
+      add(collectResult_2332033416, lastPathPart(k.path))
+  collectResult_2332033416">hiddenFiles</a></li>
   <li><a class="reference" href="#hiddenFilesRec"
     title="hiddenFilesRec =
-  var collectResult_2147484062 = newSeq(Natural(0))
+  var collectResult_2332033437 = newSeq(Natural(0))
   for v in walkDirRec(getHomeDir(), {pcFile}, {pcDir}, false, false):
     if (
       10 &lt; i):
@@ -143,8 +145,8 @@ window.addEventListener('DOMContentLoaded', main);
     else:
       i += 1
     if isHidden(v):
-      add(collectResult_2147484062, lastPathPart(v))
-  collectResult_2147484062">hiddenFilesRec</a></li>
+      add(collectResult_2332033437, lastPathPart(v))
+  collectResult_2332033437">hiddenFilesRec</a></li>
 
   </ul>
 </li>
@@ -299,6 +301,21 @@ class="link-seesrc" target="_blank">Source</a>
 <li>newOsError errorCode determines the msg as retrieved by osErrorMsg, get code via osLastError</li>
 <li>raiseOsError</li>
 </ul>
+
+<h2><a class="toc-backref" id="os-and-islasho-osproc" href="#os-and-islasho-osproc">osproc</a></h2><ul class="simple"><li>advanced cmd execution &amp; process communication</li>
+</ul>
+
+<h2><a class="toc-backref" id="os-and-islasho-osproc-types" href="#os-and-islasho-osproc-types">osproc types</a></h2><ul class="simple"><li>Process ref of an os proces</li>
+<li>ProcessOption enum that can be passed to startProcess<ul class="simple"><li>poEchoCmd before executing</li>
+<li>poUsePath to find cmd</li>
+<li>poEvalCommand without quoting</li>
+<li>poStdErrToStdOut 2&gt;&amp;1</li>
+<li>poParentStreams use parent stream</li>
+<li>poInteractive optimize buffer handling for UI applications</li>
+<li>poDaemon execute cmd in background</li>
+</ul>
+</li>
+</ul>
 not defined when generating a dynamic library</p>
   <div class="section" id="8">
 <h1><a class="toc-backref" href="#8">Vars</a></h1>
@@ -309,9 +326,9 @@ not defined when generating a dynamic library</p>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L126"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L142"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L126" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L142" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -322,42 +339,42 @@ class="link-seesrc" target="_blank">Source</a>
 <dl class="item">
 <div id="env">
 <dt><pre><span class="Identifier">env</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">collectResult_2147484562</span> <span class="Other">=</span> <span class="Identifier">initTable</span><span class="Other">(</span><span class="DecNumber">32</span><span class="Other">)</span>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_2332033937</span> <span class="Other">=</span> <span class="Identifier">initTable</span><span class="Other">(</span><span class="DecNumber">32</span><span class="Other">)</span>
   <span class="Comment">## should probably be a strtabs</span>
   <span class="Keyword">for</span> <span class="Identifier">k</span><span class="Other">,</span> <span class="Identifier">v</span> <span class="Keyword">in</span> <span class="Identifier">envPairs</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span>
     <span class="Keyword">if</span> <span class="Identifier">not</span> <span class="Identifier">contains</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">,</span> <span class="StringLit">&quot;poop&quot;</span><span class="Other">)</span> <span class="Identifier">and</span> <span class="Identifier">v</span> <span class="Operator">==</span> <span class="StringLit">&quot;1&quot;</span><span class="Other">:</span>
-      <span class="Identifier">collectResult_2147484562</span><span class="Other">[</span><span class="Identifier">k</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">v</span>
-  <span class="Identifier">collectResult_2147484562</span></pre></dt>
+      <span class="Identifier">collectResult_2332033937</span><span class="Other">[</span><span class="Identifier">k</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">v</span>
+  <span class="Identifier">collectResult_2332033937</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L247"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L263"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L247" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L263" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
 <div id="hiddenFiles">
 <dt><pre><span class="Identifier">hiddenFiles</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">collectResult_2147484041</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_2332033416</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
   <span class="Keyword">for</span> <span class="Identifier">k</span> <span class="Keyword">in</span> <span class="Identifier">walkDir</span><span class="Other">(</span><span class="Identifier">getHomeDir</span><span class="Other">(</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">false</span><span class="Other">,</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span>
     <span class="Keyword">if</span> <span class="Identifier">isHidden</span><span class="Other">(</span><span class="Identifier">k</span><span class="Other">.</span><span class="Identifier">path</span><span class="Other">)</span><span class="Other">:</span>
-      <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_2147484041</span><span class="Other">,</span> <span class="Identifier">lastPathPart</span><span class="Other">(</span><span class="Identifier">k</span><span class="Other">.</span><span class="Identifier">path</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">collectResult_2147484041</span></pre></dt>
+      <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_2332033416</span><span class="Other">,</span> <span class="Identifier">lastPathPart</span><span class="Other">(</span><span class="Identifier">k</span><span class="Other">.</span><span class="Identifier">path</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Identifier">collectResult_2332033416</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L191"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L207"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L191" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L207" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
 <div id="hiddenFilesRec">
 <dt><pre><span class="Identifier">hiddenFilesRec</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">collectResult_2147484062</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_2332033437</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
   <span class="Keyword">for</span> <span class="Identifier">v</span> <span class="Keyword">in</span> <span class="Identifier">walkDirRec</span><span class="Other">(</span><span class="Identifier">getHomeDir</span><span class="Other">(</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">{</span><span class="Identifier">pcFile</span><span class="Other">}</span><span class="Other">,</span> <span class="Other">{</span><span class="Identifier">pcDir</span><span class="Other">}</span><span class="Other">,</span> <span class="Identifier">false</span><span class="Other">,</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span>
     <span class="Keyword">if</span> <span class="Other">(</span>
       <span class="DecNumber">10</span> <span class="Operator">&lt;</span> <span class="Identifier">i</span><span class="Other">)</span><span class="Other">:</span>
@@ -365,15 +382,15 @@ class="link-seesrc" target="_blank">Source</a>
     <span class="Keyword">else</span><span class="Other">:</span>
       <span class="Identifier">i</span> <span class="Operator">+=</span> <span class="DecNumber">1</span>
     <span class="Keyword">if</span> <span class="Identifier">isHidden</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">)</span><span class="Other">:</span>
-      <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_2147484062</span><span class="Other">,</span> <span class="Identifier">lastPathPart</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">collectResult_2147484062</span></pre></dt>
+      <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_2332033437</span><span class="Other">,</span> <span class="Identifier">lastPathPart</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Identifier">collectResult_2332033437</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L197"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L213"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L197" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L213" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -388,9 +405,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L130"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L146"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L130" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L146" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -400,9 +417,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L132"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L148"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L132" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L148" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -412,9 +429,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L131"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L147"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L131" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L147" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -424,9 +441,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L135"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L151"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L135" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L151" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -436,9 +453,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L136"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L152"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L136" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L152" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -448,9 +465,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L133"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L149"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L133" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L149" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -460,9 +477,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L134"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L150"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L134" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L150" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -472,9 +489,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L129"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L145"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L129" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L145" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -484,9 +501,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L137"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L153"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L137" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L153" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -500,7 +517,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-23 14:10:42 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-23 15:48:51 UTC</small>
       </div>
     </div>
   </div>

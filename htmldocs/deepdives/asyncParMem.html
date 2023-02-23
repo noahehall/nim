@@ -99,7 +99,8 @@ window.addEventListener('DOMContentLoaded', main);
   </div>
   <ul class="simple simple-toc" id="toc-list">
 <li><a class="reference" id="async-parallelism-and-memory-management_toc" href="#async-parallelism-and-memory-management">async, parallelism and memory management</a></li>
-<ul class="simple"><li><a class="reference" id="async-parallelism-and-memory-management-threadpool_toc" href="#async-parallelism-and-memory-management-threadpool">threadpool</a></li>
+<ul class="simple"><li><a class="reference" id="async-parallelism-and-memory-management-links_toc" href="#async-parallelism-and-memory-management-links">links</a></li>
+<li><a class="reference" id="async-parallelism-and-memory-management-threadpool_toc" href="#async-parallelism-and-memory-management-threadpool">threadpool</a></li>
 </ul><li>
   <a class="reference reference-toplevel" href="#8" id="58">Vars</a>
   <ul class="simple simple-toc-section">
@@ -200,12 +201,14 @@ TLDR<ul class="simple"><li>thread related stuff requires --threads:on</li>
 </ul>
 </li>
 </ul>
-<p>links</p>
-<ul class="simple"><li>intros<ul class="simple"><li><a class="reference external" href="https://www.youtube.com/watch?v=8hVLcyBkSXY">chris: understanding mmap (video)</a></li>
+
+<h2><a class="toc-backref" id="async-parallelism-and-memory-management-links" href="#async-parallelism-and-memory-management-links">links</a></h2><ul class="simple"><li>intros<ul class="simple"><li><a class="reference external" href="https://www.youtube.com/watch?v=8hVLcyBkSXY">chris: understanding mmap (video)</a></li>
 <li><a class="reference external" href="https://nim-lang.org/1.6.0/gc.html">gc docs</a></li>
 <li><a class="reference external" href="https://nimbus.guide/auditors-book/02.2.3_memory_management_gc.html">memory mgmt intro</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/manual_experimental.html#parallel-amp-spawn">parallel &amp; spawn intro</a></li>
 <li><a class="reference external" href="https://peterme.net/asynchronous-programming-in-nim.html">peter: async in nim intro</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/mm.html">memory management</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/destructors.html">destructors and move symantics</a></li>
 </ul>
 </li>
 <li>system<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/channels_builtin.html">system channels</a></li>
@@ -240,9 +243,9 @@ TLDR<ul class="simple"><li>thread related stuff requires --threads:on</li>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L88"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L91"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L88" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L91" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -252,9 +255,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L86"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L89"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L86" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L89" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -264,9 +267,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L87"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L90"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L87" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L90" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -276,9 +279,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L71"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L74"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L71" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L74" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -293,9 +296,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L123"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L126"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L123" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L126" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -305,9 +308,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L122"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L125"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L122" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L125" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -322,9 +325,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L69"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L72"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L69" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L72" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -335,9 +338,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L91"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L94"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L91" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L94" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -348,9 +351,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L116"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L119"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L116" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L119" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -360,9 +363,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L90"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncParMem.nim#L93"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L90" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncParMem.nim#L93" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -376,7 +379,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-23 14:10:42 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-23 15:48:50 UTC</small>
       </div>
     </div>
   </div>

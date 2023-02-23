@@ -5,9 +5,10 @@
 
 ##[
 ## TLDR
-- only uses the implicitly imported system, threads and channel built_int module (and their imports)
-- dont import any of them directly, theres some compiler magic to makem work
-- in general [the source code](https://github.com/noahehall/nim/tree/develop/yolowurl/modules) has multiple examples
+- only uses the implicitly imported system;
+  - dont import (system, threads, channel) directly, theres some compiler magic to makem work
+  - threads, channels, templates, macros, effects and pragmas are in deepdives
+- in general [the source code](https://github.com/noahehall/nim/tree/develop/helloworld/modules) has multiple examples
   - we dont use runnableExamples because we want to run on the cmd line & in vscode
   - however real code should use runnableExamples for docs
 - newer nim versions seems to be getting more strict/better at catching programmer errors
@@ -15,47 +16,27 @@
 - you should expect everything in nim is heavily overloaded
   - hence only simple syntax is shown and shouldnt be considered comprehensive in any form
 
-## useful links
+useful links
+------------
 - [nim system module](https://nim-lang.org/docs/system.html)
 - [nimlang api design](https://nim-lang.org/docs/apis.html)
 - [nimlang manual](https://nim-lang.org/docs/manual.html)
 - [nimlang tools dir](https://github.com/nim-lang/Nim/tree/devel/tools)
 - [status auditor docs](https://status-im.github.io/nim-style-guide/00_introduction.html)
 
-## the road to code
-- need to review
-  - go through modules @see links and ensure you have captured relevant info in each file
-  - likely need to do a bunchy of recategorization
-  - focus on os related stuff first so we can get back to nirv
-  - ensure deepdives dir does not contain any system/basic info, and truly dives deep
-    - likely need to do a bunch of recategorization
-    - focus on os related stuff so we can get back to nirv
-  - somehow we've skipped a bunch of stuff (maybe there in deepdives as links?)
-    - effect tracking system
-    - regex
-    - tasks
-    - didnt appreciate the semicolons usefulness in grouping statements
-    - cant get too far in nim without reading through the nimble github readme
-  - finally 3: https://nim-lang.org/docs/backends.html
-    - you need to have some code ready so your not just copypasting documentation
-  - nim package directory: get familiar with what exists https://nimble.directory/
-  - nim in action: copy all your notes starting from pg 40
-- eventually: rather start coding and swing back to these later
-  - [destructors and move symantics](https://nim-lang.org/docs/destructors.html)
-  - [experimental](https://nim-lang.org/docs/manual_experimental.html)
-  - [memory management](https://nim-lang.org/docs/mm.html)
-  - [profiling and debugging](https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html)
-  - [macro tut](https://nim-lang.org/docs/tut3.html)
-
-- other stuff
-  - https://peterme.net/asynchronous-programming-in-nim.html
-  - https://peterme.net/handling-files-in-nim.html
-  - https://peterme.net/multitasking-in-nim.html
-  - https://peterme.net/optional-value-handling-in-nim.html
-  - https://peterme.net/tips-and-tricks-with-implicit-return-in-nim.html
-  - https://peterme.net/using-nimscript-as-a-configuration-language-embedding-nimscript-pt-1.html
-  - https://peterme.net/how-to-embed-nimscript-into-a-nim-program-embedding-nimscript-pt-2.html
-  - https://peterme.net/creating-condensed-shared-libraries-embedding-nimscript-pt-3.html
+todos
+-----
+- somehow we've skipped a bunch of stuff (maybe there in deepdives as links?)
+  - cant get too far in nim without reading through the nimble github readme
+- nim in action: copy all your notes starting from pg 40
+- https://peterme.net/asynchronous-programming-in-nim.html
+- https://peterme.net/handling-files-in-nim.html
+- https://peterme.net/multitasking-in-nim.html
+- https://peterme.net/optional-value-handling-in-nim.html
+- https://peterme.net/tips-and-tricks-with-implicit-return-in-nim.html
+- https://peterme.net/using-nimscript-as-a-configuration-language-embedding-nimscript-pt-1.html
+- https://peterme.net/how-to-embed-nimscript-into-a-nim-program-embedding-nimscript-pt-2.html
+- https://peterme.net/creating-condensed-shared-libraries-embedding-nimscript-pt-3.html
 
 ## std library
 - pure libraries: do not depend on external *.dll/lib*.so binary
@@ -166,7 +147,7 @@ my preferences thus far
 - can be used outside of the top level, e.g. scoped to a block/proc
 - becareful with too many includes, its difficult to debug when running the main file
 - line numbers dont point to specific included files, but to the composite file
-- example include for yolowurl.nim
+- example include for helloworld.nim
 .. code-block:: Nim
   include modules/[
     variableGlobals,
@@ -178,9 +159,7 @@ my preferences thus far
     ordinalStructured,
     routines,
     tupleObjectTable,
-    osIo,
-    templateMacros,
-    pragmas
+    osIo
   ]
 
 ## export
@@ -269,7 +248,5 @@ include modules/[
   ordinalStructured,
   routines,
   tupleObjectTable,
-  osIo,
-  templateMacros,
-  pragmas
+  osIo
 ]
