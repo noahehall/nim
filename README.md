@@ -35,7 +35,7 @@
   - [official nim manual](https://nim-lang.org/docs/manual.html)
 - 1: strings, containers, lists, datetime, maths, crypto, regex,
 - 2: osIo, data, tests
-- 3: parallelism_concurrency, memory_immutability > servers, dbs
+- 3: asyncParMem > servers, dbs
 - 4: backends dir, nimscript dir
 - 5: pragmas, macros
 - 6: books/code

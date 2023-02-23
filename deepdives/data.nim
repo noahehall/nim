@@ -1,7 +1,7 @@
 ##
 ## working with data
 ## =================
-## [bookmark](https://nim-lang.org/docs/jsonutils.html)
+## [bookmark](https://nim-lang.org/docs/logging.html)
 
 ##[
 TLDR
@@ -14,7 +14,6 @@ links
   - [json](https://nim-lang.org/docs/json.html)
   - [logging](https://nim-lang.org/docs/logging.html)
   - [marshal](https://nim-lang.org/docs/marshal.html)
-  - [mem files](https://nim-lang.org/docs/memfiles.html)
   - [parse cfg](https://nim-lang.org/docs/parsecfg.html)
   - [parse utils](https://nim-lang.org/docs/parseutils.html)
 - niche
@@ -39,7 +38,7 @@ links
 - use std/option for maybe keys when marshalling a JsonNode to a custom type
 - use `somekey` for some key thats some reserved nim keyword
 - %* doesnt support heterogeneous arrays, sets in objects, or not nil annotations
-- may require importing the underlying stdlib (e.g. tables)/jsonutils for serializing complex types
+- may require importing the underlying stdlib (e.g. tables) & jsonutils for extra helpers
 
 json types
 ----------
@@ -68,6 +67,30 @@ json procs
 - getElems(defaultValue) of an array
 - getFields(defaultValue) of an object; requires import std/table
 - to unmarshal a JsonNode to an arbitrary type
+
+## jsonutils
+- (de)serialization for arbitrary types
+
+jsonutil types
+--------------
+- EnumMode enum
+  - joptEnumOrd|Symbol|String
+- Joptions controls errors during fromJson serialization
+  - allowExtraKeys json string can have more keys than nim object
+  - allowMissingKeys json string can have less keys than expected in nim object
+- JsonNodeMode enum controls toJson for JsonNode types
+  - joptJsonNodeAsRef|CopyObject
+    - ref returned as is
+    - copy deep
+    - object regular ref
+- ToJsonOptions
+  - enumMode: EnumMode
+  - jsonNodeMode: JsonNodeMode
+
+jsonutils procs
+---------------
+- fromJsonHook JsonNode -> any nim type
+- toJsonHook any nim type -> JsonNode
 ]##
 
 import std/[sugar, strformat, strutils, sequtils, options, tables]
@@ -153,3 +176,27 @@ reqData{"noah", "quotes"} = %* ["poop"]; echoReqData()
 reqData{"noah", "quotes"}.add newJString("soup"); echoReqData()
 reqData.add "greg", newJObject(); echoReqData()
 reqData.delete "noah"; echoReqData()
+
+echo "############################ jsonutils"
+
+import std/[jsonutils, strtabs]
+
+var t = newStringTable(modeCaseSensitive)
+  ## will require us to be verbose when serializing
+  ## if you dont specify Joptions
+
+
+t.fromJsonHook parseJson """{
+  "mode": 0,
+  "table": {
+    "first": "second"
+    }
+  }""" ## inplace version of jsonTo
+echo fmt"t.fromJsonHook(parseJson(string)) -> {t=}"
+
+const opts = Joptions(allowExtraKeys: true, allowMissingKeys: true) ## \
+  ## more succcint than the strtab example
+echo fmt"{resJson.jsonTo(ResponseType, opts)=}"
+
+echo fmt"{some(1).toJson=}"
+echo fmt"{none[int]().toJson=}"

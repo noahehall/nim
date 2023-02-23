@@ -1,3 +1,6 @@
+something	deepdives/containers.html#something	containers: something	
+maybe	deepdives/containers.html#maybe	containers: maybe	
+nothing	deepdives/containers.html#nothing	containers: nothing	
 baseTable	deepdives/containers.html#baseTable	containers: baseTable	
 hashTable	deepdives/containers.html#hashTable	containers: hashTable	
 orderededTable	deepdives/containers.html#orderededTable	containers: orderededTable	
@@ -5,19 +8,19 @@ countTable	deepdives/containers.html#countTable	containers: countTable
 keys	deepdives/containers.html#keys	containers: keys	
 values	deepdives/containers.html#values	containers: values	
 keyValues	deepdives/containers.html#keyValues	containers: keyValues	
+mutated	deepdives/containers.html#mutated	containers: mutated	
+mCountTable	deepdives/containers.html#mCountTable	containers: mCountTable	
+echoMutated	deepdives/containers.html#echoMutated	containers: echoMutated(): void	
 i	deepdives/containers.html#i	containers: i	
 User	deepdives/containers.html#User	containers: User	
 t	deepdives/containers.html#t	containers: t	
 u	deepdives/containers.html#u	containers: u	
-hc`gensym92	deepdives/containers.html#hc`gensym92	containers: hc`gensym92	
-index`gensym92	deepdives/containers.html#index`gensym92	containers: index`gensym92	
-hasKey`gensym92	deepdives/containers.html#hasKey`gensym92	containers: hasKey`gensym92	
-hc`gensym94	deepdives/containers.html#hc`gensym94	containers: hc`gensym94	
-index`gensym94	deepdives/containers.html#index`gensym94	containers: index`gensym94	
-hasKey`gensym94	deepdives/containers.html#hasKey`gensym94	containers: hasKey`gensym94	
-something	deepdives/containers.html#something	containers: something	
-maybe	deepdives/containers.html#maybe	containers: maybe	
-nothing	deepdives/containers.html#nothing	containers: nothing	
+hc`gensym125	deepdives/containers.html#hc`gensym125	containers: hc`gensym125	
+index`gensym125	deepdives/containers.html#index`gensym125	containers: index`gensym125	
+hasKey`gensym125	deepdives/containers.html#hasKey`gensym125	containers: hasKey`gensym125	
+hc`gensym127	deepdives/containers.html#hc`gensym127	containers: hc`gensym127	
+index`gensym127	deepdives/containers.html#index`gensym127	containers: index`gensym127	
+hasKey`gensym127	deepdives/containers.html#hasKey`gensym127	containers: hasKey`gensym127	
 authnz	deepdives/containers.html#authnz	containers: authnz	
 newUser	deepdives/containers.html#newUser	containers: newUser	
 echoUser	deepdives/containers.html#echoUser	containers: echoUser(): void	

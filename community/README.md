@@ -70,19 +70,20 @@
 
 ## Recommended/alternatives
 
+- [chronos: efficiently async](https://github.com/status-im/nim-chronos/)
 - [httpbeast: fast http 1.1 server](https://github.com/dom96/httpbeast)
 - [jester: a sinetra-like web framework built on httpbeast](https://github.com/dom96/jester)
+- [karaxnim: SPA framework](https://github.com/karaxnim/karax)
 - [mummy: http/websocket server focusing on performance](https://github.com/guzba/mummy)
 - [nimtemplate: github repo template with github actions, tests, etc](https://github.com/treeform/nimtemplate)
+- [nimterlingua: compiletime i18](https://github.com/juancarlospaco/nim-nimterlingua)
+- [nitch: neofetch alternative](https://github.com/unxsh/nitch)
 - [nodejs: alternative stdlib for js targets](https://github.com/juancarlospaco/nodejs)
 - [norm: postgres orm](https://github.com/moigagoo/norm)
 - [nyml: yaml parser](https://github.com/openpeep/nyml)
 - [presto: rest api from status-im built on chronos](https://github.com/status-im/nim-presto)
 - [scorper: micro webframework built on chronos](https://github.com/bung87/scorper)
 - [valido: string validators & sanitizers](https://github.com/openpeep/valido)
-- [karaxnim: SPA framework](https://github.com/karaxnim/karax)
-- [nitch: neofetch alternative](https://github.com/unxsh/nitch)
-- [nimterlingua: compiletime i18](https://github.com/juancarlospaco/nim-nimterlingua)
 
 ## Could be useful
 

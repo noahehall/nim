@@ -5,7 +5,12 @@ resJson	deepdives/data.html#resJson	data: resJson
 resType	deepdives/data.html#resType	data: resType	
 reqData	deepdives/data.html#reqData	data: reqData	
 echoReqData	deepdives/data.html#echoReqData	data: echoReqData(): void	
+t	deepdives/data.html#t	data: t	
+opts	deepdives/data.html#opts	data: opts	
 working with data	deepdives/data.html#working-with-data	 working with data	
 json	deepdives/data.html#working-with-data-json	  json	
 json types	deepdives/data.html#working-with-data-json-types	  json types	
 json procs	deepdives/data.html#working-with-data-json-procs	  json procs	
+jsonutils	deepdives/data.html#working-with-data-jsonutils	  jsonutils	
+jsonutil types	deepdives/data.html#working-with-data-jsonutil-types	  jsonutil types	
+jsonutils procs	deepdives/data.html#working-with-data-jsonutils-procs	  jsonutils procs	

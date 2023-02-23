@@ -5,8 +5,6 @@
 
 ##[
 ## TLDR
-- see regex.nim for regex & related modules
-- see data.nim for additional string
 - generally any proc that accepts a string, also accepts a char, and sometimes set[char]
 
 
