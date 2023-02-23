@@ -5,7 +5,6 @@
 
 ##[
 ## TLDR
-- system os/io is included in this file
 - if a proc accepts a filename (string), it may also accept a File/Filehandle
 - generally you should check when defined(posix/linux/etc) and use unixToNativePath
   - extremely relevant if your app supports disparate systems
@@ -291,8 +290,6 @@ echo fmt"{sameFile readme, readme=}"
 echo fmt"{sameFileContent readme, readme=}"
 echo fmt"{splitFile readme=}"
 echo fmt"{readme.absolutePath.splitFile=}"
-
-
 
 const helloworldReadme = "helloworld/helloworld.md"
 
