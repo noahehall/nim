@@ -238,10 +238,21 @@ parseopt types
   - kind CmdLineKind
   - (key, val) of short, long or cmds depending on kind
 
+
+parseopt exceptions
+-------------------
+- ValueError when invoking initOptParser with nil
+
 parseopt procs
 --------------
-- initOptParser
-- next
+- initOptParser with cmdline options
+- next token is parsed into an OptParser instance
+- cmdLineRest of the cmd line that has not been parsed
+- remainingArgs that have not been parsed
+
+parseopt iterators
+------------------
+- getOpt from cmdline and return instanceof OptParser
 
 ]##
 
@@ -560,10 +571,8 @@ proc printToken(kind: CmdLineKind, key: string, val: string) =
   ## copied from docs
   case kind
   of cmdEnd: doAssert(false)  # Doesn't happen with getopt()
-  of cmdShortOption, cmdLongOption:
-      echo fmt"long/short option {key=} {val=}"
-  of cmdArgument:
-    echo fmt"cmd arg {key=} "
+  of cmdShortOption, cmdLongOption: echo fmt"long/short option {key=} {val=}"
+  of cmdArgument: echo fmt"cmd arg {key=} "
 
 echo "\n\n", fmt"{cmdxOpts=}"
 for kind, key, val in cmdxOpts.getopt(): printToken(kind, key, val)
@@ -573,3 +582,6 @@ for kind, key, val in cmdyOpts.getopt(): printToken(kind, key, val)
 
 echo "\n\n", fmt"{cmdzOpts=}"
 for kind, key, val in cmdzOpts.getopt(): printToken(kind, key, val)
+
+var p = initOptParser(myOptsArgDash)
+echo fmt"{collect(for kind, key, val in p.getopt(): (key, val))=}"
