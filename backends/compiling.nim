@@ -1,12 +1,13 @@
 ##
-## compiling and building applications
-## ===================================
+## compiling with nimc
+## ===================
 
 ##[
 TLDR
 - dunno yet
 
 links
+-----
 - [example configs](https://github.com/nim-lang/Nim/tree/devel/config)
 - [backend introduction](https://nim-lang.org/docs/backends.html)
 - [cross compile applications](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
@@ -15,6 +16,7 @@ links
 
 
 todos
+-----
 - review this entire file again, shiz alot clearer now
 - useStdoutAsStdmsg @see https://nim-lang.org/docs/io.html#stdmsg.t
 

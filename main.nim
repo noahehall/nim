@@ -26,12 +26,12 @@ import
     maths,
     osIo,
     pragmasEffects,
-    random,
     regex,
     strings,
     sugar,
     templateMacros,
   ],
   backends/[
-    compiler_builds
+    compiling,
+    packaging,
   ]

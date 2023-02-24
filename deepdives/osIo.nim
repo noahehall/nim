@@ -241,7 +241,7 @@ parseopt types
 
 parseopt exceptions
 -------------------
-- ValueError when invoking initOptParser with nil
+- ValueError when initOptParser cant parse cmdline opts
 
 parseopt procs
 --------------
@@ -584,4 +584,4 @@ echo "\n\n", fmt"{cmdzOpts=}"
 for kind, key, val in cmdzOpts.getopt(): printToken(kind, key, val)
 
 var p = initOptParser(myOptsArgDash)
-echo fmt"{collect(for kind, key, val in p.getopt(): (key, val))=}"
+echo fmt"{collect(for kind, key, val in p.getopt(): \{key: val\})=}"

@@ -1,1 +1,3 @@
 *.deps
+nimble.develop
+nimble.paths

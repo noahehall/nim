@@ -1,27 +1,26 @@
 ##
 ## nimscript
 ## =========
-## [bookmark](https://github.com/nim-lang/nimble#readme)
 
 ##[
 ## TLDR
 - subset of nim that can be evaluated by nims builtin VM
 
 links
+-----
 - [nims intro](https://nim-lang.org/docs/nims.html)
 - [nimscript spec](https://nim-lang.org/docs/nimscript.html)
 - [example nims config](https://github.com/kaushalmodi/nim_config/blob/master/config.nims)
-- [nimble](https://github.com/nim-lang/nimble#readme)
+
 
 todos
-- [tasks](https://nim-lang.org/docs/tasks.html)
-- [creating pkgs with nimscript & nimble](https://github.com/nim-lang/nimble#creating-packages)
-- https://nim-lang.org/docs/os.html
+-----
+
 
   usecase: configs (see compiler for --skip flags)
   nim will automatically process .nims configs in the following order (later overrides previous)
     - $XDG_CONFIG_HOME/nim/config.nims || ~/config/nim/config.nims
-    - $parentDir/config.nims
+    - $parentDir/config.nims think this might be $parentDir/config/*.nims
     - $projectDir/config.nims
     - $project.nims
 

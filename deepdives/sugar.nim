@@ -6,6 +6,7 @@
 ##[
 ## TLDR
 - the sweetest nim syntax
+- the fusion pkg provides additional sugar, but its modules are dispersed through other files
 
 links
 -----
