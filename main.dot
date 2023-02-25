@@ -261,6 +261,7 @@ digraph main {
 "main" -> "deepdives/strings";
 "main" -> "deepdives/sugar";
 "main" -> "deepdives/templateMacros";
+"main" -> "deepdives/tests";
 "main" -> "backends/compiling";
 "main" -> "backends/packaging";
 "main" -> "backends/targeting";

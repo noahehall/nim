@@ -9,7 +9,9 @@
 - raise keyword the only way to raise (throw) an exception
   - system.Exception provides the interface
   - have to be allocated on the heap (var) because their lifetime is unknown
-- i think docgen pretty prints the code in the html; so thats cool
+- docgen
+  - pretty prints code in the html
+  - `back ticks` and back slashes e.g. \*.nims can escape special chars
 
 todos
 -----

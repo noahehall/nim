@@ -12,6 +12,7 @@
     - lambdas in sugar
     - std & nimscript tasks in packaging
     - templates in templateMacros
+    - other routine types are in this file
 
 todos
 -----

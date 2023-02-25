@@ -31,6 +31,7 @@ import
     strings,
     sugar,
     templateMacros,
+    tests,
   ],
   backends/[
     compiling,

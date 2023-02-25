@@ -621,10 +621,10 @@ except:
     title="lastOne = 1">lastOne</a></li>
   <li><a class="reference" href="#loc%60gensym11"
     title="loc`gensym11 = (filename: &quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim&quot;,
-                line: 199, column: 7)">loc`gensym11</a></li>
+                line: 201, column: 7)">loc`gensym11</a></li>
   <li><a class="reference" href="#loc%60gensym13"
     title="loc`gensym13 = (filename: &quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim&quot;,
-                line: 202, column: 9)">loc`gensym13</a></li>
+                line: 204, column: 9)">loc`gensym13</a></li>
   <li><a class="reference" href="#m"
     title="m = 1000000000.0">m</a></li>
   <li><a class="reference" href="#n"
@@ -648,9 +648,9 @@ except:
   <li><a class="reference" href="#p"
     title="p = 0o000000000123">p</a></li>
   <li><a class="reference" href="#ploc%60gensym11"
-    title="ploc`gensym11 = &quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim(199, 8)&quot;">ploc`gensym11</a></li>
+    title="ploc`gensym11 = &quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim(201, 8)&quot;">ploc`gensym11</a></li>
   <li><a class="reference" href="#ploc%60gensym13"
-    title="ploc`gensym13 = &quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim(202, 10)&quot;">ploc`gensym13</a></li>
+    title="ploc`gensym13 = &quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim(204, 10)&quot;">ploc`gensym13</a></li>
   <li><a class="reference" href="#poop3"
     title="poop3 = &quot;flush&quot;">poop3</a></li>
   <li><a class="reference" href="#theAnswer"
@@ -1060,6 +1060,7 @@ class="link-seesrc" target="_blank">Source</a>
 </ul>
 <p>borrowed from somewhere else (e.g. status auditor docs)</p>
 <ul class="simple"><li>MACRO_CASE for external constants (status) (permitted in styleguide but not preferred)</li>
+<li>use nimble's recommended <a class="reference external" href="https://github.com/nim-lang/nimble#project-structure">package structure</a></li>
 </ul>
 
 <h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-my-preferences" href="#yolo-wurlcolon-basic-nim-syntax-my-preferences">my preferences</a></h2><ul class="simple"><li>strive for parantheseless code, remember echo f 1, f 2 == echo(f(1), f(2)) and not echo(f(1, f(2)))</li>
@@ -1452,7 +1453,10 @@ checks whether x can be compiled without any semantic error. useful to verify wh
 <li>have to be allocated on the heap (var) because their lifetime is unknown</li>
 </ul>
 </li>
-<li>i think docgen pretty prints the code in the html; so thats cool</li>
+<li>docgen<ul class="simple"><li>pretty prints code in the html</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">back</span> <span class="Identifier">ticks</span></span></tt> and back slashes e.g. *.nims can escape special chars</li>
+</ul>
+</li>
 </ul>
 
 <h2><a class="toc-backref" id="exception-handling-debugging-todo-documentation-todos" href="#exception-handling-debugging-todo-documentation-todos">todos</a></h2><ul class="simple"><li>reread the assertion docs and capture the info</li>
@@ -1743,6 +1747,7 @@ checks whether x can be compiled without any semantic error. useful to verify wh
 <li>lambdas in sugar</li>
 <li>std &amp; nimscript tasks in packaging</li>
 <li>templates in templateMacros</li>
+<li>other routine types are in this file</li>
 </ul>
 </li>
 </ul>
@@ -2065,9 +2070,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 especially things like custom types may need additional abbreviations to describe their purpose
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L104"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L106"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L104" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L106" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -2101,9 +2106,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L122"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L124"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L122" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L124" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -2684,9 +2689,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L171"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L172"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L171" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L172" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -2733,9 +2738,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L141"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L143"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L141" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L143" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -2769,9 +2774,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L170"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L171"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L170" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L171" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -2781,9 +2786,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L115"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L116"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L115" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L116" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3069,9 +3074,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L111"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L112"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L111" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L112" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3325,9 +3330,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L95"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L96"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L95" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L96" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3378,9 +3383,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 this is not included in docs because its not exported
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L101"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L103"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L101" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L103" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3429,9 +3434,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L177"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L179"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L177" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L179" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3489,9 +3494,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 <tt class="docutils literal"><span class="pre"><span class="Identifier">goodcode</span></span></tt> should be self documenting, but sometimes naming conventions arent enuff
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L99"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L101"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L99" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L101" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3773,9 +3778,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L84"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L85"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L84" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L85" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4003,7 +4008,7 @@ class="link-seesrc" target="_blank">Source</a>
 </div>
 <div id="loc`gensym11">
 <dt><pre><span class="Identifier">loc`gensym11</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim&quot;</span><span class="Other">,</span>
-                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">199</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">7</span><span class="Other">)</span></pre></dt>
+                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">201</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">7</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -4016,7 +4021,7 @@ class="link-seesrc" target="_blank">Source</a>
 </div>
 <div id="loc`gensym13">
 <dt><pre><span class="Identifier">loc`gensym13</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim&quot;</span><span class="Other">,</span>
-                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">202</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
+                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">204</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -4160,7 +4165,7 @@ class="link-seesrc" target="_blank">Source</a>
 </dd>
 </div>
 <div id="ploc`gensym11">
-<dt><pre><span class="Identifier">ploc`gensym11</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim(199, 8)&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">ploc`gensym11</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim(201, 8)&quot;</span></pre></dt>
 <dd>
 
 
@@ -4172,7 +4177,7 @@ class="link-seesrc" target="_blank">Source</a>
 </dd>
 </div>
 <div id="ploc`gensym13">
-<dt><pre><span class="Identifier">ploc`gensym13</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim(202, 10)&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">ploc`gensym13</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim(204, 10)&quot;</span></pre></dt>
 <dd>
 
 
@@ -4230,9 +4235,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L148"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L149"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L148" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L149" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4266,9 +4271,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L123"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L124"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L123" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L124" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4278,9 +4283,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L130"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L131"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L130" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L131" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4290,9 +4295,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L160"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L161"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L160" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L161" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4303,9 +4308,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L162"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L163"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L162" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L163" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4315,9 +4320,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L88"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L89"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L88" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L89" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4375,9 +4380,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L66"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L67"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L66" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L67" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4387,9 +4392,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L189"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L190"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L189" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L190" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4399,9 +4404,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L198"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L199"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L198" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L199" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4411,9 +4416,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L73"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L74"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L73" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L74" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4447,9 +4452,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L158"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L159"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L158" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L159" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4459,9 +4464,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L136"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L138"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L136" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L138" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4483,9 +4488,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L106"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L107"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L106" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L107" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4495,9 +4500,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L132"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L134"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L132" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L134" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4531,9 +4536,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L177"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L178"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L177" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L178" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4543,9 +4548,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L96"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L97"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L96" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L97" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4555,9 +4560,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L80"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L81"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L80" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L81" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4567,9 +4572,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L204"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L205"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L204" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L205" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4627,9 +4632,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L62"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L63"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L62" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L63" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4639,9 +4644,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L101"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L102"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L101" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L102" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4652,9 +4657,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L212"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L213"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L212" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L213" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4664,9 +4669,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L186"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L188"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L186" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L188" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4676,9 +4681,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L143"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L144"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L143" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L144" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4724,9 +4729,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L116"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/routines.nim#L117"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L116" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/routines.nim#L117" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4916,7 +4921,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-25 04:37:00 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-25 12:23:55 UTC</small>
       </div>
     </div>
   </div>

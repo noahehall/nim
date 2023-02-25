@@ -93,6 +93,7 @@ idiomatic nim
 
 borrowed from somewhere else (e.g. status auditor docs)
 - MACRO_CASE for external constants (status) (permitted in styleguide but not preferred)
+- use nimble's recommended [package structure](https://github.com/nim-lang/nimble#project-structure)
 
 my preferences
 --------------

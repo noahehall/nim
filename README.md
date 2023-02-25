@@ -25,9 +25,11 @@
 ## recommended ramp up
 
 - this repo serves two purposes
-  1. [online documentation](https://noahehall.github.io/nim/htmldocs/main.html) you can read while coding
-  2. [source code](./main.nim) you can execute while reading
-- thus each `*chapter*` has docs to read and code to run:
+  - 1. [online documentation](https://noahehall.github.io/nim/htmldocs/main.html) you can read while coding
+    - generally concise abbreviations extracted from one of the nim docs/blogs/etc, always check the nimdocs
+  - 2. [source code](./main.nim) you can execute while reading
+    - generally concise API invocations of the subject at hand, definitely not comprehensive
+- thus each _chapter_ has docs to read and code to run:
   - 0: tutorials (indented below) > [helloworld](/helloworld/helloworld.nim) > [sugar](/deepdives/sugar.nim)
     - [adambard: learn x in y minutes](https://learnxinyminutes.com/docs/nim/)
     - [flaviut: nim by example](https://nim-by-example.github.io/)
@@ -43,6 +45,7 @@
     - [source: nim system](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L1)
     - [source: nim std modules](https://github.com/nim-lang/Nim/tree/version-1-6/lib/system)
     - [source: nimscript](https://github.com/nim-lang/Nim/blob/devel/lib/system/nimscript.nim)
+    - [source: nimble api source](https://github.com/nim-lang/nimble/blob/master/src/nimblepkg/nimscriptapi.nim)
     - [cheatsheet: reStructured Text](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
     - [book: nim in action](https://www.manning.com/books/nim-in-action)
       - released in 2017, still highly relevant and recommended

@@ -2,7 +2,7 @@
 
 ## links
 
-- [all nimble packages](https://github.com/nim-lang/packages)
+- [all nimble packages](https://github.com/nim-lang/packages/blob/master/packages.json)
 - [nimble pkg directory](https://nimble.directory/)
 - [nim github search: most stars](https://github.com/topics/nim?l=nim&o=desc&s=stars)
 - [awesome-nim](https://github.com/xflywind/awesome-nim)
