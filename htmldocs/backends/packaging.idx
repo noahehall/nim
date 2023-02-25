@@ -10,5 +10,9 @@ releasing and publishing packages	backends/packaging.html#nimble-packages-nimscr
 nimscript	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimscript	  nimscript	
 nimscript limitations	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimscript-limitations	  nimscript limitations	
 nimscript for app configuration	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimscript-for-app-configuration	  nimscript for app configuration	
-nimscript for devops	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimscript-for-devops	  nimscript for devops	
 nimscript for scripting	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimscript-for-scripting	  nimscript for scripting	
+nimscript nimble integration	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimscript-nimble-integration	  nimscript nimble integration	
+nimscript types	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimscript-types	  nimscript types	
+nimscript vars	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimscript-vars	  nimscript vars	
+nimscript procs	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimscript-procs	  nimscript procs	
+nimscript tasks	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimscript-tasks	  nimscript tasks	

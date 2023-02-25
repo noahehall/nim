@@ -10,10 +10,13 @@
 TLDR
 - everything you should know about nim
 - always check the nim docs for the full syntax
-- the htmldocs dont surface everything in source (we arent using runnableExamples)
-  - click the source link at the top of any file
-  - or clone and run root/main.nim or backends/targets/shell.nims
-- the imported files (see below) are grouped by expected search patterns
+- the htmldocs dont surface everything  (we arent using runnableExamples)
+  - htmldocs provide high level info but very few nim API details
+  - API examples & info are detailed in the source link at the top of every file
+    - clone and run root/main.nim or backends/targets/shell.nims
+- the imported files (see below) are like chapters in a book
+  - grouped by expected search patterns & use case, not technical correctness
+  - the nimscript digest [is available here](https://github.com/noahehall/nim/blob/develop/backends/targets/shell.nims)
 ]##
 
 import

@@ -1,14 +1,13 @@
 ##
 ## nimble packages, nimscripts, and app cfgs
 ## =========================================
-## [bookmark](https://nim-lang.org/docs/nims.html)
+## [bookmark](https://nim-lang.org/docs/parsecfg.html)
 
 ##[
 ## TLDR
-- nimble
-  - nimble shipped with nim isnt the nimbiest version
-    - install a nimbier nimble with `nimble install nimble`
-  - testing stuff in tests.nim
+- nimble shipped with nim isnt the nimbiest version
+  - install a nimbier nimble with `nimble install nimble`
+- writing tests for packages in tests.nim
 
 links
 -----
@@ -98,19 +97,8 @@ creating nimble packages
       else:
         foreignDep "openssl"
 
-    # package tasks: get a pkgs tasks via `nimble tasks`
-    # run via nimble woopwoop
-    before wOOpwOOp:
-      echo "djvoice: EVERYONE SAY!"
-    task wOOpwOOp, "nimlang entering stage right":
-      echo "w00p w00p... WOOP WOOP"
-    after wOOpwOOp:
-      echo "djvoice: CMON LOUDERRR"
-      return false # stop execution
-      echo "djvoice: IS THAT ALL YOU GOT"
-
-    # local task requirements
-    taskRequires "wOOpwOOp", "somedeb =~ x.y.z"
+    # package tasks: list a pkgs tasks via `nimble tasks`
+    # see task section below
 
 package dir structure
 ---------------------
@@ -144,6 +132,7 @@ releasing and publishing packages
 
 ## nimscript
 - subset of nim that can be evaluated by nims builtin VM
+- [runnable example](https://github.com/noahehall/nim/blob/develop/backends/targets/shell.nims)
 
 nimscript limitations
 ---------------------
@@ -161,22 +150,15 @@ nimscript for app configuration
 -------------------------------
 - nim will automatically process .nims configs in the following order (later overrides previous)
 .. code-block:: Nim
-  $XDG_CONFIG_HOME/nim/config.nims or ~/config/nim/config.nims
+  $XDG_CONFIG_HOME/nim/config.nims || ~/config/nim/config.nims
   $parentDir/config.nims
   $projectDir/config.nims
   $project.nims
 
-- you can set switches via 2 syntax
+- syntax for setting switches has 2 forms
 .. code-block:: Nim
   switch("opt", "size") || hint(name, bool) || warning(name, bool)
   --opt:size # IMO the cleaner syntax
-
-nimscript for devops
---------------------
-- nimscript tasks fn as runners with pre and post lifecycle (see nimble above)
-  - you have the power of nim wherever you would use a shell script
-  - see scripting section below
-- default tasks: help, build, tests, and bench cmds
 
 
 nimscript for scripting
@@ -192,4 +174,58 @@ nimscript for scripting
 
     # with switches
     #!/usr/bin/env -S nim --hints:off
+
+nimscript nimble integration
+----------------------------
+- author
+- backend
+- bin
+- binDir
+- description
+- installDirs
+- installExt
+- installFiles
+- license
+- packageName
+- skipDirs
+- skipExt
+- skipFiles
+- srcDir
+- version
+- requires(varargs[string])
+
+nimscript types
+---------------
+- ScriptMode enum
+  - Silent bool
+  - Verbose bool echos cmd before execution
+  - Whatif bool echos cmds without execution
+
+nimscript vars
+--------------
+- mode ScriptMode runtime behavior
+- requiresData seq[string] for read/write access
+
+nimscript procs
+---------------
+- cppDefine(string) is a C preprocessor #define and needs to be mangled
+- patchFile(pkg, thisFile, withThisFile) overrides location of a file belonging to pkg
+- readAllFromStdin() read all data from stdin; blocks until EOF event (stdin closed)
+- readLineFromStdin() read a line from stdin; blocks until EOF event (stdin closed)
+- toDll(fname) posix adds lib$fname.so, windows appends .dll to fname
+- toExe(fname) posix returns fname unmodified, windows appends .exe
+- cpFile from, to
+- mvFile
+- setCommand that Nim should continue execution with
+- getCommand that Nim is currently using to execute
+- switch(x, y) nim compiler switch, IMO prefer --x:y
+
+nimscript tasks
+---------------
+- a template which creates a proc named blahTask
+- useful for package build scripts, shell scripts, devops actions, and integration with nimble
+  - tasks have before and after lifecycle hooks within .nimble files
+  - you have the power of nim wherever you would use a shell script
+- default tasks: help, build, tests, and bench cmds
+
 ]##

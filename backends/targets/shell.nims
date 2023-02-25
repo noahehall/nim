@@ -1,66 +1,49 @@
+#!/usr/bin/env nim
+# ^ or usr/bin/env -S nim --hints:off e.g.
+
+import std/[sugar, sequtils, strformat, strutils, distros]
+
+const
+  dirtmp = "/tmp/dir"
+  dotdir = "."
+  mydir = "targets"
+  mydirdir = "backends"
+  readme = "README.md"
+  SOME_KEY = "KEY_SOME"
+  somecmd = "pwd"
+  somecmdarg = "--help"
+  someval = "valsome"
+  symlinkedcmd = "runpostman"
+  tmpdir = "/tmp/dir/with/multiple/sub/dirs"
+
+echo "############################ nimble integration"
+# check nimdocs for more
+author = "noah edward hall"
+backend = "c"
+description = "nimscript api example"
+license = "TO KILL!"
+version = "0.0.1"
 
 echo "############################ config"
 
---opt:size
+--opt:size ## set compiler switches
+mode = ScriptMode.Verbose ## Silent | Whatif
+requiresData = @[] ## exposes requirments for r/w access
+const buildCPU = system.hostCPU ## build target
+const buildOS = system.hostOS ## build target
 
-echo "############################ scripts"
-#!/usr/bin/env nim
-
-# nimble integration/metadata
-# bin, binDir, installDirs, installExt, installFiles
-# skipDirs, skipExt, skipFiles, srcDir
-# packageName = the default is the nimscript filename
-# requires(varargs[string])  set the list of reqs of this nimble pkg
-
-author = "noah edward hall"
-backend = "c"
-description = "my first nimscript!"
-license = "Free"
-version = "0.0.1"
-
-import std/distros
-
-echo "############################ scripts: vars/flags"
-# hint(name, bool) enable/disable specific hints
-# warning(name, bool) enable/disable specific warnings
-
-mode = ScriptMode.Verbose ## \
-  ## Silent, Whatif echos instead of executes
-  ## set the mode when the script starts
-  ## influece how mkDir, rmDir, etc behave
-
-# requiresData = seq[string] ## \
-  # list of requirments for r/w access
-
-const buildCPU = system.hostCPU ## \
-  ## useful for cross compilation if set to a nondefault value
-
-const buildOS = system.hostOS ## \
-  ## useful for cross cmmpilation if set to a nondefault value
-
-when true:
-  echo "this package was built on: ", buildOs, "/", buildCPU
+echo fmt"this package will build for {buildOS=}/{buildCPU=}"
+echo fmt"{projectName()=}"
+put(SOME_KEY, someval) ## upsert conf
+echo fmt"{exists(SOME_KEY)=}"
+echo fmt"empty string if not found {get(SOME_KEY)=}"
 
 
-echo "############################ scripts: env"
-# env
-putEnv("MY_LEAKED_BANKACOUNT_PASSWORD", "p0oP1nurm0u7h")
-echo "are we gonna get pwned? ", existsEnv("MY_LEAKED_BANKACOUNT_PASSWORD")
-delEnv("MY_LEAKED_BANKACOUNT_PASSWORD") ## \
-  ## from the environment
-echo "do you know my name? ", getEnv("USER")
-
-# nim conf
-echo "does this key exist in conf? ", exists("opt.size") ## \
-  ## we set --opt:size previously, still reports false, dunno
-put("poop", "first check the tp") ## \
-  ## upserts conf
-echo "read conf key poop: ", get("poop") ## \
-  ## returns empty string if not found
-
-# nim
-echo "what invocation cmd was used ", getCommand() ## \
-  ## e.g. e, c, js, build, help
+echo "############################ env"
+putEnv(SOME_KEY, someval)
+echo fmt"{existsEnv(SOME_KEY)=}"
+echo fmt"{getEnv(SOME_KEY)=}"
+delEnv(SOME_KEY)
 
 # example Architectures (docs)
 if defined(amd64):
@@ -87,113 +70,68 @@ elif detectOs(Debian):
   echo "Distro is Debian"
 
 
-echo "############################ scripts: files/dirs/etc"
-# files/dirs
-# cpDir(from, to)
-# cpFile(from, to)
-# mvFile(from, to)
-# rmFile
+echo "############################ files/dirs/etc"
+echo fmt"*_d = debug, *_r = release {nimcacheDir()=}"
+echo fmt"{getCurrentDir()=}"
+echo fmt"{projectDir()=}"
+echo fmt"{thisDir()=}"
+echo fmt"{projectPath()=}"
+echo fmt"before cd {dirExists mydir=}"
+cd mydirdir ## change is permanent
+echo fmt"after cd {dirExists mydir=}"
+cd ".."
 
-echo "wheres nimcache ", nimcacheDir() ## \
-  ## remember blah_d is debug and blah_r is release
+withDir mydirdir:
+  ## change is temporary
+  ## after this block finishes we return to prev dir
+  echo fmt"{dirExists mydir=}"
+  echo fmt"{fileExists readme=}"
+  echo fmt"non recursive {listDirs dotdir=}"
+  echo fmt"non recursive {listFiles dotdir=}"
 
-echo "yolo world? ", dirExists("../yolowurl") ## \
-  ## reporting false, dunno, likely due to cwd (in vscode)
-  ## like in bash, always have a reference point
-withDir "nimscript":
-  ## after this block exists we return to prev dir
-  ## the below should now return true if running this file in vscode
-  echo "yolo world? ", dirExists("../yolowurl")
+mkDir(tmpdir) ## mkdir -p tmpdir
+cpDir(tmpdir, dirtmp)
+for dir in [tmpdir, dirtmp]: rmDir(dir)
 
-echo "every repo should have a root readme: ", fileExists("../README.md") ## \
-  ## probably cwd again, ahh yup cwd is .. in vscode
-  ## like in bash, always have a reference point
-withDir "nimscript":
-  echo "README.md is in parentDir now? ", fileExists("../README.md")
 
-echo "cwd: ", getCurrentDir()
-echo "project dir: ", projectDir()
-echo "what dir is this file in? ", thisDir()
 
-echo "subdirs in cwd: ", listDirs(".") ## \
-  ## non-recursive, seq[string]
-echo "files in cwd: ", listFiles(".") ## \
-  ## non-recursive, seq[string]
-
-const tmpDir = "tmp/mkdir/p"
-mkDir(tmpDir) ## \
-  ## mkdir -p blah
-echo tmpDir, " created? ", dirExists(tmpDir)
-try: mvDir("tmp", getCurrentDir() & "/nimscript/")
-except: echo "cant move TO a non-empty dir, ", getCurrentDir() & "/nimscript/"
-
-rmDir("tmp")
-echo tmpDir, " deleted? ", not dirExists(tmpDir)
-
-echo "############################ scripts: exec"
-# setCommand(cmd; project) ## \
-# pretty sure project is the path to a project
-# sets the nim cmd that should be used after  this script is finished
-# not sure the usecase for this one
-# why would you need to set a cmd after a script has finished?
-# ^ probably because `.nims` dual purpose is for configuration which executes before a `.nim` file
-# ^ thus you can control (e.g. cross compilation) execution of the mainfile
-
-echo "how many args did we receive? ", paramCount()
-for i in 0..<paramCount(): echo "param ", i, " is ", paramStr i ## \
+echo "############################ exec"
+echo fmt"current Nim cmd {getCommand()=}"
+echo fmt"{paramCount()=}"
+for i in 0..<paramCount(): echo fmt"{paramStr i=}" ## \
   ## 0 absolute path to nim
   ## 1 is cmd
 
-echo "will u return the symlink or resolve it? ", findExe("runpostman") ## \
-  ## searches first in cwd, then each $PATH dir until it finds the executable
-
-echo "which executable is running? ", selfExe() ## \
-  ## absolute path to nim/nimble
-selfExec("-v") ## \
-  ## command must not contain the nim part
-
-exec "pwd" ## \
-  ## if cmd errs an OSError is raised
-  ## use gorgeEx to instead receive the exit code & output
-exec "groups", "blah" ## \
-  ## exec cmd, input; cache = ""
-  ## doesnt seem to work as expected when passing input
-  ## expected groups: ‘blah’: no such user
-  ## exec groups blah does return expected
-
-cd ".." ## \
-  ## permanently change directories
-  ## use withDir for a temporary change
+echo fmt"in cwd, then in $PATH {findExe somecmd=}"
+echo fmt"resolves symlinks {findExe symlinkedcmd=}"
+echo fmt"{selfExe()=}"
+selfExec "-v"
+exec somecmd ## throws OSError on non 0
+echo fmt"returns output & exit code {gorgeEx somecmd=}"
 
 
+echo "############################ catchall procs"
+echo fmt"case insensitive {cmpic(tmpdir, dotdir)=}"
 
-echo "############################ scripts: catchall procs"
-# cppDefine(string) is a C preprocessor #define and needs to be mangled
-# patchFile(pkg, thisFile, withThisFile) overrides location of a file belonging to pkg
-# readAllFromStdin() read all data from stdin; blocks until EOF event (stdin closed)
-# readLineFromStdin() read a line from stdin; blocks until EOF event (stdin closed)
-# toDll(fname) posix adds lib$fname.so, windows appends .dll to fname
-# toExe(fname) posix returns fname unmodified, windows appends .exe
-echo "is a == A ? ", cmpic("a", "A") == 0
+echo "############################ tasks"
 
-echo "############################ scripts: tasks"
-# used in buildscripts, but also for defining tasks in general
-# now whats a task? lol for that we'll have to search the docs
-# technically its a template which creates a proc named blahTask
-# but why do you need a task, and not just a proc? no fkn clue
-# ahh you should also read the nimble docs on this one
+# run via nimble woopwoop
+task wOOpwOOp, "nimlang entering stage right":
+  echo "w00p w00p... WOOP WOOP"
 
-task poop, "with this description":
-  ## a task with a description is public
-  echo "completed!"
+task djvoice, "":
+  ## hidden tasks descriptions arent logged to console
+  echo "ARE YOU READDDDY"
+  woopwoopTask()
 
-task soup, "":
-  ## a task without a description is hidden
-  ## you can call one task from another
-  poopTask()
-
-poopTask() ## \
-  ## tasks can also be called directly
-
-echo "############################ build"
-# TODO: you need to read through the task docs
+djvoiceTask()
+## the following are available inside *.nimble files
+# task lifecycle hooks
+# before wOOpwOOp:
+#   echo "djvoice: EVERYONE SAY!"
+# after wOOpwOOp:
+#   echo "djvoice: CMON LOUDERRR"
+#   return false # stop execution
+#   echo "djvoice: IS THAT ALL YOU GOT"
+# local task requirements
+# taskRequires "wOOpwOOp", "somedeb =~ x.y.z"
