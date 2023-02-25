@@ -35,7 +35,7 @@ nimble configuration
 --------------------
 - posix: ~/.config/nimble/nimble.ini
 - windows: Users\someuser\AppData\Roaming\nimble\nimble.ini
-  .. code-block:: Nim
+.. code-block:: Nim
     # where to install pkgs
     nimbleDir = r"~/nimble/"
 
@@ -59,7 +59,7 @@ creating nimble packages
   - the .nimble file should have the same name as the package
   - its interpreted using nimscript and supports any nim vm compatible features
     - e.g. tasks can be used to define nimble package-specific commands
-  .. code-block:: Nim
+.. code-block:: Nim
     # package
     version = "1.2.3"
     author = "rohtua"
@@ -88,23 +88,26 @@ nimscript limitations
 - multimethods not available
 - random.randomize() requires an int64 as a seed
 
-
-nimscript for configs
----------------------
-- nim will automatically process .nims configs in the following order (later overrides previous)
-  - $XDG_CONFIG_HOME/nim/config.nims || ~/config/nim/config.nims
-  - $parentDir/config.nims think this might be $parentDir/config/*.nims
-  - $projectDir/config.nims
-  - $project.nims
-- you can set switches via 2 syntax
-  - switch("opt", "size"), hint(name, bool), warning(name,bool)
-  - --opt:size
-    - IMO this is the cleaner syntax
-
 nimscript as build tool
 -----------------------
 - you have to read through docs/task as well as system/tasks
 - default provides: help, build, tests, and bench cmds
+
+nimscript for configs
+---------------------
+- nim will automatically process .nims configs in the following order (later overrides previous)
+.. code-block:: Nim
+  $XDG_CONFIG_HOME/nim/config.nims or ~/config/nim/config.nims
+  $parentDir/config.nims # think this might be $parentDir/config/*.nims
+  $projectDir/config.nims
+  $project.nims
+
+- you can set switches via 2 syntax
+.. code-block:: Nim
+  switch("opt", "size")
+  hint(name, bool)
+  warning(name,bool)
+  --opt:size # IMO this is the cleaner syntax
 
 
 nimscript for scripting
@@ -112,9 +115,12 @@ nimscript for scripting
 - The syntax, style, etc is identical to compiled nim
 - supports templates, macros, types, concepts, effect tracking system, etc
 - std and third party pkgs can work in both .nim and .nims (see limitations)
-- FYI: a *.nims file doesnt have a separate $projectDir/$project config file,
-  - it is its own config file, but can rely on the other config types
+- a nims file is its own config file, but you can rely on the other types
 - shebang has two formats
-  - w/out switches `#!/usr/bin/env nim`
-  - with  switches `#!/usr/bin/env -S nim --hints:off`
+.. code-block:: Nim
+    # without switches
+    #!/usr/bin/env nim
+
+    # with switches
+    #!/usr/bin/env -S nim --hints:off
 ]##

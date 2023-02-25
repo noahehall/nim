@@ -1,0 +1,12 @@
+nimble packages, nimscripts, and app cfgs	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs	 nimble packages, nimscripts, and app cfgs	
+TLDR	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-tldr	  TLDR	
+links	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-links	  links	
+todos	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-todos	  todos	
+nimble	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimble	  nimble	
+nimble configuration	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimble-configuration	  nimble configuration	
+creating nimble packages	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-creating-nimble-packages	  creating nimble packages	
+nimscript	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimscript	  nimscript	
+nimscript limitations	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimscript-limitations	  nimscript limitations	
+nimscript as build tool	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimscript-as-build-tool	  nimscript as build tool	
+nimscript for configs	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimscript-for-configs	  nimscript for configs	
+nimscript for scripting	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimscript-for-scripting	  nimscript for scripting	
