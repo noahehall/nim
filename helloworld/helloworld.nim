@@ -94,6 +94,8 @@ idiomatic nim
 borrowed from somewhere else (e.g. status auditor docs)
 - MACRO_CASE for external constants (status) (permitted in styleguide but not preferred)
 - use nimble's recommended [package structure](https://github.com/nim-lang/nimble#project-structure)
+- use somename.nim.cfg for non autoloaded config files (nimble source)
+- use somename.nim.ini for cfgs requiring parsecfg (IMO to match nimble)
 
 my preferences
 --------------
@@ -105,8 +107,8 @@ my preferences
   - e.g. pref fn(x, ...) when chaining/closures (calling syntax impacts type compatibility (docs))
 - -- > - cmd line switches so you can sort nim compiler options
 - object vs tuple
-  - tuple: inheritance / private fields / reference equality arent required
-  - object: inheritance / private fields / reference equality are required
+  - tuple: inheritance / private fields / reference equality NOT required
+  - object: inheritance / private fields / reference equality IS required
 - refrain from using blah% operators they tend to be legacy, see https://github.com/nirv-ai/docs/issues/50
 - always compile with --panics:on (manual: smaller binaries + optimizations)
 - dont use any unsafe language features or disable runtime checks (manual: removes possibility of unchecked runtime errs)

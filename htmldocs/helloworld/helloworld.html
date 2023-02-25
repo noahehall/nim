@@ -1061,6 +1061,8 @@ class="link-seesrc" target="_blank">Source</a>
 <p>borrowed from somewhere else (e.g. status auditor docs)</p>
 <ul class="simple"><li>MACRO_CASE for external constants (status) (permitted in styleguide but not preferred)</li>
 <li>use nimble's recommended <a class="reference external" href="https://github.com/nim-lang/nimble#project-structure">package structure</a></li>
+<li>use somename.nim.cfg for non autoloaded config files (nimble source)</li>
+<li>use somename.nim.ini for cfgs requiring parsecfg (IMO to match nimble)</li>
 </ul>
 
 <h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-my-preferences" href="#yolo-wurlcolon-basic-nim-syntax-my-preferences">my preferences</a></h2><ul class="simple"><li>strive for parantheseless code, remember echo f 1, f 2 == echo(f(1), f(2)) and not echo(f(1, f(2)))</li>
@@ -1071,8 +1073,8 @@ class="link-seesrc" target="_blank">Source</a>
 </ul>
 </li>
 <li>-- &gt; - cmd line switches so you can sort nim compiler options</li>
-<li>object vs tuple<ul class="simple"><li>tuple: inheritance / private fields / reference equality arent required</li>
-<li>object: inheritance / private fields / reference equality are required</li>
+<li>object vs tuple<ul class="simple"><li>tuple: inheritance / private fields / reference equality NOT required</li>
+<li>object: inheritance / private fields / reference equality IS required</li>
 </ul>
 </li>
 <li>refrain from using blah% operators they tend to be legacy, see <a class="reference external" href="https://github.com/nirv-ai/docs/issues/50">https://github.com/nirv-ai/docs/issues/50</a></li>
@@ -4921,7 +4923,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-25 14:40:17 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-25 22:48:44 UTC</small>
       </div>
     </div>
   </div>

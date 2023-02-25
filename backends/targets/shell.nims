@@ -1,9 +1,10 @@
 #!/usr/bin/env nim
-# ^ or usr/bin/env -S nim --hints:off e.g.
+# ^ or /usr/bin/env -S nim --hints:off e.g.
 
-import std/[sugar, sequtils, strformat, strutils, distros]
+import std/[sugar, sequtils, strformat, strutils, distros, os]
 
 const
+  configFile = "main.nim.ini"
   dirtmp = "/tmp/dir"
   dotdir = "."
   mydir = "targets"
@@ -24,7 +25,9 @@ description = "nimscript api example"
 license = "TO KILL!"
 version = "0.0.1"
 
-echo "############################ config"
+echo "############################ config internal via .cfg / .nims"
+## .cfg and .nims can be autoloaded based on cfg path algorithm (see packaging docs)
+## can also use the logic in the external section that follows
 
 --opt:size ## set compiler switches
 mode = ScriptMode.Verbose ## Silent | Whatif
@@ -38,6 +41,30 @@ put(SOME_KEY, someval) ## upsert conf
 echo fmt"{exists(SOME_KEY)=}"
 echo fmt"empty string if not found {get(SOME_KEY)=}"
 
+echo "############################ config external via .ini"
+import std/[parsecfg]
+
+const cfg = normalizedPath fmt"{thisDir()}/../../{configFile}".readFile
+var dict = newconfig()
+proc parseCfg(): void =
+  ## unfortunately parseconfig not available in nimscript
+  ## so we have to manually read and parse
+  ## this quick algo doesnt support multiline values
+  var curSection = ""
+  for l in cfg.splitLines:
+    if l.startsWith(";") or l.startsWith("#") or l.len == 0: continue
+    elif l.startsWith("["): curSection = l.split({'[', ']'})[1].strip
+    else:
+      echo fmt"{l=}"
+      let kv = l.split({':', '='}, maxsplit = 1)
+      dict.setSectionKey(curSection, kv[0].strip, (if kv.len == 2: kv[1].strip else: ""))
+
+parseCfg()
+for s in sections dict: echo fmt"{s=}"
+echo fmt"""{dict.getSectionValue "section b", "k1"=}"""
+echo fmt"""{dict.getSectionValue "section b", "--k4"=}"""
+echo fmt"""{dict.getSectionValue "section b", "k9"=}"""
+echo fmt"""{dict.getSectionValue "", "--threads"=}"""
 
 echo "############################ env"
 putEnv(SOME_KEY, someval)
@@ -115,16 +142,17 @@ echo fmt"case insensitive {cmpic(tmpdir, dotdir)=}"
 
 echo "############################ tasks"
 
-# run via nimble woopwoop
+# can also run via nimble woopwoop
 task wOOpwOOp, "nimlang entering stage right":
   echo "w00p w00p... WOOP WOOP"
 
 task djvoice, "":
   ## hidden tasks descriptions arent logged to console
   echo "ARE YOU READDDDY"
-  woopwoopTask()
+  woopwoopTask() ## tasks can run other tasks for creating pipelines
 
 djvoiceTask()
+
 ## the following are available inside *.nimble files
 # task lifecycle hooks
 # before wOOpwOOp:

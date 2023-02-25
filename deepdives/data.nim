@@ -16,16 +16,17 @@ links
   - [logging](https://nim-lang.org/docs/logging.html)
   - [marshal](https://nim-lang.org/docs/marshal.html)
 - niche
-  - [json parser](https://nim-lang.org/docs/parsejson.html)
+  - [base object of a lexer](https://nim-lang.org/docs/lexbase.html)
+  - [fusion ht/xml parser](https://nim-lang.github.io/fusion/src/fusion/htmlparser/parsexml.html)
+  - [fusion ht/xml tree](https://nim-lang.github.io/fusion/src/fusion/htmlparser/xmltree.html)
+  - [fusion htmlparser](https://nim-lang.github.io/fusion/src/fusion/htmlparser.html)
   - [ht/xml parser](https://nim-lang.org/docs/xmlparser.html)
   - [ht/xml tree](https://nim-lang.org/docs/xmltree.html)
   - [ht/xml](https://nim-lang.org/docs/parsexml.html)
   - [html generator](https://nim-lang.org/docs/htmlgen.html)
   - [html parser](https://nim-lang.org/docs/htmlparser.html)
+  - [json parser](https://nim-lang.org/docs/parsejson.html)
   - [var ints](https://nim-lang.org/docs/varints.html)
-  - [fusion htmlparser](https://nim-lang.github.io/fusion/src/fusion/htmlparser.html)
-  - [fusion ht/xml parser](https://nim-lang.github.io/fusion/src/fusion/htmlparser/parsexml.html)
-  - [fusion ht/xml tree](https://nim-lang.github.io/fusion/src/fusion/htmlparser/xmltree.html)
 
 ## json
 
@@ -90,6 +91,8 @@ jsonutils procs
 ---------------
 - fromJsonHook JsonNode -> any nim type
 - toJsonHook any nim type -> JsonNode
+
+
 ]##
 
 import std/[sugar, strformat, strutils, sequtils, options, tables]

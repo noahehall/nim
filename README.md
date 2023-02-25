@@ -13,6 +13,7 @@
 - many application developers are moving to/incorporating rust/go in their stack; you should prefer nim for (many, but definitely) these reasons
   - [cross compile applications](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
   - [cross platform scripts](https://nim-lang.org/docs/nims.html#benefits)
+  - [robust application & script configuration](https://nim-lang.org/docs/parsecfg.html)
   - [documentation is a first class citizen](https://nim-lang.org/docs/docgen.html)
     - [with first class support for reStructured text](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
   - [testing is a first class citizen](https://nim-lang.github.io/Nim/testament.html)

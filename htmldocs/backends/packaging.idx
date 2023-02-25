@@ -16,3 +16,6 @@ nimscript types	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-
 nimscript vars	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimscript-vars	  nimscript vars	
 nimscript procs	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimscript-procs	  nimscript procs	
 nimscript tasks	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-nimscript-tasks	  nimscript tasks	
+parsecfg	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-parsecfg	  parsecfg	
+parsecfg types	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-parsecfg-types	  parsecfg types	
+parsecfg procs	backends/packaging.html#nimble-packages-nimscripts-and-app-cfgs-parsecfg-procs	  parsecfg procs	

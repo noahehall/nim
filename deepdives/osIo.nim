@@ -354,6 +354,7 @@ echo fmt"filtered collect getHomeDir().walkdirRec {hiddenFilesRec=}"
 echo "############################ os/system files"
 # copyFile src, dest, options
 # copyFileToDir src, dest, options
+# fileNewer a,b
 # flushFile buffer down the toilet
 # lines iterate over any line in file f
 # open a file from a filehandle/string with a given fileMode (defaults readonly); doesnt throw

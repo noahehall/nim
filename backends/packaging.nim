@@ -7,7 +7,7 @@
 ## TLDR
 - nimble shipped with nim isnt the nimbiest version
   - install a nimbier nimble with `nimble install nimble`
-- writing tests for packages in tests.nim
+- writing tests for packages explained in tests.nim
 
 links
 -----
@@ -15,13 +15,15 @@ links
   - [shell script with useful nimble functions](https://github.com/noahehall/theBookOfNoah/blob/master/linux/bash_cli_fns/nimlang.sh)
   - [example config with tasks](https://github.com/kaushalmodi/nim_config/blob/master/config.nims)
   - [nimble repo](https://github.com/nim-lang/nimble)
-  - [example nimscript script](https://github.com/noahehall/nim/blob/develop/backends/targeting/shell.nim)
+  - [example nimscript script](https://github.com/noahehall/nim/blob/develop/backends/targets/shell.nims)
 - high impact
   - [nimble pkg reference](https://github.com/nim-lang/nimble#nimble-reference)
   - [nims intro](https://nim-lang.org/docs/nims.html)
   - [nimscript spec (including tasks)](https://nim-lang.org/docs/nimscript.html)
   - [parallel tasks](https://nim-lang.org/docs/tasks.html)
   - [parse config](https://nim-lang.org/docs/parsecfg.html)
+- niche
+  - [base object of a lexer](https://nim-lang.org/docs/lexbase.html)
 
 todos
 -----
@@ -228,4 +230,39 @@ nimscript tasks
   - you have the power of nim wherever you would use a shell script
 - default tasks: help, build, tests, and bench cmds
 
+## parsecfg
+- high performance config parser in windows ini syntax
+  - fully supported in .nim files
+  - semi supported in .nims and .nimble files
+- supports string literals, raw and triple quoted nim strings
+
+parsecfg types
+--------------
+- CfgEvent object describing the parsing event
+  - kind enum CfgEventKind the type of line being parsed
+    - cfgSectionStart the start of config section
+      - section returns [name]
+    - cfgKeyValuePair in the form key=value
+      - key
+      - value
+    - cfgOption in the form --key=value
+      - key
+      - value
+    - cfgError failed to parse
+      - msg reason
+    - cfgEof end of file
+- CfgParser object BaseLexor
+- Config OrderedTableRef
+
+parsecfg procs
+--------------
+- delSectionKey from in in a specific/empty str section
+- getSectionValue from a key in a specific/empty str section
+- loadConfig from a path
+- newConfig() dictionary
+- setSectionKey set key & value in a specific/empty str section
+- writeConfig to a path
+- close parser and its associated stream
+- delSection and all associated keys
+- errorStr of error event with line and column
 ]##
