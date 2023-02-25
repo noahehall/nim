@@ -148,12 +148,12 @@ except:
                              ## use staticRead instead for compiletime">entireFile</a></li>
   <li><a class="reference" href="#env"
     title="env =
-  var collectResult_2332034014 = initTable(32)
+  var collectResult_2399142878 = initTable(32)
   ## should probably be a strtabs
   for k, v in envPairs():
     if not contains(v, &quot;poop&quot;) and v == &quot;1&quot;:
-      collectResult_2332034014[k] = v
-  collectResult_2332034014">env</a></li>
+      collectResult_2399142878[k] = v
+  collectResult_2399142878">env</a></li>
   <li><a class="reference" href="#first5Lines"
     title="first5Lines = try:
   readLines helloworldReadme, 5
@@ -161,14 +161,14 @@ except:
   @[]">first5Lines</a></li>
   <li><a class="reference" href="#hiddenFiles"
     title="hiddenFiles =
-  var collectResult_2332033437 = newSeq(Natural(0))
+  var collectResult_2399142301 = newSeq(Natural(0))
   for k in walkDir(getHomeDir(), false, false):
     if isHidden(k.path):
-      add(collectResult_2332033437, lastPathPart(k.path))
-  collectResult_2332033437">hiddenFiles</a></li>
+      add(collectResult_2399142301, lastPathPart(k.path))
+  collectResult_2399142301">hiddenFiles</a></li>
   <li><a class="reference" href="#hiddenFilesRec"
     title="hiddenFilesRec =
-  var collectResult_2332033458 = newSeq(Natural(0))
+  var collectResult_2399142322 = newSeq(Natural(0))
   for v in walkDirRec(getHomeDir(), {pcFile}, {pcDir}, false, false):
     if (
       10 &lt; i):
@@ -176,8 +176,8 @@ except:
     else:
       i += 1
     if isHidden(v):
-      add(collectResult_2332033458, lastPathPart(v))
-  collectResult_2332033458">hiddenFilesRec</a></li>
+      add(collectResult_2399142322, lastPathPart(v))
+  collectResult_2399142322">hiddenFilesRec</a></li>
   <li><a class="reference" href="#myEnv"
     title="myEnv = newStringTable([(&quot;FILE&quot;, &quot;/var/log/wtmp&quot;)], modeCaseSensitive)">myEnv</a></li>
   <li><a class="reference" href="#someCmd"
@@ -191,7 +191,7 @@ except:
   <a class="reference reference-toplevel" href="#10" id="60">Consts</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#buildInfo"
-    title="buildInfo = &quot;Revision 1728f7e8ae28f80eb4fdc6fac659c54ea1a41846\nCompiled on #33~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Jan 30 17:03:34 UTC 2&quot;">buildInfo</a></li>
+    title="buildInfo = &quot;Revision 974b705668c2a80519e13b7868be1879667843d1\nCompiled on #33~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Jan 30 17:03:34 UTC 2&quot;">buildInfo</a></li>
   <li><a class="reference" href="#dirtmp"
     title="dirtmp = &quot;/tmp/min&quot;">dirtmp</a></li>
   <li><a class="reference" href="#dotpath"
@@ -316,7 +316,8 @@ class="link-seesrc" target="_blank">Source</a>
 </li>
 </ul>
 
-<h2><a class="toc-backref" id="os-and-islasho-links" href="#os-and-islasho-links">links</a></h2><ul class="simple"><li>examples<ul class="simple"><li><a class="reference external" href="https://github.com/unxsh/nitch">nitch source code</a></li>
+<h2><a class="toc-backref" id="os-and-islasho-links" href="#os-and-islasho-links">links</a></h2><ul class="simple"><li>other<ul class="simple"><li><a class="reference external" href="https://github.com/unxsh/nitch">nitch source code</a></li>
+<li><a class="reference external" href="https://peterme.net/handling-files-in-nim.html">peter: handling files in nim</a></li>
 </ul>
 </li>
 <li>high impact<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/os.html">basic os utils</a></li>
@@ -524,26 +525,14 @@ not defined when generating a dynamic library</p>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L567"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L567" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="cmdyOpts">
-<dt><pre><span class="Identifier">cmdyOpts</span> <span class="Other">=</span> <span class="Identifier">initOptParser</span><span class="Other">(</span><span class="Identifier">myOptsArgDash</span><span class="Other">,</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">,</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">true</span><span class="Other">)</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
 href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L568"
 class="link-seesrc" target="_blank">Source</a>
 &nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L568" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="cmdzOpts">
-<dt><pre><span class="Identifier">cmdzOpts</span> <span class="Other">=</span> <span class="Identifier">initOptParser</span><span class="Other">(</span><span class="Identifier">myOptsArgDash</span><span class="Other">,</span> <span class="Other">{</span><span class="CharLit">'x'</span><span class="Other">,</span> <span class="CharLit">'y'</span><span class="Other">}</span><span class="Other">,</span> <span class="Operator">@</span><span class="Other">[</span><span class="StringLit">&quot;ex&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;why&quot;</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">true</span><span class="Other">)</span></pre></dt>
+<div id="cmdyOpts">
+<dt><pre><span class="Identifier">cmdyOpts</span> <span class="Other">=</span> <span class="Identifier">initOptParser</span><span class="Other">(</span><span class="Identifier">myOptsArgDash</span><span class="Other">,</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">,</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">true</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -554,15 +543,27 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
+<div id="cmdzOpts">
+<dt><pre><span class="Identifier">cmdzOpts</span> <span class="Other">=</span> <span class="Identifier">initOptParser</span><span class="Other">(</span><span class="Identifier">myOptsArgDash</span><span class="Other">,</span> <span class="Other">{</span><span class="CharLit">'x'</span><span class="Other">,</span> <span class="CharLit">'y'</span><span class="Other">}</span><span class="Other">,</span> <span class="Operator">@</span><span class="Other">[</span><span class="StringLit">&quot;ex&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;why&quot;</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">true</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L570"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L570" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
 <div id="i">
 <dt><pre><span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L277"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L278"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L277" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L278" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -572,9 +573,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L587"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L588"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L587" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L588" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -595,27 +596,27 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L396"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L397"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L396" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L397" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
 <div id="env">
 <dt><pre><span class="Identifier">env</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">collectResult_2332034014</span> <span class="Other">=</span> <span class="Identifier">initTable</span><span class="Other">(</span><span class="DecNumber">32</span><span class="Other">)</span>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_2399142878</span> <span class="Other">=</span> <span class="Identifier">initTable</span><span class="Other">(</span><span class="DecNumber">32</span><span class="Other">)</span>
   <span class="Comment">## should probably be a strtabs</span>
   <span class="Keyword">for</span> <span class="Identifier">k</span><span class="Other">,</span> <span class="Identifier">v</span> <span class="Keyword">in</span> <span class="Identifier">envPairs</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span>
     <span class="Keyword">if</span> <span class="Identifier">not</span> <span class="Identifier">contains</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">,</span> <span class="StringLit">&quot;poop&quot;</span><span class="Other">)</span> <span class="Identifier">and</span> <span class="Identifier">v</span> <span class="Operator">==</span> <span class="StringLit">&quot;1&quot;</span><span class="Other">:</span>
-      <span class="Identifier">collectResult_2332034014</span><span class="Other">[</span><span class="Identifier">k</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">v</span>
-  <span class="Identifier">collectResult_2332034014</span></pre></dt>
+      <span class="Identifier">collectResult_2399142878</span><span class="Other">[</span><span class="Identifier">k</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">v</span>
+  <span class="Identifier">collectResult_2399142878</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L469"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L470"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L469" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L470" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -628,32 +629,32 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L404"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L405"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L404" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L405" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
 <div id="hiddenFiles">
 <dt><pre><span class="Identifier">hiddenFiles</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">collectResult_2332033437</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_2399142301</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
   <span class="Keyword">for</span> <span class="Identifier">k</span> <span class="Keyword">in</span> <span class="Identifier">walkDir</span><span class="Other">(</span><span class="Identifier">getHomeDir</span><span class="Other">(</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">false</span><span class="Other">,</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span>
     <span class="Keyword">if</span> <span class="Identifier">isHidden</span><span class="Other">(</span><span class="Identifier">k</span><span class="Other">.</span><span class="Identifier">path</span><span class="Other">)</span><span class="Other">:</span>
-      <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_2332033437</span><span class="Other">,</span> <span class="Identifier">lastPathPart</span><span class="Other">(</span><span class="Identifier">k</span><span class="Other">.</span><span class="Identifier">path</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">collectResult_2332033437</span></pre></dt>
+      <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_2399142301</span><span class="Other">,</span> <span class="Identifier">lastPathPart</span><span class="Other">(</span><span class="Identifier">k</span><span class="Other">.</span><span class="Identifier">path</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Identifier">collectResult_2399142301</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L342"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L343"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L342" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L343" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
 <div id="hiddenFilesRec">
 <dt><pre><span class="Identifier">hiddenFilesRec</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">collectResult_2332033458</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_2399142322</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
   <span class="Keyword">for</span> <span class="Identifier">v</span> <span class="Keyword">in</span> <span class="Identifier">walkDirRec</span><span class="Other">(</span><span class="Identifier">getHomeDir</span><span class="Other">(</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">{</span><span class="Identifier">pcFile</span><span class="Other">}</span><span class="Other">,</span> <span class="Other">{</span><span class="Identifier">pcDir</span><span class="Other">}</span><span class="Other">,</span> <span class="Identifier">false</span><span class="Other">,</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span>
     <span class="Keyword">if</span> <span class="Other">(</span>
       <span class="DecNumber">10</span> <span class="Operator">&lt;</span> <span class="Identifier">i</span><span class="Other">)</span><span class="Other">:</span>
@@ -661,15 +662,15 @@ class="link-seesrc" target="_blank">Source</a>
     <span class="Keyword">else</span><span class="Other">:</span>
       <span class="Identifier">i</span> <span class="Operator">+=</span> <span class="DecNumber">1</span>
     <span class="Keyword">if</span> <span class="Identifier">isHidden</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">)</span><span class="Other">:</span>
-      <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_2332033458</span><span class="Other">,</span> <span class="Identifier">lastPathPart</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">collectResult_2332033458</span></pre></dt>
+      <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_2399142322</span><span class="Other">,</span> <span class="Identifier">lastPathPart</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Identifier">collectResult_2399142322</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L348"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L349"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L348" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L349" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -679,26 +680,14 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L543"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L544"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L543" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L544" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
 <div id="someCmd">
 <dt><pre><span class="Identifier">someCmd</span> <span class="Other">=</span> <span class="StringLit">&quot;whoami&quot;</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L541"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L541" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="someCmdArg">
-<dt><pre><span class="Identifier">someCmdArg</span> <span class="Other">=</span> <span class="Identifier">someCmd</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot; $FILE&quot;</span></pre></dt>
 <dd>
 
 
@@ -709,50 +698,38 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
+<div id="someCmdArg">
+<dt><pre><span class="Identifier">someCmdArg</span> <span class="Other">=</span> <span class="Identifier">someCmd</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot; $FILE&quot;</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L543"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L543" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
 
 </dl></div>
 <div class="section" id="10">
 <h1><a class="toc-backref" href="#10">Consts</a></h1>
 <dl class="item">
 <div id="buildInfo">
-<dt><pre><span class="Identifier">buildInfo</span> <span class="Other">=</span> <span class="StringLit">&quot;Revision 1728f7e8ae28f80eb4fdc6fac659c54ea1a41846\nCompiled on #33~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Jan 30 17:03:34 UTC 2&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">buildInfo</span> <span class="Other">=</span> <span class="StringLit">&quot;Revision 974b705668c2a80519e13b7868be1879667843d1\nCompiled on #33~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Jan 30 17:03:34 UTC 2&quot;</span></pre></dt>
 <dd>
 
 
 compile time only returns stdout + stderr
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L528"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L529"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L528" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L529" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
 <div id="dirtmp">
 <dt><pre><span class="Identifier">dirtmp</span> <span class="Other">=</span> <span class="StringLit">&quot;/tmp/min&quot;</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L281"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L281" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="dotpath">
-<dt><pre><span class="Identifier">dotpath</span> <span class="Other">=</span> <span class="StringLit">&quot;./par/sibl/nephew&quot;</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L283"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L283" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="fossdir">
-<dt><pre><span class="Identifier">fossdir</span> <span class="Other">=</span> <span class="StringLit">&quot;~/git/foss/&quot;</span></pre></dt>
 <dd>
 
 
@@ -763,83 +740,8 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="helloworldReadme">
-<dt><pre><span class="Identifier">helloworldReadme</span> <span class="Other">=</span> <span class="StringLit">&quot;helloworld/helloworld.md&quot;</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L394"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L394" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="md">
-<dt><pre><span class="Identifier">md</span> <span class="Other">=</span> <span class="StringLit">&quot;md&quot;</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L286"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L286" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="myOpts">
-<dt><pre><span class="Identifier">myOpts</span> <span class="Other">=</span> <span class="StringLit">&quot;-ab12 -c=3 -d:4 --e f 5 6 --g:7 --h=8 -i::9 -j:=10 --k==11 --l=:12&quot;</span></pre></dt>
-<dd>
-
-
-sample options
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L559"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L559" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="myOptsArgDash">
-<dt><pre><span class="Identifier">myOptsArgDash</span> <span class="Other">=</span> <span class="StringLit">&quot;-ab12 -c=3 -d:4 --e f 5 6 --g:7 --h=8 -i::9 -j:=10 --k==11 --l=:12 -- arg1 arg2&quot;</span></pre></dt>
-<dd>
-
-
-sample options with arguments after double dash
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L563"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L563" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="myOptsArgSpace">
-<dt><pre><span class="Identifier">myOptsArgSpace</span> <span class="Other">=</span> <span class="StringLit">&quot;-ab12 -c=3 -d:4 --e f 5 6 --g:7 --h=8 -i::9 -j:=10 --k==11 --l=:12 arg1 arg2&quot;</span></pre></dt>
-<dd>
-
-
-sample options with arguments
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L561"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L561" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="readme">
-<dt><pre><span class="Identifier">readme</span> <span class="Other">=</span> <span class="StringLit">&quot;README.md&quot;</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L287"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L287" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="relpath">
-<dt><pre><span class="Identifier">relpath</span> <span class="Other">=</span> <span class="StringLit">&quot;par/sibl/niece&quot;</span></pre></dt>
+<div id="dotpath">
+<dt><pre><span class="Identifier">dotpath</span> <span class="Other">=</span> <span class="StringLit">&quot;./par/sibl/nephew&quot;</span></pre></dt>
 <dd>
 
 
@@ -850,8 +752,95 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="somefile">
-<dt><pre><span class="Identifier">somefile</span> <span class="Other">=</span> <span class="StringLit">&quot;README&quot;</span></pre></dt>
+<div id="fossdir">
+<dt><pre><span class="Identifier">fossdir</span> <span class="Other">=</span> <span class="StringLit">&quot;~/git/foss/&quot;</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L283"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L283" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="helloworldReadme">
+<dt><pre><span class="Identifier">helloworldReadme</span> <span class="Other">=</span> <span class="StringLit">&quot;helloworld/helloworld.md&quot;</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L395"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L395" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="md">
+<dt><pre><span class="Identifier">md</span> <span class="Other">=</span> <span class="StringLit">&quot;md&quot;</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L287"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L287" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="myOpts">
+<dt><pre><span class="Identifier">myOpts</span> <span class="Other">=</span> <span class="StringLit">&quot;-ab12 -c=3 -d:4 --e f 5 6 --g:7 --h=8 -i::9 -j:=10 --k==11 --l=:12&quot;</span></pre></dt>
+<dd>
+
+
+sample options
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L560"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L560" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="myOptsArgDash">
+<dt><pre><span class="Identifier">myOptsArgDash</span> <span class="Other">=</span> <span class="StringLit">&quot;-ab12 -c=3 -d:4 --e f 5 6 --g:7 --h=8 -i::9 -j:=10 --k==11 --l=:12 -- arg1 arg2&quot;</span></pre></dt>
+<dd>
+
+
+sample options with arguments after double dash
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L564"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L564" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="myOptsArgSpace">
+<dt><pre><span class="Identifier">myOptsArgSpace</span> <span class="Other">=</span> <span class="StringLit">&quot;-ab12 -c=3 -d:4 --e f 5 6 --g:7 --h=8 -i::9 -j:=10 --k==11 --l=:12 arg1 arg2&quot;</span></pre></dt>
+<dd>
+
+
+sample options with arguments
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L562"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L562" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="readme">
+<dt><pre><span class="Identifier">readme</span> <span class="Other">=</span> <span class="StringLit">&quot;README.md&quot;</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L288"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L288" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="relpath">
+<dt><pre><span class="Identifier">relpath</span> <span class="Other">=</span> <span class="StringLit">&quot;par/sibl/niece&quot;</span></pre></dt>
 <dd>
 
 
@@ -862,15 +851,27 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
+<div id="somefile">
+<dt><pre><span class="Identifier">somefile</span> <span class="Other">=</span> <span class="StringLit">&quot;README&quot;</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L286"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L286" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
 <div id="srcPath">
 <dt><pre><span class="Identifier">srcPath</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/deepdives/osIo.nim&quot;</span></pre></dt>
 <dd>
 
 compile time only
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L262"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L263"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L262" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L263" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -880,9 +881,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L280"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L281"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L280" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L281" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -892,9 +893,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L438"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L439"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L438" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L439" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -904,9 +905,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L288"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L289"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L288" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L289" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -922,9 +923,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 copied from docs
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L571"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L572"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L571" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L572" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -934,9 +935,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L410"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L411"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L410" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L411" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -946,9 +947,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L443"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/osIo.nim#L444"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L443" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/osIo.nim#L444" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -962,7 +963,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-25 22:48:45 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-25 23:16:11 UTC</small>
       </div>
     </div>
   </div>

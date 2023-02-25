@@ -1,7 +1,13 @@
 ##
-## async, parallelism and memory management
-## ========================================
+## concurrency, parallelism and memory management
+## ==============================================
 ## bookmark: start over with intros > system > threadpool
+## https://nim-lang.org/docs/manual_experimental.html#parallel-amp-spawn
+## https://nim-lang.org/1.6.0/gc.html
+## https://peterme.net/multitasking-in-nim.html
+## https://nim-lang.org/docs/channels_builtin.html
+## https://nim-lang.org/docs/threads.html
+## https://nim-lang.org/docs/system.html#%7C%7C.i%2CS%2CT%2Cstaticstring
 
 ##[
 ## TLDR
@@ -39,7 +45,9 @@ links
   - [gc docs](https://nim-lang.org/1.6.0/gc.html)
   - [memory mgmt intro](https://nimbus.guide/auditors-book/02.2.3_memory_management_gc.html)
   - [parallel & spawn intro](https://nim-lang.org/docs/manual_experimental.html#parallel-amp-spawn)
-  - [peter: async in nim intro](https://peterme.net/asynchronous-programming-in-nim.html)
+  - peter
+    - [multitasking part 1](https://peterme.net/multitasking-in-nim.html)
+    - [multitasking part 2](https://peterme.net/asynchronous-programming-in-nim.html)
   - [memory management](https://nim-lang.org/docs/mm.html)
   - [destructors and move symantics](https://nim-lang.org/docs/destructors.html)
 - system

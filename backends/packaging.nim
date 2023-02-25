@@ -1,7 +1,7 @@
 ##
 ## nimble packages, nimscripts, and app cfgs
 ## =========================================
-## [bookmark](https://nim-lang.org/docs/parsecfg.html)
+## [bookmark](https://nim-lang.org/docs/tasks.html)
 
 ##[
 ## TLDR
@@ -16,6 +16,10 @@ links
   - [example config with tasks](https://github.com/kaushalmodi/nim_config/blob/master/config.nims)
   - [nimble repo](https://github.com/nim-lang/nimble)
   - [example nimscript script](https://github.com/noahehall/nim/blob/develop/backends/targets/shell.nims)
+  - peter:
+      - [nimscript part 1](https://peterme.net/using-nimscript-as-a-configuration-language-embedding-nimscript-pt-1.html)
+      - [nimscript part 2](https://peterme.net/how-to-embed-nimscript-into-a-nim-program-embedding-nimscript-pt-2.html)
+      - [nimscript part 3](https://peterme.net/creating-condensed-shared-libraries-embedding-nimscript-pt-3.html)
 - high impact
   - [nimble pkg reference](https://github.com/nim-lang/nimble#nimble-reference)
   - [nims intro](https://nim-lang.org/docs/nims.html)

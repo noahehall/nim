@@ -55,8 +55,9 @@
 
 links
 -----
-- examples
+- other
   - [nitch source code](https://github.com/unxsh/nitch)
+  - [peter: handling files in nim](https://peterme.net/handling-files-in-nim.html)
 - high impact
   - [basic os utils](https://nim-lang.org/docs/os.html)
   - [distro detection & os pkg manager](https://nim-lang.org/docs/distros.html)
