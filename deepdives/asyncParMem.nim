@@ -1,10 +1,10 @@
 ##
 ## async, parallelism and memory management
 ## ========================================
-## start with the intro links
+## bookmark: start over with intros > system > threadpool
 
 ##[
-TLDR
+## TLDR
 - thread related stuff requires --threads:on
 - procs used with threads should (but dont need to) have {.thread.} pragma
 - vars local to threads should use {.threadvar.}
@@ -56,7 +56,6 @@ links
   - [fusion smart pointers](https://nim-lang.github.io/fusion/src/fusion/smartptrs.html)
   - [mem files](https://nim-lang.org/docs/memfiles.html)
   - [streams](https://nim-lang.org/docs/streams.html)
-  - [tasks](https://nim-lang.org/docs/tasks.html)
   - [thread pool](https://nim-lang.org/docs/threadpool.html)
 
 

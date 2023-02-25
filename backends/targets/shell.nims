@@ -1,57 +1,10 @@
-##
-## nimscript
-## =========
-
-##[
-## TLDR
-- subset of nim that can be evaluated by nims builtin VM
-
-links
------
-- [nims intro](https://nim-lang.org/docs/nims.html)
-- [nimscript spec](https://nim-lang.org/docs/nimscript.html)
-- [example nims config](https://github.com/kaushalmodi/nim_config/blob/master/config.nims)
-
-
-todos
------
-
-
-  usecase: configs (see compiler for --skip flags)
-  nim will automatically process .nims configs in the following order (later overrides previous)
-    - $XDG_CONFIG_HOME/nim/config.nims || ~/config/nim/config.nims
-    - $parentDir/config.nims think this might be $parentDir/config/*.nims
-    - $projectDir/config.nims
-    - $project.nims
-
-  usecase: build tool
-    - you have to read through docs/task as well as system/tasks
-    - default provides: help, build, tests, and bench cmds
-
-  usecase: cross platform scripting (good bye complex bash scripts?)
-    - The syntax, style, etc is identical to compiled nim
-    - supports templates, macros, types, concepts, effect tracking system, etc
-    - modules can work in both .nim and .nims (see limitations)
-    - FYI: a *.nims file doesnt have a separate $projectDir/$project config file,
-      - it is its own config file, but can rely on the other types, or manually import
-
-  limitations
-    - any stdlib module relying on `importc` pragma cant be used
-    - ptr operations are tested, but may have bugs
-    - var T args (rely on ptr operations) thus may have bugs too
-    - multimethods not available
-    - random.randomize() you must pass an int64 as a seed
-]##
 
 echo "############################ config"
-# you can set switches via 2 syntax
-# switch("opt", "size") # --opt:size
-# --define:release # prefer this cleaner syntax
+
 --opt:size
 
 echo "############################ scripts"
 #!/usr/bin/env nim
-# to set switches in shebang: #!/usr/bin/env -S nim --hints:off
 
 # nimble integration/metadata
 # bin, binDir, installDirs, installExt, installFiles
@@ -65,8 +18,6 @@ description = "my first nimscript!"
 license = "Free"
 version = "0.0.1"
 
-# generally any std nim/third party package may work
-# see the limitations section & tests link
 import std/distros
 
 echo "############################ scripts: vars/flags"

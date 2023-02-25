@@ -1,13 +1,15 @@
 # nim
 
+> [bow to the crown](https://www.youtube.com/watch?v=AEtxGOjKx5c) - Heather Dale
+
 - my adventures in nim
 - hopefully a useful cheatsheet for my fellow nOobs
 
 ## for javascript appdevs & bizdevops teams
 
-> a language should scale like math: the same notation describes the lowest and highest layers - Andreas
+> a language should scale like math: the same notation describing the lowest and highest layers - Andreas
 
-- fullstack is a first principle for us, nim redefines what that means
+- fullstack is a first principle for us; nim redefines what that means
 - many nodejs devs are moving to/incorporating rust/go in their stack; you should prefer nim for (many, but definitely) these reasons
   - [cross compile applications](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
   - [cross platform scripts](https://nim-lang.org/docs/nims.html#benefits)
@@ -22,22 +24,30 @@
 
 ## recommended ramp up
 
-> runnableExamples is rarely used; this repo is meant to be [executable](./main.nim)
-
-- 0: tutorials (see links) > helloworld > sugar
-- 1: collections > strings, containers, lists, datetime, maths, crypto, regex,
-- 2: osIo, data > tests
-- 3: asyncParMem > servers, dbs
-- 4: backends dir > nimscript dir
-- 5: pragmasEffects, templateMacros
-- 6: books/code/packages
-  - [source: nim system](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L1)
-  - [source: nim std modules](https://github.com/nim-lang/Nim/tree/version-1-6/lib/system)
-  - [source: reStructured Text cheatsheet](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
-  - [book: nim in action](https://www.manning.com/books/nim-in-action)
-    - despite being released in 2017, its still highly relevant
-  - [book: mastering nim](https://nim-lang.org/blog/2022/06/29/mastering-nim.html)
-    - havent read this one, but its new; i like new
+- this repo serves two purposes
+  1. [online documentation](https://noahehall.github.io/nim/htmldocs/main.html) you can read while coding
+  2. [source code](./main.nim) you can execute while reading
+- thus each `*chapter*` has docs to read and code to run:
+  - 0: tutorials (indented below) > [helloworld](/helloworld/helloworld.nim) > [sugar](/deepdives/sugar.nim)
+    - [adambard: learn x in y minutes](https://learnxinyminutes.com/docs/nim/)
+    - [flaviut: nim by example](https://nim-by-example.github.io/)
+    - [miran: nim basics](https://narimiran.github.io/nim-basics/)
+    - [status: auditor docs](https://status-im.github.io/nim-style-guide/00_introduction.html)
+    - [official nim tutorial](https://nim-lang.org/docs/tut1.html)
+    - [official nim wiki](https://github.com/nim-lang/Nim/wiki)
+  - 1: [collections](/deepdives/collections.nim) > [strings](/deepdives/strings.nim), [containers](/deepdives/containers.nim), [lists](/deepdives/lists.nim), [datetime](/deepdives/datetime.nim), [maths](/deepdives/maths.nim), [crypto](/deepdives/crypto.nim), [regex](/deepdives/regex.nim),
+  - 2: [osIo](/deepdives/osIo.nim), [data](/deepdives/data.nim) > [tests](/deepdives/tests.nim)
+  - 3: [asyncParMem](/deepdives/asyncParMem.nim) > [servers](/deepdives/servers.nim), [dbs](/deepdives/dbs.nim)
+  - 4: [backends dir](/backends/) > [pragmasEffects](/deepdives/pragmasEffects.nim), [templateMacros](/deepdives/templateMacros.nim)
+  - 5: source code & books
+    - [source: nim system](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L1)
+    - [source: nim std modules](https://github.com/nim-lang/Nim/tree/version-1-6/lib/system)
+    - [source: nimscript](https://github.com/nim-lang/Nim/blob/devel/lib/system/nimscript.nim)
+    - [cheatsheet: reStructured Text](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
+    - [book: nim in action](https://www.manning.com/books/nim-in-action)
+      - released in 2017, still highly relevant and recommended
+    - [book: mastering nim](https://nim-lang.org/blog/2022/06/29/mastering-nim.html)
+      - havent read this one yet, but its new; i like new
 
 ## links
 
@@ -55,15 +65,6 @@ nimlang
 - [system module](https://nim-lang.org/docs/system.html)
 - [fusion docs](https://github.com/nim-lang/fusion)
   - [ctrl f it](https://nim-lang.github.io/fusion/theindex.html)
-
-tutorials
-
-- [adambard: learn x in y minutes](https://learnxinyminutes.com/docs/nim/)
-- [flaviut: nim by example](https://nim-by-example.github.io/)
-- [miran: nim basics](https://narimiran.github.io/nim-basics/)
-- [status: auditor docs](https://status-im.github.io/nim-style-guide/00_introduction.html)
-- [official nim tutorial](https://nim-lang.org/docs/tut1.html)
-- [official nim wiki](https://github.com/nim-lang/Nim/wiki)
 
 blogs
 

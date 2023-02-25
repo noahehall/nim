@@ -1,3 +1,7 @@
-#[
-  targeting specific distros and system architectures
-]#
+##
+## backend targets: distros and system architectures
+## =================================================
+
+include targets/[
+  fullstackJavascript
+]

@@ -5,12 +5,13 @@
 ##[
 ## TLDR
 - routine: a symbol of kind proc, func, method, iterator, macro, template, converter
-  - IMO this def should also include tasks
-- converters are covered in globalVariables.nim i think
-  - iterators in loopsIterators
-  - lambdas in sugar
-  - tasks in asyncParMem
-  - templates in templateMacros
+  - IMO this definition should also include tasks
+  - where to find which
+    - converters in globalVariables
+    - iterators in loopsIterators
+    - lambdas in sugar
+    - std & nimscript tasks in packaging
+    - templates in templateMacros
 
 todos
 -----
