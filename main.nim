@@ -13,6 +13,7 @@ TLDR
 - the htmldocs dont surface everything in source (we arent using runnableExamples)
   - click the source link at the top of any file
   - or clone and run root/main.nim or backends/targets/shell.nims
+- the imported files (see below) are grouped by expected search patterns
 ]##
 
 import
@@ -26,7 +27,7 @@ import
     maths,
     osIo,
     pragmasEffects,
-    regex,
+    dataWrangling,
     strings,
     sugar,
     templateMacros,

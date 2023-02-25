@@ -233,12 +233,12 @@ digraph main {
 "deepdives/osIo" -> "std/strtabs";
 "std/parseopt" -> "std/os";
 "deepdives/osIo" -> "std/parseopt";
-"deepdives/regex" -> "std/sugar";
-"deepdives/regex" -> "std/strformat";
+"deepdives/dataWrangling" -> "std/sugar";
+"deepdives/dataWrangling" -> "std/strformat";
 "std/re" -> "std/pcre";
 "std/re" -> "std/strutils";
 "std/re" -> "std/rtarrays";
-"deepdives/regex" -> "std/re";
+"deepdives/dataWrangling" -> "std/re";
 "deepdives/strings" -> "std/sugar";
 "deepdives/strings" -> "std/sequtils";
 "deepdives/strings" -> "std/strformat";
@@ -257,7 +257,7 @@ digraph main {
 "main" -> "deepdives/maths";
 "main" -> "deepdives/osIo";
 "main" -> "deepdives/pragmasEffects";
-"main" -> "deepdives/regex";
+"main" -> "deepdives/dataWrangling";
 "main" -> "deepdives/strings";
 "main" -> "deepdives/sugar";
 "main" -> "deepdives/templateMacros";

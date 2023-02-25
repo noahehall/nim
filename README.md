@@ -5,12 +5,12 @@
 - my adventures in nim
 - hopefully a useful cheatsheet for my fellow nOobs
 
-## for javascript appdevs & bizdevops teams
+## for fullstack appdevs & bizdevops teams
 
 > a language should scale like math: the same notation describing the lowest and highest layers - Andreas
 
 - fullstack is a first principle for us; nim redefines what that means
-- many nodejs devs are moving to/incorporating rust/go in their stack; you should prefer nim for (many, but definitely) these reasons
+- many application developers are moving to/incorporating rust/go in their stack; you should prefer nim for (many, but definitely) these reasons
   - [cross compile applications](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
   - [cross platform scripts](https://nim-lang.org/docs/nims.html#benefits)
   - [documentation is a first class citizen](https://nim-lang.org/docs/docgen.html)

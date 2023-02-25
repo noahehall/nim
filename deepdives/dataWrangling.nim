@@ -1,10 +1,11 @@
 ##
-## regex
-## =====
+## data wrangling
+## ==============
 ## [bookmark](https://nim-lang.org/docs/strscans.html)
 
 ##[
 TLDR
+- for parsing configuration files, see packaging
 - re follows perl 5 (see pcre spec link) thus not posix compliant
 - pegs meant to replace re
 - scanf can be extended with arbitrary procs for data wrangling
@@ -20,6 +21,7 @@ links
   - [regex pcre wrapper](https://nim-lang.org/docs/re.html)
   - [string scans](https://nim-lang.org/docs/strscans.html)
   - [fusion matching](https://nim-lang.github.io/fusion/src/fusion/matching.html)
+  - [parse utils](https://nim-lang.org/docs/parseutils.html)
 - nitche
   - [perl compatible regex](https://nim-lang.org/docs/pcre.html)
 

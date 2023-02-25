@@ -23,6 +23,7 @@ links
   - [nims intro](https://nim-lang.org/docs/nims.html)
   - [nimscript spec (including tasks)](https://nim-lang.org/docs/nimscript.html)
   - [parallel tasks](https://nim-lang.org/docs/tasks.html)
+  - [parse config](https://nim-lang.org/docs/parsecfg.html)
 
 todos
 -----

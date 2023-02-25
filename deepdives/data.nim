@@ -1,11 +1,12 @@
 ##
 ## working with data
 ## =================
-## [bookmark](https://nim-lang.org/docs/parsecfg.html)
+## [bookmark](https://nim-lang.org/docs/logging.html)
 
 ##[
 TLDR
 - [see dom96s response to this question before using marshal to parse json](https://stackoverflow.com/questions/26191114/how-to-convert-object-to-json-in-nim)
+- see data wrangling, for wrangling data
 
 links
 - high impact
@@ -14,8 +15,6 @@ links
   - [json](https://nim-lang.org/docs/json.html)
   - [logging](https://nim-lang.org/docs/logging.html)
   - [marshal](https://nim-lang.org/docs/marshal.html)
-  - [parse cfg](https://nim-lang.org/docs/parsecfg.html)
-  - [parse utils](https://nim-lang.org/docs/parseutils.html)
 - niche
   - [json parser](https://nim-lang.org/docs/parsejson.html)
   - [ht/xml parser](https://nim-lang.org/docs/xmlparser.html)
