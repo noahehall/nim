@@ -1,18 +1,44 @@
 ##
-## compiling with nimc
-## ===================
+## compiling and managing memory with nimc
+## =======================================
+## bookmark: rework this entire file
 
 ##[
-TLDR
-- dunno yet
+## TLDR
+- Stack allocated (value semantics)
+  - plain objects
+  - chars
+  - numbers
+  - pointer types (alloc)
+- Heap allocated (usually ref semantics)
+  - sequences (value semantics)
+  - strings (value semantics)
+  - ref types
+  - pointer types (malloc)
+- Copied on assignment
+    - sequences
+    - strings
+- mutable
+  - var (variables & parameters)
+  - ref/pointer types can always be mutated through a pointer
+- immutable
+  - const (compile time)
+  - let (runtime, cant be reassigned)
+  - ref/pointer variables cant point to a new ref/pointer after
+
 
 links
 -----
-- [example configs](https://github.com/nim-lang/Nim/tree/devel/config)
-- [backend introduction](https://nim-lang.org/docs/backends.html)
-- [cross compile applications](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
-- [nim compiler](https://nim-lang.org/docs/nimc.html)
-- [understanding how nim is built for X may help you do the same](https://nim-lang.org/docs/packaging.html)
+- other
+  - [chris: understanding mmap (video)](https://www.youtube.com/watch?v=8hVLcyBkSXY)
+  - [memory mgmt intro](https://nimbus.guide/auditors-book/02.2.3_memory_management_gc.html)
+- high impact
+  - [backend introduction](https://nim-lang.org/docs/backends.html)
+  - [cross compile applications](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
+  - [destructors and move symantics](https://nim-lang.org/docs/destructors.html)
+  - [gc docs](https://nim-lang.org/1.6.0/gc.html)
+  - [memory management](https://nim-lang.org/docs/mm.html)
+  - [nim compiler](https://nim-lang.org/docs/nimc.html)
 
 
 todos
@@ -21,9 +47,10 @@ todos
 - useStdoutAsStdmsg @see https://nim-lang.org/docs/io.html#stdmsg.t
 
 
-## nim CMD OPTS FILE ARGS
-- nim --fullhelp see all cmd line opts
-- nim --listCmd
+## nimc
+- nim CMD OPTS FILE ARGS
+  - nim --fullhelp see all cmd line opts
+  - nim --listCmd
 
 CMDS
 ----
@@ -249,6 +276,10 @@ skipped
 - rst2html
 - rst2tex
 
+## memory management
+- memory allocation
+  - nim GC backed by TLSF allocator for soft real-time guarantees
+  - flag `-d:useMalloc` to bypass TLSF allocator and use malloc/free
 ]##
 
 

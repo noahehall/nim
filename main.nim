@@ -22,7 +22,7 @@ TLDR
 import
   helloworld/helloworld,
   deepdives/[
-    asyncParMem,
+    asyncPar,
     collections,
     containers,
     data,
@@ -38,7 +38,7 @@ import
     tests,
   ],
   backends/[
-    compiling,
+    nimcMemory,
     packaging,
     targeting,
   ]

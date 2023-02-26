@@ -1,0 +1,23 @@
+compiling and managing memory with nimc	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc	 compiling and managing memory with nimc	
+TLDR	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-tldr	  TLDR	
+links	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-links	  links	
+todos	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-todos	  todos	
+nimc	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-nimc	  nimc	
+CMDS	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-cmds	  CMDS	
+compiler OPTS	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-compiler-opts	  compiler OPTS	
+compile time symbol/switches OPTS	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-compile-time-symbolslashswitches-opts	  compile time symbol/switches OPTS	
+output OPTS	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-output-opts	  output OPTS	
+cross compilation OPTS	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-cross-compilation-opts	  cross compilation OPTS	
+path OPTS	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-path-opts	  path OPTS	
+configuration file hierarchy &amp; precedence	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-configuration-file-hierarchy-amp-precedence	  configuration file hierarchy &amp; precedence	
+configuration OPTS	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-configuration-opts	  configuration OPTS	
+documention OPTS	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-documention-opts	  documention OPTS	
+debugging OPTS	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-debugging-opts	  debugging OPTS	
+runtime OPTS	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-runtime-opts	  runtime OPTS	
+specific runtime check OPTS	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-specific-runtime-check-opts	  specific runtime check OPTS	
+specific compiler hint OPTS	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-specific-compiler-hint-opts	  specific compiler hint OPTS	
+specific compiler warning OPTS	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-specific-compiler-warning-opts	  specific compiler warning OPTS	
+compiler style check OPTS	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-compiler-style-check-opts	  compiler style check OPTS	
+environment variables	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-environment-variables	  environment variables	
+skipped	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-skipped	  skipped	
+memory management	backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-memory-management	  memory management	

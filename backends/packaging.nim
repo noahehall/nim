@@ -14,8 +14,10 @@ links
 - other
   - [shell script with useful nimble functions](https://github.com/noahehall/theBookOfNoah/blob/master/linux/bash_cli_fns/nimlang.sh)
   - [example config with tasks](https://github.com/kaushalmodi/nim_config/blob/master/config.nims)
+  - [configs used by nim](https://github.com/nim-lang/Nim/tree/devel/config)
   - [nimble repo](https://github.com/nim-lang/nimble)
   - [example nimscript script](https://github.com/noahehall/nim/blob/develop/backends/targets/shell.nims)
+  - [understanding how nim is built for X may help you do the same](https://nim-lang.org/docs/packaging.html)
   - peter:
       - [nimscript part 1](https://peterme.net/using-nimscript-as-a-configuration-language-embedding-nimscript-pt-1.html)
       - [nimscript part 2](https://peterme.net/how-to-embed-nimscript-into-a-nim-program-embedding-nimscript-pt-2.html)

@@ -1,7 +1,7 @@
 ##
 ## os and i/o
 ## ==========
-## [bookmark](https://nim-lang.org/docs/parseopt.html#nimshortnoval-and-nimlongnoval)
+##
 
 ##[
 ## TLDR
@@ -66,6 +66,7 @@ links
   - [fusion scripting](https://nim-lang.github.io/fusion/src/fusion/scripting.html)
   - [get cpu/cors info](https://nim-lang.org/docs/cpuinfo.html)
   - [i/o multiplexing](https://nim-lang.org/docs/selectors.html)
+  - [mem files](https://nim-lang.org/docs/memfiles.html)
   - [parse cmdline opts](https://nim-lang.org/docs/parseopt.html)
   - [posix wrapper](https://nim-lang.org/docs/posix_utils.html)
   - [process exec & comms](https://nim-lang.org/docs/osproc.html)

@@ -26,10 +26,10 @@
 ## recommended ramp up
 
 - this repo serves two purposes
-  - 1. [online documentation](https://noahehall.github.io/nim/htmldocs/main.html) you can read while coding
-    - generally concise abbreviations extracted from one of the nim docs/blogs/etc, always check the nimdocs
-  - 2. [source code](./main.nim) you can execute while reading
-    - generally concise API invocations of the subject at hand, definitely not comprehensive
+  - [online documentation](https://noahehall.github.io/nim/htmldocs/main.html) you can read while coding
+    - generally concise abbreviations extracted from one of the nim docs/blogs/etc, nim doc links provided for specification at top of each file
+  - [source code](./main.nim) you can execute while reading
+    - generally concise API invocations of the subject at hand, source code provides enough nim to start programming
 - thus each _chapter_ has docs to read and code to run:
   - 0: tutorials (indented below) > [helloworld](/helloworld/helloworld.nim) > [sugar](/deepdives/sugar.nim)
     - [adambard: learn x in y minutes](https://learnxinyminutes.com/docs/nim/)
@@ -40,7 +40,7 @@
     - [official nim wiki](https://github.com/nim-lang/Nim/wiki)
   - 1: [collections](/deepdives/collections.nim) > [strings](/deepdives/strings.nim), [containers](/deepdives/containers.nim), [lists](/deepdives/lists.nim), [datetime](/deepdives/datetime.nim), [maths](/deepdives/maths.nim), [crypto](/deepdives/crypto.nim), [regex](/deepdives/regex.nim),
   - 2: [osIo](/deepdives/osIo.nim), [data](/deepdives/data.nim) > [tests](/deepdives/tests.nim)
-  - 3: [asyncParMem](/deepdives/asyncParMem.nim) > [servers](/deepdives/servers.nim), [dbs](/deepdives/dbs.nim)
+  - 3: [asyncPar](/deepdives/asyncPar.nim) > [servers](/deepdives/servers.nim), [dbs](/deepdives/dbs.nim)
   - 4: [backends dir](/backends/) > [pragmasEffects](/deepdives/pragmasEffects.nim), [templateMacros](/deepdives/templateMacros.nim)
   - 5: source code & books
     - [source: nim system](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L1)

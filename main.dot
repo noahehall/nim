@@ -146,8 +146,8 @@ digraph main {
 "std/asyncdispatch" -> "std/strutils";
 "std/asyncdispatch" -> "std/asyncfutures";
 "std/asyncdispatch" -> "std/posix";
-"deepdives/asyncParMem" -> "std/threadpool";
-"deepdives/asyncParMem" -> "std/asyncdispatch";
+"deepdives/asyncPar" -> "std/threadpool";
+"deepdives/asyncPar" -> "std/asyncdispatch";
 "std/sugar" -> "std/private/since";
 "std/sugar" -> "std/macros";
 "std/private/underscored_calls" -> "std/macros";
@@ -249,7 +249,7 @@ digraph main {
 "deepdives/sugar" -> "std/algorithm";
 "backends/targeting" -> "backends/targets/fullstackJavascript";
 "main" -> "helloworld/helloworld";
-"main" -> "deepdives/asyncParMem";
+"main" -> "deepdives/asyncPar";
 "main" -> "deepdives/collections";
 "main" -> "deepdives/containers";
 "main" -> "deepdives/data";
@@ -263,7 +263,7 @@ digraph main {
 "main" -> "deepdives/sugar";
 "main" -> "deepdives/templateMacros";
 "main" -> "deepdives/tests";
-"main" -> "backends/compiling";
+"main" -> "backends/nimcMemory";
 "main" -> "backends/packaging";
 "main" -> "backends/targeting";
 }
