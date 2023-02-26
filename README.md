@@ -46,7 +46,8 @@
     - [source: nim system](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L1)
     - [source: nim std modules](https://github.com/nim-lang/Nim/tree/version-1-6/lib/system)
     - [source: nimscript](https://github.com/nim-lang/Nim/blob/devel/lib/system/nimscript.nim)
-    - [source: nimble api source](https://github.com/nim-lang/nimble/blob/master/src/nimblepkg/nimscriptapi.nim)
+    - [source: nimble api](https://github.com/nim-lang/nimble/blob/master/src/nimblepkg/nimscriptapi.nim)
+    - [source: nimtemplate](https://github.com/treeform/nimtemplate/tree/master/src)
     - [cheatsheet: reStructured Text](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
     - [book: nim in action](https://www.manning.com/books/nim-in-action)
       - released in 2017, still highly relevant and recommended

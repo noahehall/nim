@@ -27,7 +27,8 @@ todos
     ^ if not nil, every raise statement calls this hook
     ^ if returns false, exception is caught and does not propagate
 
-## links
+links
+-----
 - [assertions](https://nim-lang.org/docs/assertions.html)
 - [defect doc](https://nim-lang.org/docs/system.html#Defect)
 - [docgen](https://nim-lang.org/docs/docgen.html)
@@ -87,11 +88,12 @@ Error (exception) types
 
 ## documentation
 - starting a line with ## creates a title that appears in the left sidebar
-- === creates an underline
-- --- creates a subtitle and appears undearneath the previous title in the sidebar
 - both --- and === need to be the same length of whatever they're underlining
+  - === creates an underline
+  - --- creates a subtitle and appears undearneath the previous title in the sidebar
 - `low(openArray) <#low,openArray[T]>`_  creates an html #fragment
 - starting a line with .. code-block:: Nim creates a codeblock for stuff indented beneath it
+- starting a line with .. image:: poop.com/image.gif creates an image
 - include another doc file .. include:: ./system_overview.rst
 - [^ check how it looks](https://raw.githubusercontent.com/nim-lang/Nim/version-1-6/lib/system_overview.rst)
 

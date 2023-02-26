@@ -1,20 +1,22 @@
 ##
 ## concurrency and parallelism
 ## ===========================
-## [bookmark](https://nim-lang.org/docs/channels_builtin.html#example)
-# https://nim-lang.org/docs/threadpool.html
+## [bookmark](https://nim-lang.org/docs/asyncdispatch.html#poll%2Cint)
 # https://nim-lang.org/docs/streams.html
 # https://nim-lang.org/docs/asyncfile.html
 # https://nim-lang.org/docs/asyncfutures.html
-# https://nim-lang.org/docs/asyncdispatch.html
-# https://nim-lang.org/docs/asyncfutures.html
+# https://nim-lang.org/docs/asyncstreams.html
 
 ##[
 ## TLDR
-- threads, channels, actors and actions
-  - actor: a specific Thread that knows how to work with data of type T
+- actor threads, actions and communication
+  - actor:
+      - thread (system): a declared Thread of type T
+      - spawn (threadpool): an ephemeral thread of type T
   - action: proc executed by and local to an actor
-  - channel: a pipe that relays data of type T between and actions
+  - channel: a pipe that relays data across actions and the thread in which its declared
+    - the main thread (module scope) is simpler and shared across all actors
+    - however you can declare within the body of action and send the ptr to another
 - threads
   - require --threads:on switch
   - each thread has its own GC heap and mem sharing is restricted
@@ -22,13 +24,33 @@
   - procs used with threads should have {.thread.} pragma
   - vars local to threads should use {.threadvar.}
   - exceptions
-    - a handle exception in one thread cant affect another
-    - an unhandle exception in one thread terminates the entire process
+    - handled exceptions dont propagate across threads
+    - unhandled exceptions terminates the entire process
 - channels
   - require --threads:on switch
   - designed for use with Threads, not Threadpool.spawn
   - cant relay cyclic data structures
   - can be passed by ptr to actions or declared in module scope
+- threadpool
+  - a flowvar can be awaited by a single caller
+- asyncdispatch
+  - dispatcher: simple event loop that buffers events to be polled (pulled) from the stack
+    - linux: uses epoll
+    - windows: IO Completion Ports
+    - other: select
+  - poll: doesnt return events, but Future[event]s when they're completed with a value/error
+    - always use a [reactor pattern (IMO)](https://en.wikipedia.org/wiki/Reactor_pattern) e.g.  waitFor/runForever
+      - procs of type Future[T | void] require {.async.} pragma for enabling `await` in the body
+        - awaited procs are suspended until and resumed once their Future arg is completed
+        - the dispatcher invokes the next async proc while the current is suspended
+        - vars, objects and other procs can be awaited
+        - awaited Futures with unhandled exceptions are rethrown
+          - yield Future; f.failed instead of try: await Future except: for increased reliability
+    - alternatively (IMO not preferred) use the [proactor pattern](https://en.wikipedia.org/wiki/Proactor_pattern)
+      - you can check Future.finished for success/failure and .failed specifically
+      - or pass a callback
+  - Futures ignore {raises: []} effects
+  - addWrite/Read exist for adapting unix-like libraries to be async on windows; avoid if possible
 
 links
 -----
@@ -36,6 +58,7 @@ links
   - peter
     - [multitasking](https://peterme.net/multitasking-in-nim.html)
     - [async programming](https://peterme.net/asynchronous-programming-in-nim.html)
+  [status-im chronos: alternative asyncdispatch](https://github.com/status-im/nim-chronos)
 - system
   - [parallel & spawn intro](https://nim-lang.org/docs/manual_experimental.html#parallel-amp-spawn)
   - [threads intro](https://nim-lang.org/docs/manual.html#threads)
@@ -43,7 +66,7 @@ links
   - [system par loop iterator](https://nim-lang.org/docs/system.html#%7C%7C.i%2CS%2CT%2Cstaticstring)
   - [system threads](https://nim-lang.org/docs/threads.html)
 - pkgs
-  - [async dispatch](https://nim-lang.org/docs/asyncdispatch.html)
+  - [async dispatch (event loop)](https://nim-lang.org/docs/asyncdispatch.html)
   - [async file](https://nim-lang.org/docs/asyncfile.html)
   - [async futures](https://nim-lang.org/docs/asyncfutures.html)
   - [async streams](https://nim-lang.org/docs/asyncstreams.html)
@@ -55,6 +78,11 @@ links
   - [fusion pools](https://nim-lang.github.io/fusion/src/fusion/pools.html)
   - [fusion smart pointers](https://nim-lang.github.io/fusion/src/fusion/smartptrs.html)
 
+todos
+-----
+- [passing channels safely](https://nim-lang.org/docs/channels_builtin.html#example-passing-channels-safely)
+- [multiple async backend support](https://nim-lang.org/docs/asyncdispatch.html#multiple-async-backend-support)
+- [grab async await examples from asyncnet](https://nim-lang.org/docs/asyncnet.html)
 
 ## locks
 - locks and conition vars
@@ -96,21 +124,119 @@ system thread procs
 - joinThreads back to main process when finished
 - onThreadDestruction called upon threads destruction (returns/throws)
 - pinToCpu sets the affinity for a thread
+
+
+## system channels
+- communication across threads
+
+system channel types
+--------------------
+- Channel for relaying messages across threads
+
+system channel procs
+--------------------
+- close permenantly a channel and frees its resources
+- open or update a channel with size int (0 == unlimited)
+- peek at total messages in channel, -1 if channel closed, use tryRecv instead to avoid race conds
+- ready true if some thread is waiting for new messages
+- recv data; blocks its channel scope until delivered
+- send deeply copied data; blocks its channel scope until sent
+- tryRecv (bool, msg)
+- trySend deeply copied data without blocking
+
+
 ## threadpool
-- abstraction over lower level system thread fnality
+- implements parallel & spawn
+- abstraction over lower level system threads
+
+threadpool types
+----------------
+- FlowVar data flow
+- FlowVarBase untyped base class for FlowVar
+- ThreadId
+
+threadpool consts
+-----------------
+- MaxDistinguishedThread == 32
+- MaxThreadPoolSize == 256
+
+threadpool operators
+--------------------
+- ^ blocks until flowvar is available, then returns its value
+
+threadpool procs
+----------------
+- awaitAndThen blocks until flowvar is available, then executes action(flowVar)
+- blockUntil flowvar is available
+- blockUntilAny flowvars are available; if all flowvars are already awaited returns -1
+- isReady true if flowvarBase value is ready; awaiting ready flowvars dont block
+- parallel block to run in parallel
+- pinnedSpawn always call action Y on actor X
+- preferSpawn to determine if spawn/direct call is preferred; micro optimization
+- setMaxPoolSize changes MaxThreadPoolSize
+- setMinPoolSize from the default 4
+- spawn action on a new actor; action is never invoked on the calling thread
+- sync spanwed actors; i.e. joinThreads
+- unsafeRead a flowvar; blocks until flowvar value is available
+- spawnX action on new thread if CPU core ready; else on this thread; blocks produce; prefer spawn
+
+
+## asyncdispatch
+- asynchronous IO: dispatcher (event loop), future and reactor (sync-style) await
+
+asyncdispatch types
+-------------------
+- AsyncEvent ptr
+- AsyncFD file descriptor
+- Callback proc(AsyncFD)
+- CompletionData object
+  - fd: AsyncFD
+  - cb: Callback
+  - cell: ForeignCell (system)
+- CustomRef
+- PDispatcher ref of PDispatcherBase
+  - ioPort: Handle (winlean)
+  - handles: HashSet[AsyncFD]
+
+asyncdispatch procs
+-------------------
+- accept new socket connection returning future client socket
+- acceptAddr new socket connecting returning future (client , address)
+- activeDescriptors for the current event loop (doesnt require syscall)
+- addEvent registers cb to invoke upon some AsyncEvent
+- addProcess registeres cb to invoke when some PID exits
+- addRead starts watching AsyncFD and invokes cb when its read-ready; only useful for windows
+- addTimer invokes cb after/every int milliseconds
+- addWrite starts watching AsyncFD and invokes cb when its write-ready; only useful for windows
+- callSoon invoke cb when control returns to the event loop
+- close an AsyncEvent
+- closeSocket and unregister it
+- connect to socket FD at some remote addr, port and domain
+- contains true if AsyncFD is registered on the current threads event loop
+- createAsyncNativeSocket
+- dial and connect to addr:port via some protocol (e.g. TCP for IPv4/6); tries until successful
+- drain and process as many events until timeout X; errors if no events are pending
+- getGlobalDispatcher
+- getIoHandler for some Dispatcher; supports both win & linux
+- hasPendingOperations only checks global dispatcher
+- maxDescriptors of the current process (requires syscall); only for Windows, Linux, OSX, BSD
+- newAsyncEvent threadsafe; not auto registered with a dispatcher
+- newCustom CustomRef
+- newDispatcher for this thread
+
 
 ]##
 
-import std/[sugar, strutils, strformat, locks]
+import std/[strutils, strformat, locks]
+from std/os import sleep
 
 var
-  bf: Thread[void] ## actor for a channel
-  chizzle: Channel[string] ## a queue for string data
-  gf: Thread[void] ## actor for a channel
+  bf: Thread[void] ## actor working as bf
+  gf: Thread[void] ## actor working as gf
   L: Lock
-  numThreads: array[4, Thread[int]] ## actors for int data
+  numThreads: array[4, Thread[int]] ## actors working with int data
 
-proc threadEcho[T](x: T): void {.thread.} =
+proc echoAction[T](x: T): void {.thread.} =
   ## action that accepts data
   ## L.acquire
   ## execute stuff
@@ -118,54 +244,89 @@ proc threadEcho[T](x: T): void {.thread.} =
   ## withLock to acquire, execute & release automatically
   L.withLock: echo fmt"i am thread {getThreadId()=} with data {x=}"
 
-proc threadMsg: void {.thread.} =
-  ## action for sending data
-  ## send will deep copy its arguments
-  chizzle.send("phone ring ring ring")
-
-proc threadRec: void {.thread.} =
-  ## action for consuming data
-  echo fmt"ignoring; busy binging mr.robot: {chizzle.recv()=}"
-
 echo "############################ system threads"
+
 
 L.initLock
 
 for i in numThreads.low .. numThreads.high:
-  createThread(numThreads[i], threadEcho, i)
+  createThread(numThreads[i], echoAction, i)
   echo fmt"created thread: {i=} {numThreads[i].running=}"
 joinThreads(numThreads)
 
 L.deinitLock
 
+echo "############################ system channels"
+
+var
+  relay: Channel[string] ## a queue for string data
+
 echo "############################ system channels: blocking"
 
-open chizzle # unlimited queue size, defaults to 0
-gf.createThread threadMsg ## gf actor executes threadMsg action
+proc sendAction: void {.thread.} =
+  sleep 500
+  ## action for sending data
+  ## blocks its channel's scope until msg delivered; deep copies its arguments
+  relay.send "phone ring ring ring"
 
-bf.createThread threadRec ## bf actor executes ThreadRec action
+proc recAction: void {.thread.} =
+  ## action for consuming data
+  ## recv blocks its channel's scope until msg received
+  echo fmt"blocking; busy binging mr.robot: {relay.recv()=}"
+  echo "unblocked: until i receive data"
+
+open relay, maxItems = 0 ## 0 = unlimited queue
+
+gf.createThread sendAction ## gf actor plays sendAction action
+bf.createThread recAction ## bf actor plays recAction action
 joinThreads gf, bf
 
 echo "############################ channels: non blocking"
 
+proc sendActionA: void {.thread.} =
+  ## action for sending data without blocking
+  sleep 500
+  ## action for sending data
+  ## deep copies its arguments
+  if not relay.trySend "phone ring ring ring": echo "failed to send message"
+
+proc recActionA: void {.thread.} =
+  ## action for consuming data without blocking
+  while true:
+    let comms = relay.tryRecv()
+    if comms.dataAvailable: echo fmt"non blocking: {comms.msg=}"; break
+    echo "never blocked: no data!"
+    sleep(400) ## before next check
+
+gf.createThread sendActionA
+bf.createThread recActionA
+jointhreads gf, bf
+
 echo "############################ threadpool"
-# import std/[threadpool]
+import std/threadpool
 
-# with spawn
-# for i in ord(numThreads.low)..ord(numThreads.high):
-#   spawn (i + 10).ekothis
-# sync()
+for i in ord(numThreads.low)..ord(numThreads.high):
+  ## create ephemeral actors for some action
+  spawn (i + 10).echoAction
+sync() ## join created actors to main thread
 
-# with spawn
-# only 2 items allowed in queue at any given time
-# subsequent send calls will be blocked (use trySend to guard against this)
-# open chizzle, 2
-# spawn threadMsg()
-# spawn threadRec()
-# sync()
 
+## adjust channel size capped at 1 message
+open relay, 1
+
+spawn sendAction()
+spawn sendActionA() ## fails because total msg < channel size 1 && we arent trying again
+spawn sendActionA()
+spawn recActionA()
+sync()
+
+close relay
 echo "############################ async"
-# import std/[asyncdispatch]
+import std/asyncdispatch
+
+## never try catch, use yield; .failed
+## never discard, use waitFor / asyncheck
+## getFuturesInProgress requires --define:futureLogging
 # an async proc
 # proc laterGater(s: string): Future[void] {.async.} =
 #   for i in 1..10:

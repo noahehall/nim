@@ -101,6 +101,7 @@ window.addEventListener('DOMContentLoaded', main);
 <li><a class="reference" id="concurrency-and-parallelism_toc" href="#concurrency-and-parallelism">concurrency and parallelism</a></li>
 <ul class="simple"><li><a class="reference" id="concurrency-and-parallelism-tldr_toc" href="#concurrency-and-parallelism-tldr">TLDR</a></li>
 <li><a class="reference" id="concurrency-and-parallelism-links_toc" href="#concurrency-and-parallelism-links">links</a></li>
+<li><a class="reference" id="concurrency-and-parallelism-todos_toc" href="#concurrency-and-parallelism-todos">todos</a></li>
 <li><a class="reference" id="concurrency-and-parallelism-locks_toc" href="#concurrency-and-parallelism-locks">locks</a></li>
 <li><a class="reference" id="concurrency-and-parallelism-lock-types_toc" href="#concurrency-and-parallelism-lock-types">lock types</a></li>
 <li><a class="reference" id="concurrency-and-parallelism-lock-procs_toc" href="#concurrency-and-parallelism-lock-procs">lock procs</a></li>
@@ -108,39 +109,59 @@ window.addEventListener('DOMContentLoaded', main);
 <li><a class="reference" id="concurrency-and-parallelism-system-threads_toc" href="#concurrency-and-parallelism-system-threads">system threads</a></li>
 <li><a class="reference" id="concurrency-and-parallelism-system-thread-types_toc" href="#concurrency-and-parallelism-system-thread-types">system thread types</a></li>
 <li><a class="reference" id="concurrency-and-parallelism-system-thread-procs_toc" href="#concurrency-and-parallelism-system-thread-procs">system thread procs</a></li>
+<li><a class="reference" id="concurrency-and-parallelism-system-channels_toc" href="#concurrency-and-parallelism-system-channels">system channels</a></li>
+<li><a class="reference" id="concurrency-and-parallelism-system-channel-types_toc" href="#concurrency-and-parallelism-system-channel-types">system channel types</a></li>
+<li><a class="reference" id="concurrency-and-parallelism-system-channel-procs_toc" href="#concurrency-and-parallelism-system-channel-procs">system channel procs</a></li>
 <li><a class="reference" id="concurrency-and-parallelism-threadpool_toc" href="#concurrency-and-parallelism-threadpool">threadpool</a></li>
+<li><a class="reference" id="concurrency-and-parallelism-threadpool-types_toc" href="#concurrency-and-parallelism-threadpool-types">threadpool types</a></li>
+<li><a class="reference" id="concurrency-and-parallelism-threadpool-consts_toc" href="#concurrency-and-parallelism-threadpool-consts">threadpool consts</a></li>
+<li><a class="reference" id="concurrency-and-parallelism-threadpool-operators_toc" href="#concurrency-and-parallelism-threadpool-operators">threadpool operators</a></li>
+<li><a class="reference" id="concurrency-and-parallelism-threadpool-procs_toc" href="#concurrency-and-parallelism-threadpool-procs">threadpool procs</a></li>
+<li><a class="reference" id="concurrency-and-parallelism-asyncdispatch_toc" href="#concurrency-and-parallelism-asyncdispatch">asyncdispatch</a></li>
+<li><a class="reference" id="concurrency-and-parallelism-asyncdispatch-types_toc" href="#concurrency-and-parallelism-asyncdispatch-types">asyncdispatch types</a></li>
+<li><a class="reference" id="concurrency-and-parallelism-asyncdispatch-procs_toc" href="#concurrency-and-parallelism-asyncdispatch-procs">asyncdispatch procs</a></li>
 </ul><li>
   <a class="reference reference-toplevel" href="#8" id="58">Vars</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#bf"
     title="bf: Thread[void]">bf</a></li>
-  <li><a class="reference" href="#chizzle"
-    title="chizzle: Channel[string]">chizzle</a></li>
   <li><a class="reference" href="#gf"
     title="gf: Thread[void]">gf</a></li>
   <li><a class="reference" href="#L"
     title="L: Lock">L</a></li>
   <li><a class="reference" href="#numThreads"
     title="numThreads: array[4, Thread[int]]">numThreads</a></li>
+  <li><a class="reference" href="#relay"
+    title="relay: Channel[string]">relay</a></li>
 
   </ul>
 </li>
 <li>
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
-      <ul class="simple nested-toc-section">threadEcho
-      <li><a class="reference" href="#threadEcho%2CT"
-    title="threadEcho[T](x: T): void">threadEcho[T](x: T): void</a></li>
+      <ul class="simple nested-toc-section">echoAction
+      <li><a class="reference" href="#echoAction%2CT"
+    title="echoAction[T](x: T): void">echoAction[T](x: T): void</a></li>
 
   </ul>
-  <ul class="simple nested-toc-section">threadMsg
-      <li><a class="reference" href="#threadMsg"
-    title="threadMsg(): void">threadMsg(): void</a></li>
+  <ul class="simple nested-toc-section">recAction
+      <li><a class="reference" href="#recAction"
+    title="recAction(): void">recAction(): void</a></li>
 
   </ul>
-  <ul class="simple nested-toc-section">threadRec
-      <li><a class="reference" href="#threadRec"
-    title="threadRec(): void">threadRec(): void</a></li>
+  <ul class="simple nested-toc-section">recActionA
+      <li><a class="reference" href="#recActionA"
+    title="recActionA(): void">recActionA(): void</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">sendAction
+      <li><a class="reference" href="#sendAction"
+    title="sendAction(): void">sendAction(): void</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">sendActionA
+      <li><a class="reference" href="#sendActionA"
+    title="sendActionA(): void">sendActionA(): void</a></li>
 
   </ul>
 
@@ -159,11 +180,20 @@ class="link-seesrc" target="_blank">Source</a>
   <div id="tocRoot"></div>
   
   <p class="module-desc">
-<h1><a class="toc-backref" id="concurrency-and-parallelism" href="#concurrency-and-parallelism">concurrency and parallelism</a></h1><p><a class="reference external" href="https://nim-lang.org/docs/channels_builtin.html#example">bookmark</a></p>
+<h1><a class="toc-backref" id="concurrency-and-parallelism" href="#concurrency-and-parallelism">concurrency and parallelism</a></h1><p><a class="reference external" href="https://nim-lang.org/docs/asyncdispatch.html#poll%2Cint">bookmark</a></p>
 
-<h2><a class="toc-backref" id="concurrency-and-parallelism-tldr" href="#concurrency-and-parallelism-tldr">TLDR</a></h2><ul class="simple"><li>threads, channels, actors and actions<ul class="simple"><li>actor: a specific Thread that knows how to work with data of type T</li>
+<h2><a class="toc-backref" id="concurrency-and-parallelism-tldr" href="#concurrency-and-parallelism-tldr">TLDR</a></h2><ul class="simple"><li>actor threads, actions and communication<ul class="simple"><li><dl class="docutils"><dt>actor:</dt>
+<dd><ul class="simple"><li>thread (system): a declared Thread of type T</li>
+<li>spawn (threadpool): an ephemeral thread of type T</li>
+</ul>
+</dd>
+</dl>
+</li>
 <li>action: proc executed by and local to an actor</li>
-<li>channel: a pipe that relays data of type T between and actions</li>
+<li>channel: a pipe that relays data across actions and the thread in which its declared<ul class="simple"><li>the main thread (module scope) is simpler and shared across all actors</li>
+<li>however you can declare within the body of action and send the ptr to another</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>threads<ul class="simple"><li>require --threads:on switch</li>
@@ -172,8 +202,8 @@ class="link-seesrc" target="_blank">Source</a>
 </li>
 <li>procs used with threads should have {.thread.} pragma</li>
 <li>vars local to threads should use {.threadvar.}</li>
-<li>exceptions<ul class="simple"><li>a handle exception in one thread cant affect another</li>
-<li>an unhandle exception in one thread terminates the entire process</li>
+<li>exceptions<ul class="simple"><li>handled exceptions dont propagate across threads</li>
+<li>unhandled exceptions terminates the entire process</li>
 </ul>
 </li>
 </ul>
@@ -184,6 +214,34 @@ class="link-seesrc" target="_blank">Source</a>
 <li>can be passed by ptr to actions or declared in module scope</li>
 </ul>
 </li>
+<li>threadpool<ul class="simple"><li>a flowvar can be awaited by a single caller</li>
+</ul>
+</li>
+<li>asyncdispatch<ul class="simple"><li>dispatcher: simple event loop that buffers events to be polled (pulled) from the stack<ul class="simple"><li>linux: uses epoll</li>
+<li>windows: IO Completion Ports</li>
+<li>other: select</li>
+</ul>
+</li>
+<li>poll: doesnt return events, but Future[event]s when they're completed with a value/error<ul class="simple"><li>always use a <a class="reference external" href="https://en.wikipedia.org/wiki/Reactor_pattern">reactor pattern (IMO)</a> e.g.  waitFor/runForever<ul class="simple"><li>procs of type Future[T | void] require {.async.} pragma for enabling <tt class="docutils literal"><span class="pre"><span class="Identifier">await</span></span></tt> in the body<ul class="simple"><li>awaited procs are suspended until and resumed once their Future arg is completed</li>
+<li>the dispatcher invokes the next async proc while the current is suspended</li>
+<li>vars, objects and other procs can be awaited</li>
+<li>awaited Futures with unhandled exceptions are rethrown<ul class="simple"><li>yield Future; f.failed instead of try: await Future except: for increased reliability</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>alternatively (IMO not preferred) use the <a class="reference external" href="https://en.wikipedia.org/wiki/Proactor_pattern">proactor pattern</a><ul class="simple"><li>you can check Future.finished for success/failure and .failed specifically</li>
+<li>or pass a callback</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Futures ignore {raises: []} effects</li>
+<li>addWrite/Read exist for adapting unix-like libraries to be async on windows; avoid if possible</li>
+</ul>
+</li>
 </ul>
 
 <h2><a class="toc-backref" id="concurrency-and-parallelism-links" href="#concurrency-and-parallelism-links">links</a></h2><ul class="simple"><li>other<ul class="simple"><li>peter<ul class="simple"><li><a class="reference external" href="https://peterme.net/multitasking-in-nim.html">multitasking</a></li>
@@ -191,6 +249,7 @@ class="link-seesrc" target="_blank">Source</a>
 </ul>
 </li>
 </ul>
+<p><a class="reference external" href="https://github.com/status-im/nim-chronos">status-im chronos: alternative asyncdispatch</a></p>
 </li>
 <li>system<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/manual_experimental.html#parallel-amp-spawn">parallel &amp; spawn intro</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/manual.html#threads">threads intro</a></li>
@@ -199,7 +258,7 @@ class="link-seesrc" target="_blank">Source</a>
 <li><a class="reference external" href="https://nim-lang.org/docs/threads.html">system threads</a></li>
 </ul>
 </li>
-<li>pkgs<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/asyncdispatch.html">async dispatch</a></li>
+<li>pkgs<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/asyncdispatch.html">async dispatch (event loop)</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/asyncfile.html">async file</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/asyncfutures.html">async futures</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/asyncstreams.html">async streams</a></li>
@@ -213,6 +272,11 @@ class="link-seesrc" target="_blank">Source</a>
 <li><a class="reference external" href="https://nim-lang.github.io/fusion/src/fusion/smartptrs.html">fusion smart pointers</a></li>
 </ul>
 </li>
+</ul>
+
+<h2><a class="toc-backref" id="concurrency-and-parallelism-todos" href="#concurrency-and-parallelism-todos">todos</a></h2><ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/channels_builtin.html#example-passing-channels-safely">passing channels safely</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/asyncdispatch.html#multiple-async-backend-support">multiple async backend support</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/asyncnet.html">grab async await examples from asyncnet</a></li>
 </ul>
 
 <h2><a class="toc-backref" id="concurrency-and-parallelism-locks" href="#concurrency-and-parallelism-locks">locks</a></h2><ul class="simple"><li>locks and conition vars</li>
@@ -250,9 +314,96 @@ class="link-seesrc" target="_blank">Source</a>
 <li>pinToCpu sets the affinity for a thread</li>
 </ul>
 
-<h2><a class="toc-backref" id="concurrency-and-parallelism-threadpool" href="#concurrency-and-parallelism-threadpool">threadpool</a></h2><ul class="simple"><li>abstraction over lower level system thread fnality</li>
+<h2><a class="toc-backref" id="concurrency-and-parallelism-system-channels" href="#concurrency-and-parallelism-system-channels">system channels</a></h2><ul class="simple"><li>communication across threads</li>
 </ul>
-</p>
+
+<h2><a class="toc-backref" id="concurrency-and-parallelism-system-channel-types" href="#concurrency-and-parallelism-system-channel-types">system channel types</a></h2><ul class="simple"><li>Channel for relaying messages across threads</li>
+</ul>
+
+<h2><a class="toc-backref" id="concurrency-and-parallelism-system-channel-procs" href="#concurrency-and-parallelism-system-channel-procs">system channel procs</a></h2><ul class="simple"><li>close permenantly a channel and frees its resources</li>
+<li>open or update a channel with size int (0 == unlimited)</li>
+<li>peek at total messages in channel, -1 if channel closed, use tryRecv instead to avoid race conds</li>
+<li>ready true if some thread is waiting for new messages</li>
+<li>recv data; blocks its channel scope until delivered</li>
+<li>send deeply copied data; blocks its channel scope until sent</li>
+<li>tryRecv (bool, msg)</li>
+<li>trySend deeply copied data without blocking</li>
+</ul>
+
+<h2><a class="toc-backref" id="concurrency-and-parallelism-threadpool" href="#concurrency-and-parallelism-threadpool">threadpool</a></h2><ul class="simple"><li>implements parallel &amp; spawn</li>
+<li>abstraction over lower level system threads</li>
+</ul>
+
+<h2><a class="toc-backref" id="concurrency-and-parallelism-threadpool-types" href="#concurrency-and-parallelism-threadpool-types">threadpool types</a></h2><ul class="simple"><li>FlowVar data flow</li>
+<li>FlowVarBase untyped base class for FlowVar</li>
+<li>ThreadId</li>
+</ul>
+
+<h2><a class="toc-backref" id="concurrency-and-parallelism-threadpool-consts" href="#concurrency-and-parallelism-threadpool-consts">threadpool consts</a></h2><ul class="simple"><li>MaxDistinguishedThread == 32</li>
+<li>MaxThreadPoolSize == 256</li>
+</ul>
+
+<h2><a class="toc-backref" id="concurrency-and-parallelism-threadpool-operators" href="#concurrency-and-parallelism-threadpool-operators">threadpool operators</a></h2><ul class="simple"><li>^ blocks until flowvar is available, then returns its value</li>
+</ul>
+
+<h2><a class="toc-backref" id="concurrency-and-parallelism-threadpool-procs" href="#concurrency-and-parallelism-threadpool-procs">threadpool procs</a></h2><ul class="simple"><li>awaitAndThen blocks until flowvar is available, then executes action(flowVar)</li>
+<li>blockUntil flowvar is available</li>
+<li>blockUntilAny flowvars are available; if all flowvars are already awaited returns -1</li>
+<li>isReady true if flowvarBase value is ready; awaiting ready flowvars dont block</li>
+<li>parallel block to run in parallel</li>
+<li>pinnedSpawn always call action Y on actor X</li>
+<li>preferSpawn to determine if spawn/direct call is preferred; micro optimization</li>
+<li>setMaxPoolSize changes MaxThreadPoolSize</li>
+<li>setMinPoolSize from the default 4</li>
+<li>spawn action on a new actor; action is never invoked on the calling thread</li>
+<li>sync spanwed actors; i.e. joinThreads</li>
+<li>unsafeRead a flowvar; blocks until flowvar value is available</li>
+<li>spawnX action on new thread if CPU core ready; else on this thread; blocks produce; prefer spawn</li>
+</ul>
+
+<h2><a class="toc-backref" id="concurrency-and-parallelism-asyncdispatch" href="#concurrency-and-parallelism-asyncdispatch">asyncdispatch</a></h2><ul class="simple"><li>asynchronous IO: dispatcher (event loop), future and reactor (sync-style) await</li>
+</ul>
+
+<h2><a class="toc-backref" id="concurrency-and-parallelism-asyncdispatch-types" href="#concurrency-and-parallelism-asyncdispatch-types">asyncdispatch types</a></h2><ul class="simple"><li>AsyncEvent ptr</li>
+<li>AsyncFD file descriptor</li>
+<li>Callback proc(AsyncFD)</li>
+<li>CompletionData object<ul class="simple"><li>fd: AsyncFD</li>
+<li>cb: Callback</li>
+<li>cell: ForeignCell (system)</li>
+</ul>
+</li>
+<li>CustomRef</li>
+<li>PDispatcher ref of PDispatcherBase<ul class="simple"><li>ioPort: Handle (winlean)</li>
+<li>handles: HashSet[AsyncFD]</li>
+</ul>
+</li>
+</ul>
+
+<h2><a class="toc-backref" id="concurrency-and-parallelism-asyncdispatch-procs" href="#concurrency-and-parallelism-asyncdispatch-procs">asyncdispatch procs</a></h2><ul class="simple"><li>accept new socket connection returning future client socket</li>
+<li>acceptAddr new socket connecting returning future (client , address)</li>
+<li>activeDescriptors for the current event loop (doesnt require syscall)</li>
+<li>addEvent registers cb to invoke upon some AsyncEvent</li>
+<li>addProcess registeres cb to invoke when some PID exits</li>
+<li>addRead starts watching AsyncFD and invokes cb when its read-ready; only useful for windows</li>
+<li>addTimer invokes cb after/every int milliseconds</li>
+<li>addWrite starts watching AsyncFD and invokes cb when its write-ready; only useful for windows</li>
+<li>callSoon invoke cb when control returns to the event loop</li>
+<li>close an AsyncEvent</li>
+<li>closeSocket and unregister it</li>
+<li>connect to socket FD at some remote addr, port and domain</li>
+<li>contains true if AsyncFD is registered on the current threads event loop</li>
+<li>createAsyncNativeSocket</li>
+<li>dial and connect to addr:port via some protocol (e.g. TCP for IPv4/6); tries until successful</li>
+<li>drain and process as many events until timeout X; errors if no events are pending</li>
+<li>getGlobalDispatcher</li>
+<li>getIoHandler for some Dispatcher; supports both win &amp; linux</li>
+<li>hasPendingOperations only checks global dispatcher</li>
+<li>maxDescriptors of the current process (requires syscall); only for Windows, Linux, OSX, BSD</li>
+<li>newAsyncEvent threadsafe; not auto registered with a dispatcher</li>
+<li>newCustom CustomRef</li>
+<li>newDispatcher for this thread</li>
+</ul>
+adjust channel size capped at 1 messagefails because total msg &lt; channel size 1 &amp;&amp; we arent trying againnever try catch, use yield; .failed never discard, use waitFor / asyncheck getFuturesInProgress requires --define:futureLogging</p>
   <div class="section" id="8">
 <h1><a class="toc-backref" href="#8">Vars</a></h1>
 <dl class="item">
@@ -260,23 +411,11 @@ class="link-seesrc" target="_blank">Source</a>
 <dt><pre><span class="Identifier">bf</span><span class="Other">:</span> <span class="Identifier">Thread</span><span class="Other">[</span><span class="Identifier">void</span><span class="Other">]</span></pre></dt>
 <dd>
 
-actor for a channel
+actor working as bf
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L107"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L234"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L107" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="chizzle">
-<dt><pre><span class="Identifier">chizzle</span><span class="Other">:</span> <span class="Identifier">Channel</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span></pre></dt>
-<dd>
-
-a queue for string data
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L108"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L108" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L234" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -284,11 +423,11 @@ class="link-seesrc" target="_blank">Source</a>
 <dt><pre><span class="Identifier">gf</span><span class="Other">:</span> <span class="Identifier">Thread</span><span class="Other">[</span><span class="Identifier">void</span><span class="Other">]</span></pre></dt>
 <dd>
 
-actor for a channel
+actor working as gf
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L109"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L235"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L109" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L235" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -298,9 +437,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L110"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L236"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L110" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L236" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -308,11 +447,23 @@ class="link-seesrc" target="_blank">Source</a>
 <dt><pre><span class="Identifier">numThreads</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">4</span><span class="Other">,</span> <span class="Identifier">Thread</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">]</span></pre></dt>
 <dd>
 
-actors for int data
+actors working with int data
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L111"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L237"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L111" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L237" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="relay">
+<dt><pre><span class="Identifier">relay</span><span class="Other">:</span> <span class="Identifier">Channel</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span></pre></dt>
+<dd>
+
+a queue for string data
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L262"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L262" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -321,40 +472,67 @@ class="link-seesrc" target="_blank">Source</a>
 <div class="section" id="12">
 <h1><a class="toc-backref" href="#12">Procs</a></h1>
 <dl class="item">
-<div id="threadEcho,T">
-<dt><pre><span class="Keyword">proc</span> <a href="#threadEcho%2CT"><span class="Identifier">threadEcho</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> {.<span class="Identifier">thread</span>.}</pre></dt>
+<div id="echoAction,T">
+<dt><pre><span class="Keyword">proc</span> <a href="#echoAction%2CT"><span class="Identifier">echoAction</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> {.<span class="Identifier">thread</span>.}</pre></dt>
 <dd>
 
 action that accepts data L.acquire execute stuff L.release withLock to acquire, execute &amp; release automatically
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L113"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L239"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L113" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L239" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="threadMsg">
-<dt><pre><span class="Keyword">proc</span> <a href="#threadMsg"><span class="Identifier">threadMsg</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> {.<span class="Identifier">thread</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
-
-action for sending data send will deep copy its arguments
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L121"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L121" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="threadRec">
-<dt><pre><span class="Keyword">proc</span> <a href="#threadRec"><span class="Identifier">threadRec</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> {.<span class="Identifier">thread</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+<div id="recAction">
+<dt><pre><span class="Keyword">proc</span> <a href="#recAction"><span class="Identifier">recAction</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> {.<span class="Identifier">thread</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
                          <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-action for consuming data
+action for consuming data recv blocks its channel's scope until msg received
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L126"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L272"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L126" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L272" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="recActionA">
+<dt><pre><span class="Keyword">proc</span> <a href="#recActionA"><span class="Identifier">recActionA</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> {.<span class="Identifier">thread</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+                          <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+action for consuming data without blocking
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L293"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L293" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="sendAction">
+<dt><pre><span class="Keyword">proc</span> <a href="#sendAction"><span class="Identifier">sendAction</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> {.<span class="Identifier">thread</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+                          <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L266"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L266" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="sendActionA">
+<dt><pre><span class="Keyword">proc</span> <a href="#sendActionA"><span class="Identifier">sendActionA</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">void</span> {.<span class="Identifier">thread</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+                           <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+action for sending data without blocking
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L286"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L286" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -368,7 +546,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-26 03:45:26 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-26 15:12:53 UTC</small>
       </div>
     </div>
   </div>

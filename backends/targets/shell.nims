@@ -51,11 +51,11 @@ proc parseCfg(): void =
   ## so we have to manually read and parse
   ## this quick algo doesnt support multiline values
   var curSection = ""
-  for l in cfg.splitLines:
+  for ll in cfg.splitLines:
+    let l = ll.strip
     if l.startsWith(";") or l.startsWith("#") or l.len == 0: continue
     elif l.startsWith("["): curSection = l.split({'[', ']'})[1].strip
     else:
-      echo fmt"{l=}"
       let kv = l.split({':', '='}, maxsplit = 1)
       dict.setSectionKey(curSection, kv[0].strip, (if kv.len == 2: kv[1].strip else: ""))
 
