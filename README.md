@@ -27,7 +27,7 @@
 
 - this repo serves two purposes
   - [online documentation](https://noahehall.github.io/nim/htmldocs/main.html) you can read while coding
-    - generally concise abbreviations extracted from one of the nim docs/blogs/etc, nim doc links provided for specification at top of each file
+    - generally concise abbreviations extracted from one of the nim docs/blogs/etc, links to specification at top of each file
   - [source code](./main.nim) you can execute while reading
     - generally concise API invocations of the subject at hand, source code provides enough nim to start programming
 - thus each _chapter_ has docs to read and code to run:

@@ -1,15 +1,19 @@
-ekothis	deepdives/asyncPar.html#ekothis,int	asyncPar: ekothis(i: int): void	
-threads	deepdives/asyncPar.html#threads	asyncPar: threads	
+bf	deepdives/asyncPar.html#bf	asyncPar: bf	
 chizzle	deepdives/asyncPar.html#chizzle	asyncPar: chizzle	
 gf	deepdives/asyncPar.html#gf	asyncPar: gf	
-bf	deepdives/asyncPar.html#bf	asyncPar: bf	
-textMsg	deepdives/asyncPar.html#textMsg	asyncPar: textMsg(): void	
-ignoreMsg	deepdives/asyncPar.html#ignoreMsg	asyncPar: ignoreMsg(): void	
-laterGater	deepdives/asyncPar.html#laterGater,string	asyncPar: laterGater(s: string): Future[void]	
-seeya	deepdives/asyncPar.html#seeya	asyncPar: seeya	
-afterwhile	deepdives/asyncPar.html#afterwhile	asyncPar: afterwhile	
+L	deepdives/asyncPar.html#L	asyncPar: L	
+numThreads	deepdives/asyncPar.html#numThreads	asyncPar: numThreads	
+threadEcho	deepdives/asyncPar.html#threadEcho,T	asyncPar: threadEcho[T](x: T): void	
+threadMsg	deepdives/asyncPar.html#threadMsg	asyncPar: threadMsg(): void	
+threadRec	deepdives/asyncPar.html#threadRec	asyncPar: threadRec(): void	
 concurrency and parallelism	deepdives/asyncPar.html#concurrency-and-parallelism	 concurrency and parallelism	
 TLDR	deepdives/asyncPar.html#concurrency-and-parallelism-tldr	  TLDR	
 links	deepdives/asyncPar.html#concurrency-and-parallelism-links	  links	
-todos	deepdives/asyncPar.html#concurrency-and-parallelism-todos	  todos	
+locks	deepdives/asyncPar.html#concurrency-and-parallelism-locks	  locks	
+lock types	deepdives/asyncPar.html#concurrency-and-parallelism-lock-types	  lock types	
+lock procs	deepdives/asyncPar.html#concurrency-and-parallelism-lock-procs	  lock procs	
+lock templates	deepdives/asyncPar.html#concurrency-and-parallelism-lock-templates	  lock templates	
+system threads	deepdives/asyncPar.html#concurrency-and-parallelism-system-threads	  system threads	
+system thread types	deepdives/asyncPar.html#concurrency-and-parallelism-system-thread-types	  system thread types	
+system thread procs	deepdives/asyncPar.html#concurrency-and-parallelism-system-thread-procs	  system thread procs	
 threadpool	deepdives/asyncPar.html#concurrency-and-parallelism-threadpool	  threadpool	
