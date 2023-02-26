@@ -1,4 +1,4 @@
-# nim
+# book of nim
 
 > [bow to the crown](https://www.youtube.com/watch?v=AEtxGOjKx5c) - Heather Dale
 
@@ -43,9 +43,12 @@
   - 3: [asyncPar](/deepdives/asyncPar.nim) > [servers](/deepdives/servers.nim), [dbs](/deepdives/dbs.nim)
   - 4: [backends dir](/backends/) > [pragmasEffects](/deepdives/pragmasEffects.nim), [templateMacros](/deepdives/templateMacros.nim)
   - 5: source code & books
-    - [source: nim system](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L1)
-    - [source: nim std modules](https://github.com/nim-lang/Nim/tree/version-1-6/lib/system)
-    - [source: nimscript](https://github.com/nim-lang/Nim/blob/devel/lib/system/nimscript.nim)
+    - [source: nim](https://github.com/nim-lang/Nim/tree/version-1-6/lib)
+      - [impure](https://github.com/nim-lang/Nim/tree/version-1-6/lib/impure)
+      - [nimscript](https://github.com/nim-lang/Nim/blob/devel/lib/system/nimscript.nim)
+      - [pure](https://github.com/nim-lang/Nim/tree/version-1-6/lib/pure)
+      - [standard](https://github.com/nim-lang/Nim/tree/version-1-6/lib/std)
+      - [system](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L1)
     - [source: nimble api](https://github.com/nim-lang/nimble/blob/master/src/nimblepkg/nimscriptapi.nim)
     - [source: nimtemplate](https://github.com/treeform/nimtemplate/tree/master/src)
     - [cheatsheet: reStructured Text](https://docutils.sourceforge.io/docs/user/rst/quickref.html)

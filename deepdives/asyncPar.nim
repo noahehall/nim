@@ -223,7 +223,31 @@ asyncdispatch procs
 - newAsyncEvent threadsafe; not auto registered with a dispatcher
 - newCustom CustomRef
 - newDispatcher for this thread
+- poll for X then wait to process pending events as they complete; throws ValueError if none exist
+- readAll FutureStream[string] that completes when all data is consumed
+- recv from socket and complete once up to/before X bytes read/socket disconnects
+- recvFromInto buf of size X, datagram from socket; senders addr saved in saddr and saddrlen
+- recvInto buf of size X, data from socket; completes once up to/before X bytes read/socket disconnects
+- register AsyncFD with some dispatcher
+- runForever the global dispatcher poll event loop
+- send X bytes from buf to socket; complete once all data sent
+- sendTo socket some data
+- setGlobalDispatcher
+- setInheritable this file descriptor by child processes; not guaranteed check with declared()
+- sleepAsync for X milliseconds
+- trigger AsyncEvent
+- unregister AsyncEvent
+- waitFor and block the current thread until Future completes
+- withTimeout wait for this Future or return false if timeout expires
 
+asyncdispatch macros
+--------------------
+- async converts async procedures into iterators and yield statements
+- multisync converts async procs into both async & sync procs (removes await calls)
+
+asyncdispatch templates
+-----------------------
+- await
 
 ]##
 
@@ -305,7 +329,7 @@ jointhreads gf, bf
 echo "############################ threadpool"
 import std/threadpool
 
-for i in ord(numThreads.low)..ord(numThreads.high):
+for i in numThreads.low .. numThreads.high:
   ## create ephemeral actors for some action
   spawn (i + 10).echoAction
 sync() ## join created actors to main thread

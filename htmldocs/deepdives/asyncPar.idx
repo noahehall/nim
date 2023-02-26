@@ -30,3 +30,5 @@ threadpool procs	deepdives/asyncPar.html#concurrency-and-parallelism-threadpool-
 asyncdispatch	deepdives/asyncPar.html#concurrency-and-parallelism-asyncdispatch	  asyncdispatch	
 asyncdispatch types	deepdives/asyncPar.html#concurrency-and-parallelism-asyncdispatch-types	  asyncdispatch types	
 asyncdispatch procs	deepdives/asyncPar.html#concurrency-and-parallelism-asyncdispatch-procs	  asyncdispatch procs	
+asyncdispatch macros	deepdives/asyncPar.html#concurrency-and-parallelism-asyncdispatch-macros	  asyncdispatch macros	
+asyncdispatch templates	deepdives/asyncPar.html#concurrency-and-parallelism-asyncdispatch-templates	  asyncdispatch templates	

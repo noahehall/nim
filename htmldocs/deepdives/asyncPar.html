@@ -120,6 +120,8 @@ window.addEventListener('DOMContentLoaded', main);
 <li><a class="reference" id="concurrency-and-parallelism-asyncdispatch_toc" href="#concurrency-and-parallelism-asyncdispatch">asyncdispatch</a></li>
 <li><a class="reference" id="concurrency-and-parallelism-asyncdispatch-types_toc" href="#concurrency-and-parallelism-asyncdispatch-types">asyncdispatch types</a></li>
 <li><a class="reference" id="concurrency-and-parallelism-asyncdispatch-procs_toc" href="#concurrency-and-parallelism-asyncdispatch-procs">asyncdispatch procs</a></li>
+<li><a class="reference" id="concurrency-and-parallelism-asyncdispatch-macros_toc" href="#concurrency-and-parallelism-asyncdispatch-macros">asyncdispatch macros</a></li>
+<li><a class="reference" id="concurrency-and-parallelism-asyncdispatch-templates_toc" href="#concurrency-and-parallelism-asyncdispatch-templates">asyncdispatch templates</a></li>
 </ul><li>
   <a class="reference reference-toplevel" href="#8" id="58">Vars</a>
   <ul class="simple simple-toc-section">
@@ -402,6 +404,29 @@ class="link-seesrc" target="_blank">Source</a>
 <li>newAsyncEvent threadsafe; not auto registered with a dispatcher</li>
 <li>newCustom CustomRef</li>
 <li>newDispatcher for this thread</li>
+<li>poll for X then wait to process pending events as they complete; throws ValueError if none exist</li>
+<li>readAll FutureStream[string] that completes when all data is consumed</li>
+<li>recv from socket and complete once up to/before X bytes read/socket disconnects</li>
+<li>recvFromInto buf of size X, datagram from socket; senders addr saved in saddr and saddrlen</li>
+<li>recvInto buf of size X, data from socket; completes once up to/before X bytes read/socket disconnects</li>
+<li>register AsyncFD with some dispatcher</li>
+<li>runForever the global dispatcher poll event loop</li>
+<li>send X bytes from buf to socket; complete once all data sent</li>
+<li>sendTo socket some data</li>
+<li>setGlobalDispatcher</li>
+<li>setInheritable this file descriptor by child processes; not guaranteed check with declared()</li>
+<li>sleepAsync for X milliseconds</li>
+<li>trigger AsyncEvent</li>
+<li>unregister AsyncEvent</li>
+<li>waitFor and block the current thread until Future completes</li>
+<li>withTimeout wait for this Future or return false if timeout expires</li>
+</ul>
+
+<h2><a class="toc-backref" id="concurrency-and-parallelism-asyncdispatch-macros" href="#concurrency-and-parallelism-asyncdispatch-macros">asyncdispatch macros</a></h2><ul class="simple"><li>async converts async procedures into iterators and yield statements</li>
+<li>multisync converts async procs into both async &amp; sync procs (removes await calls)</li>
+</ul>
+
+<h2><a class="toc-backref" id="concurrency-and-parallelism-asyncdispatch-templates" href="#concurrency-and-parallelism-asyncdispatch-templates">asyncdispatch templates</a></h2><ul class="simple"><li>await</li>
 </ul>
 adjust channel size capped at 1 messagefails because total msg &lt; channel size 1 &amp;&amp; we arent trying againnever try catch, use yield; .failed never discard, use waitFor / asyncheck getFuturesInProgress requires --define:futureLogging</p>
   <div class="section" id="8">
@@ -413,9 +438,9 @@ adjust channel size capped at 1 messagefails because total msg &lt; channel size
 
 actor working as bf
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L234"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L258"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L234" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L258" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -425,9 +450,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 actor working as gf
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L235"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L259"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L235" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L259" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -437,9 +462,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L236"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L260"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L236" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L260" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -449,9 +474,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 actors working with int data
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L237"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L261"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L237" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L261" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -461,9 +486,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 a queue for string data
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L262"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L286"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L262" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L286" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -478,9 +503,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 action that accepts data L.acquire execute stuff L.release withLock to acquire, execute &amp; release automatically
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L239"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L263"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L239" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L263" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -491,9 +516,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 action for consuming data recv blocks its channel's scope until msg received
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L272"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L296"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L272" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L296" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -504,9 +529,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 action for consuming data without blocking
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L293"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L317"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L293" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L317" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -517,9 +542,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L266"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L290"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L266" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L290" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -530,9 +555,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 action for sending data without blocking
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L286"
+href="https://github.com/noahehall/nim/tree/develop/deepdives/asyncPar.nim#L310"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L286" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/deepdives/asyncPar.nim#L310" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -546,7 +571,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-26 15:12:53 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-26 16:31:04 UTC</small>
       </div>
     </div>
   </div>
