@@ -1,7 +1,7 @@
 ##
 ## servers
 ## =======
-## [bookmark](https://nim-lang.org/docs/asynchttpserver.html)
+## [bookmark](https://nim-lang.org/docs/asynchttpserver.html#acceptRequest%2CAsyncHttpServer%2Cproc%28Request%29)
 
 ##[
 ## TLDR
@@ -13,8 +13,7 @@
     - used automagically if any URL is prefixed with `https`
     - certs are retrieved via std/ssl_certs
   - only sync functions support timeouts (milliseconds)
-    - effectively the max time to elapse without receiving data and NOT total request time
-      - i.e. if a client is receving data the timeout will never throw
+    - sets max time to wait to receive data before throwing - NOT the total request time
     - must be specified when instantiating a client
     - affects any internal invocations on sockets that may block
   - Proxy
@@ -127,6 +126,35 @@ httpclient procs
 - newMultipartData
 - newProxy
 - onProgressChanged
+
+
+## asynchttpserver
+- minimalistic high performance async http server that should be fronted by a revproxy
+
+asynchttpserver types
+---------------------
+- AsyncHttpServer ref object
+  - socket AsyncSocket
+  - reuseAddr
+  - reusePort
+  - maxBody read from incomging request bodies
+  - maxFDs
+- Request object
+  - client AsyncSocket
+  - reqMethod HttpMethod
+  - headers HttpHeaders
+  - protocol tuple[orig, major, minor]
+  - url Uri
+  - hostname of client that made the request
+  - body
+
+asynchttpserver consts
+----------------------
+- nimMaxDescriptorsFallback default 16000; set via -d:nimMaxDescriptorsFallback=n
+
+asynchttpserver procs
+---------------------
+- acceptRequest
 ]##
 
 import std/[strformat, sugar, strutils, sequtils, json]
@@ -143,7 +171,7 @@ const
   getmetimeout = endpoint & fmt"delay/{timeout + 1000}"
   postme = endpoint & "post"
 let
-  data = %*{"data": "atad"}
+  data = %*{"data": { "user": "resu", "pass": "ssap"}}
 
 
 echo "############################ httpclient sync"
@@ -160,7 +188,6 @@ fetch.headers = newHttpHeaders({ "Content-Type": "application/json" })
 echo fmt"{fetch.postContent postme, body = $data=}"
 
 fetch.headers = newHttpHeaders({ "X-Vault-Token": "abc-123-321-cba" })
-
 try: echo fmt"{fetch.getContent getmetimeout=}" except: echo "gotta catchem all!"
 
 fetch.close

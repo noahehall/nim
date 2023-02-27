@@ -194,7 +194,7 @@ debugging OPTS
 runtime OPTS
 ------------
 - --putenv:key=value
-
+- -d:nimMaxDescriptorsFallback=N for httpasyncserver
 
 specific runtime check OPTS
 ---------------------------

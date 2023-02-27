@@ -16,3 +16,7 @@ httpclient errors	deepdives/servers.html#servers-httpclient-errors	  httpclient 
 httpclient types	deepdives/servers.html#servers-httpclient-types	  httpclient types	
 httpclient consts	deepdives/servers.html#servers-httpclient-consts	  httpclient consts	
 httpclient procs	deepdives/servers.html#servers-httpclient-procs	  httpclient procs	
+asynchttpserver	deepdives/servers.html#servers-asynchttpserver	  asynchttpserver	
+asynchttpserver types	deepdives/servers.html#servers-asynchttpserver-types	  asynchttpserver types	
+asynchttpserver consts	deepdives/servers.html#servers-asynchttpserver-consts	  asynchttpserver consts	
+asynchttpserver procs	deepdives/servers.html#servers-asynchttpserver-procs	  asynchttpserver procs	
