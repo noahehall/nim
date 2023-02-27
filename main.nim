@@ -16,6 +16,10 @@
 - the imported files (see below) are like chapters in a book
   - grouped by expected search patterns & use case, not technical correctness
   - the nimscript digest [is available here](https://github.com/noahehall/nim/blob/develop/backends/targets/shell.nims)
+
+todos
+-----
+- remove doc comments from fn calls as they look weird in the html docs
 ]##
 
 import

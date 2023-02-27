@@ -31,7 +31,7 @@
 - niche
   - [cstr utils](https://nim-lang.org/docs/cstrutils.html)
   - [ropes (very long strings)](https://nim-lang.org/docs/ropes.html)
-  - [str (high perf) basics](https://nim-lang.org/docs/strbasics.html)
+  - [str (high perf) utils](https://nim-lang.org/docs/strbasics.html)
   - [str misc](https://nim-lang.org/docs/strmisc.html)
   - [unicode](https://nim-lang.org/docs/unicode.html)
   - [unicode decode](https://nim-lang.org/docs/unidecode.html)

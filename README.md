@@ -4,13 +4,14 @@
 
 - my adventures in nim
 - hopefully a useful cheatsheet for my fellow nOobs
+- contributions welcomed
 
 ## for fullstack appdevs & bizdevops teams
 
 > a language should scale like math: the same notation describing the lowest and highest layers - Andreas
 
 - fullstack is a first principle for us; nim redefines what that means
-- many application developers are moving to/incorporating rust/go in their stack; you should prefer nim for (many, but definitely) these reasons
+- many application developers are moving to/incorporating rust/go in their stack; suspend judgment and consider nim for (many, but definitely) these reasons
   - [cross compile applications](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
   - [cross platform scripts](https://nim-lang.org/docs/nims.html#benefits)
   - [robust application & script configuration](https://nim-lang.org/docs/parsecfg.html)
@@ -20,17 +21,18 @@
   - [first class support for postgres, mysql](https://nim-lang.org/docs/lib.html#impure-libraries-database-support)
     - [including a generic ODBC wrapper for other dbs](https://nim-lang.org/docs/db_odbc.html)
   - [future proof design philisophy](https://www.youtube.com/watch?v=aDi50K_Id_k)
+    - [with ergonomic APIs](https://nim-lang.org/docs/apis.html)
   - [various pragmas to customize, restrict and enhance the compiler and runtime](https://nim-lang.github.io/Nim/manual.html#pragmas)
   - [community forum](https://forum.nim-lang.org/)
   - [spidermans uncle](https://nim-lang.org/docs/tut3.html)
 
 ## recommended ramp up
 
-- this repo serves two purposes
-  - [online documentation](https://noahehall.github.io/nim/htmldocs/main.html) you can read while coding
-    - generally concise abbreviations extracted from one of the nim docs/blogs/etc, links to specification at top of each file
-  - [source code](./main.nim) you can execute while reading
-    - generally concise API invocations of the subject at hand, source code provides enough nim to start programming
+- this repo serves two purposes for programmers considering nim as their Nth language:
+  - [primary: source code](./main.nim) you can execute while reading
+    - generally concise examples of the subject at hand; provding enough nim to create production-ready applications
+  - [secondary: documentation](https://noahehall.github.io/nim/htmldocs/main.html) you can read while coding
+    - generally concise abbreviations extracted from nim docs/blogs/etc & categorized with links to technical specs
 - thus each _chapter_ has docs to read and code to run:
   - 0: tutorials (indented below) > [helloworld](/helloworld/helloworld.nim) > [sugar](/deepdives/sugar.nim)
     - [adambard: learn x in y minutes](https://learnxinyminutes.com/docs/nim/)
@@ -50,9 +52,9 @@
       - [pure](https://github.com/nim-lang/Nim/tree/version-1-6/lib/pure)
       - [standard](https://github.com/nim-lang/Nim/tree/version-1-6/lib/std)
       - [system](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L1)
-    - [source: nimforum](https://github.com/nim-lang/nimforum/tree/master/src)
+    - [source: nimforum SPA](https://github.com/nim-lang/nimforum/tree/master/src)
     - [source: nimble api](https://github.com/nim-lang/nimble/blob/master/src/nimblepkg/nimscriptapi.nim)
-    - [source: nimtemplate](https://github.com/treeform/nimtemplate/tree/master/src)
+    - [source: nimtemplate CI](https://github.com/treeform/nimtemplate/tree/master/src)
     - [cheatsheet: reStructured Text](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
     - [book: nim in action](https://www.manning.com/books/nim-in-action)
       - released in 2017, still highly relevant and recommended
