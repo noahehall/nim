@@ -16,11 +16,9 @@ digraph main {
 "system/dollars" -> "system/formatfloat";
 "system" -> "system/dollars";
 "system/countbits_impl" -> "std/private/bitops_utils";
-"std/sharedlist" -> "std/locks";
 "system" -> "std/private/miscdollars";
 "system" -> "system/stacktraces";
 "system" -> "system/countbits_impl";
-"system" -> "std/sharedlist";
 "system" -> "std/private/digitsutils";
 "system" -> "std/private/digitsutils";
 "system" -> "system/widestrs";
@@ -97,7 +95,6 @@ digraph main {
 "std/asyncfutures" -> "std/deques";
 "std/asyncfutures" -> "std/cstrutils";
 "std/asyncfutures" -> "system/stacktraces";
-"std/asyncfutures" -> "std/hashes";
 "std/asyncstreams" -> "std/asyncfutures";
 "std/asyncstreams" -> "std/deques";
 "std/asyncdispatch" -> "std/os";
@@ -129,16 +126,6 @@ digraph main {
 "std/net" -> "std/options";
 "std/net" -> "std/monotimes";
 "std/net" -> "std/ssl_config";
-"std/openssl" -> "std/strutils";
-"std/openssl" -> "std/posix";
-"std/dynlib" -> "std/strutils";
-"std/dynlib" -> "std/posix";
-"std/openssl" -> "std/dynlib";
-"std/openssl" -> "std/strutils";
-"std/ssl_certs" -> "std/os";
-"std/ssl_certs" -> "std/strutils";
-"std/net" -> "std/openssl";
-"std/net" -> "std/ssl_certs";
 "std/net" -> "std/posix";
 "std/net" -> "std/posix";
 "std/net" -> "std/posix";
@@ -149,7 +136,6 @@ digraph main {
 "std/selectors" -> "std/nativesockets";
 "std/epoll" -> "std/posix";
 "std/selectors" -> "std/strutils";
-"std/selectors" -> "std/locks";
 "std/selectors" -> "std/posix";
 "std/selectors" -> "std/posix";
 "std/selectors" -> "std/times";
@@ -273,7 +259,6 @@ digraph main {
 "std/random" -> "std/os";
 "std/random" -> "std/sysrand";
 "std/random" -> "std/monotimes";
-"std/random" -> "std/locks";
 "std/httpcore" -> "std/private/since";
 "std/httpcore" -> "std/tables";
 "std/httpcore" -> "std/strutils";
@@ -283,7 +268,6 @@ digraph main {
 "std/asyncnet" -> "std/nativesockets";
 "std/asyncnet" -> "std/net";
 "std/asyncnet" -> "std/os";
-"std/asyncnet" -> "std/openssl";
 "std/httpclient" -> "std/net";
 "std/httpclient" -> "std/strutils";
 "std/httpclient" -> "std/uri";
@@ -331,7 +315,7 @@ digraph main {
 "main" -> "deepdives/strings";
 "main" -> "deepdives/sugar";
 "main" -> "deepdives/templateMacros";
-"main" -> "deepdives/tests";
+"main" -> "tests/ttests";
 "main" -> "backends/nimcMemory";
 "main" -> "backends/packaging";
 "main" -> "backends/targeting";

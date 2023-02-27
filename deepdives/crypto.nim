@@ -5,11 +5,14 @@
 
 ##[
 ## TLDR
+- comeback later
 - random shouldnt be used for cryptographic purposes
 - mersenne is deprecated; use random instead
 
 links
 -----
+- other
+  - before using any nim hashing fn: [read this](https://github.com/nim-lang/Nim/issues/19863)
 - high impact
   - [base64 en/decoder](https://nim-lang.org/docs/base64.html)
   - [efficient hashing](https://nim-lang.org/docs/hashes.html)

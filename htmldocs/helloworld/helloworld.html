@@ -621,10 +621,10 @@ except:
     title="lastOne = 1">lastOne</a></li>
   <li><a class="reference" href="#loc%60gensym11"
     title="loc`gensym11 = (filename: &quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim&quot;,
-                line: 203, column: 7)">loc`gensym11</a></li>
+                line: 207, column: 7)">loc`gensym11</a></li>
   <li><a class="reference" href="#loc%60gensym13"
     title="loc`gensym13 = (filename: &quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim&quot;,
-                line: 206, column: 9)">loc`gensym13</a></li>
+                line: 210, column: 9)">loc`gensym13</a></li>
   <li><a class="reference" href="#m"
     title="m = 1000000000.0">m</a></li>
   <li><a class="reference" href="#n"
@@ -648,9 +648,9 @@ except:
   <li><a class="reference" href="#p"
     title="p = 0o000000000123">p</a></li>
   <li><a class="reference" href="#ploc%60gensym11"
-    title="ploc`gensym11 = &quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim(203, 8)&quot;">ploc`gensym11</a></li>
+    title="ploc`gensym11 = &quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim(207, 8)&quot;">ploc`gensym11</a></li>
   <li><a class="reference" href="#ploc%60gensym13"
-    title="ploc`gensym13 = &quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim(206, 10)&quot;">ploc`gensym13</a></li>
+    title="ploc`gensym13 = &quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim(210, 10)&quot;">ploc`gensym13</a></li>
   <li><a class="reference" href="#poop3"
     title="poop3 = &quot;flush&quot;">poop3</a></li>
   <li><a class="reference" href="#theAnswer"
@@ -1056,8 +1056,8 @@ class="link-seesrc" target="_blank">Source</a>
 <li>use result(its optimized) &gt; return (only for control flow) &gt; last statement expression (stylguide) (FYI status prefers last statement)</li>
 <li>use sets (e.g. as flags) &gt; integers that have to be or'ed (docs)</li>
 <li>use status push &gt; raises convention to help track unfound errs (docs + status)</li>
-<li>use std/options &gt; nil for dealing with optional values (docs)</li>
-<li>use testament &gt; unittests with dir structur like root/tests/somecategory/tsomefile.nim (testament source maybe?)</li>
+<li>use options &gt; nil for dealing with optional values (docs)</li>
+<li>use testament &gt; unittests with dir structur like root/tests/somecategory/t*.nim (testament source)</li>
 <li>use typeof x and not type x (docs)</li>
 <li>use X.y &gt; x[].y for accessing ref/ptr objects (docs: x[].y highly discouraged)</li>
 <li>use yield Future; future.failed &gt; try: await Future: except: blah for reliable error handling (docs)</li>
@@ -1459,7 +1459,13 @@ checks whether x can be compiled without any semantic error. useful to verify wh
 <li>have to be allocated on the heap (var) because their lifetime is unknown</li>
 </ul>
 </li>
-<li>docgen<ul class="simple"><li>pretty prints code in the html</li>
+<li>docgen<ul class="simple"><li>having <tt class="docutils literal"><span class="pre"><span class="Operator">*</span></span></tt> after - (like on this line) will break htmldocs rst parser<ul class="simple"><li>you must escape it with backticks (see above) or backslash *</li>
+<li>the line number reported may not be correct, but the filename will be<ul class="simple"><li>error reported as <tt class="docutils literal"><span class="pre"><span class="Identifier">Error</span><span class="Punctuation">:</span> <span class="CharLit">'*'</span> <span class="Identifier">expected</span></span></tt></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>pretty prints code in the html</li>
 <li><tt class="docutils literal"><span class="pre"><span class="Identifier">back</span> <span class="Identifier">ticks</span></span></tt> and back slashes e.g. *.nims can escape special chars</li>
 </ul>
 </li>
@@ -2078,9 +2084,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 especially things like custom types may need additional abbreviations to describe their purpose
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L108"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L112"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L108" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L112" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -2114,9 +2120,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L126"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L130"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L126" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L130" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -2746,9 +2752,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L145"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L149"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L145" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L149" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3391,9 +3397,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 this is not included in docs because its not exported
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L105"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L109"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L105" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L109" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3442,9 +3448,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L181"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L185"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L181" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L185" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3502,9 +3508,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 <tt class="docutils literal"><span class="pre"><span class="Identifier">goodcode</span></span></tt> should be self documenting, but sometimes naming conventions arent enuff
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L103"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L107"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L103" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L107" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4016,7 +4022,7 @@ class="link-seesrc" target="_blank">Source</a>
 </div>
 <div id="loc`gensym11">
 <dt><pre><span class="Identifier">loc`gensym11</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim&quot;</span><span class="Other">,</span>
-                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">203</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">7</span><span class="Other">)</span></pre></dt>
+                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">207</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">7</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -4029,7 +4035,7 @@ class="link-seesrc" target="_blank">Source</a>
 </div>
 <div id="loc`gensym13">
 <dt><pre><span class="Identifier">loc`gensym13</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim&quot;</span><span class="Other">,</span>
-                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">206</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
+                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">210</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -4173,7 +4179,7 @@ class="link-seesrc" target="_blank">Source</a>
 </dd>
 </div>
 <div id="ploc`gensym11">
-<dt><pre><span class="Identifier">ploc`gensym11</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim(203, 8)&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">ploc`gensym11</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim(207, 8)&quot;</span></pre></dt>
 <dd>
 
 
@@ -4185,7 +4191,7 @@ class="link-seesrc" target="_blank">Source</a>
 </dd>
 </div>
 <div id="ploc`gensym13">
-<dt><pre><span class="Identifier">ploc`gensym13</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim(206, 10)&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">ploc`gensym13</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/helloworld/modules/exceptionHandlingDocs.nim(210, 10)&quot;</span></pre></dt>
 <dd>
 
 
@@ -4472,9 +4478,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L140"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L144"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L140" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L144" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4508,9 +4514,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L136"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L140"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L136" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L140" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4677,9 +4683,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L190"
+href="https://github.com/noahehall/nim/tree/develop/helloworld/modules/exceptionHandlingDocs.nim#L194"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L190" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/helloworld/modules/exceptionHandlingDocs.nim#L194" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4929,7 +4935,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-27 16:46:51 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-02-28 18:16:14 UTC</small>
       </div>
     </div>
   </div>

@@ -10,6 +10,10 @@
   - system.Exception provides the interface
   - have to be allocated on the heap (var) because their lifetime is unknown
 - docgen
+  - having `*` after - (like on this line) will break htmldocs rst parser
+    - you must escape it with backticks (see above) or backslash \*
+    - the line number reported may not be correct, but the filename will be
+      - error reported as `Error: '*' expected`
   - pretty prints code in the html
   - `back ticks` and back slashes e.g. \*.nims can escape special chars
 

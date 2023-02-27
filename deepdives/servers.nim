@@ -15,13 +15,13 @@
   - only sync functions support timeouts (milliseconds)
     - sets max time to wait to receive data before throwing - NOT the total request time
     - must be specified when instantiating a client
-    - affects any internal invocations on sockets that may block
+    - affects all internal blocking socket invocations
   - Proxy
     - only basic auth is supported
   - creating clients
     - both a/sync http clients accept
-      - userAgent defaults to some Nim x.y.z string
-      - maxRedirects defaults to 5
+      - userAgent default "Nim httpclient/x.y.z"
+      - maxRedirects default 5
       - sslContext for HTTPS requests
       - proxy to use for connections
       - headers for requests
@@ -109,6 +109,10 @@ httpclient types
 httpclient consts
 -----------------
 - defUserAgent "Nim httpclient/x.y.z"
+
+httpclient operators
+--------------------
+- []= add file (fname, contentType, content)/entry "some content" to multipart data p
 
 httpclient procs
 ----------------

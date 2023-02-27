@@ -6,7 +6,7 @@
 - hopefully a useful cheatsheet for my fellow nOobs
 - contributions welcomed
 
-## for fullstack appdevs & bizdevops teams
+## for fullstack appdevs & bizdevops+sec teams
 
 > a language should scale like math: the same notation describing the lowest and highest layers - Andreas
 
@@ -33,7 +33,7 @@
     - generally concise examples of the subject at hand; provding enough nim to create production-ready applications
   - [secondary: documentation](https://noahehall.github.io/nim/htmldocs/main.html) you can read while coding
     - generally concise abbreviations extracted from nim docs/blogs/etc & categorized with links to technical specs
-- thus each _chapter_ has docs to read and code to run:
+- thus each _chapter_ consists of docs to read and code to run:
   - 0: tutorials (indented below) > [helloworld](/helloworld/helloworld.nim) > [sugar](/deepdives/sugar.nim)
     - [adambard: learn x in y minutes](https://learnxinyminutes.com/docs/nim/)
     - [flaviut: nim by example](https://nim-by-example.github.io/)
@@ -42,7 +42,7 @@
     - [official nim tutorial](https://nim-lang.org/docs/tut1.html)
     - [official nim wiki](https://github.com/nim-lang/Nim/wiki)
   - 1: [collections](/deepdives/collections.nim) > [strings](/deepdives/strings.nim), [containers](/deepdives/containers.nim), [lists](/deepdives/lists.nim), [datetime](/deepdives/datetime.nim), [maths](/deepdives/maths.nim), [crypto](/deepdives/crypto.nim), [regex](/deepdives/regex.nim),
-  - 2: [osIo](/deepdives/osIo.nim), [data](/deepdives/data.nim) > [tests](/deepdives/tests.nim)
+  - 2: [osIo](/deepdives/osIo.nim), [data](/deepdives/data.nim) > [ttests](/tests/ttests.nim)
   - 3: [asyncPar](/deepdives/asyncPar.nim) > [servers](/deepdives/servers.nim), [dbs](/deepdives/dbs.nim)
   - 4: [backends dir](/backends/) > [pragmasEffects](/deepdives/pragmasEffects.nim), [templateMacros](/deepdives/templateMacros.nim)
   - 5: source code & books
@@ -52,6 +52,8 @@
       - [pure](https://github.com/nim-lang/Nim/tree/version-1-6/lib/pure)
       - [standard](https://github.com/nim-lang/Nim/tree/version-1-6/lib/std)
       - [system](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L1)
+      - [test examples](https://github.com/nim-lang/Nim/tree/devel/tests)
+      - [testament](https://github.com/nim-lang/Nim/tree/devel/testament)
     - [source: nimforum SPA](https://github.com/nim-lang/nimforum/tree/master/src)
     - [source: nimble api](https://github.com/nim-lang/nimble/blob/master/src/nimblepkg/nimscriptapi.nim)
     - [source: nimtemplate CI](https://github.com/treeform/nimtemplate/tree/master/src)
@@ -77,6 +79,7 @@ nimlang
 - [system module](https://nim-lang.org/docs/system.html)
 - [fusion docs](https://github.com/nim-lang/fusion)
   - [ctrl f it](https://nim-lang.github.io/fusion/theindex.html)
+- [finding somethign easy to contribute to](https://forum.nim-lang.org/t/9956)
 
 blogs
 
@@ -89,6 +92,8 @@ blogs
 
 ### quickies
 
+- move projects out of this repo
+  - make sure you fork the nimtemplate repo
 - [check how getTime handles os checks](https://github.com/nim-lang/Nim/blob/version-1-6/lib/pure/times.nim#L897)
 - [skipped most of the section on cross compilation](https://nim-lang.org/docs/nimc.html#crossminuscompilation-for-windows)
 - [checkout status opensource theyve already built bunch of things you'll need for nirv](https://github.com/status-im)

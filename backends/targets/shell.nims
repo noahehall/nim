@@ -50,6 +50,7 @@ proc parseCfg(): void =
   ## unfortunately parseconfig not available in nimscript
   ## so we have to manually read and parse
   ## this quick algo doesnt support multiline values
+  ## @see [extract and parse spec procs](https://github.com/nim-lang/Nim/blob/devel/testament/specs.nim) for parsing a file into a config
   var curSection = ""
   for ll in cfg.splitLines:
     let l = ll.strip

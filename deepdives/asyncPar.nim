@@ -482,7 +482,10 @@ import std/[asyncfile, os] ## asyncdispatch imported above
 const
   afilepath = "/tmp/or/rary.txt"
 
-try: afilepath.parentDir.createDir except: echo fmt"couldnt create {afilepath.parentDir}"
+try:
+  afilepath.parentDir.createDir
+  discard fmt"touch {afilepath}".execShellCmd
+except: echo fmt"couldnt create {afilepath.parentDir}"
 
 var
   reader = afilepath.openAsync fmRead

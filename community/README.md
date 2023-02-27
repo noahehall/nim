@@ -5,21 +5,18 @@
 - [all nimble packages](https://github.com/nim-lang/packages/blob/master/packages.json)
 - [nimble pkg directory](https://nimble.directory/)
 - [nim github search: most stars](https://github.com/topics/nim?l=nim&o=desc&s=stars)
-- [awesome-nim](https://github.com/xflywind/awesome-nim)
+- [awesome nim](https://github.com/xflywind/awesome-nim)
 - [offensive nim](https://github.com/byt3bl33d3r/OffensiveNim)
+- [list of safe packages](https://github.com/nim-lang/Nim/blob/devel/testament/important_packages.nim)
+  - if _safe_ for you means included in nimlang tests and deemed important by nim core developers
 
 ### worth checking out
 
 - [async tools](https://github.com/cheatfate/asynctools)
 - [c2nm: converts C and C++ header files to nim code](https://github.com/nim-lang/c2nim)
-- [color and util tools for nim](https://github.com/qqtop/NimCx)
 - [convert markdown files to html](https://github.com/h3rald/hastyscribe)
-- [convert your nim code and its outputs to html docs](https://github.com/pietroppeter/nimib)
-- [create cli interfaces](https://github.com/docopt/docopt.nim)
-- [cryptographic library](https://github.com/cheatfate/nimcrypto)
-- [data manipulation](https://github.com/bluenote10/NimData)
-- [deflate,zlib,gzip,tarballs,zip files management](https://github.com/guzba/zippy)
 - [dev desktop applicatoins in nim](https://github.com/trustable-code/NiGui)
+- [docopt: create cli interfaces](https://github.com/docopt/docopt.nim)
 - [document.qerySelector+all for nim](https://github.com/GULPF/nimquery)
 - [dsl: svg|gif generator](https://github.com/bluenote10/NimSvg)
 - [DSL: webserver: composable http handlers](https://github.com/andreaferretti/rosencrantz)
@@ -32,11 +29,17 @@
 - [llvm based compiler for nim](https://github.com/arnetheduck/nlvm)
 - [macr-based pattern matching library](https://github.com/alehander92/gara)
 - [moe: vim like editor that didnt work on the first try](https://github.com/fox0430/moe)
+- [nimcrypto: cryptographic library](https://github.com/cheatfate/nimcrypto)
+- [nimcx: color and util tools for nim](https://github.com/qqtop/NimCx)
+- [nimdata: data manipulation](https://github.com/bluenote10/NimData)
+- [nimib: convert your nim code and its outputs to html docs](https://github.com/pietroppeter/nimib)
+- [nimibook: port of mdbook to Nim](https://github.com/pietroppeter/nimibook)
 - [nimqt: bindings for QT interface development](https://github.com/jerous86/nimqt)
 - [nimterlingua: compiletime i18](https://github.com/juancarlospaco/nim-nimterlingua)
 - [nitch: neofetch alternative](https://github.com/unxsh/nitch)
 - [nodejs: alternative stdlib for js targets](https://github.com/juancarlospaco/nodejs)
 - [norm: postgres orm](https://github.com/moigagoo/norm)
+- [norman: migration manager for norm](https://github.com/moigagoo/norman)
 - [nyml: yaml parser](https://github.com/openpeep/nyml)
 - [parsing,compiling,executing regex](https://github.com/nitely/nim-regex)
 - [patterm matching (see gara as well)](https://github.com/andreaferretti/patty)
@@ -51,9 +54,10 @@
 - [valido: string validators & sanitizers](https://github.com/openpeep/valido)
 - [very advanced fuzzer for parsing http responses](https://github.com/d4rckh/vaf)
 - [web framework](https://github.com/planety/prologue)
+- [zioppy: deflate,zlib,gzip,tarballs,zip files management](https://github.com/guzba/zippy)
 - [zsh & bash prompt](https://github.com/icyphox/nicy)
 
-## orgs/people to follow
+## orgs/people with nim open source
 
 - [status-im](https://github.com/orgs/status-im/repositories?q=&type=all&language=nim&sort=)
 - [waku](https://github.com/orgs/waku-org/repositories?q=&type=all&language=nim&sort=)
