@@ -248,7 +248,6 @@ asyncdispatch templates
 - await
 
 
-
 ## asyncfutures
 - primitives for creating and consuming futures
 - all other modules build on asyncfutures and generally isnt imported directly
@@ -436,15 +435,16 @@ let
 var fake2 = newFutureVar[int]() ## FutureVar[T] example
 
 
+## TODO: this doesnt echo
+## @see https://forum.nim-lang.org/t/9946#65549
+addCallback[string](
+  fake1,
+  cb = proc(x: Future[string]): void = echo fmt"fake1 callback: ${x.read=}")
+
 echo fmt"before complete {fake1.finished=}"
 fake1.complete "fake 1 value"
 echo fmt"after complete {fake1.finished=}"
 echo fmt"{fake1.read=}"
-
-## TODO: this doesnt echo
-addCallback[string](
-  fake1,
-  cb = proc(x: Future[string]): void = echo fmt"fake1 complete: ${x.read=}")
 
 fake2.complete 1
 echo fmt"complete 1 {fake2.read=}"
@@ -456,3 +456,6 @@ echo fmt"clean -> complete {fake2.read=}"
 fakeFailed.fail(someErr)
 if fakeFailed.failed:
   echo fmt"{fakeFailed.readError.msg=}"
+
+echo "############################ asyncfutures "
+# import std/asyncfile
