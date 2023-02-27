@@ -21,16 +21,19 @@
 import
   helloworld/helloworld, ## basic nim split into modules
   deepdives/[
-    asyncPar, ## concurrency, parallelism
+    asyncPar, ## concurrency, parallelism (except async servers)
     collections, ## non list/queues, e.g. arrays and seqs
     containers,  ## tuples, tables and object
+    crypto, ## cryptography (+ random) related
     data, ## e.g. json, csv
     dataWrangling, ## e.g. regex
     datetime, ## dates and times
+    dbs, ## database clients
+    lists, ## list/queues
     maths, ## math stuff
     osIo, ## operating system, distros, files etc
     pragmasEffects, ## pragmas and the effect system
-    servers, ## http, sockets, ftp etc
+    servers, ## http, sockets, ftp etc + async versions
     strings, ## e.g. string utils
     sugar, ## sugar, algorithms and other helpers
     templateMacros, ## templates and macros

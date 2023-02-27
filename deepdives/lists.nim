@@ -5,6 +5,7 @@
 
 ##[
 ## TLDR
+- comeback later
 - check collections.nim for other stuff
 
 links
@@ -15,5 +16,3 @@ links
 - niche
   - [shared list](https://nim-lang.org/docs/sharedlist.html)
 ]##
-
-import std/[sugar, sequtils]

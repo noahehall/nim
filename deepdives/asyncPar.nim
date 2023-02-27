@@ -1,8 +1,7 @@
 ##
 ## concurrency and parallelism
 ## ===========================
-## [bookmark](https://nim-lang.org/docs/asyncfile.html)
-# https://nim-lang.org/docs/asyncstreams.html
+## [bookmark](https://nim-lang.org/docs/asyncstreams.html)
 
 ##[
 ## TLDR

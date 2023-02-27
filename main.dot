@@ -264,9 +264,12 @@ digraph main {
 "main" -> "deepdives/asyncPar";
 "main" -> "deepdives/collections";
 "main" -> "deepdives/containers";
+"main" -> "deepdives/crypto";
 "main" -> "deepdives/data";
 "main" -> "deepdives/dataWrangling";
 "main" -> "deepdives/datetime";
+"main" -> "deepdives/dbs";
+"main" -> "deepdives/lists";
 "main" -> "deepdives/maths";
 "main" -> "deepdives/osIo";
 "main" -> "deepdives/pragmasEffects";
