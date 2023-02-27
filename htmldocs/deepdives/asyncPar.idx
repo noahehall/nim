@@ -14,6 +14,10 @@ f2	deepdives/asyncPar.html#f2	asyncPar: f2(): Future[string]
 laterGater	deepdives/asyncPar.html#laterGater,string	asyncPar: laterGater(s: string): Future[void]	
 seeya	deepdives/asyncPar.html#seeya	asyncPar: seeya	
 afterwhile	deepdives/asyncPar.html#afterwhile	asyncPar: afterwhile	
+fake1	deepdives/asyncPar.html#fake1	asyncPar: fake1	
+fakeFailed	deepdives/asyncPar.html#fakeFailed	asyncPar: fakeFailed	
+someErr	deepdives/asyncPar.html#someErr	asyncPar: someErr	
+fake2	deepdives/asyncPar.html#fake2	asyncPar: fake2	
 concurrency and parallelism	deepdives/asyncPar.html#concurrency-and-parallelism	 concurrency and parallelism	
 TLDR	deepdives/asyncPar.html#concurrency-and-parallelism-tldr	  TLDR	
 links	deepdives/asyncPar.html#concurrency-and-parallelism-links	  links	
@@ -39,3 +43,6 @@ asyncdispatch procs	deepdives/asyncPar.html#concurrency-and-parallelism-asyncdis
 asyncdispatch macros	deepdives/asyncPar.html#concurrency-and-parallelism-asyncdispatch-macros	  asyncdispatch macros	
 asyncdispatch templates	deepdives/asyncPar.html#concurrency-and-parallelism-asyncdispatch-templates	  asyncdispatch templates	
 asyncfutures	deepdives/asyncPar.html#concurrency-and-parallelism-asyncfutures	  asyncfutures	
+asyncfutures types	deepdives/asyncPar.html#concurrency-and-parallelism-asyncfutures-types	  asyncfutures types	
+asyncfutures consts	deepdives/asyncPar.html#concurrency-and-parallelism-asyncfutures-consts	  asyncfutures consts	
+asyncFutures procs	deepdives/asyncPar.html#concurrency-and-parallelism-asyncfutures-procs	  asyncFutures procs	

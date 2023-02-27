@@ -1,9 +1,8 @@
 ##
 ## concurrency and parallelism
 ## ===========================
-## [bookmark](https://nim-lang.org/docs/asyncfutures.html)
+## [bookmark](https://nim-lang.org/docs/asyncfile.html)
 # https://nim-lang.org/docs/streams.html
-# https://nim-lang.org/docs/asyncfile.html
 # https://nim-lang.org/docs/asyncstreams.html
 
 ##[
@@ -183,6 +182,7 @@ threadpool procs
 
 ## asyncdispatch
 - asynchronous IO: dispatcher (event loop), future and reactor (sync-style) await
+- the primary way to create and consume async programs
 
 asyncdispatch types
 -------------------
@@ -250,8 +250,49 @@ asyncdispatch templates
 - await
 
 
-## asyncfutures
 
+## asyncfutures
+- primitives for creating and consuming futures
+- all other modules build on asyncfutures and generally isnt imported directly
+
+asyncfutures types
+------------------
+- Future[T] ref of FutureBase
+  - value
+- FutureBase ref of RootObject
+  - callbacks: CallbackList
+  - finished: bool
+  - error: Exception
+  - errorStackTrace: string
+- FutureError object of Defect
+  - cause: FutureBase
+- FutureVar[T] distinct Future[T]
+
+
+asyncfutures consts
+-------------------
+- isFutureLoggingEnabled
+
+asyncFutures procs
+------------------
+- and returns future X when future Y and Z complete
+- or returns future X when future Y or Z complete
+- addCallback to execute when future X completes; accepts FutureBase[T]/Future[T]
+- all returns when futures 0..X complete
+- asyncCheck discards futures
+- callsoon somecallback on next tick of asyncdispatcher if running, else immediately
+- clean resets finished status of some future
+- clearCallbacks
+- complete future X with value Y
+- fail future X with exception Y
+- failed bool
+- finished bool
+- getCallSoonProc
+- mget a mutable value stored in future
+- newFuture of type T owned by proc X
+- read the value of a finished future
+- readError of a failed future
+- setCallSoonproc change implementation of callsoon
 ]##
 
 import std/[sugar, strutils, strformat, locks]
@@ -348,14 +389,11 @@ sync()
 
 close relay
 
-echo "############################ asyncfutures "
 
 echo "############################ asyncdispatch "
+import std/[asyncdispatch]
 
-import std/asyncdispatch
 
-## never try catch, use yield; .failed
-## never discard, use waitFor / asyncheck
 ## getFuturesInProgress requires --define:futureLogging
 
 proc f1 (): Future[string] {.async.} =
@@ -389,3 +427,34 @@ let
   seeya = laterGater("see ya later aligator")
   afterwhile = laterGater("after while crocodile")
 waitFor seeya and afterwhile
+
+echo "############################ asyncfutures "
+import std/asyncfutures
+
+let
+  fake1 = newFuture[string]() ## Future[T] success example
+  fakeFailed = newFuture[string]() ## Future[T] failed example
+  someErr = newException(ValueError, "oops") ## arbitrary
+var fake2 = newFutureVar[int]() ## FutureVar[T] example
+
+
+echo fmt"before complete {fake1.finished=}"
+fake1.complete "fake 1 value"
+echo fmt"after complete {fake1.finished=}"
+echo fmt"{fake1.read=}"
+
+## TODO: this doesnt echo
+addCallback[string](
+  fake1,
+  cb = proc(x: Future[string]): void = echo fmt"fake1 complete: ${x.read=}")
+
+fake2.complete 1
+echo fmt"complete 1 {fake2.read=}"
+echo fmt"{fake2.mget=}"
+fake2.clean
+fake2.complete 2
+echo fmt"clean -> complete {fake2.read=}"
+
+fakeFailed.fail(someErr)
+if fakeFailed.failed:
+  echo fmt"{fakeFailed.readError.msg=}"

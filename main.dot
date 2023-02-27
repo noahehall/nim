@@ -162,6 +162,7 @@ digraph main {
 "std/asyncdispatch" -> "std/asyncfutures";
 "std/asyncdispatch" -> "std/posix";
 "deepdives/asyncPar" -> "std/asyncdispatch";
+"deepdives/asyncPar" -> "std/asyncfutures";
 "deepdives/collections" -> "std/sugar";
 "deepdives/collections" -> "std/strformat";
 "std/sequtils" -> "std/private/since";
