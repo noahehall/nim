@@ -8,6 +8,12 @@ sendAction	deepdives/asyncPar.html#sendAction	asyncPar: sendAction(): void
 recAction	deepdives/asyncPar.html#recAction	asyncPar: recAction(): void	
 sendActionA	deepdives/asyncPar.html#sendActionA	asyncPar: sendActionA(): void	
 recActionA	deepdives/asyncPar.html#recActionA	asyncPar: recActionA(): void	
+f1	deepdives/asyncPar.html#f1	asyncPar: f1(): Future[string]	
+fv1	deepdives/asyncPar.html#fv1	asyncPar: fv1	
+f2	deepdives/asyncPar.html#f2	asyncPar: f2(): Future[string]	
+laterGater	deepdives/asyncPar.html#laterGater,string	asyncPar: laterGater(s: string): Future[void]	
+seeya	deepdives/asyncPar.html#seeya	asyncPar: seeya	
+afterwhile	deepdives/asyncPar.html#afterwhile	asyncPar: afterwhile	
 concurrency and parallelism	deepdives/asyncPar.html#concurrency-and-parallelism	 concurrency and parallelism	
 TLDR	deepdives/asyncPar.html#concurrency-and-parallelism-tldr	  TLDR	
 links	deepdives/asyncPar.html#concurrency-and-parallelism-links	  links	
@@ -32,3 +38,4 @@ asyncdispatch types	deepdives/asyncPar.html#concurrency-and-parallelism-asyncdis
 asyncdispatch procs	deepdives/asyncPar.html#concurrency-and-parallelism-asyncdispatch-procs	  asyncdispatch procs	
 asyncdispatch macros	deepdives/asyncPar.html#concurrency-and-parallelism-asyncdispatch-macros	  asyncdispatch macros	
 asyncdispatch templates	deepdives/asyncPar.html#concurrency-and-parallelism-asyncdispatch-templates	  asyncdispatch templates	
+asyncfutures	deepdives/asyncPar.html#concurrency-and-parallelism-asyncfutures	  asyncfutures	

@@ -27,9 +27,13 @@ digraph main {
 "system/io" -> "std/private/since";
 "system/io" -> "system/formatfloat";
 "system" -> "system/io";
+"std/sugar" -> "std/private/since";
+"std/macros" -> "std/private/since";
+"std/sugar" -> "std/macros";
+"std/private/underscored_calls" -> "std/macros";
+"std/sugar" -> "std/private/underscored_calls";
 "std/strutils" -> "std/parseutils";
 "std/math" -> "std/private/since";
-"std/macros" -> "std/private/since";
 "std/bitops" -> "std/macros";
 "std/bitops" -> "std/private/since";
 "std/bitops" -> "std/private/bitops_utils";
@@ -51,6 +55,7 @@ digraph main {
 "std/strformat" -> "std/parseutils";
 "std/strformat" -> "std/unicode";
 "std/strformat" -> "std/strutils";
+"deepdives/asyncPar" -> "std/sugar";
 "deepdives/asyncPar" -> "std/strutils";
 "deepdives/asyncPar" -> "std/strformat";
 "deepdives/asyncPar" -> "std/locks";
@@ -157,10 +162,6 @@ digraph main {
 "std/asyncdispatch" -> "std/asyncfutures";
 "std/asyncdispatch" -> "std/posix";
 "deepdives/asyncPar" -> "std/asyncdispatch";
-"std/sugar" -> "std/private/since";
-"std/sugar" -> "std/macros";
-"std/private/underscored_calls" -> "std/macros";
-"std/sugar" -> "std/private/underscored_calls";
 "deepdives/collections" -> "std/sugar";
 "deepdives/collections" -> "std/strformat";
 "std/sequtils" -> "std/private/since";

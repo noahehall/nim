@@ -1,22 +1,21 @@
 ##
 ## concurrency and parallelism
 ## ===========================
-## [bookmark](https://nim-lang.org/docs/asyncdispatch.html#poll%2Cint)
+## [bookmark](https://nim-lang.org/docs/asyncfutures.html)
 # https://nim-lang.org/docs/streams.html
 # https://nim-lang.org/docs/asyncfile.html
-# https://nim-lang.org/docs/asyncfutures.html
 # https://nim-lang.org/docs/asyncstreams.html
 
 ##[
 ## TLDR
-- actor threads, actions and communication
-  - actor:
-      - thread (system): a declared Thread of type T
-      - spawn (threadpool): an ephemeral thread of type T
-  - action: proc executed by and local to an actor
-  - channel: a pipe that relays data across actions and the thread in which its declared
+- actors, actions and relays
+  - actor: instance of Thread[T/void]
+      - thread (system): a variable actor
+      - spawn (threadpool): an ephemeral ctor
+  - action: proc[T/void] executed by and local to an actor
+  - relay: channel[T] node that relays data across actions and the thread in which its declared
     - the main thread (module scope) is simpler and shared across all actors
-    - however you can declare within the body of action and send the ptr to another
+    - else you can declare within the body of action and send the ptr to another
 - threads
   - require --threads:on switch
   - each thread has its own GC heap and mem sharing is restricted
@@ -82,7 +81,8 @@ todos
 -----
 - [passing channels safely](https://nim-lang.org/docs/channels_builtin.html#example-passing-channels-safely)
 - [multiple async backend support](https://nim-lang.org/docs/asyncdispatch.html#multiple-async-backend-support)
-- [grab async await examples from asyncnet](https://nim-lang.org/docs/asyncnet.html)
+- [add more sophisticated asyncdispatch examples](https://nim-lang.org/docs/asyncdispatch.html)
+- add more lock examples
 
 ## locks
 - locks and conition vars
@@ -249,9 +249,12 @@ asyncdispatch templates
 -----------------------
 - await
 
+
+## asyncfutures
+
 ]##
 
-import std/[strutils, strformat, locks]
+import std/[sugar, strutils, strformat, locks]
 from std/os import sleep
 
 var
@@ -310,7 +313,6 @@ echo "############################ channels: non blocking"
 proc sendActionA: void {.thread.} =
   ## action for sending data without blocking
   sleep 500
-  ## action for sending data
   ## deep copies its arguments
   if not relay.trySend "phone ring ring ring": echo "failed to send message"
 
@@ -320,7 +322,7 @@ proc recActionA: void {.thread.} =
     let comms = relay.tryRecv()
     if comms.dataAvailable: echo fmt"non blocking: {comms.msg=}"; break
     echo "never blocked: no data!"
-    sleep(400) ## before next check
+    sleep 400 ## before next check
 
 gf.createThread sendActionA
 bf.createThread recActionA
@@ -335,30 +337,55 @@ for i in numThreads.low .. numThreads.high:
 sync() ## join created actors to main thread
 
 
-## adjust channel size capped at 1 message
+## adjust channel size capping at 1 message
 open relay, 1
 
 spawn sendAction()
-spawn sendActionA() ## fails because total msg < channel size 1 && we arent trying again
+spawn sendActionA() ## unsuccessful because total msg > channel size 1
 spawn sendActionA()
 spawn recActionA()
 sync()
 
 close relay
-echo "############################ async"
+
+echo "############################ asyncfutures "
+
+echo "############################ asyncdispatch "
+
 import std/asyncdispatch
 
 ## never try catch, use yield; .failed
 ## never discard, use waitFor / asyncheck
 ## getFuturesInProgress requires --define:futureLogging
-# an async proc
-# proc laterGater(s: string): Future[void] {.async.} =
-#   for i in 1..10:
-#     await sleepAsync(10) # ms
-#     echo "iteration ", i, " for string ", s
 
-# let
-#   seeya = laterGater("see ya later aligator")
-#   afterwhile = laterGater("after while crocodile")
-# waitFor seeya and afterwhile
-# also runForever
+proc f1 (): Future[string] {.async.} =
+  ## handling exeptions the correct way
+  asyncCheck sleepAsync(1) ## when you DONT care about the value/error
+  let slept = sleepAsync(1) ## when you DO care about the value/error
+  yield slept ## wont re raise exceptions
+  if slept.failed: result = "failed to sleep"
+  else: result = "slept like a vampire"
+
+let fv1 = f1()
+echo fmt"{waitFor f1()=}"
+echo fmt"{waitFor fv1=}"
+
+proc f2 (): Future[string] {.async.} =
+  ## handling exceptions the wrong way
+  try:
+    await sleepAsync(1)
+    result = "try/catch wont catch all async errors all the time"
+  except:
+    result = "exception was thrown"
+
+echo fmt"{waitFor f2()=}"
+
+proc laterGater(s: string): Future[void] {.async.} =
+  for i in 1..2:
+    await sleepAsync(10)
+    echo "iteration ", i, " for string ", s
+
+let
+  seeya = laterGater("see ya later aligator")
+  afterwhile = laterGater("after while crocodile")
+waitFor seeya and afterwhile
