@@ -163,6 +163,11 @@ digraph main {
 "std/asyncdispatch" -> "std/posix";
 "deepdives/asyncPar" -> "std/asyncdispatch";
 "deepdives/asyncPar" -> "std/asyncfutures";
+"std/asyncfile" -> "std/asyncdispatch";
+"std/asyncfile" -> "std/os";
+"std/asyncfile" -> "std/posix";
+"deepdives/asyncPar" -> "std/asyncfile";
+"deepdives/asyncPar" -> "std/os";
 "deepdives/collections" -> "std/sugar";
 "deepdives/collections" -> "std/strformat";
 "std/sequtils" -> "std/private/since";

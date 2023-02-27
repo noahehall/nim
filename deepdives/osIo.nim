@@ -98,10 +98,10 @@ vars/procs/etc
   - "freebsd", "openbsd", "solaris", "aix", "haiku", "standalone"
 - FileMode = enum
   - fmRead only
-  - fmWrite only
-  - fmReadWrite both
+  - fmWrite zero file (force creates) then open for writing
+  - fmReadWrite zero file (force creates) then open for rw
   - fmReadWriteExisting same but doesnt create file
-  - fmAppend append
+  - fmAppend append doesnt create file
 - getFreeMem  number of bytes owned by the process, but do not hold any meaningful data
 
 

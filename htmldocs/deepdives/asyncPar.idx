@@ -18,6 +18,10 @@ fake1	deepdives/asyncPar.html#fake1	asyncPar: fake1
 fakeFailed	deepdives/asyncPar.html#fakeFailed	asyncPar: fakeFailed	
 someErr	deepdives/asyncPar.html#someErr	asyncPar: someErr	
 fake2	deepdives/asyncPar.html#fake2	asyncPar: fake2	
+afilepath	deepdives/asyncPar.html#afilepath	asyncPar: afilepath	
+reader	deepdives/asyncPar.html#reader	asyncPar: reader	
+writer	deepdives/asyncPar.html#writer	asyncPar: writer	
+cursize	deepdives/asyncPar.html#cursize	asyncPar: cursize	
 concurrency and parallelism	deepdives/asyncPar.html#concurrency-and-parallelism	 concurrency and parallelism	
 TLDR	deepdives/asyncPar.html#concurrency-and-parallelism-tldr	  TLDR	
 links	deepdives/asyncPar.html#concurrency-and-parallelism-links	  links	
@@ -46,3 +50,6 @@ asyncfutures	deepdives/asyncPar.html#concurrency-and-parallelism-asyncfutures	  
 asyncfutures types	deepdives/asyncPar.html#concurrency-and-parallelism-asyncfutures-types	  asyncfutures types	
 asyncfutures consts	deepdives/asyncPar.html#concurrency-and-parallelism-asyncfutures-consts	  asyncfutures consts	
 asyncFutures procs	deepdives/asyncPar.html#concurrency-and-parallelism-asyncfutures-procs	  asyncFutures procs	
+asyncfile	deepdives/asyncPar.html#concurrency-and-parallelism-asyncfile	  asyncfile	
+asyncfile types	deepdives/asyncPar.html#concurrency-and-parallelism-asyncfile-types	  asyncfile types	
+asyncfile procs	deepdives/asyncPar.html#concurrency-and-parallelism-asyncfile-procs	  asyncfile procs	

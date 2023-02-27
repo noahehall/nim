@@ -21,6 +21,7 @@
     - [including a generic ODBC wrapper for other dbs](https://nim-lang.org/docs/db_odbc.html)
   - [future proof design philisophy](https://www.youtube.com/watch?v=aDi50K_Id_k)
   - [various pragmas to customize, restrict and enhance the compiler and runtime](https://nim-lang.github.io/Nim/manual.html#pragmas)
+  - [community forum](https://forum.nim-lang.org/)
   - [spidermans uncle](https://nim-lang.org/docs/tut3.html)
 
 ## recommended ramp up
@@ -49,6 +50,7 @@
       - [pure](https://github.com/nim-lang/Nim/tree/version-1-6/lib/pure)
       - [standard](https://github.com/nim-lang/Nim/tree/version-1-6/lib/std)
       - [system](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L1)
+    - [source: nimforum](https://github.com/nim-lang/nimforum/tree/master/src)
     - [source: nimble api](https://github.com/nim-lang/nimble/blob/master/src/nimblepkg/nimscriptapi.nim)
     - [source: nimtemplate](https://github.com/treeform/nimtemplate/tree/master/src)
     - [cheatsheet: reStructured Text](https://docutils.sourceforge.io/docs/user/rst/quickref.html)

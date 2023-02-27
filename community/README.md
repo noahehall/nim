@@ -29,7 +29,6 @@
 - [http auth](https://github.com/FedericoCeratto/nim-httpauth)
 - [httpbeast: fast http 1.1 server](https://github.com/dom96/httpbeast)
 - [jester: a sinetra-like web framework built on httpbeast](https://github.com/dom96/jester)
-- [karaxnim: SPA framework](https://github.com/karaxnim/karax)
 - [llvm based compiler for nim](https://github.com/arnetheduck/nlvm)
 - [macr-based pattern matching library](https://github.com/alehander92/gara)
 - [moe: vim like editor that didnt work on the first try](https://github.com/fox0430/moe)
@@ -54,13 +53,14 @@
 - [web framework](https://github.com/planety/prologue)
 - [zsh & bash prompt](https://github.com/icyphox/nicy)
 
-## orgs with opensource projects
+## orgs/people to follow
 
 - [status-im](https://github.com/orgs/status-im/repositories?q=&type=all&language=nim&sort=)
 - [waku](https://github.com/orgs/waku-org/repositories?q=&type=all&language=nim&sort=)
 - [treeform](https://github.com/treeform)
+- [guzba](https://github.com/guzba)
 
-## must haves
+## exceptional repos
 
 ### choosenim
 
@@ -72,7 +72,7 @@
 
 ### INim
 
-- [repl nim] https://github.com/inim-repl/INim
+- [repl nim](https://github.com/inim-repl/INim)
 - dude this is a fkn must have
 
 ### chronos
@@ -101,3 +101,8 @@
 ### curly
 
 - [pool and reuse curl handles for keep-alive connections](https://github.com/guzba/curly/)
+
+### karax
+
+- [SPA framework](https://github.com/karaxnim/karax)
+- [used by nimforum](https://github.com/nim-lang/nimforum)

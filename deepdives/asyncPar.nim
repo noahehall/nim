@@ -290,6 +290,27 @@ asyncFutures procs
 - read the value of a finished future
 - readError of a failed future
 - setCallSoonproc change implementation of callsoon
+
+## asyncfile
+- asynchronous reads & writes
+- unlike std/os you need to get an FD on a file first via openAsync
+  - most procs require an AsyncFD and not a filename[string]
+
+asyncfile types
+---------------
+- AsyncFile = ref object
+  - fd: AsyncFD
+  - offset: int64
+
+asyncfile procs
+---------------
+- close a file
+- [get | set]File[Pos | Size]
+- newAsyncFile from an AsyncFD
+- openAsync file X in mode Y returning AsyncFile; all other procs require an AsyncFile
+- read[All | Buffer | Line | ToStream]
+- write[Buffer | FromStream]
+  - writeFromStream: perfect for saving streamed data to af ile without wasting memory
 ]##
 
 import std/[sugar, strutils, strformat, locks]
@@ -429,10 +450,10 @@ echo "############################ asyncfutures "
 import std/asyncfutures
 
 let
-  fake1 = newFuture[string]() ## Future[T] success example
-  fakeFailed = newFuture[string]() ## Future[T] failed example
-  someErr = newException(ValueError, "oops") ## arbitrary
-var fake2 = newFutureVar[int]() ## FutureVar[T] example
+  fake1 = newFuture[string]("success example") ## Future[T]
+  fakeFailed = newFuture[string]("failed example") ## provide a name for debugging
+  someErr = newException(ValueError, "oops")
+var fake2 = newFutureVar[int]("FutureVar example") ## FutureVar[T]
 
 
 ## TODO: this doesnt echo
@@ -454,8 +475,25 @@ fake2.complete 2
 echo fmt"clean -> complete {fake2.read=}"
 
 fakeFailed.fail(someErr)
-if fakeFailed.failed:
-  echo fmt"{fakeFailed.readError.msg=}"
+if fakeFailed.failed: echo fmt"{fakeFailed.readError.msg=}"
 
-echo "############################ asyncfutures "
-# import std/asyncfile
+echo "############################ asyncfile "
+import std/[asyncfile, os] ## asyncdispatch imported above
+
+const
+  afilepath = "/tmp/or/rary.txt"
+
+try: afilepath.parentDir.createDir except: echo fmt"couldnt create {afilepath.parentDir}"
+
+var
+  reader = afilepath.openAsync fmRead
+  writer = afilepath.openASync fmWrite
+
+
+waitFor writer.write "first line in file\n"
+let cursize = writer.getFileSize
+echo fmt"{waitFor reader.read (int)cursize=}"
+waitFor writer.write "second line in file"
+echo fmt"{waitFor reader.read (int)writer.getFileSize - cursize=}"
+
+for f in [reader,writer]: f.close
