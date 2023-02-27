@@ -1,7 +1,7 @@
 ##
 ## os and i/o
 ## ==========
-##
+## [bookmark](https://nim-lang.org/docs/streams.html)
 
 ##[
 ## TLDR
@@ -61,6 +61,7 @@ links
 - high impact
   - [basic os utils](https://nim-lang.org/docs/os.html)
   - [distro detection & os pkg manager](https://nim-lang.org/docs/distros.html)
+  - [file and string streams](https://nim-lang.org/docs/streams.html)
   - [fusion file permissions](https://nim-lang.github.io/fusion/src/fusion/filepermissions.html)
   - [fusion io utils](https://nim-lang.github.io/fusion/src/fusion/ioutils.html)
   - [fusion scripting](https://nim-lang.github.io/fusion/src/fusion/scripting.html)

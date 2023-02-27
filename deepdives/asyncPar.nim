@@ -2,7 +2,6 @@
 ## concurrency and parallelism
 ## ===========================
 ## [bookmark](https://nim-lang.org/docs/asyncfile.html)
-# https://nim-lang.org/docs/streams.html
 # https://nim-lang.org/docs/asyncstreams.html
 
 ##[
@@ -69,7 +68,6 @@ links
   - [async futures](https://nim-lang.org/docs/asyncfutures.html)
   - [async streams](https://nim-lang.org/docs/asyncstreams.html)
   - [lock and condition vars](https://nim-lang.org/docs/locks.html)
-  - [streams](https://nim-lang.org/docs/streams.html)
   - [thread pool](https://nim-lang.org/docs/threadpool.html)
 - niche
   - [co routines](https://nim-lang.org/docs/coro.html)
