@@ -2,3 +2,5 @@
 # but both work on the cli (sans icdiff)
 **/htmldocs/** binary
 **/htmldocs/** -diff
+testresults.html binary
+testresults.html -diff

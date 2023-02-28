@@ -11,6 +11,7 @@
     .. code-block:: Nim
       # now importing custom modules in your test file will work
       switch("path", "$projectDir/../where/you/keep/your/source/code")
+      --path:"$projectDir/../.." # IMO preferred
     - optional [nim.cfg](https://github.com/nim-lang/Nim/blob/devel/tests/arc/nim.cfg)
     - optional file (e.g. skip.ini) with tests to skip (1 per line, `# comments ignored`)
     - subdirs for test categories, e.g. `root/tests/mymodule/\*.nim`
@@ -108,6 +109,10 @@ testament specs
   - if file|line|column is specified, either msg | errormsg | nimout (if line)
     - set to a non empty value
     - appear before file option
+  - if exitcode is set forces action == run
+  - if errormsg is set forces action == reject
+  - can use config.nims/nim.cfg instead of cmd if only changing nimc flags
+    - cmd is required for nimscripts; e.g. `cmd: "nim e --hints:on -d:testing $options $file"`
 - action sets test validation to compile | (compile &) run | reject
 - batchable can run in batch mode; i.e. all tests with the same dependency set can be batched
 - column @see FYI section

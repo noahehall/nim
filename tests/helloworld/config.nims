@@ -1,0 +1,4 @@
+--define:ssl
+--multimethods:on
+--path:"$projectDir/../.."
+--threads:on

@@ -1,0 +1,3 @@
+--define:ssl
+--path:"$projectDir/../.."
+--threads:on

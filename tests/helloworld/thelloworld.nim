@@ -1,5 +1,6 @@
-# if it compiles, it works!
-
 discard """
-  action: "compile"
+  action: "run"
+  valgrind: true
 """
+
+import helloworld/helloworld ## basic nim split into modules
