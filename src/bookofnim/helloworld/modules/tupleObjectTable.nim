@@ -70,28 +70,6 @@ todo
 - the order of (key,val) are preserved to support ordered dicts
 - can be a const which requires a minimal amount of memory
 
-## ref
-- generic traced pointer type mem is gc'ed on heap
-- generally you should always use ref objects with inheritance
-- non-ref objects truncate subclass fields on = assignment
-- since objs are value types, composition is as efficient as inheritance
-- dont have to label ref objects as var in proc signatures to mutate them
-
-## ptr
-- generic untraced pointer type
-- untraced references (are unsafe), pointing to manually managed memory locations
-- required when accessing hardware/low-level ops
-
-## ref/pter procs
-- . and [] always def-ref, i.e. return the value and not the ref
-- . access tuple/object
-- new(T) object of type T and return a traced ref, when T is a ref the result type will be T, else ref T
-- new[T](a) object of type T and return a trace reference to it in a
-- new[T](a; finalizer) same as before, but this time finalizer is called a is gc'ed
-- of i.e. instanceof creates a single layer of inheritance between types
-- as
-- in notin is isnot
-- isNil(x) sometimes more efficient than == nil
 
 ## inheritance (ref/ptr)
 - introduce many-to-one relationships: many instances point to the same heap
@@ -102,7 +80,35 @@ todo
 - objects can be self-referencing
 - use the [] operator when logging the object (see strutils)
 
-## dynamic dispatch
+ref
+---
+- generic traced pointer type mem is gc'ed on heap
+- generally you should always use ref objects with inheritance
+- non-ref objects truncate subclass fields on = assignment
+- since objs are value types, composition is as efficient as inheritance
+- dont have to label ref objects as var in proc signatures to mutate them
+
+ptr
+---
+- generic untraced pointer type
+- untraced references (are unsafe), pointing to manually managed memory locations
+- required when accessing hardware/low-level ops
+
+ref/pter procs
+--------------
+- . and [] always def-ref, i.e. return the value and not the ref
+- . access tuple/object
+- new(T) object of type T and return a traced ref, when T is a ref the result type will be T, else ref T
+- new[T](a) object of type T and return a trace reference to it in a
+- new[T](a; finalizer) same as before, but this time finalizer is called a is gc'ed
+- of i.e. instanceof creates a single layer of inheritance between types
+- as
+- in notin is isnot
+- isNil(x) sometimes more efficient than == nil
+
+
+dynamic dispatch
+----------------
 - generally only required with ref/ptr objects
 - use method whenever an object has an inherited subtype only known at runtime
 

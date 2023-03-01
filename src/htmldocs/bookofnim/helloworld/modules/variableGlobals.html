@@ -101,7 +101,6 @@ window.addEventListener('DOMContentLoaded', main);
 <li><a class="reference" id="variables-and-globals_toc" href="#variables-and-globals">variables and globals</a></li>
 <ul class="simple"><li><a class="reference" id="variables-and-globals-tldr_toc" href="#variables-and-globals-tldr">TLDR</a></li>
 <li><a class="reference" id="variables-and-globals-links_toc" href="#variables-and-globals-links">links</a></li>
-<li><a class="reference" id="variables-and-globals-todos_toc" href="#variables-and-globals-todos">todos</a></li>
 <li><a class="reference" id="variables-and-globals-var_toc" href="#variables-and-globals-var">var</a></li>
 <li><a class="reference" id="variables-and-globals-let_toc" href="#variables-and-globals-let">let</a></li>
 <li><a class="reference" id="variables-and-globals-const_toc" href="#variables-and-globals-const">const</a></li>
@@ -237,41 +236,6 @@ class="link-seesrc" target="_blank">Source</a>
 <li><a class="reference external" href="https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#converter">converters</a></li>
 </ul>
 
-<h2><a class="toc-backref" id="variables-and-globals-todos" href="#variables-and-globals-todos">todos</a></h2><ul class="simple"><li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L2816">couldnt get eval to work</a></li>
-</ul>
-<pre class="listing"><span class="Comment"># probably need a memory_mgmt.nim file</span>
-<span class="Comment"># skipped everything in this section</span>
-<span class="Comment"># but they look intersting</span>
-<span class="Identifier">addAndFetch</span> <span class="Identifier">doesnt</span> <span class="Identifier">have</span> <span class="Identifier">a</span> <span class="Identifier">description</span>
-<span class="Identifier">copyMem</span> <span class="Identifier">copies</span> <span class="Identifier">content</span> <span class="Keyword">from</span> <span class="Identifier">memory</span> <span class="Identifier">at</span> <span class="Identifier">source</span> <span class="Identifier">to</span> <span class="Identifier">memory</span> <span class="Identifier">at</span> <span class="Identifier">dest</span>
-<span class="Identifier">compileOption</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">[</span><span class="Punctuation">,</span> <span class="Identifier">y</span><span class="Punctuation">]</span><span class="Punctuation">)</span> <span class="Identifier">check</span> <span class="Keyword">if</span> <span class="Identifier">a</span> <span class="Identifier">switch</span> <span class="Keyword">is</span> <span class="Identifier">active</span> <span class="Keyword">and</span><span class="Operator">/</span><span class="Keyword">or</span> <span class="Identifier">its</span> <span class="Identifier">value</span> <span class="Identifier">at</span> <span class="Identifier">compile</span> <span class="Identifier">time</span>
-<span class="Identifier">create</span> <span class="Identifier">allocates</span> <span class="Identifier">a</span> <span class="Identifier">new</span> <span class="Identifier">memory</span> <span class="Keyword">block</span> <span class="Identifier">with</span> <span class="Identifier">atleast</span> <span class="Identifier">T</span><span class="Operator">.</span><span class="Identifier">sizeof</span> <span class="Operator">*</span> <span class="Identifier">size</span> <span class="Identifier">bytes</span>
-<span class="Identifier">createShared</span> <span class="Identifier">allocates</span> <span class="Identifier">new</span> <span class="Identifier">memory</span> <span class="Keyword">block</span> <span class="Identifier">on</span> <span class="Identifier">the</span> <span class="Identifier">shared</span> <span class="Identifier">heap</span> <span class="Identifier">with</span> <span class="Identifier">atleast</span> <span class="Identifier">T</span><span class="Operator">.</span><span class="Identifier">sizeof</span> <span class="Operator">*</span> <span class="Identifier">bytes</span>
-<span class="Identifier">createSharedU</span> <span class="Identifier">allocates</span> <span class="Identifier">new</span> <span class="Identifier">memory</span> <span class="Keyword">block</span> <span class="Identifier">on</span> <span class="Identifier">the</span> <span class="Identifier">shared</span> <span class="Identifier">heap</span> <span class="Identifier">with</span> <span class="Identifier">atleast</span> <span class="Identifier">T</span><span class="Operator">.</span><span class="Identifier">sizeof</span> <span class="Operator">*</span> <span class="Identifier">bytes</span>
-<span class="Identifier">createU</span> <span class="Identifier">allocates</span> <span class="Identifier">memory</span> <span class="Keyword">block</span> <span class="Identifier">atleast</span> <span class="Identifier">T</span><span class="Operator">.</span><span class="Identifier">sizeof</span> <span class="Operator">*</span> <span class="Identifier">bytes</span>
-<span class="Identifier">dealloc</span> <span class="Identifier">frees</span> <span class="Identifier">the</span> <span class="Identifier">memory</span> <span class="Identifier">allocated</span> <span class="Identifier">with</span> <span class="Identifier">alloc</span><span class="Punctuation">,</span> <span class="Identifier">alloc0</span><span class="Punctuation">,</span> <span class="Identifier">realloc</span><span class="Punctuation">,</span> <span class="Identifier">create</span> <span class="Keyword">or</span> <span class="Identifier">createU</span>
-<span class="Identifier">deallocHeap</span> <span class="Identifier">frees</span> <span class="Identifier">the</span> <span class="Identifier">thread</span> <span class="Identifier">local</span> <span class="Identifier">heap</span>
-<span class="Identifier">deallocShared</span> <span class="Identifier">frees</span> <span class="Identifier">the</span> <span class="Identifier">mem</span> <span class="Identifier">allocated</span> <span class="Identifier">with</span> <span class="Identifier">allocShared</span><span class="Punctuation">,</span> <span class="Identifier">allocShared0</span> <span class="Keyword">or</span> <span class="Identifier">reallocShared</span>
-<span class="Identifier">equalMem</span> <span class="Identifier">compares</span> <span class="Identifier">size</span> <span class="Identifier">bytes</span> <span class="Keyword">of</span> <span class="Identifier">mem</span> <span class="Identifier">blocks</span> <span class="Identifier">a</span> <span class="Keyword">and</span> <span class="Identifier">b</span>
-<span class="Identifier">freeShared</span> <span class="Identifier">frees</span> <span class="Identifier">the</span> <span class="Identifier">mem</span> <span class="Identifier">allocated</span> <span class="Identifier">with</span> <span class="Identifier">createShared</span><span class="Punctuation">,</span> <span class="Identifier">createSharedU</span><span class="Punctuation">,</span> <span class="Keyword">or</span> <span class="Identifier">resizeShared</span>
-<span class="Identifier">GC_disable</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Identifier">GC_disableMarkAndSweep</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Identifier">GC_enable</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Identifier">GC_enableMarkAndSweep</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Identifier">GC_fullCollect</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Identifier">GC_getStatistics</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
-<span class="Identifier">getAllocStats</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
-<span class="Identifier">getFrame</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
-<span class="Identifier">getFrameState</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
-<span class="Identifier">isNotForeign</span> <span class="Identifier">returns</span> <span class="Identifier">true</span> <span class="Keyword">if</span> <span class="Identifier">x</span> <span class="Identifier">belongs</span> <span class="Identifier">to</span> <span class="Identifier">the</span> <span class="Identifier">calling</span> <span class="Identifier">thread</span>
-<span class="Identifier">moveMem</span> <span class="Identifier">copies</span> <span class="Identifier">content</span> <span class="Keyword">from</span> <span class="Identifier">memory</span> <span class="Identifier">at</span> <span class="Identifier">source</span> <span class="Identifier">to</span> <span class="Identifier">memory</span> <span class="Identifier">at</span> <span class="Identifier">dest</span>
-<span class="Identifier">prepareMutation</span> <span class="Identifier">string</span> <span class="Identifier">literals</span> <span class="Keyword">in</span> <span class="Identifier">ARC</span><span class="Operator">/</span><span class="Identifier">ORC</span> <span class="Identifier">mode</span> <span class="Identifier">are</span> <span class="Identifier">copy</span> <span class="Identifier">on</span> <span class="Identifier">write</span><span class="Punctuation">,</span> <span class="Identifier">this</span> <span class="Identifier">must</span> <span class="Identifier">be</span> <span class="Identifier">called</span> <span class="Identifier">before</span> <span class="Identifier">mutating</span> <span class="Identifier">them</span>
-<span class="Identifier">rawEnv</span> <span class="Identifier">retrieve</span> <span class="Identifier">the</span> <span class="Identifier">raw</span> <span class="Identifier">env</span> <span class="Identifier">pointer</span> <span class="Keyword">of</span> <span class="Identifier">a</span> <span class="Identifier">closure</span>
-<span class="Identifier">rawProc</span> <span class="Identifier">retrieve</span> <span class="Identifier">the</span> <span class="Identifier">raw</span> <span class="Keyword">proc</span> <span class="Identifier">pointer</span> <span class="Keyword">of</span> <span class="Identifier">closer</span> <span class="Identifier">X</span>
-<span class="Identifier">resize</span> <span class="Identifier">a</span> <span class="Identifier">memory</span> <span class="Keyword">block</span>
-<span class="Identifier">resizeShared</span>
-<span class="Identifier">setControlCHook</span> <span class="Keyword">proc</span> <span class="Identifier">to</span> <span class="Identifier">run</span> <span class="Keyword">when</span> <span class="Identifier">program</span> <span class="Keyword">is</span> <span class="Identifier">ctrlc</span><span class="CharLit">'ed</span>
-<span class="Identifier">sizeof</span> <span class="Identifier">blah</span> <span class="Keyword">in</span> <span class="Identifier">bytes</span></pre>
 <h2><a class="toc-backref" id="variables-and-globals-var" href="#variables-and-globals-var">var</a></h2><ul class="simple"><li>runtime mutable global var</li>
 </ul>
 
@@ -340,9 +304,9 @@ checks whether x can be compiled without any semantic error. useful to verify wh
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L263"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L225"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L263" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L225" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -360,9 +324,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L234"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L196"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L234" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L196" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -377,9 +341,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 type inference, relevant for proc return type
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L134"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L96"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L134" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L96" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -390,9 +354,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 if gc:arc|orc you have to enable via --deepcopy:on
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L175"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L137"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L175" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L137" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -402,9 +366,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L264"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L226"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L264" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L226" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -414,9 +378,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L222"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L184"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L222" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L184" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -426,9 +390,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L257"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L219"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L257" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L219" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -438,9 +402,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L256"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L218"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L256" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L218" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -450,9 +414,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L159"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L121"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L159" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L121" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -462,9 +426,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L121"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L83"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L121" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L83" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -479,9 +443,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L131"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L93"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L131" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L93" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -491,9 +455,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L240"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L202"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L240" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L202" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -503,9 +467,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L241"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L203"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L241" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L203" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -515,9 +479,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L122"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L84"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L122" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L84" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -533,9 +497,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 notice the use of semi colins to have multiple statements on a single line
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L126"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L88"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L126" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L88" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -545,9 +509,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L146"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L108"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L146" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L108" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -557,9 +521,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L123"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L85"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L123" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L85" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -574,9 +538,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L224"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L186"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L224" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L186" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -586,9 +550,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L143"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L105"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L143" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L105" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -603,9 +567,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 create an implicit conversion for Option[T] now Option[int] + Option[int] works
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L243"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L205"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L243" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L205" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -615,9 +579,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L251"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L213"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L251" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L213" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -631,7 +595,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-03-01 21:30:52 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-03-01 22:42:38 UTC</small>
       </div>
     </div>
   </div>

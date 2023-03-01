@@ -1,5 +1,5 @@
 pubfn	bookofnim/helloworld/modules/routines.html#pubfn	routines: pubfn(): void	
-eko	bookofnim/helloworld/modules/routines.html#eko,string	routines: eko(this = &quot;Default value&quot;): void	
+eko	bookofnim/helloworld/modules/routines.html#eko,string	routines: eko(s = &quot;Default value&quot;): void	
 ekoGroups	bookofnim/helloworld/modules/routines.html#ekoGroups,int,int,string,char	routines: ekoGroups(a, b: int; c: string; d: char): void	
 passedByValue	bookofnim/helloworld/modules/routines.html#passedByValue,string	routines: passedByValue(x: string): void	
 xx	bookofnim/helloworld/modules/routines.html#xx	routines: xx	

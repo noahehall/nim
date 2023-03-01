@@ -68,11 +68,11 @@ proc pubfn*(): void =
   echo "the * makes this fn public"
 
 # params with defaults dont requre a type
-proc eko(this = "Default value"): void =
-  debugEcho this
-eko "wtf1"
-eko("wtf2")
-"wtf3".eChO
+proc eko(s = "Default value"): void =
+  debugEcho s
+eko "first"
+eko("second")
+"third".eChO
 
 # use of semi to group parameters by type
 proc ekoGroups(a, b: int; c: string, d: char): void = echo "ints: ", a, b, " strings: ", c, d
@@ -153,7 +153,7 @@ proc `***`(i: int): auto =
   result = i * i * i
 echo ***5 + ***(5)
 
-if `==`( `+`(3, 4), 7): echo "invoking operator as proc looks wierd"
+if `==`( `+`(3, 4), 7): echo "invoking operator as proc looks weird"
 
 # calling syntax impacts type compatability
 # ^ I cant seem to get this to throw an error

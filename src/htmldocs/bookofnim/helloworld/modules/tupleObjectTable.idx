@@ -88,10 +88,10 @@ objects	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-ta
 type aliases	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-type-aliases	  type aliases	
 type aliases (distinct)	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-type-aliases-distinct	  type aliases (distinct)	
 table	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-table	  table	
+inheritance (ref/ptr)	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-inheritance-refslashptr	  inheritance (ref/ptr)	
 ref	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-ref	  ref	
 ptr	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-ptr	  ptr	
 ref/pter procs	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-refslashpter-procs	  ref/pter procs	
-inheritance (ref/ptr)	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-inheritance-refslashptr	  inheritance (ref/ptr)	
 dynamic dispatch	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-dynamic-dispatch	  dynamic dispatch	
 multi-methods	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-multiminusmethods	  multi-methods	
 metatypes	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-metatypes	  metatypes	

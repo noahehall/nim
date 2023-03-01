@@ -18,44 +18,6 @@ links
 - [converters](https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#converter)
 
 
-todos
------
-- [couldnt get eval to work](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L2816)
-.. code-block:: Nim
-  # probably need a memory_mgmt.nim file
-  # skipped everything in this section
-  # but they look intersting
-  addAndFetch doesnt have a description
-  copyMem copies content from memory at source to memory at dest
-  compileOption(x[, y]) check if a switch is active and/or its value at compile time
-  create allocates a new memory block with atleast T.sizeof * size bytes
-  createShared allocates new memory block on the shared heap with atleast T.sizeof * bytes
-  createSharedU allocates new memory block on the shared heap with atleast T.sizeof * bytes
-  createU allocates memory block atleast T.sizeof * bytes
-  dealloc frees the memory allocated with alloc, alloc0, realloc, create or createU
-  deallocHeap frees the thread local heap
-  deallocShared frees the mem allocated with allocShared, allocShared0 or reallocShared
-  equalMem compares size bytes of mem blocks a and b
-  freeShared frees the mem allocated with createShared, createSharedU, or resizeShared
-  GC_disable()
-  GC_disableMarkAndSweep()
-  GC_enable()
-  GC_enableMarkAndSweep()
-  GC_fullCollect()
-  GC_getStatistics():
-  getAllocStats():
-  getFrame():
-  getFrameState():
-  isNotForeign returns true if x belongs to the calling thread
-  moveMem copies content from memory at source to memory at dest
-  prepareMutation string literals in ARC/ORC mode are copy on write, this must be called before mutating them
-  rawEnv retrieve the raw env pointer of a closure
-  rawProc retrieve the raw proc pointer of closer X
-  resize a memory block
-  resizeShared
-  setControlCHook proc to run when program is ctrlc'ed
-  sizeof blah in bytes
-
 ## var
 - runtime mutable global var
 
