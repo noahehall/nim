@@ -44,6 +44,7 @@ echo fmt"empty string if not found {get(SOME_KEY)=}"
 echo "############################ config external via .ini"
 import std/[parsecfg]
 
+echo fmt"{thisDir()=}"
 const cfg = normalizedPath fmt"""{thisDir() / ".." / ".." / ".." / configFile}""".readFile
 var dict = newconfig()
 proc parseCfg(): void =

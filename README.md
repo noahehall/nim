@@ -95,8 +95,7 @@ blogs
 ### quickies
 
 - find the rst syntax for creating links between pages and remove all the markdown links
-- fix tests/src/bookofnim/deepdives/tmemoryLeaks and add it to a new `good examples of bad code` section
-  - lol fix helloworld too
+- fix tests/src/skip and add it to a new `good examples of bad code` section
 - move projects out of this repo
   - make sure you fork the nimtemplate repo
 - [check how getTime handles os checks](https://github.com/nim-lang/Nim/blob/version-1-6/lib/pure/times.nim#L897)

@@ -13,7 +13,7 @@
       switch("path", "$projectDir/../where/you/keep/your/source/code")
       --path:"$projectDir/../.." # IMO preferred
     - optional [nim.cfg](https://github.com/nim-lang/Nim/blob/devel/tests/arc/nim.cfg)
-    - optional file (e.g. skip.ini) with tests to skip (1 per line, `# comments ignored`)
+    - optional file (e.g. skip) with tests to skip (1 per line, `# comments ignored`)
     - subdirs for test categories, e.g. `root/tests/mymodule/\*.nim`
       - test files prefixed with `t` e.g. `tsomefile.nim`
 

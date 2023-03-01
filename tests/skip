@@ -1,0 +1,5 @@
+# leaks memory
+memoryLeaks
+helloworld
+# thisDir() fails when executed via testament
+# tshell
