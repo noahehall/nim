@@ -2,6 +2,7 @@
 ## routines
 ## ========
 ## [bookmark](https://nim-lang.org/docs/manual_experimental.html#do-notation)
+# check how do is used in this screenshot: https://forum.nim-lang.org/t/9961
 
 ##[
 ## TLDR
