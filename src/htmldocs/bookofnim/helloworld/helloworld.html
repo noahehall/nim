@@ -117,37 +117,12 @@ window.addEventListener('DOMContentLoaded', main);
 <li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax-statements_toc" href="#yolo-wurlcolon-basic-nim-syntax-statements">statements</a></li>
 <li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax-expressions_toc" href="#yolo-wurlcolon-basic-nim-syntax-expressions">expressions</a></li>
 <li><a class="reference" id="yolo-wurlcolon-basic-nim-syntax-visibility_toc" href="#yolo-wurlcolon-basic-nim-syntax-visibility">visibility</a></li>
-</ul><li><a class="reference" id="variables-and-globals_toc" href="#variables-and-globals">variables and globals</a></li>
-<ul class="simple"><li><a class="reference" id="variables-and-globals-tldr_toc" href="#variables-and-globals-tldr">TLDR</a></li>
-<li><a class="reference" id="variables-and-globals-varslashglobal-todos_toc" href="#variables-and-globals-varslashglobal-todos">var/global todos</a></li>
-<li><a class="reference" id="variables-and-globals-varslashglobal-links_toc" href="#variables-and-globals-varslashglobal-links">var/global links</a></li>
-<li><a class="reference" id="variables-and-globals-var_toc" href="#variables-and-globals-var">var</a></li>
-<li><a class="reference" id="variables-and-globals-let_toc" href="#variables-and-globals-let">let</a></li>
-<li><a class="reference" id="variables-and-globals-const_toc" href="#variables-and-globals-const">const</a></li>
-<li><a class="reference" id="variables-and-globals-static_toc" href="#variables-and-globals-static">static</a></li>
-<li><a class="reference" id="variables-and-globals-eval_toc" href="#variables-and-globals-eval">eval</a></li>
-<li><a class="reference" id="variables-and-globals-stropping_toc" href="#variables-and-globals-stropping">stropping</a></li>
-<li><a class="reference" id="variables-and-globals-auto_toc" href="#variables-and-globals-auto">auto</a></li>
-<li><a class="reference" id="variables-and-globals-type-casts_toc" href="#variables-and-globals-type-casts">type casts</a></li>
-<li><a class="reference" id="variables-and-globals-type-coercions_toc" href="#variables-and-globals-type-coercions">type coercions</a></li>
-<li><a class="reference" id="variables-and-globals-type-inspection_toc" href="#variables-and-globals-type-inspection">type inspection</a></li>
-<li><a class="reference" id="variables-and-globals-echoslashrepr_toc" href="#variables-and-globals-echoslashrepr">echo/repr</a></li>
-</ul><li><a class="reference" id="simple-types_toc" href="#simple-types">simple types</a></li>
-<ul class="simple"><li><a class="reference" id="simple-types-tldr_toc" href="#simple-types-tldr">TLDR</a></li>
-<li><a class="reference" id="simple-types-links_toc" href="#simple-types-links">links</a></li>
-<li><a class="reference" id="simple-types-string_toc" href="#simple-types-string">string</a></li>
-<li><a class="reference" id="simple-types-char_toc" href="#simple-types-char">char</a></li>
-<li><a class="reference" id="simple-types-byte_toc" href="#simple-types-byte">byte</a></li>
-<li><a class="reference" id="simple-types-bool_toc" href="#simple-types-bool">bool</a></li>
-<li><a class="reference" id="simple-types-stringslashchar-procs_toc" href="#simple-types-stringslashchar-procs">string/char procs</a></li>
-<li><a class="reference" id="simple-types-number-procs_toc" href="#simple-types-number-procs">number procs</a></li>
-<li><a class="reference" id="simple-types-number-types_toc" href="#simple-types-number-types">number types</a></li>
-<li><a class="reference" id="simple-types-misc-procs_toc" href="#simple-types-misc-procs">misc procs</a></li>
-</ul><li><a class="reference" id="branchingcolon-if-when-case_toc" href="#branchingcolon-if-when-case">branching: if when case</a></li>
-<ul class="simple"><li><a class="reference" id="branchingcolon-if-when-case-tldr_toc" href="#branchingcolon-if-when-case-tldr">TLDR</a></li>
-<li><a class="reference" id="branchingcolon-if-when-case-branching-todos_toc" href="#branchingcolon-if-when-case-branching-todos">branching todos</a></li>
-<li><a class="reference" id="branchingcolon-if-when-case-when_toc" href="#branchingcolon-if-when-case-when">when</a></li>
-<li><a class="reference" id="branchingcolon-if-when-case-case_toc" href="#branchingcolon-if-when-case-case">case</a></li>
+</ul><li><a class="reference" id="blocks_toc" href="#blocks">blocks</a></li>
+<ul class="simple"><li><a class="reference" id="blocks-tldr_toc" href="#blocks-tldr">TLDR</a></li>
+<li><a class="reference" id="blocks-links_toc" href="#blocks-links">links</a></li>
+<li><a class="reference" id="blocks-todos_toc" href="#blocks-todos">todos</a></li>
+<li><a class="reference" id="blocks-do-blocks_toc" href="#blocks-do-blocks">do blocks</a></li>
+<li><a class="reference" id="blocks-once-blocks_toc" href="#blocks-once-blocks">once blocks</a></li>
 </ul><li><a class="reference" id="exception-handling-debugging-todo-documentation_toc" href="#exception-handling-debugging-todo-documentation">exception handling, debugging (todo), documentation</a></li>
 <ul class="simple"><li><a class="reference" id="exception-handling-debugging-todo-documentation-tldr_toc" href="#exception-handling-debugging-todo-documentation-tldr">TLDR</a></li>
 <li><a class="reference" id="exception-handling-debugging-todo-documentation-todos_toc" href="#exception-handling-debugging-todo-documentation-todos">todos</a></li>
@@ -156,16 +131,17 @@ window.addEventListener('DOMContentLoaded', main);
 <li><a class="reference" id="exception-handling-debugging-todo-documentation-defect-types_toc" href="#exception-handling-debugging-todo-documentation-defect-types">Defect types</a></li>
 <li><a class="reference" id="exception-handling-debugging-todo-documentation-error-exception-types_toc" href="#exception-handling-debugging-todo-documentation-error-exception-types">Error (exception) types</a></li>
 <li><a class="reference" id="exception-handling-debugging-todo-documentation-documentation_toc" href="#exception-handling-debugging-todo-documentation-documentation">documentation</a></li>
+</ul><li><a class="reference" id="branchingcolon-if-when-case_toc" href="#branchingcolon-if-when-case">branching: if when case</a></li>
+<ul class="simple"><li><a class="reference" id="branchingcolon-if-when-case-tldr_toc" href="#branchingcolon-if-when-case-tldr">TLDR</a></li>
+<li><a class="reference" id="branchingcolon-if-when-case-branching-todos_toc" href="#branchingcolon-if-when-case-branching-todos">branching todos</a></li>
+<li><a class="reference" id="branchingcolon-if-when-case-when_toc" href="#branchingcolon-if-when-case-when">when</a></li>
+<li><a class="reference" id="branchingcolon-if-when-case-case_toc" href="#branchingcolon-if-when-case-case">case</a></li>
 </ul><li><a class="reference" id="loops-and-iterators_toc" href="#loops-and-iterators">loops and iterators</a></li>
 <ul class="simple"><li><a class="reference" id="loops-and-iterators-tldr_toc" href="#loops-and-iterators-tldr">TLDR</a></li>
 <li><a class="reference" id="loops-and-iterators-links_toc" href="#loops-and-iterators-links">links</a></li>
 <li><a class="reference" id="loops-and-iterators-todos_toc" href="#loops-and-iterators-todos">todos</a></li>
 <li><a class="reference" id="loops-and-iterators-loopslashiterator-related-procs_toc" href="#loops-and-iterators-loopslashiterator-related-procs">loop/iterator related procs</a></li>
 <li><a class="reference" id="loops-and-iterators-iterators_toc" href="#loops-and-iterators-iterators">iterators</a></li>
-</ul><li><a class="reference" id="blocks_toc" href="#blocks">blocks</a></li>
-<ul class="simple"><li><a class="reference" id="blocks-tldr_toc" href="#blocks-tldr">TLDR</a></li>
-<li><a class="reference" id="blocks-do-blocks_toc" href="#blocks-do-blocks">do blocks</a></li>
-<li><a class="reference" id="blocks-once-blocks_toc" href="#blocks-once-blocks">once blocks</a></li>
 </ul><li><a class="reference" id="ordinals-and-structured_toc" href="#ordinals-and-structured">ordinals and structured</a></li>
 <ul class="simple"><li><a class="reference" id="ordinals-and-structured-tldr_toc" href="#ordinals-and-structured-tldr">TLDR</a></li>
 <li><a class="reference" id="ordinals-and-structured-links_toc" href="#ordinals-and-structured-links">links</a></li>
@@ -206,6 +182,32 @@ window.addEventListener('DOMContentLoaded', main);
 <li><a class="reference" id="tuples-objects-and-tables-recursive-types_toc" href="#tuples-objects-and-tables-recursive-types">recursive types</a></li>
 <li><a class="reference" id="tuples-objects-and-tables-type-classes_toc" href="#tuples-objects-and-tables-type-classes">type classes</a></li>
 <li><a class="reference" id="tuples-objects-and-tables-typedesc_toc" href="#tuples-objects-and-tables-typedesc">typedesc</a></li>
+</ul><li><a class="reference" id="simple-types_toc" href="#simple-types">simple types</a></li>
+<ul class="simple"><li><a class="reference" id="simple-types-tldr_toc" href="#simple-types-tldr">TLDR</a></li>
+<li><a class="reference" id="simple-types-links_toc" href="#simple-types-links">links</a></li>
+<li><a class="reference" id="simple-types-string_toc" href="#simple-types-string">string</a></li>
+<li><a class="reference" id="simple-types-char_toc" href="#simple-types-char">char</a></li>
+<li><a class="reference" id="simple-types-byte_toc" href="#simple-types-byte">byte</a></li>
+<li><a class="reference" id="simple-types-bool_toc" href="#simple-types-bool">bool</a></li>
+<li><a class="reference" id="simple-types-stringslashchar-procs_toc" href="#simple-types-stringslashchar-procs">string/char procs</a></li>
+<li><a class="reference" id="simple-types-number-procs_toc" href="#simple-types-number-procs">number procs</a></li>
+<li><a class="reference" id="simple-types-number-types_toc" href="#simple-types-number-types">number types</a></li>
+<li><a class="reference" id="simple-types-misc-procs_toc" href="#simple-types-misc-procs">misc procs</a></li>
+</ul><li><a class="reference" id="variables-and-globals_toc" href="#variables-and-globals">variables and globals</a></li>
+<ul class="simple"><li><a class="reference" id="variables-and-globals-tldr_toc" href="#variables-and-globals-tldr">TLDR</a></li>
+<li><a class="reference" id="variables-and-globals-varslashglobal-todos_toc" href="#variables-and-globals-varslashglobal-todos">var/global todos</a></li>
+<li><a class="reference" id="variables-and-globals-varslashglobal-links_toc" href="#variables-and-globals-varslashglobal-links">var/global links</a></li>
+<li><a class="reference" id="variables-and-globals-var_toc" href="#variables-and-globals-var">var</a></li>
+<li><a class="reference" id="variables-and-globals-let_toc" href="#variables-and-globals-let">let</a></li>
+<li><a class="reference" id="variables-and-globals-const_toc" href="#variables-and-globals-const">const</a></li>
+<li><a class="reference" id="variables-and-globals-static_toc" href="#variables-and-globals-static">static</a></li>
+<li><a class="reference" id="variables-and-globals-eval_toc" href="#variables-and-globals-eval">eval</a></li>
+<li><a class="reference" id="variables-and-globals-stropping_toc" href="#variables-and-globals-stropping">stropping</a></li>
+<li><a class="reference" id="variables-and-globals-auto_toc" href="#variables-and-globals-auto">auto</a></li>
+<li><a class="reference" id="variables-and-globals-type-casts_toc" href="#variables-and-globals-type-casts">type casts</a></li>
+<li><a class="reference" id="variables-and-globals-type-coercions_toc" href="#variables-and-globals-type-coercions">type coercions</a></li>
+<li><a class="reference" id="variables-and-globals-type-inspection_toc" href="#variables-and-globals-type-inspection">type inspection</a></li>
+<li><a class="reference" id="variables-and-globals-echoslashrepr_toc" href="#variables-and-globals-echoslashrepr">echo/repr</a></li>
 </ul><li>
   <a class="reference reference-toplevel" href="#7" id="57">Types</a>
   <ul class="simple simple-toc-section">
@@ -234,11 +236,11 @@ window.addEventListener('DOMContentLoaded', main);
   <li><a class="reference" href="#GoodApplications"
     title="GoodApplications = object
   pubfield*: string          ## is included in docs
-  prvfield: string           ## also included since goodapplications is exported">GoodApplications</a></li>
-  <li><a class="reference" href="#IPoop_2"
-    title="IPoop = ref object of WhoPoop">IPoop</a></li>
+  prvfield*: string          ## also included since goodapplications is exported">GoodApplications</a></li>
   <li><a class="reference" href="#IsOn"
     title="IsOn = set[int8]">IsOn</a></li>
+  <li><a class="reference" href="#IWoop_2"
+    title="IWoop = ref object of WhoWoop">IWoop</a></li>
   <li><a class="reference" href="#LearningError"
     title="LearningError = object of CatchableError">LearningError</a></li>
   <li><a class="reference" href="#LevelSetting"
@@ -303,14 +305,14 @@ window.addEventListener('DOMContentLoaded', main);
   <li><a class="reference" href="#PlusExpr"
     title="PlusExpr = ref object of Expression
   a, b: Expression">PlusExpr</a></li>
-  <li><a class="reference" href="#PrivatePoop"
-    title="PrivatePoop = object
+  <li><a class="reference" href="#PrivateWoop"
+    title="PrivateWoop = object
   i*: bool
-  times: int">PrivatePoop</a></li>
-  <li><a class="reference" href="#PublicPoop"
-    title="PublicPoop = object
+  times: int">PrivateWoop</a></li>
+  <li><a class="reference" href="#PublicWoop"
+    title="PublicWoop = object
   u: bool
-  times: int">PublicPoop</a></li>
+  times: int">PublicWoop</a></li>
   <li><a class="reference" href="#RecordType"
     title="RecordType = (typeof myRecord) or object | tuple">RecordType</a></li>
   <li><a class="reference" href="#SomeObj"
@@ -348,11 +350,11 @@ window.addEventListener('DOMContentLoaded', main);
   <li><a class="reference" href="#WhatToEat"
     title="WhatToEat = enum
   proteinshake, ramen, ramentWithMeet, pnutbutteryjelly">WhatToEat</a></li>
-  <li><a class="reference" href="#WhoPoop"
-    title="WhoPoop = ref object of RootObj
-  name: string">WhoPoop</a></li>
-  <li><a class="reference" href="#YouPoop"
-    title="YouPoop = ref object of WhoPoop">YouPoop</a></li>
+  <li><a class="reference" href="#WhoWoop"
+    title="WhoWoop = ref object of RootObj
+  name: string">WhoWoop</a></li>
+  <li><a class="reference" href="#YouWoop"
+    title="YouWoop = ref object of WhoWoop">YouWoop</a></li>
 
   </ul>
 </li>
@@ -363,8 +365,8 @@ window.addEventListener('DOMContentLoaded', main);
     title="a = &quot;Nim is a programming language&quot;">a</a></li>
   <li><a class="reference" href="#aaaa"
     title="aaaa: Unit">aaaa</a></li>
-  <li><a class="reference" href="#alreadyExecuted%60gensym17"
-    title="alreadyExecuted`gensym17 = false">alreadyExecuted`gensym17</a></li>
+  <li><a class="reference" href="#alreadyExecuted%60gensym2"
+    title="alreadyExecuted`gensym2 = false">alreadyExecuted`gensym2</a></li>
   <li><a class="reference" href="#arrayWithRange"
     title="arrayWithRange: array[0 .. 5, string] = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;,
     &quot;six&quot;]">arrayWithRange</a></li>
@@ -453,30 +455,20 @@ window.addEventListener('DOMContentLoaded', main);
     title="onSundayIAte: Eating">onSundayIAte</a></li>
   <li><a class="reference" href="#othervar"
     title="othervar: string = &quot;&quot;">othervar</a></li>
-  <li><a class="reference" href="#poop1"
-    title="poop1 = &quot;flush&quot;">poop1</a></li>
-  <li><a class="reference" href="#poops"
-    title="poops: seq[int] = @[1, 2, 3, 4]">poops</a></li>
   <li><a class="reference" href="#rangeArr"
     title="rangeArr: array[0 .. 10, int]">rangeArr</a></li>
   <li><a class="reference" href="#seqEmpty"
     title="seqEmpty = newSeq(Natural(0))">seqEmpty</a></li>
-  <li><a class="reference" href="#sherlockpoops"
-    title="sherlockpoops: seq[WhoPoop] = @[]">sherlockpoops</a></li>
+  <li><a class="reference" href="#sherlockwoops"
+    title="sherlockwoops: seq[WhoWoop] = @[]">sherlockwoops</a></li>
   <li><a class="reference" href="#sj"
     title="sj = (iz: &quot;super&quot;, wha: 133, t: 't')">sj</a></li>
   <li><a class="reference" href="#smun"
     title="smun = [5, 8, 9, 1]">smun</a></li>
   <li><a class="reference" href="#somevar"
     title="somevar: seq[char] = @['n', 'o', 'a', 'h']">somevar</a></li>
-  <li><a class="reference" href="#spoop"
-    title="spoop: seq[int] = newSeq(4)">spoop</a></li>
-  <li><a class="reference" href="#stupidChar"
-    title="stupidChar = block:
-  var dumbChar = 'a'
-  if contains({'a', 'b', 'c'}, dumbChar):
-    echo [&quot;dumbChar is in alphabeta &quot;, dumbChar]
-  ord(dumbChar)">stupidChar</a></li>
+  <li><a class="reference" href="#swoop"
+    title="swoop: seq[int] = newSeq(4)">swoop</a></li>
   <li><a class="reference" href="#thisRange"
     title="thisRange: range[0 .. 5]">thisRange</a></li>
   <li><a class="reference" href="#typeSupportBlah"
@@ -485,8 +477,12 @@ window.addEventListener('DOMContentLoaded', main);
     title="utherRecord: OtherRecord = (wtf: &quot;yo2&quot;)">utherRecord</a></li>
   <li><a class="reference" href="#whichVerse"
     title="whichVerse: string = &quot;twitter verse&quot;">whichVerse</a></li>
-  <li><a class="reference" href="#x%60gensym40"
-    title="x`gensym40: int = 42">x`gensym40</a></li>
+  <li><a class="reference" href="#woop1"
+    title="woop1 = &quot;flush&quot;">woop1</a></li>
+  <li><a class="reference" href="#woops"
+    title="woops: seq[int] = @[1, 2, 3, 4]">woops</a></li>
+  <li><a class="reference" href="#x%60gensym45"
+    title="x`gensym45: int = 42">x`gensym45</a></li>
   <li><a class="reference" href="#zz"
     title="zz = &quot;who&quot;">zz</a></li>
 
@@ -497,13 +493,13 @@ window.addEventListener('DOMContentLoaded', main);
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#let"
     title="let = &quot;stropping&quot;">`let`</a></li>
-  <li><a class="reference" href="#aa"
+  <li><a class="reference" href="#aa_2"
     title="aa = Option[int](hasValue: true, value: 1)">aa</a></li>
   <li><a class="reference" href="#aaa"
     title="aaa = [(10, 'a'), (20, 'b'), (30, 'c')]">aaa</a></li>
   <li><a class="reference" href="#badcode"
     title="badcode = &quot;ishardtomaintain&quot;">badcode</a></li>
-  <li><a class="reference" href="#bb"
+  <li><a class="reference" href="#bb_2"
     title="bb = Option[int](hasValue: true, value: 2)">bb</a></li>
   <li><a class="reference" href="#bizRating"
     title="(bizRating, devRating, opsRating) = bizDevOps">bizRating</a></li>
@@ -514,10 +510,10 @@ window.addEventListener('DOMContentLoaded', main);
   4 / 0
 except:
   -1.0">divBy0</a></li>
-  <li><a class="reference" href="#everyonepoop"
-    title="everyonepoop = upoop">everyonepoop</a></li>
+  <li><a class="reference" href="#everyonewoop"
+    title="everyonewoop = uwoop">everyonewoop</a></li>
   <li><a class="reference" href="#first"
-    title="(first, __1090522450, third) = bizDevOps">first</a></li>
+    title="(first, __1090522109, third) = bizDevOps">first</a></li>
   <li><a class="reference" href="#flags"
     title="flags: Opts = {'d'..'z'}">flags</a></li>
   <li><a class="reference" href="#flush"
@@ -526,14 +522,20 @@ except:
     title="goodcode = &quot;isdocumented&quot;">goodcode</a></li>
   <li><a class="reference" href="#intArr"
     title="intArr = [5, 4, 3, 2, 1]">intArr</a></li>
-  <li><a class="reference" href="#ipoop"
-    title="ipoop = PrivatePoop(i: false, times: 0)">ipoop</a></li>
+  <li><a class="reference" href="#iwoop"
+    title="iwoop = PrivateWoop(i: false, times: 0)">iwoop</a></li>
   <li><a class="reference" href="#js"
     title="js = (&quot;super&quot;, 133, 't')">js</a></li>
   <li><a class="reference" href="#multiline"
     title="multiline = &quot;&quot;&quot;    can be split on multiple lines,
     escape sequences arent interpreted
     &quot;&quot;&quot;">multiline</a></li>
+  <li><a class="reference" href="#myChar"
+    title="myChar = block:
+  var yourChar = 'a'
+  if contains({'a', 'b', 'c'}, yourChar):
+    echo [&quot;yourChar was found &quot;, yourChar]
+  yourChar">myChar</a></li>
   <li><a class="reference" href="#offf"
     title="offf: IsOn = {0'i8}">offf</a></li>
   <li><a class="reference" href="#onn"
@@ -542,16 +544,12 @@ except:
     title="people: ref Someone = new(Someone)">people</a></li>
   <li><a class="reference" href="#people2"
     title="people2 = SomeoneRef(name: &quot;npc&quot;, bday: &quot;before noah&quot;, age: 1)">people2</a></li>
-  <li><a class="reference" href="#poop2"
-    title="poop2 = &quot;hello&quot;">poop2</a></li>
-  <li><a class="reference" href="#poop6"
-    title="poop6 = &quot;flush\n\n\n\n\n\nescapes are interpreted&quot;">poop6</a></li>
   <li><a class="reference" href="#simpleOpts"
     title="simpleOpts: Opts = {'a', 'b', 'c'}">simpleOpts</a></li>
   <li><a class="reference" href="#sniper"
-    title="sniper = &quot;scope parent&quot;">sniper</a></li>
+    title="sniper = &quot;scope module&quot;">sniper</a></li>
   <li><a class="reference" href="#str1"
-    title="str1 = &quot;pooper scooper&quot;">str1</a></li>
+    title="str1 = &quot;wooper scooper&quot;">str1</a></li>
   <li><a class="reference" href="#str2"
     title="str2 = &quot;&quot;&quot;    long
     string
@@ -571,8 +569,12 @@ except:
     title="thisInt: StrOrInt = 1">thisInt</a></li>
   <li><a class="reference" href="#thizString"
     title="thizString: StrOrInt = &quot;1&quot;">thizString</a></li>
-  <li><a class="reference" href="#upoop"
-    title="upoop = PublicPoop(u: true, times: 100)">upoop</a></li>
+  <li><a class="reference" href="#uwoop"
+    title="uwoop = PublicWoop(u: true, times: 100)">uwoop</a></li>
+  <li><a class="reference" href="#woop2"
+    title="woop2 = &quot;hello&quot;">woop2</a></li>
+  <li><a class="reference" href="#woop6"
+    title="woop6 = &quot;flush\n\n\n\n\n\nescapes are interpreted&quot;">woop6</a></li>
   <li><a class="reference" href="#x1"
     title="x1: int32 = int32(1)">x1</a></li>
   <li><a class="reference" href="#xx"
@@ -620,11 +622,9 @@ except:
   <li><a class="reference" href="#lastOne"
     title="lastOne = 1">lastOne</a></li>
   <li><a class="reference" href="#loc%60gensym11"
-    title="loc`gensym11 = (filename: &quot;/home/poop/git/foss/nim/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim&quot;,
-                line: 207, column: 7)">loc`gensym11</a></li>
+    title="loc`gensym11 = (filename: &quot;exceptionHandlingDocs.nim&quot;, line: 208, column: 7)">loc`gensym11</a></li>
   <li><a class="reference" href="#loc%60gensym13"
-    title="loc`gensym13 = (filename: &quot;/home/poop/git/foss/nim/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim&quot;,
-                line: 210, column: 9)">loc`gensym13</a></li>
+    title="loc`gensym13 = (filename: &quot;exceptionHandlingDocs.nim&quot;, line: 211, column: 9)">loc`gensym13</a></li>
   <li><a class="reference" href="#m"
     title="m = 1000000000.0">m</a></li>
   <li><a class="reference" href="#n"
@@ -648,13 +648,13 @@ except:
   <li><a class="reference" href="#p"
     title="p = 0o000000000123">p</a></li>
   <li><a class="reference" href="#ploc%60gensym11"
-    title="ploc`gensym11 = &quot;/home/poop/git/foss/nim/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim(207, 8)&quot;">ploc`gensym11</a></li>
+    title="ploc`gensym11 = &quot;exceptionHandlingDocs.nim(208, 8)&quot;">ploc`gensym11</a></li>
   <li><a class="reference" href="#ploc%60gensym13"
-    title="ploc`gensym13 = &quot;/home/poop/git/foss/nim/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim(210, 10)&quot;">ploc`gensym13</a></li>
-  <li><a class="reference" href="#poop3"
-    title="poop3 = &quot;flush&quot;">poop3</a></li>
+    title="ploc`gensym13 = &quot;exceptionHandlingDocs.nim(211, 10)&quot;">ploc`gensym13</a></li>
   <li><a class="reference" href="#theAnswer"
     title="theAnswer = &quot;what is it&quot;">theAnswer</a></li>
+  <li><a class="reference" href="#woop3"
+    title="woop3 = &quot;flush&quot;">woop3</a></li>
 
   </ul>
 </li>
@@ -706,19 +706,19 @@ except:
     title="copyThenMutateValue(x: string): void">copyThenMutateValue(x: string): void</a></li>
 
   </ul>
-  <ul class="simple nested-toc-section">did_i_poop
-      <li><a class="reference" href="#did_i_poop%2CWhoPoop"
-    title="did_i_poop(self: WhoPoop): string">did_i_poop(self: WhoPoop): string</a></li>
+  <ul class="simple nested-toc-section">did_i_woop
+      <li><a class="reference" href="#did_i_woop%2CWhoWoop"
+    title="did_i_woop(self: WhoWoop): string">did_i_woop(self: WhoWoop): string</a></li>
 
   </ul>
-  <ul class="simple nested-toc-section">didipoop
-      <li><a class="reference" href="#didipoop%2CYouPoop"
-    title="didipoop(self: YouPoop): string">didipoop(self: YouPoop): string</a></li>
+  <ul class="simple nested-toc-section">dIdIwoop
+      <li><a class="reference" href="#dIdIwoop%2CIWoop"
+    title="dIdIwoop(self: IWoop): string">dIdIwoop(self: IWoop): string</a></li>
 
   </ul>
-  <ul class="simple nested-toc-section">dIdIpOoP
-      <li><a class="reference" href="#dIdIpOoP%2CIPoop"
-    title="dIdIpOoP(self: IPoop): string">dIdIpOoP(self: IPoop): string</a></li>
+  <ul class="simple nested-toc-section">didiwoop
+      <li><a class="reference" href="#didiwoop%2CYouWoop"
+    title="didiwoop(self: YouWoop): string">didiwoop(self: YouWoop): string</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">doubleFloat
@@ -806,11 +806,6 @@ except:
     title="passedByValue(x: string): void">passedByValue(x: string): void</a></li>
 
   </ul>
-  <ul class="simple nested-toc-section">poop
-      <li><a class="reference" href="#poop"
-    title="poop(): string">poop(): string</a></li>
-
-  </ul>
   <ul class="simple nested-toc-section">positiveOrNegative
       <li><a class="reference" href="#positiveOrNegative%2Cint"
     title="positiveOrNegative(num: int): string">positiveOrNegative(num: int): string</a></li>
@@ -869,6 +864,11 @@ except:
   <ul class="simple nested-toc-section">withArrParam
       <li><a class="reference" href="#withArrParam%2Carray%5BI%2CT%5D"
     title="withArrParam[I, T](a: array[I, T]): string">withArrParam[I, T](a: array[I, T]): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">woop
+      <li><a class="reference" href="#woop"
+    title="woop(): string">woop(): string</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">writeAccessToG
@@ -972,14 +972,10 @@ class="link-seesrc" target="_blank">Source</a>
 <h1><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax" href="#yolo-wurlcolon-basic-nim-syntax">yolo wurl: basic nim syntax</a></h1><p><a class="reference external" href="https://nim-lang.org/docs/manual.html#special-types">bookmark</a></p>
 
 <h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-tldr" href="#yolo-wurlcolon-basic-nim-syntax-tldr">TLDR</a></h2><ul class="simple"><li>only uses the implicitly imported system<ul class="simple"><li>dont import (system, threads, channel) directly, theres some compiler magic to makem work</li>
-<li>threads, channels, templates, macros, effects, pragmas, os, io and tests are in deepdives</li>
+<li>threads, channels, templates, macros, effects, pragmas, os and io are in deepdives</li>
 </ul>
 </li>
-<li>in general <a class="reference external" href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules">the source code</a> has multiple examples<ul class="simple"><li>we dont use runnableExamples because we want to run on the cmd line &amp; in vscode</li>
-<li>however real code should use runnableExamples for docs</li>
-</ul>
-</li>
-<li>newer nim versions seems to be getting more strict/better at catching programmer errors<ul class="simple"><li>this repo uses nim 1.6.10</li>
+<li>newer nim versions seems to be getting more strict/better at catching programmer errors<ul class="simple"><li>this repo uses nim 1.6.10 and breaks on later versions</li>
 </ul>
 </li>
 <li>you should expect everything in nim is heavily overloaded<ul class="simple"><li>hence only simple syntax is shown and shouldnt be considered comprehensive in any form</li>
@@ -994,18 +990,7 @@ class="link-seesrc" target="_blank">Source</a>
 <li><a class="reference external" href="https://status-im.github.io/nim-style-guide/00_introduction.html">status auditor docs</a></li>
 </ul>
 
-<h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-todos" href="#yolo-wurlcolon-basic-nim-syntax-todos">todos</a></h2><ul class="simple"><li>somehow we've skipped a bunch of stuff (maybe there in deepdives as links?)<ul class="simple"><li>cant get too far in nim without reading through the nimble github readme</li>
-</ul>
-</li>
-<li>nim in action: copy all your notes starting from pg 40</li>
-<li><a class="reference external" href="https://peterme.net/asynchronous-programming-in-nim.html">https://peterme.net/asynchronous-programming-in-nim.html</a></li>
-<li><a class="reference external" href="https://peterme.net/handling-files-in-nim.html">https://peterme.net/handling-files-in-nim.html</a></li>
-<li><a class="reference external" href="https://peterme.net/multitasking-in-nim.html">https://peterme.net/multitasking-in-nim.html</a></li>
-<li><a class="reference external" href="https://peterme.net/optional-value-handling-in-nim.html">https://peterme.net/optional-value-handling-in-nim.html</a></li>
-<li><a class="reference external" href="https://peterme.net/tips-and-tricks-with-implicit-return-in-nim.html">https://peterme.net/tips-and-tricks-with-implicit-return-in-nim.html</a></li>
-<li><a class="reference external" href="https://peterme.net/using-nimscript-as-a-configuration-language-embedding-nimscript-pt-1.html">https://peterme.net/using-nimscript-as-a-configuration-language-embedding-nimscript-pt-1.html</a></li>
-<li><a class="reference external" href="https://peterme.net/how-to-embed-nimscript-into-a-nim-program-embedding-nimscript-pt-2.html">https://peterme.net/how-to-embed-nimscript-into-a-nim-program-embedding-nimscript-pt-2.html</a></li>
-<li><a class="reference external" href="https://peterme.net/creating-condensed-shared-libraries-embedding-nimscript-pt-3.html">https://peterme.net/creating-condensed-shared-libraries-embedding-nimscript-pt-3.html</a></li>
+<h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-todos" href="#yolo-wurlcolon-basic-nim-syntax-todos">todos</a></h2><ul class="simple"><li>nim in action: copy all your notes starting from pg 40</li>
 </ul>
 
 <h2><a class="toc-backref" id="yolo-wurlcolon-basic-nim-syntax-std-library" href="#yolo-wurlcolon-basic-nim-syntax-std-library">std library</a></h2><ul class="simple"><li>pure libraries: do not depend on external <em>.dll/lib</em>.so binary</li>
@@ -1214,249 +1199,35 @@ class="link-seesrc" target="_blank">Source</a>
 <li>scopes: all blocks (ifs, loops, procs, etc) introduce a closure EXCEPT when statements</li>
 </ul>
 
-<h1><a class="toc-backref" id="variables-and-globals" href="#variables-and-globals">variables and globals</a></h1>
-<h2><a class="toc-backref" id="variables-and-globals-tldr" href="#variables-and-globals-tldr">TLDR</a></h2><ul class="simple"><li>catchall for global keywords/procs/types/etc not specified in other files</li>
-<li>anything like <tt class="docutils literal"><span class="pre"><span class="Identifier">BLAH</span><span class="Operator">=</span></span></tt> can be written <tt class="docutils literal"><span class="pre"><span class="Identifier">BLAH</span> <span class="Operator">=</span></span></tt><ul class="simple"><li>the former enables you to define/overload operators via 'proc <tt class="docutils literal"><span class="pre"><span class="Identifier">poop</span><span class="Operator">=</span></span></tt><a class="reference external" href="soop">bloop</a>: doop = toot'</li>
+<h1><a class="toc-backref" id="blocks" href="#blocks">blocks</a></h1>
+<h2><a class="toc-backref" id="blocks-tldr" href="#blocks-tldr">TLDR</a></h2><ul class="simple"><li>blocks have a () syntax but we skipped it as its not idiomatic nim in this context</li>
+<li>scope starts after the : symbol, and ends when the indentention returns to previous level</li>
+<li>named blocks have similar usescases to javascript</li>
+<li>like most other things, blocks can be expressions and assigned to a var</li>
+<li>see loopIterator.nim for closureScope blocks</li>
+</ul>
+
+<h2><a class="toc-backref" id="blocks-links" href="#blocks-links">links</a></h2><ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/manual.html#statements-and-expressions-block-statement">block statements</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/manual.html#statements-and-expressions-block-expression">block expressions</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/system.html#once.t%2Cuntyped">once template</a></li>
+</ul>
+
+<h2><a class="toc-backref" id="blocks-todos" href="#blocks-todos">todos</a></h2><ul class="simple"><li>have no clue where <tt class="docutils literal"><span class="pre"><span class="Keyword">do</span><span class="Punctuation">:</span></span></tt> is within the documentation<ul class="simple"><li>but from the context looks like its just an alias for block:</li>
 </ul>
 </li>
-<li>converts are listed here because their purpose is implicit type coercion</li>
-<li>additional type features are covered in tupleObjectTable.nim</li>
-<li>you can call clear on pretty much anything</li>
 </ul>
 
-<h2><a class="toc-backref" id="variables-and-globals-varslashglobal-todos" href="#variables-and-globals-varslashglobal-todos">var/global todos</a></h2><ul class="simple"><li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L2816">couldnt get eval to work</a></li>
-</ul>
-<pre class="listing"><span class="Comment"># probably need a memory_mgmt.nim file</span>
-<span class="Comment"># skipped everything in this section</span>
-<span class="Comment"># but they look intersting</span>
-<span class="Identifier">addAndFetch</span> <span class="Identifier">doesnt</span> <span class="Identifier">have</span> <span class="Identifier">a</span> <span class="Identifier">description</span>
-<span class="Identifier">copyMem</span> <span class="Identifier">copies</span> <span class="Identifier">content</span> <span class="Keyword">from</span> <span class="Identifier">memory</span> <span class="Identifier">at</span> <span class="Identifier">source</span> <span class="Identifier">to</span> <span class="Identifier">memory</span> <span class="Identifier">at</span> <span class="Identifier">dest</span>
-<span class="Identifier">compileOption</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">[</span><span class="Punctuation">,</span> <span class="Identifier">y</span><span class="Punctuation">]</span><span class="Punctuation">)</span> <span class="Identifier">check</span> <span class="Keyword">if</span> <span class="Identifier">a</span> <span class="Identifier">switch</span> <span class="Keyword">is</span> <span class="Identifier">active</span> <span class="Keyword">and</span><span class="Operator">/</span><span class="Keyword">or</span> <span class="Identifier">its</span> <span class="Identifier">value</span> <span class="Identifier">at</span> <span class="Identifier">compile</span> <span class="Identifier">time</span>
-<span class="Identifier">create</span> <span class="Identifier">allocates</span> <span class="Identifier">a</span> <span class="Identifier">new</span> <span class="Identifier">memory</span> <span class="Keyword">block</span> <span class="Identifier">with</span> <span class="Identifier">atleast</span> <span class="Identifier">T</span><span class="Operator">.</span><span class="Identifier">sizeof</span> <span class="Operator">*</span> <span class="Identifier">size</span> <span class="Identifier">bytes</span>
-<span class="Identifier">createShared</span> <span class="Identifier">allocates</span> <span class="Identifier">new</span> <span class="Identifier">memory</span> <span class="Keyword">block</span> <span class="Identifier">on</span> <span class="Identifier">the</span> <span class="Identifier">shared</span> <span class="Identifier">heap</span> <span class="Identifier">with</span> <span class="Identifier">atleast</span> <span class="Identifier">T</span><span class="Operator">.</span><span class="Identifier">sizeof</span> <span class="Operator">*</span> <span class="Identifier">bytes</span>
-<span class="Identifier">createSharedU</span> <span class="Identifier">allocates</span> <span class="Identifier">new</span> <span class="Identifier">memory</span> <span class="Keyword">block</span> <span class="Identifier">on</span> <span class="Identifier">the</span> <span class="Identifier">shared</span> <span class="Identifier">heap</span> <span class="Identifier">with</span> <span class="Identifier">atleast</span> <span class="Identifier">T</span><span class="Operator">.</span><span class="Identifier">sizeof</span> <span class="Operator">*</span> <span class="Identifier">bytes</span>
-<span class="Identifier">createU</span> <span class="Identifier">allocates</span> <span class="Identifier">memory</span> <span class="Keyword">block</span> <span class="Identifier">atleast</span> <span class="Identifier">T</span><span class="Operator">.</span><span class="Identifier">sizeof</span> <span class="Operator">*</span> <span class="Identifier">bytes</span>
-<span class="Identifier">dealloc</span> <span class="Identifier">frees</span> <span class="Identifier">the</span> <span class="Identifier">memory</span> <span class="Identifier">allocated</span> <span class="Identifier">with</span> <span class="Identifier">alloc</span><span class="Punctuation">,</span> <span class="Identifier">alloc0</span><span class="Punctuation">,</span> <span class="Identifier">realloc</span><span class="Punctuation">,</span> <span class="Identifier">create</span> <span class="Keyword">or</span> <span class="Identifier">createU</span>
-<span class="Identifier">deallocHeap</span> <span class="Identifier">frees</span> <span class="Identifier">the</span> <span class="Identifier">thread</span> <span class="Identifier">local</span> <span class="Identifier">heap</span>
-<span class="Identifier">deallocShared</span> <span class="Identifier">frees</span> <span class="Identifier">the</span> <span class="Identifier">mem</span> <span class="Identifier">allocated</span> <span class="Identifier">with</span> <span class="Identifier">allocShared</span><span class="Punctuation">,</span> <span class="Identifier">allocShared0</span> <span class="Keyword">or</span> <span class="Identifier">reallocShared</span>
-<span class="Identifier">equalMem</span> <span class="Identifier">compares</span> <span class="Identifier">size</span> <span class="Identifier">bytes</span> <span class="Keyword">of</span> <span class="Identifier">mem</span> <span class="Identifier">blocks</span> <span class="Identifier">a</span> <span class="Keyword">and</span> <span class="Identifier">b</span>
-<span class="Identifier">freeShared</span> <span class="Identifier">frees</span> <span class="Identifier">the</span> <span class="Identifier">mem</span> <span class="Identifier">allocated</span> <span class="Identifier">with</span> <span class="Identifier">createShared</span><span class="Punctuation">,</span> <span class="Identifier">createSharedU</span><span class="Punctuation">,</span> <span class="Keyword">or</span> <span class="Identifier">resizeShared</span>
-<span class="Identifier">GC_disable</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Identifier">GC_disableMarkAndSweep</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Identifier">GC_enable</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Identifier">GC_enableMarkAndSweep</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Identifier">GC_fullCollect</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Identifier">GC_getStatistics</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
-<span class="Identifier">getAllocStats</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
-<span class="Identifier">getFrame</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
-<span class="Identifier">getFrameState</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
-<span class="Identifier">isNotForeign</span> <span class="Identifier">returns</span> <span class="Identifier">true</span> <span class="Keyword">if</span> <span class="Identifier">x</span> <span class="Identifier">belongs</span> <span class="Identifier">to</span> <span class="Identifier">the</span> <span class="Identifier">calling</span> <span class="Identifier">thread</span>
-<span class="Identifier">moveMem</span> <span class="Identifier">copies</span> <span class="Identifier">content</span> <span class="Keyword">from</span> <span class="Identifier">memory</span> <span class="Identifier">at</span> <span class="Identifier">source</span> <span class="Identifier">to</span> <span class="Identifier">memory</span> <span class="Identifier">at</span> <span class="Identifier">dest</span>
-<span class="Identifier">prepareMutation</span> <span class="Identifier">string</span> <span class="Identifier">literals</span> <span class="Keyword">in</span> <span class="Identifier">ARC</span><span class="Operator">/</span><span class="Identifier">ORC</span> <span class="Identifier">mode</span> <span class="Identifier">are</span> <span class="Identifier">copy</span> <span class="Identifier">on</span> <span class="Identifier">write</span><span class="Punctuation">,</span> <span class="Identifier">this</span> <span class="Identifier">must</span> <span class="Identifier">be</span> <span class="Identifier">called</span> <span class="Identifier">before</span> <span class="Identifier">mutating</span> <span class="Identifier">them</span>
-<span class="Identifier">rawEnv</span> <span class="Identifier">retrieve</span> <span class="Identifier">the</span> <span class="Identifier">raw</span> <span class="Identifier">env</span> <span class="Identifier">pointer</span> <span class="Keyword">of</span> <span class="Identifier">a</span> <span class="Identifier">closure</span>
-<span class="Identifier">rawProc</span> <span class="Identifier">retrieve</span> <span class="Identifier">the</span> <span class="Identifier">raw</span> <span class="Keyword">proc</span> <span class="Identifier">pointer</span> <span class="Keyword">of</span> <span class="Identifier">closer</span> <span class="Identifier">X</span>
-<span class="Identifier">resize</span> <span class="Identifier">a</span> <span class="Identifier">memory</span> <span class="Keyword">block</span>
-<span class="Identifier">resizeShared</span>
-<span class="Identifier">setControlCHook</span> <span class="Keyword">proc</span> <span class="Identifier">to</span> <span class="Identifier">run</span> <span class="Keyword">when</span> <span class="Identifier">program</span> <span class="Keyword">is</span> <span class="Identifier">ctrlc</span><span class="CharLit">'ed</span>
-<span class="Identifier">sizeof</span> <span class="Identifier">blah</span> <span class="Keyword">in</span> <span class="Identifier">bytes</span></pre>
-<h2><a class="toc-backref" id="variables-and-globals-varslashglobal-links" href="#variables-and-globals-varslashglobal-links">var/global links</a></h2><ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/system.html#8">system vars</a></li>
-<li><a class="reference external" href="https://nim-lang.org/docs/typeinfo.html">typeinfo</a></li>
-<li><a class="reference external" href="https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#converter">converters</a></li>
+<h2><a class="toc-backref" id="blocks-do-blocks" href="#blocks-do-blocks">do blocks</a></h2><ul class="simple"><li>you should probably read the docs on do blocks</li>
 </ul>
 
-<h2><a class="toc-backref" id="variables-and-globals-var" href="#variables-and-globals-var">var</a></h2><ul class="simple"><li>runtime mutable global var</li>
-</ul>
-
-<h2><a class="toc-backref" id="variables-and-globals-let" href="#variables-and-globals-let">let</a></h2><ul class="simple"><li>runtime immutable</li>
-</ul>
-
-<h2><a class="toc-backref" id="variables-and-globals-const" href="#variables-and-globals-const">const</a></h2><ul class="simple"><li>compile-time evaluation cannot interface with C</li>
-<li>there is no compile-time foreign function interface at this time.</li>
-<li>consts must be initialized with a value</li>
-<li>declares variables whose values are constant expressions</li>
-</ul>
-
-<h2><a class="toc-backref" id="variables-and-globals-static" href="#variables-and-globals-static">static</a></h2><ul class="simple"><li>static represents a compile time entity, whether variable, block or type restriction</li>
-<li>static[T] meta type representing all values that can be evaluated at compile time</li>
-<li>all static params are treated as generic params, thus may lead to executable bloat (see generics)</li>
-</ul>
-
-<h2><a class="toc-backref" id="variables-and-globals-eval" href="#variables-and-globals-eval">eval</a></h2><ul class="simple"><li>eval executes a block of code at compile time</li>
-</ul>
-
-<h2><a class="toc-backref" id="variables-and-globals-stropping" href="#variables-and-globals-stropping">stropping</a></h2><ul class="simple"><li>enable use of keywords as operators</li>
-</ul>
-
-<h2><a class="toc-backref" id="variables-and-globals-auto" href="#variables-and-globals-auto">auto</a></h2><ul class="simple"><li>auto only for proc return types and signature parameters</li>
-<li>parameter auto: creates an implicit generic of proc<a class="reference external" href="">x</a></li>
-<li>return auto: causes the compiler to infer the type form the routine body</li>
-</ul>
-
-<h2><a class="toc-backref" id="variables-and-globals-type-casts" href="#variables-and-globals-type-casts">type casts</a></h2><ul class="simple"><li>cast operator forces the compiler to interpret a bit pattern to be of another type</li>
-<li>i.e. interpret the bit pattern as another type, but dont actually convert it to the other type</li>
-<li>only needed for low-level programming and are inherently unsafe</li>
-</ul>
-
-<h2><a class="toc-backref" id="variables-and-globals-type-coercions" href="#variables-and-globals-type-coercions">type coercions</a></h2><ul class="simple"><li>aka type conversions sometimes in docs, but always means coercion<ul class="simple"><li>type coercions preserve the abstract value, but not the bit-pattern</li>
-</ul>
-</li>
-<li>allocCStringArray creates a null terminated cstringArray from</li>
-<li>chr(i): convert 0..255 to a char</li>
-<li>cstringArrayToSeq</li>
-<li>only widening (smaller &gt; larger) conversions are automatic/implicit</li>
-<li>ord(i): convert char to an int</li>
-<li>parseInt/parseFloat from a string</li>
-<li>static(x): force the compile-time evaluation of the given expression</li>
-<li>toFloat(int): convert int to a float</li>
-<li>toInt(float): convert float to an int</li>
-<li>toOpenArray</li>
-<li>toOpenArrayByte</li>
-</ul>
-
-<h2><a class="toc-backref" id="variables-and-globals-type-inspection" href="#variables-and-globals-type-inspection">type inspection</a></h2><ul class="simple"><li>type(x): retrieve the type of x, discouraged should use typeof</li>
-<li>typeof(x): retrieve the type of x</li>
-<li>typeOfProc: retrieve the result of a proc, i.e. typeof x, typeOfProc</li>
-</ul>
-
-<h2><a class="toc-backref" id="variables-and-globals-echoslashrepr" href="#variables-and-globals-echoslashrepr">echo/repr</a></h2><ul class="simple"><li>roughly equivalent to writeLine(stdout, x); flushFile(stdout)</li>
-<li>available for the JavaScript target too.</li>
-<li>cant be used with funcs/{.noSideEffect.} (use debugEcho)</li>
-</ul>
-checks whether x can be compiled without any semantic error. useful to verify whether a type supports some operation:whether x is declared at compile timechecks current scope at compile time
-<h1><a class="toc-backref" id="simple-types" href="#simple-types">simple types</a></h1>
-<h2><a class="toc-backref" id="simple-types-tldr" href="#simple-types-tldr">TLDR</a></h2><ul class="simple"><li>Conversion between int and int32 or int64 must be explicit except for string literals.</li>
-<li>stay away from <a class="reference external" href="https://nim-lang.org/docs/manual.html#types-preminusdefined-integer-types">blah% operators in practice</a><ul class="simple"><li>% are mainly for backwards compatibility with previous nim versions</li>
-</ul>
-</li>
-<li>generally procs that work for strings work for chars</li>
-<li>generally strings can use any seq proc for manipulation</li>
-</ul>
-
-<h2><a class="toc-backref" id="simple-types-links" href="#simple-types-links">links</a></h2><ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/widestrs.html">wide strings</a></li>
-<li><a class="reference external" href="https://nim-lang.org/docs/dollars.html">dollars</a></li>
-</ul>
-
-<h2><a class="toc-backref" id="simple-types-string" href="#simple-types-string">string</a></h2><ul class="simple"><li>value semantics</li>
-<li>are really just seq[char|byte] except for the terminating nullbyte 0</li>
-<li>^0 terminated so nim strings can be converted to a cstring without a copy</li>
-<li>compared using lexicographical order</li>
-<li>to intrepret unicode, you need to import the unicode module</li>
-<li>addQuoted escapes and quotes y:string then appends to x:string</li>
-<li>addEscapedChar escapes y:char then appends to x:string</li>
-</ul>
-
-<h2><a class="toc-backref" id="simple-types-char" href="#simple-types-char">char</a></h2><ul class="simple"><li>8 bit char (unsigned, basically an alias for uint8)</li>
-<li>always 1 byte so cant represent most UTF-8 chars</li>
-<li>single ASCII characters</li>
-<li>enclosed in single quotes</li>
-</ul>
-
-<h2><a class="toc-backref" id="simple-types-byte" href="#simple-types-byte">byte</a></h2><ul class="simple"><li>alias for uint8 that is 8 bits wide</li>
-<li>if dealing with binary blobs, prefer seq[byte] &gt; string,</li>
-<li>if dealing with binary data, prefer seq[char|uint8]</li>
-<li>ByteAddress alias for int, used for converting pointers to itneger addresses</li>
-</ul>
-
-<h2><a class="toc-backref" id="simple-types-bool" href="#simple-types-bool">bool</a></h2><ul class="simple"><li>only true &amp; false (i.e. not 1/0) evaluate to bool<ul class="simple"><li>but its an enum, so 0=false, 1=true</li>
-<li>off/on are aliases for true/false</li>
-</ul>
-</li>
-<li>if and while conditions must be of type bool</li>
-</ul>
-
-<h2><a class="toc-backref" id="simple-types-stringslashchar-procs" href="#simple-types-stringslashchar-procs">string/char procs</a></h2><ul class="simple"><li>len(s)	Return the length of a string</li>
-<li>chr(i)	Convert an int in the range 0..255 to a character</li>
-<li>ord(c)	Return int value of a character</li>
-<li>a &amp; b	Concatenate two strings</li>
-<li>s.add(c)	Add character to the string</li>
-<li>$	Convert various types to string</li>
-<li>substr</li>
-<li>in/notin are for checking if chars are/notin a string</li>
-</ul>
-
-<h2><a class="toc-backref" id="simple-types-number-procs" href="#simple-types-number-procs">number procs</a></h2><ul class="simple"><li>and	Bitwise and	&amp;</li>
-<li>ashr	Arithmetic shift right</li>
-<li>div	Integer division</li>
-<li>Inf == high(int)</li>
-<li>max(x,y)</li>
-<li>min(x,y)</li>
-<li>mod	Integer modulo (remainder)	%</li>
-<li>not	Bitwise not (complement)	~</li>
-<li>or	Bitwise or	|</li>
-<li>Positive range[1..high(int)]</li>
-<li>shl	Shift left	&lt;&lt;</li>
-<li>shr	Shift right	&gt;&gt;</li>
-<li>toBiggestFloat</li>
-<li>toBiggestInt</li>
-<li>toFloat	Convert an integer into a float</li>
-<li>toInt	Convert floating-point number into an int</li>
-<li>xor	Bitwise xor	^</li>
-</ul>
-
-<h2><a class="toc-backref" id="simple-types-number-types" href="#simple-types-number-types">number types</a></h2><ul class="simple"><li>BackwardsIndex alias for distinct int, see range docs</li>
-<li>float (alias for float64|BiggestFloat) === processors fastest type</li>
-<li>float: float32 (C Float), 64 (C Double)</li>
-<li>Inf float64 infinity</li>
-<li>int (signed), 32bit/64bit depending on system</li>
-<li>int === same size as pointer (platform word size), bitwidth depends on architecture</li>
-<li>int8,16,32,64 - 8 = +-127, 16 = +-~32k, 32 = +-~2.1billion, BiggestInt alias for int64</li>
-<li>Natural alias for range[0, ..high(int): useful for documentation/debugging/guards</li>
-<li>NegInf !inf</li>
-<li>PFloat32 alias for ptr float32</li>
-<li>PFloat64 alias for ptr float64</li>
-<li>PInt32 alias for ptr int32</li>
-<li>Pint64 alias for ptrint64</li>
-<li>Positive alias for range[1, ..high(int): useful for documentation/debugging/guards</li>
-<li>SomeFloat matches all float types</li>
-<li>SomeInteger matches Some[Signed|Unsigned]Int</li>
-<li>SomeNumber matches Some[Integer|Float]</li>
-<li>SomeSignedInt matches all signed integer types</li>
-<li>SomeUnsignedInt matches all unsigned integer types</li>
-<li>uint: unsigned integers, 32/64 bit depending on system,</li>
-<li>uint8,16,32,64 # 8 = 0 -&gt; 2550, 16 = ~65k, 32 = ~4billion, BiggestUInt alias uinty64</li>
-</ul>
-
-<h2><a class="toc-backref" id="simple-types-misc-procs" href="#simple-types-misc-procs">misc procs</a></h2><ul class="simple"><li>is	Check if two arguments are of the same type</li>
-<li>isnot	Negated version of is</li>
-<li>!=	Not equals</li>
-<li>addr	Take the address of a memory location</li>
-<li>T and F	Boolean and</li>
-<li>T or F	Boolean or</li>
-<li>T xor F	Boolean xor (exclusive or)</li>
-<li>not T	Boolean not</li>
-</ul>
-
-<h1><a class="toc-backref" id="branchingcolon-if-when-case" href="#branchingcolon-if-when-case">branching: if when case</a></h1>
-<h2><a class="toc-backref" id="branchingcolon-if-when-case-tldr" href="#branchingcolon-if-when-case-tldr">TLDR</a></h2><ul class="simple"><li>new scopes are introduced immediately aftered the keywords (e.g. if, elif, etc)<ul class="simple"><li>except for when statements/expressions</li>
-</ul>
-</li>
-<li>use whens for completely removing sections of code at compile time</li>
-<li>all can be used as expressions and the result assigned to a var</li>
-</ul>
-
-<h2><a class="toc-backref" id="branchingcolon-if-when-case-branching-todos" href="#branchingcolon-if-when-case-branching-todos">branching todos</a></h2><ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/system.html#likely.t%2Cbool">likely</a></li>
-<li><a class="reference external" href="https://nim-lang.org/docs/system.html#unlikely.t%2Cbool">unlikely</a></li>
-</ul>
-
-<h2><a class="toc-backref" id="branchingcolon-if-when-case-when" href="#branchingcolon-if-when-case-when">when</a></h2><ul class="simple"><li>a compile time if statement</li>
-<li>the condition MUST be a constant expression</li>
-<li>does not open a new scope</li>
-<li>only the first truthy value is compiled</li>
-</ul>
-
-<h2><a class="toc-backref" id="branchingcolon-if-when-case-case" href="#branchingcolon-if-when-case-case">case</a></h2><ul class="simple"><li>similar to if, but represents a multi-branch selection</li>
-<li>only use strings, ordinal types and integers<ul class="simple"><li>ints/ordinals can also use ranges</li>
-<li>the <tt class="docutils literal"><span class="pre"><span class="Keyword">of</span></span></tt> part must match the value type</li>
-</ul>
-</li>
-<li>can also use elif, else branches</li>
+<h2><a class="toc-backref" id="blocks-once-blocks" href="#blocks-once-blocks">once blocks</a></h2><ul class="simple"><li>are executed once, the first time their seen by the compiler</li>
 </ul>
 
 <h1><a class="toc-backref" id="exception-handling-debugging-todo-documentation" href="#exception-handling-debugging-todo-documentation">exception handling, debugging (todo), documentation</a></h1>
 <h2><a class="toc-backref" id="exception-handling-debugging-todo-documentation-tldr" href="#exception-handling-debugging-todo-documentation-tldr">TLDR</a></h2><ul class="simple"><li>all custom exceptions should ref a specific error/CatchableERror/Defect/and lastly Exception</li>
 <li>Exception is the base type for CatachableError (exceptions), Defect (non catchable)</li>
-<li>raise keyword the only way to raise (throw) an exception<ul class="simple"><li>system.Exception provides the interface</li>
-<li>have to be allocated on the heap (var) because their lifetime is unknown</li>
+<li>raise keyword for raising (throwing) an exception<ul class="simple"><li>system.Exception provides the interface</li>
+<li>have to be allocated on the heap because their lifetime is unknown</li>
 </ul>
 </li>
 <li>docgen<ul class="simple"><li>having <tt class="docutils literal"><span class="pre"><span class="Operator">*</span></span></tt> after - (like on this line) will break htmldocs rst parser<ul class="simple"><li>you must escape it with backticks (see above) or backslash *</li>
@@ -1473,8 +1244,7 @@ checks whether x can be compiled without any semantic error. useful to verify wh
 
 <h2><a class="toc-backref" id="exception-handling-debugging-todo-documentation-todos" href="#exception-handling-debugging-todo-documentation-todos">todos</a></h2><ul class="simple"><li>reread the assertion docs and capture the info</li>
 </ul>
-<pre class="listing"><span class="Comment"># bunch of todos</span>
-<span class="Identifier">errorMessageWriter</span> <span class="Punctuation">(</span><span class="Keyword">var</span><span class="Punctuation">)</span> <span class="Identifier">called</span> <span class="Identifier">instead</span> <span class="Keyword">of</span> <span class="Identifier">stdmsg</span><span class="Operator">.</span><span class="Identifier">write</span> <span class="Keyword">when</span> <span class="Identifier">printing</span> <span class="Identifier">stacktrace</span>
+<pre class="listing"><span class="Identifier">errorMessageWriter</span> <span class="Punctuation">(</span><span class="Keyword">var</span><span class="Punctuation">)</span> <span class="Identifier">called</span> <span class="Identifier">instead</span> <span class="Keyword">of</span> <span class="Identifier">stdmsg</span><span class="Operator">.</span><span class="Identifier">write</span> <span class="Keyword">when</span> <span class="Identifier">printing</span> <span class="Identifier">stacktrace</span>
 <span class="Identifier">onUnhandledException</span> <span class="Punctuation">(</span><span class="Keyword">var</span><span class="Punctuation">)</span> <span class="Identifier">override</span> <span class="Identifier">default</span> <span class="Identifier">behavior</span><span class="Punctuation">:</span> <span class="Identifier">write</span> <span class="Identifier">stacktrace</span> <span class="Identifier">to</span> <span class="Identifier">stderr</span> <span class="Identifier">then</span> <span class="Identifier">quit</span><span class="Punctuation">(</span><span class="DecNumber">1</span><span class="Punctuation">)</span>
 <span class="Identifier">outOfMemHook</span> <span class="Punctuation">(</span><span class="Keyword">var</span><span class="Punctuation">)</span> <span class="Identifier">override</span> <span class="Identifier">default</span> <span class="Identifier">behavior</span><span class="Punctuation">:</span> <span class="Identifier">write</span> <span class="Identifier">err</span> <span class="Identifier">msg</span> <span class="Identifier">then</span> <span class="Identifier">terminate</span> <span class="Punctuation">(</span><span class="Identifier">see</span> <span class="Identifier">docs</span> <span class="Keyword">for</span> <span class="Identifier">example</span><span class="Punctuation">)</span>
 <span class="Identifier">unhandledExceptionHook</span> <span class="Punctuation">(</span><span class="Keyword">var</span><span class="Punctuation">)</span> <span class="Identifier">override</span> <span class="Identifier">default</span> <span class="Identifier">behavior</span><span class="Punctuation">:</span> <span class="Identifier">write</span> <span class="Identifier">err</span> <span class="Identifier">msg</span> <span class="Identifier">then</span> <span class="Identifier">terminate</span>
@@ -1482,19 +1252,24 @@ checks whether x can be compiled without any semantic error. useful to verify wh
   <span class="Identifier">globalRaiseHook</span> <span class="Punctuation">(</span><span class="Keyword">var</span><span class="Punctuation">)</span> <span class="Identifier">influence</span> <span class="Identifier">exception</span> <span class="Identifier">handling</span> <span class="Identifier">on</span> <span class="Identifier">a</span> <span class="Identifier">global</span> <span class="Identifier">level</span>
   <span class="Operator">^</span> <span class="Keyword">if</span> <span class="Keyword">not</span> <span class="Keyword">nil</span><span class="Punctuation">,</span> <span class="Identifier">every</span> <span class="Keyword">raise</span> <span class="Identifier">statement</span> <span class="Identifier">calls</span> <span class="Identifier">this</span> <span class="Identifier">hook</span>
   <span class="Operator">^</span> <span class="Keyword">if</span> <span class="Identifier">returns</span> <span class="Identifier">false</span><span class="Punctuation">,</span> <span class="Identifier">exception</span> <span class="Keyword">is</span> <span class="Identifier">caught</span> <span class="Keyword">and</span> <span class="Identifier">does</span> <span class="Keyword">not</span> <span class="Identifier">propagate</span></pre>
-<h2><a class="toc-backref" id="exception-handling-debugging-todo-documentation-links" href="#exception-handling-debugging-todo-documentation-links">links</a></h2><ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/assertions.html">assertions</a></li>
+<h2><a class="toc-backref" id="exception-handling-debugging-todo-documentation-links" href="#exception-handling-debugging-todo-documentation-links">links</a></h2><ul class="simple"><li>other<ul class="simple"><li><a class="reference external" href="https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling">status exception handling docs</a></li>
+<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim">system exceptions you can extend from</a></li>
+<li><a class="reference external" href="https://docutils.sourceforge.io/docs/user/rst/quickref.html">restructuredText wiki</a></li>
+</ul>
+</li>
+<li>high impact<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/assertions.html">assertions</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/system.html#Defect">defect doc</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/docgen.html">docgen</a></li>
-<li><a class="reference external" href="https://nim-lang.org/docs/drnim.html">drnim</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/system.html#runnableExamples%2Cstring%2Cuntyped">embedding runnable examples</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/system.html#Exception">exception doc</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/manual.html#exception-handling-exception-hierarchy">exception hierarchy doc</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/rst.html">nim reStructuredText &amp; markdown</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/devel/tests/test_nimscript.nims">nimscript compatibility tests</a></li>
+</ul>
+</li>
+<li>niche<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/drnim.html">drnim</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/segfaults.html">segfaults module</a></li>
-<li><a class="reference external" href="https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling">status exception handling docs</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim">system exceptions you can extend from</a></li>
-<li><a class="reference external" href="https://docutils.sourceforge.io/docs/user/rst/quickref.html">use this restructuredText wiki</a></li>
+</ul>
+</li>
 </ul>
 
 <h2><a class="toc-backref" id="exception-handling-debugging-todo-documentation-exception-handling" href="#exception-handling-debugging-todo-documentation-exception-handling">Exception Handling</a></h2><ul class="simple"><li>interesting stuff<ul class="simple"><li>getStackTrace() only works for debug builds</li>
@@ -1544,20 +1319,47 @@ checks whether x can be compiled without any semantic error. useful to verify wh
 <li>--- creates a subtitle and appears undearneath the previous title in the sidebar</li>
 </ul>
 </li>
-<li><a class="reference external" href="#low,openArray[T]">low(openArray)</a>  creates an html #fragment</li>
+<li><a class="reference external" href="#low,openArray[T]">low(openArray)</a>  creates an html #fragment ?</li>
 <li>starting a line with .. code-block:: Nim creates a codeblock for stuff indented beneath it</li>
-<li>starting a line with .. image:: poop.com/image.gif creates an image</li>
+<li>starting a line with .. image:: woopwoop.com/image.gif creates an image</li>
 <li>include another doc file .. include:: ./system_overview.rst</li>
 <li><a class="reference external" href="https://raw.githubusercontent.com/nim-lang/Nim/version-1-6/lib/system_overview.rst">^ check how it looks</a></li>
 </ul>
 
 <p><strong class="examples_text">Example:</strong></p>
-<pre class="listing"><span class="Comment">## ignored in release/debug, but not during docgen:</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">src</span><span class="Operator">/</span><span class="Identifier">bookofnim</span><span class="Operator">/</span><span class="Identifier">helloworld</span><span class="Operator">/</span><span class="Identifier">helloworld</span>
+<span class="Comment">## ignored in release/debug, but not during docgen:</span>
 <span class="Comment">## - will aggregate all into a separate module, compile, test</span>
 <span class="Comment">## - also ensures only exported symbols exist</span>
 <span class="Keyword">var</span> <span class="Identifier">iam</span> <span class="Operator">=</span> <span class="Identifier">GoodApplications</span><span class="Punctuation">(</span><span class="Identifier">pubfield</span><span class="Punctuation">:</span> <span class="StringLit">&quot;yes u are&quot;</span><span class="Punctuation">,</span> <span class="Identifier">prvfield</span><span class="Punctuation">:</span> <span class="StringLit">&quot;I know I am&quot;</span><span class="Punctuation">)</span> <span class="Comment">## \</span>
   <span class="Comment">## example of creating a good application</span>
-<span class="Identifier">repr</span> <span class="Identifier">iam</span></pre>
+<span class="Keyword">discard</span> <span class="Identifier">repr</span> <span class="Identifier">iam</span></pre>
+<h1><a class="toc-backref" id="branchingcolon-if-when-case" href="#branchingcolon-if-when-case">branching: if when case</a></h1>
+<h2><a class="toc-backref" id="branchingcolon-if-when-case-tldr" href="#branchingcolon-if-when-case-tldr">TLDR</a></h2><ul class="simple"><li>new scopes are introduced immediately aftered the keywords (e.g. if, elif, etc)<ul class="simple"><li>except for when statements/expressions</li>
+</ul>
+</li>
+<li>use whens for completely removing sections of code at compile time</li>
+<li>all can be used as expressions and the result assigned to a var</li>
+</ul>
+
+<h2><a class="toc-backref" id="branchingcolon-if-when-case-branching-todos" href="#branchingcolon-if-when-case-branching-todos">branching todos</a></h2><ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/system.html#likely.t%2Cbool">likely</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/system.html#unlikely.t%2Cbool">unlikely</a></li>
+</ul>
+
+<h2><a class="toc-backref" id="branchingcolon-if-when-case-when" href="#branchingcolon-if-when-case-when">when</a></h2><ul class="simple"><li>a compile time if statement</li>
+<li>the condition MUST be a constant expression</li>
+<li>does not open a new scope</li>
+<li>only the first truthy value is compiled</li>
+</ul>
+
+<h2><a class="toc-backref" id="branchingcolon-if-when-case-case" href="#branchingcolon-if-when-case-case">case</a></h2><ul class="simple"><li>similar to if, but represents a multi-branch selection</li>
+<li>only use strings, ordinal types and integers<ul class="simple"><li>ints/ordinals can also use ranges</li>
+<li>the <tt class="docutils literal"><span class="pre"><span class="Keyword">of</span></span></tt> part must match the value type</li>
+</ul>
+</li>
+<li>can also use elif, else branches</li>
+</ul>
+
 <h1><a class="toc-backref" id="loops-and-iterators" href="#loops-and-iterators">loops and iterators</a></h1>
 <h2><a class="toc-backref" id="loops-and-iterators-tldr" href="#loops-and-iterators-tldr">TLDR</a></h2><ul class="simple"><li>iterators are included, as their only used with loops<ul class="simple"><li>the parallel iterator is in asyncParMem</li>
 </ul>
@@ -1597,20 +1399,6 @@ checks whether x can be compiled without any semantic error. useful to verify wh
 <li>cant be forward declared</li>
 </ul>
 </li>
-</ul>
-
-<h1><a class="toc-backref" id="blocks" href="#blocks">blocks</a></h1>
-<h2><a class="toc-backref" id="blocks-tldr" href="#blocks-tldr">TLDR</a></h2><ul class="simple"><li>blocks have a () syntax but we skipped it as its not idiomatic nim in this context</li>
-<li>scope starts after the : symbol, and ends when the indentention returns to previous level</li>
-<li>named blocks have similar usescases to javascript</li>
-<li>like most other things, blocks can be expressions and assigned to a var</li>
-<li>see loopIterator.nim for closureScope blocks</li>
-</ul>
-
-<h2><a class="toc-backref" id="blocks-do-blocks" href="#blocks-do-blocks">do blocks</a></h2><ul class="simple"><li>you should probably read the docs on do blocks</li>
-</ul>
-
-<h2><a class="toc-backref" id="blocks-once-blocks" href="#blocks-once-blocks">once blocks</a></h2><ul class="simple"><li>are executed once, the first time their seen by the compiler</li>
 </ul>
 
 <h1><a class="toc-backref" id="ordinals-and-structured" href="#ordinals-and-structured">ordinals and structured</a></h1>
@@ -1764,6 +1552,11 @@ checks whether x can be compiled without any semantic error. useful to verify wh
 <li>other routine types are in this file</li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+<p>links</p>
+<ul class="simple"><li>other<ul class="simple"><li><a class="reference external" href="https://peterme.net/tips-and-tricks-with-implicit-return-in-nim.html">peter: return tips n tricks</a></li>
 </ul>
 </li>
 </ul>
@@ -1959,7 +1752,219 @@ checks whether x can be compiled without any semantic error. useful to verify wh
 <li>typedesc is a generic type for all types denoting the type class of all types</li>
 <li>procs using typedesc params are implicitly generic</li>
 </ul>
-</p>
+
+<h1><a class="toc-backref" id="simple-types" href="#simple-types">simple types</a></h1>
+<h2><a class="toc-backref" id="simple-types-tldr" href="#simple-types-tldr">TLDR</a></h2><ul class="simple"><li>Conversion between int and int32 or int64 must be explicit except for string literals.</li>
+<li>stay away from <a class="reference external" href="https://nim-lang.org/docs/manual.html#types-preminusdefined-integer-types">blah% operators in practice</a><ul class="simple"><li>% are mainly for backwards compatibility with previous nim versions</li>
+</ul>
+</li>
+<li>generally procs that work for strings work for chars</li>
+<li>generally strings can use any seq proc for manipulation</li>
+</ul>
+
+<h2><a class="toc-backref" id="simple-types-links" href="#simple-types-links">links</a></h2><ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/widestrs.html">wide strings</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/dollars.html">dollars</a></li>
+</ul>
+
+<h2><a class="toc-backref" id="simple-types-string" href="#simple-types-string">string</a></h2><ul class="simple"><li>value semantics</li>
+<li>are really just seq[char|byte] except for the terminating nullbyte 0</li>
+<li>^0 terminated so nim strings can be converted to a cstring without a copy</li>
+<li>compared using lexicographical order</li>
+<li>to intrepret unicode, you need to import the unicode module</li>
+<li>addQuoted escapes and quotes y:string then appends to x:string</li>
+<li>addEscapedChar escapes y:char then appends to x:string</li>
+</ul>
+
+<h2><a class="toc-backref" id="simple-types-char" href="#simple-types-char">char</a></h2><ul class="simple"><li>8 bit char (unsigned, basically an alias for uint8)</li>
+<li>always 1 byte so cant represent most UTF-8 chars</li>
+<li>single ASCII characters</li>
+<li>enclosed in single quotes</li>
+</ul>
+
+<h2><a class="toc-backref" id="simple-types-byte" href="#simple-types-byte">byte</a></h2><ul class="simple"><li>alias for uint8 that is 8 bits wide</li>
+<li>if dealing with binary blobs, prefer seq[byte] &gt; string,</li>
+<li>if dealing with binary data, prefer seq[char|uint8]</li>
+<li>ByteAddress alias for int, used for converting pointers to itneger addresses</li>
+</ul>
+
+<h2><a class="toc-backref" id="simple-types-bool" href="#simple-types-bool">bool</a></h2><ul class="simple"><li>only true &amp; false (i.e. not 1/0) evaluate to bool<ul class="simple"><li>but its an enum, so 0=false, 1=true</li>
+<li>off/on are aliases for true/false</li>
+</ul>
+</li>
+<li>if and while conditions must be of type bool</li>
+</ul>
+
+<h2><a class="toc-backref" id="simple-types-stringslashchar-procs" href="#simple-types-stringslashchar-procs">string/char procs</a></h2><ul class="simple"><li>len(s)	Return the length of a string</li>
+<li>chr(i)	Convert an int in the range 0..255 to a character</li>
+<li>ord(c)	Return int value of a character</li>
+<li>a &amp; b	Concatenate two strings</li>
+<li>s.add(c)	Add character to the string</li>
+<li>$	Convert various types to string</li>
+<li>substr</li>
+<li>in/notin are for checking if chars are/notin a string</li>
+</ul>
+
+<h2><a class="toc-backref" id="simple-types-number-procs" href="#simple-types-number-procs">number procs</a></h2><ul class="simple"><li>and	Bitwise and	&amp;</li>
+<li>ashr	Arithmetic shift right</li>
+<li>div	Integer division</li>
+<li>Inf == high(int)</li>
+<li>max(x,y)</li>
+<li>min(x,y)</li>
+<li>mod	Integer modulo (remainder)	%</li>
+<li>not	Bitwise not (complement)	~</li>
+<li>or	Bitwise or	|</li>
+<li>Positive range[1..high(int)]</li>
+<li>shl	Shift left	&lt;&lt;</li>
+<li>shr	Shift right	&gt;&gt;</li>
+<li>toBiggestFloat</li>
+<li>toBiggestInt</li>
+<li>toFloat	Convert an integer into a float</li>
+<li>toInt	Convert floating-point number into an int</li>
+<li>xor	Bitwise xor	^</li>
+</ul>
+
+<h2><a class="toc-backref" id="simple-types-number-types" href="#simple-types-number-types">number types</a></h2><ul class="simple"><li>BackwardsIndex alias for distinct int, see range docs</li>
+<li>float (alias for float64|BiggestFloat) === processors fastest type</li>
+<li>float: float32 (C Float), 64 (C Double)</li>
+<li>Inf float64 infinity</li>
+<li>int (signed), 32bit/64bit depending on system</li>
+<li>int === same size as pointer (platform word size), bitwidth depends on architecture</li>
+<li>int8,16,32,64 - 8 = +-127, 16 = +-~32k, 32 = +-~2.1billion, BiggestInt alias for int64</li>
+<li>Natural alias for range[0, ..high(int): useful for documentation/debugging/guards</li>
+<li>NegInf !inf</li>
+<li>PFloat32 alias for ptr float32</li>
+<li>PFloat64 alias for ptr float64</li>
+<li>PInt32 alias for ptr int32</li>
+<li>Pint64 alias for ptrint64</li>
+<li>Positive alias for range[1, ..high(int): useful for documentation/debugging/guards</li>
+<li>SomeFloat matches all float types</li>
+<li>SomeInteger matches Some[Signed|Unsigned]Int</li>
+<li>SomeNumber matches Some[Integer|Float]</li>
+<li>SomeSignedInt matches all signed integer types</li>
+<li>SomeUnsignedInt matches all unsigned integer types</li>
+<li>uint: unsigned integers, 32/64 bit depending on system,</li>
+<li>uint8,16,32,64 # 8 = 0 -&gt; 2550, 16 = ~65k, 32 = ~4billion, BiggestUInt alias uinty64</li>
+</ul>
+
+<h2><a class="toc-backref" id="simple-types-misc-procs" href="#simple-types-misc-procs">misc procs</a></h2><ul class="simple"><li>is	Check if two arguments are of the same type</li>
+<li>isnot	Negated version of is</li>
+<li>!=	Not equals</li>
+<li>addr	Take the address of a memory location</li>
+<li>T and F	Boolean and</li>
+<li>T or F	Boolean or</li>
+<li>T xor F	Boolean xor (exclusive or)</li>
+<li>not T	Boolean not</li>
+</ul>
+
+<h1><a class="toc-backref" id="variables-and-globals" href="#variables-and-globals">variables and globals</a></h1>
+<h2><a class="toc-backref" id="variables-and-globals-tldr" href="#variables-and-globals-tldr">TLDR</a></h2><ul class="simple"><li>catchall for global keywords/procs/types/etc not specified in other files</li>
+<li>anything like <tt class="docutils literal"><span class="pre"><span class="Identifier">BLAH</span><span class="Operator">=</span></span></tt> can be written <tt class="docutils literal"><span class="pre"><span class="Identifier">BLAH</span> <span class="Operator">=</span></span></tt><ul class="simple"><li>the former enables you to define/overload operators via 'proc <tt class="docutils literal"><span class="pre"><span class="Identifier">woop</span><span class="Operator">=</span></span></tt><a class="reference external" href="soop">bloop</a>: doop = toot'</li>
+</ul>
+</li>
+<li>converts are listed here because their purpose is implicit type coercion</li>
+<li>additional type features are covered in tupleObjectTable.nim</li>
+<li>you can call clear on pretty much anything</li>
+</ul>
+
+<h2><a class="toc-backref" id="variables-and-globals-varslashglobal-todos" href="#variables-and-globals-varslashglobal-todos">var/global todos</a></h2><ul class="simple"><li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L2816">couldnt get eval to work</a></li>
+</ul>
+<pre class="listing"><span class="Comment"># probably need a memory_mgmt.nim file</span>
+<span class="Comment"># skipped everything in this section</span>
+<span class="Comment"># but they look intersting</span>
+<span class="Identifier">addAndFetch</span> <span class="Identifier">doesnt</span> <span class="Identifier">have</span> <span class="Identifier">a</span> <span class="Identifier">description</span>
+<span class="Identifier">copyMem</span> <span class="Identifier">copies</span> <span class="Identifier">content</span> <span class="Keyword">from</span> <span class="Identifier">memory</span> <span class="Identifier">at</span> <span class="Identifier">source</span> <span class="Identifier">to</span> <span class="Identifier">memory</span> <span class="Identifier">at</span> <span class="Identifier">dest</span>
+<span class="Identifier">compileOption</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">[</span><span class="Punctuation">,</span> <span class="Identifier">y</span><span class="Punctuation">]</span><span class="Punctuation">)</span> <span class="Identifier">check</span> <span class="Keyword">if</span> <span class="Identifier">a</span> <span class="Identifier">switch</span> <span class="Keyword">is</span> <span class="Identifier">active</span> <span class="Keyword">and</span><span class="Operator">/</span><span class="Keyword">or</span> <span class="Identifier">its</span> <span class="Identifier">value</span> <span class="Identifier">at</span> <span class="Identifier">compile</span> <span class="Identifier">time</span>
+<span class="Identifier">create</span> <span class="Identifier">allocates</span> <span class="Identifier">a</span> <span class="Identifier">new</span> <span class="Identifier">memory</span> <span class="Keyword">block</span> <span class="Identifier">with</span> <span class="Identifier">atleast</span> <span class="Identifier">T</span><span class="Operator">.</span><span class="Identifier">sizeof</span> <span class="Operator">*</span> <span class="Identifier">size</span> <span class="Identifier">bytes</span>
+<span class="Identifier">createShared</span> <span class="Identifier">allocates</span> <span class="Identifier">new</span> <span class="Identifier">memory</span> <span class="Keyword">block</span> <span class="Identifier">on</span> <span class="Identifier">the</span> <span class="Identifier">shared</span> <span class="Identifier">heap</span> <span class="Identifier">with</span> <span class="Identifier">atleast</span> <span class="Identifier">T</span><span class="Operator">.</span><span class="Identifier">sizeof</span> <span class="Operator">*</span> <span class="Identifier">bytes</span>
+<span class="Identifier">createSharedU</span> <span class="Identifier">allocates</span> <span class="Identifier">new</span> <span class="Identifier">memory</span> <span class="Keyword">block</span> <span class="Identifier">on</span> <span class="Identifier">the</span> <span class="Identifier">shared</span> <span class="Identifier">heap</span> <span class="Identifier">with</span> <span class="Identifier">atleast</span> <span class="Identifier">T</span><span class="Operator">.</span><span class="Identifier">sizeof</span> <span class="Operator">*</span> <span class="Identifier">bytes</span>
+<span class="Identifier">createU</span> <span class="Identifier">allocates</span> <span class="Identifier">memory</span> <span class="Keyword">block</span> <span class="Identifier">atleast</span> <span class="Identifier">T</span><span class="Operator">.</span><span class="Identifier">sizeof</span> <span class="Operator">*</span> <span class="Identifier">bytes</span>
+<span class="Identifier">dealloc</span> <span class="Identifier">frees</span> <span class="Identifier">the</span> <span class="Identifier">memory</span> <span class="Identifier">allocated</span> <span class="Identifier">with</span> <span class="Identifier">alloc</span><span class="Punctuation">,</span> <span class="Identifier">alloc0</span><span class="Punctuation">,</span> <span class="Identifier">realloc</span><span class="Punctuation">,</span> <span class="Identifier">create</span> <span class="Keyword">or</span> <span class="Identifier">createU</span>
+<span class="Identifier">deallocHeap</span> <span class="Identifier">frees</span> <span class="Identifier">the</span> <span class="Identifier">thread</span> <span class="Identifier">local</span> <span class="Identifier">heap</span>
+<span class="Identifier">deallocShared</span> <span class="Identifier">frees</span> <span class="Identifier">the</span> <span class="Identifier">mem</span> <span class="Identifier">allocated</span> <span class="Identifier">with</span> <span class="Identifier">allocShared</span><span class="Punctuation">,</span> <span class="Identifier">allocShared0</span> <span class="Keyword">or</span> <span class="Identifier">reallocShared</span>
+<span class="Identifier">equalMem</span> <span class="Identifier">compares</span> <span class="Identifier">size</span> <span class="Identifier">bytes</span> <span class="Keyword">of</span> <span class="Identifier">mem</span> <span class="Identifier">blocks</span> <span class="Identifier">a</span> <span class="Keyword">and</span> <span class="Identifier">b</span>
+<span class="Identifier">freeShared</span> <span class="Identifier">frees</span> <span class="Identifier">the</span> <span class="Identifier">mem</span> <span class="Identifier">allocated</span> <span class="Identifier">with</span> <span class="Identifier">createShared</span><span class="Punctuation">,</span> <span class="Identifier">createSharedU</span><span class="Punctuation">,</span> <span class="Keyword">or</span> <span class="Identifier">resizeShared</span>
+<span class="Identifier">GC_disable</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">GC_disableMarkAndSweep</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">GC_enable</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">GC_enableMarkAndSweep</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">GC_fullCollect</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">GC_getStatistics</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+<span class="Identifier">getAllocStats</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+<span class="Identifier">getFrame</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+<span class="Identifier">getFrameState</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+<span class="Identifier">isNotForeign</span> <span class="Identifier">returns</span> <span class="Identifier">true</span> <span class="Keyword">if</span> <span class="Identifier">x</span> <span class="Identifier">belongs</span> <span class="Identifier">to</span> <span class="Identifier">the</span> <span class="Identifier">calling</span> <span class="Identifier">thread</span>
+<span class="Identifier">moveMem</span> <span class="Identifier">copies</span> <span class="Identifier">content</span> <span class="Keyword">from</span> <span class="Identifier">memory</span> <span class="Identifier">at</span> <span class="Identifier">source</span> <span class="Identifier">to</span> <span class="Identifier">memory</span> <span class="Identifier">at</span> <span class="Identifier">dest</span>
+<span class="Identifier">prepareMutation</span> <span class="Identifier">string</span> <span class="Identifier">literals</span> <span class="Keyword">in</span> <span class="Identifier">ARC</span><span class="Operator">/</span><span class="Identifier">ORC</span> <span class="Identifier">mode</span> <span class="Identifier">are</span> <span class="Identifier">copy</span> <span class="Identifier">on</span> <span class="Identifier">write</span><span class="Punctuation">,</span> <span class="Identifier">this</span> <span class="Identifier">must</span> <span class="Identifier">be</span> <span class="Identifier">called</span> <span class="Identifier">before</span> <span class="Identifier">mutating</span> <span class="Identifier">them</span>
+<span class="Identifier">rawEnv</span> <span class="Identifier">retrieve</span> <span class="Identifier">the</span> <span class="Identifier">raw</span> <span class="Identifier">env</span> <span class="Identifier">pointer</span> <span class="Keyword">of</span> <span class="Identifier">a</span> <span class="Identifier">closure</span>
+<span class="Identifier">rawProc</span> <span class="Identifier">retrieve</span> <span class="Identifier">the</span> <span class="Identifier">raw</span> <span class="Keyword">proc</span> <span class="Identifier">pointer</span> <span class="Keyword">of</span> <span class="Identifier">closer</span> <span class="Identifier">X</span>
+<span class="Identifier">resize</span> <span class="Identifier">a</span> <span class="Identifier">memory</span> <span class="Keyword">block</span>
+<span class="Identifier">resizeShared</span>
+<span class="Identifier">setControlCHook</span> <span class="Keyword">proc</span> <span class="Identifier">to</span> <span class="Identifier">run</span> <span class="Keyword">when</span> <span class="Identifier">program</span> <span class="Keyword">is</span> <span class="Identifier">ctrlc</span><span class="CharLit">'ed</span>
+<span class="Identifier">sizeof</span> <span class="Identifier">blah</span> <span class="Keyword">in</span> <span class="Identifier">bytes</span></pre>
+<h2><a class="toc-backref" id="variables-and-globals-varslashglobal-links" href="#variables-and-globals-varslashglobal-links">var/global links</a></h2><ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/system.html#8">system vars</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/typeinfo.html">typeinfo</a></li>
+<li><a class="reference external" href="https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#converter">converters</a></li>
+</ul>
+
+<h2><a class="toc-backref" id="variables-and-globals-var" href="#variables-and-globals-var">var</a></h2><ul class="simple"><li>runtime mutable global var</li>
+</ul>
+
+<h2><a class="toc-backref" id="variables-and-globals-let" href="#variables-and-globals-let">let</a></h2><ul class="simple"><li>runtime immutable</li>
+</ul>
+
+<h2><a class="toc-backref" id="variables-and-globals-const" href="#variables-and-globals-const">const</a></h2><ul class="simple"><li>compile-time evaluation cannot interface with C</li>
+<li>there is no compile-time foreign function interface at this time.</li>
+<li>consts must be initialized with a value</li>
+<li>declares variables whose values are constant expressions</li>
+</ul>
+
+<h2><a class="toc-backref" id="variables-and-globals-static" href="#variables-and-globals-static">static</a></h2><ul class="simple"><li>static represents a compile time entity, whether variable, block or type restriction</li>
+<li>static[T] meta type representing all values that can be evaluated at compile time</li>
+<li>all static params are treated as generic params, thus may lead to executable bloat (see generics)</li>
+</ul>
+
+<h2><a class="toc-backref" id="variables-and-globals-eval" href="#variables-and-globals-eval">eval</a></h2><ul class="simple"><li>eval executes a block of code at compile time</li>
+</ul>
+
+<h2><a class="toc-backref" id="variables-and-globals-stropping" href="#variables-and-globals-stropping">stropping</a></h2><ul class="simple"><li>enable use of keywords as operators</li>
+</ul>
+
+<h2><a class="toc-backref" id="variables-and-globals-auto" href="#variables-and-globals-auto">auto</a></h2><ul class="simple"><li>auto only for proc return types and signature parameters</li>
+<li>parameter auto: creates an implicit generic of proc<a class="reference external" href="">x</a></li>
+<li>return auto: causes the compiler to infer the type form the routine body</li>
+</ul>
+
+<h2><a class="toc-backref" id="variables-and-globals-type-casts" href="#variables-and-globals-type-casts">type casts</a></h2><ul class="simple"><li>cast operator forces the compiler to interpret a bit pattern to be of another type</li>
+<li>i.e. interpret the bit pattern as another type, but dont actually convert it to the other type</li>
+<li>only needed for low-level programming and are inherently unsafe</li>
+</ul>
+
+<h2><a class="toc-backref" id="variables-and-globals-type-coercions" href="#variables-and-globals-type-coercions">type coercions</a></h2><ul class="simple"><li>aka type conversions sometimes in docs, but always means coercion<ul class="simple"><li>type coercions preserve the abstract value, but not the bit-pattern</li>
+</ul>
+</li>
+<li>allocCStringArray creates a null terminated cstringArray from</li>
+<li>chr(i): convert 0..255 to a char</li>
+<li>cstringArrayToSeq</li>
+<li>only widening (smaller &gt; larger) conversions are automatic/implicit</li>
+<li>ord(i): convert char to an int</li>
+<li>parseInt/parseFloat from a string</li>
+<li>static(x): force the compile-time evaluation of the given expression</li>
+<li>toFloat(int): convert int to a float</li>
+<li>toInt(float): convert float to an int</li>
+<li>toOpenArray</li>
+<li>toOpenArrayByte</li>
+</ul>
+
+<h2><a class="toc-backref" id="variables-and-globals-type-inspection" href="#variables-and-globals-type-inspection">type inspection</a></h2><ul class="simple"><li>type(x): retrieve the type of x, discouraged should use typeof</li>
+<li>typeof(x): retrieve the type of x</li>
+<li>typeOfProc: retrieve the result of a proc, i.e. typeof x, typeOfProc</li>
+</ul>
+
+<h2><a class="toc-backref" id="variables-and-globals-echoslashrepr" href="#variables-and-globals-echoslashrepr">echo/repr</a></h2><ul class="simple"><li>roughly equivalent to writeLine(stdout, x); flushFile(stdout)</li>
+<li>available for the JavaScript target too.</li>
+<li>cant be used with funcs/{.noSideEffect.} (use debugEcho)</li>
+</ul>
+checks whether x can be compiled without any semantic error. useful to verify whether a type supports some operation:whether x is declared at compile timechecks current scope at compile time</p>
   <div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
 <dl class="item">
@@ -2078,27 +2083,15 @@ class="link-seesrc" target="_blank">Source</a>
 <div id="GoodApplications">
 <dt><pre><a href="helloworld.html#GoodApplications"><span class="Identifier">GoodApplications</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">pubfield</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>          <span class="Comment">## is included in docs</span>
-  <span class="Identifier">prvfield</span><span class="Other">:</span> <span class="Identifier">string</span>           <span class="Comment">## also included since goodapplications is exported</span>
+  <span class="Identifier">prvfield</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>          <span class="Comment">## also included since goodapplications is exported</span>
   </pre></dt>
 <dd>
 
 especially things like custom types may need additional abbreviations to describe their purpose
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L112"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L113"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L112" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="IPoop_2">
-<dt><pre><span class="Identifier">IPoop</span> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">WhoPoop</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L327"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L327" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L113" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -2114,15 +2107,27 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
+<div id="IWoop_2">
+<dt><pre><span class="Identifier">IWoop</span> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">WhoWoop</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L327"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L327" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
 <div id="LearningError">
 <dt><pre><span class="Identifier">LearningError</span> <span class="Other">=</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">CatchableError</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L130"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L131"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L130" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L131" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -2366,8 +2371,8 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="PrivatePoop">
-<dt><pre><span class="Identifier">PrivatePoop</span> <span class="Other">=</span> <span class="Keyword">object</span>
+<div id="PrivateWoop">
+<dt><pre><span class="Identifier">PrivateWoop</span> <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">i</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">bool</span>
   <span class="Identifier">times</span><span class="Other">:</span> <span class="Identifier">int</span>
 </pre></dt>
@@ -2381,8 +2386,8 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="PublicPoop">
-<dt><pre><a href="helloworld.html#PublicPoop"><span class="Identifier">PublicPoop</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
+<div id="PublicWoop">
+<dt><pre><a href="helloworld.html#PublicWoop"><span class="Identifier">PublicWoop</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">u</span><span class="Other">:</span> <span class="Identifier">bool</span>
   <span class="Identifier">times</span><span class="Other">:</span> <span class="Identifier">int</span>
 </pre></dt>
@@ -2568,8 +2573,8 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="WhoPoop">
-<dt><pre><span class="Identifier">WhoPoop</span> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">RootObj</span>
+<div id="WhoWoop">
+<dt><pre><span class="Identifier">WhoWoop</span> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">RootObj</span>
   <span class="Identifier">name</span><span class="Other">:</span> <span class="Identifier">string</span>
 </pre></dt>
 <dd>
@@ -2582,8 +2587,8 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="YouPoop">
-<dt><pre><span class="Identifier">YouPoop</span> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">WhoPoop</span></pre></dt>
+<div id="YouWoop">
+<dt><pre><span class="Identifier">YouWoop</span> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">WhoWoop</span></pre></dt>
 <dd>
 
 
@@ -2623,8 +2628,8 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="alreadyExecuted`gensym17">
-<dt><pre><span class="Identifier">alreadyExecuted`gensym17</span> <span class="Other">=</span> <span class="Identifier">false</span></pre></dt>
+<div id="alreadyExecuted`gensym2">
+<dt><pre><span class="Identifier">alreadyExecuted`gensym2</span> <span class="Other">=</span> <span class="Identifier">false</span></pre></dt>
 <dd>
 
 
@@ -2703,9 +2708,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L172"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L176"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L172" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L176" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -2752,9 +2757,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L149"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L150"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L149" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L150" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -2788,9 +2793,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L171"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L175"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L171" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L175" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -2800,9 +2805,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L116"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L120"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L116" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L120" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3088,9 +3093,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L112"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L116"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L112" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L116" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3154,30 +3159,6 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="poop1">
-<dt><pre><span class="Identifier">poop1</span> <span class="Other">=</span> <span class="StringLit">&quot;flush&quot;</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L120"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L120" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="poops">
-<dt><pre><span class="Identifier">poops</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">,</span> <span class="DecNumber">2</span><span class="Other">,</span> <span class="DecNumber">3</span><span class="Other">,</span> <span class="DecNumber">4</span><span class="Other">]</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L179"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L179" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
 <div id="rangeArr">
 <dt><pre><span class="Identifier">rangeArr</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="DecNumber">10</span><span class="Other">,</span> <span class="Identifier">int</span><span class="Other">]</span></pre></dt>
 <dd>
@@ -3202,8 +3183,8 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="sherlockpoops">
-<dt><pre><span class="Identifier">sherlockpoops</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">WhoPoop</span><span class="Other">]</span> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span></pre></dt>
+<div id="sherlockwoops">
+<dt><pre><span class="Identifier">sherlockwoops</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">WhoWoop</span><span class="Other">]</span> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span></pre></dt>
 <dd>
 
 
@@ -3250,8 +3231,8 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="spoop">
-<dt><pre><span class="Identifier">spoop</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="DecNumber">4</span><span class="Other">)</span></pre></dt>
+<div id="swoop">
+<dt><pre><span class="Identifier">swoop</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="DecNumber">4</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -3259,22 +3240,6 @@ class="link-seesrc" target="_blank">Source</a>
 href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L180"
 class="link-seesrc" target="_blank">Source</a>
 &nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L180" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="stupidChar">
-<dt><pre><span class="Identifier">stupidChar</span> <span class="Other">=</span> <span class="Keyword">block</span><span class="Other">:</span>
-  <span class="Keyword">var</span> <span class="Identifier">dumbChar</span> <span class="Other">=</span> <span class="CharLit">'a'</span>
-  <span class="Keyword">if</span> <span class="Identifier">contains</span><span class="Other">(</span><span class="Other">{</span><span class="CharLit">'a'</span><span class="Other">,</span> <span class="CharLit">'b'</span><span class="Other">,</span> <span class="CharLit">'c'</span><span class="Other">}</span><span class="Other">,</span> <span class="Identifier">dumbChar</span><span class="Other">)</span><span class="Other">:</span>
-    <span class="Identifier">echo</span> <span class="Other">[</span><span class="StringLit">&quot;dumbChar is in alphabeta &quot;</span><span class="Other">,</span> <span class="Identifier">dumbChar</span><span class="Other">]</span>
-  <span class="Identifier">ord</span><span class="Other">(</span><span class="Identifier">dumbChar</span><span class="Other">)</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/blocks.nim#L41"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/blocks.nim#L41" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3326,8 +3291,32 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="x`gensym40">
-<dt><pre><span class="Identifier">x`gensym40</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">42</span></pre></dt>
+<div id="woop1">
+<dt><pre><span class="Identifier">woop1</span> <span class="Other">=</span> <span class="StringLit">&quot;flush&quot;</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L120"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L120" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="woops">
+<dt><pre><span class="Identifier">woops</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">,</span> <span class="DecNumber">2</span><span class="Other">,</span> <span class="DecNumber">3</span><span class="Other">,</span> <span class="DecNumber">4</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L179"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L179" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="x`gensym45">
+<dt><pre><span class="Identifier">x`gensym45</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">42</span></pre></dt>
 <dd>
 
 
@@ -3344,9 +3333,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L96"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L100"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L96" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L100" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3367,7 +3356,7 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="aa">
+<div id="aa_2">
 <dt><pre><span class="Identifier">aa</span> <span class="Other">=</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">hasValue</span><span class="Other">:</span> <span class="DecNumber">true</span><span class="Other">,</span> <span class="Identifier">value</span><span class="Other">:</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
 <dd>
 
@@ -3397,13 +3386,13 @@ class="link-seesrc" target="_blank">Source</a>
 
 this is not included in docs because its not exported
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L109"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L110"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L109" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L110" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="bb">
+<div id="bb_2">
 <dt><pre><span class="Identifier">bb</span> <span class="Other">=</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">hasValue</span><span class="Other">:</span> <span class="DecNumber">true</span><span class="Other">,</span> <span class="Identifier">value</span><span class="Other">:</span> <span class="DecNumber">2</span><span class="Other">)</span></pre></dt>
 <dd>
 
@@ -3448,14 +3437,14 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L185"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L186"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L185" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L186" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="everyonepoop">
-<dt><pre><span class="Identifier">everyonepoop</span> <span class="Other">=</span> <span class="Identifier">upoop</span></pre></dt>
+<div id="everyonewoop">
+<dt><pre><span class="Identifier">everyonewoop</span> <span class="Other">=</span> <span class="Identifier">uwoop</span></pre></dt>
 <dd>
 
 
@@ -3467,7 +3456,7 @@ class="link-seesrc" target="_blank">Source</a>
 </dd>
 </div>
 <div id="first">
-<dt><pre><span class="Other">(</span><a href="#first"><span class="Identifier">first</span></a><span class="Other">,</span> <span class="Operator">__1090522450</span><span class="Other">,</span> <span class="Identifier">third</span><span class="Other">)</span> <span class="Other">=</span> <span class="Identifier">bizDevOps</span></pre></dt>
+<dt><pre><span class="Other">(</span><a href="#first"><span class="Identifier">first</span></a><span class="Other">,</span> <span class="Operator">__1090522109</span><span class="Other">,</span> <span class="Identifier">third</span><span class="Other">)</span> <span class="Other">=</span> <span class="Identifier">bizDevOps</span></pre></dt>
 <dd>
 
 
@@ -3508,9 +3497,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 <tt class="docutils literal"><span class="pre"><span class="Identifier">goodcode</span></span></tt> should be self documenting, but sometimes naming conventions arent enuff
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L107"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L108"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L107" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L108" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3526,8 +3515,8 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="ipoop">
-<dt><pre><span class="Identifier">ipoop</span> <span class="Other">=</span> <span class="Identifier">PrivatePoop</span><span class="Other">(</span><span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">false</span><span class="Other">,</span> <span class="Identifier">times</span><span class="Other">:</span> <span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
+<div id="iwoop">
+<dt><pre><span class="Identifier">iwoop</span> <span class="Other">=</span> <span class="Identifier">PrivateWoop</span><span class="Other">(</span><span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">false</span><span class="Other">,</span> <span class="Identifier">times</span><span class="Other">:</span> <span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -3561,6 +3550,22 @@ class="link-seesrc" target="_blank">Source</a>
 href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L213"
 class="link-seesrc" target="_blank">Source</a>
 &nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L213" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="myChar">
+<dt><pre><span class="Identifier">myChar</span> <span class="Other">=</span> <span class="Keyword">block</span><span class="Other">:</span>
+  <span class="Keyword">var</span> <span class="Identifier">yourChar</span> <span class="Other">=</span> <span class="CharLit">'a'</span>
+  <span class="Keyword">if</span> <span class="Identifier">contains</span><span class="Other">(</span><span class="Other">{</span><span class="CharLit">'a'</span><span class="Other">,</span> <span class="CharLit">'b'</span><span class="Other">,</span> <span class="CharLit">'c'</span><span class="Other">}</span><span class="Other">,</span> <span class="Identifier">yourChar</span><span class="Other">)</span><span class="Other">:</span>
+    <span class="Identifier">echo</span> <span class="Other">[</span><span class="StringLit">&quot;yourChar was found &quot;</span><span class="Other">,</span> <span class="Identifier">yourChar</span><span class="Other">]</span>
+  <span class="Identifier">yourChar</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/blocks.nim#L48"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/blocks.nim#L48" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3612,30 +3617,6 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="poop2">
-<dt><pre><span class="Identifier">poop2</span> <span class="Other">=</span> <span class="StringLit">&quot;hello&quot;</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L121"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L121" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="poop6">
-<dt><pre><span class="Identifier">poop6</span> <span class="Other">=</span> <span class="StringLit">&quot;flush\n\n\n\n\n\nescapes are interpreted&quot;</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L211"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L211" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
 <div id="simpleOpts">
 <dt><pre><span class="Identifier">simpleOpts</span><span class="Other">:</span> <span class="Identifier">Opts</span> <span class="Other">=</span> <span class="Other">{</span><span class="CharLit">'a'</span><span class="Other">,</span> <span class="CharLit">'b'</span><span class="Other">,</span> <span class="CharLit">'c'</span><span class="Other">}</span></pre></dt>
 <dd>
@@ -3649,20 +3630,19 @@ class="link-seesrc" target="_blank">Source</a>
 </dd>
 </div>
 <div id="sniper">
-<dt><pre><span class="Identifier">sniper</span> <span class="Other">=</span> <span class="StringLit">&quot;scope parent&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">sniper</span> <span class="Other">=</span> <span class="StringLit">&quot;scope module&quot;</span></pre></dt>
 <dd>
 
-
-is in the global scope
+is in the module scope, global to this module
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/blocks.nim#L23"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/blocks.nim#L32"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/blocks.nim#L23" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/blocks.nim#L32" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
 <div id="str1">
-<dt><pre><span class="Identifier">str1</span> <span class="Other">=</span> <span class="StringLit">&quot;pooper scooper&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">str1</span> <span class="Other">=</span> <span class="StringLit">&quot;wooper scooper&quot;</span></pre></dt>
 <dd>
 
 
@@ -3762,8 +3742,8 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="upoop">
-<dt><pre><span class="Identifier">upoop</span> <span class="Other">=</span> <a href="helloworld.html#PublicPoop"><span class="Identifier">PublicPoop</span></a><span class="Other">(</span><span class="Identifier">u</span><span class="Other">:</span> <span class="Identifier">true</span><span class="Other">,</span> <span class="Identifier">times</span><span class="Other">:</span> <span class="DecNumber">100</span><span class="Other">)</span></pre></dt>
+<div id="uwoop">
+<dt><pre><span class="Identifier">uwoop</span> <span class="Other">=</span> <a href="helloworld.html#PublicWoop"><span class="Identifier">PublicWoop</span></a><span class="Other">(</span><span class="Identifier">u</span><span class="Other">:</span> <span class="Identifier">true</span><span class="Other">,</span> <span class="Identifier">times</span><span class="Other">:</span> <span class="DecNumber">100</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -3771,6 +3751,30 @@ class="link-seesrc" target="_blank">Source</a>
 href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L228"
 class="link-seesrc" target="_blank">Source</a>
 &nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L228" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="woop2">
+<dt><pre><span class="Identifier">woop2</span> <span class="Other">=</span> <span class="StringLit">&quot;hello&quot;</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L121"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L121" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="woop6">
+<dt><pre><span class="Identifier">woop6</span> <span class="Other">=</span> <span class="StringLit">&quot;flush\n\n\n\n\n\nescapes are interpreted&quot;</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L211"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L211" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -3792,9 +3796,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L85"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L89"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L85" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L89" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4021,8 +4025,7 @@ class="link-seesrc" target="_blank">Source</a>
 </dd>
 </div>
 <div id="loc`gensym11">
-<dt><pre><span class="Identifier">loc`gensym11</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim&quot;</span><span class="Other">,</span>
-                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">207</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">7</span><span class="Other">)</span></pre></dt>
+<dt><pre><span class="Identifier">loc`gensym11</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;exceptionHandlingDocs.nim&quot;</span><span class="Other">,</span> <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">208</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">7</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -4034,8 +4037,7 @@ class="link-seesrc" target="_blank">Source</a>
 </dd>
 </div>
 <div id="loc`gensym13">
-<dt><pre><span class="Identifier">loc`gensym13</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim&quot;</span><span class="Other">,</span>
-                <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">210</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
+<dt><pre><span class="Identifier">loc`gensym13</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="StringLit">&quot;exceptionHandlingDocs.nim&quot;</span><span class="Other">,</span> <span class="Identifier">line</span><span class="Other">:</span> <span class="DecNumber">211</span><span class="Other">,</span> <span class="Identifier">column</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -4179,7 +4181,7 @@ class="link-seesrc" target="_blank">Source</a>
 </dd>
 </div>
 <div id="ploc`gensym11">
-<dt><pre><span class="Identifier">ploc`gensym11</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim(207, 8)&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">ploc`gensym11</span> <span class="Other">=</span> <span class="StringLit">&quot;exceptionHandlingDocs.nim(208, 8)&quot;</span></pre></dt>
 <dd>
 
 
@@ -4191,7 +4193,7 @@ class="link-seesrc" target="_blank">Source</a>
 </dd>
 </div>
 <div id="ploc`gensym13">
-<dt><pre><span class="Identifier">ploc`gensym13</span> <span class="Other">=</span> <span class="StringLit">&quot;/home/poop/git/foss/nim/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim(210, 10)&quot;</span></pre></dt>
+<dt><pre><span class="Identifier">ploc`gensym13</span> <span class="Other">=</span> <span class="StringLit">&quot;exceptionHandlingDocs.nim(211, 10)&quot;</span></pre></dt>
 <dd>
 
 
@@ -4199,18 +4201,6 @@ class="link-seesrc" target="_blank">Source</a>
 href="https://github.com/noahehall/nim/tree/develop/../../../.choosenim/toolchains/nim-1.6.10/lib/system/assertions.nim#L44"
 class="link-seesrc" target="_blank">Source</a>
 &nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/../../../.choosenim/toolchains/nim-1.6.10/lib/system/assertions.nim#L44" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="poop3">
-<dt><pre><span class="Identifier">poop3</span> <span class="Other">=</span> <span class="StringLit">&quot;flush&quot;</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L122"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L122" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4223,6 +4213,18 @@ class="link-seesrc" target="_blank">Source</a>
 href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L145"
 class="link-seesrc" target="_blank">Source</a>
 &nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L145" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="woop3">
+<dt><pre><span class="Identifier">woop3</span> <span class="Other">=</span> <span class="StringLit">&quot;flush&quot;</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/variableGlobals.nim#L122"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/variableGlobals.nim#L122" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4249,9 +4251,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L149"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L153"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L149" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L153" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4285,9 +4287,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L124"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L128"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L124" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L128" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4297,9 +4299,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L131"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L135"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L131" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L135" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4309,9 +4311,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L161"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L165"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L161" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L165" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4322,9 +4324,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L163"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L167"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L163" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L167" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4334,14 +4336,14 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L89"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L93"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L89" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L93" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="did_i_poop,WhoPoop">
-<dt><pre><span class="Keyword">proc</span> <a href="#did_i_poop%2CWhoPoop"><span class="Identifier">did_i_poop</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Identifier">WhoPoop</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+<div id="did_i_woop,WhoWoop">
+<dt><pre><span class="Keyword">proc</span> <a href="#did_i_woop%2CWhoWoop"><span class="Identifier">did_i_woop</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Identifier">WhoWoop</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 
@@ -4352,8 +4354,8 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="dIdIpOoP,IPoop">
-<dt><pre><span class="Keyword">proc</span> <a href="#dIdIpOoP%2CIPoop"><span class="Identifier">dIdIpOoP</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Identifier">IPoop</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+<div id="dIdIwoop,IWoop">
+<dt><pre><span class="Keyword">proc</span> <a href="#dIdIwoop%2CIWoop"><span class="Identifier">dIdIwoop</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Identifier">IWoop</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 
@@ -4364,8 +4366,8 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
-<div id="didipoop,YouPoop">
-<dt><pre><span class="Keyword">proc</span> <a href="#didipoop%2CYouPoop"><span class="Identifier">didipoop</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Identifier">YouPoop</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+<div id="didiwoop,YouWoop">
+<dt><pre><span class="Keyword">proc</span> <a href="#didiwoop%2CYouWoop"><span class="Identifier">didiwoop</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Identifier">YouWoop</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 
@@ -4394,9 +4396,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L67"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L71"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L67" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L71" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4406,9 +4408,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L190"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L194"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L190" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L194" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4418,9 +4420,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L199"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L203"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L199" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L203" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4430,9 +4432,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L74"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L78"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L74" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L78" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4466,9 +4468,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L159"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L163"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L159" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L163" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4478,9 +4480,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L144"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L145"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L144" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L145" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4502,9 +4504,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L107"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L111"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L107" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L111" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4514,9 +4516,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L140"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L141"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L140" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L141" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4550,9 +4552,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L178"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L182"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L178" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L182" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4562,9 +4564,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L97"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L101"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L97" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L101" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4574,21 +4576,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L81"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L85"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L81" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="poop">
-<dt><pre><span class="Keyword">func</span> <a href="#poop"><span class="Identifier">poop</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L205"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L205" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L85" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4646,9 +4636,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L63"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L67"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L63" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L67" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4658,9 +4648,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L102"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L106"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L102" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L106" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4671,9 +4661,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L213"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L217"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L213" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L217" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4683,9 +4673,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L194"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L195"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L194" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L195" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4695,9 +4685,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L144"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L148"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L144" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L148" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4737,15 +4727,27 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
+<div id="woop">
+<dt><pre><span class="Keyword">func</span> <a href="#woop"><span class="Identifier">woop</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L209"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L209" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
 <div id="writeAccessToG">
 <dt><pre><span class="Keyword">proc</span> <a href="#writeAccessToG"><span class="Identifier">writeAccessToG</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">int</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L117"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/routines.nim#L121"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L117" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/routines.nim#L121" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -4935,7 +4937,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-03-01 04:15:28 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-03-01 08:59:14 UTC</small>
       </div>
     </div>
   </div>

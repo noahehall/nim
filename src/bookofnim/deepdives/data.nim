@@ -124,7 +124,7 @@ const
         "Content-Type": "application/json",
         "Vary": "Accept-Encoding",
         "Scheme": "https",
-        "Host": "www.poop.com",
+        "Host": "www.woop.com",
         "Status": 200,
         "Method": "Get"
       }
@@ -174,7 +174,7 @@ reqData["andreas"] = %* {"quotes": [
 ]}
 echoReqData()
 
-reqData{"noah", "quotes"} = %* ["poop"]; echoReqData()
+reqData{"noah", "quotes"} = %* ["woop"]; echoReqData()
 reqData{"noah", "quotes"}.add newJString("soup"); echoReqData()
 reqData.add "greg", newJObject(); echoReqData()
 reqData.delete "noah"; echoReqData()

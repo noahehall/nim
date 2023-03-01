@@ -218,18 +218,18 @@ echo "############################ metatypes"
 
 echo "############################ object"
 type
-  PrivatePoop = object
+  PrivateWoop = object
     i*: bool # field i dont think is visible because the type isnt
     times: int
-  PublicPoop* = object # <-- type is visible
+  PublicWoop* = object # <-- type is visible
     u: bool
     times: int
-let ipoop = PrivatePoop(i: false, times: 0)
-let upoop = PublicPoop(u: true, times: 100)
-let everyonepoop = upoop # deep copy
-echo "did ", ipoop
-echo "or did ", upoop
-echo "does ", everyonepoop
+let iwoop = PrivateWoop(i: false, times: 0)
+let uwoop = PublicWoop(u: true, times: 100)
+let everyonewoop = uwoop # deep copy
+echo "did ", iwoop
+echo "or did ", uwoop
+echo "does ", everyonewoop
 
 type
   Someone* = object
@@ -321,33 +321,33 @@ echo "############################ nil"
 # thus use in comparison to prove not nil
 
 echo "############################ inheritance: ref / ptr"
-type WhoPoop = ref object of RootObj
+type WhoWoop = ref object of RootObj
     name: string
-type YouPoop = ref object of WhoPoop
-type IPoop = ref object of WhoPoop
+type YouWoop = ref object of WhoWoop
+type IWoop = ref object of WhoWoop
 
 # overload procs by changing the signature
-proc did_i_poop(self: WhoPoop): string  =
+proc did_i_woop(self: WhoWoop): string  =
   "i dont know"
-proc didipoop(self: YouPoop): string =
+proc didiwoop(self: YouWoop): string =
   self.name & " is a filthy animal"
-proc dIdIpOoP(self: IPoop): string =
-  self.name & " has evolved passed pooping"
+proc dIdIwoop(self: IWoop): string =
+  self.name & " has evolved passed wooping"
 
 
 # this has to be `var` to enable adding subtypes
-# let throws error because You/IPoop arent WhoPoops
+# let throws error because You/IWoop arent WhoWoops
 # const doesnt work at all and im not sure why but its a compile time issue
-var sherlockpoops: seq[WhoPoop] = @[]
-sherlockpoops.add(YouPoop(name: "spiderman"))
-sherlockpoops.add(IPoop(name: "noah"))
-for criminal in sherlockpoops:
+var sherlockwoops: seq[WhoWoop] = @[]
+sherlockwoops.add(YouWoop(name: "spiderman"))
+sherlockwoops.add(IWoop(name: "noah"))
+for criminal in sherlockwoops:
   # echo $criminal doesnt work because $ doesnt exist on RootObj
-  echo criminal.dIDIPOOP
+  echo criminal.dIDIwoop
 
 # type checking
-if sherlockpoops[0] of YouPoop: echo "filthy animal" else: echo "snobby bourgeois"
-echo "is sherlockpoops[0] nil? ", isNil(sherlockpoops[0])
+if sherlockwoops[0] of YouWoop: echo "filthy animal" else: echo "snobby bourgeois"
+echo "is sherlockwoops[0] nil? ", isNil(sherlockwoops[0])
 
 echo "############################ dynamic dispatch"
 # copied from docs
@@ -394,7 +394,7 @@ new aaaa
 new bbbb
 # there both Units, but collide doesnt have an overload specifically for that
 # so which will be used? type preference occurs from left -> right
-collide(aaaa, bbbb) # output: 2
+# collide(aaaa, bbbb) # output: 2 # dunno, started failing on nim doc
 
 echo "############################ variants"
 # better example @see https://nim-lang.org/docs/json.html#JsonNodeObj

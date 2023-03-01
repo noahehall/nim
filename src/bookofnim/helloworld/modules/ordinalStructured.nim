@@ -176,19 +176,19 @@ echo "but there are ", lastWeek.len , " days in a week.. are you cheating on you
 echo "############################ sequences"
 # seq[T] generic type for constructing sequences
 var
-  poops: seq[int] = @[1,2,3,4]
-  spoop: seq[int] = newSeq[int](4) # empty but has length 4
+  woops: seq[int] = @[1,2,3,4]
+  swoop: seq[int] = newSeq[int](4) # empty but has length 4
   emptySeq: seq[int]
   seqEmpty = newSeq[int]()
 
-poops.add(5)
-echo poops
-spoop.add(poops)
-echo spoop.len
-echo "first ", poops[0]
-echo "first ", poops[0 ..< 1]
-echo "first 2", poops[0 .. 1]
-echo "last ", poops[^1]
+woops.add(5)
+echo woops
+swoop.add(woops)
+echo swoop.len
+echo "first ", woops[0]
+echo "first ", woops[0 ..< 1]
+echo "first 2", woops[0 .. 1]
+echo "last ", woops[^1]
 
 var me = "noAH"
 me[0 .. 1] = "NO"

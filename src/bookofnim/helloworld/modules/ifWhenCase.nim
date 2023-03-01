@@ -36,7 +36,7 @@ echo if 1 > 2: "its true" elif 2 < 1: "also true" else: "must be in a different 
 # another funny one
 if 11 < 2 or (11 == 11 and 'a' >= 'b' and not true):
   echo "or " & "true"
-elif "poop" == "boob": echo "boobs arent poops"
+elif "woop" == "poow": echo "poows arent woops"
 else: echo false
 
 echo "############################ when"

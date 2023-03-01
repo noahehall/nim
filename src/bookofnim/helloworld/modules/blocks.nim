@@ -9,46 +9,52 @@
 - like most other things, blocks can be expressions and assigned to a var
 - see loopIterator.nim for closureScope blocks
 
-do blocks
----------
+links
+-----
+- [block statements](https://nim-lang.org/docs/manual.html#statements-and-expressions-block-statement)
+- [block expressions](https://nim-lang.org/docs/manual.html#statements-and-expressions-block-expression)
+- [once template](https://nim-lang.org/docs/system.html#once.t%2Cuntyped)
+
+todos
+-----
+- have no clue where `do:` is within the documentation
+  - but from the context looks like its just an alias for block:
+
+## do blocks
 - you should probably read the docs on do blocks
 
-once blocks
------------
+## once blocks
 - are executed once, the first time their seen by the compiler
 ]##
 
 echo "############################ block"
 
-let sniper = "scope parent" ## \
-  ## is in the global scope
-block: ## \
-  ## creates new scope
-  let sniper = "scope private" ## local
+let sniper = "scope module" ## is in the module scope, global to this module
+block:
+  let sniper = "scope private" ## block scope, not visible to module
   echo sniper
-echo sniper ## global scoped
+echo sniper
 
-block poop:
+block myblock:
   var count = 0
   while true:
     while true:
       while count < 5:
-        echo "I took ", count, " poops"
+        echo "everyone say", count, " woop woop"
         count += 1
-        if count > 2: ## dont want to take too many
-          break poop
+        if count > 2:
+          break myblock
 
-var stupidChar = block:
-  var dumbChar = 'a'
-  if dumbChar in {'a', 'b', 'c'}:
-    echo "dumbChar is in alphabeta ", dumbChar
-  ord(dumbChar)
-echo "im running out of silly examples ", ord(stupidChar) == ord(true)
+let myChar = block:
+  var yourChar = 'a'
+  if yourChar in {'a', 'b', 'c'}:
+    echo "yourChar was found ", yourChar
+  yourChar # last expression is returned
+echo "can I sit in your char, i mean chair " & $myChar
 
 echo "############################ do"
 
-echo do:
-  "this ting"
+echo do: "this expression"
 
 echo "############################ once"
 
