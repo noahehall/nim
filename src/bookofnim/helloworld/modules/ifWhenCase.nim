@@ -49,6 +49,10 @@ elif system.hostOS == "macosx":
 else:
   echo "unknown operating system"
 
+when isMainModule:
+  # true if the module is compiled as the main file
+  # useful for embedding tests within the module
+  assert true == true
 
 var whichVerse:string = when 1 > 2: "real world" else: "twitter verse"
 echo "i live in the " & whichVerse

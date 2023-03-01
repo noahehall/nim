@@ -17,12 +17,14 @@
   - datetimes are singular e.g. month
   - intervals are plural e.g. months
 
-## links
+links
+-----
 - [date & times](https://nim-lang.org/docs/times.html)
 - [mono times](https://nim-lang.org/docs/monotimes.html)
 - [timezone names, but any unambiguous string can be used](https://en.wikipedia.org/wiki/Tz_database)
 
-## todos
+todos
+-----
 - time
   - high, low
   - newTimezone

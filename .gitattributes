@@ -1,6 +1,10 @@
-# lol neither of these remove the diff from github
-# but both work on the cli (sans icdiff)
-**/htmldocs/** binary
+# -diff ignores files on cli diff
+# binary interpret it as binary
+# linguist-generated=true ignore file in github PRs
+
 **/htmldocs/** -diff
-testresults.html binary
+**/htmldocs/** binary
+**/htmldocs/** linguist-generated=true
 testresults.html -diff
+testresults.html binary
+testresults.html linguist-generated=true

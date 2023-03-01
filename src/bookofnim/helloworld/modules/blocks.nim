@@ -18,10 +18,10 @@ links
 todos
 -----
 - have no clue where `do:` is within the documentation
-  - but from the context looks like its just an alias for block:
+  - but from the context looks like its just an alias for `block:`
 
 ## do blocks
-- you should probably read the docs on do blocks
+- see todos
 
 ## once blocks
 - are executed once, the first time their seen by the compiler

@@ -8,21 +8,8 @@
 - generally any proc that accepts a string, also accepts a char, and sometimes set[char]
 
 
-## todos
-- strutils
-  - BinaryPrefixMode, FloatFormatMode, SkipTable, addSep, align[left,right]
-  - center, cmpIgnoreStyle, dedent, indent, indentation, unindent
-  - nimIdentNormalize, validIdentifier
-  - format (like % +auto stringifies), normalize, spaces
-  - formatBiggestFloat, format[Eng, Float, Size], from[Bin, Hex, Oct]
-  - initSkipTable, insertSep, intToStr
-  - isAlpha[Ascii, Numeric],
-  - is[Digit, EmptyOrWhitespace, LowerAscii, SpaceAscii, UpperAscii]
-  - parse[Int, BiggestInt/Uint, BinInt, Bool, Enum, Float, HexInt, HexStr, OctInt, Uint]
-  - to[Bin,Hex,Oct,Octal]
-  - trimZeros,
-
-## links
+links
+-----
 - high impact
   - [str format](https://nim-lang.org/docs/strformat.html)
   - [str utils](https://nim-lang.org/docs/strutils.html)
@@ -39,6 +26,22 @@
   - [encodings](https://nim-lang.org/docs/encodings.html)
   - [edit distance](https://nim-lang.org/docs/editdistance.html)
   - [punycode](https://nim-lang.org/docs/punycode.html)
+
+
+todos
+-----
+- strutils
+  - BinaryPrefixMode, FloatFormatMode, SkipTable, addSep, align[left,right]
+  - center, cmpIgnoreStyle, dedent, indent, indentation, unindent
+  - nimIdentNormalize, validIdentifier
+  - format (like % +auto stringifies), normalize, spaces
+  - formatBiggestFloat, format[Eng, Float, Size], from[Bin, Hex, Oct]
+  - initSkipTable, insertSep, intToStr
+  - isAlpha[Ascii, Numeric],
+  - is[Digit, EmptyOrWhitespace, LowerAscii, SpaceAscii, UpperAscii]
+  - parse[Int, BiggestInt/Uint, BinInt, Bool, Enum, Float, HexInt, HexStr, OctInt, Uint]
+  - to[Bin,Hex,Oct,Octal]
+  - trimZeros,
 
 
 ## strformat

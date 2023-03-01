@@ -7,6 +7,15 @@
 - heterogenous containers of named fields of any type
 - enums are in ordinalStructured.nim
 
+links
+-----
+- [distinct type aliases](https://nim-lang.org/docs/manual.html#types-distinct-type)
+- [type bound operators](https://nim-lang.org/docs/manual.html#procedures-type-bound-operators)
+- [inheritance](https://nim-lang.org/docs/manual.html#type-relations)
+- [type classes](https://nim-lang.org/docs/manual.html#generics-type-classes
+- [implicit generics](https://nim-lang.org/docs/manual.html#generics-implicit-generics)
+
+
 todo
 ----
 - [symbol lookups in generics](https://nim-lang.org/docs/manual.html#generics-symbol-lookup-in-generics)
@@ -21,13 +30,6 @@ todo
 - probably should reread the typedesc docs
 - blah.reset an object to its default value
 
-links
------
-- [distinct type aliases](https://nim-lang.org/docs/manual.html#types-distinct-type)
-- [type bound operators](https://nim-lang.org/docs/manual.html#procedures-type-bound-operators)
-- [inheritance](https://nim-lang.org/docs/manual.html#type-relations)
-- [type classes](https://nim-lang.org/docs/manual.html#generics-type-classes
-- [implicit generics](https://nim-lang.org/docs/manual.html#generics-implicit-generics)
 
 ## tuples
 - lexical order of fields with few abstractions

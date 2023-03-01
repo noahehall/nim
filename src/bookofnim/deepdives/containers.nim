@@ -8,11 +8,9 @@
 - [custom types as keys require hash + == procs](https://nim-lang.org/docs/tables.html#basic-usage-hashing)
 - generally all table types have the same interface; CountTables a bit more
 
-## todos
-- tables
-  - [the commit for indexBy, scroll down for tests](https://github.com/nim-lang/Nim/commit/5498415f3b44048739c9b7116638824713d9c1df)
 
-## links
+links
+-----
 - other
   - [peter: option handling in nim](https://peterme.net/optional-value-handling-in-nim.html)
 - high impact
@@ -23,6 +21,11 @@
 - niche
   - [enum utils](https://nim-lang.org/docs/enumutils.html)
   - [shared tables](https://nim-lang.org/docs/sharedtables.html)
+
+todos
+-----
+- tables
+  - [the commit for indexBy, scroll down for tests](https://github.com/nim-lang/Nim/commit/5498415f3b44048739c9b7116638824713d9c1df)
 
 
 ## tables
