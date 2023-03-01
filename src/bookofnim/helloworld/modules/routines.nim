@@ -14,6 +14,10 @@
     - templates in templateMacros
     - other routine types are in this file
 
+links
+- other
+  - [peter: return tips n tricks](https://peterme.net/tips-and-tricks-with-implicit-return-in-nim.html)
+
 todos
 -----
 - [offsetOf](https://nim-lang.org/docs/system.html#offsetOf.t%2Ctypedesc%5BT%5D%2Cuntyped)
@@ -202,11 +206,11 @@ proc eko_anything(s: varargs[string, `$`]) =
 eKoAnyThInG 1, "threee", @[1,2,3]
 
 echo "############################ funcs (pure procs)"
-func poop(): string =
+func woop(): string =
   result = "yolo"
   result.add(" wurl") # <-- permitted because its a local var
 
-echo poop()
+echo woop()
 
 echo "############################ closures"
 # closures with proc notation
@@ -222,9 +226,9 @@ echo runFn("with another string") do (x: string) -> string: "another: " & x
 
 
 # anonymous proc
-# var someName = ( proc (params): returnType = "poop")
+# var someName = ( proc (params): returnType = "woop")
 # # alternatively you can import sugar to get the -> symbol
 # import sugar
-# var someName = (params) -> returnType => "poop"
+# var someName = (params) -> returnType => "woop"
 # # can also be used as a type for a proc param that accepts a fn
 # proc someName(someFn: (params) -> returnType) =

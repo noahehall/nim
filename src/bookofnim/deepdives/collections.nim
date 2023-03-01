@@ -133,10 +133,10 @@ echo "############################ sets impure"
 var mstringset = stringSet1
 proc echoMutatedSet(): void = echo "strset: ", $mstringset
 
-echo fmt"""true if item existed {mstringset.containsOrIncl "poop"=}"""; echoMutatedSet()
-echo fmt"""{mstringset.containsOrIncl "poop"=}"""; echoMutatedSet()
-echo fmt"""true if item missing {mstringset.missingOrExcl "poop"=}"""; echoMutatedSet()
-echo fmt"""{mstringset.missingOrExcl "poop"=}"""; echoMutatedSet()
-echo fmt"""silently removes key/hashset {{mstringset.excl "poop"}}"""
+echo fmt"""true if item existed {mstringset.containsOrIncl "woop"=}"""; echoMutatedSet()
+echo fmt"""{mstringset.containsOrIncl "woop"=}"""; echoMutatedSet()
+echo fmt"""true if item missing {mstringset.missingOrExcl "woop"=}"""; echoMutatedSet()
+echo fmt"""{mstringset.missingOrExcl "woop"=}"""; echoMutatedSet()
+echo fmt"""silently removes key/hashset {{mstringset.excl "woop"}}"""
 echo fmt"""adds key/hash if missing {{mstringset.incl "soup"}}"""
 echo fmt"""pop an arbitrary item, throws on empty set {mstringset.pop=}"""

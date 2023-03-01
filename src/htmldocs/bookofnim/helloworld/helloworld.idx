@@ -1,67 +1,6 @@
-poop1	bookofnim/helloworld/helloworld.html#poop1	helloworld: poop1	
-poop2	bookofnim/helloworld/helloworld.html#poop2	helloworld: poop2	
-poop3	bookofnim/helloworld/helloworld.html#poop3	helloworld: poop3	
-fac4	bookofnim/helloworld/helloworld.html#fac4	helloworld: fac4	
-`let`	bookofnim/helloworld/helloworld.html#let	helloworld: let	
-autoInt	bookofnim/helloworld/helloworld.html#autoInt	helloworld: autoInt	
-meaningOfLife	bookofnim/helloworld/helloworld.html#meaningOfLife,staticstring	helloworld: meaningOfLife(question: static string): auto	
-theAnswer	bookofnim/helloworld/helloworld.html#theAnswer	helloworld: theAnswer	
-typeSupportBlah	bookofnim/helloworld/helloworld.html#typeSupportBlah	helloworld: typeSupportBlah	
-d33pcopy	bookofnim/helloworld/helloworld.html#d33pcopy	helloworld: d33pcopy	
-myInt	bookofnim/helloworld/helloworld.html#myInt	helloworld: myInt	
-doubleFloat	bookofnim/helloworld/helloworld.html#doubleFloat,float	helloworld: doubleFloat(x: float): float	
-Option	bookofnim/helloworld/helloworld.html#Option	helloworld: Option	
-aa	bookofnim/helloworld/helloworld.html#aa	helloworld: aa	
-bb	bookofnim/helloworld/helloworld.html#bb	helloworld: bb	
-get	bookofnim/helloworld/helloworld.html#get.c,Option[T]	helloworld: get[T](x: Option[T]): T	
-toBool	bookofnim/helloworld/helloworld.html#toBool.c,int	helloworld: toBool(x: int): bool	
-somevar	bookofnim/helloworld/helloworld.html#somevar	helloworld: somevar	
-othervar	bookofnim/helloworld/helloworld.html#othervar	helloworld: othervar	
-MyType	bookofnim/helloworld/helloworld.html#MyType	helloworld: MyType	
-instance	bookofnim/helloworld/helloworld.html#instance	helloworld: instance	
-xxx	bookofnim/helloworld/helloworld.html#xxx	helloworld: xxx	
-y	bookofnim/helloworld/helloworld.html#y	helloworld: y	
-z	bookofnim/helloworld/helloworld.html#z	helloworld: z	
-x1	bookofnim/helloworld/helloworld.html#x1	helloworld: x1	
-y1	bookofnim/helloworld/helloworld.html#y1	helloworld: y1	
-z1	bookofnim/helloworld/helloworld.html#z1	helloworld: z1	
-sum	bookofnim/helloworld/helloworld.html#sum	helloworld: sum	
-b	bookofnim/helloworld/helloworld.html#b	helloworld: b	
-c	bookofnim/helloworld/helloworld.html#c	helloworld: c	
-negint	bookofnim/helloworld/helloworld.html#negint	helloworld: negint	
-num0	bookofnim/helloworld/helloworld.html#num0	helloworld: num0	
-num1	bookofnim/helloworld/helloworld.html#num1	helloworld: num1	
-num2	bookofnim/helloworld/helloworld.html#num2	helloworld: num2	
-amilliamilliamilli	bookofnim/helloworld/helloworld.html#amilliamilliamilli	helloworld: amilliamilliamilli	
-e	bookofnim/helloworld/helloworld.html#e	helloworld: e	
-f	bookofnim/helloworld/helloworld.html#f	helloworld: f	
-num3	bookofnim/helloworld/helloworld.html#num3	helloworld: num3	
-num4	bookofnim/helloworld/helloworld.html#num4	helloworld: num4	
-num5	bookofnim/helloworld/helloworld.html#num5	helloworld: num5	
-g	bookofnim/helloworld/helloworld.html#g	helloworld: g	
-h	bookofnim/helloworld/helloworld.html#h	helloworld: h	
-i	bookofnim/helloworld/helloworld.html#i	helloworld: i	
-l	bookofnim/helloworld/helloworld.html#l	helloworld: l	
-m	bookofnim/helloworld/helloworld.html#m	helloworld: m	
-globalint	bookofnim/helloworld/helloworld.html#globalint	helloworld: globalint	
-globalfloat	bookofnim/helloworld/helloworld.html#globalfloat	helloworld: globalfloat	
-n	bookofnim/helloworld/helloworld.html#n	helloworld: n	
-o	bookofnim/helloworld/helloworld.html#o	helloworld: o	
-p	bookofnim/helloworld/helloworld.html#p	helloworld: p	
-str1	bookofnim/helloworld/helloworld.html#str1	helloworld: str1	
-str2	bookofnim/helloworld/helloworld.html#str2	helloworld: str2	
-str3	bookofnim/helloworld/helloworld.html#str3	helloworld: str3	
-str4	bookofnim/helloworld/helloworld.html#str4	helloworld: str4	
-str5	bookofnim/helloworld/helloworld.html#str5	helloworld: str5	
-char1	bookofnim/helloworld/helloworld.html#char1	helloworld: char1	
-msg	bookofnim/helloworld/helloworld.html#msg	helloworld: msg	
-poop6	bookofnim/helloworld/helloworld.html#poop6	helloworld: poop6	
-flush	bookofnim/helloworld/helloworld.html#flush	helloworld: flush	
-multiline	bookofnim/helloworld/helloworld.html#multiline	helloworld: multiline	
-globalstring	bookofnim/helloworld/helloworld.html#globalstring	helloworld: globalstring	
-whichVerse	bookofnim/helloworld/helloworld.html#whichVerse	helloworld: whichVerse	
-numCase	bookofnim/helloworld/helloworld.html#numCase	helloworld: numCase	
-positiveOrNegative	bookofnim/helloworld/helloworld.html#positiveOrNegative,int	helloworld: positiveOrNegative(num: int): string	
+sniper	bookofnim/helloworld/helloworld.html#sniper	helloworld: sniper	
+myChar	bookofnim/helloworld/helloworld.html#myChar	helloworld: myChar	
+alreadyExecuted`gensym2	bookofnim/helloworld/helloworld.html#alreadyExecuted`gensym2	helloworld: alreadyExecuted`gensym2	
 goodcode	bookofnim/helloworld/helloworld.html#goodcode	helloworld: goodcode	
 badcode	bookofnim/helloworld/helloworld.html#badcode	helloworld: badcode	
 GoodApplications	bookofnim/helloworld/helloworld.html#GoodApplications	helloworld: GoodApplications	
@@ -75,6 +14,9 @@ loc`gensym11	bookofnim/helloworld/helloworld.html#loc`gensym11	helloworld: loc`g
 ploc`gensym11	bookofnim/helloworld/helloworld.html#ploc`gensym11	helloworld: ploc`gensym11	
 loc`gensym13	bookofnim/helloworld/helloworld.html#loc`gensym13	helloworld: loc`gensym13	
 ploc`gensym13	bookofnim/helloworld/helloworld.html#ploc`gensym13	helloworld: ploc`gensym13	
+whichVerse	bookofnim/helloworld/helloworld.html#whichVerse	helloworld: whichVerse	
+numCase	bookofnim/helloworld/helloworld.html#numCase	helloworld: numCase	
+positiveOrNegative	bookofnim/helloworld/helloworld.html#positiveOrNegative,int	helloworld: positiveOrNegative(num: int): string	
 `...`	bookofnim/helloworld/helloworld.html#....i,T,T	helloworld: `...`[T](a: T; b: T): T	
 countTo	bookofnim/helloworld/helloworld.html#countTo.i,int	helloworld: countTo(n: int): int	
 mycount	bookofnim/helloworld/helloworld.html#mycount.i,int,int	helloworld: mycount(a, b: int): int	
@@ -82,9 +24,6 @@ finishedIncorrect	bookofnim/helloworld/helloworld.html#finishedIncorrect	hellowo
 finishedCorrect	bookofnim/helloworld/helloworld.html#finishedCorrect	helloworld: finishedCorrect	
 intArr	bookofnim/helloworld/helloworld.html#intArr	helloworld: intArr	
 num6	bookofnim/helloworld/helloworld.html#num6	helloworld: num6	
-sniper	bookofnim/helloworld/helloworld.html#sniper	helloworld: sniper	
-stupidChar	bookofnim/helloworld/helloworld.html#stupidChar	helloworld: stupidChar	
-alreadyExecuted`gensym17	bookofnim/helloworld/helloworld.html#alreadyExecuted`gensym17	helloworld: alreadyExecuted`gensym17	
 nums	bookofnim/helloworld/helloworld.html#nums	helloworld: nums	
 nums4	bookofnim/helloworld/helloworld.html#nums4	helloworld: nums4	
 rangeArr	bookofnim/helloworld/helloworld.html#rangeArr	helloworld: rangeArr	
@@ -107,8 +46,8 @@ WeeklyFoodTracker	bookofnim/helloworld/helloworld.html#WeeklyFoodTracker	hellowo
 MonthlyFoodTracker	bookofnim/helloworld/helloworld.html#MonthlyFoodTracker	helloworld: MonthlyFoodTracker	
 onSundayIAte	bookofnim/helloworld/helloworld.html#onSundayIAte	helloworld: onSundayIAte	
 lastWeek	bookofnim/helloworld/helloworld.html#lastWeek	helloworld: lastWeek	
-poops	bookofnim/helloworld/helloworld.html#poops	helloworld: poops	
-spoop	bookofnim/helloworld/helloworld.html#spoop	helloworld: spoop	
+woops	bookofnim/helloworld/helloworld.html#woops	helloworld: woops	
+swoop	bookofnim/helloworld/helloworld.html#swoop	helloworld: swoop	
 emptySeq	bookofnim/helloworld/helloworld.html#emptySeq	helloworld: emptySeq	
 seqEmpty	bookofnim/helloworld/helloworld.html#seqEmpty	helloworld: seqEmpty	
 me	bookofnim/helloworld/helloworld.html#me	helloworld: me	
@@ -118,8 +57,8 @@ republicans	bookofnim/helloworld/helloworld.html#republicans	GangsOfAmerica.repu
 politicians	bookofnim/helloworld/helloworld.html#politicians	GangsOfAmerica.politicians	
 GangsOfAmerica	bookofnim/helloworld/helloworld.html#GangsOfAmerica	helloworld: GangsOfAmerica	
 PeopleOfAmerica	bookofnim/helloworld/helloworld.html#PeopleOfAmerica	helloworld: PeopleOfAmerica	
-AA	bookofnim/helloworld/helloworld.html#AA_2	ExplicitEnum.AA	
-BB	bookofnim/helloworld/helloworld.html#BB_2	ExplicitEnum.BB	
+AA	bookofnim/helloworld/helloworld.html#AA	ExplicitEnum.AA	
+BB	bookofnim/helloworld/helloworld.html#BB	ExplicitEnum.BB	
 ExplicitEnum	bookofnim/helloworld/helloworld.html#ExplicitEnum	helloworld: ExplicitEnum	
 north	bookofnim/helloworld/helloworld.html#north	Direction.north	
 east	bookofnim/helloworld/helloworld.html#east	Direction.east	
@@ -179,7 +118,7 @@ capitals	bookofnim/helloworld/helloworld.html#capitals	helloworld: capitals
 openArraySize	bookofnim/helloworld/helloworld.html#openArraySize,openArray[string]	helloworld: openArraySize(oa: openArray[string]): int	
 eko_all	bookofnim/helloworld/helloworld.html#eko_all,varargs[string]	helloworld: eko_all(s: varargs[string])	
 eko_anything	bookofnim/helloworld/helloworld.html#eko_anything,varargs[string,]	helloworld: eko_anything(s: varargs[string, `$`])	
-poop	bookofnim/helloworld/helloworld.html#poop	helloworld: poop(): string	
+woop	bookofnim/helloworld/helloworld.html#woop	helloworld: woop(): string	
 runFn	bookofnim/helloworld/helloworld.html#runFn,string,proc(string)	helloworld: runFn(a: string; fn: proc (x: string): string): string	
 myTable	bookofnim/helloworld/helloworld.html#myTable	helloworld: myTable	
 NirvStack	bookofnim/helloworld/helloworld.html#NirvStack	helloworld: NirvStack	
@@ -198,11 +137,11 @@ thizString	bookofnim/helloworld/helloworld.html#thizString	helloworld: thizStrin
 thisInt	bookofnim/helloworld/helloworld.html#thisInt	helloworld: thisInt	
 BiggerMoney	bookofnim/helloworld/helloworld.html#BiggerMoney	helloworld: BiggerMoney	
 BiggestMoney	bookofnim/helloworld/helloworld.html#BiggestMoney	helloworld: BiggestMoney	
-PrivatePoop	bookofnim/helloworld/helloworld.html#PrivatePoop	helloworld: PrivatePoop	
-PublicPoop	bookofnim/helloworld/helloworld.html#PublicPoop	helloworld: PublicPoop	
-ipoop	bookofnim/helloworld/helloworld.html#ipoop	helloworld: ipoop	
-upoop	bookofnim/helloworld/helloworld.html#upoop	helloworld: upoop	
-everyonepoop	bookofnim/helloworld/helloworld.html#everyonepoop	helloworld: everyonepoop	
+PrivateWoop	bookofnim/helloworld/helloworld.html#PrivateWoop	helloworld: PrivateWoop	
+PublicWoop	bookofnim/helloworld/helloworld.html#PublicWoop	helloworld: PublicWoop	
+iwoop	bookofnim/helloworld/helloworld.html#iwoop	helloworld: iwoop	
+uwoop	bookofnim/helloworld/helloworld.html#uwoop	helloworld: uwoop	
+everyonewoop	bookofnim/helloworld/helloworld.html#everyonewoop	helloworld: everyonewoop	
 Someone	bookofnim/helloworld/helloworld.html#Someone	helloworld: Someone	
 noah	bookofnim/helloworld/helloworld.html#noah	helloworld: noah	
 you	bookofnim/helloworld/helloworld.html#you	helloworld: you	
@@ -218,13 +157,13 @@ people	bookofnim/helloworld/helloworld.html#people	helloworld: people
 SomeoneRef	bookofnim/helloworld/helloworld.html#SomeoneRef	helloworld: SomeoneRef	
 OrRefObject	bookofnim/helloworld/helloworld.html#OrRefObject	helloworld: OrRefObject	
 people2	bookofnim/helloworld/helloworld.html#people2	helloworld: people2	
-WhoPoop	bookofnim/helloworld/helloworld.html#WhoPoop	helloworld: WhoPoop	
-YouPoop	bookofnim/helloworld/helloworld.html#YouPoop	helloworld: YouPoop	
-IPoop	bookofnim/helloworld/helloworld.html#IPoop_2	helloworld: IPoop	
-did_i_poop	bookofnim/helloworld/helloworld.html#did_i_poop,WhoPoop	helloworld: did_i_poop(self: WhoPoop): string	
-didipoop	bookofnim/helloworld/helloworld.html#didipoop,YouPoop	helloworld: didipoop(self: YouPoop): string	
-dIdIpOoP	bookofnim/helloworld/helloworld.html#dIdIpOoP,IPoop	helloworld: dIdIpOoP(self: IPoop): string	
-sherlockpoops	bookofnim/helloworld/helloworld.html#sherlockpoops	helloworld: sherlockpoops	
+WhoWoop	bookofnim/helloworld/helloworld.html#WhoWoop	helloworld: WhoWoop	
+YouWoop	bookofnim/helloworld/helloworld.html#YouWoop	helloworld: YouWoop	
+IWoop	bookofnim/helloworld/helloworld.html#IWoop_2	helloworld: IWoop	
+did_i_woop	bookofnim/helloworld/helloworld.html#did_i_woop,WhoWoop	helloworld: did_i_woop(self: WhoWoop): string	
+didiwoop	bookofnim/helloworld/helloworld.html#didiwoop,YouWoop	helloworld: didiwoop(self: YouWoop): string	
+dIdIwoop	bookofnim/helloworld/helloworld.html#dIdIwoop,IWoop	helloworld: dIdIwoop(self: IWoop): string	
+sherlockwoops	bookofnim/helloworld/helloworld.html#sherlockwoops	helloworld: sherlockwoops	
 Expression	bookofnim/helloworld/helloworld.html#Expression	helloworld: Expression	
 Literal	bookofnim/helloworld/helloworld.html#Literal	helloworld: Literal	
 PlusExpr	bookofnim/helloworld/helloworld.html#PlusExpr	helloworld: PlusExpr	
@@ -261,7 +200,68 @@ printFields	bookofnim/helloworld/helloworld.html#printFields,T	helloworld: print
 utherRecord	bookofnim/helloworld/helloworld.html#utherRecord	helloworld: utherRecord	
 fieldsPrint	bookofnim/helloworld/helloworld.html#fieldsPrint,T,T	helloworld: fieldsPrint[T: distinct tuple | object](first, second: T)	
 declareVariableWithType	bookofnim/helloworld/helloworld.html#declareVariableWithType.t,typedesc,typedesc	helloworld: declareVariableWithType(T: typedesc; value: T:type)	
-x`gensym40	bookofnim/helloworld/helloworld.html#x`gensym40	helloworld: x`gensym40	
+x`gensym45	bookofnim/helloworld/helloworld.html#x`gensym45	helloworld: x`gensym45	
+xxx	bookofnim/helloworld/helloworld.html#xxx	helloworld: xxx	
+y	bookofnim/helloworld/helloworld.html#y	helloworld: y	
+z	bookofnim/helloworld/helloworld.html#z	helloworld: z	
+x1	bookofnim/helloworld/helloworld.html#x1	helloworld: x1	
+y1	bookofnim/helloworld/helloworld.html#y1	helloworld: y1	
+z1	bookofnim/helloworld/helloworld.html#z1	helloworld: z1	
+sum	bookofnim/helloworld/helloworld.html#sum	helloworld: sum	
+b	bookofnim/helloworld/helloworld.html#b	helloworld: b	
+c	bookofnim/helloworld/helloworld.html#c	helloworld: c	
+negint	bookofnim/helloworld/helloworld.html#negint	helloworld: negint	
+num0	bookofnim/helloworld/helloworld.html#num0	helloworld: num0	
+num1	bookofnim/helloworld/helloworld.html#num1	helloworld: num1	
+num2	bookofnim/helloworld/helloworld.html#num2	helloworld: num2	
+amilliamilliamilli	bookofnim/helloworld/helloworld.html#amilliamilliamilli	helloworld: amilliamilliamilli	
+e	bookofnim/helloworld/helloworld.html#e	helloworld: e	
+f	bookofnim/helloworld/helloworld.html#f	helloworld: f	
+num3	bookofnim/helloworld/helloworld.html#num3	helloworld: num3	
+num4	bookofnim/helloworld/helloworld.html#num4	helloworld: num4	
+num5	bookofnim/helloworld/helloworld.html#num5	helloworld: num5	
+g	bookofnim/helloworld/helloworld.html#g	helloworld: g	
+h	bookofnim/helloworld/helloworld.html#h	helloworld: h	
+i	bookofnim/helloworld/helloworld.html#i	helloworld: i	
+l	bookofnim/helloworld/helloworld.html#l	helloworld: l	
+m	bookofnim/helloworld/helloworld.html#m	helloworld: m	
+globalint	bookofnim/helloworld/helloworld.html#globalint	helloworld: globalint	
+globalfloat	bookofnim/helloworld/helloworld.html#globalfloat	helloworld: globalfloat	
+n	bookofnim/helloworld/helloworld.html#n	helloworld: n	
+o	bookofnim/helloworld/helloworld.html#o	helloworld: o	
+p	bookofnim/helloworld/helloworld.html#p	helloworld: p	
+str1	bookofnim/helloworld/helloworld.html#str1	helloworld: str1	
+str2	bookofnim/helloworld/helloworld.html#str2	helloworld: str2	
+str3	bookofnim/helloworld/helloworld.html#str3	helloworld: str3	
+str4	bookofnim/helloworld/helloworld.html#str4	helloworld: str4	
+str5	bookofnim/helloworld/helloworld.html#str5	helloworld: str5	
+char1	bookofnim/helloworld/helloworld.html#char1	helloworld: char1	
+msg	bookofnim/helloworld/helloworld.html#msg	helloworld: msg	
+woop6	bookofnim/helloworld/helloworld.html#woop6	helloworld: woop6	
+flush	bookofnim/helloworld/helloworld.html#flush	helloworld: flush	
+multiline	bookofnim/helloworld/helloworld.html#multiline	helloworld: multiline	
+globalstring	bookofnim/helloworld/helloworld.html#globalstring	helloworld: globalstring	
+woop1	bookofnim/helloworld/helloworld.html#woop1	helloworld: woop1	
+woop2	bookofnim/helloworld/helloworld.html#woop2	helloworld: woop2	
+woop3	bookofnim/helloworld/helloworld.html#woop3	helloworld: woop3	
+fac4	bookofnim/helloworld/helloworld.html#fac4	helloworld: fac4	
+`let`	bookofnim/helloworld/helloworld.html#let	helloworld: let	
+autoInt	bookofnim/helloworld/helloworld.html#autoInt	helloworld: autoInt	
+meaningOfLife	bookofnim/helloworld/helloworld.html#meaningOfLife,staticstring	helloworld: meaningOfLife(question: static string): auto	
+theAnswer	bookofnim/helloworld/helloworld.html#theAnswer	helloworld: theAnswer	
+typeSupportBlah	bookofnim/helloworld/helloworld.html#typeSupportBlah	helloworld: typeSupportBlah	
+d33pcopy	bookofnim/helloworld/helloworld.html#d33pcopy	helloworld: d33pcopy	
+myInt	bookofnim/helloworld/helloworld.html#myInt	helloworld: myInt	
+doubleFloat	bookofnim/helloworld/helloworld.html#doubleFloat,float	helloworld: doubleFloat(x: float): float	
+Option	bookofnim/helloworld/helloworld.html#Option	helloworld: Option	
+aa	bookofnim/helloworld/helloworld.html#aa_2	helloworld: aa	
+bb	bookofnim/helloworld/helloworld.html#bb_2	helloworld: bb	
+get	bookofnim/helloworld/helloworld.html#get.c,Option[T]	helloworld: get[T](x: Option[T]): T	
+toBool	bookofnim/helloworld/helloworld.html#toBool.c,int	helloworld: toBool(x: int): bool	
+somevar	bookofnim/helloworld/helloworld.html#somevar	helloworld: somevar	
+othervar	bookofnim/helloworld/helloworld.html#othervar	helloworld: othervar	
+MyType	bookofnim/helloworld/helloworld.html#MyType	helloworld: MyType	
+instance	bookofnim/helloworld/helloworld.html#instance	helloworld: instance	
 yolo wurl: basic nim syntax	bookofnim/helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax	 yolo wurl: basic nim syntax	
 TLDR	bookofnim/helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-tldr	  TLDR	
 useful links	bookofnim/helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-useful-links	  useful links	
@@ -281,37 +281,12 @@ keywords	bookofnim/helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-ke
 statements	bookofnim/helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-statements	  statements	
 expressions	bookofnim/helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-expressions	  expressions	
 visibility	bookofnim/helloworld/helloworld.html#yolo-wurlcolon-basic-nim-syntax-visibility	  visibility	
-variables and globals	bookofnim/helloworld/helloworld.html#variables-and-globals	 variables and globals	
-TLDR	bookofnim/helloworld/helloworld.html#variables-and-globals-tldr	  TLDR	
-var/global todos	bookofnim/helloworld/helloworld.html#variables-and-globals-varslashglobal-todos	  var/global todos	
-var/global links	bookofnim/helloworld/helloworld.html#variables-and-globals-varslashglobal-links	  var/global links	
-var	bookofnim/helloworld/helloworld.html#variables-and-globals-var	  var	
-let	bookofnim/helloworld/helloworld.html#variables-and-globals-let	  let	
-const	bookofnim/helloworld/helloworld.html#variables-and-globals-const	  const	
-static	bookofnim/helloworld/helloworld.html#variables-and-globals-static	  static	
-eval	bookofnim/helloworld/helloworld.html#variables-and-globals-eval	  eval	
-stropping	bookofnim/helloworld/helloworld.html#variables-and-globals-stropping	  stropping	
-auto	bookofnim/helloworld/helloworld.html#variables-and-globals-auto	  auto	
-type casts	bookofnim/helloworld/helloworld.html#variables-and-globals-type-casts	  type casts	
-type coercions	bookofnim/helloworld/helloworld.html#variables-and-globals-type-coercions	  type coercions	
-type inspection	bookofnim/helloworld/helloworld.html#variables-and-globals-type-inspection	  type inspection	
-echo/repr	bookofnim/helloworld/helloworld.html#variables-and-globals-echoslashrepr	  echo/repr	
-simple types	bookofnim/helloworld/helloworld.html#simple-types	 simple types	
-TLDR	bookofnim/helloworld/helloworld.html#simple-types-tldr	  TLDR	
-links	bookofnim/helloworld/helloworld.html#simple-types-links	  links	
-string	bookofnim/helloworld/helloworld.html#simple-types-string	  string	
-char	bookofnim/helloworld/helloworld.html#simple-types-char	  char	
-byte	bookofnim/helloworld/helloworld.html#simple-types-byte	  byte	
-bool	bookofnim/helloworld/helloworld.html#simple-types-bool	  bool	
-string/char procs	bookofnim/helloworld/helloworld.html#simple-types-stringslashchar-procs	  string/char procs	
-number procs	bookofnim/helloworld/helloworld.html#simple-types-number-procs	  number procs	
-number types	bookofnim/helloworld/helloworld.html#simple-types-number-types	  number types	
-misc procs	bookofnim/helloworld/helloworld.html#simple-types-misc-procs	  misc procs	
-branching: if when case	bookofnim/helloworld/helloworld.html#branchingcolon-if-when-case	 branching: if when case	
-TLDR	bookofnim/helloworld/helloworld.html#branchingcolon-if-when-case-tldr	  TLDR	
-branching todos	bookofnim/helloworld/helloworld.html#branchingcolon-if-when-case-branching-todos	  branching todos	
-when	bookofnim/helloworld/helloworld.html#branchingcolon-if-when-case-when	  when	
-case	bookofnim/helloworld/helloworld.html#branchingcolon-if-when-case-case	  case	
+blocks	bookofnim/helloworld/helloworld.html#blocks	 blocks	
+TLDR	bookofnim/helloworld/helloworld.html#blocks-tldr	  TLDR	
+links	bookofnim/helloworld/helloworld.html#blocks-links	  links	
+todos	bookofnim/helloworld/helloworld.html#blocks-todos	  todos	
+do blocks	bookofnim/helloworld/helloworld.html#blocks-do-blocks	  do blocks	
+once blocks	bookofnim/helloworld/helloworld.html#blocks-once-blocks	  once blocks	
 exception handling, debugging (todo), documentation	bookofnim/helloworld/helloworld.html#exception-handling-debugging-todo-documentation	 exception handling, debugging (todo), documentation	
 TLDR	bookofnim/helloworld/helloworld.html#exception-handling-debugging-todo-documentation-tldr	  TLDR	
 todos	bookofnim/helloworld/helloworld.html#exception-handling-debugging-todo-documentation-todos	  todos	
@@ -320,16 +295,17 @@ Exception Handling	bookofnim/helloworld/helloworld.html#exception-handling-debug
 Defect types	bookofnim/helloworld/helloworld.html#exception-handling-debugging-todo-documentation-defect-types	  Defect types	
 Error (exception) types	bookofnim/helloworld/helloworld.html#exception-handling-debugging-todo-documentation-error-exception-types	  Error (exception) types	
 documentation	bookofnim/helloworld/helloworld.html#exception-handling-debugging-todo-documentation-documentation	  documentation	
+branching: if when case	bookofnim/helloworld/helloworld.html#branchingcolon-if-when-case	 branching: if when case	
+TLDR	bookofnim/helloworld/helloworld.html#branchingcolon-if-when-case-tldr	  TLDR	
+branching todos	bookofnim/helloworld/helloworld.html#branchingcolon-if-when-case-branching-todos	  branching todos	
+when	bookofnim/helloworld/helloworld.html#branchingcolon-if-when-case-when	  when	
+case	bookofnim/helloworld/helloworld.html#branchingcolon-if-when-case-case	  case	
 loops and iterators	bookofnim/helloworld/helloworld.html#loops-and-iterators	 loops and iterators	
 TLDR	bookofnim/helloworld/helloworld.html#loops-and-iterators-tldr	  TLDR	
 links	bookofnim/helloworld/helloworld.html#loops-and-iterators-links	  links	
 todos	bookofnim/helloworld/helloworld.html#loops-and-iterators-todos	  todos	
 loop/iterator related procs	bookofnim/helloworld/helloworld.html#loops-and-iterators-loopslashiterator-related-procs	  loop/iterator related procs	
 iterators	bookofnim/helloworld/helloworld.html#loops-and-iterators-iterators	  iterators	
-blocks	bookofnim/helloworld/helloworld.html#blocks	 blocks	
-TLDR	bookofnim/helloworld/helloworld.html#blocks-tldr	  TLDR	
-do blocks	bookofnim/helloworld/helloworld.html#blocks-do-blocks	  do blocks	
-once blocks	bookofnim/helloworld/helloworld.html#blocks-once-blocks	  once blocks	
 ordinals and structured	bookofnim/helloworld/helloworld.html#ordinals-and-structured	 ordinals and structured	
 TLDR	bookofnim/helloworld/helloworld.html#ordinals-and-structured-tldr	  TLDR	
 links	bookofnim/helloworld/helloworld.html#ordinals-and-structured-links	  links	
@@ -370,3 +346,29 @@ variants	bookofnim/helloworld/helloworld.html#tuples-objects-and-tables-variants
 recursive types	bookofnim/helloworld/helloworld.html#tuples-objects-and-tables-recursive-types	  recursive types	
 type classes	bookofnim/helloworld/helloworld.html#tuples-objects-and-tables-type-classes	  type classes	
 typedesc	bookofnim/helloworld/helloworld.html#tuples-objects-and-tables-typedesc	  typedesc	
+simple types	bookofnim/helloworld/helloworld.html#simple-types	 simple types	
+TLDR	bookofnim/helloworld/helloworld.html#simple-types-tldr	  TLDR	
+links	bookofnim/helloworld/helloworld.html#simple-types-links	  links	
+string	bookofnim/helloworld/helloworld.html#simple-types-string	  string	
+char	bookofnim/helloworld/helloworld.html#simple-types-char	  char	
+byte	bookofnim/helloworld/helloworld.html#simple-types-byte	  byte	
+bool	bookofnim/helloworld/helloworld.html#simple-types-bool	  bool	
+string/char procs	bookofnim/helloworld/helloworld.html#simple-types-stringslashchar-procs	  string/char procs	
+number procs	bookofnim/helloworld/helloworld.html#simple-types-number-procs	  number procs	
+number types	bookofnim/helloworld/helloworld.html#simple-types-number-types	  number types	
+misc procs	bookofnim/helloworld/helloworld.html#simple-types-misc-procs	  misc procs	
+variables and globals	bookofnim/helloworld/helloworld.html#variables-and-globals	 variables and globals	
+TLDR	bookofnim/helloworld/helloworld.html#variables-and-globals-tldr	  TLDR	
+var/global todos	bookofnim/helloworld/helloworld.html#variables-and-globals-varslashglobal-todos	  var/global todos	
+var/global links	bookofnim/helloworld/helloworld.html#variables-and-globals-varslashglobal-links	  var/global links	
+var	bookofnim/helloworld/helloworld.html#variables-and-globals-var	  var	
+let	bookofnim/helloworld/helloworld.html#variables-and-globals-let	  let	
+const	bookofnim/helloworld/helloworld.html#variables-and-globals-const	  const	
+static	bookofnim/helloworld/helloworld.html#variables-and-globals-static	  static	
+eval	bookofnim/helloworld/helloworld.html#variables-and-globals-eval	  eval	
+stropping	bookofnim/helloworld/helloworld.html#variables-and-globals-stropping	  stropping	
+auto	bookofnim/helloworld/helloworld.html#variables-and-globals-auto	  auto	
+type casts	bookofnim/helloworld/helloworld.html#variables-and-globals-type-casts	  type casts	
+type coercions	bookofnim/helloworld/helloworld.html#variables-and-globals-type-coercions	  type coercions	
+type inspection	bookofnim/helloworld/helloworld.html#variables-and-globals-type-inspection	  type inspection	
+echo/repr	bookofnim/helloworld/helloworld.html#variables-and-globals-echoslashrepr	  echo/repr	

@@ -52,10 +52,8 @@ xcuserdata/
 /tools/dochack/dochack.js
 /pkgstemp/**/*
 
-
 /testresults.json
 testament.db
-
 
 /csources
 /csources_v1
@@ -80,7 +78,6 @@ tweeter_test.db
 /tests/ic/*_temp.nim
 /tests/navigator/*_temp.nim
 
-
 /outputExpected.txt
 /outputGotten.txt
 /t15148.txt
@@ -104,5 +101,3 @@ tweeter_test.db
 *.deps
 nimble.develop
 nimble.paths
-bookofnim.dot
-bookofnim.png

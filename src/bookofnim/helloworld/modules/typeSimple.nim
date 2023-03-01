@@ -189,7 +189,7 @@ echo "on is an alias for ", $on
 
 echo "############################ strings"
 let
-  str1 = "pooper scooper"
+  str1 = "wooper scooper"
   str2 = """
     long
     string
@@ -208,13 +208,13 @@ msg.add(" wurl") # modifies the string in place
 echo msg, "has length ", len msg
 echo if 'y' in msg: "y in yolo" else: "must be a different universe"
 let
-  poop6 = "flush\n\n\n\n\n\nescapes are interpreted"
+  woop6 = "flush\n\n\n\n\n\nescapes are interpreted"
   flush = r"raw string, escapes arent interpreted"
   multiline = """
     can be split on multiple lines,
     escape sequences arent interpreted
     """
-echo poop6, flush, multiline
+echo woop6, flush, multiline
 echo "cmp a, z ", cmp("a", "z")
 echo "cmp z, a ", cmp("z", "a")
 echo "cmp a, a ", cmp("a", "a")

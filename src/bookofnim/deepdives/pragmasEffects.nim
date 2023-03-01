@@ -27,7 +27,7 @@ todo
   {.exportc: "or-use-this-specific-name".} # read the docs
   {.exportc.} # disable proc name mangling when compiled
   {.global.} # turns a locally scoped var into a global, e.g. var x: string {.global.} = "global"
-  {.hint[POOP]:on/off.} # can also be set via cli flags
+  {.hint[woop]:on/off.} # can also be set via cli flags
   {.inheritable.} # check the docs: create alternative RootObj
   {.inject.} # dunno, something to do with symbol visibility
   {.inline.} # check the docs: inlines a procedure
@@ -39,7 +39,7 @@ todo
   {.size: ...} # check the docs
   {.thread.} # informs the compiler this fn is meant for execution on a new thread
   {.threadvar.} # informs the compiler this var should be local to a thread
-  {.warning[POOP]:on/off.} #  can also be set via cli flags
+  {.warning[woop]:on/off.} #  can also be set via cli flags
 
 ## effects
 

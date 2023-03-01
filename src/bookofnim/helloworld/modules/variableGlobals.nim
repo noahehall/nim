@@ -6,7 +6,7 @@
 ## TLDR
 - catchall for global keywords/procs/types/etc not specified in other files
 - anything like `BLAH=` can be written `BLAH =`
-  - the former enables you to define/overload operators via 'proc `poop=`[bloop](soop): doop = toot'
+  - the former enables you to define/overload operators via 'proc `woop=`[bloop](soop): doop = toot'
 - converts are listed here because their purpose is implicit type coercion
 - additional type features are covered in tupleObjectTable.nim
 - you can call clear on pretty much anything
@@ -117,15 +117,15 @@ var/global links
 
 
 echo "############################ variables"
-var poop1 = "flush"
-let poop2 = "hello"
-const poop3 = "flush"
+var woop1 = "flush"
+let woop2 = "hello"
+const woop3 = "flush"
 
 # docs
 const fac4 = (var x = 1; for i in 1..4: x *= i; x) ## \
   ## notice the use of semi colins to have multiple statements on a single line
 
-echo poop1, poop2, poop3, fac4
+echo woop1, woop2, woop3, fac4
 
 let `let` = "stropping"
 echo(`let`) ## stropping enables keywords as identifiers

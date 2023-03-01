@@ -7,12 +7,9 @@
 ## TLDR
 - only uses the implicitly imported system
   - dont import (system, threads, channel) directly, theres some compiler magic to makem work
-  - threads, channels, templates, macros, effects, pragmas, os, io and tests are in deepdives
-- in general [the source code](https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules) has multiple examples
-  - we dont use runnableExamples because we want to run on the cmd line & in vscode
-  - however real code should use runnableExamples for docs
+  - threads, channels, templates, macros, effects, pragmas, os and io are in deepdives
 - newer nim versions seems to be getting more strict/better at catching programmer errors
-  - this repo uses nim 1.6.10
+  - this repo uses nim 1.6.10 and breaks on later versions
 - you should expect everything in nim is heavily overloaded
   - hence only simple syntax is shown and shouldnt be considered comprehensive in any form
 
@@ -26,17 +23,7 @@ useful links
 
 todos
 -----
-- somehow we've skipped a bunch of stuff (maybe there in deepdives as links?)
-  - cant get too far in nim without reading through the nimble github readme
 - nim in action: copy all your notes starting from pg 40
-- https://peterme.net/asynchronous-programming-in-nim.html
-- https://peterme.net/handling-files-in-nim.html
-- https://peterme.net/multitasking-in-nim.html
-- https://peterme.net/optional-value-handling-in-nim.html
-- https://peterme.net/tips-and-tricks-with-implicit-return-in-nim.html
-- https://peterme.net/using-nimscript-as-a-configuration-language-embedding-nimscript-pt-1.html
-- https://peterme.net/how-to-embed-nimscript-into-a-nim-program-embedding-nimscript-pt-2.html
-- https://peterme.net/creating-condensed-shared-libraries-embedding-nimscript-pt-3.html
 
 ## std library
 - pure libraries: do not depend on external *.dll/lib*.so binary
@@ -257,14 +244,14 @@ visibility
 
 
 
-include modules/[
-  variableGlobals,
-  typeSimple,
-  ifWhenCase,
-  exceptionHandlingDocs,
-  loopsIterator,
-  blocks,
-  ordinalStructured,
-  routines,
-  tupleObjectTable
+include modules / [
+  blocks, ## block statements,
+  exceptionHandlingDocs, ## exceptions, assertions, doc comments, try/catch
+  ifWhenCase, ## if when and case statements
+  loopsIterator, ## loops and iterators
+  ordinalStructured, ## ordinals and collections
+  routines, ## main types of procs
+  tupleObjectTable, ## tuples, objects + inheritance, tables
+  typeSimple, ## nim primitive
+  variableGlobals, ## const, let, var; catchall for globals
 ]

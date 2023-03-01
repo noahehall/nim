@@ -13,6 +13,8 @@
   - [the commit for indexBy, scroll down for tests](https://github.com/nim-lang/Nim/commit/5498415f3b44048739c9b7116638824713d9c1df)
 
 ## links
+- other
+  - [peter: option handling in nim](https://peterme.net/optional-value-handling-in-nim.html)
 - high impact
   - [tables aka dictionary](https://nim-lang.org/docs/tables.html)
   - [string tables](https://nim-lang.org/docs/strtabs.html)
@@ -118,7 +120,7 @@ const
   baseTable = {"fname": "noah", "lname": "hall"} ## system table
   hashTable = baseTable.toTable ## newTable
   orderededTable = baseTable.toOrderedTable ## [('a', 5), ('b', 9)].toOrderedTable
-  countTable = "pooperscooper".toCountTable ## anyOpenArrayLikeThing.toCountTable
+  countTable = "wooperscooper".toCountTable ## anyOpenArrayLikeThing.toCountTable
 
 
 echo "############################ pure tables"
@@ -204,7 +206,7 @@ echo fmt"key % obj -> $ROLE $TRUSTED" % authnz
 
 echo fmt"""{"ROLE" in authnz=}"""
 echo fmt"""{"RoLe" notin authnz=}"""
-echo fmt"""{authnz.hasKey "poop"=}"""
+echo fmt"""{authnz.hasKey "woop"=}"""
 echo fmt"""{authnz.getOrDefault "RoLe", "ANON"=}"""
 
 

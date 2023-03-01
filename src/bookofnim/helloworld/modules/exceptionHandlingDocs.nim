@@ -6,9 +6,9 @@
 ## TLDR
 - all custom exceptions should ref a specific error/CatchableERror/Defect/and lastly Exception
 - Exception is the base type for CatachableError (exceptions), Defect (non catchable)
-- raise keyword the only way to raise (throw) an exception
+- raise keyword for raising (throwing) an exception
   - system.Exception provides the interface
-  - have to be allocated on the heap (var) because their lifetime is unknown
+  - have to be allocated on the heap because their lifetime is unknown
 - docgen
   - having `*` after - (like on this line) will break htmldocs rst parser
     - you must escape it with backticks (see above) or backslash \*
@@ -21,7 +21,6 @@ todos
 -----
 - reread the assertion docs and capture the info
 .. code-block:: Nim
-  # bunch of todos
   errorMessageWriter (var) called instead of stdmsg.write when printing stacktrace
   onUnhandledException (var) override default behavior: write stacktrace to stderr then quit(1)
   outOfMemHook (var) override default behavior: write err msg then terminate (see docs for example)
@@ -33,19 +32,21 @@ todos
 
 links
 -----
-- [assertions](https://nim-lang.org/docs/assertions.html)
-- [defect doc](https://nim-lang.org/docs/system.html#Defect)
-- [docgen](https://nim-lang.org/docs/docgen.html)
-- [drnim](https://nim-lang.org/docs/drnim.html)
-- [embedding runnable examples](https://nim-lang.org/docs/system.html#runnableExamples%2Cstring%2Cuntyped)
-- [exception doc](https://nim-lang.org/docs/system.html#Exception)
-- [exception hierarchy doc](https://nim-lang.org/docs/manual.html#exception-handling-exception-hierarchy)
-- [nim reStructuredText & markdown](https://nim-lang.org/docs/rst.html)
-- [nimscript compatibility tests](https://github.com/nim-lang/Nim/blob/devel/tests/test_nimscript.nims)
-- [segfaults module](https://nim-lang.org/docs/segfaults.html)
-- [status exception handling docs](https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling)
-- [system exceptions you can extend from](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim)
-- [use this restructuredText wiki](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
+- other
+  - [status exception handling docs](https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling)
+  - [system exceptions you can extend from](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim)
+  - [restructuredText wiki](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
+- high impact
+  - [assertions](https://nim-lang.org/docs/assertions.html)
+  - [defect doc](https://nim-lang.org/docs/system.html#Defect)
+  - [docgen](https://nim-lang.org/docs/docgen.html)
+  - [embedding runnable examples](https://nim-lang.org/docs/system.html#runnableExamples%2Cstring%2Cuntyped)
+  - [exception doc](https://nim-lang.org/docs/system.html#Exception)
+  - [exception hierarchy doc](https://nim-lang.org/docs/manual.html#exception-handling-exception-hierarchy)
+  - [nim reStructuredText & markdown](https://nim-lang.org/docs/rst.html)
+- niche
+  - [drnim](https://nim-lang.org/docs/drnim.html)
+  - [segfaults module](https://nim-lang.org/docs/segfaults.html)
 
 ## Exception Handling
 - interesting stuff
@@ -95,9 +96,9 @@ Error (exception) types
 - both --- and === need to be the same length of whatever they're underlining
   - === creates an underline
   - --- creates a subtitle and appears undearneath the previous title in the sidebar
-- `low(openArray) <#low,openArray[T]>`_  creates an html #fragment
+- `low(openArray) <#low,openArray[T]>`_  creates an html #fragment ?
 - starting a line with .. code-block:: Nim creates a codeblock for stuff indented beneath it
-- starting a line with .. image:: poop.com/image.gif creates an image
+- starting a line with .. image:: woopwoop.com/image.gif creates an image
 - include another doc file .. include:: ./system_overview.rst
 - [^ check how it looks](https://raw.githubusercontent.com/nim-lang/Nim/version-1-6/lib/system_overview.rst)
 
@@ -113,7 +114,7 @@ type GoodApplications* = object
   ## especially things like custom types
   ## may need additional abbreviations to describe their purpose
   pubfield*: string ## is included in docs
-  prvfield: string  ## also included since goodapplications is exported
+  prvfield*: string  ## also included since goodapplications is exported
 
 echo "############################ documentation: runnableExamples"
 
@@ -123,7 +124,7 @@ runnableExamples:
   ## - also ensures only exported symbols exist
   var iam = GoodApplications(pubfield: "yes u are", prvfield: "I know I am") ## \
     ## example of creating a good application
-  repr iam
+  discard repr iam
 
 
 echo "############################ Exceptions "

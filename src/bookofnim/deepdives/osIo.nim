@@ -465,14 +465,14 @@ echo "############################ os ram"
 
 echo fmt"""{getEnv "USER"=}"""
 echo fmt"""{existsEnv "woobidedoobide"=}"""
-echo fmt"""{getEnv "woobidedoobide", "poop"=}"""
+echo fmt"""{getEnv "woobidedoobide", "woop"=}"""
 "ENV_PUTTED".putEnv "1"
 echo fmt"""ENV_PUTTED.putEnv "1" -> {getEnv "ENV_PUTTED"=}"""
 
 let env = collect:
   ## should probably be a strtabs
   for k,v in envPairs():
-    if "poop" notin v and v == $1: {k: v}
+    if "woop" notin v and v == $1: {k: v}
 echo fmt"filtered collect envPairs() {env=}"
 
 echo "############################ os/system exec/cmds/process"

@@ -113,7 +113,7 @@ echo fmt"""case sensitive {oneline.rfind "string"=}"""
 echo fmt"""{oneline.endsWith "string"=}"""
 echo fmt"""{oneline.startsWith "this"=}"""
 echo fmt"""if subr starts at index {oneline.continuesWith("one", 10)=}"""
-echo fmt"""index of first match {abbrev("poop", ["soup", "pooperscooper"])=}"""
+echo fmt"""index of first match {abbrev("woop", ["soup", "wooperscooper"])=}"""
 echo fmt"""expects varargs[tuple] {oneline.multiReplace(("s","z"))=}"""
 echo fmt"""{oneline.replace 's', 'z'=}"""
 
