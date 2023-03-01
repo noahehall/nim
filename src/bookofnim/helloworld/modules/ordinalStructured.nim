@@ -13,17 +13,8 @@
 - ordinals: enums, integers, char, bool, subranges
   - integers, chars and bool are in typeSimple
   - are countable and ordered, with a smallest & highest value
-- types
-  - array[n, T] fixed-length dimensionally homogeneous
-  - cstringArray
-  - openArray[T] a procs parameter that accepts an array/seq of any size but only of 1 dimension
-  - Ordinal[T] generic ordinal type
-  - range[T] generic constructor for range
-  - seq[T] dynamic-length dimensionally homogeneous
-  - set[T] generic set constructor
-  - SomeOrdinal
-  - UncheckedArray[T] array with no bounds checking for implmenting customized flexibly sized arrays
-  - varargs[T] an openarray paramter that accepts a variable number of args in a procedure
+- FYI about low & high procs
+  - should only be used with types not values
 
 links
 -----
@@ -70,12 +61,25 @@ links
 - valuable for catching / preventing underflows.
 - e.g. Nims natural type: type Natural = range[0 .. high(int)]
   - should be used to guard against negative numbers
+  - you can use Natural.low to check for 0
 
 ## slice
 - provides a range of values matching the type required by the operator/proc
 - same syntax as slice but different type (Slice) & context
 - collection types define operators/procs which accept slices in place of ranges
   - the operator/proc determines the type of values they except in a slice
+
+## ordinal types
+- array[n, T] fixed-length dimensionally homogeneous
+- cstringArray
+- openArray[T] a procs parameter that accepts an array/seq of any size but only of 1 dimension
+- Ordinal[T] generic ordinal type
+- range[T] generic constructor for range
+- seq[T] dynamic-length dimensionally homogeneous
+- set[T] generic set constructor
+- SomeOrdinal
+- UncheckedArray[T] array with no bounds checking for implmenting customized flexibly sized arrays
+- varargs[T] an openarray paramter that accepts a variable number of args in a procedure
 
 ## ordinals/structured interface
 - immutable ops
@@ -112,7 +116,7 @@ links
   - is(x, y) true if value x of type y
   - isnot(x,y) opposite of is, equivalent to not(x is type)
   - len	Return the length
-  - low(x) lowest possible value/index
+  - low(x) lowest possible value/index s
   - varargsLen the number of variadic arguments in x
   - in/notin
 - set procs
@@ -132,12 +136,13 @@ links
 ]##
 
 echo "############################ arrays"
-var
-  nums: array[4, int] = [1,9,8,5] # 4 items
+var # vars dont need to be initialized to a value
   nums4: array[0 .. 3, int] # 4 items
   rangeArr: array[0..10, int] # max 11 items
-  smun = [5,8,9,1]
   emptyArr: array[4, int]
+let
+  nums: array[4, int] = [1,9,8,5] # 4 items
+  smun = [5,8,9,1]
   # this allows you to convert an ordinal (e.g. an enum) to an array
   # e.g. declaring an array x: array[MyEnum, string] = [x, y, z]
   arrayWithRange: array[0..5, string] = ["one", "two", "three", "four", "five", "six"]
@@ -156,7 +161,8 @@ type
     proteinshake, ramen, ramentWithMeet, pnutbutteryjelly
   Eating = array[breakfast .. sweettooth, WhatToEat] # enum indexed
   WeeklyFoodTracker = array[0 .. 6, Eating] # integer indexed
-  MonthlyFoodTracker = array[0 .. 3, array[0 .. 6, array[breakfast .. sweettooth, WhatToEat]]] # oneliner, if only months were exactly 4 weeks
+  MonthlyFoodTracker = array[0 .. 3, array[0 .. 6, array[breakfast .. sweettooth, WhatToEat]]]
+    # ^ oneliner, if only months were exactly 4 weeks
 
 var onSundayIAte: Eating
 onSundayIAte[breakfast] = proteinshake
@@ -202,12 +208,15 @@ echo "copy seq then append a single el and return new seq ", globalSeq & 4
 echo "copy seq then prepend a single el and return new seq ", 0 & globalseq
 
 echo "############################ enums"
-type GangsOfAmerica = enum
-  democrats, republicans, politicians # order matters: assigned as 0,1,2
+type AmericaOfJobs = enum
+  nineToFives, fiveToNines, twentyFourSeven # order matters: assigned as 0,1,2
 
 # you can assign custom string values for use with $ operator
 type PeopleOfAmerica {.pure.} = enum
-  coders = "think i am", teachers = "pretend to be", farmers = "prefer to be", scientists = "trying to be"
+  coders = "think i am",
+  teachers = "pretend to be",
+  farmers = "prefer to be",
+  scientists = "trying to be"
 
 # you can assign both the ordinal and string value
 type ExplicitEnum = enum
@@ -215,13 +224,13 @@ type ExplicitEnum = enum
   BB = (1, "letter BB")
 
 echo ExplicitEnum.AA # letter AA
-echo politicians # impure so doesnt need to be qualified
+echo twentyFourSeven # impure so doesnt need to be qualified
 echo PeopleOfAmerica.coders # coders needs to be qualified cuz its labeled pure
 
 # enum iteration via ord
-for i in ord(low(GangsOfAmerica))..
-        ord(high(GangsOfAmerica)):
-  echo GangsOfAmerica(i), " index is: ", i
+for i in ord(low(AmericaOfJobs))..
+        ord(high(AmericaOfJobs)):
+  echo AmericaOfJobs(i), " index is: ", i
 # iteration via enum
 # this echos the custom strings
 for peeps in PeopleOfAmerica.coders .. PeopleOfAmerica.scientists:
@@ -258,7 +267,7 @@ echo MySubrange
 var thisRange: range[0..5]
 echo "thisRange bounds = ", thisRange.low, "..", thisRange.high
 # for i in thisRange:  doesnt work, you need to use low & and high
-for i in low(thisRange)..high(thisRange): # dunno, works but says deprecated
+for i in thisRange..thisRange: # dunno, works but says deprecated
   echo "got range to work ", i
 
 

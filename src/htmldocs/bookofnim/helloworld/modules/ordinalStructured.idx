@@ -1,8 +1,8 @@
-nums	bookofnim/helloworld/modules/ordinalStructured.html#nums	ordinalStructured: nums	
 nums4	bookofnim/helloworld/modules/ordinalStructured.html#nums4	ordinalStructured: nums4	
 rangeArr	bookofnim/helloworld/modules/ordinalStructured.html#rangeArr	ordinalStructured: rangeArr	
-smun	bookofnim/helloworld/modules/ordinalStructured.html#smun	ordinalStructured: smun	
 emptyArr	bookofnim/helloworld/modules/ordinalStructured.html#emptyArr	ordinalStructured: emptyArr	
+nums	bookofnim/helloworld/modules/ordinalStructured.html#nums	ordinalStructured: nums	
+smun	bookofnim/helloworld/modules/ordinalStructured.html#smun	ordinalStructured: smun	
 arrayWithRange	bookofnim/helloworld/modules/ordinalStructured.html#arrayWithRange	ordinalStructured: arrayWithRange	
 withArrParam	bookofnim/helloworld/modules/ordinalStructured.html#withArrParam,array[I,T]	ordinalStructured: withArrParam[I, T](a: array[I, T]): string	
 breakfast	bookofnim/helloworld/modules/ordinalStructured.html#breakfast	TimeToEat.breakfast	
@@ -26,10 +26,10 @@ emptySeq	bookofnim/helloworld/modules/ordinalStructured.html#emptySeq	ordinalStr
 seqEmpty	bookofnim/helloworld/modules/ordinalStructured.html#seqEmpty	ordinalStructured: seqEmpty	
 me	bookofnim/helloworld/modules/ordinalStructured.html#me	ordinalStructured: me	
 globalseq	bookofnim/helloworld/modules/ordinalStructured.html#globalseq	ordinalStructured: globalseq	
-democrats	bookofnim/helloworld/modules/ordinalStructured.html#democrats	GangsOfAmerica.democrats	
-republicans	bookofnim/helloworld/modules/ordinalStructured.html#republicans	GangsOfAmerica.republicans	
-politicians	bookofnim/helloworld/modules/ordinalStructured.html#politicians	GangsOfAmerica.politicians	
-GangsOfAmerica	bookofnim/helloworld/modules/ordinalStructured.html#GangsOfAmerica	ordinalStructured: GangsOfAmerica	
+nineToFives	bookofnim/helloworld/modules/ordinalStructured.html#nineToFives	AmericaOfJobs.nineToFives	
+fiveToNines	bookofnim/helloworld/modules/ordinalStructured.html#fiveToNines	AmericaOfJobs.fiveToNines	
+twentyFourSeven	bookofnim/helloworld/modules/ordinalStructured.html#twentyFourSeven	AmericaOfJobs.twentyFourSeven	
+AmericaOfJobs	bookofnim/helloworld/modules/ordinalStructured.html#AmericaOfJobs	ordinalStructured: AmericaOfJobs	
 PeopleOfAmerica	bookofnim/helloworld/modules/ordinalStructured.html#PeopleOfAmerica	ordinalStructured: PeopleOfAmerica	
 AA	bookofnim/helloworld/modules/ordinalStructured.html#AA	ExplicitEnum.AA	
 BB	bookofnim/helloworld/modules/ordinalStructured.html#BB	ExplicitEnum.BB	
@@ -76,4 +76,5 @@ sequence	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-struct
 enum	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-enum	  enum	
 range	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-range	  range	
 slice	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-slice	  slice	
+ordinal types	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-ordinal-types	  ordinal types	
 ordinals/structured interface	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-ordinalsslashstructured-interface	  ordinals/structured interface	

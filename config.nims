@@ -1,4 +1,3 @@
---assertions:on
 --debugger:native
 --deepcopy:on
 --define:nimStrictDelete
@@ -7,7 +6,7 @@
 --hints:on
 --mm:orc
 --multimethods:on
---parallelBuild:0
+--parallelBuild:0 # 1 is always a good idea in CI
 --stackTraceMsgs:on
 --styleCheck:hint
 --threads:on
@@ -23,6 +22,7 @@ case getCommand():
 
 case getEnv "ENV":
   of "DEV":
+    --assertions:on
     --checks:on
     --colors:on
     --debuginfo:on
@@ -33,6 +33,7 @@ case getEnv "ENV":
     --showAllMismatches:on
     --verbosity:2
   else:
+    --assertions:off
     --define:release
     --errorMax:1
     --forceBuild:on

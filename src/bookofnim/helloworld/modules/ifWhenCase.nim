@@ -21,7 +21,7 @@ branching todos
 
 ## case
 - similar to if, but represents a multi-branch selection
-- only use strings, ordinal types and integers
+- supports strings, ordinal types and integers
   - ints/ordinals can also use ranges
   - the `of` part must match the value type
 - can also use elif, else branches
@@ -31,15 +31,16 @@ echo "############################ if"
 if not false: echo "true": else: echo "false"
 
 # difficult to read, but note the placement of :
-echo if 1 > 2: "its true" elif 2 < 1: "also true" else: "must be in a different universe"
+echo if 1 > 2: "its true" elif 2 < 1: "also true" else: "must be the multiverse"
 
 # another funny one
-if 11 < 2 or (11 == 11 and 'a' >= 'b' and not true):
-  echo "or " & "true"
+if 11 < 2 or (11 == 11 and 'a' >= 'b' and not true or false ):
+  echo "no clue"
 elif "woop" == "poow": echo "poows arent woops"
-else: echo false
+else: echo "you are the holy one"
 
 echo "############################ when"
+# think this is as copypasta from docs
 when system.hostOS == "windows":
   echo "running on Windows!"
 elif system.hostOS == "linux":
@@ -58,9 +59,10 @@ var whichVerse:string = when 1 > 2: "real world" else: "twitter verse"
 echo "i live in the " & whichVerse
 
 when false: # trick for commenting code
-  echo "this code is never run"
+  echo "this code is never run and not required to be commented out"
 
 # check if execution is compiletime or runtime (executable)
+# likely got this from the docs too
 when nimvm:
   echo "in nim's vm, so its compile time"
 else:

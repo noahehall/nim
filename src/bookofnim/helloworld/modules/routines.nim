@@ -1,6 +1,7 @@
 ##
 ## routines
 ## ========
+## [bookmark](https://nim-lang.org/docs/manual_experimental.html#do-notation)
 
 ##[
 ## TLDR
@@ -43,7 +44,6 @@ todos
 - array args must match the param base type, index type is ignored
 - arrays and seqs are implicity converted for openArray params
 
-
 ## varargs
 - enables passing a variable number of args to a proc param
 - the args are converted to an array if the param is the last param
@@ -55,7 +55,7 @@ todos
 - allocating a seq/string does not throw an err
 
 ## closures
-- can be created with proc or [do notation](https://nim-lang.org/docs/manual_experimental.html#do-notation)
+- can be created with proc expressions or do notation
 
 ## anonymous procs
 - dont have a name and surrounded by paranthesis
@@ -75,11 +75,10 @@ eko("wtf2")
 "wtf3".eChO
 
 # use of semi to group parameters by type
-proc ekoGroups(a, b: int; c: string, d: char): void =
-  echo "ints: ", a, b, " strings: ", c, d
-ekogroups 1, 2, "c", 'd'
+proc ekoGroups(a, b: int; c: string, d: char): void = echo "ints: ", a, b, " strings: ", c, d
+ekoGroups 1, 2, "c", 'd'
 # requires parenths for named args
-ekogroups(b = 2, a = 1, c = "c is named, but d param isnt", 'd')
+ekoGroups(b = 2, a = 1, c = "c is named, but d param isnt", 'd')
 
 # anything less than 3*sizeof(pointer), i.e. 24 bytes on 64-bit OS
 proc passedByValue(x: string): void =

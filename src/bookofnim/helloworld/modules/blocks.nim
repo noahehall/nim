@@ -1,6 +1,7 @@
 ## blocks
 ## ======
 
+
 ##[
 ## TLDR
 - blocks have a () syntax but we skipped it as its not idiomatic nim in this context
@@ -15,16 +16,14 @@ links
 - [block expressions](https://nim-lang.org/docs/manual.html#statements-and-expressions-block-expression)
 - [once template](https://nim-lang.org/docs/system.html#once.t%2Cuntyped)
 
-todos
------
-- have no clue where `do:` is within the documentation
-  - but from the context looks like its just an alias for `block:`
 
 ## do blocks
-- see todos
+- in this context can be considered an alias for `block:`
+- see routines for use with proc expressions to create closures
+- see macros for using do to do macros
 
 ## once blocks
-- are executed once, the first time their seen by the compiler
+- are executed once, the first time they're seen by the compiler
 ]##
 
 echo "############################ block"
@@ -58,5 +57,4 @@ echo do: "this expression"
 
 echo "############################ once"
 
-once:
-  echo "this the first time this block is reached"
+once: echo "this the first time this block is reached"

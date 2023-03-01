@@ -7,7 +7,6 @@
   - the parallel iterator is in asyncParMem
 - for loops can iterate over any iterator
 
-
 links
 -----
 - [iterators](https://nim-lang.org/docs/iterators.html)
@@ -51,24 +50,20 @@ iterator `...`*[T](a: T, b: T): T =
     yield res # enables returning a value without exiting
     inc res # we can continue because of yield
 
-for i in 0...5:
-  echo "useless iterator ", i
+for i in 0...5: echo "useless iterator ", i
 
 iterator countTo(n: int): int =
   var i = 0
-  while i <= n:
-    yield i
-    inc i
-for i in countTo(5):
-  echo i
+  while i <= n: yield i; inc i
+
+for i in countTo(5): echo i
 
 # std collection iterators
 # items/mitems : mutable/immutable, just the value
-for item in "noah".items:
-  echo "item is ", item
+for item in "noah".items: echo "item is ", item
+
 # pairs/mpairs: mutable/immutable index & item
-for index, item in ["a","b"].pairs:
-  echo item, " at index ", index
+for index, item in ["a","b"].pairs: echo item, " at index ", index
 
 # copied from docs: finished proc
 iterator mycount(a, b: int): int {.closure.} =
@@ -81,6 +76,7 @@ iterator mycount(a, b: int): int {.closure.} =
 var finishedIncorrect = mycount # instantiate the iterator
 while not finished(finishedIncorrect):
   echo "incorrect finished usage: ", finishedIncorrect(1, 3) # 1,2,3,0
+
 # case 2: correct usage for finished
 # ^ here we break out of the loop
 var finishedCorrect = mycount # instantiate the iterator
@@ -91,22 +87,15 @@ while true:
 
 echo "############################ for"
 # loops over iterators
-for i in 1..2:
-  echo "loop " & $i
-for i in 1 ..< 2:
-  echo "loop ", i
-for i in countup(0,10,2):
-  echo "evens only ", i
-for i in countdown(11,0, 2):
-  echo "odds only ", i
-for i in "noah":
-  echo "spell my name spell my name when your not around me ", i
-for i, n in "noah":
-  echo "index ", i, " is ", n
+for i in 1..2: echo "loop " & $i
+for i in 1 ..< 2: echo "loop ", i
+for i in countup(0,10,2): echo "evens only ", i
+for i in countdown(11,0, 2): echo "odds only ", i
+for i in "noah": echo "spell my name spell my name when your not around me ", i
+for i, n in "noah": echo "index ", i, " is ", n
 
 let intArr = [5,4,3,2,1]
-for i in low(intArr) .. high(intArr):
-  echo "index ", i, " in nums = ", intArr[i]
+for i in low(intArr) .. high(intArr): echo "index ", i, " in nums = ", intArr[i]
 
 echo "############################ while"
 var num6 = 0

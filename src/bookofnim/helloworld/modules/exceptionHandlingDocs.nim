@@ -22,9 +22,11 @@
 - assert
   - -d:danger or --asertions:off to remove from compilation
   - --assertions:on to keep them in compiled output
+  - thus asserts are perfect for soft checks that can be turned off used for testing
 - doAssert
   - always on regardless of flags
   - can be used to check for specific errors with `doAssertRaises(woop):` block
+  - thus doAssert are useful for hard checks & implementing design by contract
 - drnim
   - requires koch to be setup
 

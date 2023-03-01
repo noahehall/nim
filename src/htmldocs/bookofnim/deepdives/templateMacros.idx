@@ -1,6 +1,4 @@
 `!=`	bookofnim/deepdives/templateMacros.html#!=.t,untyped,untyped	templateMacros: `!=`(a, b: untyped): untyped	
-loc`gensym2	bookofnim/deepdives/templateMacros.html#loc`gensym2	templateMacros: loc`gensym2	
-ploc`gensym2	bookofnim/deepdives/templateMacros.html#ploc`gensym2	templateMacros: ploc`gensym2	
 debug	bookofnim/deepdives/templateMacros.html#debug	templateMacros: debug	
 xy	bookofnim/deepdives/templateMacros.html#xy	templateMacros: xy	
 log_eager	bookofnim/deepdives/templateMacros.html#log_eager,string	templateMacros: log_eager(msg: string)	

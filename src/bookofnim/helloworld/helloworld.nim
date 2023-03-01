@@ -2,11 +2,7 @@
 ## Hello world: my name is nim
 ## ===========================
 ## [bookmark](https://nim-lang.org/docs/manual.html#special-types)
-# exception handling
-# ifwhencase
-# loopsiterator
-# ordinal structured
-# todos_skipped
+# routines
 # tuple object
 # type simple
 # variable globals
@@ -80,7 +76,7 @@ idiomatic nim
 - use getMonoTime | cpuTime > now for benchmarking (docs)
 - use getTime > epochTime for epoch (docs)
 - use include to split large modules into distinct files (docs)
-- use Natural/Positive (docs) e.g. if Blah is Positive
+- use Natural/Positive for bounds checks/type desc (docs) i.e. Positive.low == 1 Natural.low == 0
 - use parseopt module > os.parseCmdLine unless specifically required (docs)
 - use procs > (macros/templates/iterators/convertors) unless necessary (styleguide)
 - use result(its optimized) > return (only for control flow) > last statement expression (stylguide) (FYI status prefers last statement)
@@ -153,10 +149,10 @@ include
 -------
 - a file as part of this module
 - can be used in any scope, e.g. scoped to a block/proc
-- including too many files makes its difficult to debug when running the main file
-  - line numbers dont point to specific included files, but to the composite file
+- including files hampers debugging as the composite module is shown
+  - line numbers dont point to distinct files, but to the composite file
   - IMO stay away from includes and use imports, except for simple cases
-- example include before we needed to debug memory leaks and converted to imports
+- example include before we needed to debug memory leaks (and moved to imports)
 .. code-block:: Nim
   include modules/[
     variableGlobals,
@@ -177,8 +173,8 @@ export
   - thus importers dont need to import their dependencies' depencencies
 - example exports
 .. code-block:: Nim
-  export woop # all turds are exported
-  export boop except soup, doup, loop
+  export woop # export everything from woop
+  export boop except soup, doup, loop # export specific symbols from boop
 
 ## packages
 - a file named identifier.nimble creates a package
@@ -241,7 +237,7 @@ statements
 
 expressions
 -----------
-- result in a value
+- result in a value, pretty much everything in nim is an expression
 - indentation can occur after operators, open parantheiss and commas
 - paranthesis and semicolins allow you to embed statements where expressions are expected
 
