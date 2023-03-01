@@ -2,10 +2,6 @@
 ## Hello world: my name is nim
 ## ===========================
 ## [bookmark](https://nim-lang.org/docs/manual.html#special-types)
-# routines
-# tuple object
-# type simple
-# variable globals
 
 ##[
 ## TLDR
