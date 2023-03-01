@@ -172,7 +172,7 @@ const
   endpoint = "https://postman-echo.com/"
   getmegood = endpoint & "status/200"
   getmebad = endpoint & "status/404"
-  getmetimeout = endpoint & fmt"delay/{timeout + 1000}"
+  getmetimeout = endpoint & fmt"delay/{timeout + 10}"
   postme = endpoint & "post"
 let
   data = %*{"data": { "user": "resu", "pass": "ssap"}}

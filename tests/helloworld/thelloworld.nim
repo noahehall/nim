@@ -3,4 +3,4 @@ discard """
   valgrind: true
 """
 
-import helloworld/helloworld ## basic nim split into modules
+import bookofnim / helloworld / helloworld ## basic nim split into modules

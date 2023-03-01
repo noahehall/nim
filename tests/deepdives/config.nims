@@ -1,3 +1,3 @@
 --define:ssl
---path:"$projectDir/../.."
+--path:"$projectDir/../../src"
 --threads:on

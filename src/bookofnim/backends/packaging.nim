@@ -1,13 +1,13 @@
 ##
 ## nimble packages, nimscripts, and app cfgs
 ## =========================================
-## [bookmark](https://nim-lang.org/docs/tasks.html)
+## bookmark: dunno
 
 ##[
 ## TLDR
 - nimble shipped with nim isnt the nimbiest version
   - install a nimbier nimble with `nimble install nimble`
-- writing tests for packages explained in tests.nim
+- parallel tasks are described in asyncPar
 
 links
 -----
@@ -16,7 +16,7 @@ links
   - [example config with tasks](https://github.com/kaushalmodi/nim_config/blob/master/config.nims)
   - [configs used by nim](https://github.com/nim-lang/Nim/tree/devel/config)
   - [nimble repo](https://github.com/nim-lang/nimble)
-  - [example nimscript script](https://github.com/noahehall/nim/blob/develop/backends/targets/shell.nims)
+  - [example nimscript script](https://github.com/noahehall/nim/blob/develop/src/backends/targets/shell.nims)
   - [understanding how nim is built for X may help you do the same](https://nim-lang.org/docs/packaging.html)
   - peter:
       - [nimscript part 1](https://peterme.net/using-nimscript-as-a-configuration-language-embedding-nimscript-pt-1.html)
@@ -26,7 +26,6 @@ links
   - [nimble pkg reference](https://github.com/nim-lang/nimble#nimble-reference)
   - [nims intro](https://nim-lang.org/docs/nims.html)
   - [nimscript spec (including tasks)](https://nim-lang.org/docs/nimscript.html)
-  - [parallel tasks](https://nim-lang.org/docs/tasks.html)
   - [parse config](https://nim-lang.org/docs/parsecfg.html)
 - niche
   - [base object of a lexer](https://nim-lang.org/docs/lexbase.html)
@@ -63,7 +62,7 @@ creating nimble packages
 - by default nimble uses [git repos](https://github.com/nim-lang/packages) as its primary source for packages
 - each package contains a .nimble file with install & build directives
   - [check nimble api src for all .nimble options](https://github.com/nim-lang/nimble/blob/master/src/nimblepkg/nimscriptapi.nim)
-  - the .nimble file should have the same name as the package
+  - the .nimble file should (but not required to) have the same name as the package
   - its interpreted using nimscript and supports any nim vm compatible features
     - e.g. tasks can be used to define nimble package-specific commands
 - packages install dirs
@@ -140,7 +139,7 @@ releasing and publishing packages
 
 ## nimscript
 - subset of nim that can be evaluated by nims builtin VM
-- [runnable example](https://github.com/noahehall/nim/blob/develop/backends/targets/shell.nims)
+- [runnable example](https://github.com/noahehall/nim/blob/develop/src/backends/targets/shell.nims)
 
 nimscript limitations
 ---------------------

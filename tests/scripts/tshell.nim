@@ -6,4 +6,4 @@ discard """
   valgrind: true
 """
 
-import "backends/targets/shell.nims"
+import "bookofnim/backends/targets/shell.nims"

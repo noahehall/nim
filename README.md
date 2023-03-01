@@ -58,7 +58,7 @@
       - [testament](https://github.com/nim-lang/Nim/tree/devel/testament)
     - [source: nimforum SPA](https://github.com/nim-lang/nimforum/tree/master/src)
     - [source: nimble api](https://github.com/nim-lang/nimble/blob/master/src/nimblepkg/nimscriptapi.nim)
-    - [source: nimtemplate CI](https://github.com/treeform/nimtemplate/tree/master/src)
+    - [source: nimtemplate repo template](https://github.com/treeform/nimtemplate/tree/master/src)
     - [cheatsheet: reStructured Text](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
     - [book: nim in action](https://www.manning.com/books/nim-in-action)
       - released in 2017, still highly relevant and recommended
@@ -94,6 +94,7 @@ blogs
 
 ### quickies
 
+- find the rst syntax for creating links between pages and remove all the markdown links
 - fix tests/deepdives/tmemoryLeaks and add it to a new `good examples of bad code` section
   - lol fix helloworld too
 - move projects out of this repo

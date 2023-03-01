@@ -3,7 +3,7 @@ discard """
   valgrind: true
 """
 
-import deepdives/[
+import bookofnim / deepdives / [
     servers, ## http, sockets, ftp etc + async versions
     osIo, ## operating system, distros, files etc
     datetime, ## dates and times

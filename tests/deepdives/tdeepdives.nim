@@ -3,7 +3,7 @@ discard """
   valgrind: true
 """
 
-import deepdives/[
+import bookofnim / deepdives / [
     crypto, ## cryptography (+ random) related
     dataWrangling, ## regex, strscan, etc
     dbs, ## database clients + mime types

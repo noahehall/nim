@@ -394,7 +394,7 @@ echo fmt"{sameFileContent readme, readme=}"
 echo fmt"{splitFile readme=}"
 echo fmt"{readme.absolutePath.splitFile=}"
 
-const helloworldReadme = "helloworld/helloworld.md"
+const helloworldReadme = "src/bookofnim/helloworld/helloworld.md"
 
 let entireFile = try: readFile helloworldReadme except: "" ## \
   ## calls readAll then closes the file afterwards

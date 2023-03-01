@@ -108,3 +108,5 @@ nimdoc.out.css
 *.deps
 nimble.develop
 nimble.paths
+bookofnim.dot
+bookofnim.png

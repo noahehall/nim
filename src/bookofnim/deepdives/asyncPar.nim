@@ -57,16 +57,17 @@ links
   [status-im chronos: alternative asyncdispatch](https://github.com/status-im/nim-chronos)
 - system
   - [parallel & spawn intro](https://nim-lang.org/docs/manual_experimental.html#parallel-amp-spawn)
-  - [threads intro](https://nim-lang.org/docs/manual.html#threads)
   - [system channels](https://nim-lang.org/docs/channels_builtin.html)
   - [system par loop iterator](https://nim-lang.org/docs/system.html#%7C%7C.i%2CS%2CT%2Cstaticstring)
   - [system threads](https://nim-lang.org/docs/threads.html)
+  - [threads intro](https://nim-lang.org/docs/manual.html#threads)
 - pkgs
   - [async dispatch (event loop)](https://nim-lang.org/docs/asyncdispatch.html)
   - [async file](https://nim-lang.org/docs/asyncfile.html)
   - [async futures](https://nim-lang.org/docs/asyncfutures.html)
   - [async streams](https://nim-lang.org/docs/asyncstreams.html)
   - [lock and condition vars](https://nim-lang.org/docs/locks.html)
+  - [parallel tasks](https://nim-lang.org/docs/tasks.html)
   - [thread pool](https://nim-lang.org/docs/threadpool.html)
 - niche
   - [co routines](https://nim-lang.org/docs/coro.html)

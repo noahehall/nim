@@ -22,7 +22,7 @@
 - [DSL: webserver: composable http handlers](https://github.com/andreaferretti/rosencrantz)
 - [fidget: UI Library + Figma plugin](https://github.com/treeform/fidget)
 - [fullstack web framework](https://github.com/itsumura-h/nim-basolato)
-- [html/js gui library](https://github.com/Niminem/Neel)
+- [neel: create lightweight electron apps](https://github.com/Niminem/Neel)
 - [http auth](https://github.com/FedericoCeratto/nim-httpauth)
 - [httpbeast: fast http 1.1 server](https://github.com/dom96/httpbeast)
 - [jester: a sinetra-like web framework built on httpbeast](https://github.com/dom96/jester)
@@ -36,6 +36,7 @@
 - [nimibook: port of mdbook to Nim](https://github.com/pietroppeter/nimibook)
 - [nimqt: bindings for QT interface development](https://github.com/jerous86/nimqt)
 - [nimterlingua: compiletime i18](https://github.com/juancarlospaco/nim-nimterlingua)
+- [nimx: cross platform GUI framework](https://github.com/yglukhov/nimx)
 - [nitch: neofetch alternative](https://github.com/unxsh/nitch)
 - [nodejs: alternative stdlib for js targets](https://github.com/juancarlospaco/nodejs)
 - [norm: postgres orm](https://github.com/moigagoo/norm)
@@ -64,7 +65,7 @@
 - [treeform](https://github.com/treeform)
 - [guzba](https://github.com/guzba)
 
-## exceptional repos
+## Personal preferences
 
 ### choosenim
 
@@ -110,3 +111,8 @@
 
 - [SPA framework](https://github.com/karaxnim/karax)
 - [used by nimforum](https://github.com/nim-lang/nimforum)
+
+### Nim-graphql
+
+- [graphql services in nim](https://github.com/status-im/nim-graphql)
+- supports http/s, sockets, i/rpc, stdin/out

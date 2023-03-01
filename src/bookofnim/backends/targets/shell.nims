@@ -4,7 +4,7 @@
 import std/[sugar, sequtils, strformat, strutils, distros, os]
 
 const
-  configFile = "main.nim.ini"
+  configFile = "bookofnim.nim.ini"
   dirtmp = "/tmp/dir"
   dotdir = "."
   mydir = "targets"
@@ -44,7 +44,7 @@ echo fmt"empty string if not found {get(SOME_KEY)=}"
 echo "############################ config external via .ini"
 import std/[parsecfg]
 
-const cfg = normalizedPath fmt"{thisDir()}/../../{configFile}".readFile
+const cfg = normalizedPath fmt"""{thisDir() / ".." / ".." / ".." / configFile}""".readFile
 var dict = newconfig()
 proc parseCfg(): void =
   ## unfortunately parseconfig not available in nimscript
@@ -99,13 +99,14 @@ elif detectOs(Debian):
 
 
 echo "############################ files/dirs/etc"
+
 echo fmt"*_d = debug, *_r = release {nimcacheDir()=}"
 echo fmt"{getCurrentDir()=}"
 echo fmt"{projectDir()=}"
 echo fmt"{thisDir()=}"
 echo fmt"{projectPath()=}"
 echo fmt"before cd {dirExists mydir=}"
-cd mydirdir ## change is permanent
+cd (thisDir() / "..")  ## change is permanent
 echo fmt"after cd {dirExists mydir=}"
 cd ".."
 
@@ -148,7 +149,7 @@ task wOOpwOOp, "nimlang entering stage right":
   echo "w00p w00p... WOOP WOOP"
 
 task djvoice, "":
-  ## hidden tasks descriptions arent logged to console
+  ## hidden tasks descriptions are not logged to console
   echo "ARE YOU READDDDY"
   woopwoopTask() ## tasks can run other tasks for creating pipelines
 
