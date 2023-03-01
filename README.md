@@ -36,17 +36,17 @@
   - [secondary: documentation](https://noahehall.github.io/nim/htmldocs/main.html) you can read while coding
     - generally concise abbreviations extracted from nim docs/blogs/etc & categorized with links to technical specs
 - thus each _chapter_ consists of docs to read and code to run:
-  - 0: tutorials (indented below) > [helloworld](/helloworld/helloworld.nim) > [sugar](/deepdives/sugar.nim)
+  - 0: tutorials (indented below) > [helloworld](/src/bookofnim/helloworld/helloworld.nim) > [sugar](/src/bookofnim/deepdives/sugar.nim)
     - [adambard: learn x in y minutes](https://learnxinyminutes.com/docs/nim/)
     - [flaviut: nim by example](https://nim-by-example.github.io/)
     - [miran: nim basics](https://narimiran.github.io/nim-basics/)
     - [status: auditor docs](https://status-im.github.io/nim-style-guide/00_introduction.html)
     - [official nim tutorial](https://nim-lang.org/docs/tut1.html)
     - [official nim wiki](https://github.com/nim-lang/Nim/wiki)
-  - 1: [collections](/deepdives/collections.nim) > [strings](/deepdives/strings.nim), [containers](/deepdives/containers.nim), [lists](/deepdives/lists.nim), [datetime](/deepdives/datetime.nim), [maths](/deepdives/maths.nim), [crypto](/deepdives/crypto.nim), [regex](/deepdives/regex.nim),
-  - 2: [osIo](/deepdives/osIo.nim), [data](/deepdives/data.nim) > [ttests](/tests/ttests.nim)
-  - 3: [asyncPar](/deepdives/asyncPar.nim) > [servers](/deepdives/servers.nim), [dbs](/deepdives/dbs.nim)
-  - 4: [backends dir](/backends/) > [pragmasEffects](/deepdives/pragmasEffects.nim), [templateMacros](/deepdives/templateMacros.nim)
+  - 1: [collections](/src/bookofnim/deepdives/collections.nim) > [strings](/src/bookofnim/deepdives/strings.nim), [containers](/src/bookofnim/deepdives/containers.nim), [lists](/src/bookofnim/deepdives/lists.nim), [datetime](/src/bookofnim/deepdives/datetime.nim), [maths](/src/bookofnim/deepdives/maths.nim), [crypto](/src/bookofnim/deepdives/crypto.nim), [regex](/src/bookofnim/deepdives/regex.nim),
+  - 2: [osIo](/src/bookofnim/deepdives/osIo.nim), [data](/src/bookofnim/deepdives/data.nim) > [ttests](/tests/ttests.nim)
+  - 3: [asyncPar](/src/bookofnim/deepdives/asyncPar.nim) > [servers](/src/bookofnim/deepdives/servers.nim), [dbs](/src/bookofnim/deepdives/dbs.nim)
+  - 4: [backends dir](/backends/) > [pragmasEffects](/src/bookofnim/deepdives/pragmasEffects.nim), [templateMacros](/src/bookofnim/deepdives/templateMacros.nim)
   - 5: source code & books
     - [source: nim](https://github.com/nim-lang/Nim/tree/version-1-6/lib)
       - [impure](https://github.com/nim-lang/Nim/tree/version-1-6/lib/impure)
@@ -95,7 +95,7 @@ blogs
 ### quickies
 
 - find the rst syntax for creating links between pages and remove all the markdown links
-- fix tests/deepdives/tmemoryLeaks and add it to a new `good examples of bad code` section
+- fix tests/src/bookofnim/deepdives/tmemoryLeaks and add it to a new `good examples of bad code` section
   - lol fix helloworld too
 - move projects out of this repo
   - make sure you fork the nimtemplate repo

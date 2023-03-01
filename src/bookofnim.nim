@@ -14,7 +14,7 @@
   - click the source link (top of every file) to dive into the source code
   - the source code is where the magic happens
 - the imported files (see below) are grouped by expected search patterns & use case
-  - the nimscript source code [is available here](https://github.com/noahehall/nim/blob/develop/src/backends/targets/shell.nims)
+  - the nimscript source code [is available here](https://github.com/noahehall/nim/blob/develop/src/bookofnim/backends/targets/shell.nims)
 
 todos
 -----

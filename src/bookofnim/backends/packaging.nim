@@ -16,7 +16,7 @@ links
   - [example config with tasks](https://github.com/kaushalmodi/nim_config/blob/master/config.nims)
   - [configs used by nim](https://github.com/nim-lang/Nim/tree/devel/config)
   - [nimble repo](https://github.com/nim-lang/nimble)
-  - [example nimscript script](https://github.com/noahehall/nim/blob/develop/src/backends/targets/shell.nims)
+  - [example nimscript script](https://github.com/noahehall/nim/blob/develop/src/bookofnim/backends/targets/shell.nims)
   - [understanding how nim is built for X may help you do the same](https://nim-lang.org/docs/packaging.html)
   - peter:
       - [nimscript part 1](https://peterme.net/using-nimscript-as-a-configuration-language-embedding-nimscript-pt-1.html)
@@ -139,7 +139,7 @@ releasing and publishing packages
 
 ## nimscript
 - subset of nim that can be evaluated by nims builtin VM
-- [runnable example](https://github.com/noahehall/nim/blob/develop/src/backends/targets/shell.nims)
+- [runnable example](https://github.com/noahehall/nim/blob/develop/src/bookofnim/backends/targets/shell.nims)
 
 nimscript limitations
 ---------------------

@@ -8,7 +8,7 @@
 - only uses the implicitly imported system
   - dont import (system, threads, channel) directly, theres some compiler magic to makem work
   - threads, channels, templates, macros, effects, pragmas, os, io and tests are in deepdives
-- in general [the source code](https://github.com/noahehall/nim/tree/develop/helloworld/modules) has multiple examples
+- in general [the source code](https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules) has multiple examples
   - we dont use runnableExamples because we want to run on the cmd line & in vscode
   - however real code should use runnableExamples for docs
 - newer nim versions seems to be getting more strict/better at catching programmer errors
