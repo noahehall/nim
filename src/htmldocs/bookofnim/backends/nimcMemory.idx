@@ -1,0 +1,23 @@
+compiling and managing memory with nimc	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc	 compiling and managing memory with nimc	
+TLDR	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-tldr	  TLDR	
+links	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-links	  links	
+todos	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-todos	  todos	
+nimc	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-nimc	  nimc	
+CMDS	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-cmds	  CMDS	
+compiler OPTS	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-compiler-opts	  compiler OPTS	
+compile time symbol/switches OPTS	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-compile-time-symbolslashswitches-opts	  compile time symbol/switches OPTS	
+output OPTS	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-output-opts	  output OPTS	
+cross compilation OPTS	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-cross-compilation-opts	  cross compilation OPTS	
+path OPTS	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-path-opts	  path OPTS	
+configuration file hierarchy &amp; precedence	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-configuration-file-hierarchy-amp-precedence	  configuration file hierarchy &amp; precedence	
+configuration OPTS	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-configuration-opts	  configuration OPTS	
+documention OPTS	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-documention-opts	  documention OPTS	
+debugging OPTS	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-debugging-opts	  debugging OPTS	
+runtime OPTS	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-runtime-opts	  runtime OPTS	
+specific runtime check OPTS	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-specific-runtime-check-opts	  specific runtime check OPTS	
+specific compiler hint OPTS	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-specific-compiler-hint-opts	  specific compiler hint OPTS	
+specific compiler warning OPTS	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-specific-compiler-warning-opts	  specific compiler warning OPTS	
+compiler style check OPTS	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-compiler-style-check-opts	  compiler style check OPTS	
+environment variables	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-environment-variables	  environment variables	
+skipped	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-skipped	  skipped	
+memory management	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-memory-management	  memory management	

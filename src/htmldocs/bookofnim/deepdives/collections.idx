@@ -1,0 +1,17 @@
+immutable	bookofnim/deepdives/collections.html#immutable	collections: immutable	
+seq2d	bookofnim/deepdives/collections.html#seq2d	collections: seq2d	
+zipped	bookofnim/deepdives/collections.html#zipped	collections: zipped	
+mutable	bookofnim/deepdives/collections.html#mutable	collections: mutable	
+mutated	bookofnim/deepdives/collections.html#mutated	collections: mutated	
+echoMutated	bookofnim/deepdives/collections.html#echoMutated	collections: echoMutated(): void	
+stringSet1	bookofnim/deepdives/collections.html#stringSet1	collections: stringSet1	
+stringSet2	bookofnim/deepdives/collections.html#stringSet2	collections: stringSet2	
+floatSet	bookofnim/deepdives/collections.html#floatSet	collections: floatSet	
+x	bookofnim/deepdives/collections.html#x	collections: x	
+mstringset	bookofnim/deepdives/collections.html#mstringset	collections: mstringset	
+echoMutatedSet	bookofnim/deepdives/collections.html#echoMutatedSet	collections: echoMutatedSet(): void	
+collections deep dive	bookofnim/deepdives/collections.html#collections-deep-dive	 collections deep dive	
+TLDR	bookofnim/deepdives/collections.html#collections-deep-dive-tldr	  TLDR	
+links	bookofnim/deepdives/collections.html#collections-deep-dive-links	  links	
+seqs	bookofnim/deepdives/collections.html#collections-deep-dive-seqs	  seqs	
+sets	bookofnim/deepdives/collections.html#collections-deep-dive-sets	  sets	
