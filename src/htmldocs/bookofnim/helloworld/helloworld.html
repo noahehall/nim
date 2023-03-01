@@ -205,7 +205,7 @@ class="link-seesrc" target="_blank">Source</a>
 <li>use getMonoTime | cpuTime &gt; now for benchmarking (docs)</li>
 <li>use getTime &gt; epochTime for epoch (docs)</li>
 <li>use include to split large modules into distinct files (docs)</li>
-<li>use Natural/Positive (docs) e.g. if Blah is Positive</li>
+<li>use Natural/Positive for bounds checks/type desc (docs) i.e. Positive.low == 1 Natural.low == 0</li>
 <li>use parseopt module &gt; os.parseCmdLine unless specifically required (docs)</li>
 <li>use procs &gt; (macros/templates/iterators/convertors) unless necessary (styleguide)</li>
 <li>use result(its optimized) &gt; return (only for control flow) &gt; last statement expression (stylguide) (FYI status prefers last statement)</li>
@@ -277,11 +277,11 @@ class="link-seesrc" target="_blank">Source</a>
 
 <h2><a class="toc-backref" id="hello-worldcolon-my-name-is-nim-include" href="#hello-worldcolon-my-name-is-nim-include">include</a></h2><ul class="simple"><li>a file as part of this module</li>
 <li>can be used in any scope, e.g. scoped to a block/proc</li>
-<li>including too many files makes its difficult to debug when running the main file<ul class="simple"><li>line numbers dont point to specific included files, but to the composite file</li>
+<li>including files hampers debugging as the composite module is shown<ul class="simple"><li>line numbers dont point to distinct files, but to the composite file</li>
 <li>IMO stay away from includes and use imports, except for simple cases</li>
 </ul>
 </li>
-<li>example include before we needed to debug memory leaks and converted to imports</li>
+<li>example include before we needed to debug memory leaks (and moved to imports)</li>
 </ul>
 <pre class="listing"><span class="Keyword">include</span> <span class="Identifier">modules</span><span class="Operator">/</span><span class="Punctuation">[</span>
   <span class="Identifier">variableGlobals</span><span class="Punctuation">,</span>
@@ -300,8 +300,8 @@ class="link-seesrc" target="_blank">Source</a>
 </li>
 <li>example exports</li>
 </ul>
-<pre class="listing"><span class="Keyword">export</span> <span class="Identifier">woop</span> <span class="Comment"># all turds are exported</span>
-<span class="Keyword">export</span> <span class="Identifier">boop</span> <span class="Keyword">except</span> <span class="Identifier">soup</span><span class="Punctuation">,</span> <span class="Identifier">doup</span><span class="Punctuation">,</span> <span class="Identifier">loop</span></pre>
+<pre class="listing"><span class="Keyword">export</span> <span class="Identifier">woop</span> <span class="Comment"># export everything from woop</span>
+<span class="Keyword">export</span> <span class="Identifier">boop</span> <span class="Keyword">except</span> <span class="Identifier">soup</span><span class="Punctuation">,</span> <span class="Identifier">doup</span><span class="Punctuation">,</span> <span class="Identifier">loop</span> <span class="Comment"># export specific symbols from boop</span></pre>
 <h2><a class="toc-backref" id="hello-worldcolon-my-name-is-nim-packages" href="#hello-worldcolon-my-name-is-nim-packages">packages</a></h2><ul class="simple"><li>a file named identifier.nimble creates a package</li>
 <li>all sibling/descendent identifier.nim files become modules of that package</li>
 </ul>
@@ -360,7 +360,7 @@ class="link-seesrc" target="_blank">Source</a>
 </li>
 </ul>
 
-<h2><a class="toc-backref" id="hello-worldcolon-my-name-is-nim-expressions" href="#hello-worldcolon-my-name-is-nim-expressions">expressions</a></h2><ul class="simple"><li>result in a value</li>
+<h2><a class="toc-backref" id="hello-worldcolon-my-name-is-nim-expressions" href="#hello-worldcolon-my-name-is-nim-expressions">expressions</a></h2><ul class="simple"><li>result in a value, pretty much everything in nim is an expression</li>
 <li>indentation can occur after operators, open parantheiss and commas</li>
 <li>paranthesis and semicolins allow you to embed statements where expressions are expected</li>
 </ul>
@@ -384,7 +384,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-03-01 20:17:29 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-03-01 21:30:52 UTC</small>
       </div>
     </div>
   </div>

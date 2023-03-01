@@ -7,8 +7,6 @@ maybeThrows	bookofnim/helloworld/modules/exceptionHandlingDocs.html#maybeThrows,
 err	bookofnim/helloworld/modules/exceptionHandlingDocs.html#err	exceptionHandlingDocs: err	
 divBy0	bookofnim/helloworld/modules/exceptionHandlingDocs.html#divBy0	exceptionHandlingDocs: divBy0	
 deferExample	bookofnim/helloworld/modules/exceptionHandlingDocs.html#deferExample	exceptionHandlingDocs: deferExample(): auto	
-loc`gensym8	bookofnim/helloworld/modules/exceptionHandlingDocs.html#loc`gensym8	exceptionHandlingDocs: loc`gensym8	
-ploc`gensym8	bookofnim/helloworld/modules/exceptionHandlingDocs.html#ploc`gensym8	exceptionHandlingDocs: ploc`gensym8	
 loc`gensym10	bookofnim/helloworld/modules/exceptionHandlingDocs.html#loc`gensym10	exceptionHandlingDocs: loc`gensym10	
 ploc`gensym10	bookofnim/helloworld/modules/exceptionHandlingDocs.html#ploc`gensym10	exceptionHandlingDocs: ploc`gensym10	
 exception handling, debugging, documentation	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation	 exception handling, debugging, documentation	

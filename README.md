@@ -32,7 +32,7 @@
 
 - this repo serves two purposes for programmers considering nim as their Nth language:
   - [primary: source code](/src/bookofnim.nim) you can execute while reading
-    - generally concise examples of the subject at hand; provding enough nim to create production-ready applications
+    - generally concise examples of the subject at hand; providing enough nim to create production-ready applications
   - [secondary: documentation](https://noahehall.github.io/nim/src/htmldocs/bookofnim.html) you can read while coding
     - generally concise abbreviations extracted from nim docs/blogs/etc & categorized with links to technical specs
 - thus each _chapter_ consists of docs to read and code to run:

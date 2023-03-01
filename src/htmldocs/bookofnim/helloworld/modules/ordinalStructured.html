@@ -107,11 +107,15 @@ window.addEventListener('DOMContentLoaded', main);
 <li><a class="reference" id="ordinals-and-structured-enum_toc" href="#ordinals-and-structured-enum">enum</a></li>
 <li><a class="reference" id="ordinals-and-structured-range_toc" href="#ordinals-and-structured-range">range</a></li>
 <li><a class="reference" id="ordinals-and-structured-slice_toc" href="#ordinals-and-structured-slice">slice</a></li>
+<li><a class="reference" id="ordinals-and-structured-ordinal-types_toc" href="#ordinals-and-structured-ordinal-types">ordinal types</a></li>
 <li><a class="reference" id="ordinals-and-structured-ordinalsslashstructured-interface_toc" href="#ordinals-and-structured-ordinalsslashstructured-interface">ordinals/structured interface</a></li>
 </ul><li>
   <a class="reference reference-toplevel" href="#7" id="57">Types</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#BlinkLights"
+      <li><a class="reference" href="#AmericaOfJobs"
+    title="AmericaOfJobs = enum
+  nineToFives, fiveToNines, twentyFourSeven">AmericaOfJobs</a></li>
+  <li><a class="reference" href="#BlinkLights"
     title="BlinkLights = enum
   off, on, slowBlink, mediumBlink, fastBlink">BlinkLights</a></li>
   <li><a class="reference" href="#Direction"
@@ -122,9 +126,6 @@ window.addEventListener('DOMContentLoaded', main);
   <li><a class="reference" href="#ExplicitEnum"
     title="ExplicitEnum = enum
   AA = (0, &quot;letter AA&quot;), BB = (1, &quot;letter BB&quot;)">ExplicitEnum</a></li>
-  <li><a class="reference" href="#GangsOfAmerica"
-    title="GangsOfAmerica = enum
-  democrats, republicans, politicians">GangsOfAmerica</a></li>
   <li><a class="reference" href="#IsOn"
     title="IsOn = set[int8]">IsOn</a></li>
   <li><a class="reference" href="#LevelSetting"
@@ -161,9 +162,6 @@ window.addEventListener('DOMContentLoaded', main);
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#a"
     title="a = &quot;Nim is a programming language&quot;">a</a></li>
-  <li><a class="reference" href="#arrayWithRange"
-    title="arrayWithRange: array[0 .. 5, string] = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;,
-    &quot;six&quot;]">arrayWithRange</a></li>
   <li><a class="reference" href="#bbb"
     title="bbb = &quot;Slices are useless.&quot;">bbb</a></li>
   <li><a class="reference" href="#emptyArr"
@@ -186,8 +184,6 @@ window.addEventListener('DOMContentLoaded', main);
     title="level: LevelSetting">level</a></li>
   <li><a class="reference" href="#me"
     title="me = &quot;noAH&quot;">me</a></li>
-  <li><a class="reference" href="#nums"
-    title="nums: array[4, int] = [1, 9, 8, 5]">nums</a></li>
   <li><a class="reference" href="#nums4"
     title="nums4: array[0 .. 3, int]">nums4</a></li>
   <li><a class="reference" href="#onSundayIAte"
@@ -196,8 +192,6 @@ window.addEventListener('DOMContentLoaded', main);
     title="rangeArr: array[0 .. 10, int]">rangeArr</a></li>
   <li><a class="reference" href="#seqEmpty"
     title="seqEmpty = newSeq(Natural(0))">seqEmpty</a></li>
-  <li><a class="reference" href="#smun"
-    title="smun = [5, 8, 9, 1]">smun</a></li>
   <li><a class="reference" href="#swoop"
     title="swoop: seq[int] = newSeq(4)">swoop</a></li>
   <li><a class="reference" href="#thisRange"
@@ -210,14 +204,21 @@ window.addEventListener('DOMContentLoaded', main);
 <li>
   <a class="reference reference-toplevel" href="#9" id="59">Lets</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#flags"
+      <li><a class="reference" href="#arrayWithRange"
+    title="arrayWithRange: array[0 .. 5, string] = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;,
+    &quot;six&quot;]">arrayWithRange</a></li>
+  <li><a class="reference" href="#flags"
     title="flags: Opts = {'d'..'z'}">flags</a></li>
+  <li><a class="reference" href="#nums"
+    title="nums: array[4, int] = [1, 9, 8, 5]">nums</a></li>
   <li><a class="reference" href="#offf"
     title="offf: IsOn = {0'i8}">offf</a></li>
   <li><a class="reference" href="#onn"
     title="onn: IsOn = {1'i8}">onn</a></li>
   <li><a class="reference" href="#simpleOpts"
     title="simpleOpts: Opts = {'a', 'b', 'c'}">simpleOpts</a></li>
+  <li><a class="reference" href="#smun"
+    title="smun = [5, 8, 9, 1]">smun</a></li>
 
   </ul>
 </li>
@@ -278,16 +279,7 @@ class="link-seesrc" target="_blank">Source</a>
 <li>are countable and ordered, with a smallest &amp; highest value</li>
 </ul>
 </li>
-<li>types<ul class="simple"><li>array[n, T] fixed-length dimensionally homogeneous</li>
-<li>cstringArray</li>
-<li>openArray[T] a procs parameter that accepts an array/seq of any size but only of 1 dimension</li>
-<li>Ordinal[T] generic ordinal type</li>
-<li>range[T] generic constructor for range</li>
-<li>seq[T] dynamic-length dimensionally homogeneous</li>
-<li>set[T] generic set constructor</li>
-<li>SomeOrdinal</li>
-<li>UncheckedArray[T] array with no bounds checking for implmenting customized flexibly sized arrays</li>
-<li>varargs[T] an openarray paramter that accepts a variable number of args in a procedure</li>
+<li>FYI about low &amp; high procs<ul class="simple"><li>should only be used with types not values</li>
 </ul>
 </li>
 </ul>
@@ -338,6 +330,7 @@ class="link-seesrc" target="_blank">Source</a>
 <li>are checked at runtime whenever the value changes</li>
 <li>valuable for catching / preventing underflows.</li>
 <li>e.g. Nims natural type: type Natural = range[0 .. high(int)]<ul class="simple"><li>should be used to guard against negative numbers</li>
+<li>you can use Natural.low to check for 0</li>
 </ul>
 </li>
 </ul>
@@ -347,6 +340,18 @@ class="link-seesrc" target="_blank">Source</a>
 <li>collection types define operators/procs which accept slices in place of ranges<ul class="simple"><li>the operator/proc determines the type of values they except in a slice</li>
 </ul>
 </li>
+</ul>
+
+<h2><a class="toc-backref" id="ordinals-and-structured-ordinal-types" href="#ordinals-and-structured-ordinal-types">ordinal types</a></h2><ul class="simple"><li>array[n, T] fixed-length dimensionally homogeneous</li>
+<li>cstringArray</li>
+<li>openArray[T] a procs parameter that accepts an array/seq of any size but only of 1 dimension</li>
+<li>Ordinal[T] generic ordinal type</li>
+<li>range[T] generic constructor for range</li>
+<li>seq[T] dynamic-length dimensionally homogeneous</li>
+<li>set[T] generic set constructor</li>
+<li>SomeOrdinal</li>
+<li>UncheckedArray[T] array with no bounds checking for implmenting customized flexibly sized arrays</li>
+<li>varargs[T] an openarray paramter that accepts a variable number of args in a procedure</li>
 </ul>
 
 <h2><a class="toc-backref" id="ordinals-and-structured-ordinalsslashstructured-interface" href="#ordinals-and-structured-ordinalsslashstructured-interface">ordinals/structured interface</a></h2><ul class="simple"><li>immutable ops<ul class="simple"><li>[a .. ^b]	Slice: b is a backwardsIndex (inclusive)</li>
@@ -384,7 +389,7 @@ class="link-seesrc" target="_blank">Source</a>
 <li>is(x, y) true if value x of type y</li>
 <li>isnot(x,y) opposite of is, equivalent to not(x is type)</li>
 <li>len	Return the length</li>
-<li>low(x) lowest possible value/index</li>
+<li>low(x) lowest possible value/index s</li>
 <li>varargsLen the number of variadic arguments in x</li>
 <li>in/notin</li>
 </ul>
@@ -409,6 +414,19 @@ class="link-seesrc" target="_blank">Source</a>
   <div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
 <dl class="item">
+<div id="AmericaOfJobs">
+<dt><pre><span class="Identifier">AmericaOfJobs</span> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">nineToFives</span><span class="Other">,</span> <span class="Identifier">fiveToNines</span><span class="Other">,</span> <span class="Identifier">twentyFourSeven</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L211"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L211" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
 <div id="BlinkLights">
 <dt><pre><span class="Identifier">BlinkLights</span> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">off</span><span class="Other">,</span> <span class="Identifier">on</span><span class="Other">,</span> <span class="Identifier">slowBlink</span><span class="Other">,</span> <span class="Identifier">mediumBlink</span><span class="Other">,</span> <span class="Identifier">fastBlink</span></pre></dt>
@@ -416,9 +434,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L234"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L243"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L234" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L243" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -429,9 +447,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L232"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L241"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L232" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L241" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -441,9 +459,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L157"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L162"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L157" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L162" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -454,22 +472,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L213"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L222"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L213" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="GangsOfAmerica">
-<dt><pre><span class="Identifier">GangsOfAmerica</span> <span class="Other">=</span> <span class="Keyword">enum</span>
-  <span class="Identifier">democrats</span><span class="Other">,</span> <span class="Identifier">republicans</span><span class="Other">,</span> <span class="Identifier">politicians</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L205"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L205" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L222" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -479,9 +484,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L280"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L289"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L280" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L289" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -491,9 +496,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L236"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L245"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L236" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L245" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -504,9 +509,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L159"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L164"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L159" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L164" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -517,9 +522,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L290"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L299"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L290" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L299" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -529,9 +534,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L295"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L304"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L295" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L304" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -541,9 +546,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L255"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L264"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L255" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L264" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -553,9 +558,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L279"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L288"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L279" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L288" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -567,9 +572,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L209"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L215"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L209" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L215" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -580,9 +585,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L153"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L158"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L153" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L158" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -592,9 +597,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L158"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L163"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L158" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L163" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -605,9 +610,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L155"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L160"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L155" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L160" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -622,22 +627,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L270"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L279"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L270" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="arrayWithRange">
-<dt><pre><span class="Identifier">arrayWithRange</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="DecNumber">5</span><span class="Other">,</span> <span class="Identifier">string</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">[</span><span class="StringLit">&quot;one&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;two&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;three&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;four&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;five&quot;</span><span class="Other">,</span>
-    <span class="StringLit">&quot;six&quot;</span><span class="Other">]</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L143"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L143" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L279" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -647,9 +639,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L271"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L280"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L271" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L280" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -659,9 +651,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L140"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L142"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L140" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L142" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -671,9 +663,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L181"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L187"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L181" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L187" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -683,9 +675,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L330"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L339"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L330" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L339" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -695,38 +687,14 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L198"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L204"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L198" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L204" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
 <div id="globalset1">
 <dt><pre><span class="Identifier">globalset1</span> <span class="Other">=</span> <span class="Other">{</span><span class="DecNumber">1</span><span class="Other">,</span> <span class="DecNumber">2</span><span class="Other">,</span> <span class="DecNumber">3</span><span class="Other">}</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L308"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L308" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="globalset2">
-<dt><pre><span class="Identifier">globalset2</span> <span class="Other">=</span> <span class="Other">{</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="DecNumber">4</span><span class="Other">,</span> <span class="DecNumber">6</span><span class="Other">}</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L309"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L309" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="globalset11">
-<dt><pre><span class="Identifier">globalset11</span> <span class="Other">=</span> <span class="Identifier">deepCopy</span> <span class="Identifier">globalset1</span></pre></dt>
 <dd>
 
 
@@ -737,15 +705,39 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
+<div id="globalset2">
+<dt><pre><span class="Identifier">globalset2</span> <span class="Other">=</span> <span class="Other">{</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="DecNumber">4</span><span class="Other">,</span> <span class="DecNumber">6</span><span class="Other">}</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L318"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L318" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="globalset11">
+<dt><pre><span class="Identifier">globalset11</span> <span class="Other">=</span> <span class="Identifier">deepCopy</span> <span class="Identifier">globalset1</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L326"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L326" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
 <div id="lastWeek">
 <dt><pre><span class="Identifier">lastWeek</span><span class="Other">:</span> <span class="Identifier">WeeklyFoodTracker</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L170"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L176"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L170" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L176" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -755,9 +747,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L238"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L247"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L238" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L247" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -767,21 +759,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L193"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L199"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L193" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="nums">
-<dt><pre><span class="Identifier">nums</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">4</span><span class="Other">,</span> <span class="Identifier">int</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">[</span><span class="DecNumber">1</span><span class="Other">,</span> <span class="DecNumber">9</span><span class="Other">,</span> <span class="DecNumber">8</span><span class="Other">,</span> <span class="DecNumber">5</span><span class="Other">]</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L136"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L136" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L199" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -791,9 +771,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L137"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L140"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L137" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L140" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -803,9 +783,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L161"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L167"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L161" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L167" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -815,9 +795,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L138"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L141"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L138" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L141" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -827,21 +807,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L182"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L188"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L182" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="smun">
-<dt><pre><span class="Identifier">smun</span> <span class="Other">=</span> <span class="Other">[</span><span class="DecNumber">5</span><span class="Other">,</span> <span class="DecNumber">8</span><span class="Other">,</span> <span class="DecNumber">9</span><span class="Other">,</span> <span class="DecNumber">1</span><span class="Other">]</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L139"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L139" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L188" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -851,9 +819,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L180"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L186"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L180" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L186" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -863,9 +831,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L258"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L267"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L258" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L267" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -875,9 +843,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L179"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L185"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L179" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L185" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -886,15 +854,40 @@ class="link-seesrc" target="_blank">Source</a>
 <div class="section" id="9">
 <h1><a class="toc-backref" href="#9">Lets</a></h1>
 <dl class="item">
+<div id="arrayWithRange">
+<dt><pre><span class="Identifier">arrayWithRange</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="DecNumber">5</span><span class="Other">,</span> <span class="Identifier">string</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">[</span><span class="StringLit">&quot;one&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;two&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;three&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;four&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;five&quot;</span><span class="Other">,</span>
+    <span class="StringLit">&quot;six&quot;</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L148"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L148" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
 <div id="flags">
 <dt><pre><span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">Opts</span> <span class="Other">=</span> <span class="Other">{</span><span class="CharLit">'d'</span><span class="Other">..</span><span class="CharLit">'z'</span><span class="Other">}</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L285"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L294"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L285" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L294" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="nums">
+<dt><pre><span class="Identifier">nums</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">4</span><span class="Other">,</span> <span class="Identifier">int</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">[</span><span class="DecNumber">1</span><span class="Other">,</span> <span class="DecNumber">9</span><span class="Other">,</span> <span class="DecNumber">8</span><span class="Other">,</span> <span class="DecNumber">5</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L144"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L144" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -904,9 +897,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L284"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L293"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L284" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L293" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -916,9 +909,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L283"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L292"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L283" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L292" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -928,9 +921,21 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L282"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L291"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L282" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L291" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="smun">
+<dt><pre><span class="Identifier">smun</span> <span class="Other">=</span> <span class="Other">[</span><span class="DecNumber">5</span><span class="Other">,</span> <span class="DecNumber">8</span><span class="Other">,</span> <span class="DecNumber">9</span><span class="Other">,</span> <span class="DecNumber">1</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L145"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L145" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -945,9 +950,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L249"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L258"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L249" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L258" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -957,9 +962,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L250"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L259"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L250" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L259" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -974,9 +979,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L298"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L307"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L298" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L307" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -986,9 +991,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L297"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L306"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L297" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L306" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -998,9 +1003,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L145"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/ordinalStructured.nim#L150"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L145" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/ordinalStructured.nim#L150" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1014,7 +1019,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-03-01 20:17:29 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-03-01 21:30:52 UTC</small>
       </div>
     </div>
   </div>
