@@ -1,0 +1,79 @@
+nums	bookofnim/helloworld/modules/ordinalStructured.html#nums	ordinalStructured: nums	
+nums4	bookofnim/helloworld/modules/ordinalStructured.html#nums4	ordinalStructured: nums4	
+rangeArr	bookofnim/helloworld/modules/ordinalStructured.html#rangeArr	ordinalStructured: rangeArr	
+smun	bookofnim/helloworld/modules/ordinalStructured.html#smun	ordinalStructured: smun	
+emptyArr	bookofnim/helloworld/modules/ordinalStructured.html#emptyArr	ordinalStructured: emptyArr	
+arrayWithRange	bookofnim/helloworld/modules/ordinalStructured.html#arrayWithRange	ordinalStructured: arrayWithRange	
+withArrParam	bookofnim/helloworld/modules/ordinalStructured.html#withArrParam,array[I,T]	ordinalStructured: withArrParam[I, T](a: array[I, T]): string	
+breakfast	bookofnim/helloworld/modules/ordinalStructured.html#breakfast	TimeToEat.breakfast	
+lunch	bookofnim/helloworld/modules/ordinalStructured.html#lunch	TimeToEat.lunch	
+dinner	bookofnim/helloworld/modules/ordinalStructured.html#dinner	TimeToEat.dinner	
+sweettooth	bookofnim/helloworld/modules/ordinalStructured.html#sweettooth	TimeToEat.sweettooth	
+TimeToEat	bookofnim/helloworld/modules/ordinalStructured.html#TimeToEat	ordinalStructured: TimeToEat	
+proteinshake	bookofnim/helloworld/modules/ordinalStructured.html#proteinshake	WhatToEat.proteinshake	
+ramen	bookofnim/helloworld/modules/ordinalStructured.html#ramen	WhatToEat.ramen	
+ramentWithMeet	bookofnim/helloworld/modules/ordinalStructured.html#ramentWithMeet	WhatToEat.ramentWithMeet	
+pnutbutteryjelly	bookofnim/helloworld/modules/ordinalStructured.html#pnutbutteryjelly	WhatToEat.pnutbutteryjelly	
+WhatToEat	bookofnim/helloworld/modules/ordinalStructured.html#WhatToEat	ordinalStructured: WhatToEat	
+Eating	bookofnim/helloworld/modules/ordinalStructured.html#Eating	ordinalStructured: Eating	
+WeeklyFoodTracker	bookofnim/helloworld/modules/ordinalStructured.html#WeeklyFoodTracker	ordinalStructured: WeeklyFoodTracker	
+MonthlyFoodTracker	bookofnim/helloworld/modules/ordinalStructured.html#MonthlyFoodTracker	ordinalStructured: MonthlyFoodTracker	
+onSundayIAte	bookofnim/helloworld/modules/ordinalStructured.html#onSundayIAte	ordinalStructured: onSundayIAte	
+lastWeek	bookofnim/helloworld/modules/ordinalStructured.html#lastWeek	ordinalStructured: lastWeek	
+woops	bookofnim/helloworld/modules/ordinalStructured.html#woops	ordinalStructured: woops	
+swoop	bookofnim/helloworld/modules/ordinalStructured.html#swoop	ordinalStructured: swoop	
+emptySeq	bookofnim/helloworld/modules/ordinalStructured.html#emptySeq	ordinalStructured: emptySeq	
+seqEmpty	bookofnim/helloworld/modules/ordinalStructured.html#seqEmpty	ordinalStructured: seqEmpty	
+me	bookofnim/helloworld/modules/ordinalStructured.html#me	ordinalStructured: me	
+globalseq	bookofnim/helloworld/modules/ordinalStructured.html#globalseq	ordinalStructured: globalseq	
+democrats	bookofnim/helloworld/modules/ordinalStructured.html#democrats	GangsOfAmerica.democrats	
+republicans	bookofnim/helloworld/modules/ordinalStructured.html#republicans	GangsOfAmerica.republicans	
+politicians	bookofnim/helloworld/modules/ordinalStructured.html#politicians	GangsOfAmerica.politicians	
+GangsOfAmerica	bookofnim/helloworld/modules/ordinalStructured.html#GangsOfAmerica	ordinalStructured: GangsOfAmerica	
+PeopleOfAmerica	bookofnim/helloworld/modules/ordinalStructured.html#PeopleOfAmerica	ordinalStructured: PeopleOfAmerica	
+AA	bookofnim/helloworld/modules/ordinalStructured.html#AA	ExplicitEnum.AA	
+BB	bookofnim/helloworld/modules/ordinalStructured.html#BB	ExplicitEnum.BB	
+ExplicitEnum	bookofnim/helloworld/modules/ordinalStructured.html#ExplicitEnum	ordinalStructured: ExplicitEnum	
+north	bookofnim/helloworld/modules/ordinalStructured.html#north	Direction.north	
+east	bookofnim/helloworld/modules/ordinalStructured.html#east	Direction.east	
+south	bookofnim/helloworld/modules/ordinalStructured.html#south	Direction.south	
+west	bookofnim/helloworld/modules/ordinalStructured.html#west	Direction.west	
+Direction	bookofnim/helloworld/modules/ordinalStructured.html#Direction	ordinalStructured: Direction	
+off	bookofnim/helloworld/modules/ordinalStructured.html#off	BlinkLights.off	
+on	bookofnim/helloworld/modules/ordinalStructured.html#on	BlinkLights.on	
+slowBlink	bookofnim/helloworld/modules/ordinalStructured.html#slowBlink	BlinkLights.slowBlink	
+mediumBlink	bookofnim/helloworld/modules/ordinalStructured.html#mediumBlink	BlinkLights.mediumBlink	
+fastBlink	bookofnim/helloworld/modules/ordinalStructured.html#fastBlink	BlinkLights.fastBlink	
+BlinkLights	bookofnim/helloworld/modules/ordinalStructured.html#BlinkLights	ordinalStructured: BlinkLights	
+LevelSetting	bookofnim/helloworld/modules/ordinalStructured.html#LevelSetting	ordinalStructured: LevelSetting	
+level	bookofnim/helloworld/modules/ordinalStructured.html#level	ordinalStructured: level	
+lastFour	bookofnim/helloworld/modules/ordinalStructured.html#lastFour	ordinalStructured: lastFour	
+lastOne	bookofnim/helloworld/modules/ordinalStructured.html#lastOne	ordinalStructured: lastOne	
+MySubrange	bookofnim/helloworld/modules/ordinalStructured.html#MySubrange	ordinalStructured: MySubrange	
+thisRange	bookofnim/helloworld/modules/ordinalStructured.html#thisRange	ordinalStructured: thisRange	
+a	bookofnim/helloworld/modules/ordinalStructured.html#a	ordinalStructured: a	
+bbb	bookofnim/helloworld/modules/ordinalStructured.html#bbb	ordinalStructured: bbb	
+Opts	bookofnim/helloworld/modules/ordinalStructured.html#Opts	ordinalStructured: Opts	
+IsOn	bookofnim/helloworld/modules/ordinalStructured.html#IsOn	ordinalStructured: IsOn	
+simpleOpts	bookofnim/helloworld/modules/ordinalStructured.html#simpleOpts	ordinalStructured: simpleOpts	
+onn	bookofnim/helloworld/modules/ordinalStructured.html#onn	ordinalStructured: onn	
+offf	bookofnim/helloworld/modules/ordinalStructured.html#offf	ordinalStructured: offf	
+flags	bookofnim/helloworld/modules/ordinalStructured.html#flags	ordinalStructured: flags	
+MyFlag	bookofnim/helloworld/modules/ordinalStructured.html#MyFlag	ordinalStructured: MyFlag	
+MyFlags	bookofnim/helloworld/modules/ordinalStructured.html#MyFlags	ordinalStructured: MyFlags	
+toNum	bookofnim/helloworld/modules/ordinalStructured.html#toNum,MyFlags	ordinalStructured: toNum(f: MyFlags): int	
+toFlags	bookofnim/helloworld/modules/ordinalStructured.html#toFlags,int	ordinalStructured: toFlags(v: int): MyFlags	
+globalset1	bookofnim/helloworld/modules/ordinalStructured.html#globalset1	ordinalStructured: globalset1	
+globalset2	bookofnim/helloworld/modules/ordinalStructured.html#globalset2	ordinalStructured: globalset2	
+globalset11	bookofnim/helloworld/modules/ordinalStructured.html#globalset11	ordinalStructured: globalset11	
+globalarr	bookofnim/helloworld/modules/ordinalStructured.html#globalarr	ordinalStructured: globalarr	
+ordinals and structured	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured	 ordinals and structured	
+TLDR	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-tldr	  TLDR	
+links	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-links	  links	
+arrays	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-arrays	  arrays	
+set	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-set	  set	
+sequence	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-sequence	  sequence	
+enum	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-enum	  enum	
+range	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-range	  range	
+slice	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-slice	  slice	
+ordinals/structured interface	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-ordinalsslashstructured-interface	  ordinals/structured interface	

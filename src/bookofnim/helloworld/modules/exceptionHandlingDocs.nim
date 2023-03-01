@@ -1,14 +1,9 @@
 ##
-## exception handling, debugging (todo), documentation
-## ===================================================
+## exception handling, debugging, documentation
+## ============================================
 
 ##[
 ## TLDR
-- all custom exceptions should ref a specific error/CatchableERror/Defect/and lastly Exception
-- Exception is the base type for CatachableError (exceptions), Defect (non catchable)
-- raise keyword for raising (throwing) an exception
-  - system.Exception provides the interface
-  - have to be allocated on the heap because their lifetime is unknown
 - docgen
   - having `*` after - (like on this line) will break htmldocs rst parser
     - you must escape it with backticks (see above) or backslash \*
@@ -16,9 +11,47 @@
       - error reported as `Error: '*' expected`
   - pretty prints code in the html
   - `back ticks` and back slashes e.g. \*.nims can escape special chars
+- exceptions
+  - all custom exceptions should ref a specific error/CatchableERror/Defect/and lastly Exception
+    - Exception is the base type for CatachableError (exceptions), Defect (non catchable)
+    - has to be allocated on the heap because their lifetime is unknown
+  - raise keyword for throwing an exception/defect
+    - throw err: `raise err`
+    - throw err: `raise newException(OSError, "Oops! did i do that?")`
+    - raising without an error rethrows the previous exception
+- assert
+  - -d:danger or --asertions:off to remove from compilation
+  - --assertions:on to keep them in compiled output
+- doAssert
+  - always on regardless of flags
+  - can be used to check for specific errors with `doAssertRaises(woop):` block
+- drnim
+  - requires koch to be setup
+
+links
+-----
+- other
+  - [restructuredText wiki](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
+  - [status exception handling docs](https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling)
+  - [system exceptions you can extend from](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim)
+- high impact
+  - [assertions](https://nim-lang.org/docs/assertions.html)
+  - [defect doc](https://nim-lang.org/docs/system.html#Defect)
+  - [docgen](https://nim-lang.org/docs/docgen.html)
+  - [documenting, profiling and debugging nim code](https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html)
+  - [embedding runnable examples](https://nim-lang.org/docs/system.html#runnableExamples%2Cstring%2Cuntyped)
+  - [exception doc](https://nim-lang.org/docs/system.html#Exception)
+  - [exception handling with defer](https://nim-lang.org/docs/manual.html#exception-handling-defer-statement)
+  - [exception hierarchy doc](https://nim-lang.org/docs/manual.html#exception-handling-exception-hierarchy)
+  - [nim reStructuredText & markdown](https://nim-lang.org/docs/rst.html)
+- niche
+  - [drnim](https://nim-lang.org/docs/drnim.html)
+  - [segfaults module](https://nim-lang.org/docs/segfaults.html)
 
 todos
 -----
+- drnim tool
+- debugger
 - reread the assertion docs and capture the info
 .. code-block:: Nim
   errorMessageWriter (var) called instead of stdmsg.write when printing stacktrace
@@ -30,30 +63,12 @@ todos
     ^ if not nil, every raise statement calls this hook
     ^ if returns false, exception is caught and does not propagate
 
-links
------
-- other
-  - [status exception handling docs](https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling)
-  - [system exceptions you can extend from](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim)
-  - [restructuredText wiki](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
-- high impact
-  - [assertions](https://nim-lang.org/docs/assertions.html)
-  - [defect doc](https://nim-lang.org/docs/system.html#Defect)
-  - [docgen](https://nim-lang.org/docs/docgen.html)
-  - [embedding runnable examples](https://nim-lang.org/docs/system.html#runnableExamples%2Cstring%2Cuntyped)
-  - [exception doc](https://nim-lang.org/docs/system.html#Exception)
-  - [exception hierarchy doc](https://nim-lang.org/docs/manual.html#exception-handling-exception-hierarchy)
-  - [nim reStructuredText & markdown](https://nim-lang.org/docs/rst.html)
-- niche
-  - [drnim](https://nim-lang.org/docs/drnim.html)
-  - [segfaults module](https://nim-lang.org/docs/segfaults.html)
-
 ## Exception Handling
+
 - interesting stuff
   - getStackTrace() only works for debug builds
   - getStackTrace(e) of a specific exception
   - getStackTraceEntries() doesnt work for the js backend
-  - getStackTraceEntries(e) of a specific exception
 
 Defect types
 ------------
@@ -91,6 +106,23 @@ Error (exception) types
 - ResourceExhaustedError when resource request cant be fulfilled
 - ValueError string/object conversion
 
+try/except/finally
+------------------
+- like most things can be an expression and assigned to a var
+- the try + except must all be of the same type
+- if theres a finally, it must return void
+
+defer
+-----
+- alternative try finally statement that avoids lexical nesting + scoping flexibility
+- all statements after defer will be within an implicit try block
+- top level defers arent supported (must be within a block/proc/etc)
+
+assert
+------
+- useful for guard, pre & post conditions if using design by contract
+- i think drnim even extends this further
+
 ## documentation
 - starting a line with ## creates a title that appears in the left sidebar
 - both --- and === need to be the same length of whatever they're underlining
@@ -100,7 +132,15 @@ Error (exception) types
 - starting a line with .. code-block:: Nim creates a codeblock for stuff indented beneath it
 - starting a line with .. image:: woopwoop.com/image.gif creates an image
 - include another doc file .. include:: ./system_overview.rst
-- [^ check how it looks](https://raw.githubusercontent.com/nim-lang/Nim/version-1-6/lib/system_overview.rst)
+- [^ e.g. system_overview](https://raw.githubusercontent.com/nim-lang/Nim/version-1-6/lib/system_overview.rst)
+
+runnableExamples
+----------------
+- example code to be formatted and displayed in html docs
+- ignored in release/debug, but parsed during docgen:
+  - will aggregate all into a separate module, compile, test
+  - ensures only exported symbols exist
+    - errors if private symbols are included
 
 ]##
 
@@ -119,23 +159,22 @@ type GoodApplications* = object
 echo "############################ documentation: runnableExamples"
 
 runnableExamples:
-  ## ignored in release/debug, but not during docgen:
-  ## - will aggregate all into a separate module, compile, test
-  ## - also ensures only exported symbols exist
   var iam = GoodApplications(pubfield: "yes u are", prvfield: "I know I am") ## \
     ## example of creating a good application
   discard repr iam
 
 
 echo "############################ Exceptions "
-type LearningError = object of CatchableError
+type LearningError = object of CatchableError ## \
+  ## The first pass is figuring things out.
+  ## the second pass is ironing things out
 
 block howlong:
   try:
     if 24 div 12 == 2:
       raise newException(LearningError, "its been a long time")
   except LearningError as e:
-    echo e.msg & " but i finally found the time"
+    echo e.msg & " I shouldnt have left you"
 
 echo "############################ raise "
 proc neverThrows(): string {.raises: [].} =
@@ -146,65 +185,55 @@ proc maybeThrows(x: int): int {.raises: [ValueError].} =
   result = x
 echo maybeThrows(23)
 
-var
-  err: ref OSError
-new(err)
-err.msg = "the request to the OS failed"
-# raise e
-# alternatively, you can raise without defining a custom err
-# raise newException(OSError, "the request to the os Failed")
-# raise # raising without an error rethrows the previous exception
+var err: ref OSError
+new(err) # a new OSError instance without a msg
+err.msg = "Oops! this is a bad error msg"
 
-echo "############################ try/catch/finally "
+echo "############################ try/except/finally "
 if true:
   try:
-    let f: File = open "this file doesnt exist"
-  except OverflowDefect, ArithmeticDefect: # catch multiple types
+    let f: File = open "a file that doesnt exist"
+  except OverflowDefect, ArithmeticDefect:
     echo "wrong error type"
   except ValueError as e:
     echo "you can access the current exception if assigned: ", e.msg
-  # except IOError:
   except KeyError:
     # explicitly convert the currentException to a type
     let e = (ref IOError)(getCurrentException())
     echo "wrong error type: ", e.msg
   except:
-    echo "unknown exception! this is bad code"
+    echo "unknown exception"
     let
       e = getCurrentException()
       msg = getCurrentExceptionMsg()
     echo "Got exception ", repr(e), " with message ", msg
-    # raise <-- would rethrow whatever the previous err was
   finally:
-    echo "Glad we survived this horrible day"
-    echo "if you didnt catch the err in an except"
-    echo "this will be the last line before exiting"
+    echo "Glad we survived this horrible day",
+      "\nif you didnt catch the err in an except",
+      "\nthis will be the last line before exiting"
 
-# can be an expression
-# the try + except must all be of the same type
-# if theres a finally, it must return void
 let divBy0: float = try: 4 / 0 except: -1.0
 echo "oops! ", divBy0
 
+
 echo "############################ defer "
-# @see https://nim-lang.org/docs/manual.html#exception-handling-defer-statement
-# alternative try finally statement that avoids lexical nesting + scoping flexibility
-# all statements after defer will be within an implicit try block
-# top level defers arent supported (must be within a block/proc/etc)
+proc deferExample: auto =
+  echo "before defer"
+  defer:
+    echo "inside defer",
+      "\nan implicit finally block",
+      "\nunlike try/finally there is no except clause"
+  echo "\tafter defer" &
+    "\n\tall statements in the same scope as defer" &
+    "\n\tare in an implicit try block" &
+    "\n\tnote this is NOT within the defer block"
+  result = "defer return this"
 
-proc somethingStupid: auto =
-  result =  "something"
-  defer: echo "this is the finally block"
-  result &= " stupid in an implicit try block"
 
-echo somethingStupid()
+echo deferExample()
+
 
 echo "############################ assert"
-# useful for guard, pre & post conditions if using design by contract
-# ^ i think drnim even extends this further
-# ^ haha remember trying to use thiz: https://github.com/codemix/contractual
-# -d:danger or --asertions:off to remove from compilation
-# --assertions:on to keep them in compiled output
 assert "a" == $'a' # has to be of same type
 
 # is always turned on regardless of --assertions flag
@@ -213,11 +242,6 @@ doAssert 1 < 2, "failure msg"
 # doAssertRaises(KeyError):
 #   discard {'a', 'b'}['z']
 
-# true if the module is compiled as the main file
-# useful for embedding tests within the module
-when isMainModule:
-  assert true == true
-
 echo "############################ debugger"
-# Todo, find the debugger apiin the docs somewhere
+# Todo, find the debugger api in the docs somewhere
 # PFrame runtime frame of the callstack, part of the debugger api

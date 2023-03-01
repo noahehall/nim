@@ -8,7 +8,8 @@
 - enable new functionality without adding new keywords to the language
 - syntax: {.pragma1, pragma2:val, etc.}
 
-todo
+todos
+-----
 - [skipped everything starting here](https://nim-lang.org/docs/manual.html#pragmas)
 - [additional features](https://nim-lang.org/docs/nimc.html#additional-features)
 - [effect system](https://nim-lang.org/docs/manual.html#effect-system)

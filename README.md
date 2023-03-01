@@ -26,14 +26,14 @@
     - [with ergonomic APIs](https://nim-lang.org/docs/apis.html)
   - [various pragmas to customize, restrict and enhance the compiler and runtime](https://nim-lang.github.io/Nim/manual.html#pragmas)
   - [community forum](https://forum.nim-lang.org/)
-  - [spidermans uncle](https://nim-lang.org/docs/tut3.html)
+  - [spiderman's uncle](https://nim-lang.org/docs/tut3.html)
 
 ## recommended ramp up
 
 - this repo serves two purposes for programmers considering nim as their Nth language:
-  - [primary: source code](./main.nim) you can execute while reading
+  - [primary: source code](/src/bookofnim.nim) you can execute while reading
     - generally concise examples of the subject at hand; provding enough nim to create production-ready applications
-  - [secondary: documentation](https://noahehall.github.io/nim/htmldocs/main.html) you can read while coding
+  - [secondary: documentation](https://noahehall.github.io/nim/src/htmldocs/bookofnim.html) you can read while coding
     - generally concise abbreviations extracted from nim docs/blogs/etc & categorized with links to technical specs
 - thus each _chapter_ consists of docs to read and code to run:
   - 0: tutorials (indented below) > [helloworld](/src/bookofnim/helloworld/helloworld.nim) > [sugar](/src/bookofnim/deepdives/sugar.nim)
@@ -94,6 +94,7 @@ blogs
 
 ### quickies
 
+- dont forget about the nimlang/tools dir
 - find the rst syntax for creating links between pages and remove all the markdown links
 - fix tests/src/skip and add it to a new `good examples of bad code` section
 - move projects out of this repo

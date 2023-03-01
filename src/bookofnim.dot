@@ -26,6 +26,15 @@ digraph bookofnim {
 "system/io" -> "std/private/since";
 "system/io" -> "system/formatfloat";
 "system" -> "system/io";
+"bookofnim/helloworld/helloworld" -> "bookofnim/helloworld/modules/blocks";
+"bookofnim/helloworld/helloworld" -> "bookofnim/helloworld/modules/exceptionHandlingDocs";
+"bookofnim/helloworld/helloworld" -> "bookofnim/helloworld/modules/ifWhenCase";
+"bookofnim/helloworld/helloworld" -> "bookofnim/helloworld/modules/loopsIterator";
+"bookofnim/helloworld/helloworld" -> "bookofnim/helloworld/modules/ordinalStructured";
+"bookofnim/helloworld/helloworld" -> "bookofnim/helloworld/modules/routines";
+"bookofnim/helloworld/helloworld" -> "bookofnim/helloworld/modules/tupleObjectTable";
+"bookofnim/helloworld/helloworld" -> "bookofnim/helloworld/modules/typeSimple";
+"bookofnim/helloworld/helloworld" -> "bookofnim/helloworld/modules/variableGlobals";
 "bookofnim" -> "bookofnim/helloworld/helloworld";
 "std/sugar" -> "std/private/since";
 "std/macros" -> "std/private/since";

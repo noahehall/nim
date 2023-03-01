@@ -11,8 +11,15 @@
 - additional type features are covered in tupleObjectTable.nim
 - you can call clear on pretty much anything
 
-var/global todos
-----------------
+links
+-----
+- [system vars](https://nim-lang.org/docs/system.html#8)
+- [typeinfo](https://nim-lang.org/docs/typeinfo.html)
+- [converters](https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#converter)
+
+
+todos
+-----
 - [couldnt get eval to work](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L2816)
 .. code-block:: Nim
   # probably need a memory_mgmt.nim file
@@ -48,12 +55,6 @@ var/global todos
   resizeShared
   setControlCHook proc to run when program is ctrlc'ed
   sizeof blah in bytes
-
-var/global links
-----------------
-- [system vars](https://nim-lang.org/docs/system.html#8)
-- [typeinfo](https://nim-lang.org/docs/typeinfo.html)
-- [converters](https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#converter)
 
 ## var
 - runtime mutable global var

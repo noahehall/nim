@@ -1,7 +1,15 @@
 ##
-## yolo wurl: basic nim syntax
+## Hello world: my name is nim
 ## ===========================
 ## [bookmark](https://nim-lang.org/docs/manual.html#special-types)
+# exception handling
+# ifwhencase
+# loopsiterator
+# ordinal structured
+# todos_skipped
+# tuple object
+# type simple
+# variable globals
 
 ##[
 ## TLDR
@@ -12,9 +20,11 @@
   - this repo uses nim 1.6.10 and breaks on later versions
 - you should expect everything in nim is heavily overloaded
   - hence only simple syntax is shown and shouldnt be considered comprehensive in any form
+- generaly guidance
+  - everything in javascript is an object, almost everything in nim is an expression
 
-useful links
-------------
+links
+-----
 - [nim system module](https://nim-lang.org/docs/system.html)
 - [nimlang api design](https://nim-lang.org/docs/apis.html)
 - [nimlang manual](https://nim-lang.org/docs/manual.html)
@@ -53,7 +63,7 @@ idiomatic nim
 - prefer object variants > inheritance for simple types; no type conversion required (docs)
 - prefer type > cast operator cuz type preserves the bit pattern (docs)
 - procs that mutate data should be prefixed with 'm' (styleguide)
-- procs that return a transformed copy of soemthing should be in past particle (e.g. pooped) (styleguide)
+- procs that return a transformed copy of soemthing should be in past particle (e.g. wooped) (styleguide)
 - refrain from MACRO_CASE naming conventions, no matter what it is (styleguide)
 - run initialization logic as toplevel module statements, e.g. init data (docs)
 - secondary flavors of type identifiers should have suffix Obj|Ref|Ptr (styleguide)
@@ -132,8 +142,8 @@ import
     import myOtherSubdir / [fourthFile, fifthFile]
     import thisThing except thiz,thaz,thoz
     import thisThing as thingThis
-    import this/thing/here, "that/is/in/this/sub/dir" # identifier is stil here.poop
-    import "this/valid dir name/but invalid for nim/someMod" # someMod.poop
+    import this/thing/here, "that/is/in/this/sub/dir" # identifier is stil here.woop
+    import "this/valid dir name/but invalid for nim/someMod" # someMod.woop
     import pkg/someNimblePkg # use pkg to import a nimble pkg
     from thisThing import this, thaz, thoz # can invoke this,that,thot without qualifying
     from thisThing import nil # force symbol qualification, e.g. thisThing.blah()
@@ -142,10 +152,11 @@ import
 include
 -------
 - a file as part of this module
-- can be used outside of the top level, e.g. scoped to a block/proc
-- becareful with too many includes, its difficult to debug when running the main file
-- line numbers dont point to specific included files, but to the composite file
-- example include for helloworld.nim
+- can be used in any scope, e.g. scoped to a block/proc
+- including too many files makes its difficult to debug when running the main file
+  - line numbers dont point to specific included files, but to the composite file
+  - IMO stay away from includes and use imports, except for simple cases
+- example include before we needed to debug memory leaks and converted to imports
 .. code-block:: Nim
   include modules/[
     variableGlobals,
@@ -166,7 +177,7 @@ export
   - thus importers dont need to import their dependencies' depencencies
 - example exports
 .. code-block:: Nim
-  export poop # all turds are exported
+  export woop # all turds are exported
   export boop except soup, doup, loop
 
 ## packages
@@ -238,15 +249,14 @@ visibility
 ----------
 - var: local or global depending on scope,
 - force local scope vars to global via {.global.} pragma
-- export via symbols via poop* and it will be visible to client modules
+- export via symbols via woop* and it will be visible to client modules
 - scopes: all blocks (ifs, loops, procs, etc) introduce a closure EXCEPT when statements
 ]##
 
 
-
-include modules / [
+import modules / [
   blocks, ## block statements,
-  exceptionHandlingDocs, ## exceptions, assertions, doc comments, try/catch
+  exceptionHandlingDocs, ## exceptions, assertions, doc comments, try/catch, defer
   ifWhenCase, ## if when and case statements
   loopsIterator, ## loops and iterators
   ordinalStructured, ## ordinals and collections

@@ -9,6 +9,7 @@
 - check collections.nim for other stuff
 
 links
+-----
 - high impact
   - [singly/doubly linked list/rings](https://nim-lang.org/docs/lists.html)
   - [double ended queue](https://nim-lang.org/docs/deques.html)
