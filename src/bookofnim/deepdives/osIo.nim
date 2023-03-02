@@ -6,6 +6,8 @@
 ##[
 ## TLDR
 - if a proc accepts a filename (string), it may also accept a File/Filehandle
+- tips
+  - always use absolutePath when working with paths
 - generally you should check when defined(posix/linux/etc) and use unixToNativePath
   - extremely relevant if your app supports disparate systems
   - posix

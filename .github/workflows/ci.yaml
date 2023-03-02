@@ -1,4 +1,4 @@
-name: bookofnim CI
+name: bookofnim
 on:
   push:
     branches: [develop, deploy]

@@ -5,7 +5,7 @@ import std/[os, strformat]
 mode = ScriptMode.Verbose
 
 let
-  # proxy for in github || local machine
+  # proxy for github || local machine
   rootDir = absolutePath normalizedPath "GITHUB_WORKSPACE".getEnv "."
 
 proc installDeps: void =

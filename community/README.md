@@ -12,7 +12,7 @@
 
 ### worth checking out
 
-- [async tools](https://github.com/cheatfate/asynctools)
+- [async tools: async utilities for nim](https://github.com/cheatfate/asynctools)
 - [Basolato: fullstack web framework](https://github.com/itsumura-h/nim-basolato)
 - [c2nm: converts C and C++ header files to nim code](https://github.com/nim-lang/c2nim)
 - [docopt: create cli interfaces](https://github.com/docopt/docopt.nim)
@@ -27,6 +27,7 @@
 - [macr-based pattern matching library](https://github.com/alehander92/gara)
 - [moe: vim like editor that didnt work on the first try](https://github.com/fox0430/moe)
 - [neel: create lightweight electron apps](https://github.com/Niminem/Neel)
+- [ni18n: super fast i18](https://github.com/heinthanth/ni18n)
 - [NiGui: cross platform desktop GUI toolkit](https://github.com/trustable-code/NiGui)
 - [nim-regex: parsing,compiling,executing regex](https://github.com/nitely/nim-regex)
 - [nimcrypto: cryptographic library](https://github.com/cheatfate/nimcrypto)

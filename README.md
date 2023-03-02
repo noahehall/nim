@@ -97,8 +97,6 @@ blogs
 - dont forget about the nimlang/tools dir
 - find the rst syntax for creating links between pages and remove all the markdown links
 - fix tests/src/skip and add it to a new `good examples of bad code` section
-- move projects out of this repo
-  - make sure you fork the nimtemplate repo
 - [check how getTime handles os checks](https://github.com/nim-lang/Nim/blob/version-1-6/lib/pure/times.nim#L897)
 - [skipped most of the section on cross compilation](https://nim-lang.org/docs/nimc.html#crossminuscompilation-for-windows)
 - [checkout status opensource theyve already built bunch of things you'll need for nirv](https://github.com/status-im)
