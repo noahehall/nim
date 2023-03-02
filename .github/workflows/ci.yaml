@@ -11,15 +11,15 @@ concurrency:
 
 jobs:
   ci:
-    name: ${{ matrix.os }} / Nim${{ matrix.nimv }} / ci
+    name: CI / ${{ matrix.os }} / Nim${{ matrix.nimv }}
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 10
+    timeout-minutes: 5
 
     strategy:
       fail-fast: true
       matrix:
         os: [ubuntu-latest] # macos-11 fails
-        nimv: ["1.6.10"]
+        nimv: [1.6.10]
 
     steps:
       - name: Checkout
@@ -46,6 +46,4 @@ jobs:
         run: nim c src/bookofnim.nim
 
       - name: test
-        run: |
-          sudo apt install valgrind
-          ~/.nimble/bin/testament all
+        run: nim e ${GITHUB_WORKSPACE}/.github/scripts/test.nims
