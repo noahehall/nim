@@ -73,6 +73,7 @@ xcuserdata/
 *.deps
 nimble.develop
 nimble.paths
+*.out
 
 # allow
 !tests/skip

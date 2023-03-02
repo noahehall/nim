@@ -5,8 +5,7 @@ author        = "noahehall"
 description   = "book of nim: bow to the crown"
 license       = "MIT"
 srcDir        = "src"
-installExt    = @["nim"]
-bin           = @["nim"]
+
 
 
 # Dependencies
