@@ -58,11 +58,13 @@
 
 ## orgs/people with nim open source
 
-- [status-im](https://github.com/orgs/status-im/repositories?q=&type=all&language=nim&sort=)
-- [waku](https://github.com/orgs/waku-org/repositories?q=&type=all&language=nim&sort=)
-- [treeform](https://github.com/treeform)
+- [dom96](https://github.com/dom96)
 - [guzba](https://github.com/guzba)
 - [iffy](https://github.com/iffy)
+- [jiro](https://github.com/jiro4989)
+- [status-im](https://github.com/orgs/status-im/repositories?q=&type=all&language=nim&sort=)
+- [treeform](https://github.com/treeform)
+- [waku](https://github.com/orgs/waku-org/repositories?q=&type=all&language=nim&sort=)
 
 ## Personal preferences
 
@@ -118,6 +120,16 @@
 
 ### github actions
 
-- [sets up a nimble environment](https://github.com/jiro4989/setup-nim-action)
-  - make sure you read the rate limiting section if you experience any errors
-- [installs nim](https://github.com/iffy/install-nim)
+- FYI:
+  - make sure you read the rate limiting section if you experience any errors with jiro / iffy github actions
+
+```sh
+# testament without setting up nimble tasks
+sudo apt-fast -y install valgrind
+~/.nimble/bin/testament all
+```
+
+- [caching apt pkgs vs docker container](https://stackoverflow.com/questions/59269850/caching-apt-packages-in-github-actions-workflow)
+- [uses node to install choosenim to install nim](https://github.com/jiro4989/setup-nim-action)
+- [uses bash to install choosenim to install nim](https://github.com/iffy/install-nim)
+  - should be faster than jiros
