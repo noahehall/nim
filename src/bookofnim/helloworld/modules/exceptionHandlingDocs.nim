@@ -4,13 +4,15 @@
 
 ##[
 ## TLDR
-- docgen
+- docgen:
   - having `*` after - (like on this line) will break htmldocs rst parser
     - you must escape it with backticks (see above) or backslash \*
     - the line number reported may not be correct, but the filename will be
       - error reported as `Error: '*' expected`
   - pretty prints code in the html
   - `back ticks` and back slashes e.g. \*.nims can escape special chars
+  - if reusing rsts (e.g. for github readmes)
+    - make sure to add an empty line before the first indented list item
 - exceptions
   - all custom exceptions should ref a specific error/CatchableERror/Defect/and lastly Exception
     - Exception is the base type for CatachableError (exceptions), Defect (non catchable)
