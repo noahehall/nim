@@ -8,7 +8,7 @@
 
 ##[
 ## TLDR
-- everything you should know about nim
+- the minimum nim needed to make meaningful nim apps
 - always check the nim docs for the full syntax
 - if viewing this online:
   - every imported file has a `source` link to dive into the source code

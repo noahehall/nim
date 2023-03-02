@@ -3,7 +3,7 @@
 version       = "0.1.0"
 author        = "noahehall"
 description   = "book of nim: bow to the crown"
-license       = "MIT"
+license       = "TO KILL!"
 srcDir        = "src"
 
 
