@@ -1,0 +1,51 @@
+name: bookofnim CI
+on:
+  push:
+    branches: [develop, deploy]
+  pull_request:
+    branches: [develop, deploy]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: ${{ matrix.os }} / Nim${{ matrix.nimv }} / ci
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ubuntu-latest] # macos-11 fails
+        nimv: ["1.6.10"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Cache Nimble
+        id: cache-nimble
+        uses: actions/cache@v3
+        with:
+          path: ~/.nimble
+          key: ${{ runner.os }}-nimble-${{ hashFiles('*.nimble') }}
+          restore-keys: |
+            ${{ runner.os }}-nimble-
+
+      - name: Setup nim
+        uses: jiro4989/setup-nim-action@v1
+        with:
+          nim-version: ${{ matrix.nimv }}
+          # repo-token: ${{ secrets.GITHUB_TOKEN }} # only required if API rate limit is breached
+
+      - name: compile
+        run: nim c src/bookofnim.nim
+
+      - name: test
+        run: |
+          sudo apt install valgrind
+          ~/.nimble/bin/testament all

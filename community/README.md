@@ -13,15 +13,13 @@
 ### worth checking out
 
 - [async tools](https://github.com/cheatfate/asynctools)
+- [Basolato: fullstack web framework](https://github.com/itsumura-h/nim-basolato)
 - [c2nm: converts C and C++ header files to nim code](https://github.com/nim-lang/c2nim)
-- [convert markdown files to html](https://github.com/h3rald/hastyscribe)
-- [dev desktop applicatoins in nim](https://github.com/trustable-code/NiGui)
 - [docopt: create cli interfaces](https://github.com/docopt/docopt.nim)
-- [document.qerySelector+all for nim](https://github.com/GULPF/nimquery)
 - [dsl: svg|gif generator](https://github.com/bluenote10/NimSvg)
 - [DSL: webserver: composable http handlers](https://github.com/andreaferretti/rosencrantz)
 - [fidget: UI Library + Figma plugin](https://github.com/treeform/fidget)
-- [fullstack web framework](https://github.com/itsumura-h/nim-basolato)
+- [hastyscribe: cli markdown > html converter](https://github.com/h3rald/hastyscribe)
 - [http auth](https://github.com/FedericoCeratto/nim-httpauth)
 - [httpbeast: fast http 1.1 server](https://github.com/dom96/httpbeast)
 - [jester: a sinetra-like web framework built on httpbeast](https://github.com/dom96/jester)
@@ -29,35 +27,34 @@
 - [macr-based pattern matching library](https://github.com/alehander92/gara)
 - [moe: vim like editor that didnt work on the first try](https://github.com/fox0430/moe)
 - [neel: create lightweight electron apps](https://github.com/Niminem/Neel)
+- [NiGui: cross platform desktop GUI toolkit](https://github.com/trustable-code/NiGui)
+- [nim-regex: parsing,compiling,executing regex](https://github.com/nitely/nim-regex)
 - [nimcrypto: cryptographic library](https://github.com/cheatfate/nimcrypto)
 - [nimcx: color and util tools for nim](https://github.com/qqtop/NimCx)
 - [nimdata: data manipulation](https://github.com/bluenote10/NimData)
 - [nimib: convert your nim code and its outputs to html docs](https://github.com/pietroppeter/nimib)
 - [nimibook: port of mdbook to Nim](https://github.com/pietroppeter/nimibook)
 - [nimqt: bindings for QT interface development](https://github.com/jerous86/nimqt)
+- [nimquery: document.qerySelector+all for nim](https://github.com/GULPF/nimquery)
+- [nimtemplate: nim project/library starter kit](https://github.com/treeform/nimtemplate)
+- [NimTemplate: third-person template for unreal engine](https://github.com/jmgomez/NimTemplate)
 - [nimterlingua: compiletime i18](https://github.com/juancarlospaco/nim-nimterlingua)
 - [nimx: cross platform GUI framework](https://github.com/yglukhov/nimx)
+- [NimYAML: serialize & stream yaml bidrectionally](https://github.com/flyx/NimYAML)
 - [nitch: neofetch alternative](https://github.com/unxsh/nitch)
 - [nodejs: alternative stdlib for js targets](https://github.com/juancarlospaco/nodejs)
 - [norm: postgres orm](https://github.com/moigagoo/norm)
 - [norman: migration manager for norm](https://github.com/moigagoo/norman)
 - [nyml: yaml parser](https://github.com/openpeep/nyml)
-- [parsing,compiling,executing regex](https://github.com/nitely/nim-regex)
-- [patterm matching (see gara as well)](https://github.com/andreaferretti/patty)
-- [port scanner](https://github.com/elddy/NimScan)
 - [presto: rest api from status-im built on chronos](https://github.com/status-im/nim-presto)
-- [protobuf](https://github.com/PMunch/protobuf-nim)
-- [react bindings for nim](https://github.com/andreaferretti/react.nim)
+- [protobuf-nim: protobuff protocol with 0 deps](https://github.com/PMunch/protobuf-nim)
 - [ready: redis client](https://github.com/guzba/ready)
 - [scorper: micro webframework built on chronos](https://github.com/bung87/scorper)
-- [serialize & stream yaml bidrectionally](https://github.com/flyx/NimYAML)
-- [terminal dashboards](https://github.com/FedericoCeratto/nim-dashing)
 - [uing: updated fork of nim-lang/ui](https://github.com/neroist/uing)
+- [vaf: http fuzzer](https://github.com/d4rckh/vaf)
 - [valido: string validators & sanitizers](https://github.com/openpeep/valido)
-- [very advanced fuzzer for parsing http responses](https://github.com/d4rckh/vaf)
 - [web framework](https://github.com/planety/prologue)
-- [zioppy: deflate,zlib,gzip,tarballs,zip files management](https://github.com/guzba/zippy)
-- [zsh & bash prompt](https://github.com/icyphox/nicy)
+- [zippy: deflate,zlib,gzip,tarballs,zip files management](https://github.com/guzba/zippy)
 
 ## orgs/people with nim open source
 
@@ -65,6 +62,7 @@
 - [waku](https://github.com/orgs/waku-org/repositories?q=&type=all&language=nim&sort=)
 - [treeform](https://github.com/treeform)
 - [guzba](https://github.com/guzba)
+- [iffy](https://github.com/iffy)
 
 ## Personal preferences
 
@@ -117,3 +115,9 @@
 
 - [graphql services in nim](https://github.com/status-im/nim-graphql)
 - supports http/s, sockets, i/rpc, stdin/out
+
+### github actions
+
+- [sets up a nimble environment](https://github.com/jiro4989/setup-nim-action)
+  - make sure you read the rate limiting section if you experience any errors
+- [installs nim](https://github.com/iffy/install-nim)

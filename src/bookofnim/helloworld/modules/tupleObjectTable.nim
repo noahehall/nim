@@ -400,9 +400,9 @@ method collide(a: Unit, b: Thing) {.inline.} =
 var aaaa, bbbb: Unit
 new aaaa
 new bbbb
-# there both Units, but collide doesnt have an overload specifically for that
+# they're both Units, but collide doesnt have an overload specifically for that
 # so which will be used? type preference occurs from left -> right
-# collide(aaaa, bbbb) # output: 2 # dunno, started failing on nim doc
+collide(aaaa, bbbb)
 
 echo "############################ variants"
 # better example @see https://nim-lang.org/docs/json.html#JsonNodeObj
