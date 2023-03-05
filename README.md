@@ -94,6 +94,8 @@ blogs
 
 ### quickies
 
+- [check how qrgen overrides docgen with nimdoc.cfg](https://github.com/aruZeta/QRgen/blob/main/nimdoc.cfg)
+  - not sure how we missed this in the beginning
 - dont forget about the nimlang/tools dir
 - find the rst syntax for creating links between pages and remove all the markdown links
 - fix tests/src/skip and add it to a new `good examples of bad code` section

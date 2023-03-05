@@ -49,6 +49,7 @@
 - [nyml: yaml parser](https://github.com/openpeep/nyml)
 - [presto: rest api from status-im built on chronos](https://github.com/status-im/nim-presto)
 - [protobuf-nim: protobuff protocol with 0 deps](https://github.com/PMunch/protobuf-nim)
+- [qrgen: generate QR codes](https://github.com/aruZeta/QRgen)
 - [ready: redis client](https://github.com/guzba/ready)
 - [scorper: micro webframework built on chronos](https://github.com/bung87/scorper)
 - [uing: updated fork of nim-lang/ui](https://github.com/neroist/uing)
