@@ -94,6 +94,8 @@ blogs
 
 ### quickies
 
+- [chaining anonymouse procs using with](https://forum.nim-lang.org/t/9500)
+  - add example
 - [check how qrgen overrides docgen with nimdoc.cfg](https://github.com/aruZeta/QRgen/blob/main/nimdoc.cfg)
   - not sure how we missed this in the beginning
 - dont forget about the nimlang/tools dir

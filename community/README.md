@@ -64,6 +64,7 @@
 - [guzba](https://github.com/guzba)
 - [iffy](https://github.com/iffy)
 - [jiro](https://github.com/jiro4989)
+- [pmunch](https://github.com/PMunch)
 - [status-im](https://github.com/orgs/status-im/repositories?q=&type=all&language=nim&sort=)
 - [treeform](https://github.com/treeform)
 - [waku](https://github.com/orgs/waku-org/repositories?q=&type=all&language=nim&sort=)

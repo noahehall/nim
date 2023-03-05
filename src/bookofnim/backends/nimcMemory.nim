@@ -45,6 +45,9 @@ todos
 -----
 - review this entire file again, shiz alot clearer now
 - useStdoutAsStdmsg @see https://nim-lang.org/docs/io.html#stdmsg.t
+- Mixed mode projects are not officially supported anymore, it's too hard
+  - [forum conversation](https://forum.nim-lang.org/t/9948)
+- [embedded stack trace profiler guide](https://nim-lang.org/1.6.10/estp.html)
 
 
 ## nimc
