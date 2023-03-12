@@ -12,6 +12,7 @@
 
 ### worth checking out
 
+- [algorithms in nim: coming soon](https://github.com/TheAlgorithms/Nim)
 - [async tools: async utilities for nim](https://github.com/cheatfate/asynctools)
 - [Basolato: fullstack web framework](https://github.com/itsumura-h/nim-basolato)
 - [c2nm: converts C and C++ header files to nim code](https://github.com/nim-lang/c2nim)

@@ -43,7 +43,7 @@ jobs:
           # repo-token: ${{ secrets.GITHUB_TOKEN }} # only required if API rate limit is breached
 
       - name: compile
-        run: nim c src/bookofnim.nim
+        run: nim c ${GITHUB_WORKSPACE}/src/bookofnim.nim
 
       - name: test
         run: nim e ${GITHUB_WORKSPACE}/.github/scripts/test.nims

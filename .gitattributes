@@ -2,6 +2,9 @@
 # binary interpret it as binary
 # linguist-generated=true ignore file in github PRs
 
+*.drawio -diff
+*.drawio binary
+*.drawio linguist-generated=true
 **/htmldocs/** -diff
 **/htmldocs/** binary
 **/htmldocs/** linguist-generated=true

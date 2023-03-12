@@ -26,10 +26,12 @@ testresults
 
 ## internal
 # ignore
+*.bkp
 *.deps
+*.dtmp
+*.out
 nimble.develop
 nimble.paths
-*.out
 
 # allow
 !tests/skip
