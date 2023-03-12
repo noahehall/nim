@@ -16,6 +16,9 @@
     - optional file (e.g. skip) with tests to skip (1 per line, `# comments ignored`)
     - subdirs for test categories, e.g. `root/tests/mymodule/\*.nim`
       - test files prefixed with `t` e.g. `tsomefile.nim`
+- gotchas
+  - dont add leading tabs before discard """ stuff here """ when using output type directives
+    - i.e. for formatting; remember """ raw strings keep tabs, thus wont match against output
 
 links
 -----
@@ -68,7 +71,7 @@ testament writing tests
     - test lifecycle: parse spec -> validate spec > execute code against spec
     - the default is to fail a test if any error is thrown
       - however you can change this behavior, e.g.
-        - compile only | run and compile | or reject tests that dont throw expected errors
+        - "compile" only | "run" and compile | "reject" tests that dont throw expected errors
         - reject test if stdout fails sparsely match with expected stdout
   - examples that reflect specs & code
     - [unittests examples](https://nim-lang.org/docs/testament.html#unitests-examples)
@@ -132,9 +135,9 @@ testament specs
 - line in `file` that will stderr/out the string set in error(msg) options; @see FYI section
 - matrix of ; delimited switches each being a group of test scenarios
 - maxcodesize test permitted to compile to
-- nimout '''multi line output''' each line sparsely matched against compiler output
+- nimout '''multi line output''' each line sparsely matched against COMPILER!! output
 - nimoutFull nimout is the full output or a subset
-- output test prints to stdout for validation
+- output test prints to stdout for validation <--- likely what you want
 - outputsub test prints that must be included in the full stdout
 - sortoutput before validating against stdout
 - targets default "c" accepts space separated backends

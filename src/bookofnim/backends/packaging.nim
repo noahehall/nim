@@ -8,6 +8,8 @@
 - nimble shipped with nim isnt the nimbiest version
   - install a nimbier nimble with `nimble install nimble`
 - parallel tasks are described in asyncPar
+- for some reason (oops) parseCfg is in shell.nims
+  - TODO: even tho you cant use parseCfg in a nimscript (put example here)
 
 links
 -----

@@ -43,7 +43,7 @@ todo
 - field access by name/index (const int)
 
 ## objects
-- complex tuples without lexical ordering (lol my definition)
+- complex tuples without lexical ordering
 - provide inheritance & hidden fields > tuples
 - nominally equivalent
 - enum and object types may only be defined within a type statement.

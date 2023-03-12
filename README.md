@@ -2,7 +2,7 @@
 
 > [bow to the crown](https://www.youtube.com/watch?v=AEtxGOjKx5c) - Heather Dale
 
-- my adventures in nim
+- my adventures in nim (1.6.12, will update to 2.0 when stable)
 - hopefully a useful cheatsheet for my fellow nOobs
 - contributions welcomed
 

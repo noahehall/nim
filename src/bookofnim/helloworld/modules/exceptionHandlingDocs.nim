@@ -13,6 +13,7 @@
   - `back ticks` and back slashes e.g. \*.nims can escape special chars
   - if reusing rsts (e.g. for github readmes)
     - make sure to add an empty line before the first indented list item
+    - IMO always externalize readme.rst files so their viewable in github & in html docs
 - exceptions
   - all custom exceptions should ref a specific error/CatchableERror/Defect/and lastly Exception
     - Exception is the base type for CatachableError (exceptions), Defect (non catchable)
@@ -57,6 +58,7 @@ todos
 - drnim tool
 - debugger
 - reread the assertion docs and capture the info
+- [try-except discussion](https://forum.nim-lang.org/t/9765)
 .. code-block:: Nim
   errorMessageWriter (var) called instead of stdmsg.write when printing stacktrace
   onUnhandledException (var) override default behavior: write stacktrace to stderr then quit(1)
@@ -136,7 +138,8 @@ assert
 - starting a line with .. code-block:: Nim creates a codeblock for stuff indented beneath it
 - starting a line with .. image:: woopwoop.com/image.gif creates an image
 - include another doc file .. include:: ./system_overview.rst
-- [^ e.g. system_overview](https://raw.githubusercontent.com/nim-lang/Nim/version-1-6/lib/system_overview.rst)
+  - [example nim file including rst](https://github.com/nim-lang/Nim/blob/devel/lib/system.nim)
+  - [^ e.g. system_overview](https://raw.githubusercontent.com/nim-lang/Nim/version-1-6/lib/system_overview.rst)
 
 runnableExamples
 ----------------

@@ -24,6 +24,7 @@
 - [http auth](https://github.com/FedericoCeratto/nim-httpauth)
 - [httpbeast: fast http 1.1 server](https://github.com/dom96/httpbeast)
 - [jester: a sinetra-like web framework built on httpbeast](https://github.com/dom96/jester)
+- [limbdb: kv store using lmdb](https://forum.nim-lang.org/t/9210)
 - [llvm based compiler for nim](https://github.com/arnetheduck/nlvm)
 - [macr-based pattern matching library](https://github.com/alehander92/gara)
 - [moe: vim like editor that didnt work on the first try](https://github.com/fox0430/moe)

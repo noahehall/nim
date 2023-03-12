@@ -12,6 +12,7 @@ todos
   - ^ continue until you get to SpecialTypes
 - [macro tut](https://nim-lang.org/docs/tut3.html)
 - [fusion astdsl](https://nim-lang.github.io/fusion/src/fusion/astdsl.html)
+- [templates vs generics](https://forum.nim-lang.org/t/9985)
 
 ## templates
 - simple form of a macro

@@ -10,6 +10,8 @@ links
 -----
 - other
   - [avoiding sql injections](https://nim-lang.org/docs/manual.html#distinct-type-avoiding-sql-injection-attacks)
+  - [limbdb forum post](https://forum.nim-lang.org/t/9210)
+    - [cloudflare lmbd post](https://blog.cloudflare.com/introducing-quicksilver-configuration-distribution-at-internet-scale/)
 - high impact
   - [mysql client](https://nim-lang.org/docs/db_mysql.html)
   - [postgres client](https://nim-lang.org/docs/db_postgres.html)
