@@ -182,6 +182,10 @@ class="link-seesrc" target="_blank">Source</a>
 
 <h2><a class="toc-backref" id="compiling-and-managing-memory-with-nimc-todos" href="#compiling-and-managing-memory-with-nimc-todos">todos</a></h2><ul class="simple"><li>review this entire file again, shiz alot clearer now</li>
 <li>useStdoutAsStdmsg @see <a class="reference external" href="https://nim-lang.org/docs/io.html#stdmsg.t">https://nim-lang.org/docs/io.html#stdmsg.t</a></li>
+<li>Mixed mode projects are not officially supported anymore, it's too hard<ul class="simple"><li><a class="reference external" href="https://forum.nim-lang.org/t/9948">forum conversation</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="https://nim-lang.org/1.6.10/estp.html">embedded stack trace profiler guide</a></li>
 </ul>
 
 <h2><a class="toc-backref" id="compiling-and-managing-memory-with-nimc-nimc" href="#compiling-and-managing-memory-with-nimc-nimc">nimc</a></h2><ul class="simple"><li>nim CMD OPTS FILE ARGS<ul class="simple"><li>nim --fullhelp see all cmd line opts</li>
@@ -252,7 +256,7 @@ class="link-seesrc" target="_blank">Source</a>
 <li>case and _ insensitive</li>
 <li>keys starting with nim are reserved</li>
 <li>@see <a class="reference external" href="https://nim-lang.org/docs/nimc.html#compiler-usage-compileminustime-symbols">https://nim-lang.org/docs/nimc.html#compiler-usage-compileminustime-symbols</a></li>
-<li>either --define/-d:poop[=soop]<ul class="simple"><li><div class="option-list"><div class="option-list-item odd"><div class="option-list-label"><tt><span class="option">--define:danger remove all runtime checks and debugging, e.g. benchmarks against C</span></tt></div><div class="option-list-description"></div></div>
+<li>either --define/-d:woop[=soop]<ul class="simple"><li><div class="option-list"><div class="option-list-item odd"><div class="option-list-label"><tt><span class="option">--define:danger remove all runtime checks and debugging, e.g. benchmarks against C</span></tt></div><div class="option-list-description"></div></div>
 </div></li>
 <li><div class="option-list"><div class="option-list-item odd"><div class="option-list-label"><tt><span class="option">--define:release optimize for performance (default is debug)</span></tt></div><div class="option-list-description"></div></div>
 </div></li>
@@ -272,7 +276,7 @@ class="link-seesrc" target="_blank">Source</a>
 </div></li>
 <li><div class="option-list"><div class="option-list-item odd"><div class="option-list-label"><tt><span class="option">--define:nimStrictDelete throws if indexed passed to a delete operator is out of bounds</span></tt></div><div class="option-list-description"></div></div>
 </div></li>
-<li><div class="option-list"><div class="option-list-item odd"><div class="option-list-label"><tt><span class="option">--define:tempDir=poop override path returned in os.getTempDir()</span></tt></div><div class="option-list-description"></div></div>
+<li><div class="option-list"><div class="option-list-item odd"><div class="option-list-label"><tt><span class="option">--define:tempDir=woop override path returned in os.getTempDir()</span></tt></div><div class="option-list-description"></div></div>
 </div></li>
 </ul>
 </li>
@@ -426,20 +430,21 @@ class="link-seesrc" target="_blank">Source</a>
 </ul>
 
 <h2><a class="toc-backref" id="compiling-and-managing-memory-with-nimc-specific-compiler-hint-opts" href="#compiling-and-managing-memory-with-nimc-specific-compiler-hint-opts">specific compiler hint OPTS</a></h2><ul class="simple"><li>@see <a class="reference external" href="https://nim-lang.org/docs/nimc.html#compiler-usage-list-of-hints">https://nim-lang.org/docs/nimc.html#compiler-usage-list-of-hints</a></li>
-<li>can also be set via {.hint[POOP]:on/off.}</li>
-<li>require :on/off, set all --hints:on/off/list<ul class="simple"><li><div class="option-list"><div class="option-list-item odd"><div class="option-list-label"><tt><span class="option">--hint:POOP:</span></tt></div><div class="option-list-description"></div></div>
+<li>can also be set via {.hint[woop]:on/off.}</li>
+<li>require :on/off, set all --hints:on/off/list<ul class="simple"><li><div class="option-list"><div class="option-list-item odd"><div class="option-list-label"><tt><span class="option">--hint:woop:</span></tt></div><div class="option-list-description"></div></div>
 </div></li>
-<li><div class="option-list"><div class="option-list-item odd"><div class="option-list-label"><tt><span class="option">--hintAsError:POOP:</span></tt></div><div class="option-list-description"></div></div>
+<li><div class="option-list"><div class="option-list-item odd"><div class="option-list-label"><tt><span class="option">--hintAsError:woop:</span></tt></div><div class="option-list-description"></div></div>
 </div></li>
+<li>sometimes its just woop:off, instead of hint:woop:off</li>
 </ul>
 </li>
 </ul>
 
 <h2><a class="toc-backref" id="compiling-and-managing-memory-with-nimc-specific-compiler-warning-opts" href="#compiling-and-managing-memory-with-nimc-specific-compiler-warning-opts">specific compiler warning OPTS</a></h2><ul class="simple"><li>@see <a class="reference external" href="https://nim-lang.org/docs/nimc.html#compiler-usage-list-of-warnings">https://nim-lang.org/docs/nimc.html#compiler-usage-list-of-warnings</a></li>
-<li>can also be set via {.warning[POOP]:on/off.}</li>
-<li>require :on/off, set all --warnings/-w:on|off|list<ul class="simple"><li><div class="option-list"><div class="option-list-item odd"><div class="option-list-label"><tt><span class="option">--warning:POOP</span></tt></div><div class="option-list-description"></div></div>
+<li>can also be set via {.warning[woop]:on/off.}</li>
+<li>require :on/off, set all --warnings/-w:on|off|list<ul class="simple"><li><div class="option-list"><div class="option-list-item odd"><div class="option-list-label"><tt><span class="option">--warning:woop</span></tt></div><div class="option-list-description"></div></div>
 </div></li>
-<li><div class="option-list"><div class="option-list-item odd"><div class="option-list-label"><tt><span class="option">--warningAsError:POOP</span></tt></div><div class="option-list-description"></div></div>
+<li><div class="option-list"><div class="option-list-item odd"><div class="option-list-label"><tt><span class="option">--warningAsError:woop</span></tt></div><div class="option-list-description"></div></div>
 </div></li>
 </ul>
 </li>
@@ -547,7 +552,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-03-04 07:57:42 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-03-12 14:35:58 UTC</small>
       </div>
     </div>
   </div>

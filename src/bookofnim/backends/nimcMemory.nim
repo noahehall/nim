@@ -101,7 +101,7 @@ compile time symbol/switches OPTS
 - case and _ insensitive
 - keys starting with nim are reserved
 - @see https://nim-lang.org/docs/nimc.html#compiler-usage-compileminustime-symbols
-- either --define/-d:poop[=soop]
+- either --define/-d:woop[=soop]
   - --define:danger remove all runtime checks and debugging, e.g. benchmarks against C
   - --define:release optimize for performance (default is debug)
   - --define:ssl activate OpenSSL ssl sockets module
@@ -112,7 +112,7 @@ compile time symbol/switches OPTS
   - --define:memProfiler memory profile for the native GC
   - --define:uClibc use uClibc instead of libc
   - --define:nimStrictDelete throws if indexed passed to a delete operator is out of bounds
-  - --define:tempDir=poop override path returned in os.getTempDir()
+  - --define:tempDir=woop override path returned in os.getTempDir()
 
 output OPTS
 -----------
@@ -214,18 +214,19 @@ specific runtime check OPTS
 specific compiler hint OPTS
 ---------------------------
 - @see https://nim-lang.org/docs/nimc.html#compiler-usage-list-of-hints
-- can also be set via {.hint[POOP]:on/off.}
+- can also be set via {.hint[woop]:on/off.}
 - require :on/off, set all --hints:on/off/list
-  - --hint:POOP:
-  - --hintAsError:POOP:
+  - --hint:woop:
+  - --hintAsError:woop:
+  - sometimes its just woop:off, instead of hint:woop:off
 
 specific compiler warning OPTS
 ------------------------------
 - @see https://nim-lang.org/docs/nimc.html#compiler-usage-list-of-warnings
-- can also be set via {.warning[POOP]:on/off.}
+- can also be set via {.warning[woop]:on/off.}
 - require :on/off, set all --warnings/-w:on|off|list
-  - --warning:POOP
-  - --warningAsError:POOP
+  - --warning:woop
+  - --warningAsError:woop
 
 compiler style check OPTS
 -------------------------
