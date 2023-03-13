@@ -94,6 +94,12 @@ blogs
 
 ### quickies
 
+- [read through concepts](https://nim-lang.org/docs/compiler/concepts.html)
+  - [and this forum post](https://forum.nim-lang.org/t/9992)
+  - [probably should review each module here](https://nim-lang.org/docs/compiler/theindex.html)
+  - [haha we skipped experimental features](https://nim-lang.org/docs/manual_experimental.html)
+    - this is a must do
+- move the creation of htmldocs to a github action
 - [chaining anonymouse procs using with](https://forum.nim-lang.org/t/9500)
   - add example
 - [check how qrgen overrides docgen with nimdoc.cfg](https://github.com/aruZeta/QRgen/blob/main/nimdoc.cfg)

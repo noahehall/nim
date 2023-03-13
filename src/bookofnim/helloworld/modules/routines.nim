@@ -16,7 +16,13 @@
     - templates in templateMacros
     - other routine types are in this file
 
+gotchas
+-------
+- [read this if you receive `cant instantiate result/generic/etc`](https://github.com/nim-lang/Nim/issues/19882)
+  - basically you need provide type params at callsite as for the generic your invoking
+
 links
+-----
 - other
   - [peter: return tips n tricks](https://peterme.net/tips-and-tricks-with-implicit-return-in-nim.html)
 
@@ -27,6 +33,7 @@ todos
 - [forward directions, couldnt get it to compile](https://nim-lang.org/docs/manual.html#var-return-type-future-directions)
 - [read the status docs on this one](https://nimbus.guide/auditors-book/02.1.4_closure_iterators.html)
   - something to do with long lived ref objects & unreclaimable memory
+
 
 ## procedures
 - returning things: (cant contain a yield statement)

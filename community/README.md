@@ -49,6 +49,7 @@
 - [norm: postgres orm](https://github.com/moigagoo/norm)
 - [norman: migration manager for norm](https://github.com/moigagoo/norman)
 - [nyml: yaml parser](https://github.com/openpeep/nyml)
+- [parlexgen: macro for generating lexers and parsers](https://github.com/choltreppe/parlexgen)
 - [presto: rest api from status-im built on chronos](https://github.com/status-im/nim-presto)
 - [protobuf-nim: protobuff protocol with 0 deps](https://github.com/PMunch/protobuf-nim)
 - [qrgen: generate QR codes](https://github.com/aruZeta/QRgen)
@@ -62,6 +63,7 @@
 
 ## orgs/people with nim open source
 
+- [araq](https://github.com/Araq)
 - [dom96](https://github.com/dom96)
 - [guzba](https://github.com/guzba)
 - [iffy](https://github.com/iffy)
@@ -71,7 +73,7 @@
 - [treeform](https://github.com/treeform)
 - [waku](https://github.com/orgs/waku-org/repositories?q=&type=all&language=nim&sort=)
 
-## Personal preferences
+## My Stack
 
 ### choosenim
 
@@ -125,16 +127,6 @@
 
 ### github actions
 
-- FYI:
-  - make sure you read the rate limiting section if you experience any errors with jiro / iffy github actions
-
-```sh
-# testament without setting up nimble tasks
-sudo apt-fast -y install valgrind
-~/.nimble/bin/testament all
-```
-
 - [caching apt pkgs vs docker container](https://stackoverflow.com/questions/59269850/caching-apt-packages-in-github-actions-workflow)
 - [uses node to install choosenim to install nim](https://github.com/jiro4989/setup-nim-action)
 - [uses bash to install choosenim to install nim](https://github.com/iffy/install-nim)
-  - should be faster than jiros
