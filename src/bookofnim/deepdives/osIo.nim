@@ -85,6 +85,7 @@ todos
 - cpuEndian
 - cpuRelax
 - DynlibFormat, ExeExt[s], ScriptExt
+- [find instantiationInfo in the docs](https://stackoverflow.com/questions/55891650/how-to-use-slurp-gorge-staticread-staticexec-in-the-directory-of-the-callsite)
 
 
 ## system
@@ -479,8 +480,8 @@ echo fmt"filtered collect envPairs() {env=}"
 
 echo "############################ os/system exec/cmds/process"
 # exitStatusLikeShell status
-# gorge alias for staticExec
-# gorgeEx similar to gorge but returns tuple(result, exitCode)
+# gorge alias for staticExec; does not return exit
+# gorgeEx similar to gorge but returns tuple(result, exitCode) <--- likely what you want
 # quoteShell string
 # quoteShellCommand [argX, argY...]
 # quoteShellPosix string

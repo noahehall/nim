@@ -13,12 +13,12 @@
       switch("path", "$projectDir/../where/you/keep/your/source/code")
       --path:"$projectDir/../.." # IMO preferred
     - optional [nim.cfg](https://github.com/nim-lang/Nim/blob/devel/tests/arc/nim.cfg)
-    - optional file (e.g. skip) with tests to skip (1 per line, `# comments ignored`)
+    - optional file (any name, e.g. skip) with tests to skip (1 per line, `# comments ignored`)
     - subdirs for test categories, e.g. `root/tests/mymodule/\*.nim`
       - test files prefixed with `t` e.g. `tsomefile.nim`
 - gotchas
   - dont add leading tabs before discard """ stuff here """ when using output type directives
-    - i.e. for formatting; remember """ raw strings keep tabs, thus wont match against output
+    - e.g. for formatting; remember """ raw strings keep tabs, thus wont match against output
 
 links
 -----
@@ -135,9 +135,9 @@ testament specs
 - line in `file` that will stderr/out the string set in error(msg) options; @see FYI section
 - matrix of ; delimited switches each being a group of test scenarios
 - maxcodesize test permitted to compile to
-- nimout '''multi line output''' each line sparsely matched against COMPILER!! output
+- nimout '''multi line output''' each line sparsely matched against COMPILER (not test!!) output
 - nimoutFull nimout is the full output or a subset
-- output test prints to stdout for validation <--- likely what you want
+- output test prints to stdout for validation <--- likely what you want for testing test output
 - outputsub test prints that must be included in the full stdout
 - sortoutput before validating against stdout
 - targets default "c" accepts space separated backends
@@ -153,7 +153,7 @@ testament specs
 
 ## unittests
 - the nim std library comes with its own unit test framework
-  - unittests provide a [familiar test interface](https://github.com/dom96/prometheus/blob/master/tests/tcounter.nim)
+  - unittests provides a [familiar test interface](https://github.com/dom96/prometheus/blob/master/tests/tcounter.nim)
 - however, testament is preferred so we'll be skipping std/unittest
 
 ]##
