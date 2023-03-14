@@ -205,7 +205,7 @@ class="link-seesrc" target="_blank">Source</a>
 </ul>
 </li>
 <li>exceptions<ul class="simple"><li>all custom exceptions should ref a specific error/CatchableERror/Defect/and lastly Exception<ul class="simple"><li>Exception is the base type for CatachableError (exceptions), Defect (non catchable)</li>
-<li>has to be allocated on the heap because their lifetime is unknown</li>
+<li>has to be allocated on the heap (requires ref) because their lifetime is unknown</li>
 </ul>
 </li>
 <li>raise keyword for throwing an exception/defect<ul class="simple"><li>throw err: <tt class="docutils literal"><span class="pre"><span class="Keyword">raise</span> <span class="Identifier">err</span></span></tt></li>
@@ -390,7 +390,7 @@ class="link-seesrc" target="_blank">Source</a>
 <dt><pre><span class="Identifier">err</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Identifier">OSError</span></pre></dt>
 <dd>
 
-
+requires ref! only ref objects can be raised
 &nbsp;&nbsp;<a
 href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/exceptionHandlingDocs.nim#L195"
 class="link-seesrc" target="_blank">Source</a>
@@ -522,7 +522,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-03-13 15:53:01 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-03-14 05:42:11 UTC</small>
       </div>
     </div>
   </div>

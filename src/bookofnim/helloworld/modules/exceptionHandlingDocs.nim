@@ -17,7 +17,7 @@
 - exceptions
   - all custom exceptions should ref a specific error/CatchableERror/Defect/and lastly Exception
     - Exception is the base type for CatachableError (exceptions), Defect (non catchable)
-    - has to be allocated on the heap because their lifetime is unknown
+    - has to be allocated on the heap (requires ref) because their lifetime is unknown
   - raise keyword for throwing an exception/defect
     - throw err: `raise err`
     - throw err: `raise newException(OSError, "Oops! did i do that?")`
@@ -192,7 +192,7 @@ proc maybeThrows(x: int): int {.raises: [ValueError].} =
   result = x
 echo maybeThrows(23)
 
-var err: ref OSError
+var err: ref OSError ## requires ref! only ref objects can be raised
 new(err) # a new OSError instance without a msg
 err.msg = "Oops! this is a bad error msg"
 

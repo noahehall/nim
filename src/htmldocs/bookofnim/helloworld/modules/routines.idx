@@ -27,6 +27,8 @@ woop	bookofnim/helloworld/modules/routines.html#woop	routines: woop(): string
 runFn	bookofnim/helloworld/modules/routines.html#runFn,string,proc(string)	routines: runFn(a: string; fn: proc (x: string): string): string	
 routines	bookofnim/helloworld/modules/routines.html#routines	 routines	
 TLDR	bookofnim/helloworld/modules/routines.html#routines-tldr	  TLDR	
+gotchas	bookofnim/helloworld/modules/routines.html#routines-gotchas	  gotchas	
+links	bookofnim/helloworld/modules/routines.html#routines-links	  links	
 todos	bookofnim/helloworld/modules/routines.html#routines-todos	  todos	
 procedures	bookofnim/helloworld/modules/routines.html#routines-procedures	  procedures	
 openArray	bookofnim/helloworld/modules/routines.html#routines-openarray	  openArray	

@@ -32,6 +32,7 @@ links
 - other
   - [chris: understanding mmap (video)](https://www.youtube.com/watch?v=8hVLcyBkSXY)
   - [memory mgmt intro](https://nimbus.guide/auditors-book/02.2.3_memory_management_gc.html)
+  - [advanced compilers self guided online course](https://www.cs.cornell.edu/courses/cs6120/2020fa/self-guided/)
 - high impact
   - [backend introduction](https://nim-lang.org/docs/backends.html)
   - [cross compile applications](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
