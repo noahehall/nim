@@ -1,9 +1,10 @@
-name: bookofnim
+name: bookofnim-ci
 on:
   push:
     branches: [develop, deploy]
   pull_request:
     branches: [develop, deploy]
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}

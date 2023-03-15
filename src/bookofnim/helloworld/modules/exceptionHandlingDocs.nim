@@ -140,6 +140,7 @@ assert
 - include another doc file .. include:: ./system_overview.rst
   - [example nim file including rst](https://github.com/nim-lang/Nim/blob/devel/lib/system.nim)
   - [^ e.g. system_overview](https://raw.githubusercontent.com/nim-lang/Nim/version-1-6/lib/system_overview.rst)
+- `.. _LinkName: some.url.com` can be referenced as `LinkName_`
 
 runnableExamples
 ----------------
