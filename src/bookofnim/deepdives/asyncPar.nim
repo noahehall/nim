@@ -355,7 +355,7 @@ proc sendAction: void {.thread.} =
   ## blocks its channel's scope until msg delivered; deep copies its arguments
   relay.send "phone ring ring ring"
 
-proc recAction: void {.thread.} =
+proc receiveAction: void {.thread.} =
   ## action for consuming data
   ## recv blocks its channel's scope until msg received
   echo fmt"blocking; busy binging mr.robot: {relay.recv()=}"
@@ -364,7 +364,7 @@ proc recAction: void {.thread.} =
 open relay, maxItems = 0 ## 0 = unlimited queue
 
 gf.createThread sendAction ## gf actor plays sendAction action
-bf.createThread recAction ## bf actor plays recAction action
+bf.createThread receiveAction ## bf actor plays receiveAction action
 joinThreads gf, bf
 
 echo "############################ channels: non blocking"
@@ -375,7 +375,7 @@ proc sendActionA: void {.thread.} =
   ## deep copies its arguments
   if not relay.trySend "phone ring ring ring": echo "failed to send message"
 
-proc recActionA: void {.thread.} =
+proc receiveActionA: void {.thread.} =
   ## action for consuming data without blocking
   while true:
     let comms = relay.tryRecv()
@@ -384,7 +384,7 @@ proc recActionA: void {.thread.} =
     sleep 400 ## before next check
 
 gf.createThread sendActionA
-bf.createThread recActionA
+bf.createThread receiveActionA
 jointhreads gf, bf
 
 echo "############################ threadpool"
@@ -402,7 +402,7 @@ open relay, 1
 spawn sendAction()
 spawn sendActionA() ## unsuccessful because total msg > channel size 1
 spawn sendActionA()
-spawn recActionA()
+spawn receiveActionA()
 sync()
 
 close relay

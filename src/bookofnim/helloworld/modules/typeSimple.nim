@@ -9,6 +9,8 @@
   - % are mainly for backwards compatibility with previous nim versions
 - generally procs that work for strings work for chars
 - generally strings can use any seq proc for manipulation
+- similar to js isNull, use blah.isNil, or blah != nil
+  - however you cannot `if blah not nil: ...`
 
 links
 -----

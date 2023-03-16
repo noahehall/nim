@@ -5,9 +5,9 @@ numThreads	bookofnim/deepdives/asyncPar.html#numThreads	asyncPar: numThreads
 echoAction	bookofnim/deepdives/asyncPar.html#echoAction,T	asyncPar: echoAction[T](x: T): void	
 relay	bookofnim/deepdives/asyncPar.html#relay	asyncPar: relay	
 sendAction	bookofnim/deepdives/asyncPar.html#sendAction	asyncPar: sendAction(): void	
-recAction	bookofnim/deepdives/asyncPar.html#recAction	asyncPar: recAction(): void	
+receiveAction	bookofnim/deepdives/asyncPar.html#receiveAction	asyncPar: receiveAction(): void	
 sendActionA	bookofnim/deepdives/asyncPar.html#sendActionA	asyncPar: sendActionA(): void	
-recActionA	bookofnim/deepdives/asyncPar.html#recActionA	asyncPar: recActionA(): void	
+receiveActionA	bookofnim/deepdives/asyncPar.html#receiveActionA	asyncPar: receiveActionA(): void	
 f1	bookofnim/deepdives/asyncPar.html#f1	asyncPar: f1(): Future[string]	
 fv1	bookofnim/deepdives/asyncPar.html#fv1	asyncPar: fv1	
 f2	bookofnim/deepdives/asyncPar.html#f2	asyncPar: f2(): Future[string]	

@@ -174,7 +174,7 @@ export
 .. code-block:: Nim
   export woop # export everything from woop
   export soup.doop # named export
-  export boop except soup, doup, loop # export specific symbols from boop
+  export boop except soup, doup, loop # export all except specific symbols from boop
 
 ## packages
 - a file named identifier.nimble creates a package

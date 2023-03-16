@@ -31,6 +31,7 @@
 - [neel: create lightweight electron apps](https://github.com/Niminem/Neel)
 - [ni18n: super fast i18](https://github.com/heinthanth/ni18n)
 - [NiGui: cross platform desktop GUI toolkit](https://github.com/trustable-code/NiGui)
+- [nim_config:kaushal's nim config](https://github.com/kaushalmodi/nim_config#list-available-tasks)
 - [nim-regex: parsing,compiling,executing regex](https://github.com/nitely/nim-regex)
 - [nimcrypto: cryptographic library](https://github.com/cheatfate/nimcrypto)
 - [nimcx: color and util tools for nim](https://github.com/qqtop/NimCx)
@@ -66,6 +67,7 @@
 ## orgs/people with nim open source
 
 - [araq](https://github.com/Araq)
+- [cblake](https://github.com/c-blake)
 - [dom96](https://github.com/dom96)
 - [guzba](https://github.com/guzba)
 - [iffy](https://github.com/iffy)
@@ -77,62 +79,78 @@
 
 ## My Stack
 
-### choosenim
+- take with a grain of all natural, no preservatives or artificial flavoring salt and sugar to spice up your application development
+  - I havent tested many of these
+- however, they fullfill the needs of the types of apps I build
 
-- [nvm for nim](https://github.com/dom96/choosenim)
+### data
 
-### nimble
+#### jsony
 
-- [npm for nim](https://github.com/nim-lang/nimble)
+- [high perf, loose json >< object serialization](https://github.com/treeform/jsony)
 
-### INim
+### tools
+
+#### INim
 
 - [repl nim](https://github.com/inim-repl/INim)
 - dude this is a fkn must have
 
-### chronos
+#### chronos
 
 - [asyncdispatch alternative used by some other popular pkgs](https://github.com/status-im/nim-chronos)
 - [read this as well](https://nim-lang.org/docs/asyncdispatch.html#multiple-async-backend-support)
 
-### cliche
+### frontend
 
-- [automagic cli parsing](https://github.com/juancarlospaco/cliche)
-- works with js targets (if you use the alternative nodejs lib below)
-
-### mummy
-
-- [http/websocket server focusing on performance](https://github.com/guzba/mummy)
-- [user post on mummy perf](https://forum.nim-lang.org/t/9902)
-
-### nimtemplate
-
-- [github repo template with github actions, tests, etc](https://github.com/treeform/nimtemplate)
-
-### jsony
-
-- [high perf, loose json >< object serialization](https://github.com/treeform/jsony)
-
-### curly
-
-- [pool and reuse curl handles for keep-alive connections](https://github.com/guzba/curly/)
-
-### karax
+#### karax
 
 - [SPA framework](https://github.com/karaxnim/karax)
 - [used by nimforum](https://github.com/nim-lang/nimforum)
 
-### Nim-graphql
+### apis
+
+#### curly
+
+- [pool and reuse curl handles for keep-alive connections](https://github.com/guzba/curly/)
+
+#### mummy
+
+- [http/websocket server focusing on performance](https://github.com/guzba/mummy)
+- [user post on mummy perf](https://forum.nim-lang.org/t/9902)
+
+#### Nim-graphql
 
 - [graphql services in nim](https://github.com/status-im/nim-graphql)
 - supports http/s, sockets, i/rpc, stdin/out
 
-### github actions
+### starter kits
+
+#### nimtemplate
+
+- [github repo template with github actions, tests, etc](https://github.com/treeform/nimtemplate)
+
+### ci
+
+#### github actions
 
 - [caching apt pkgs vs docker container](https://stackoverflow.com/questions/59269850/caching-apt-packages-in-github-actions-workflow)
 - [uses node to install choosenim to install nim](https://github.com/jiro4989/setup-nim-action)
 - [uses bash to install choosenim to install nim](https://github.com/iffy/install-nim)
 
-### nim docker img
+### virtualization
+
+#### nim docker img
 
 - [an official image is soon to be released](https://forum.nim-lang.org/t/9983)
+
+### cmdline
+
+#### cligen
+
+- [native API inferred cmdline parser](https://github.com/c-blake/cligen)
+
+#### cliche
+
+- [automagic cli parsing](https://github.com/juancarlospaco/cliche)
+- works with js targets (if you use the alternative nodejs lib below)
