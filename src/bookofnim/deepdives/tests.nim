@@ -16,9 +16,14 @@
     - optional file (any name, e.g. skip) with tests to skip (1 per line, `# comments ignored`)
     - subdirs for test categories, e.g. `root/tests/mymodule/\*.nim`
       - test files prefixed with `t` e.g. `tsomefile.nim`
-- gotchas
+
+gotchas
+-------
+- testament
   - dont add leading tabs before discard """ stuff here """ when using output type directives
     - e.g. for formatting; remember """ raw strings keep tabs, thus wont match against output
+- valgrind
+  - Use --mm:orc -d:useMalloc with Valgrind in order to avoid false positives.
 
 links
 -----

@@ -19,5 +19,6 @@ specific compiler hint OPTS	bookofnim/backends/nimcMemory.html#compiling-and-man
 specific compiler warning OPTS	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-specific-compiler-warning-opts	  specific compiler warning OPTS	
 compiler style check OPTS	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-compiler-style-check-opts	  compiler style check OPTS	
 environment variables	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-environment-variables	  environment variables	
+type opts	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-type-opts	  type opts	
 skipped	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-skipped	  skipped	
 memory management	bookofnim/backends/nimcMemory.html#compiling-and-managing-memory-with-nimc-memory-management	  memory management	

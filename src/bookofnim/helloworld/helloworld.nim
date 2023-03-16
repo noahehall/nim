@@ -167,9 +167,13 @@ export
 ------
 - enables forwarding this modules dependencies onto downstream modules
   - thus importers dont need to import their dependencies' depencencies
+  - remember you are exporting the MODULE identifier,
+    - e.g. a module X with a type X,
+      - export X is exporting the module, not the type X
 - example exports
 .. code-block:: Nim
   export woop # export everything from woop
+  export soup.doop # named export
   export boop except soup, doup, loop # export specific symbols from boop
 
 ## packages

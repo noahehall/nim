@@ -237,6 +237,10 @@ compiler style check OPTS
 environment variables
 ---------------------
 - CC sets compiler when --cc:env is used
+- `-d:nimPreviewHashRef` enable hashing refs
+
+type opts
+---------
 
 skipped
 -------

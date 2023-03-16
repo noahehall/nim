@@ -132,3 +132,7 @@
 - [caching apt pkgs vs docker container](https://stackoverflow.com/questions/59269850/caching-apt-packages-in-github-actions-workflow)
 - [uses node to install choosenim to install nim](https://github.com/jiro4989/setup-nim-action)
 - [uses bash to install choosenim to install nim](https://github.com/iffy/install-nim)
+
+### nim docker img
+
+- [an official image is soon to be released](https://forum.nim-lang.org/t/9983)

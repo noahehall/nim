@@ -193,6 +193,10 @@ digraph bookofnim {
 "std/strtabs" -> "std/strutils";
 "std/strtabs" -> "std/os";
 "bookofnim/deepdives/containers" -> "std/strtabs";
+"bookofnim/deepdives/crypto" -> "std/strformat";
+"bookofnim/deepdives/crypto" -> "std/sugar";
+"bookofnim/deepdives/crypto" -> "std/hashes";
+"bookofnim/deepdives/crypto" -> "std/base64";
 "bookofnim/deepdives/data" -> "std/sugar";
 "bookofnim/deepdives/data" -> "std/strformat";
 "bookofnim/deepdives/data" -> "std/strutils";
