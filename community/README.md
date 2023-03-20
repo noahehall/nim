@@ -72,16 +72,16 @@
 - [guzba](https://github.com/guzba)
 - [iffy](https://github.com/iffy)
 - [jiro](https://github.com/jiro4989)
+- [planety](https://github.com/planety)
 - [pmunch](https://github.com/PMunch)
 - [status-im](https://github.com/orgs/status-im/repositories?q=&type=all&language=nim&sort=)
 - [treeform](https://github.com/treeform)
 - [waku](https://github.com/orgs/waku-org/repositories?q=&type=all&language=nim&sort=)
 
-## My Stack
+## Try First Stack
 
 - take with a grain of all natural, no preservatives or artificial flavoring salt and sugar to spice up your application development
-  - I havent tested many of these
-- however, they fullfill the needs of the types of apps I build
+  - i.e. I havent tested many of these
 
 ### data
 
@@ -101,12 +101,16 @@
 - [asyncdispatch alternative used by some other popular pkgs](https://github.com/status-im/nim-chronos)
 - [read this as well](https://nim-lang.org/docs/asyncdispatch.html#multiple-async-backend-support)
 
-### frontend
+### appdev
 
 #### karax
 
 - [SPA framework](https://github.com/karaxnim/karax)
 - [used by nimforum](https://github.com/nim-lang/nimforum)
+
+#### prologue
+
+- [web framework ideal for high perf web services](https://github.com/planety/Prologue)
 
 ### apis
 
@@ -154,3 +158,13 @@
 
 - [automagic cli parsing](https://github.com/juancarlospaco/cliche)
 - works with js targets (if you use the alternative nodejs lib below)
+
+### testing
+
+#### coco
+
+- [test code coverage](https://github.com/binhonglee/coco)
+- dunno if it works with testament, doesnt appear to be maintained
+  - might be a good fork to start something new
+- [read this thread before using it](https://forum.nim-lang.org/t/7024#50401)
+- [and this pr](https://github.com/nim-lang/Nim/pull/15827)

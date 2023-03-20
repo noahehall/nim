@@ -64,6 +64,7 @@
       - released in 2017, still highly relevant and recommended
     - [book: mastering nim](https://nim-lang.org/blog/2022/06/29/mastering-nim.html)
       - havent read this one yet, but its new; i like new
+      - [excerpt of code examples are available](https://github.com/Araq/mastering_nim/tree/master)
 
 ## links
 
@@ -82,6 +83,8 @@ nimlang
 - [fusion docs](https://github.com/nim-lang/fusion)
   - [ctrl f it](https://nim-lang.github.io/fusion/theindex.html)
 - [finding somethign easy to contribute to](https://forum.nim-lang.org/t/9956)
+- [nimlang RFCs](https://github.com/nim-lang/RFCs)
+- [nimlang on matrix](https://matrix.to/#/!ZmWXggMgfkKpcLbQkB:matrix.org?via=matrix.org)
 
 blogs
 

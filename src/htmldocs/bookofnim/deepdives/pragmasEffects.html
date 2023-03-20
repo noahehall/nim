@@ -98,12 +98,24 @@ window.addEventListener('DOMContentLoaded', main);
     </select>
   </div>
   <ul class="simple simple-toc" id="toc-list">
-<li><a class="reference" id="pragmas_toc" href="#pragmas">pragmas</a></li>
-<ul class="simple"><li><a class="reference" id="pragmas-tldr_toc" href="#pragmas-tldr">TLDR</a></li>
-<li><a class="reference" id="pragmas-todos_toc" href="#pragmas-todos">todos</a></li>
-<li><a class="reference" id="pragmas-pragmas_toc" href="#pragmas-pragmas">pragmas</a></li>
-<li><a class="reference" id="pragmas-effects_toc" href="#pragmas-effects">effects</a></li>
-<li><a class="reference" id="pragmas-effect-types_toc" href="#pragmas-effect-types">effect types</a></li>
+<li><a class="reference" id="pragmas-effects-and-experimental-features_toc" href="#pragmas-effects-and-experimental-features">pragmas, effects and experimental features</a></li>
+<ul class="simple"><li><a class="reference" id="pragmas-effects-and-experimental-features-tldr_toc" href="#pragmas-effects-and-experimental-features-tldr">TLDR</a></li>
+<li><a class="reference" id="pragmas-effects-and-experimental-features-links_toc" href="#pragmas-effects-and-experimental-features-links">links</a></li>
+<li><a class="reference" id="pragmas-effects-and-experimental-features-todos_toc" href="#pragmas-effects-and-experimental-features-todos">todos</a></li>
+<li><a class="reference" id="pragmas-effects-and-experimental-features-pragmas_toc" href="#pragmas-effects-and-experimental-features-pragmas">pragmas</a></li>
+<li><a class="reference" id="pragmas-effects-and-experimental-features-custom-pragmas_toc" href="#pragmas-effects-and-experimental-features-custom-pragmas">custom pragmas</a></li>
+<li><a class="reference" id="pragmas-effects-and-experimental-features-universal-pragmas_toc" href="#pragmas-effects-and-experimental-features-universal-pragmas">universal pragmas</a></li>
+<li><a class="reference" id="pragmas-effects-and-experimental-features-var-pragmas_toc" href="#pragmas-effects-and-experimental-features-var-pragmas">var pragmas</a></li>
+<li><a class="reference" id="pragmas-effects-and-experimental-features-proc-pragmas_toc" href="#pragmas-effects-and-experimental-features-proc-pragmas">proc pragmas</a></li>
+<li><a class="reference" id="pragmas-effects-and-experimental-features-type-pragmas_toc" href="#pragmas-effects-and-experimental-features-type-pragmas">type pragmas</a></li>
+<li><a class="reference" id="pragmas-effects-and-experimental-features-effect-pragmas_toc" href="#pragmas-effects-and-experimental-features-effect-pragmas">effect pragmas</a></li>
+<li><a class="reference" id="pragmas-effects-and-experimental-features-js-pragmas_toc" href="#pragmas-effects-and-experimental-features-js-pragmas">JS pragmas</a></li>
+<li><a class="reference" id="pragmas-effects-and-experimental-features-experimental-pragmas_toc" href="#pragmas-effects-and-experimental-features-experimental-pragmas">experimental pragmas</a></li>
+<li><a class="reference" id="pragmas-effects-and-experimental-features-compilation-pragmas_toc" href="#pragmas-effects-and-experimental-features-compilation-pragmas">compilation pragmas</a></li>
+<li><a class="reference" id="pragmas-effects-and-experimental-features-niche-pragmas_toc" href="#pragmas-effects-and-experimental-features-niche-pragmas">niche pragmas</a></li>
+<li><a class="reference" id="pragmas-effects-and-experimental-features-unknownslashskippedslashc-pragmas_toc" href="#pragmas-effects-and-experimental-features-unknownslashskippedslashc-pragmas">unknown/skipped/C pragmas</a></li>
+<li><a class="reference" id="pragmas-effects-and-experimental-features-effects_toc" href="#pragmas-effects-and-experimental-features-effects">effects</a></li>
+<li><a class="reference" id="pragmas-effects-and-experimental-features-effect-types_toc" href="#pragmas-effects-and-experimental-features-effect-types">effect types</a></li>
 </ul>
 </ul>
 
@@ -117,44 +129,154 @@ class="link-seesrc" target="_blank">Source</a>
   <div id="tocRoot"></div>
   
   <p class="module-desc">
-<h1><a class="toc-backref" id="pragmas" href="#pragmas">pragmas</a></h1>
-<h2><a class="toc-backref" id="pragmas-tldr" href="#pragmas-tldr">TLDR</a></h2><ul class="simple"><li>this entire section is unfinished, come back later</li>
-<li>enable new functionality without adding new keywords to the language</li>
-<li>syntax: {.pragma1, pragma2:val, etc.}</li>
+<h1><a class="toc-backref" id="pragmas-effects-and-experimental-features" href="#pragmas-effects-and-experimental-features">pragmas, effects and experimental features</a></h1><ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/manual.html#effect-system">bookmark</a></li>
 </ul>
 
-<h2><a class="toc-backref" id="pragmas-todos" href="#pragmas-todos">todos</a></h2><ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/manual.html#pragmas">skipped everything starting here</a></li>
-<li><a class="reference external" href="https://nim-lang.org/docs/nimc.html#additional-features">additional features</a></li>
-<li><a class="reference external" href="https://nim-lang.org/docs/manual.html#effect-system">effect system</a></li>
+<h2><a class="toc-backref" id="pragmas-effects-and-experimental-features-tldr" href="#pragmas-effects-and-experimental-features-tldr">TLDR</a></h2><ul class="simple"><li>pragmas<ul class="simple"><li>syntax: <tt class="docutils literal"><span class="pre"><span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">pragma1</span><span class="Punctuation">,</span> <span class="Identifier">pragma2</span><span class="Punctuation">:</span><span class="Identifier">val</span><span class="Punctuation">,</span> <span class="Identifier">etc</span><span class="Operator">.</span><span class="Punctuation">}</span></span></tt></li>
+<li>many pragmas require familiarity of C/C++/objc</li>
+<li>FYI:<ul class="simple"><li>a futile attempt was taken at categorizing pragmas</li>
+<li>pragma annotation &amp; macro pragmas are in templateMacros.nim</li>
+<li>thread/async like templates are in asyncPar.nim</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h2><a class="toc-backref" id="pragmas-effects-and-experimental-features-links" href="#pragmas-effects-and-experimental-features-links">links</a></h2><ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/manual.html#pragmas">pragmas section in manual</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/manual.html#effect-system">effect system in manual</a></li>
+</ul>
+
+<h2><a class="toc-backref" id="pragmas-effects-and-experimental-features-todos" href="#pragmas-effects-and-experimental-features-todos">todos</a></h2><ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/manual.html#effect-system">effect system</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/manual_experimental.html">experimental</a></li>
+<li>move all the C pragmas into the backends dir</li>
 </ul>
 
-<h2><a class="toc-backref" id="pragmas-pragmas" href="#pragmas-pragmas">pragmas</a></h2><pre class="listing"><span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">acyclic</span><span class="Operator">.</span><span class="Punctuation">}</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">async</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># this fn is asynchronous and can use the await keyword</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">base</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># for methods, to associate fns with a base type. see inheritance</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">bycopy</span><span class="Operator">|</span><span class="Identifier">byref</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># label a proc arg</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">closure</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># introduces a closure?</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">compiletime</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment">#  check the docs, maybe runs a proc @ compile time</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">dirty</span><span class="Operator">.</span> <span class="Punctuation">}</span><span class="Comment">#  dunno, but used with templates</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">effects</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># check the docs: will output all inferred effects (e.g. exceptions) up to this point</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">exportc</span><span class="Punctuation">:</span> <span class="StringLit">&quot;or-use-this-specific-name&quot;</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># read the docs</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">exportc</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># disable proc name mangling when compiled</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">global</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># turns a locally scoped var into a global, e.g. var x: string {.global.} = &quot;global&quot;</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">hint</span><span class="Punctuation">[</span><span class="Identifier">woop</span><span class="Punctuation">]</span><span class="Punctuation">:</span><span class="Identifier">on</span><span class="Operator">/</span><span class="Identifier">off</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># can also be set via cli flags</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">inheritable</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># check the docs: create alternative RootObj</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">inject</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># dunno, something to do with symbol visibility</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">inline</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># check the docs: inlines a procedure</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">noSideEffect</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># convert a proc to a func, but why not just use func?</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">pop</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># removes a pragma from the code that follows, check the docs</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">pure</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># requires qualifying ambiguous references; x fails, but y.x doesnt</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">push</span> <span class="Operator">...</span><span class="Punctuation">}</span> <span class="Comment"># pushes a pragma into the context of the code that follows, check the docs</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">raises</span><span class="Punctuation">:</span> <span class="Punctuation">[</span><span class="Identifier">permit</span><span class="Punctuation">,</span><span class="Identifier">these</span><span class="Punctuation">]</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># list permitted/none exceptions; unlisted force compiler errs</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">size</span><span class="Punctuation">:</span> <span class="Operator">...</span><span class="Punctuation">}</span> <span class="Comment"># check the docs</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">thread</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># informs the compiler this fn is meant for execution on a new thread</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">threadvar</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># informs the compiler this var should be local to a thread</span>
-<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">warning</span><span class="Punctuation">[</span><span class="Identifier">woop</span><span class="Punctuation">]</span><span class="Punctuation">:</span><span class="Identifier">on</span><span class="Operator">/</span><span class="Identifier">off</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment">#  can also be set via cli flags</span></pre>
-<h2><a class="toc-backref" id="pragmas-effects" href="#pragmas-effects">effects</a></h2>
-<h2><a class="toc-backref" id="pragmas-effect-types" href="#pragmas-effect-types">effect types</a></h2><p>IOEffect</p>
+<h2><a class="toc-backref" id="pragmas-effects-and-experimental-features-pragmas" href="#pragmas-effects-and-experimental-features-pragmas">pragmas</a></h2><ul class="simple"><li>enable new functionality without adding new keywords to the language</li>
+<li>are processed on the fly durings emantic checking</li>
+<li>push &amp; prop pragmas should spark your imagination</li>
+<li>user defined pragmas are in a module wide scope distinct from all other symbol types<ul class="simple"><li>cannot be improted from a module</li>
+</ul>
+</li>
+<li>union &amp; packed pragma should not use inheritance/GCed memory</li>
+</ul>
+<pre class="listing"><span class="Keyword">var</span> <span class="Identifier">x</span> <span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">pragmaX</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Operator">=</span> <span class="Identifier">thingsome</span>
+<span class="Keyword">var</span> <span class="Identifier">y</span> <span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">intdefine</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Operator">=</span> <span class="DecNumber">20</span> <span class="Comment"># see intdefine, 20 will be replaced if --define:y=blah</span>
+<span class="Keyword">proc</span> <span class="Identifier">y</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">auto</span> <span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">pragmaX</span><span class="Punctuation">:</span><span class="Identifier">value</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Operator">=</span>
+
+<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">experimental</span><span class="Punctuation">:</span> <span class="StringLit">&quot;pragmaZ&quot;</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># can be module scoped too</span>
+
+<span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">pragma</span><span class="Punctuation">:</span><span class="Identifier">myPragma</span><span class="Punctuation">,</span> <span class="Identifier">pragmaX</span><span class="Punctuation">,</span> <span class="Identifier">pragmaY</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># create new pragma named myPragma</span>
+<span class="Keyword">proc</span> <span class="Identifier">Z</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">auto</span> <span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">myPragma</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Comment"># &lt;- now receives pragmaX and pragmaY</span></pre>
+<h2><a class="toc-backref" id="pragmas-effects-and-experimental-features-custom-pragmas" href="#pragmas-effects-and-experimental-features-custom-pragmas">custom pragmas</a></h2><ul class="simple"><li>compile tiem pragmas: pass to the compiler via <tt class="docutils literal"><span class="pre"><span class="Operator">--</span><span class="Identifier">define</span><span class="Punctuation">:</span><span class="Identifier">X</span><span class="Operator">=</span><span class="Identifier">Y</span></span></tt><ul class="simple"><li>intdefine replaces all assignments to X with value extracted from <tt class="docutils literal"><span class="pre"><span class="Operator">--</span><span class="Identifier">define</span><span class="Punctuation">:</span><span class="Identifier">X</span><span class="Operator">=</span><span class="DecNumber">42</span></span></tt></li>
+<li>strdefine same as intdefine but for strings</li>
+<li>booldefine same as intdefine but for bools</li>
+</ul>
+</li>
+<li>user defined pragmas: WOOP is a new pragma,<ul class="simple"><li>pragma:WOOP, pragmaX, pragmaY</li>
+</ul>
+</li>
+<li>see templateMacros.nim for template pragmas</li>
+</ul>
+
+<h2><a class="toc-backref" id="pragmas-effects-and-experimental-features-universal-pragmas" href="#pragmas-effects-and-experimental-features-universal-pragmas">universal pragmas</a></h2><ul class="simple"><li>compileTime marks proc as compile time only; vars init during compile and const at runtime</li>
+<li>deprecated: &quot;optional msg&quot; flag, prints warning in compiler logs if symbol is used</li>
+<li>error: &quot;msg&quot; annotate a symbol with an error msg; when the symbol is used a static error is thrown</li>
+<li>fatal: &quot;msg&quot; same as error but compilation is guaranteed to be aborted when symbol is used</li>
+<li>used: inform the compiler this symbol/module is used, and not to print warning about it</li>
+<li>warning: &quot;msg&quot; same as error but for warnings</li>
+</ul>
+
+<h2><a class="toc-backref" id="pragmas-effects-and-experimental-features-var-pragmas" href="#pragmas-effects-and-experimental-features-var-pragmas">var pragmas</a></h2><ul class="simple"><li>global converts a proc scoped var into a global</li>
+<li>raises: [x,y,z] list permitted exceptions; non listed force compiler errs</li>
+<li>threadvar informs the compiler this var should be local to a thread</li>
+</ul>
+
+<h2><a class="toc-backref" id="pragmas-effects-and-experimental-features-proc-pragmas" href="#pragmas-effects-and-experimental-features-proc-pragmas">proc pragmas</a></h2><ul class="simple"><li>varags this proc can take a variable number of params after the last one</li>
+<li>async requires import asyncdispatch; proc can now use await keyword</li>
+<li>base method used on a base type for inheritable objects</li>
+<li>closure</li>
+<li>noReturn proc that never returns</li>
+<li>noSideEffect proc is interpreted as a func (see routines.nim)</li>
+<li>thread informs the compiler this proc is meant for execution on a new thread</li>
+</ul>
+
+<h2><a class="toc-backref" id="pragmas-effects-and-experimental-features-type-pragmas" href="#pragmas-effects-and-experimental-features-type-pragmas">type pragmas</a></h2><ul class="simple"><li>acyclic mark object as non recursive incase GC infers otherwise; for GC optimization</li>
+<li>bycopy pass this obj/tuple by value into procs</li>
+<li>byref pass this obj/tuple by ref into procs</li>
+<li>final mark an object as non inheritable</li>
+<li>inheritable create alternative RootObj</li>
+<li>shallow objects can be shallow copied; use w/ caution; speeds up assignments considerably</li>
+<li>union sets an objects fields overlaid in memory producing a union instead of struct in C/++</li>
+<li>packed sets an objects field back to back in memory; e.g. for network/hardware drivers</li>
+</ul>
+
+<h2><a class="toc-backref" id="pragmas-effects-and-experimental-features-effect-pragmas" href="#pragmas-effects-and-experimental-features-effect-pragmas">effect pragmas</a></h2><ul class="simple"><li>linearScanEnd signify the end of expected case branches for optimization</li>
+<li>pop: [x,y,z] remove pragma/all previously pushed pragmas from the code that follows</li>
+<li>push: [x,y,z] add pragma into the context of the code that follows</li>
+</ul>
+
+<h2><a class="toc-backref" id="pragmas-effects-and-experimental-features-js-pragmas" href="#pragmas-effects-and-experimental-features-js-pragmas">JS pragmas</a></h2><ul class="simple"><li>importJs fns/symbols that can be called via <tt class="docutils literal"><span class="pre"><span class="Identifier">obj</span><span class="Operator">.</span><span class="Identifier">fn</span><span class="Punctuation">(</span><span class="Identifier">args</span><span class="Punctuation">)</span></span></tt></li>
+</ul>
+
+<h2><a class="toc-backref" id="pragmas-effects-and-experimental-features-experimental-pragmas" href="#pragmas-effects-and-experimental-features-experimental-pragmas">experimental pragmas</a></h2><ul class="simple"><li>enable experimental features<ul class="simple"><li>parallel</li>
+</ul>
+</li>
+</ul>
+
+<h2><a class="toc-backref" id="pragmas-effects-and-experimental-features-compilation-pragmas" href="#pragmas-effects-and-experimental-features-compilation-pragmas">compilation pragmas</a></h2><ul class="simple"><li>assertions:on/off</li>
+<li>boundChecks:on/off</li>
+<li>callconv:on/off</li>
+<li>checks:on/off</li>
+<li>hint[woop]:on/off</li>
+<li>hints:on/off</li>
+<li>nilChecks:on/off</li>
+<li>optimization:none/speed/size</li>
+<li>overflowChecks: on/off</li>
+<li>patterns:on/off</li>
+<li>warning[woop]:on/off</li>
+<li>warnings:on/off</li>
+</ul>
+
+<h2><a class="toc-backref" id="pragmas-effects-and-experimental-features-niche-pragmas" href="#pragmas-effects-and-experimental-features-niche-pragmas">niche pragmas</a></h2><ul class="simple"><li>asmNoStackFrame should only be used by procs consisting only of assembler statements</li>
+<li>effects will output all inferred effects (e.g. exceptions) up to this point</li>
+<li>pure requires enums to be fully qualified; x fails, but y.x doesnt</li>
+<li>line modify line information as seen in stacktraces</li>
+<li>regiser a var for placement in hardware registry for faster access</li>
+</ul>
+
+<h2><a class="toc-backref" id="pragmas-effects-and-experimental-features-unknownslashskippedslashc-pragmas" href="#pragmas-effects-and-experimental-features-unknownslashskippedslashc-pragmas">unknown/skipped/C pragmas</a></h2><ul class="simple"><li>align</li>
+<li>bitsize</li>
+<li>codegenDecl</li>
+<li>compile</li>
+<li>computedGoTo dunno; something to do with case statements in a while loop and interpreters</li>
+<li>cpopNonPod</li>
+<li>dirty something to do with templates</li>
+<li>discardable</li>
+<li>dynlib: &quot;exactName&quot; import a proc/var from a dynamic .{dll,so} library</li>
+<li>dynlib export this symbol to a dynamic library, must be used with exportc</li>
+<li>emit</li>
+<li>exportc: &quot;optionalName&quot; use the symbols/provided name when exporting this to c</li>
+<li>extern: &quot;x$1&quot; affects symbol name mangling when exported</li>
+<li>header</li>
+<li>importc import a proc/var from C</li>
+<li>importCpp</li>
+<li>importObjC</li>
+<li>incompleteStruct</li>
+<li>inject something to do with symbol visibility</li>
+<li>inline a proc; dunno what that means</li>
+<li>link</li>
+<li>localPassc</li>
+<li>nodecl</li>
+<li>passc</li>
+<li>passl</li>
+<li>registerProc dunno; included in the compileTime example</li>
+<li>size dunno</li>
+<li>volatile</li>
+</ul>
+
+<h2><a class="toc-backref" id="pragmas-effects-and-experimental-features-effects" href="#pragmas-effects-and-experimental-features-effects">effects</a></h2>
+<h2><a class="toc-backref" id="pragmas-effects-and-experimental-features-effect-types" href="#pragmas-effects-and-experimental-features-effect-types">effect types</a></h2><p>IOEffect</p>
 <ul class="simple"><li>ExecIOEffect executing IO operation</li>
 <li>ReadIOEffect describes a read IO operation</li>
 <li>RootEffect custom effects should inherit from this</li>
@@ -170,7 +292,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-03-17 19:43:36 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-03-20 16:04:37 UTC</small>
       </div>
     </div>
   </div>

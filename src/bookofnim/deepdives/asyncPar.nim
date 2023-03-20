@@ -18,7 +18,13 @@
   - each thread has its own GC heap and mem sharing is restricted
     - improves efficiency and prevents race conditions
   - procs used with threads should have {.thread.} pragma
-  - vars local to threads should use {.threadvar.}
+    - to create a thread from the proc you must use spawn/createThread
+    - proc signature cant have var/ref/closure types (enforces no heap sharing restriction)
+    - implies `procvar`
+  - vars local to threads must use {.threadvar.}
+    - implies all the effects of {.global.}
+    - can be defined but not initialized: it will be replicated at thread creation
+      - `var x* {.threadvar.}: string` is okay, but not `.... = "abc"
   - exceptions
     - handled exceptions dont propagate across threads
     - unhandled exceptions terminates the entire process

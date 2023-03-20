@@ -1,8 +1,9 @@
 --debugger:native
---deepcopy:on
+--deepcopy:on # required for mm:orc/arc
 --define:nimStrictDelete
 --define:ssl
 --define:threadsafe
+--experimental:strictEffects
 --hints:on
 --mm:orc
 --multimethods:on
@@ -24,7 +25,6 @@ case getEnv "ENV":
   of "DEV":
     --assertions:on
     --checks:on
-    --colors:on
     --debuginfo:on
     --declaredLocs:on
     --errorMax:0
@@ -32,6 +32,7 @@ case getEnv "ENV":
     --opt:size
     --showAllMismatches:on
     --verbosity:2
+    # --colors:on # breaks vscode run code extension
   else:
     --assertions:off
     --define:release

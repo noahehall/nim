@@ -45,6 +45,7 @@ todo
 ## objects
 - complex tuples without lexical ordering
 - provide inheritance & hidden fields > tuples
+  - ref/ptr objects can use of to distinguish between types
 - nominally equivalent
 - enum and object types may only be defined within a type statement.
 - traced by the garbage collector, no need to free them when allocated
@@ -320,6 +321,10 @@ type
 let people2 = SomeoneRef(name: "npc",
   bday: "before noah",
   age: 1)
+
+method baseMethod(self: SomeoneRef): bool {.base.} =
+  # override this base method
+  raise newException(CatchableError, "Method without implementation override")
 
 echo "############################ ptr"
 # todo

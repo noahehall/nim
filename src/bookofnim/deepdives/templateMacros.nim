@@ -5,6 +5,7 @@
 ##[
 ## TLDR
 - pretty much skipped the entire section on templates, and definitely on macros
+- FYI: you dont know nim if you dont know templates & macros
 
 todos
 -----
@@ -13,6 +14,10 @@ todos
 - [macro tut](https://nim-lang.org/docs/tut3.html)
 - [fusion astdsl](https://nim-lang.github.io/fusion/src/fusion/astdsl.html)
 - [templates vs generics](https://forum.nim-lang.org/t/9985)
+- [system.nimNode is discussed here](https://nim-lang.org/docs/manual.html#pragmas-compiletime-pragma)
+- [typed vs untyped for templates](https://nim-lang.org/docs/manual.html#templates-typed-vs-untyped-parameters)
+- [custom annotations with template pragmas](https://nim-lang.org/docs/manual.html#userminusdefined-pragmas-custom-annotations)
+- [macro pragmas](https://nim-lang.org/docs/manual.html#userminusdefined-pragmas-macro-pragmas)
 
 ## templates
 - simple form of a macro

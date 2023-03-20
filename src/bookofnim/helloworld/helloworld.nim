@@ -72,7 +72,7 @@ idiomatic nim
 - use getMonoTime | cpuTime > now for benchmarking (docs)
 - use getTime > epochTime for epoch (docs)
 - use include to split large modules into distinct files (docs)
-- use Natural/Positive for bounds checks/type desc (docs) i.e. Positive.low == 1 Natural.low == 0
+- use Natural/Positive for checks/type desc (docs) i.e. Positive.low == 1 Natural.low == 0
 - use parseopt module > os.parseCmdLine unless specifically required (docs)
 - use procs > (macros/templates/iterators/convertors) unless necessary (styleguide)
 - use result(its optimized) > return (only for control flow) > last statement expression (stylguide) (FYI status prefers last statement)

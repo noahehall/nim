@@ -35,6 +35,7 @@ people	bookofnim/helloworld/modules/tupleObjectTable.html#people	tupleObjectTabl
 SomeoneRef	bookofnim/helloworld/modules/tupleObjectTable.html#SomeoneRef	tupleObjectTable: SomeoneRef	
 OrRefObject	bookofnim/helloworld/modules/tupleObjectTable.html#OrRefObject	tupleObjectTable: OrRefObject	
 people2	bookofnim/helloworld/modules/tupleObjectTable.html#people2	tupleObjectTable: people2	
+baseMethod	bookofnim/helloworld/modules/tupleObjectTable.html#baseMethod.e,SomeoneRef	tupleObjectTable: baseMethod(self: SomeoneRef): bool	
 WhoWoop	bookofnim/helloworld/modules/tupleObjectTable.html#WhoWoop	tupleObjectTable: WhoWoop	
 YouWoop	bookofnim/helloworld/modules/tupleObjectTable.html#YouWoop	tupleObjectTable: YouWoop	
 IWoop	bookofnim/helloworld/modules/tupleObjectTable.html#IWoop_2	tupleObjectTable: IWoop	
@@ -78,7 +79,7 @@ printFields	bookofnim/helloworld/modules/tupleObjectTable.html#printFields,T	tup
 utherRecord	bookofnim/helloworld/modules/tupleObjectTable.html#utherRecord	tupleObjectTable: utherRecord	
 fieldsPrint	bookofnim/helloworld/modules/tupleObjectTable.html#fieldsPrint,T,T	tupleObjectTable: fieldsPrint[T: distinct tuple | object](first, second: T)	
 declareVariableWithType	bookofnim/helloworld/modules/tupleObjectTable.html#declareVariableWithType.t,typedesc,typedesc	tupleObjectTable: declareVariableWithType(T: typedesc; value: T:type)	
-x`gensym6	bookofnim/helloworld/modules/tupleObjectTable.html#x`gensym6	tupleObjectTable: x`gensym6	
+x`gensym7	bookofnim/helloworld/modules/tupleObjectTable.html#x`gensym7	tupleObjectTable: x`gensym7	
 tuples, objects and tables	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables	 tuples, objects and tables	
 TLDR	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-tldr	  TLDR	
 links	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-links	  links	

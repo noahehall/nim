@@ -283,6 +283,7 @@ import std/os
 var i: int
 
 const
+  appName = "bookofnim"
   tmpdir = "/tmp/nim"
   dirtmp = "/tmp/min"
   fossdir = "~/git/foss/"
@@ -334,10 +335,13 @@ echo "############################ os dirs"
 # walkPattern walkDirs + walkFiles
 
 echo fmt"{getCurrentDir()=}"
-echo fmt"{getCacheDir()=}"
+echo fmt"current users {getCacheDir()=}"
+echo fmt"some apps {appName.getCacheDir()=}"
 echo fmt"{getConfigDir()=}"
 echo fmt"{getTempDir()=}"
-echo fmt"i.e. expandTilde ~ {getHomeDir()=}"
+echo fmt"compiled osIo.nim {getAppDir()=}"
+echo fmt"compiled osIo.nim {getAppFilename()=}"
+echo fmt"alias for expandTilde {getHomeDir()=}"
 echo fmt"shifts path {tailDir fossdir=}"
 
 echo fmt"{fossdir.parentDirs.toSeq=}"
@@ -515,8 +519,6 @@ if fmt"tree1 {tmpdir.parentDir}".execShellCmd != 0:
   echo "uses sh by default, thus no bash aliases"
 
 echo fmt"{getCurrentPRocessId()=}"
-echo fmt"compiled osIo.nim {getAppDir()=}"
-echo fmt"compiled osIo.nim {getAppFilename()=}"
 echo fmt"nim/nimble at compiletime {getCurrentCompilerExe()=}"
 
 echo fmt"""{findExe "nim"=}"""

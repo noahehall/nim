@@ -7,6 +7,7 @@
   - except for when statements/expressions
 - use whens for completely removing sections of code at compile time
 - all can be used as expressions and the result assigned to a var
+- case statement branches should be listed in order of most expected
 
 branching todos
 ---------------
@@ -73,7 +74,9 @@ var numCase = 50.345
 echo case numCase
   of 2: "of 2 satisifes float 2.0" # ofs must a constant expression
   of 2.0: "is float 2.0" # if we switch to devel branch this throws duplicate
-  of 5.0, 6.0: "float is 5 or 6.0"
+  of 5.0, 6.0:
+    {.linearScanEnd.} # signify the end of likely scenarios
+    "float is 5 or 6.0"
   of 7.0..12.9999: "wow your almost a teenager"
   elif numCase in 13.00 .. 51.00: "just made it!" # must come after of statements
   else: "not all cases covered: compile error if we dont discard" # required for non-ordinal types

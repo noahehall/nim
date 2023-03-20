@@ -243,8 +243,8 @@ window.addEventListener('DOMContentLoaded', main);
     title="sj = (iz: &quot;super&quot;, wha: 133, t: 't')">sj</a></li>
   <li><a class="reference" href="#utherRecord"
     title="utherRecord: OtherRecord = (wtf: &quot;yo2&quot;)">utherRecord</a></li>
-  <li><a class="reference" href="#x%60gensym6"
-    title="x`gensym6: int = 42">x`gensym6</a></li>
+  <li><a class="reference" href="#x%60gensym7"
+    title="x`gensym7: int = 42">x`gensym7</a></li>
 
   </ul>
 </li>
@@ -357,7 +357,12 @@ window.addEventListener('DOMContentLoaded', main);
 <li>
   <a class="reference reference-toplevel" href="#14" id="64">Methods</a>
   <ul class="simple simple-toc-section">
-      <ul class="simple nested-toc-section">collide
+      <ul class="simple nested-toc-section">baseMethod
+      <li><a class="reference" href="#baseMethod.e%2CSomeoneRef"
+    title="baseMethod(self: SomeoneRef): bool">baseMethod(self: SomeoneRef): bool</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">collide
       <li><a class="reference" href="#collide.e%2CThing%2CThing"
     title="collide(a, b: Thing)">collide(a, b: Thing)</a></li>
   <li><a class="reference" href="#collide.e%2CThing%2CUnit"
@@ -441,7 +446,9 @@ class="link-seesrc" target="_blank">Source</a>
 </ul>
 
 <h2><a class="toc-backref" id="tuples-objects-and-tables-objects" href="#tuples-objects-and-tables-objects">objects</a></h2><ul class="simple"><li>complex tuples without lexical ordering</li>
-<li>provide inheritance &amp; hidden fields &gt; tuples</li>
+<li>provide inheritance &amp; hidden fields &gt; tuples<ul class="simple"><li>ref/ptr objects can use of to distinguish between types</li>
+</ul>
+</li>
 <li>nominally equivalent</li>
 <li>enum and object types may only be defined within a type statement.</li>
 <li>traced by the garbage collector, no need to free them when allocated</li>
@@ -558,9 +565,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L220"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L221"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L220" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L221" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -570,9 +577,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L221"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L222"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L221" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L222" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -582,9 +589,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L209"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L210"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L209" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L210" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -594,9 +601,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 abstract base class for an expression
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L363"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L368"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L363" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L368" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -606,9 +613,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L335"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L340"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L335" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L340" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -620,9 +627,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L364"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L369"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L364" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L369" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -632,9 +639,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L168"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L169"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L168" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L169" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -647,9 +654,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L439"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L444"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L439" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L444" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -673,9 +680,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L419"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L424"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L419" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L424" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -686,9 +693,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L412"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L417"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L412" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L417" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -700,9 +707,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L318"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L319"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L318" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L319" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -712,9 +719,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L481"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L486"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L481" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L486" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -726,9 +733,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L366"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L371"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L366" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L371" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -741,9 +748,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L229"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L230"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L229" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L230" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -756,9 +763,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L232"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L233"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L232" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L233" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -768,9 +775,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L486"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L491"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L486" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L491" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -783,9 +790,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L267"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L268"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L267" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L268" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -798,9 +805,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L243"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L244"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L243" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L244" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -810,9 +817,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L317"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L318"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L317" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L318" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -822,9 +829,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L172"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L173"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L172" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L173" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -834,9 +841,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L212"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L213"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L212" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L213" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -850,9 +857,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L443"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L448"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L443" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L448" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -862,9 +869,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L387"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L392"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L387" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L392" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -876,9 +883,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L388"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L393"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L388" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L393" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -890,9 +897,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L284"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L285"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L284" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L285" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -904,9 +911,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L332"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L337"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L332" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L337" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -916,9 +923,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L334"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L339"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L334" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L339" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -933,9 +940,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L400"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L405"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L400" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L405" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -945,9 +952,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L400"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L405"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L400" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L405" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -958,9 +965,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L188"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L189"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L188" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L189" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -970,9 +977,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L175"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L176"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L175" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L176" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -982,9 +989,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L470"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L475"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L470" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L475" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -994,9 +1001,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L429"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L434"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L429" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L434" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1006,9 +1013,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L276"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L277"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L276" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L277" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1018,9 +1025,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L478"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L483"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L478" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L483" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1030,9 +1037,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L158"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L159"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L158" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L159" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1042,9 +1049,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L177"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L178"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L177" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L178" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1054,9 +1061,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L247"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L248"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L247" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L248" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1066,9 +1073,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L349"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L354"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L349" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L354" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1078,9 +1085,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L183"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L184"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L183" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L184" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1090,21 +1097,21 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L493"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L498"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L493" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L498" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="x`gensym6">
-<dt><pre><span class="Identifier">x`gensym6</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">42</span></pre></dt>
+<div id="x`gensym7">
+<dt><pre><span class="Identifier">x`gensym7</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">42</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L508"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L513"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L508" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L513" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1119,9 +1126,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L200"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L201"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L200" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L201" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1131,9 +1138,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L193"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L194"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L193" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L194" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1143,9 +1150,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L237"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L238"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L237" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L238" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1155,86 +1162,14 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L195"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L196"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L195" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L196" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
 <div id="iwoop">
 <dt><pre><span class="Identifier">iwoop</span> <span class="Other">=</span> <span class="Identifier">PrivateWoop</span><span class="Other">(</span><span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">false</span><span class="Other">,</span> <span class="Identifier">times</span><span class="Other">:</span> <span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L235"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L235" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="js">
-<dt><pre><span class="Identifier">js</span> <span class="Other">=</span> <span class="Other">(</span><span class="StringLit">&quot;super&quot;</span><span class="Other">,</span> <span class="DecNumber">133</span><span class="Other">,</span> <span class="CharLit">'t'</span><span class="Other">)</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L180"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L180" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="people">
-<dt><pre><span class="Identifier">people</span><span class="Other">:</span> <span class="Keyword">ref</span> <a href="tupleObjectTable.html#Someone"><span class="Identifier">Someone</span></a> <span class="Other">=</span> <span class="Identifier">new</span><span class="Other">(</span><a href="tupleObjectTable.html#Someone"><span class="Identifier">Someone</span></a><span class="Other">)</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L310"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L310" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="people2">
-<dt><pre><span class="Identifier">people2</span> <span class="Other">=</span> <a href="tupleObjectTable.html#SomeoneRef"><span class="Identifier">SomeoneRef</span></a><span class="Other">(</span><span class="Identifier">name</span><span class="Other">:</span> <span class="StringLit">&quot;npc&quot;</span><span class="Other">,</span> <span class="Identifier">bday</span><span class="Other">:</span> <span class="StringLit">&quot;before noah&quot;</span><span class="Other">,</span> <span class="Identifier">age</span><span class="Other">:</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L320"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L320" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="thisInt">
-<dt><pre><span class="Identifier">thisInt</span><span class="Other">:</span> <span class="Identifier">StrOrInt</span> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L214"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L214" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="thizString">
-<dt><pre><span class="Identifier">thizString</span><span class="Other">:</span> <span class="Identifier">StrOrInt</span> <span class="Other">=</span> <span class="StringLit">&quot;1&quot;</span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L213"
-class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L213" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-</div>
-<div id="uwoop">
-<dt><pre><span class="Identifier">uwoop</span> <span class="Other">=</span> <a href="tupleObjectTable.html#PublicWoop"><span class="Identifier">PublicWoop</span></a><span class="Other">(</span><span class="Identifier">u</span><span class="Other">:</span> <span class="Identifier">true</span><span class="Other">,</span> <span class="Identifier">times</span><span class="Other">:</span> <span class="DecNumber">100</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -1245,15 +1180,87 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 </div>
+<div id="js">
+<dt><pre><span class="Identifier">js</span> <span class="Other">=</span> <span class="Other">(</span><span class="StringLit">&quot;super&quot;</span><span class="Other">,</span> <span class="DecNumber">133</span><span class="Other">,</span> <span class="CharLit">'t'</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L181"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L181" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="people">
+<dt><pre><span class="Identifier">people</span><span class="Other">:</span> <span class="Keyword">ref</span> <a href="tupleObjectTable.html#Someone"><span class="Identifier">Someone</span></a> <span class="Other">=</span> <span class="Identifier">new</span><span class="Other">(</span><a href="tupleObjectTable.html#Someone"><span class="Identifier">Someone</span></a><span class="Other">)</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L311"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L311" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="people2">
+<dt><pre><span class="Identifier">people2</span> <span class="Other">=</span> <a href="tupleObjectTable.html#SomeoneRef"><span class="Identifier">SomeoneRef</span></a><span class="Other">(</span><span class="Identifier">name</span><span class="Other">:</span> <span class="StringLit">&quot;npc&quot;</span><span class="Other">,</span> <span class="Identifier">bday</span><span class="Other">:</span> <span class="StringLit">&quot;before noah&quot;</span><span class="Other">,</span> <span class="Identifier">age</span><span class="Other">:</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L321"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L321" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="thisInt">
+<dt><pre><span class="Identifier">thisInt</span><span class="Other">:</span> <span class="Identifier">StrOrInt</span> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L215"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L215" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="thizString">
+<dt><pre><span class="Identifier">thizString</span><span class="Other">:</span> <span class="Identifier">StrOrInt</span> <span class="Other">=</span> <span class="StringLit">&quot;1&quot;</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L214"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L214" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="uwoop">
+<dt><pre><span class="Identifier">uwoop</span> <span class="Other">=</span> <a href="tupleObjectTable.html#PublicWoop"><span class="Identifier">PublicWoop</span></a><span class="Other">(</span><span class="Identifier">u</span><span class="Other">:</span> <span class="Identifier">true</span><span class="Other">,</span> <span class="Identifier">times</span><span class="Other">:</span> <span class="DecNumber">100</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L237"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L237" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
 <div id="you">
 <dt><pre><span class="Identifier">you</span> <span class="Other">=</span> <a href="tupleObjectTable.html#Someone"><span class="Identifier">Someone</span></a><span class="Other">(</span><span class="Identifier">name</span><span class="Other">:</span> <span class="StringLit">&quot;not noah&quot;</span><span class="Other">,</span> <span class="Identifier">bday</span><span class="Other">:</span> <span class="StringLit">&quot;dunno&quot;</span><span class="Other">,</span> <span class="Identifier">age</span><span class="Other">:</span> <span class="DecNumber">19</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L252"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L253"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L252" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L253" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1268,9 +1275,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L256"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L257"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L256" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L257" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1280,9 +1287,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L288"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L289"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L288" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L289" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1292,9 +1299,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L295"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L296"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L295" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L296" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1304,9 +1311,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L338"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L343"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L338" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L343" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1316,9 +1323,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L342"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L347"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L342" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L347" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1328,9 +1335,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L340"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L345"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L340" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L345" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1340,9 +1347,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L501"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L506"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L501" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L506" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1352,9 +1359,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L468"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L473"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L468" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L473" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1364,9 +1371,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L377"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L382"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L377" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L382" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1376,9 +1383,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L378"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L383"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L378" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L383" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1388,9 +1395,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L489"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L494"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L489" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L494" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1400,9 +1407,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L274"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L275"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L274" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L275" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1412,9 +1419,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L272"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L273"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L272" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L273" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1424,9 +1431,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L457"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L462"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L457" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L462" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1435,15 +1442,28 @@ class="link-seesrc" target="_blank">Source</a>
 <div class="section" id="14">
 <h1><a class="toc-backref" href="#14">Methods</a></h1>
 <dl class="item">
+<div id="baseMethod.e,SomeoneRef">
+<dt><pre><span class="Keyword">method</span> <a href="#baseMethod.e%2CSomeoneRef"><span class="Identifier">baseMethod</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="tupleObjectTable.html#SomeoneRef"><span class="Identifier">SomeoneRef</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span class="Identifier">base</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">CatchableError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L325"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L325" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
 <div id="collide.e,Thing,Thing">
 <dt><pre><span class="Keyword">method</span> <a href="#collide.e%2CThing%2CThing"><span class="Identifier">collide</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">Thing</span><span class="Other">)</span> {.<span class="Identifier">inline</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L391"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L396"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L391" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L396" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1453,9 +1473,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L394"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L399"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L394" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L399" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1465,9 +1485,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L397"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L402"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L397" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L402" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1477,9 +1497,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L370"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L375"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L370" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L375" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1489,9 +1509,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L374"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L379"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L374" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L379" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1501,9 +1521,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L375"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L380"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L375" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L380" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1518,9 +1538,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L507"
+href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L512"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L507" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/tupleObjectTable.nim#L512" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -1534,7 +1554,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-03-17 19:43:35 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-03-20 16:04:36 UTC</small>
       </div>
     </div>
   </div>
