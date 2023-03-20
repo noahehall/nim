@@ -3,6 +3,8 @@ digraph bookofnim {
 "system/memory" -> "system/ansi_c";
 "system" -> "system/ansi_c";
 "system" -> "system/memory";
+"system" -> "system/ansi_c";
+"system/assertions" -> "system/ansi_c";
 "std/private/miscdollars" -> "std/private/digitsutils";
 "system/assertions" -> "std/private/miscdollars";
 "system" -> "system/assertions";

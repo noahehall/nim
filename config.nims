@@ -7,6 +7,7 @@
 --hints:on
 --mm:orc
 --multimethods:on
+--panics:on
 --parallelBuild:0 # 1 is always a good idea in CI
 --stackTraceMsgs:on
 --styleCheck:hint

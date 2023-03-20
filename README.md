@@ -97,6 +97,10 @@ blogs
 
 ### quickies
 
+- [js issues](https://github.com/nim-lang/Nim/labels/Javascript)
+
+---
+
 - [read through concepts](https://nim-lang.org/docs/compiler/concepts.html)
   - [and this forum post](https://forum.nim-lang.org/t/9992)
   - [probably should review each module here](https://nim-lang.org/docs/compiler/theindex.html)

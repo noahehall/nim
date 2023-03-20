@@ -15,6 +15,7 @@
     - std & nimscript tasks in packaging
     - templates in templateMacros
     - other routine types are in this file
+  - routine exception tracking is in pragmasEffects
 
 gotchas
 -------

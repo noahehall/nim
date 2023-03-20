@@ -1,7 +1,7 @@
 ##
 ## pragmas, effects and experimental features
 ## ==========================================
-## - [bookmark](https://nim-lang.org/docs/manual.html#effect-system)
+## - [bookmark](https://nim-lang.org/docs/manual.html#effect-system-tag-tracking)
 
 ##[
 ## TLDR
@@ -10,11 +10,18 @@
   - many pragmas require familiarity of C/C++/objc
   - FYI:
     - a futile attempt was taken at categorizing pragmas
-    - pragma annotation & macro pragmas are in templateMacros.nim
-    - thread/async like templates are in asyncPar.nim
+    - template annotation & macro pragmas are in templateMacros.nim
+    - thread/async pragmas are in asyncPar.nim
+- effect system consists of
+  - proc exception tracking
+  - user defined effect tag tracking
+  - functional side effect tracking
+  - memory/gc safety tracking
 
 links
 -----
+- other
+  - [wikipedia side effects](https://en.wikipedia.org/wiki/Effect_system)
 - [pragmas section in manual](https://nim-lang.org/docs/manual.html#pragmas)
 - [effect system in manual](https://nim-lang.org/docs/manual.html#effect-system)
 
@@ -57,26 +64,32 @@ universal pragmas
 -----------------
 - compileTime marks proc as compile time only; vars init during compile and const at runtime
 - deprecated: "optional msg" flag, prints warning in compiler logs if symbol is used
+- effects will output all inferred effects (e.g. exceptions) up to this point
 - error: "msg" annotate a symbol with an error msg; when the symbol is used a static error is thrown
 - fatal: "msg" same as error but compilation is guaranteed to be aborted when symbol is used
+- linearScanEnd signify the end of expected case branches for optimization
+- pop: [x,y,z] remove pragma/all previously pushed pragmas from the code that follows
+- push: [x,y,z] add pragma into the context of the code that follows
 - used: inform the compiler this symbol/module is used, and not to print warning about it
 - warning: "msg" same as error but for warnings
 
 var pragmas
 -----------
 - global converts a proc scoped var into a global
-- raises: [x,y,z] list permitted exceptions; non listed force compiler errs
 - threadvar informs the compiler this var should be local to a thread
 
-proc pragmas
-------------
-- varags this proc can take a variable number of params after the last one
+routine pragmas
+---------------
 - async requires import asyncdispatch; proc can now use await keyword
 - base method used on a base type for inheritable objects
 - closure
+- effectsOf: paramX inform the compiler this proc has the effects of paramX
 - noReturn proc that never returns
 - noSideEffect proc is interpreted as a func (see routines.nim)
+- raises: [x,y,z] list permitted exceptions; non listed force compiler errs
+- tags: [x,y,z] list of user defined effects to enforce
 - thread informs the compiler this proc is meant for execution on a new thread
+- varags this proc can take a variable number of params after the last one
 
 type pragmas
 ------------
@@ -85,15 +98,10 @@ type pragmas
 - byref pass this obj/tuple by ref into procs
 - final mark an object as non inheritable
 - inheritable create alternative RootObj
+- packed sets an objects field back to back in memory; e.g. for network/hardware drivers
+- pure requires enums to be fully qualified; x fails, but y.x doesnt
 - shallow objects can be shallow copied; use w/ caution; speeds up assignments considerably
 - union sets an objects fields overlaid in memory producing a union instead of struct in C/++
-- packed sets an objects field back to back in memory; e.g. for network/hardware drivers
-
-effect pragmas
---------------
-- linearScanEnd signify the end of expected case branches for optimization
-- pop: [x,y,z] remove pragma/all previously pushed pragmas from the code that follows
-- push: [x,y,z] add pragma into the context of the code that follows
 
 JS pragmas
 ----------
@@ -122,8 +130,6 @@ compilation pragmas
 niche pragmas
 -------------
 - asmNoStackFrame should only be used by procs consisting only of assembler statements
-- effects will output all inferred effects (e.g. exceptions) up to this point
-- pure requires enums to be fully qualified; x fails, but y.x doesnt
 - line modify line information as seen in stacktraces
 - regiser a var for placement in hardware registry for faster access
 
@@ -160,15 +166,50 @@ unknown/skipped/C pragmas
 
 
 ## effects
+- informing the compiler about a routine's side effects
+- impacts type compatibility and compilation
+
+exception tracking effects
+--------------------------
+- implemented through the raises pragma and indirectly through try statements
+  - only tracks Exceptions, not Defects
+- can be attach to any type of routine (except func?)
+  - in a type def, e.g. `type x = proc {.raises [...].}` are part of type checks on assignment
+- general rules for determining which exceptions a routine throws
+  - all routines potentially raise System.Exception
+    - if routine X is invoked and its body cant be inferred
+    - unless
+      - routine contains a try/except statement, then those are included
+      - routine X indirectly invoked via `Y(...)`, then X has `effectsOf: Y`
+      - routine X imported via `importc`, then no exceptions expected
+      - raise and tryh
+      - an explicit `raises` is defined, then can raise only those declared
+        - this trumps all others except:
+          - expression Y can raise A,B,C and is invoked within Xs scope, then X raises + Y raises
+
+
+user defined effects
+--------------------
+- tag routines with custom effects via named types
+- routines tagged must be invoked with the named type in scope
+
+
+functional side effect tracking
+-------------------------------
+
+gc safety memory effects
+------------------------
 
 effect types
 ------------
-IOEffect
-- ExecIOEffect executing IO operation
-- ReadIOEffect describes a read IO operation
-- RootEffect custom effects should inherit from this
-- TimeEffect
-- WriteIOEffect
+
+- IOEffect
+  - ExecIOEffect executing IO operation
+  - ReadIOEffect describes a read IO operation
+  - RootEffect custom effects should inherit from this
+  - TimeEffect
+  - WriteIOEffect
+
 ]##
 
 
@@ -188,3 +229,22 @@ echo "############################ push/pop pragma"
 # all procs after this line will have the previous push removed
 # last line of your file
 {.pop.}
+
+echo "############################ effects: exception tracking"
+
+type Oops = object of CatchableError
+
+proc neverRaises*(a: string): bool {.raises: [].} = true
+  ## any inferred exceptions/defects cause compilation errors
+
+proc canOnlyRaiseOops*(): bool {.raises: [Oops].} =
+  if true == false: raise newException(Oops, "sorry")
+  else: true
+
+proc couldRaise*(thisParam: proc(): bool): bool {.raises: [], effectsOf: thisParam.} =
+  thisParam()
+
+proc passCallback*(): bool = couldRaise(canOnlyRaiseOops)
+
+
+echo "############################ effects: user defined"
