@@ -44,6 +44,7 @@ links
 
 todos
 -----
+- [checkout glmf example repo for targeting android/ios](https://github.com/treeform/glfm)
 - review this entire file again, shiz alot clearer now
 - useStdoutAsStdmsg @see https://nim-lang.org/docs/io.html#stdmsg.t
 - Mixed mode projects are not officially supported anymore, it's too hard
