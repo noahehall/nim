@@ -1,3 +1,8 @@
+# V2! BABY
+
+- delete this section once this repo runs on V2
+- [install steps](https://nim-lang.org/blog/2023/03/31/version-20-rc2.html)
+
 # book of nim
 
 > [bow to the crown](https://www.youtube.com/watch?v=AEtxGOjKx5c) - Heather Dale
