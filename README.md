@@ -98,6 +98,8 @@ blogs
 
 ## Todos
 
+- docs should be generated during CI
+
 ---
 
 ### quickies

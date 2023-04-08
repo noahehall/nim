@@ -1,6 +1,6 @@
 ##
-## Hello world: my name is nim 1.9.3 (v2 RC)
-## ===========================
+## Hello world: my name is nim `#version-2-0`
+## =========================================
 ## [bookmark](https://nim-lang.org/docs/manual.html#special-types)
 
 ##[
@@ -28,7 +28,7 @@ todos
 
 ## std library
 - pure libraries: do not depend on external *.dll/lib*.so binary
-- impure libraries: !pure libraries
+- impure libraries: not pure libraries
 - wrapper libraries: impure low level interfaces to a C library
 
 ## style guide & best practices
@@ -124,7 +124,7 @@ import
 - are only allowed at the top level
 - looks in the current dir relative to the imported file and uses the first match
 - else traverses up the nim PATH for the first match
-  - [checkout the search path docs](https://nim-lang.org/docs/nimc.html#compiler-usage-search-path-handling)
+  - [search path docs](https://nim-lang.org/docs/nimc.html#compiler-usage-search-path-handling)
   .. code-block:: Nim
     import math # everything
     import std/math # import math specifically from the std library
@@ -164,10 +164,7 @@ include
 export
 ------
 - enables forwarding this modules dependencies onto downstream modules
-  - thus importers dont need to import their dependencies' depencencies
-  - remember you are exporting the MODULE identifier,
-    - e.g. a module X with a type X,
-      - export X is exporting the module, not the type X
+  - useful if module X will always be used with module Y
 - example exports
 .. code-block:: Nim
   export woop # export everything from woop
@@ -210,7 +207,6 @@ operators
   # assignment
   # - value semantics: copied on assignment, all types have value semantics
   # - ref semantics: referenced on assignment, anything with ref keyword
-    =
 
 keywords
 --------
@@ -226,12 +222,13 @@ keywords
 statements
 ----------
 - simple statements
-  - cant contain other statements unless separated with a semicolon
+  - cant contain other statements unless separated with a semicolon (statement lists)
   - e.g. assignment, invocations, and using return
 - complex statements
   - can contain other statements
   - must always be indented except for single complex statements
   - e.g. if, when, for, while
+
 
 expressions
 -----------
@@ -243,7 +240,7 @@ visibility
 ----------
 - var: local or global depending on scope,
 - force local scope vars to global via {.global.} pragma
-- export via symbols via woop* and it will be visible to client modules
+- export symbols with asterisk e.g. `woop*` and it will be visible to client modules
 - scopes: all blocks (ifs, loops, procs, etc) introduce a closure EXCEPT when statements
 ]##
 
