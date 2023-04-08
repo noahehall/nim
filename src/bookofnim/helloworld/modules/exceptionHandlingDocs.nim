@@ -6,9 +6,8 @@
 ## TLDR
 - docgen:
   - having `*` after - (like on this line) will break htmldocs rst parser
-    - you must escape it with backticks (see above) or backslash \*
-    - the line number reported may not be correct, but the filename will be
-      - error reported as `Error: '*' expected`
+    - you must escape it with backticks `*` or backslash \*
+    - error reported as `Error: '*' expected`
   - pretty prints code in the html
   - `back ticks` and back slashes e.g. \*.nims can escape special chars
   - if reusing rsts (e.g. for github readmes)
@@ -16,21 +15,20 @@
     - IMO always externalize readme.rst files so their viewable in github & in html docs
 - exceptions
   - all custom exceptions should ref a specific error/CatchableERror/Defect/and lastly Exception
-    - Exception is the base type for CatachableError (exceptions), Defect (non catchable)
+    - Exception is the base type for CatachableError (exceptions) and Defect (non catchable)
     - has to be allocated on the heap (requires ref) because their lifetime is unknown
   - raise keyword for throwing an exception/defect
-    - throw err: `raise err`
-    - throw err: `raise newException(OSError, "Oops! did i do that?")`
+    - e.g. `raise errInstance`
+    - e.g. `raise newException(OSError, "Oops! did i do that?")`
     - raising without an error rethrows the previous exception
   - compile with `--panics:on` to make defects unrecoverable
 - assert
   - -d:danger or --asertions:off to remove from compilation
   - --assertions:on to keep them in compiled output
-  - thus asserts are perfect for soft checks that can be turned off used for testing
 - doAssert
   - always on regardless of flags
   - can be used to check for specific errors with `doAssertRaises(woop):` block
-  - thus doAssert are useful for hard checks & implementing design by contract
+  - useful for hard checks & design by contract
 - drnim
   - requires koch to be setup
 
@@ -39,17 +37,18 @@ links
 - other
   - [restructuredText wiki](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
   - [status exception handling docs](https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling)
-  - [system exceptions you can extend from](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system/exceptions.nim)
 - high impact
   - [assertions](https://nim-lang.org/docs/assertions.html)
-  - [defect doc](https://nim-lang.org/docs/system.html#Defect)
+  - [defect](https://nim-lang.org/docs/system.html#Defect)
   - [docgen](https://nim-lang.org/docs/docgen.html)
   - [documenting, profiling and debugging nim code](https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html)
-  - [embedding runnable examples](https://nim-lang.org/docs/system.html#runnableExamples%2Cstring%2Cuntyped)
-  - [exception doc](https://nim-lang.org/docs/system.html#Exception)
   - [exception handling with defer](https://nim-lang.org/docs/manual.html#exception-handling-defer-statement)
-  - [exception hierarchy doc](https://nim-lang.org/docs/manual.html#exception-handling-exception-hierarchy)
-  - [nim reStructuredText & markdown](https://nim-lang.org/docs/rst.html)
+  - [exception hierarchy](https://nim-lang.org/docs/manual.html#exception-handling-exception-hierarchy)
+  - [exception](https://nim-lang.org/docs/system.html#Exception)
+  - [reStructuredText & markdown](https://nim-lang.org/docs/rst.html)
+  - [restructured text intro](https://docutils.sourceforge.io/docs/user/rst/quickstart.html)
+  - [runnable examples](https://nim-lang.org/docs/system.html#runnableExamples%2Cstring%2Cuntyped)
+  - [system exceptions you can extend from](https://github.com/nim-lang/Nim/blob/devel/lib/system/exceptions.nim)
 - niche
   - [drnim](https://nim-lang.org/docs/drnim.html)
   - [segfaults module](https://nim-lang.org/docs/segfaults.html)
@@ -140,7 +139,7 @@ assert
 - starting a line with .. image:: woopwoop.com/image.gif creates an image
 - include another doc file .. include:: ./system_overview.rst
   - [example nim file including rst](https://github.com/nim-lang/Nim/blob/devel/lib/system.nim)
-  - [^ e.g. system_overview](https://raw.githubusercontent.com/nim-lang/Nim/version-1-6/lib/system_overview.rst)
+  - [^ e.g. system_overview](https://raw.githubusercontent.com/nim-lang/Nim/devel/lib/system_overview.rst)
 - `.. _LinkName: some.url.com` can be referenced as `LinkName_`
 
 runnableExamples

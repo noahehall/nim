@@ -2,7 +2,6 @@
 
 todos
 -----
-- [couldnt get eval to work](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L2816)
 .. code-block:: Nim
   # probably need a memory_mgmt.nim file
   # skipped everything in this section

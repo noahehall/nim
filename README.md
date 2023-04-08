@@ -53,12 +53,12 @@
   - 3: [asyncPar](/src/bookofnim/deepdives/asyncPar.nim) > [servers](/src/bookofnim/deepdives/servers.nim), [dbs](/src/bookofnim/deepdives/dbs.nim)
   - 4: [backends dir](/backends/) > [pragmasEffects](/src/bookofnim/deepdives/pragmasEffects.nim), [templateMacros](/src/bookofnim/deepdives/templateMacros.nim)
   - 5: source code & books
-    - [source: nim](https://github.com/nim-lang/Nim/tree/version-1-6/lib)
-      - [impure](https://github.com/nim-lang/Nim/tree/version-1-6/lib/impure)
+    - [source: nim](https://github.com/nim-lang/Nim/tree/devel/lib)
+      - [impure](https://github.com/nim-lang/Nim/tree/devel/lib/impure)
       - [nimscript](https://github.com/nim-lang/Nim/blob/devel/lib/system/nimscript.nim)
-      - [pure](https://github.com/nim-lang/Nim/tree/version-1-6/lib/pure)
-      - [standard](https://github.com/nim-lang/Nim/tree/version-1-6/lib/std)
-      - [system](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L1)
+      - [pure](https://github.com/nim-lang/Nim/tree/devel/lib/pure)
+      - [standard](https://github.com/nim-lang/Nim/tree/devel/lib/std)
+      - [system](https://github.com/nim-lang/Nim/blob/devel/lib/system.nim#L1)
       - [test examples](https://github.com/nim-lang/Nim/tree/devel/tests)
       - [testament](https://github.com/nim-lang/Nim/tree/devel/testament)
     - [source: nimforum SPA](https://github.com/nim-lang/nimforum/tree/master/src)
@@ -119,7 +119,7 @@ blogs
 - dont forget about the nimlang/tools dir
 - find the rst syntax for creating links between pages and remove all the markdown links
 - fix tests/src/skip and add it to a new `good examples of bad code` section
-- [check how getTime handles os checks](https://github.com/nim-lang/Nim/blob/version-1-6/lib/pure/times.nim#L897)
+- [check how getTime handles os checks](https://github.com/nim-lang/Nim/blob/devel/lib/pure/times.nim#L897)
 - [skipped most of the section on cross compilation](https://nim-lang.org/docs/nimc.html#crossminuscompilation-for-windows)
 - [checkout status opensource theyve already built bunch of things you'll need for nirv](https://github.com/status-im)
 - you should review compile_backends.nim again stuff should be alot clearer now
