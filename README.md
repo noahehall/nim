@@ -2,6 +2,9 @@
 
 - delete this section once this repo runs on V2
 - [install steps](https://nim-lang.org/blog/2023/03/31/version-20-rc2.html)
+- remember:
+  - the docs all point to 1.6 so you cant depend on them for v2
+  - after dealing with migration errors, add source links to the `devel` branch
 
 # book of nim
 
