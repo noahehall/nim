@@ -30,6 +30,7 @@ todos
 - [effect system](https://nim-lang.org/docs/manual.html#effect-system)
 - [experimental](https://nim-lang.org/docs/manual_experimental.html)
 - move all the C pragmas into the backends dir
+- [document the effect types from devel branch](https://github.com/nim-lang/Nim/blob/devel/lib/system/exceptions.nim)
 
 ## pragmas
 - enable new functionality without adding new keywords to the language

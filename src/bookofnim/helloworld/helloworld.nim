@@ -16,6 +16,7 @@
 
 links
 -----
+- [devel branch nim docs](https://github.com/nim-lang/Nim/tree/devel/doc)
 - [nim system module](https://nim-lang.org/docs/system.html)
 - [nimlang api design](https://nim-lang.org/docs/apis.html)
 - [nimlang manual](https://nim-lang.org/docs/manual.html)

@@ -284,7 +284,12 @@ echo bbb # --> 'Slices are useful.'
 
 
 echo "############################ set"
-# set[T] generic type for constructing bit sets
+# set[T] generic type for constructing sets of chars / ints
+# there is no getter for sets (like in js), you have to loop through it or check for existence
+
+let myCharSet: set[char] = {'a', 'b'}
+echo myCharSet.contains('a')
+
 type Opts = set[char]
 type IsOn = set[int8]
 let

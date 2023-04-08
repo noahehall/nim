@@ -37,6 +37,9 @@ links
 - other
   - [restructuredText wiki](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
   - [status exception handling docs](https://nimbus.guide/auditors-book/02.3_correctness_distinct_mutability_effects_exceptions.html#enforcing-exception-handling)
+- devel source
+  - [assertions](https://github.com/nim-lang/Nim/blob/devel/lib/std/assertions.nim)
+  - [exception and effect types](https://github.com/nim-lang/Nim/blob/devel/lib/system/exceptions.nim)
 - high impact
   - [assertions](https://nim-lang.org/docs/assertions.html)
   - [defect](https://nim-lang.org/docs/system.html#Defect)
@@ -48,7 +51,6 @@ links
   - [reStructuredText & markdown](https://nim-lang.org/docs/rst.html)
   - [restructured text intro](https://docutils.sourceforge.io/docs/user/rst/quickstart.html)
   - [runnable examples](https://nim-lang.org/docs/system.html#runnableExamples%2Cstring%2Cuntyped)
-  - [system exceptions you can extend from](https://github.com/nim-lang/Nim/blob/devel/lib/system/exceptions.nim)
 - niche
   - [drnim](https://nim-lang.org/docs/drnim.html)
   - [segfaults module](https://nim-lang.org/docs/segfaults.html)
@@ -57,7 +59,6 @@ todos
 -----
 - drnim tool
 - debugger
-- reread the assertion docs and capture the info
 - [try-except discussion](https://forum.nim-lang.org/t/9765)
 .. code-block:: Nim
   errorMessageWriter (var) called instead of stdmsg.write when printing stacktrace
@@ -91,7 +92,7 @@ Defect types
 - FloatInvalidOpDefect invalid ops according to IEEE, e.g. 0.0/0.0
 - FloatOverflowDefect  stackoverflow.com
 - FloatUnderflowDefect stackunderflow.com
-- IndexDefect  array index out of bounds
+- IndexDefect array index out of bounds
 - NilAccessDefect dereferences of nil pointers (only raised when segfaults is imported)
 - ObjectAssignmentDefect object being assigned to its parent object
 - ObjectConversionDefect converting to an incompatible type
@@ -161,8 +162,8 @@ let badcode = "ishardtomaintain"  ## this is not included in docs because its no
 type GoodApplications* = object
   ## especially things like custom types
   ## may need additional abbreviations to describe their purpose
-  pubfield*: string ## is included in docs
-  prvfield*: string  ## also included since goodapplications is exported
+  pubfield*: string ## public: included in docs
+  prvfield: string  ## private: not included in docs
 
 echo "############################ documentation: runnableExamples"
 
@@ -173,6 +174,10 @@ runnableExamples:
 
 
 echo "############################ Exceptions "
+var err: ref OSError ## requires ref! only ref objects can be raised
+new(err) # a new OSError instance without a msg
+err.msg = "Oops! this is a bad error msg"
+
 type LearningError = object of CatchableError ## \
   ## The first pass is figuring things out.
   ## the second pass is ironing things out
@@ -185,17 +190,21 @@ block howlong:
     echo e.msg & " I shouldnt have left you"
 
 echo "############################ raise "
+
 proc neverThrows(): string {.raises: [].} =
+  ## we set raises to empty list
   result = "dont compile if I can raise any error"
 echo neverThrows()
 
 proc maybeThrows(x: int): int {.raises: [ValueError].} =
+  ## only value errors are allowed
+  try:
+    raise newException(ValueError, "will be raised")
+  except CatchableError:
+    echo "caught a value error!"
   result = x
 echo maybeThrows(23)
 
-var err: ref OSError ## requires ref! only ref objects can be raised
-new(err) # a new OSError instance without a msg
-err.msg = "Oops! this is a bad error msg"
 
 echo "############################ try/except/finally "
 if true:
@@ -220,8 +229,9 @@ if true:
       "\nif you didnt catch the err in an except",
       "\nthis will be the last line before exiting"
 
-let divBy0: float = try: 4 / 0 except: -1.0
-echo "oops! ", divBy0
+when false:
+  # div by 0 is a defect in nim2 and cannot be caught
+  let divBy0: float = try: 4 / 0 except FloatOverflowDefect: -1.0
 
 
 echo "############################ defer "
@@ -242,14 +252,30 @@ echo deferExample()
 
 
 echo "############################ assert"
-assert "a" == $'a' # has to be of same type
+# can be turned off
+assert "a" == $'a'
 
 # is always turned on regardless of --assertions flag
 doAssert 1 < 2, "failure msg"
-# doAssertRaises(IndexDefect): # declare exceptions the codeblock raises
-# doAssertRaises(KeyError):
-#   discard {'a', 'b'}['z']
 
-echo "############################ debugger"
-# Todo, find the debugger api in the docs somewhere
-# PFrame runtime frame of the callstack, part of the debugger api
+doAssertRaises KeyError:
+  raise newException(KeyError, "key error")
+
+when false:
+  doAssertRaises AssertionDefect:
+    raiseAssert "this msg"
+
+try:
+  # handles assertions in the current block
+  onFailedAssert msg:
+    # assert handler logic
+    let m = "assert handled: " & msg
+    raise newException(CatchableError, m)
+  # all assertions will be managed
+  doAssert 1 == 2, "1 !== 2"
+except CatchableError as e:
+  echo e.msg
+
+# echo "############################ debugger"
+# # Todo, find the debugger api in the docs somewhere
+# # PFrame runtime frame of the callstack, part of the debugger api
