@@ -31,7 +31,7 @@ branching todos
 echo "############################ if"
 if not false: echo "true": else: echo "false"
 
-# difficult to read, but note the placement of :
+#  note the placement of : after if & elif verses else
 echo if 1 > 2: "its true" elif 2 < 1: "also true" else: "must be the multiverse"
 
 # another funny one
@@ -56,11 +56,11 @@ when isMainModule:
   # useful for embedding tests within the module
   assert true == true
 
-var whichVerse:string = when 1 > 2: "real world" else: "twitter verse"
+var whichVerse:string = when 1 < 2: "real world" else: "twitter verse"
 echo "i live in the " & whichVerse
 
 when false: # trick for commenting code
-  echo "this code is never run and not required to be commented out"
+  echo "this code is never compiled and not required to be commented out"
 
 # check if execution is compiletime or runtime (executable)
 # likely got this from the docs too
@@ -73,7 +73,8 @@ echo "############################ case expressions"
 var numCase = 50.345
 echo case numCase
   of 2: "of 2 satisifes float 2.0" # ofs must a constant expression
-  of 2.0: "is float 2.0" # if we switch to devel branch this throws duplicate
+  # duplicate case labels are errors in v2
+  # of 2.0: "is float 2.0" # if we switch to devel branch this throws duplicate
   of 5.0, 6.0:
     {.linearScanEnd.} # signify the end of likely scenarios
     "float is 5 or 6.0"
@@ -85,10 +86,10 @@ case 'a'
 of 'b', 'c': echo "char 'a' isnt of char 'b' or 'c'"
 else: discard
 
-#[
+when false:
   case num2:
   of 2.0: echo "type mispmatch because num2 is int"
-]#
+
 proc positiveOrNegative(num: int): string =
   result = case num: # <-- case is an expression
     of low(int).. -1: # <--- check the low proc

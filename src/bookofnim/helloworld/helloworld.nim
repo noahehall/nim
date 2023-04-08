@@ -16,11 +16,13 @@
 
 links
 -----
-- [devel branch nim docs](https://github.com/nim-lang/Nim/tree/devel/doc)
-- [nim system module](https://nim-lang.org/docs/system.html)
-- [nimlang api design](https://nim-lang.org/docs/apis.html)
-- [nimlang manual](https://nim-lang.org/docs/manual.html)
-- [nimlang tools dir](https://github.com/nim-lang/Nim/tree/devel/tools)
+- devel branch
+  - [docs](https://github.com/nim-lang/Nim/tree/devel/doc)
+  - [system](https://github.com/nim-lang/Nim/blob/devel/lib/system.nim)
+- [system module](https://nim-lang.org/docs/system.html)
+- [api design](https://nim-lang.org/docs/apis.html)
+- [manual](https://nim-lang.org/docs/manual.html)
+- [tools dir](https://github.com/nim-lang/Nim/tree/devel/tools)
 - [status auditor docs](https://status-im.github.io/nim-style-guide/00_introduction.html)
 
 todos
