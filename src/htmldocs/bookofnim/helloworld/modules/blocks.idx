@@ -1,9 +1,0 @@
-nimTitle	blocks	bookofnim/helloworld/modules/blocks.html	module src/bookofnim/helloworld/modules/blocks		0
-nim	sniper	bookofnim/helloworld/modules/blocks.html#sniper	let sniper		31
-nim	myChar	bookofnim/helloworld/modules/blocks.html#myChar	let myChar		47
-nim	alreadyExecuted`gensym2	bookofnim/helloworld/modules/blocks.html#alreadyExecuted`gensym2	var alreadyExecuted`gensym2		2582
-heading	blocks	bookofnim/helloworld/modules/blocks.html#blocks	 blocks		0
-heading	TLDR	bookofnim/helloworld/modules/blocks.html#blocks-tldr	  TLDR		0
-heading	links	bookofnim/helloworld/modules/blocks.html#blocks-links	  links		0
-heading	do blocks	bookofnim/helloworld/modules/blocks.html#blocks-do-blocks	  do blocks		0
-heading	once blocks	bookofnim/helloworld/modules/blocks.html#blocks-once-blocks	  once blocks		0
