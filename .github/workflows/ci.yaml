@@ -10,6 +10,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
+env:
+  SRC_PATH: ./src
+
 jobs:
   ci:
     name: CI / ${{ matrix.os }} / Nim${{ matrix.nimv }}
@@ -45,7 +48,7 @@ jobs:
           # repo-token: ${{ secrets.GITHUB_TOKEN }} # only required if API rate limit is breached
 
       - name: compile
-        run: nim c ${GITHUB_WORKSPACE}/src/bookofnim.nim
+        run: nim c $SRC_PATH/bookofnim.nim
 
       - name: test
         run: nim e ${GITHUB_WORKSPACE}/.github/scripts/test.nims
@@ -85,8 +88,11 @@ jobs:
       - name: Create Docs
         run: nim e ${GITHUB_WORKSPACE}/.github/scripts/docs.nims
 
-      - name: Cache docs
-        uses: actions/cache/save@v3
+      - name: persist docs
+        uses: actions/upload-artifact@v3
+        # uses: actions/cache/save@v3
         with:
           path: src/htmldocs
-          key: ${{ runner.os }}-${{ matrix.nimv }}
+          name: htmldocs
+          retention-days: 7 # todo: create action that deletes stale PRs
+          # key: ${{ runner.os }}-${{ matrix.nimv }} # delete this once artifact verified

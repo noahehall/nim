@@ -25,7 +25,6 @@ let
 
 cd rootDir
 
-
 proc installDeps: (string, int) =
   result = """
     sudo apt-fast -y install \
@@ -42,6 +41,7 @@ proc deletePrevdocs(): (string, int) =
 
 
 proc createSourceDocs(): (string, int) =
+  echo "create source code documentation"
   try:
     fmt"doc -b:c {docOpts} {rootDir / mainFile}".selfExec
     ("source documentation created", 0)
@@ -49,6 +49,7 @@ proc createSourceDocs(): (string, int) =
     ("failed to create documentation", 1)
 
 proc createDependencyGraphs(): (string, int) =
+  echo "creating source code dependency graphs"
   try:
     fmt"genDepend {rootDir / mainFile}".selfExec
     for output in @[
