@@ -41,13 +41,6 @@ proc deletePrevdocs(): (string, int) =
     ("failed to rm dir", 1)
 
 
-proc createDependencyGraphs(): (string, int) =
-  try:
-    fmt"genDepend {mainFile}".selfExec
-    ("dependencies graph created", 0)
-  except OSError:
-    ("failed to generate deps graph", 1)
-
 proc createSourceDocs(): (string, int) =
   try:
     fmt"doc -b:c {docOpts} {rootDir / mainFile}".selfExec
@@ -55,11 +48,21 @@ proc createSourceDocs(): (string, int) =
   except OSError:
     ("failed to create documentation", 1)
 
+proc createDependencyGraphs(): (string, int) =
+  try:
+    fmt"genDepend {rootDir / mainFile}".selfExec
+    for output in @[
+      rootDir / "src/bookofnim.dot",
+      rootDir / "src/bookofnim.png"
+    ]: fmt"mv {output} src/htmldocs".exec
+    ("dependencies graph created", 0)
+  except OSError:
+    ("failed to generate deps graph", 1)
 
 when isMainModule:
   for action in @[
     installDeps,
     deletePrevdocs,
-    createDependencyGraphs,
-    createSourceDocs
+    createSourceDocs,
+    createDependencyGraphs, # needs to occur after htmldocs dir is created
   ]: run action

@@ -1,0 +1,15 @@
+# # @see https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#running-your-pull_request-workflow-when-a-pull-request-merges
+# on:
+#   push:
+#     branches: [develop]
+#   pull_request:
+#     types: [closed]
+#     branches: [develop]
+
+# jobs:
+#   if_merged:
+#     if: github.event.pull_request.merged == true
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: |
+#           echo The PR was merged
