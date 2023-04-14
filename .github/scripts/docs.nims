@@ -8,40 +8,58 @@ mode = ScriptMode.Verbose
 
 let
   # proxy for github || local machine
-  rootDir = absolutePath normalizedPath "GITHUB_WORKSPACE".getEnv "."
+  rootDir = absolutePath normalizedPath "GITHUB_WORKSPACE".getEnv getCurrentDir()
   docOpts = """
-    --docInternal
-    --git.commit:develop
-    --git.url:https://github.com/noahehall/nim
-    --hints:off
-    --index:on
-    --multimethods:on
-    --project
-    --threads:on
-    --verbosity:0
+    --docInternal \
+    --git.commit:develop \
+    --git.url:https://github.com/noahehall/nim \
+    --hints:off \
+    --index:on \
+    --multimethods:on \
+    --project \
+    --threads:on \
+    --verbosity:0 \
     """
   mainFile = "src/bookofnim.nim"
+  docsDir =  "src/htmldocs"
+
+cd rootDir
+
+
+proc installDeps: (string, int) =
+  result = """
+    sudo apt-fast -y install \
+      graphviz
+  """.gorgeEx
 
 proc deletePrevdocs(): (string, int) =
-  result = with rootDir:
-    "rm -rf ./htmldocs".gorgeEx
+  echo "deleting previous docs"
+  try:
+    rmDir rootDir / docsDir
+    ("dir removed", 0)
+  except OSError:
+    ("failed to rm dir", 1)
+
 
 proc createDependencyGraphs(): (string, int) =
-  result = with rootDir:
-    fmt"nim genDepend {mainFile}".gorgeEx
-
-proc createTestResultsHtml(): (string, int) =
-  result = with rootDir:
-    "testament html".gorgeEx
+  try:
+    fmt"genDepend {mainFile}".selfExec
+    ("dependencies graph created", 0)
+  except OSError:
+    ("failed to generate deps graph", 1)
 
 proc createSourceDocs(): (string, int) =
-  result = with rootDir:
-    fmt"nim doc -b:c {docOpts} {mainFile}".gorgeEx
+  try:
+    fmt"doc -b:c {docOpts} {rootDir / mainFile}".selfExec
+    ("source documentation created", 0)
+  except OSError:
+    ("failed to create documentation", 1)
+
 
 when isMainModule:
   for action in @[
+    installDeps,
     deletePrevdocs,
     createDependencyGraphs,
-    createTestResultsHtml,
-    createDocs
+    createSourceDocs
   ]: run action

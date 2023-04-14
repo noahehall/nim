@@ -163,10 +163,10 @@ type GoodApplications* = object
   ## especially things like custom types
   ## may need additional abbreviations to describe their purpose
   pubfield*: string ## public: included in docs
-  # commented because this throws on nim_docs src/bookofnim.nim
+  # FYI: this throws on nim_docs src/bookofnim.nim
   # ^ but not on nim doc src/bookofnim.nim
   # ^ Error: the field 'prvfield' is not accessible.
-  # prvfield: string
+  prvfield*: string # TODO: errors on doc creation
 
 echo "############################ documentation: runnableExamples"
 

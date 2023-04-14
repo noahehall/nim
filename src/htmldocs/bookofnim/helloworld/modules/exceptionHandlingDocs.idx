@@ -1,0 +1,27 @@
+nimTitle	exceptionHandlingDocs	bookofnim/helloworld/modules/exceptionHandlingDocs.html	module src/bookofnim/helloworld/modules/exceptionHandlingDocs		0
+nim	goodcode	bookofnim/helloworld/modules/exceptionHandlingDocs.html#goodcode	let goodcode		157
+nim	badcode	bookofnim/helloworld/modules/exceptionHandlingDocs.html#badcode	let badcode		159
+nim	GoodApplications	bookofnim/helloworld/modules/exceptionHandlingDocs.html#GoodApplications	object GoodApplications		162
+nim	err	bookofnim/helloworld/modules/exceptionHandlingDocs.html#err	var err		180
+nim	LearningError	bookofnim/helloworld/modules/exceptionHandlingDocs.html#LearningError	object LearningError		184
+nim	neverThrows	bookofnim/helloworld/modules/exceptionHandlingDocs.html#neverThrows	proc neverThrows(): string		197
+nim	maybeThrows	bookofnim/helloworld/modules/exceptionHandlingDocs.html#maybeThrows,int	proc maybeThrows(x: int): int		202
+nim	deferExample	bookofnim/helloworld/modules/exceptionHandlingDocs.html#deferExample	proc deferExample(): auto		241
+nim	loc`gensym11	bookofnim/helloworld/modules/exceptionHandlingDocs.html#loc`gensym11	const loc`gensym11		51
+nim	ploc`gensym11	bookofnim/helloworld/modules/exceptionHandlingDocs.html#ploc`gensym11	const ploc`gensym11		52
+nim	wrong`gensym12	bookofnim/helloworld/modules/exceptionHandlingDocs.html#wrong`gensym12	var wrong`gensym12		102
+nim	begin`gensym12	bookofnim/helloworld/modules/exceptionHandlingDocs.html#begin`gensym12	const begin`gensym12		103
+nim	msgEnd`gensym12	bookofnim/helloworld/modules/exceptionHandlingDocs.html#msgEnd`gensym12	const msgEnd`gensym12		104
+nim	raisedForeign`gensym12	bookofnim/helloworld/modules/exceptionHandlingDocs.html#raisedForeign`gensym12.t	template raisedForeign`gensym12()		105
+heading	exception handling, debugging, documentation	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation	 exception handling, debugging, documentation		0
+heading	TLDR	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-tldr	  TLDR		0
+heading	links	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-links	  links		0
+heading	todos	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-todos	  todos		0
+heading	Exception Handling	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-exception-handling	  Exception Handling		0
+heading	Defect types	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-defect-types	  Defect types		0
+heading	Error (exception) types	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-error-exception-types	  Error (exception) types		0
+heading	try/except/finally	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-tryslashexceptslashfinally	  try/except/finally		0
+heading	defer	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-defer	  defer		0
+heading	assert	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-assert	  assert		0
+heading	documentation	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-documentation	  documentation		0
+heading	runnableExamples	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-runnableexamples	  runnableExamples		0

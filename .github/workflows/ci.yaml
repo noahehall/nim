@@ -50,12 +50,6 @@ jobs:
       - name: test
         run: nim e ${GITHUB_WORKSPACE}/.github/scripts/test.nims
 
-      - name: cache testresults
-        uses: actions/cache/save@v3
-        id: cache-testresults
-        with:
-          path: ${GITHUB_WORKSPACE}/testresults
-          key: ${{ runner.os }}-${{ matrix.nimv }}
   docs:
     name: DOCS
     needs: CI
@@ -83,11 +77,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-${{ matrix.nimv }}
 
-      - name: restore test results
-        uses: actions/cache/restore@v3
+      - name: Setup nim
+        uses: jiro4989/setup-nim-action@v1
         with:
-          path: ${GITHUB_WORKSPACE}/testresults
-          key: ${{ runner.os }}-${{ matrix.nimv }}
+          nim-version: ${{ matrix.nimv }}
 
-      - name: create-docs
+      - name: Create Docs
         run: nim e ${GITHUB_WORKSPACE}/.github/scripts/docs.nims

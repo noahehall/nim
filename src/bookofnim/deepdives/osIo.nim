@@ -265,8 +265,8 @@ parseopt iterators
 import std/[sugar, strformat, strutils, sequtils, tables]
 
 echo "############################ system"
-const srcPath = currentSourcePath() ## compile time only
-
+const srcPath = currentSourcePath()
+echo fmt"compile time only srcPath=currentSourcePath() {srcPath=}"
 echo fmt"{hostCPU=}"
 echo fmt"{hostOS=}"
 echo fmt"{getFreeMem()=}"
@@ -327,7 +327,6 @@ echo fmt"""{normalizePathEnd "//p//o/oo/p//.//./"=}"""
 
 
 echo "############################ os dirs"
-# parentDir()
 # copyDir src, dest
 # moveDir src, dest
 # setCurrentDir tothis
@@ -335,10 +334,12 @@ echo "############################ os dirs"
 # walkPattern walkDirs + walkFiles
 
 echo fmt"{getCurrentDir()=}"
-echo fmt"current users {getCacheDir()=}"
-echo fmt"some apps {appName.getCacheDir()=}"
+echo fmt"{currentSourcePath()=}"
+echo fmt"{currentSourcePath.parentdir()=}"
 echo fmt"{getConfigDir()=}"
 echo fmt"{getTempDir()=}"
+echo fmt"current users {getCacheDir()=}"
+echo fmt"some apps {appName.getCacheDir()=}"
 echo fmt"compiled osIo.nim {getAppDir()=}"
 echo fmt"compiled osIo.nim {getAppFilename()=}"
 echo fmt"alias for expandTilde {getHomeDir()=}"

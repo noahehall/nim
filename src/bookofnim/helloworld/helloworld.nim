@@ -1,6 +1,6 @@
 ##
-## Hello world: my name is nim `#version-2-0`
-## =========================================
+## Hello world: my name is nim #version-2-0
+## ========================================
 ## [bookmark](https://nim-lang.org/docs/manual.html#special-types)
 
 ##[
