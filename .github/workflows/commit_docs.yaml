@@ -1,7 +1,5 @@
 # # @see https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#running-your-pull_request-workflow-when-a-pull-request-merges
 # on:
-#   push:
-#     branches: [develop]
 #   pull_request:
 #     types: [closed]
 #     branches: [develop]

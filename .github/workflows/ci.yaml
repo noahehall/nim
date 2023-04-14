@@ -84,3 +84,9 @@ jobs:
 
       - name: Create Docs
         run: nim e ${GITHUB_WORKSPACE}/.github/scripts/docs.nims
+
+      - name: Cache docs
+        uses: actions/cache/save@v3
+        with:
+          path: src/htmldocs
+          key: ${{ runner.os }}-${{ matrix.nimv }}
