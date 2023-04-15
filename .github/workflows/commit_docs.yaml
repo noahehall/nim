@@ -23,8 +23,6 @@ jobs:
         with:
           clean: false
           fetch-depth: 1
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.event.pull_request.head.ref }}
 
       # @see https://github.com/actions/cache/issues/1152
       - name: Restore Docs
