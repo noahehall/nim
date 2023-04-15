@@ -57,11 +57,10 @@ jobs:
 
       - name: Commit Docs and Push
         if: success() || steps.create.conclusion == 'success' || steps.restore.conclusion == 'success'
-        uses: EndBug/add-and-commit@v9
-        with:
-          add: "src/htmldocs"
-          commit: --no-verify
-          default_author: github_actions
-          committer_name: GitHub Actions
-          committer_email: actions@github.com
-          message: "Add(htmldocs): CI automation"
+        shell: bash
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add -A
+          git commit -a --no-verify -m "Add(htmldocs): CI automation"
+          git push -f
