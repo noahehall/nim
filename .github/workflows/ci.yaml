@@ -4,7 +4,6 @@ on:
     branches: [develop, deploy]
   pull_request:
     branches: [develop, deploy]
-  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -88,11 +87,8 @@ jobs:
       - name: Create Docs
         run: nim e ${GITHUB_WORKSPACE}/.github/scripts/docs.nims
 
-      - name: persist docs
-        uses: actions/upload-artifact@v3
-        # uses: actions/cache/save@v3
+      - name: Cache Docs
+        uses: actions/cache/save@v3
         with:
           path: src/htmldocs
-          name: htmldocs
-          retention-days: 7 # todo: create action that deletes stale PRs
-          # key: ${{ runner.os }}-${{ matrix.nimv }} # delete this once artifact verified
+          key: $GITHUB_REF

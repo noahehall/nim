@@ -55,8 +55,8 @@ proc createDependencyGraphs(): (string, int) =
     for output in @[
       rootDir / "src/bookofnim.dot",
       rootDir / "src/bookofnim.png"
-    ]: fmt"mv {output} src/htmldocs".exec
-    ("dependencies graph created", 0)
+    ]: output.mvFile "src" / "htmldocs" / output.extractFilename
+    ("dependency graph generated", 0)
   except OSError:
     ("failed to generate deps graph", 1)
 
@@ -65,5 +65,5 @@ when isMainModule:
     installDeps,
     deletePrevdocs,
     createSourceDocs,
-    createDependencyGraphs, # needs to occur after htmldocs dir is created
+    createDependencyGraphs, # needs to execute after source docs are created
   ]: run action

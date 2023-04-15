@@ -40,7 +40,7 @@
 
 - this repo serves two purposes for programmers considering nim as their Nth language:
   - [primary: source code](/src/bookofnim.nim) you can execute while reading
-    - generally concise examples of the subject at hand; providing enough nim to create production-ready applications
+    - generally concise examples of the subject at hand
   - [secondary: documentation](https://noahehall.github.io/nim/src/htmldocs/bookofnim.html) you can read while coding
     - generally concise abbreviations extracted from nim docs/blogs/etc & categorized with links to technical specs
 - thus each _chapter_ consists of docs to read and code to run:
@@ -70,6 +70,7 @@
     - [cheatsheet: reStructured Text](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
     - [book: nim in action](https://www.manning.com/books/nim-in-action)
       - released in 2017, still highly relevant and recommended
+    - [computer programming with Nim](https://ssalewski.de/nimprogramming.html)
     - [book: mastering nim](https://nim-lang.org/blog/2022/06/29/mastering-nim.html)
       - havent read this one yet, but its new; i like new
       - [excerpt of code examples are available](https://github.com/Araq/mastering_nim/tree/master)

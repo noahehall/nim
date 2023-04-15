@@ -1,22 +1,23 @@
-# # # @see https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#running-your-pull_request-workflow-when-a-pull-request-merges
-# think we need pull_request_target var @see https://docs.github.com/en/actions/learn-github-actions/variables
-
-# on:
-#   pull_request:
-#     types: [closed]
-# env:
-#   SRC_PATH: ${GITHUB_WORKSPACE}/src
-#   GITHUB_PATH: ${GITHUB_WORKSPACE}/.github
-# jobs:
-#   if_merged:
-#     if: github.event.pull_request.merged == true
-#     if: branch name === develop
-#     runs-on: ubuntu-latest
-#     steps:
-# - name: Download a single artifact
-#   uses: actions/download-artifact@v3
-#   with:
-#     name: should be saved under a specific github PR ref or something
-#       - run: |
-#           download the artifact based on github PR ref
-#           delete the artifact the assets have been commited
+on:
+  pull_request_target:
+    types: [closed]
+env:
+  SRC_PATH: ${GITHUB_WORKSPACE}/src
+  GITHUB_PATH: ${GITHUB_WORKSPACE}/.github
+jobs:
+  if_merged:
+    name: Add docs to previous commit
+    if: github.event.pull_request.merged == true && $GITHUB_BASE_REF == 'develop'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Restore Docs
+        uses: actions/cache/restore@v3
+        with:
+          fail-on-cache-miss: true
+          path: src/htmldocs
+          key: $GITHUB_REF
+      - name: Amend & Push Commit
+        run: |
+          git add -A
+          git commit -a --amend --no-verify --no-edit
+          git push -f
