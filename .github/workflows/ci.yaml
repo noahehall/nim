@@ -1,4 +1,5 @@
 name: bookofnim-ci
+
 on:
   push:
     branches: [develop, deploy]
@@ -56,7 +57,7 @@ jobs:
     name: DOCS
     needs: CI
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 1
+    timeout-minutes: 5
 
     strategy:
       fail-fast: true

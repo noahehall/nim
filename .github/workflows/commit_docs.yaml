@@ -1,9 +1,9 @@
+name: bookofnim-commit-docs
+
 on:
   pull_request_target:
     types: [closed]
-env:
-  SRC_PATH: ${GITHUB_WORKSPACE}/src
-  GITHUB_PATH: ${GITHUB_WORKSPACE}/.github
+
 jobs:
   if_merged:
     name: Add docs to previous commit
@@ -16,6 +16,7 @@ jobs:
           fail-on-cache-miss: true
           path: src/htmldocs
           key: $GITHUB_REF
+
       - name: Commit Docs and Push
         run: |
           git add -A
