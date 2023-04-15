@@ -59,8 +59,10 @@ jobs:
         if: success() || steps.create.conclusion == 'success' || steps.restore.conclusion == 'success'
         shell: bash
         run: |
+          # this requires relaxing of branch protection rules if pushing to develop
+          # else you can keep docs on a different branch
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add -A
-          git commit -a --no-verify -m "Add(htmldocs): CI automation"
+          git commit --no-verify -m "Add(htmldocs): CI automation"
           git push -f
