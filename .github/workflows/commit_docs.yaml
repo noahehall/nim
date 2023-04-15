@@ -8,8 +8,22 @@ jobs:
   if_merged:
     name: Commit docs
     if: (github.event.pull_request.merged == true) && (github.base_ref == 'develop')
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10 # extra 5 minutes for compiling the devel branch
+
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ubuntu-latest] # macos-12
+        nimv: ["devel"] # 1.9.3 doesnt work with choosenim
+
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          clean: false
+          fetch-depth: 1
+
       # @see https://github.com/actions/cache/issues/1152
       - name: Restore Docs
         id: restore
@@ -19,10 +33,29 @@ jobs:
           path: src/htmldocs
           key: ${{ github.head_ref }}
 
-      # temporary: see above issue
+      # see above
+      - name: Restore Nim Devel
+        id: restorenim
+        if: failure()
+        uses: actions/cache/restore@v3
+        with:
+          path: ~/.nimble
+          key: ${{ runner.os }}-${{ matrix.nimv }}-${{ hashFiles('*.nimble') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.nimv }}
+
+      # see above
+      - name: Setup nim
+        id: setupnim
+        if: failure() && steps.restorenim.conclusion == 'success'
+        uses: jiro4989/setup-nim-action@v1
+        with:
+          nim-version: ${{ matrix.nimv }}
+
+      # see above
       - name: Create Docs
         id: create
-        if: failure()
+        if: failure() && steps.setupnim.conclusion == 'success'
         run: nim e ${GITHUB_WORKSPACE}/.github/scripts/docs.nims
 
       - name: Commit Docs and Push
