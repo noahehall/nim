@@ -9,7 +9,9 @@ mode = ScriptMode.Verbose
 let
   # proxy for github || local machine
   rootDir = absolutePath normalizedPath "GITHUB_WORKSPACE".getEnv getCurrentDir()
-  docOpts = """
+  docsDir =  "htmldocs"
+  mainFile = "src/bookofnim.nim"
+  docOpts = fmt"""
     --docInternal \
     --git.commit:develop \
     --git.url:https://github.com/noahehall/nim \
@@ -19,9 +21,8 @@ let
     --project \
     --threads:on \
     --verbosity:0 \
+    --outdir:{docsDir} \
     """
-  mainFile = "src/bookofnim.nim"
-  docsDir =  "src/htmldocs"
 
 cd rootDir
 
@@ -55,7 +56,7 @@ proc createDependencyGraphs(): (string, int) =
     for output in @[
       rootDir / "src/bookofnim.dot",
       rootDir / "src/bookofnim.png"
-    ]: output.mvFile "src" / "htmldocs" / output.extractFilename
+    ]: output.mvFile absolutePath(docsDir / output.extractFilename)
     ("dependency graph generated", 0)
   except OSError:
     ("failed to generate deps graph", 1)

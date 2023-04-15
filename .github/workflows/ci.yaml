@@ -92,5 +92,5 @@ jobs:
       - name: Cache Docs
         uses: actions/cache/save@v3
         with:
-          path: src/htmldocs
+          path: ${GITHUB_WORKSPACE}/htmldocs
           key: ${{ env.BRANCH_NAME }}
