@@ -16,8 +16,8 @@ jobs:
           fail-on-cache-miss: true
           path: src/htmldocs
           key: $GITHUB_REF
-      - name: Amend & Push Commit
+      - name: Commit Docs and Push
         run: |
           git add -A
-          git commit -a --amend --no-verify --no-edit
+          git commit -a --no-verify -m "Add(htmldocs): use htmldocs from CI automation"
           git push -f
