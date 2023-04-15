@@ -14,6 +14,14 @@ env:
   SRC_PATH: ./src
 
 jobs:
+  if_merged:
+    name: wtf
+    if: ${{ github.event.pull_request.merged == true && GITHUB_BASE_REF == 'develop' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Restore Docs
+        run: echo "wtf"
+
   ci:
     name: CI / ${{ matrix.os }} / Nim${{ matrix.nimv }}
     runs-on: ${{ matrix.os }}
