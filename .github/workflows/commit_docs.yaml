@@ -6,16 +6,19 @@ on:
 
 jobs:
   if_merged:
-    name: Add docs to previous commit
-    if: ${{ github.event.pull_request.merged == true && $GITHUB_BASE_REF == 'develop' }}
+    name: Commit docs
+    if: (github.event.pull_request.merged == true) && (github.base_ref == 'develop')
     runs-on: ubuntu-latest
     steps:
+      - name: Cache key check
+        run: echo ${{ github.ref_name }}
+
       - name: Restore Docs
         uses: actions/cache/restore@v3
         with:
           fail-on-cache-miss: true
           path: src/htmldocs
-          key: $GITHUB_REF
+          key: ${{ github.ref_name }}
 
       - name: Commit Docs and Push
         run: |
