@@ -20,9 +20,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          clean: false
-          fetch-depth: 1
 
       # @see https://github.com/actions/cache/issues/1152
       - name: Restore Docs
@@ -64,5 +61,7 @@ jobs:
         with:
           add: "src/htmldocs"
           commit: --no-verify
-          default_author: github_actor
+          default_author: github_actions
+          committer_name: GitHub Actions
+          committer_email: actions@github.com
           message: "Add(htmldocs): CI automation"
