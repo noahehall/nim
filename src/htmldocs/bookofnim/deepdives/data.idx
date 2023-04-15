@@ -1,0 +1,18 @@
+nimTitle	data	bookofnim/deepdives/data.html	module src/bookofnim/deepdives/data		0
+nim	Headers	bookofnim/deepdives/data.html#Headers	object Headers		108
+nim	ResponseType	bookofnim/deepdives/data.html#ResponseType	object ResponseType		112
+nim	response	bookofnim/deepdives/data.html#response	const response		122
+nim	resJson	bookofnim/deepdives/data.html#resJson	let resJson		135
+nim	resType	bookofnim/deepdives/data.html#resType	let resType		136
+nim	reqData	bookofnim/deepdives/data.html#reqData	var reqData		167
+nim	echoReqData	bookofnim/deepdives/data.html#echoReqData	proc echoReqData(): void		170
+nim	t	bookofnim/deepdives/data.html#t	var t		187
+nim	opts	bookofnim/deepdives/data.html#opts	const opts		200
+heading	working with data	bookofnim/deepdives/data.html#working-with-data	 working with data		0
+heading	links	bookofnim/deepdives/data.html#working-with-data-links	  links		0
+heading	json	bookofnim/deepdives/data.html#working-with-data-json	  json		0
+heading	json types	bookofnim/deepdives/data.html#working-with-data-json-types	  json types		0
+heading	json procs	bookofnim/deepdives/data.html#working-with-data-json-procs	  json procs		0
+heading	jsonutils	bookofnim/deepdives/data.html#working-with-data-jsonutils	  jsonutils		0
+heading	jsonutil types	bookofnim/deepdives/data.html#working-with-data-jsonutil-types	  jsonutil types		0
+heading	jsonutils procs	bookofnim/deepdives/data.html#working-with-data-jsonutils-procs	  jsonutils procs		0

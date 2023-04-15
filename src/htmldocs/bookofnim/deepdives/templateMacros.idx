@@ -1,0 +1,13 @@
+nimTitle	templateMacros	bookofnim/deepdives/templateMacros.html	module src/bookofnim/deepdives/templateMacros		0
+nim	`!=`	bookofnim/deepdives/templateMacros.html#!=.t,untyped,untyped	template `!=`(a, b: untyped): untyped		32
+nim	debug	bookofnim/deepdives/templateMacros.html#debug	const debug		40
+nim	xy	bookofnim/deepdives/templateMacros.html#xy	var xy		41
+nim	log_eager	bookofnim/deepdives/templateMacros.html#log_eager,string	proc log_eager(msg: string)		42
+nim	log_lazy	bookofnim/deepdives/templateMacros.html#log_lazy.t,string	template log_lazy(msg: string)		45
+nim	blockRunner	bookofnim/deepdives/templateMacros.html#blockRunner.t,bool,untyped	template blockRunner(please: bool; body: untyped): void		54
+nim	theyAskedNickely`gensym4	bookofnim/deepdives/templateMacros.html#theyAskedNickely`gensym4	let theyAskedNickely`gensym4		57
+nim	theyAskedNickely`gensym5	bookofnim/deepdives/templateMacros.html#theyAskedNickely`gensym5	let theyAskedNickely`gensym5		57
+heading	templates and macros	bookofnim/deepdives/templateMacros.html#templates-and-macros	 templates and macros		0
+heading	TLDR	bookofnim/deepdives/templateMacros.html#templates-and-macros-tldr	  TLDR		0
+heading	todos	bookofnim/deepdives/templateMacros.html#templates-and-macros-todos	  todos		0
+heading	templates	bookofnim/deepdives/templateMacros.html#templates-and-macros-templates	  templates		0
