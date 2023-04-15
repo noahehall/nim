@@ -10,15 +10,12 @@ jobs:
     if: (github.event.pull_request.merged == true) && (github.base_ref == 'develop')
     runs-on: ubuntu-latest
     steps:
-      - name: Cache key check
-        run: echo ${{ github.ref_name }}
-
       - name: Restore Docs
         uses: actions/cache/restore@v3
         with:
           fail-on-cache-miss: true
           path: src/htmldocs
-          key: ${{ github.ref_name }}
+          key: ${{ github.head_ref }}
 
       - name: Commit Docs and Push
         run: |

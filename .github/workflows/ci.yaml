@@ -12,6 +12,7 @@ concurrency:
 
 env:
   SRC_PATH: ./src
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
 
 jobs:
   ci:
@@ -88,11 +89,8 @@ jobs:
       - name: Create Docs
         run: nim e ${GITHUB_WORKSPACE}/.github/scripts/docs.nims
 
-      - name: Cache key check
-        run: echo ${{ github.ref_name }}
-
       - name: Cache Docs
         uses: actions/cache/save@v3
         with:
           path: src/htmldocs
-          key: ${{ github.ref_name }}
+          key: ${{ env.BRANCH_NAME }}
