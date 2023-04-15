@@ -1,3 +1,11 @@
+# V2! BABY
+
+- delete this section once this repo runs on V2
+- [install steps](https://nim-lang.org/blog/2023/03/31/version-20-rc2.html)
+- remember:
+  - the docs all point to 1.6 so you cant depend on them for v2
+  - after dealing with migration errors, add source links to the `devel` branch
+
 # book of nim
 
 > [bow to the crown](https://www.youtube.com/watch?v=AEtxGOjKx5c) - Heather Dale
@@ -32,7 +40,7 @@
 
 - this repo serves two purposes for programmers considering nim as their Nth language:
   - [primary: source code](/src/bookofnim.nim) you can execute while reading
-    - generally concise examples of the subject at hand; providing enough nim to create production-ready applications
+    - generally concise examples of the subject at hand
   - [secondary: documentation](https://noahehall.github.io/nim/src/htmldocs/bookofnim.html) you can read while coding
     - generally concise abbreviations extracted from nim docs/blogs/etc & categorized with links to technical specs
 - thus each _chapter_ consists of docs to read and code to run:
@@ -48,12 +56,12 @@
   - 3: [asyncPar](/src/bookofnim/deepdives/asyncPar.nim) > [servers](/src/bookofnim/deepdives/servers.nim), [dbs](/src/bookofnim/deepdives/dbs.nim)
   - 4: [backends dir](/backends/) > [pragmasEffects](/src/bookofnim/deepdives/pragmasEffects.nim), [templateMacros](/src/bookofnim/deepdives/templateMacros.nim)
   - 5: source code & books
-    - [source: nim](https://github.com/nim-lang/Nim/tree/version-1-6/lib)
-      - [impure](https://github.com/nim-lang/Nim/tree/version-1-6/lib/impure)
+    - [source: nim](https://github.com/nim-lang/Nim/tree/devel/lib)
+      - [impure](https://github.com/nim-lang/Nim/tree/devel/lib/impure)
       - [nimscript](https://github.com/nim-lang/Nim/blob/devel/lib/system/nimscript.nim)
-      - [pure](https://github.com/nim-lang/Nim/tree/version-1-6/lib/pure)
-      - [standard](https://github.com/nim-lang/Nim/tree/version-1-6/lib/std)
-      - [system](https://github.com/nim-lang/Nim/blob/version-1-6/lib/system.nim#L1)
+      - [pure](https://github.com/nim-lang/Nim/tree/devel/lib/pure)
+      - [standard](https://github.com/nim-lang/Nim/tree/devel/lib/std)
+      - [system](https://github.com/nim-lang/Nim/blob/devel/lib/system.nim#L1)
       - [test examples](https://github.com/nim-lang/Nim/tree/devel/tests)
       - [testament](https://github.com/nim-lang/Nim/tree/devel/testament)
     - [source: nimforum SPA](https://github.com/nim-lang/nimforum/tree/master/src)
@@ -62,6 +70,7 @@
     - [cheatsheet: reStructured Text](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
     - [book: nim in action](https://www.manning.com/books/nim-in-action)
       - released in 2017, still highly relevant and recommended
+    - [computer programming with Nim](https://ssalewski.de/nimprogramming.html)
     - [book: mastering nim](https://nim-lang.org/blog/2022/06/29/mastering-nim.html)
       - havent read this one yet, but its new; i like new
       - [excerpt of code examples are available](https://github.com/Araq/mastering_nim/tree/master)
@@ -93,6 +102,8 @@ blogs
 
 ## Todos
 
+- docs should be generated during CI
+
 ---
 
 ### quickies
@@ -114,7 +125,7 @@ blogs
 - dont forget about the nimlang/tools dir
 - find the rst syntax for creating links between pages and remove all the markdown links
 - fix tests/src/skip and add it to a new `good examples of bad code` section
-- [check how getTime handles os checks](https://github.com/nim-lang/Nim/blob/version-1-6/lib/pure/times.nim#L897)
+- [check how getTime handles os checks](https://github.com/nim-lang/Nim/blob/devel/lib/pure/times.nim#L897)
 - [skipped most of the section on cross compilation](https://nim-lang.org/docs/nimc.html#crossminuscompilation-for-windows)
 - [checkout status opensource theyve already built bunch of things you'll need for nirv](https://github.com/status-im)
 - you should review compile_backends.nim again stuff should be alot clearer now

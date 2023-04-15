@@ -9,6 +9,7 @@
 - [offensive nim](https://github.com/byt3bl33d3r/OffensiveNim)
 - [list of safe packages](https://github.com/nim-lang/Nim/blob/devel/testament/important_packages.nim)
   - if _safe_ for you means included in nimlang tests and deemed important by nim core developers
+- [discussion on webservers in NIM](https://forum.nim-lang.org/t/10080)
 
 ### worth checking out
 
@@ -23,11 +24,13 @@
 - [hastyscribe: cli markdown > html converter](https://github.com/h3rald/hastyscribe)
 - [http auth](https://github.com/FedericoCeratto/nim-httpauth)
 - [httpbeast: fast http 1.1 server](https://github.com/dom96/httpbeast)
+- [httpx](https://github.com/ringabout/httpx)
 - [jester: a sinetra-like web framework built on httpbeast](https://github.com/dom96/jester)
 - [limbdb: kv store using lmdb](https://forum.nim-lang.org/t/9210)
 - [llvm based compiler for nim](https://github.com/arnetheduck/nlvm)
 - [macr-based pattern matching library](https://github.com/alehander92/gara)
 - [moe: vim like editor that didnt work on the first try](https://github.com/fox0430/moe)
+- [mummy: http/websocket server](https://github.com/guzba/mummy)
 - [neel: create lightweight electron apps](https://github.com/Niminem/Neel)
 - [ni18n: super fast i18](https://github.com/heinthanth/ni18n)
 - [NiGui: cross platform desktop GUI toolkit](https://github.com/trustable-code/NiGui)
@@ -54,6 +57,7 @@
 - [nyml: yaml parser](https://github.com/openpeep/nyml)
 - [parlexgen: macro for generating lexers and parsers](https://github.com/choltreppe/parlexgen)
 - [presto: rest api from status-im built on chronos](https://github.com/status-im/nim-presto)
+- [prologue: web framework](https://github.com/planety/Prologue)
 - [protobuf-nim: protobuff protocol with 0 deps](https://github.com/PMunch/protobuf-nim)
 - [qrgen: generate QR codes](https://github.com/aruZeta/QRgen)
 - [ready: redis client](https://github.com/guzba/ready)
@@ -76,6 +80,7 @@
 - [juan](https://github.com/juancarlospaco)
 - [planety](https://github.com/planety)
 - [pmunch](https://github.com/PMunch)
+- [ringabout](https://github.com/ringabout)
 - [status-im](https://github.com/orgs/status-im/repositories?q=&type=all&language=nim&sort=)
 - [treeform](https://github.com/treeform)
 - [waku](https://github.com/orgs/waku-org/repositories?q=&type=all&language=nim&sort=)
@@ -110,20 +115,11 @@
 - [SPA framework](https://github.com/karaxnim/karax)
 - [used by nimforum](https://github.com/nim-lang/nimforum)
 
-#### prologue
-
-- [web framework ideal for high perf web services](https://github.com/planety/Prologue)
-
 ### apis
 
 #### curly
 
 - [pool and reuse curl handles for keep-alive connections](https://github.com/guzba/curly/)
-
-#### mummy
-
-- [http/websocket server focusing on performance](https://github.com/guzba/mummy)
-- [user post on mummy perf](https://forum.nim-lang.org/t/9902)
 
 #### Nim-graphql
 

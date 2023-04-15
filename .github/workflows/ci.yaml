@@ -1,41 +1,45 @@
 name: bookofnim-ci
+
 on:
   push:
     branches: [develop, deploy]
   pull_request:
     branches: [develop, deploy]
-  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
+env:
+  SRC_PATH: ./src
+
 jobs:
   ci:
     name: CI / ${{ matrix.os }} / Nim${{ matrix.nimv }}
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 5
+    timeout-minutes: 10 # extra 5 minutes for compiling the devel branch
 
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-latest] # macos-11 fails
-        nimv: [1.6.12]
+        os: [ubuntu-latest] # macos-12
+        nimv: [1.6.12, "devel"] # 1.9.3 doesnt work with choosenim
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          fetch-depth: 2
+          fetch-depth: 1
+          clean: true
 
       - name: Cache Nimble
         id: cache-nimble
         uses: actions/cache@v3
         with:
           path: ~/.nimble
-          key: ${{ runner.os }}-nimble-${{ hashFiles('*.nimble') }}
+          key: ${{ runner.os }}-${{ matrix.nimv }}-${{ hashFiles('*.nimble') }}
           restore-keys: |
-            ${{ runner.os }}-nimble-
+            ${{ runner.os }}-${{ matrix.nimv }}
 
       - name: Setup nim
         uses: jiro4989/setup-nim-action@v1
@@ -44,7 +48,48 @@ jobs:
           # repo-token: ${{ secrets.GITHUB_TOKEN }} # only required if API rate limit is breached
 
       - name: compile
-        run: nim c ${GITHUB_WORKSPACE}/src/bookofnim.nim
+        run: nim c $SRC_PATH/bookofnim.nim
 
       - name: test
         run: nim e ${GITHUB_WORKSPACE}/.github/scripts/test.nims
+
+  docs:
+    name: DOCS
+    needs: CI
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 5
+
+    strategy:
+      fail-fast: true
+      matrix:
+        os: ["ubuntu-latest"]
+        nimv: ["devel"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          clean: false
+          fetch-depth: 1
+
+      - name: Restore Nim Devel
+        uses: actions/cache/restore@v3
+        with:
+          path: ~/.nimble
+          key: ${{ runner.os }}-${{ matrix.nimv }}-${{ hashFiles('*.nimble') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.nimv }}
+
+      - name: Setup nim
+        uses: jiro4989/setup-nim-action@v1
+        with:
+          nim-version: ${{ matrix.nimv }}
+
+      - name: Create Docs
+        run: nim e ${GITHUB_WORKSPACE}/.github/scripts/docs.nims
+
+      - name: Cache Docs
+        uses: actions/cache/save@v3
+        with:
+          path: src/htmldocs
+          key: $GITHUB_REF

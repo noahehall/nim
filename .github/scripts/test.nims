@@ -7,8 +7,10 @@ import ./run.nims
 mode = ScriptMode.Verbose
 
 let
-  # proxy for github || local machine
-  rootDir = absolutePath normalizedPath "GITHUB_WORKSPACE".getEnv "."
+  # proxy for repo root
+  rootDir = absolutePath normalizedPath "GITHUB_WORKSPACE".getEnv getCurrentDir()
+
+cd rootDir
 
 proc installDeps: (string, int) =
   result = """
@@ -17,11 +19,14 @@ proc installDeps: (string, int) =
   """.gorgeEx
 
 proc runTests: (string, int) =
-  result = withDir rootDir:
-    fmt"testament --directory:{rootDir} all".gorgeEx
+  result = fmt"testament --directory:{rootDir} all".gorgeEx
+
+proc createTestResultsHtml: (string, int) =
+  result = fmt"testament --directory:{rootDir} html".gorgeEx
 
 when isMainModule:
   for action in @[
     installDeps,
-    runTests
+    runTests,
+    createTestResultsHtml
   ]: run action

@@ -1,6 +1,6 @@
 ##
-## Hello world: my name is nim
-## ===========================
+## Hello world: my name is nim #version-2-0
+## ========================================
 ## [bookmark](https://nim-lang.org/docs/manual.html#special-types)
 
 ##[
@@ -9,18 +9,20 @@
   - dont import (system, threads, channel) directly, theres some compiler magic to makem work
   - threads, channels, templates, macros, effects, pragmas, os and io are in deepdives
 - newer nim versions seems to be getting more strict/better at catching programmer errors
-  - this repo uses nim 1.6.10 and breaks on later versions
+  - this repo uses nim V2
 - you should expect everything in nim is heavily overloaded
-  - hence only simple syntax is shown and shouldnt be considered comprehensive in any form
-- generaly guidance
-  - everything in javascript is an object, almost everything in nim is an expression
+  - hence only base syntax is shown and shouldnt be considered comprehensive in any form
+
 
 links
 -----
-- [nim system module](https://nim-lang.org/docs/system.html)
-- [nimlang api design](https://nim-lang.org/docs/apis.html)
-- [nimlang manual](https://nim-lang.org/docs/manual.html)
-- [nimlang tools dir](https://github.com/nim-lang/Nim/tree/devel/tools)
+- devel branch
+  - [docs](https://github.com/nim-lang/Nim/tree/devel/doc)
+  - [system](https://github.com/nim-lang/Nim/blob/devel/lib/system.nim)
+- [system module](https://nim-lang.org/docs/system.html)
+- [api design](https://nim-lang.org/docs/apis.html)
+- [manual](https://nim-lang.org/docs/manual.html)
+- [tools dir](https://github.com/nim-lang/Nim/tree/devel/tools)
 - [status auditor docs](https://status-im.github.io/nim-style-guide/00_introduction.html)
 
 todos
@@ -29,56 +31,49 @@ todos
 
 ## std library
 - pure libraries: do not depend on external *.dll/lib*.so binary
-- impure libraries: !pure libraries
+- impure libraries: not pure libraries
 - wrapper libraries: impure low level interfaces to a C library
 
 ## style guide & best practices
 
 idiomatic nim
 -------------
+- always add an Error|Defect suffix to exceptions/defects types (styleguide)
+- always add Obj/REf/Prt suffice to secondary flavors of type identifiers (styleguide)
+- always align signature parameters longer than 1 line with the one above it (styleguide)
+- always continue multi-line invocations on the same column as the open paranthesis (styleguide)
+- always extend custom errors from the system.Exception/etc hierarchy (docs)
+- always keep lines <= 80  with 2 spaces for indentation (styleguide)
+- always prefix impure enum members (e.g. with abbr of the enum name) (styleguide)
 - always qualify the imports from std, e.g. std/os and std/[os, posix] (styleguide?)
-- any tuple/proc/type signature longer than 1 line should have their parameters aligned with the one above it (styleguide)
-- dont align the = across subsequent lines like you see java apps (styleguide)
-- dont prefix getters/setters with `get/setBlah` unless the it has side effects, or cost > O(1) (styleguide)
-- exceptions/defects types should always have an Error|Defect suffix (styleguide)
-- follow nims api conventions (theres bunches), the idea is to make it easy to `guess the procedure` (naming scheme?)
-- identifiers should use subjectVerb not verbSubject (lol this ones gonna hurt) (styleguide)
-- impure enum members should always have a prefix (e.g. abbr of the enum name) (styleguide)
-- keep lines <= 80  with 2 spaces for indentation (styleguide)
-- module names are generally long to be descriptive (docs)
-- multi-line invocations should continue on the same column as the open paranthesis (styleguide)
-- MyCustomError should follow the hierarchy defiend in system.Exception (docs)
-- never discard Futures; use waitFor (eventually) / asyncCheck (immediately) to throwaway value/error
+- always run initialization logic as toplevel module statements, e.g. init data (docs)
+- always use subjectVerb not verbSubject in identifiers (styleguide)
+- never align the `=` in assignments across subsequent lines (styleguide)
+- never prefix getters/setters with `get/setBlah` unless the it has side effects, or cost > O(1) (styleguide)
 - never raise an exception without a msg, and never for control flow (docs maybe?)
-- prefer composition > inheritance is often the better design (docs)
-- prefer declare as var > proc var params when modifying global vars (docs)
+- prefer composition > inheritance (docs)
+- prefer declaring vars as vars > proc var params when modifying global vars (docs)
+- prefer descriptive > terse module names (docs)
+- prefer nims api conventions (theres bunches), the idea is to make it easy to `guess the procedure` (naming scheme?)
 - prefer object variants > inheritance for simple types; no type conversion required (docs)
+- prefer shadowing proc params > passing vars; enables the most efficient parameter passing (docs)
 - prefer type > cast operator cuz type preserves the bit pattern (docs)
 - procs that mutate data should be prefixed with 'm' (styleguide)
 - procs that return a transformed copy of soemthing should be in past particle (e.g. wooped) (styleguide)
 - refrain from MACRO_CASE naming conventions, no matter what it is (styleguide)
-- run initialization logic as toplevel module statements, e.g. init data (docs)
-- secondary flavors of type identifiers should have suffix Obj|Ref|Ptr (styleguide)
-- shadowing proc params > declaring them as var enables the most efficient parameter passing (docs)
-- the main type idenfier shouldn not have a Obj|Ref|Ptr suffix (styleguide)
-- type identifiers/consts/pure enums use PascalCase, all other (including pure enums) use camelCase
-- use -d:futureLogging + getFuturesInProgress() to guard against stuck Futures leaking memory
-- use """string literals""" that start with new line, i.e. the """ first should be on its own line
 - use a..b unless a .. ^b has an operator (docs, styleguide)
 - use cast > type conversion to force the compiler to reinterpret the bit pattern (docs)
 - use channel.tryRecv > channel.peek to reduce potential of race conditions (docs)
 - use collect macro > map and filter (docs)
-- use fmt"{expr}" > &"{expr} (docs) unless you need escapes (me)
 - use getMonoTime | cpuTime > now for benchmarking (docs)
 - use getTime > epochTime for epoch (docs)
 - use include to split large modules into distinct files (docs)
-- use Natural/Positive for checks/type desc (docs) i.e. Positive.low == 1 Natural.low == 0
+- use options > nil for dealing with optional values (docs)
 - use parseopt module > os.parseCmdLine unless specifically required (docs)
 - use procs > (macros/templates/iterators/convertors) unless necessary (styleguide)
 - use result(its optimized) > return (only for control flow) > last statement expression (stylguide) (FYI status prefers last statement)
 - use sets (e.g. as flags) > integers that have to be or'ed (docs)
 - use status push > raises convention to help track unfound errs (docs + status)
-- use options > nil for dealing with optional values (docs)
 - use testament > unittests with dir structur like root/tests/somecategory/t\*.nim (testament source)
 - use typeof x and not type x (docs)
 - use X.y > x[].y for accessing ref/ptr objects (docs: x[].y highly discouraged)
@@ -92,6 +87,12 @@ borrowed from somewhere else (e.g. status auditor docs)
 
 my preferences
 --------------
+- use fmt"{expr}" > &"{expr}" unless you need escapes (me)
+- use Natural/Positive for checks/type desc i.e. Positive.low == 1 Natural.low == 0
+- never discard Futures; use waitFor (eventually) / asyncCheck (immediately) to throwaway value/error
+- never add an Obj/RefP/Ptr suffix to the main type idenfier (styleguide)
+- use -d:futureLogging + getFuturesInProgress() to guard against stuck Futures leaking memory
+- use """string literals""" that start with new line, i.e. the """ first should be on its own line
 - strive for parantheseless code, remember echo f 1, f 2 == echo(f(1), f(2)) and not echo(f(1, f(2)))
 - keep it as sugary as possible
 - prefer fn x,y over x.fn y over fn(x, y) unless it conflicts with the context
@@ -126,7 +127,7 @@ import
 - are only allowed at the top level
 - looks in the current dir relative to the imported file and uses the first match
 - else traverses up the nim PATH for the first match
-  - [checkout the search path docs](https://nim-lang.org/docs/nimc.html#compiler-usage-search-path-handling)
+  - [search path docs](https://nim-lang.org/docs/nimc.html#compiler-usage-search-path-handling)
   .. code-block:: Nim
     import math # everything
     import std/math # import math specifically from the std library
@@ -166,10 +167,7 @@ include
 export
 ------
 - enables forwarding this modules dependencies onto downstream modules
-  - thus importers dont need to import their dependencies' depencencies
-  - remember you are exporting the MODULE identifier,
-    - e.g. a module X with a type X,
-      - export X is exporting the module, not the type X
+  - useful if module X will always be used with module Y
 - example exports
 .. code-block:: Nim
   export woop # export everything from woop
@@ -212,7 +210,6 @@ operators
   # assignment
   # - value semantics: copied on assignment, all types have value semantics
   # - ref semantics: referenced on assignment, anything with ref keyword
-    =
 
 keywords
 --------
@@ -228,12 +225,13 @@ keywords
 statements
 ----------
 - simple statements
-  - cant contain other statements unless separated with a semicolon
+  - cant contain other statements unless separated with a semicolon (statement lists)
   - e.g. assignment, invocations, and using return
 - complex statements
   - can contain other statements
   - must always be indented except for single complex statements
   - e.g. if, when, for, while
+
 
 expressions
 -----------
@@ -245,7 +243,7 @@ visibility
 ----------
 - var: local or global depending on scope,
 - force local scope vars to global via {.global.} pragma
-- export via symbols via woop* and it will be visible to client modules
+- export symbols with asterisk e.g. `woop*` and it will be visible to client modules
 - scopes: all blocks (ifs, loops, procs, etc) introduce a closure EXCEPT when statements
 ]##
 

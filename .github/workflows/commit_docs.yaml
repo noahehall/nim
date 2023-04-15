@@ -1,0 +1,24 @@
+name: bookofnim-commit-docs
+
+on:
+  pull_request_target:
+    types: [closed]
+
+jobs:
+  if_merged:
+    name: Add docs to previous commit
+    if: github.event.pull_request.merged == true && $GITHUB_BASE_REF == 'develop'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Restore Docs
+        uses: actions/cache/restore@v3
+        with:
+          fail-on-cache-miss: true
+          path: src/htmldocs
+          key: $GITHUB_REF
+
+      - name: Commit Docs and Push
+        run: |
+          git add -A
+          git commit -a --no-verify -m "Add(htmldocs): use htmldocs from CI automation"
+          git push -f
