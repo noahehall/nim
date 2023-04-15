@@ -7,7 +7,7 @@ on:
 jobs:
   if_merged:
     name: Add docs to previous commit
-    if: github.event.pull_request.merged == true && $GITHUB_BASE_REF == 'develop'
+    if: ${{ github.event.pull_request.merged == true && $GITHUB_BASE_REF == 'develop' }}
     runs-on: ubuntu-latest
     steps:
       - name: Restore Docs
