@@ -44,7 +44,7 @@ jobs:
       # see above
       - name: Setup nim
         id: setupnim
-        if: failure() && steps.restorenim.conclusion == 'success'
+        if: steps.restorenim.conclusion == 'success'
         uses: jiro4989/setup-nim-action@v1
         with:
           nim-version: ${{ matrix.nimv }}
@@ -52,15 +52,14 @@ jobs:
       # see above
       - name: Create Docs
         id: createdocs
-        if: failure() && steps.setupnim.conclusion == 'success'
+        if: steps.setupnim.conclusion == 'success'
         run: nim e ${GITHUB_WORKSPACE}/.github/scripts/docs.nims
 
       - name: Commit Docs and Push
         if: success() || steps.createdocs.conclusion == 'success' || steps.restoredocs.conclusion == 'success'
         shell: bash
         run: |
-          # this requires relaxing of branch protection rules if pushing to develop
-          # else you can keep docs on a different branch
+          # this required relaxing develop branch protection rules
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add -A
