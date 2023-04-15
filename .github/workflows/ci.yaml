@@ -12,6 +12,7 @@ concurrency:
 
 env:
   SRC_PATH: ./src
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
 
 jobs:
   ci:
@@ -92,4 +93,4 @@ jobs:
         uses: actions/cache/save@v3
         with:
           path: src/htmldocs
-          key: ${{ git rev-parse --abbrev-ref HEAD }}
+          key: ${{ env.BRANCH_NAME }}
