@@ -10,14 +10,23 @@ jobs:
     if: (github.event.pull_request.merged == true) && (github.base_ref == 'develop')
     runs-on: ubuntu-latest
     steps:
+      # @see https://github.com/actions/cache/issues/1152
       - name: Restore Docs
+        id: restore
         uses: actions/cache/restore@v3
         with:
           fail-on-cache-miss: true
           path: src/htmldocs
           key: ${{ github.head_ref }}
 
+      # temporary: see above issue
+      - name: Create Docs
+        id: create
+        if: failure()
+        run: nim e ${GITHUB_WORKSPACE}/.github/scripts/docs.nims
+
       - name: Commit Docs and Push
+        if: success() || steps.create.conclusion == 'success' || steps.restore.conclusion == 'success'
         run: |
           git add -A
           git commit -a --no-verify -m "Add(htmldocs): use htmldocs from CI automation"
