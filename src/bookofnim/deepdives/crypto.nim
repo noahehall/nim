@@ -10,6 +10,10 @@
 - hashes
   - overload hash proc using `!$` and `!&` to enable hashing of custom datatypes
 
+todos
+-----
+- [shared hash fns](https://github.com/nim-lang/Nim/blob/devel/lib/pure/collections/hashcommon.nim)
+
 links
 -----
 - other

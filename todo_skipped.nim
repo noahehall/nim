@@ -1,6 +1,6 @@
 #[
 ## new list of todos
-- take the pure dir one by one: https://github.com/nim-lang/Nim/tree/devel/lib/pure
+- https://github.com/nim-lang/Nim/tree/devel/lib/pure/concurrency
 - take the impure dir one by one: https://github.com/nim-lang/Nim/tree/devel/lib/impure
 - then std: https://github.com/nim-lang/Nim/tree/devel/lib/std
 - then linux: https://github.com/nim-lang/Nim/tree/devel/lib/posix

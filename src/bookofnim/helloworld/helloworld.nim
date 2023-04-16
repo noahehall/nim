@@ -141,10 +141,14 @@ import
 include
 -------
 - a file as part of this module
-- can be used in any scope, e.g. scoped to a block/proc
-- including files hampers debugging as the composite module is shown
-  - line numbers dont point to distinct files, but to the composite file
-  - IMO stay away from includes and use imports, except for simple cases
+- positives to including files
+  - can be used in any scope, e.g. scoped to a block/proc
+  - symbols dont require exporting to be consumed in the parent file
+  - easier to share code between files
+- negatives to including files
+  - including files hampers debugging as the composite module is shown instead of the source
+    - line numbers dont point to distinct files, but to the composite file
+    - IMO stay away from includes and use imports, except if the benefits are useful
 - example include before we needed to debug memory leaks (and moved to imports)
 .. code-block:: Nim
   include modules/[
