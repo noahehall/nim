@@ -35,8 +35,8 @@ if not false: echo "true": else: echo "false"
 echo if 1 > 2: "its true" elif 2 < 1: "also true" else: "must be the multiverse"
 
 # another funny one
-if 11 < 2 or (11 == 11 and 'a' >= 'b' and not true or false ):
-  echo "no clue"
+if 11 < 2 or (11 == 11 and 'a' >= 'b' and not true or false):
+  echo "hello world"
 elif "woop" == "poow": echo "poows arent woops"
 else: echo "you are the holy one"
 

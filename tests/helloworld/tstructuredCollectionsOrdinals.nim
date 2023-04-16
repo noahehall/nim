@@ -4,4 +4,4 @@ discard """
   disabled: false # memory leaks
 """
 
-import bookofnim / helloworld / modules / tupleObjectTable
+import bookofnim / helloworld / modules / structuredCollectionsOrdinals

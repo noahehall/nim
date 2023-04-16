@@ -42,6 +42,8 @@ todos
   - cant be forward declared
 ]##
 
+{.push hint[GlobalVar]:off .}
+
 echo "############################ iterators "
 # iterable[T] an expression that yeilds T
 iterator `...`*[T](a: T, b: T): T =
@@ -59,11 +61,17 @@ iterator countTo(n: int): int =
 for i in countTo(5): echo i
 
 # std collection iterators
-# items/mitems : mutable/immutable, just the value
+# items/mitems : immutable/mutable, just the value
 for item in "noah".items: echo "item is ", item
 
-# pairs/mpairs: mutable/immutable index & item
+# pairs/mpairs: immutable/mutable index & item
 for index, item in ["a","b"].pairs: echo item, " at index ", index
+
+# fields: immutable items of containers
+for field in ("first", "second").fields: echo field
+
+# fieldPairs: immutable key, value of containers
+for k, v in ("first", "second").fieldPairs: echo k, v
 
 # copied from docs: finished proc
 iterator mycount(a, b: int): int {.closure.} =
@@ -87,9 +95,9 @@ while true:
 
 echo "############################ for"
 # loops over iterators
-for i in 1..2: echo "loop " & $i
-for i in 1 ..< 2: echo "loop ", i
-for i in countup(0,10,2): echo "evens only ", i
+for i in 1..5: echo "loop .. " & $i
+for i in 1 ..< 5: echo "loop ..< ", i
+for i in countup(0,10,2): echo "evens only ", i # alias for ..
 for i in countdown(11,0, 2): echo "odds only ", i
 for i in "noah": echo "spell my name spell my name when your not around me ", i
 for i, n in "noah": echo "index ", i, " is ", n

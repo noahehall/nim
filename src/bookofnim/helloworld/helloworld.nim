@@ -9,16 +9,12 @@
   - dont import (system, threads, channel) directly, theres some compiler magic to makem work
   - threads, channels, templates, macros, effects, pragmas, os and io are in deepdives
 - newer nim versions seems to be getting more strict/better at catching programmer errors
-  - this repo uses nim V2
 - you should expect everything in nim is heavily overloaded
   - hence only base syntax is shown and shouldnt be considered comprehensive in any form
 
 
 links
 -----
-- devel branch
-  - [docs](https://github.com/nim-lang/Nim/tree/devel/doc)
-  - [system](https://github.com/nim-lang/Nim/blob/devel/lib/system.nim)
 - [system module](https://nim-lang.org/docs/system.html)
 - [api design](https://nim-lang.org/docs/apis.html)
 - [manual](https://nim-lang.org/docs/manual.html)
@@ -158,9 +154,7 @@ include
     exceptionHandlingDocs,
     loopsIterator,
     blocks,
-    ordinalStructured,
     routines,
-    tupleObjectTable,
     osIo
   ]
 
@@ -247,15 +241,16 @@ visibility
 - scopes: all blocks (ifs, loops, procs, etc) introduce a closure EXCEPT when statements
 ]##
 
+{.push warning[UnusedImport]:off, hint[GlobalVar]:off .}
 
 import modules / [
   blocks, ## block statements,
   exceptionHandlingDocs, ## exceptions, assertions, doc comments, try/catch, defer
   ifWhenCase, ## if when and case statements
   loopsIterator, ## loops and iterators
-  ordinalStructured, ## ordinals and collections
+  structuredCollectionsOrdinals, ## e.g. sequences, enums, arrays
   routines, ## main types of procs
-  tupleObjectTable, ## tuples, objects + inheritance, tables
-  typeSimple, ## nim primitive
+  structuredContainers, ## e.g. objects, custom types, tables
+  typeSimple, ## basic types
   variableGlobals, ## const, let, var; catchall for globals
 ]

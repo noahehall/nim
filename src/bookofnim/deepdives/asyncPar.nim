@@ -5,15 +5,9 @@
 
 ##[
 ## TLDR
-- actors, actions and relays
-  - actor: instance of Thread[T/void]
-      - thread (system): a variable actor
-      - spawn (threadpool): an ephemeral ctor
-  - action: proc[T/void] executed by and local to an actor
-  - relay: channel[T] node that relays data across actions and the thread in which its declared
-    - the main thread (module scope) is simpler and shared across all actors
-    - else you can declare within the body of action and send the ptr to another
 - threads
+  - thread (system) can be saved to a var / proc
+  - spawn (threadpool): is ephemeral
   - require --threads:on switch
   - each thread has its own GC heap and mem sharing is restricted
     - improves efficiency and prevents race conditions
@@ -24,13 +18,16 @@
   - vars local to threads must use {.threadvar.}
     - implies all the effects of {.global.}
     - can be defined but not initialized: it will be replicated at thread creation
-      - `var x* {.threadvar.}: string` is okay, but not `.... = "abc"
+      - `var x* {.threadvar.}: string` is okay, but not `.... = "abc"`
   - exceptions
     - handled exceptions dont propagate across threads
     - unhandled exceptions terminates the entire process
-- channels
+- channel[T]
+  - node that relays data across threads in which its declared
+  - the main thread (module scope) is simpler and shared across all threads
+  - else you can declare within the body of proc thread and send the ptr to another
+  - meant for threads, unstable when used with spawn
   - require --threads:on switch
-  - designed for use with Threads, not Threadpool.spawn
   - cant relay cyclic data structures
   - can be passed by ptr to actions or declared in module scope
 - threadpool

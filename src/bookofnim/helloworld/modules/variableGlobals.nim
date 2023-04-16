@@ -8,7 +8,7 @@
 - anything like `BLAH=` can be written `BLAH =`
   - the former enables you to define/overload operators via 'proc `woop=`[bloop](soop): doop = toot'
 - converts are listed here because their purpose is implicit type coercion
-- additional type features are covered in tupleObjectTable.nim
+- additional type features are covered in structuredContainers.nim
 - you can call clear on pretty much anything
 
 links

@@ -1,11 +1,10 @@
 ##
-## tuples, objects and tables
-## ==========================
+## structured containers
+## =====================
 
 ##[
 ## TLDR
 - heterogenous containers of named fields of any type
-- enums are in ordinalStructured.nim
 
 links
 -----

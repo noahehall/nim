@@ -69,8 +69,8 @@ universal pragmas
 - error: "msg" annotate a symbol with an error msg; when the symbol is used a static error is thrown
 - fatal: "msg" same as error but compilation is guaranteed to be aborted when symbol is used
 - linearScanEnd signify the end of expected case branches for optimization
-- pop: [x,y,z] remove pragma/all previously pushed pragmas from the code that follows
-- push: [x,y,z] add pragma into the context of the code that follows
+- pop: x,y,z remove pragma/all pushed pragmas, e.g. {.pop.} removes all
+- push: x,y,z add pragmas until popped, e.g. {.push hints:off, warning[blah]: on.}
 - used: inform the compiler this symbol/module is used, and not to print warning about it
 - warning: "msg" same as error but for warnings
 
