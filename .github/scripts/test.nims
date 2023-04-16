@@ -21,7 +21,7 @@ proc installDeps: (string, int) =
 proc runTests: (string, int) =
   result = fmt"testament --directory:{rootDir} all".gorgeEx
 
-proc createTestResultsHtml: (string, int) =
+proc createTestResultsHtml*: (string, int) =
   result = fmt"testament --directory:{rootDir} html".gorgeEx
 
 when isMainModule:

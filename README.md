@@ -19,7 +19,7 @@
   - [documentation is a first class citizen](https://nim-lang.org/docs/docgen.html)
     - [with first class support for reStructured text](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
   - [testing is a first class citizen](https://nim-lang.github.io/Nim/testament.html)
-    - [with html reports](https://noahehall.github.io/nim/testresults.html)
+    - [with html reports](https://noahehall.github.io/nim/htmldocs/testresults.html)
     - [and valgrind integration for memory leaks](https://valgrind.org/)
   - [first class support for postgres, mysql](https://nim-lang.org/docs/lib.html#impure-libraries-database-support)
     - [including a generic ODBC wrapper for other dbs](https://nim-lang.org/docs/db_odbc.html)

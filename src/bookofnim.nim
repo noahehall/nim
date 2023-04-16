@@ -18,7 +18,7 @@
 
 links
 -----
-- [latest test results](https://noahehall.github.io/nim/testresults.html)
+- [latest test results](https://noahehall.github.io/nim/htmldocs/testresults.html)
 - use nims devel branch until the online documentation for v2 is ready
   - [docs](https://github.com/nim-lang/Nim/tree/devel/doc)
   - [system](https://github.com/nim-lang/Nim/blob/devel/lib/system.nim)
