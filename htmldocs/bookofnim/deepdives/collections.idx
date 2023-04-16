@@ -1,0 +1,18 @@
+nimTitle	collections	bookofnim/deepdives/collections.html	module src/bookofnim/deepdives/collections		0
+nim	immutable	bookofnim/deepdives/collections.html#immutable	const immutable		54
+nim	seq2d	bookofnim/deepdives/collections.html#seq2d	const seq2d		55
+nim	zipped	bookofnim/deepdives/collections.html#zipped	const zipped		56
+nim	mutable	bookofnim/deepdives/collections.html#mutable	var mutable		88
+nim	mutated	bookofnim/deepdives/collections.html#mutated	var mutated		89
+nim	echoMutated	bookofnim/deepdives/collections.html#echoMutated	proc echoMutated(): void		90
+nim	stringSet1	bookofnim/deepdives/collections.html#stringSet1	const stringSet1		108
+nim	stringSet2	bookofnim/deepdives/collections.html#stringSet2	const stringSet2		109
+nim	floatSet	bookofnim/deepdives/collections.html#floatSet	const floatSet		110
+nim	x	bookofnim/deepdives/collections.html#x	var x		130
+nim	mstringset	bookofnim/deepdives/collections.html#mstringset	var mstringset		137
+nim	echoMutatedSet	bookofnim/deepdives/collections.html#echoMutatedSet	proc echoMutatedSet(): void		138
+heading	collections deep dive	bookofnim/deepdives/collections.html#collections-deep-dive	 collections deep dive		0
+heading	TLDR	bookofnim/deepdives/collections.html#collections-deep-dive-tldr	  TLDR		0
+heading	links	bookofnim/deepdives/collections.html#collections-deep-dive-links	  links		0
+heading	seqs	bookofnim/deepdives/collections.html#collections-deep-dive-seqs	  seqs		0
+heading	sets	bookofnim/deepdives/collections.html#collections-deep-dive-sets	  sets		0

@@ -1,0 +1,86 @@
+nimTitle	ordinalStructured	bookofnim/helloworld/modules/ordinalStructured.html	module src/bookofnim/helloworld/modules/ordinalStructured		0
+nim	nums4	bookofnim/helloworld/modules/ordinalStructured.html#nums4	var nums4		151
+nim	rangeArr	bookofnim/helloworld/modules/ordinalStructured.html#rangeArr	var rangeArr		152
+nim	emptyArr	bookofnim/helloworld/modules/ordinalStructured.html#emptyArr	var emptyArr		153
+nim	nums	bookofnim/helloworld/modules/ordinalStructured.html#nums	let nums		155
+nim	smun	bookofnim/helloworld/modules/ordinalStructured.html#smun	let smun		156
+nim	arrayWithRange	bookofnim/helloworld/modules/ordinalStructured.html#arrayWithRange	let arrayWithRange		159
+nim	withArrParam	bookofnim/helloworld/modules/ordinalStructured.html#withArrParam,array[I,T]	proc withArrParam[I, T](a: array[I, T]): string		161
+nim	breakfast	bookofnim/helloworld/modules/ordinalStructured.html#breakfast	TimeToEat.breakfast		169
+nim	lunch	bookofnim/helloworld/modules/ordinalStructured.html#lunch	TimeToEat.lunch		169
+nim	dinner	bookofnim/helloworld/modules/ordinalStructured.html#dinner	TimeToEat.dinner		169
+nim	sweettooth	bookofnim/helloworld/modules/ordinalStructured.html#sweettooth	TimeToEat.sweettooth		169
+nim	TimeToEat	bookofnim/helloworld/modules/ordinalStructured.html#TimeToEat	enum TimeToEat		169
+nim	proteinshake	bookofnim/helloworld/modules/ordinalStructured.html#proteinshake	WhatToEat.proteinshake		171
+nim	ramen	bookofnim/helloworld/modules/ordinalStructured.html#ramen	WhatToEat.ramen		171
+nim	ramentWithMeet	bookofnim/helloworld/modules/ordinalStructured.html#ramentWithMeet	WhatToEat.ramentWithMeet		171
+nim	pnutbutteryjelly	bookofnim/helloworld/modules/ordinalStructured.html#pnutbutteryjelly	WhatToEat.pnutbutteryjelly		171
+nim	WhatToEat	bookofnim/helloworld/modules/ordinalStructured.html#WhatToEat	enum WhatToEat		171
+nim	Eating	bookofnim/helloworld/modules/ordinalStructured.html#Eating	type Eating		173
+nim	WeeklyFoodTracker	bookofnim/helloworld/modules/ordinalStructured.html#WeeklyFoodTracker	type WeeklyFoodTracker		174
+nim	MonthlyFoodTracker	bookofnim/helloworld/modules/ordinalStructured.html#MonthlyFoodTracker	type MonthlyFoodTracker		175
+nim	onSundayIAte	bookofnim/helloworld/modules/ordinalStructured.html#onSundayIAte	var onSundayIAte		178
+nim	lastWeek	bookofnim/helloworld/modules/ordinalStructured.html#lastWeek	var lastWeek		187
+nim	woops	bookofnim/helloworld/modules/ordinalStructured.html#woops	var woops		196
+nim	swoop	bookofnim/helloworld/modules/ordinalStructured.html#swoop	var swoop		197
+nim	emptySeq	bookofnim/helloworld/modules/ordinalStructured.html#emptySeq	var emptySeq		198
+nim	seqEmpty	bookofnim/helloworld/modules/ordinalStructured.html#seqEmpty	var seqEmpty		199
+nim	me	bookofnim/helloworld/modules/ordinalStructured.html#me	var me		210
+nim	globalseq	bookofnim/helloworld/modules/ordinalStructured.html#globalseq	var globalseq		215
+nim	nineToFives	bookofnim/helloworld/modules/ordinalStructured.html#nineToFives	AmericaOfJobs.nineToFives		222
+nim	fiveToNines	bookofnim/helloworld/modules/ordinalStructured.html#fiveToNines	AmericaOfJobs.fiveToNines		222
+nim	twentyFourSeven	bookofnim/helloworld/modules/ordinalStructured.html#twentyFourSeven	AmericaOfJobs.twentyFourSeven		222
+nim	AmericaOfJobs	bookofnim/helloworld/modules/ordinalStructured.html#AmericaOfJobs	enum AmericaOfJobs		222
+nim	PeopleOfAmerica	bookofnim/helloworld/modules/ordinalStructured.html#PeopleOfAmerica	enum PeopleOfAmerica		226
+nim	AA	bookofnim/helloworld/modules/ordinalStructured.html#AA	ExplicitEnum.AA		233
+nim	BB	bookofnim/helloworld/modules/ordinalStructured.html#BB	ExplicitEnum.BB		233
+nim	ExplicitEnum	bookofnim/helloworld/modules/ordinalStructured.html#ExplicitEnum	enum ExplicitEnum		233
+nim	north	bookofnim/helloworld/modules/ordinalStructured.html#north	Direction.north		252
+nim	east	bookofnim/helloworld/modules/ordinalStructured.html#east	Direction.east		252
+nim	south	bookofnim/helloworld/modules/ordinalStructured.html#south	Direction.south		252
+nim	west	bookofnim/helloworld/modules/ordinalStructured.html#west	Direction.west		252
+nim	Direction	bookofnim/helloworld/modules/ordinalStructured.html#Direction	enum Direction		252
+nim	off	bookofnim/helloworld/modules/ordinalStructured.html#off	BlinkLights.off		254
+nim	on	bookofnim/helloworld/modules/ordinalStructured.html#on	BlinkLights.on		254
+nim	slowBlink	bookofnim/helloworld/modules/ordinalStructured.html#slowBlink	BlinkLights.slowBlink		254
+nim	mediumBlink	bookofnim/helloworld/modules/ordinalStructured.html#mediumBlink	BlinkLights.mediumBlink		254
+nim	fastBlink	bookofnim/helloworld/modules/ordinalStructured.html#fastBlink	BlinkLights.fastBlink		254
+nim	BlinkLights	bookofnim/helloworld/modules/ordinalStructured.html#BlinkLights	enum BlinkLights		254
+nim	LevelSetting	bookofnim/helloworld/modules/ordinalStructured.html#LevelSetting	type LevelSetting		256
+nim	level	bookofnim/helloworld/modules/ordinalStructured.html#level	var level		258
+nim	lastFour	bookofnim/helloworld/modules/ordinalStructured.html#lastFour	const lastFour		269
+nim	lastOne	bookofnim/helloworld/modules/ordinalStructured.html#lastOne	const lastOne		270
+nim	MySubrange	bookofnim/helloworld/modules/ordinalStructured.html#MySubrange	type MySubrange		275
+nim	thisRange	bookofnim/helloworld/modules/ordinalStructured.html#thisRange	var thisRange		278
+nim	a	bookofnim/helloworld/modules/ordinalStructured.html#a	var a		290
+nim	bbb	bookofnim/helloworld/modules/ordinalStructured.html#bbb	var bbb		291
+nim	myCharSet	bookofnim/helloworld/modules/ordinalStructured.html#myCharSet	let myCharSet		301
+nim	Opts	bookofnim/helloworld/modules/ordinalStructured.html#Opts	type Opts		304
+nim	IsOn	bookofnim/helloworld/modules/ordinalStructured.html#IsOn	type IsOn		305
+nim	simpleOpts	bookofnim/helloworld/modules/ordinalStructured.html#simpleOpts	let simpleOpts		307
+nim	onn	bookofnim/helloworld/modules/ordinalStructured.html#onn	let onn		308
+nim	offf	bookofnim/helloworld/modules/ordinalStructured.html#offf	let offf		309
+nim	flags	bookofnim/helloworld/modules/ordinalStructured.html#flags	let flags		310
+nim	MyFlag	bookofnim/helloworld/modules/ordinalStructured.html#MyFlag	enum MyFlag		315
+nim	MyFlags	bookofnim/helloworld/modules/ordinalStructured.html#MyFlags	type MyFlags		320
+nim	toNum	bookofnim/helloworld/modules/ordinalStructured.html#toNum,MyFlags	proc toNum(f: MyFlags): int		322
+nim	toFlags	bookofnim/helloworld/modules/ordinalStructured.html#toFlags,int	proc toFlags(v: int): MyFlags		323
+nim	globalset1	bookofnim/helloworld/modules/ordinalStructured.html#globalset1	var globalset1		333
+nim	globalset2	bookofnim/helloworld/modules/ordinalStructured.html#globalset2	var globalset2		334
+nim	globalset11	bookofnim/helloworld/modules/ordinalStructured.html#globalset11	var globalset11		342
+nim	globalarr	bookofnim/helloworld/modules/ordinalStructured.html#globalarr	var globalarr		355
+heading	ordinals and structured	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured	 ordinals and structured		0
+heading	TLDR	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-tldr	  TLDR		0
+heading	links	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-links	  links		0
+heading	arrays	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-arrays	  arrays		0
+heading	set	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-set	  set		0
+heading	sequence	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-sequence	  sequence		0
+heading	enum	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-enum	  enum		0
+heading	range	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-range	  range		0
+heading	slice	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-slice	  slice		0
+heading	ordinal types	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-ordinal-types	  ordinal types		0
+heading	generic interface	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-generic-interface	  generic interface		0
+heading	immutable ops	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-immutable-ops	  immutable ops		0
+heading	mutable ops	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-mutable-ops	  mutable ops		0
+heading	inspection ops	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-inspection-ops	  inspection ops		0
+heading	set procs	bookofnim/helloworld/modules/ordinalStructured.html#ordinals-and-structured-set-procs	  set procs		0

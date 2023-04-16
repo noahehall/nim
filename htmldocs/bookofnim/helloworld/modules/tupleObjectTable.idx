@@ -1,0 +1,111 @@
+nimTitle	tupleObjectTable	bookofnim/helloworld/modules/tupleObjectTable.html	module src/bookofnim/helloworld/modules/tupleObjectTable		0
+nim	myTable	bookofnim/helloworld/modules/tupleObjectTable.html#myTable	var myTable		158
+nim	NirvStack	bookofnim/helloworld/modules/tupleObjectTable.html#NirvStack	tuple NirvStack		168
+nim	StackNirv	bookofnim/helloworld/modules/tupleObjectTable.html#StackNirv	tuple StackNirv		172
+nim	hardCoreStack	bookofnim/helloworld/modules/tupleObjectTable.html#hardCoreStack	var hardCoreStack		175
+nim	newCoreStack	bookofnim/helloworld/modules/tupleObjectTable.html#newCoreStack	var newCoreStack		177
+nim	js	bookofnim/helloworld/modules/tupleObjectTable.html#js	let js		180
+nim	sj	bookofnim/helloworld/modules/tupleObjectTable.html#sj	var sj		183
+nim	bizDevOps	bookofnim/helloworld/modules/tupleObjectTable.html#bizDevOps	var bizDevOps		188
+nim	tmpTuple	bookofnim/helloworld/modules/tupleObjectTable.html#tmpTuple	let tmpTuple		193
+nim	bizRating	bookofnim/helloworld/modules/tupleObjectTable.html#bizRating	let bizRating		193
+nim	devRating	bookofnim/helloworld/modules/tupleObjectTable.html#devRating	let devRating		193
+nim	opsRating	bookofnim/helloworld/modules/tupleObjectTable.html#opsRating	let opsRating		193
+nim	tmpTuple	bookofnim/helloworld/modules/tupleObjectTable.html#tmpTuple_2	let tmpTuple		195
+nim	first	bookofnim/helloworld/modules/tupleObjectTable.html#first	let first		195
+nim	third	bookofnim/helloworld/modules/tupleObjectTable.html#third	let third		195
+nim	aaa	bookofnim/helloworld/modules/tupleObjectTable.html#aaa	let aaa		200
+nim	BigMoney	bookofnim/helloworld/modules/tupleObjectTable.html#BigMoney	type BigMoney		209
+nim	StrOrInt	bookofnim/helloworld/modules/tupleObjectTable.html#StrOrInt	type StrOrInt		212
+nim	thizString	bookofnim/helloworld/modules/tupleObjectTable.html#thizString	let thizString		213
+nim	thisInt	bookofnim/helloworld/modules/tupleObjectTable.html#thisInt	let thisInt		214
+nim	BiggerMoney	bookofnim/helloworld/modules/tupleObjectTable.html#BiggerMoney	type BiggerMoney		220
+nim	BiggestMoney	bookofnim/helloworld/modules/tupleObjectTable.html#BiggestMoney	type BiggestMoney		221
+nim	PrivateWoop	bookofnim/helloworld/modules/tupleObjectTable.html#PrivateWoop	object PrivateWoop		229
+nim	PublicWoop	bookofnim/helloworld/modules/tupleObjectTable.html#PublicWoop	object PublicWoop		232
+nim	iwoop	bookofnim/helloworld/modules/tupleObjectTable.html#iwoop	let iwoop		235
+nim	uwoop	bookofnim/helloworld/modules/tupleObjectTable.html#uwoop	let uwoop		236
+nim	everyonewoop	bookofnim/helloworld/modules/tupleObjectTable.html#everyonewoop	let everyonewoop		237
+nim	Someone	bookofnim/helloworld/modules/tupleObjectTable.html#Someone	object Someone		243
+nim	noah	bookofnim/helloworld/modules/tupleObjectTable.html#noah	var noah		247
+nim	you	bookofnim/helloworld/modules/tupleObjectTable.html#you	let you		252
+nim	`$`	bookofnim/helloworld/modules/tupleObjectTable.html#$,Someone	proc `$`(self: Someone): string		256
+nim	SomeObj	bookofnim/helloworld/modules/tupleObjectTable.html#SomeObj	object SomeObj		267
+nim	prv=	bookofnim/helloworld/modules/tupleObjectTable.html#prv=,SomeObj,string	proc prv=(x: var SomeObj; v: string)		272
+nim	prv	bookofnim/helloworld/modules/tupleObjectTable.html#prv,SomeObj	proc prv(x: SomeObj): string		274
+nim	myobj	bookofnim/helloworld/modules/tupleObjectTable.html#myobj	var myobj		276
+nim	Vector	bookofnim/helloworld/modules/tupleObjectTable.html#Vector	object Vector		284
+nim	`[]=`	bookofnim/helloworld/modules/tupleObjectTable.html#[]=,Vector,int,float	proc `[]=`(v: var Vector; i: int; value: float)		288
+nim	`[]`	bookofnim/helloworld/modules/tupleObjectTable.html#[],Vector,int	proc `[]`(v: Vector; i: int): float		295
+nim	people	bookofnim/helloworld/modules/tupleObjectTable.html#people	let people		310
+nim	SomeoneRef	bookofnim/helloworld/modules/tupleObjectTable.html#SomeoneRef	type SomeoneRef		317
+nim	OrRefObject	bookofnim/helloworld/modules/tupleObjectTable.html#OrRefObject	type OrRefObject		318
+nim	people2	bookofnim/helloworld/modules/tupleObjectTable.html#people2	let people2		320
+nim	baseMethod	bookofnim/helloworld/modules/tupleObjectTable.html#baseMethod.e,SomeoneRef	method baseMethod(self: SomeoneRef): bool		324
+nim	WhoWoop	bookofnim/helloworld/modules/tupleObjectTable.html#WhoWoop	type WhoWoop		336
+nim	YouWoop	bookofnim/helloworld/modules/tupleObjectTable.html#YouWoop	type YouWoop		338
+nim	IWoop	bookofnim/helloworld/modules/tupleObjectTable.html#IWoop_2	type IWoop		339
+nim	did_i_woop	bookofnim/helloworld/modules/tupleObjectTable.html#did_i_woop,WhoWoop	proc did_i_woop(self: WhoWoop): string		342
+nim	didiwoop	bookofnim/helloworld/modules/tupleObjectTable.html#didiwoop,YouWoop	proc didiwoop(self: YouWoop): string		344
+nim	dIdIwoop	bookofnim/helloworld/modules/tupleObjectTable.html#dIdIwoop,IWoop	proc dIdIwoop(self: IWoop): string		346
+nim	sherlockwoops	bookofnim/helloworld/modules/tupleObjectTable.html#sherlockwoops	var sherlockwoops		353
+nim	Expression	bookofnim/helloworld/modules/tupleObjectTable.html#Expression	type Expression		367
+nim	Literal	bookofnim/helloworld/modules/tupleObjectTable.html#Literal	type Literal		368
+nim	PlusExpr	bookofnim/helloworld/modules/tupleObjectTable.html#PlusExpr	type PlusExpr		370
+nim	eval	bookofnim/helloworld/modules/tupleObjectTable.html#eval.e,Expression	method eval(e: Expression): int		374
+nim	eval	bookofnim/helloworld/modules/tupleObjectTable.html#eval.e,Literal	method eval(e: Literal): int		378
+nim	eval	bookofnim/helloworld/modules/tupleObjectTable.html#eval.e,PlusExpr	method eval(e: PlusExpr): int		379
+nim	newLit	bookofnim/helloworld/modules/tupleObjectTable.html#newLit,int	proc newLit(x: int): Literal		381
+nim	newPlus	bookofnim/helloworld/modules/tupleObjectTable.html#newPlus,Expression,Expression	proc newPlus(a, b: Expression): PlusExpr		382
+nim	Thing	bookofnim/helloworld/modules/tupleObjectTable.html#Thing	type Thing		391
+nim	Unit	bookofnim/helloworld/modules/tupleObjectTable.html#Unit	type Unit		392
+nim	collide	bookofnim/helloworld/modules/tupleObjectTable.html#collide.e,Thing,Thing	method collide(a, b: Thing)		395
+nim	collide	bookofnim/helloworld/modules/tupleObjectTable.html#collide.e,Thing,Unit	method collide(a: Thing; b: Unit)		398
+nim	collide	bookofnim/helloworld/modules/tupleObjectTable.html#collide.e,Unit,Thing	method collide(a: Unit; b: Thing)		401
+nim	aaaa	bookofnim/helloworld/modules/tupleObjectTable.html#aaaa	var aaaa		404
+nim	bbbb	bookofnim/helloworld/modules/tupleObjectTable.html#bbbb	var bbbb		404
+nim	nkInt	bookofnim/helloworld/modules/tupleObjectTable.html#nkInt	NodeKind.nkInt		416
+nim	nkFloat	bookofnim/helloworld/modules/tupleObjectTable.html#nkFloat	NodeKind.nkFloat		416
+nim	nkString	bookofnim/helloworld/modules/tupleObjectTable.html#nkString	NodeKind.nkString		416
+nim	nkAdd	bookofnim/helloworld/modules/tupleObjectTable.html#nkAdd	NodeKind.nkAdd		416
+nim	nkSub	bookofnim/helloworld/modules/tupleObjectTable.html#nkSub	NodeKind.nkSub		416
+nim	nkIf	bookofnim/helloworld/modules/tupleObjectTable.html#nkIf	NodeKind.nkIf		416
+nim	NodeKind	bookofnim/helloworld/modules/tupleObjectTable.html#NodeKind	enum NodeKind		416
+nim	Node2	bookofnim/helloworld/modules/tupleObjectTable.html#Node2	type Node2		423
+nim	myFloat	bookofnim/helloworld/modules/tupleObjectTable.html#myFloat	var myFloat		433
+nim	Node	bookofnim/helloworld/modules/tupleObjectTable.html#Node	type Node		443
+nim	Sym	bookofnim/helloworld/modules/tupleObjectTable.html#Sym	object Sym		447
+nim	wtf	bookofnim/helloworld/modules/tupleObjectTable.html#wtf,T	proc wtf[T](a: T): auto		461
+nim	foo	bookofnim/helloworld/modules/tupleObjectTable.html#foo,T	proc foo[T](i: T)		472
+nim	ii	bookofnim/helloworld/modules/tupleObjectTable.html#ii	var ii		474
+nim	myRecord	bookofnim/helloworld/modules/tupleObjectTable.html#myRecord	var myRecord		482
+nim	OtherRecord	bookofnim/helloworld/modules/tupleObjectTable.html#OtherRecord	tuple OtherRecord		485
+nim	RecordType	bookofnim/helloworld/modules/tupleObjectTable.html#RecordType	type RecordType		490
+nim	printFields	bookofnim/helloworld/modules/tupleObjectTable.html#printFields,T	proc printFields[T: RecordType](rec: T)		493
+nim	utherRecord	bookofnim/helloworld/modules/tupleObjectTable.html#utherRecord	var utherRecord		497
+nim	fieldsPrint	bookofnim/helloworld/modules/tupleObjectTable.html#fieldsPrint,T,T	proc fieldsPrint[T: distinct tuple | object](first, second: T)		505
+nim	declareVariableWithType	bookofnim/helloworld/modules/tupleObjectTable.html#declareVariableWithType.t,typedesc,typedesc	template declareVariableWithType(T: typedesc; value: T:type)		511
+nim	x`gensym116	bookofnim/helloworld/modules/tupleObjectTable.html#x`gensym116	var x`gensym116		512
+nimgrp	collide	bookofnim/helloworld/modules/tupleObjectTable.html#collide-methods-all	method		395
+nimgrp	eval	bookofnim/helloworld/modules/tupleObjectTable.html#eval-methods-all	method		374
+heading	tuples, objects and tables	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables	 tuples, objects and tables		0
+heading	TLDR	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-tldr	  TLDR		0
+heading	links	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-links	  links		0
+heading	todo	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-todo	  todo		0
+heading	tuples	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-tuples	  tuples		0
+heading	objects	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-objects	  objects		0
+heading	type aliases	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-type-aliases	  type aliases		0
+heading	type aliases (distinct)	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-type-aliases-distinct	  type aliases (distinct)		0
+heading	table	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-table	  table		0
+heading	inheritance (ref/ptr)	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-inheritance-refslashptr	  inheritance (ref/ptr)		0
+heading	ref	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-ref	  ref		0
+heading	ptr	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-ptr	  ptr		0
+heading	ref/pter procs	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-refslashpter-procs	  ref/pter procs		0
+heading	dynamic dispatch	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-dynamic-dispatch	  dynamic dispatch		0
+heading	multi-methods	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-multiminusmethods	  multi-methods		0
+heading	metatypes	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-metatypes	  metatypes		0
+heading	type bound operators	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-type-bound-operators	  type bound operators		0
+heading	variants	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-variants	  variants		0
+heading	recursive types	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-recursive-types	  recursive types		0
+heading	type classes	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-type-classes	  type classes		0
+heading	typedesc	bookofnim/helloworld/modules/tupleObjectTable.html#tuples-objects-and-tables-typedesc	  typedesc		0

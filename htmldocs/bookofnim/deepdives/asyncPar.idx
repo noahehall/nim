@@ -1,0 +1,56 @@
+nimTitle	asyncPar	bookofnim/deepdives/asyncPar.html	module src/bookofnim/deepdives/asyncPar		0
+nim	bf	bookofnim/deepdives/asyncPar.html#bf	var bf		326
+nim	gf	bookofnim/deepdives/asyncPar.html#gf	var gf		327
+nim	L	bookofnim/deepdives/asyncPar.html#L	var L		328
+nim	numThreads	bookofnim/deepdives/asyncPar.html#numThreads	var numThreads		329
+nim	echoAction	bookofnim/deepdives/asyncPar.html#echoAction,T	proc echoAction[T](x: T): void		331
+nim	relay	bookofnim/deepdives/asyncPar.html#relay	var relay		354
+nim	sendAction	bookofnim/deepdives/asyncPar.html#sendAction	proc sendAction(): void		358
+nim	receiveAction	bookofnim/deepdives/asyncPar.html#receiveAction	proc receiveAction(): void		364
+nim	sendActionA	bookofnim/deepdives/asyncPar.html#sendActionA	proc sendActionA(): void		378
+nim	receiveActionA	bookofnim/deepdives/asyncPar.html#receiveActionA	proc receiveActionA(): void		384
+nim	f1	bookofnim/deepdives/asyncPar.html#f1	proc f1(): Future[string]		423
+nim	fv1	bookofnim/deepdives/asyncPar.html#fv1	let fv1		431
+nim	f2	bookofnim/deepdives/asyncPar.html#f2	proc f2(): Future[string]		435
+nim	laterGater	bookofnim/deepdives/asyncPar.html#laterGater,string	proc laterGater(s: string): Future[void]		445
+nim	seeya	bookofnim/deepdives/asyncPar.html#seeya	let seeya		451
+nim	afterwhile	bookofnim/deepdives/asyncPar.html#afterwhile	let afterwhile		452
+nim	fake1	bookofnim/deepdives/asyncPar.html#fake1	let fake1		459
+nim	fakeFailed	bookofnim/deepdives/asyncPar.html#fakeFailed	let fakeFailed		460
+nim	someErr	bookofnim/deepdives/asyncPar.html#someErr	let someErr		461
+nim	fake2	bookofnim/deepdives/asyncPar.html#fake2	var fake2		462
+nim	afilepath	bookofnim/deepdives/asyncPar.html#afilepath	const afilepath		490
+nim	reader	bookofnim/deepdives/asyncPar.html#reader	var reader		498
+nim	writer	bookofnim/deepdives/asyncPar.html#writer	var writer		499
+nim	cursize	bookofnim/deepdives/asyncPar.html#cursize	let cursize		503
+heading	concurrency and parallelism	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism	 concurrency and parallelism		0
+heading	TLDR	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-tldr	  TLDR		0
+heading	links	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-links	  links		0
+heading	todos	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-todos	  todos		0
+heading	locks	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-locks	  locks		0
+heading	lock types	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-lock-types	  lock types		0
+heading	lock procs	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-lock-procs	  lock procs		0
+heading	lock templates	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-lock-templates	  lock templates		0
+heading	system threads	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-system-threads	  system threads		0
+heading	system thread types	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-system-thread-types	  system thread types		0
+heading	system thread procs	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-system-thread-procs	  system thread procs		0
+heading	system channels	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-system-channels	  system channels		0
+heading	system channel types	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-system-channel-types	  system channel types		0
+heading	system channel procs	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-system-channel-procs	  system channel procs		0
+heading	threadpool	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-threadpool	  threadpool		0
+heading	threadpool types	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-threadpool-types	  threadpool types		0
+heading	threadpool consts	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-threadpool-consts	  threadpool consts		0
+heading	threadpool operators	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-threadpool-operators	  threadpool operators		0
+heading	threadpool procs	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-threadpool-procs	  threadpool procs		0
+heading	asyncdispatch	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-asyncdispatch	  asyncdispatch		0
+heading	asyncdispatch types	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-asyncdispatch-types	  asyncdispatch types		0
+heading	asyncdispatch procs	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-asyncdispatch-procs	  asyncdispatch procs		0
+heading	asyncdispatch macros	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-asyncdispatch-macros	  asyncdispatch macros		0
+heading	asyncdispatch templates	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-asyncdispatch-templates	  asyncdispatch templates		0
+heading	asyncfutures	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-asyncfutures	  asyncfutures		0
+heading	asyncfutures types	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-asyncfutures-types	  asyncfutures types		0
+heading	asyncfutures consts	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-asyncfutures-consts	  asyncfutures consts		0
+heading	asyncFutures procs	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-asyncfutures-procs	  asyncFutures procs		0
+heading	asyncfile	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-asyncfile	  asyncfile		0
+heading	asyncfile types	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-asyncfile-types	  asyncfile types		0
+heading	asyncfile procs	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-asyncfile-procs	  asyncfile procs		0

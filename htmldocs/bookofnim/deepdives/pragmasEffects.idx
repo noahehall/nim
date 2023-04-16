@@ -1,0 +1,27 @@
+nimTitle	pragmasEffects	bookofnim/deepdives/pragmasEffects.html	module src/bookofnim/deepdives/pragmasEffects		0
+nim	Oops	bookofnim/deepdives/pragmasEffects.html#Oops	object Oops		236
+nim	neverRaises	bookofnim/deepdives/pragmasEffects.html#neverRaises,string	proc neverRaises(a: string): bool		238
+nim	canOnlyRaiseOops	bookofnim/deepdives/pragmasEffects.html#canOnlyRaiseOops	proc canOnlyRaiseOops(): bool		241
+nim	couldRaise	bookofnim/deepdives/pragmasEffects.html#couldRaise,proc)	proc couldRaise(thisParam: proc (): bool): bool		245
+nim	passCallback	bookofnim/deepdives/pragmasEffects.html#passCallback	proc passCallback(): bool		248
+heading	pragmas, effects and experimental features	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features	 pragmas, effects and experimental features		0
+heading	TLDR	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-tldr	  TLDR		0
+heading	links	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-links	  links		0
+heading	todos	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-todos	  todos		0
+heading	pragmas	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-pragmas	  pragmas		0
+heading	custom pragmas	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-custom-pragmas	  custom pragmas		0
+heading	universal pragmas	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-universal-pragmas	  universal pragmas		0
+heading	var pragmas	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-var-pragmas	  var pragmas		0
+heading	routine pragmas	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-routine-pragmas	  routine pragmas		0
+heading	type pragmas	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-type-pragmas	  type pragmas		0
+heading	JS pragmas	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-js-pragmas	  JS pragmas		0
+heading	experimental pragmas	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-experimental-pragmas	  experimental pragmas		0
+heading	compilation pragmas	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-compilation-pragmas	  compilation pragmas		0
+heading	niche pragmas	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-niche-pragmas	  niche pragmas		0
+heading	unknown/skipped/C pragmas	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-unknownslashskippedslashc-pragmas	  unknown/skipped/C pragmas		0
+heading	effects	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-effects	  effects		0
+heading	exception tracking effects	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-exception-tracking-effects	  exception tracking effects		0
+heading	user defined effects	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-user-defined-effects	  user defined effects		0
+heading	functional side effect tracking	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-functional-side-effect-tracking	  functional side effect tracking		0
+heading	gc safety memory effects	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-gc-safety-memory-effects	  gc safety memory effects		0
+heading	effect types	bookofnim/deepdives/pragmasEffects.html#pragmas-effects-and-experimental-features-effect-types	  effect types		0
