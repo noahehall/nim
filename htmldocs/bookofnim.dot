@@ -48,9 +48,9 @@ digraph bookofnim {
 "bookofnim/helloworld/helloworld" -> "bookofnim/helloworld/modules/exceptionHandlingDocs";
 "bookofnim/helloworld/helloworld" -> "bookofnim/helloworld/modules/ifWhenCase";
 "bookofnim/helloworld/helloworld" -> "bookofnim/helloworld/modules/loopsIterator";
-"bookofnim/helloworld/helloworld" -> "bookofnim/helloworld/modules/ordinalStructured";
+"bookofnim/helloworld/helloworld" -> "bookofnim/helloworld/modules/structuredCollectionsOrdinals";
 "bookofnim/helloworld/helloworld" -> "bookofnim/helloworld/modules/routines";
-"bookofnim/helloworld/helloworld" -> "bookofnim/helloworld/modules/tupleObjectTable";
+"bookofnim/helloworld/helloworld" -> "bookofnim/helloworld/modules/structuredContainers";
 "bookofnim/helloworld/helloworld" -> "bookofnim/helloworld/modules/typeSimple";
 "bookofnim/helloworld/helloworld" -> "bookofnim/helloworld/modules/variableGlobals";
 "std/macros" -> "std/private/since";

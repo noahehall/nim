@@ -178,8 +178,8 @@
 <li>error: &quot;msg&quot; annotate a symbol with an error msg; when the symbol is used a static error is thrown</li>
 <li>fatal: &quot;msg&quot; same as error but compilation is guaranteed to be aborted when symbol is used</li>
 <li>linearScanEnd signify the end of expected case branches for optimization</li>
-<li>pop: <a class="reference internal" href="#x,y,z">x,y,z</a> remove pragma/all previously pushed pragmas from the code that follows</li>
-<li>push: <a class="reference internal" href="#x,y,z">x,y,z</a> add pragma into the context of the code that follows</li>
+<li>pop: x,y,z remove pragma/all pushed pragmas, e.g. {.pop.} removes all</li>
+<li>push: x,y,z add pragmas until popped, e.g. {.push hints:off, warning<a class="reference internal" href="#blah">blah</a>: on.}</li>
 <li>used: inform the compiler this symbol/module is used, and not to print warning about it</li>
 <li>warning: &quot;msg&quot; same as error but for warnings</li>
 </ul>
@@ -393,7 +393,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-04-16 07:14:01 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-04-16 17:48:16 UTC</small>
       </div>
     </div>
   </div>

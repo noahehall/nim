@@ -51,6 +51,7 @@
 <ul class="simple"><li><a class="reference" id="templates-and-macros-tldr_toc" href="#templates-and-macros-tldr">TLDR</a></li>
 <li><a class="reference" id="templates-and-macros-todos_toc" href="#templates-and-macros-todos">todos</a></li>
 <li><a class="reference" id="templates-and-macros-templates_toc" href="#templates-and-macros-templates">templates</a></li>
+<li><a class="reference" id="templates-and-macros-template-types_toc" href="#templates-and-macros-template-types">template types</a></li>
 </ul><li>
   <details open>
     <summary><a class="reference reference-toplevel" href="#8" id="58">Vars</a></summary>
@@ -146,6 +147,10 @@
 <li>are processed in the semantic pass of the compiler</li>
 <li>accepts meta types</li>
 </ul>
+
+<h2><a class="toc-backref" id="templates-and-macros-template-types" href="#templates-and-macros-template-types">template types</a></h2><ul class="simple"><li>untyped an expression thats not resolved for lazy evaluation</li>
+<li>typed an expression that is resolved for greedy evaluation</li>
+</ul>
 </p>
     <div class="section" id="8">
   <h1><a class="toc-backref" href="#8">Vars</a></h1>
@@ -155,8 +160,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/templateMacros.nim#L41" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/templateMacros.nim#L41" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/templateMacros.nim#L46" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/templateMacros.nim#L46" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -171,8 +176,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/templateMacros.nim#L57" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/templateMacros.nim#L57" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/templateMacros.nim#L62" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/templateMacros.nim#L62" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -181,8 +186,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/templateMacros.nim#L57" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/templateMacros.nim#L57" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/templateMacros.nim#L62" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/templateMacros.nim#L62" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -197,8 +202,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/templateMacros.nim#L40" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/templateMacros.nim#L40" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/templateMacros.nim#L45" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/templateMacros.nim#L45" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -215,8 +220,8 @@
   <dd>
     
     msg arg is evaluted before the fn is evoked
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/templateMacros.nim#L42" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/templateMacros.nim#L42" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/templateMacros.nim#L47" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/templateMacros.nim#L47" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -234,8 +239,8 @@
   <dd>
     
     it will replace a &amp; b with the a and b operands to != then replace a != b in the original with the below template i.e. assert(5 != 6) -&gt; assert(not (5 == 6))
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/templateMacros.nim#L32" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/templateMacros.nim#L32" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/templateMacros.nim#L37" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/templateMacros.nim#L37" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -247,8 +252,8 @@
   <dd>
     
     example of using untyped to get a block of statements the block statements are bound to the body param
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/templateMacros.nim#L54" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/templateMacros.nim#L54" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/templateMacros.nim#L59" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/templateMacros.nim#L59" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -260,8 +265,8 @@
   <dd>
     
     the template is processed before msg arg so if debug is false, msg wont be evaluted
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/templateMacros.nim#L45" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/templateMacros.nim#L45" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/templateMacros.nim#L50" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/templateMacros.nim#L50" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -277,7 +282,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-04-16 07:14:01 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-04-16 17:48:16 UTC</small>
       </div>
     </div>
   </div>

@@ -60,7 +60,9 @@
 <li><a class="reference" id="simple-types-numbers_toc" href="#simple-types-numbers">numbers</a></li>
 <li><a class="reference" id="simple-types-number-procs_toc" href="#simple-types-number-procs">number procs</a></li>
 <li><a class="reference" id="simple-types-number-types_toc" href="#simple-types-number-types">number types</a></li>
-<li><a class="reference" id="simple-types-mem-procs_toc" href="#simple-types-mem-procs">mem procs</a></li>
+<li><a class="reference" id="simple-types-reference-types_toc" href="#simple-types-reference-types">reference types</a></li>
+<li><a class="reference" id="simple-types-reference-procs_toc" href="#simple-types-reference-procs">reference procs</a></li>
+<li><a class="reference" id="simple-types-misc-types_toc" href="#simple-types-misc-types">misc types</a></li>
 </ul><li>
   <details open>
     <summary><a class="reference reference-toplevel" href="#8" id="58">Vars</a></summary>
@@ -237,12 +239,13 @@
 </ul>
 
 <h2><a class="toc-backref" id="simple-types-number-types" href="#simple-types-number-types">number types</a></h2><ul class="simple"><li>BackwardsIndex alias for distinct int, see range docs</li>
-<li>float (alias for float64|BiggestFloat) === processors fastest type</li>
-<li>float: float32 (C Float), 64 (C Double)</li>
+<li>BiggestInt alias for int64</li>
+<li>BiggestUInt alias uinty64</li>
+<li>float (alias for float64|BiggestFloat) === processors fastest type,</li>
+<li>float32,64</li>
 <li>Inf float64 infinity</li>
-<li>int (signed), 32bit/64bit depending on system</li>
-<li>int === same size as pointer (platform word size), bitwidth depends on architecture</li>
-<li>int8,16,32,64 - 8 = +-127, 16 = +-~32k, 32 = +-~2.1billion, BiggestInt alias for int64</li>
+<li>int (signed), 32bit/64bit os arch, platform word size, bitwidth depends on os arch</li>
+<li>int8,16,32,64</li>
 <li>NaN not a number</li>
 <li>Natural alias for range[0, ..high(int): useful for documentation/debugging/guards</li>
 <li>NegInf !inf</li>
@@ -257,13 +260,23 @@
 <li>SomeSignedInt matches all signed integer types</li>
 <li>SomeUnsignedInt matches all unsigned integer types</li>
 <li>uint: unsigned integers, 32/64 bit depending on system,</li>
-<li>uint8,16,32,64 # 8 = 0 -&gt; 2550, 16 = ~65k, 32 = ~4billion, BiggestUInt alias uinty64</li>
+<li>uint8,16,32,64</li>
 </ul>
 
-<h2><a class="toc-backref" id="simple-types-mem-procs" href="#simple-types-mem-procs">mem procs</a></h2><ul class="simple"><li>addr Take the address of a memory location</li>
+<h2><a class="toc-backref" id="simple-types-reference-types" href="#simple-types-reference-types">reference types</a></h2><ul class="simple"><li>ptr generic untraced pointer</li>
+<li>ref generic traced pointer</li>
+</ul>
+
+<h2><a class="toc-backref" id="simple-types-reference-procs" href="#simple-types-reference-procs">reference procs</a></h2><ul class="simple"><li>addr Take the address of a memory location</li>
 <li>owned</li>
 <li>unown</li>
 <li>disarm</li>
+</ul>
+
+<h2><a class="toc-backref" id="simple-types-misc-types" href="#simple-types-misc-types">misc types</a></h2><ul class="simple"><li>typedesc meta type denoting a type description, e.g. in a proc signature to pass in a type</li>
+<li>nil</li>
+<li>void</li>
+<li>auto for type inference</li>
 </ul>
 </p>
     <div class="section" id="8">
@@ -274,8 +287,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L183" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L183" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L198" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L198" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -284,8 +297,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L182" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L182" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L197" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L197" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -294,8 +307,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L246" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L246" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L261" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L261" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -304,8 +317,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L229" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L229" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L244" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L244" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -320,8 +333,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L227" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L227" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L242" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L242" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -330,8 +343,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L236" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L236" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L251" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L251" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -342,8 +355,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L237" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L237" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L252" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L252" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -352,8 +365,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L216" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L216" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L231" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L231" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -367,8 +380,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L217" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L217" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L232" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L232" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -377,8 +390,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L224" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L224" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L239" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L239" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -387,8 +400,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L225" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L225" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L240" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L240" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -397,8 +410,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L226" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L226" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L241" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L241" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -407,8 +420,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L144" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L144" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L159" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L159" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -417,8 +430,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L235" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L235" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L250" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L250" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -427,8 +440,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L141" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L141" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L156" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L156" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -437,8 +450,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L134" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L134" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L149" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L149" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -447,8 +460,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L135" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L135" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L150" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L150" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -457,8 +470,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L142" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L142" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L157" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L157" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -467,8 +480,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L136" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L136" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L151" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L151" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -477,8 +490,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L143" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L143" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L158" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L158" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -493,8 +506,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L154" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L154" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L169" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L169" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -503,8 +516,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L148" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L148" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L163" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L163" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -513,8 +526,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L149" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L149" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L164" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L164" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -523,8 +536,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L159" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L159" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L174" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L174" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -533,8 +546,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L160" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L160" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L175" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L175" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -543,8 +556,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L170" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L170" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L185" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L185" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -553,8 +566,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L171" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L171" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L186" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L186" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -563,8 +576,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L172" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L172" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L187" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L187" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -573,8 +586,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L173" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L173" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L188" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L188" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -583,8 +596,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L174" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L174" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L189" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L189" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -593,8 +606,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L196" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L196" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L211" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L211" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -603,8 +616,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L150" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L150" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L165" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L165" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -613,8 +626,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L151" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L151" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L166" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L166" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -623,8 +636,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L152" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L152" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L167" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L167" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -633,8 +646,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L153" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L153" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L168" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L168" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -643,8 +656,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L167" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L167" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L182" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L182" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -653,8 +666,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L168" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L168" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L183" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L183" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -663,8 +676,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L169" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L169" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L184" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L184" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -673,8 +686,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L200" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L200" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L215" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L215" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -683,8 +696,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L204" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L204" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/helloworld/modules/typeSimple.nim#L219" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/helloworld/modules/typeSimple.nim#L219" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -698,7 +711,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-04-16 07:14:00 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-04-16 17:48:15 UTC</small>
       </div>
     </div>
   </div>

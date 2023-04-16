@@ -2,11 +2,11 @@ nimTitle	exceptionHandlingDocs	bookofnim/helloworld/modules/exceptionHandlingDoc
 nim	goodcode	bookofnim/helloworld/modules/exceptionHandlingDocs.html#goodcode	let goodcode		157
 nim	badcode	bookofnim/helloworld/modules/exceptionHandlingDocs.html#badcode	let badcode		158
 nim	GoodApplications	bookofnim/helloworld/modules/exceptionHandlingDocs.html#GoodApplications	object GoodApplications		162
-nim	err	bookofnim/helloworld/modules/exceptionHandlingDocs.html#err	var err		180
-nim	LearningError	bookofnim/helloworld/modules/exceptionHandlingDocs.html#LearningError	object LearningError		184
-nim	neverThrows	bookofnim/helloworld/modules/exceptionHandlingDocs.html#neverThrows	proc neverThrows(): string		197
-nim	maybeThrows	bookofnim/helloworld/modules/exceptionHandlingDocs.html#maybeThrows,int	proc maybeThrows(x: int): int		202
-nim	deferExample	bookofnim/helloworld/modules/exceptionHandlingDocs.html#deferExample	proc deferExample(): auto		241
+nim	err	bookofnim/helloworld/modules/exceptionHandlingDocs.html#err	var err		178
+nim	LearningError	bookofnim/helloworld/modules/exceptionHandlingDocs.html#LearningError	object LearningError		182
+nim	neverThrows	bookofnim/helloworld/modules/exceptionHandlingDocs.html#neverThrows	proc neverThrows(): string		193
+nim	maybeThrows	bookofnim/helloworld/modules/exceptionHandlingDocs.html#maybeThrows,int	proc maybeThrows(x: int): int		198
+nim	deferExample	bookofnim/helloworld/modules/exceptionHandlingDocs.html#deferExample	proc deferExample(): auto		237
 nim	loc`gensym11	bookofnim/helloworld/modules/exceptionHandlingDocs.html#loc`gensym11	const loc`gensym11		51
 nim	ploc`gensym11	bookofnim/helloworld/modules/exceptionHandlingDocs.html#ploc`gensym11	const ploc`gensym11		52
 nim	wrong`gensym12	bookofnim/helloworld/modules/exceptionHandlingDocs.html#wrong`gensym12	var wrong`gensym12		102

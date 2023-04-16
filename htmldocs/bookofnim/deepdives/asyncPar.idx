@@ -1,28 +1,28 @@
 nimTitle	asyncPar	bookofnim/deepdives/asyncPar.html	module src/bookofnim/deepdives/asyncPar		0
-nim	bf	bookofnim/deepdives/asyncPar.html#bf	var bf		326
-nim	gf	bookofnim/deepdives/asyncPar.html#gf	var gf		327
-nim	L	bookofnim/deepdives/asyncPar.html#L	var L		328
-nim	numThreads	bookofnim/deepdives/asyncPar.html#numThreads	var numThreads		329
-nim	echoAction	bookofnim/deepdives/asyncPar.html#echoAction,T	proc echoAction[T](x: T): void		331
-nim	relay	bookofnim/deepdives/asyncPar.html#relay	var relay		354
-nim	sendAction	bookofnim/deepdives/asyncPar.html#sendAction	proc sendAction(): void		358
-nim	receiveAction	bookofnim/deepdives/asyncPar.html#receiveAction	proc receiveAction(): void		364
-nim	sendActionA	bookofnim/deepdives/asyncPar.html#sendActionA	proc sendActionA(): void		378
-nim	receiveActionA	bookofnim/deepdives/asyncPar.html#receiveActionA	proc receiveActionA(): void		384
-nim	f1	bookofnim/deepdives/asyncPar.html#f1	proc f1(): Future[string]		423
-nim	fv1	bookofnim/deepdives/asyncPar.html#fv1	let fv1		431
-nim	f2	bookofnim/deepdives/asyncPar.html#f2	proc f2(): Future[string]		435
-nim	laterGater	bookofnim/deepdives/asyncPar.html#laterGater,string	proc laterGater(s: string): Future[void]		445
-nim	seeya	bookofnim/deepdives/asyncPar.html#seeya	let seeya		451
-nim	afterwhile	bookofnim/deepdives/asyncPar.html#afterwhile	let afterwhile		452
-nim	fake1	bookofnim/deepdives/asyncPar.html#fake1	let fake1		459
-nim	fakeFailed	bookofnim/deepdives/asyncPar.html#fakeFailed	let fakeFailed		460
-nim	someErr	bookofnim/deepdives/asyncPar.html#someErr	let someErr		461
-nim	fake2	bookofnim/deepdives/asyncPar.html#fake2	var fake2		462
-nim	afilepath	bookofnim/deepdives/asyncPar.html#afilepath	const afilepath		490
-nim	reader	bookofnim/deepdives/asyncPar.html#reader	var reader		498
-nim	writer	bookofnim/deepdives/asyncPar.html#writer	var writer		499
-nim	cursize	bookofnim/deepdives/asyncPar.html#cursize	let cursize		503
+nim	bf	bookofnim/deepdives/asyncPar.html#bf	var bf		323
+nim	gf	bookofnim/deepdives/asyncPar.html#gf	var gf		324
+nim	L	bookofnim/deepdives/asyncPar.html#L	var L		325
+nim	numThreads	bookofnim/deepdives/asyncPar.html#numThreads	var numThreads		326
+nim	echoAction	bookofnim/deepdives/asyncPar.html#echoAction,T	proc echoAction[T](x: T): void		328
+nim	relay	bookofnim/deepdives/asyncPar.html#relay	var relay		351
+nim	sendAction	bookofnim/deepdives/asyncPar.html#sendAction	proc sendAction(): void		355
+nim	receiveAction	bookofnim/deepdives/asyncPar.html#receiveAction	proc receiveAction(): void		361
+nim	sendActionA	bookofnim/deepdives/asyncPar.html#sendActionA	proc sendActionA(): void		375
+nim	receiveActionA	bookofnim/deepdives/asyncPar.html#receiveActionA	proc receiveActionA(): void		381
+nim	f1	bookofnim/deepdives/asyncPar.html#f1	proc f1(): Future[string]		420
+nim	fv1	bookofnim/deepdives/asyncPar.html#fv1	let fv1		428
+nim	f2	bookofnim/deepdives/asyncPar.html#f2	proc f2(): Future[string]		432
+nim	laterGater	bookofnim/deepdives/asyncPar.html#laterGater,string	proc laterGater(s: string): Future[void]		442
+nim	seeya	bookofnim/deepdives/asyncPar.html#seeya	let seeya		448
+nim	afterwhile	bookofnim/deepdives/asyncPar.html#afterwhile	let afterwhile		449
+nim	fake1	bookofnim/deepdives/asyncPar.html#fake1	let fake1		456
+nim	fakeFailed	bookofnim/deepdives/asyncPar.html#fakeFailed	let fakeFailed		457
+nim	someErr	bookofnim/deepdives/asyncPar.html#someErr	let someErr		458
+nim	fake2	bookofnim/deepdives/asyncPar.html#fake2	var fake2		459
+nim	afilepath	bookofnim/deepdives/asyncPar.html#afilepath	const afilepath		487
+nim	reader	bookofnim/deepdives/asyncPar.html#reader	var reader		495
+nim	writer	bookofnim/deepdives/asyncPar.html#writer	var writer		496
+nim	cursize	bookofnim/deepdives/asyncPar.html#cursize	let cursize		500
 heading	concurrency and parallelism	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism	 concurrency and parallelism		0
 heading	TLDR	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-tldr	  TLDR		0
 heading	links	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-links	  links		0

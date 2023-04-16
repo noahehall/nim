@@ -1,44 +1,44 @@
 nimTitle	typeSimple	bookofnim/helloworld/modules/typeSimple.html	module src/bookofnim/helloworld/modules/typeSimple		0
-nim	xxx	bookofnim/helloworld/modules/typeSimple.html#xxx	let xxx		134
-nim	y	bookofnim/helloworld/modules/typeSimple.html#y	let y		135
-nim	z	bookofnim/helloworld/modules/typeSimple.html#z	let z		136
-nim	x1	bookofnim/helloworld/modules/typeSimple.html#x1	let x1		141
-nim	y1	bookofnim/helloworld/modules/typeSimple.html#y1	let y1		142
-nim	z1	bookofnim/helloworld/modules/typeSimple.html#z1	let z1		143
-nim	sum	bookofnim/helloworld/modules/typeSimple.html#sum	let sum		144
-nim	b	bookofnim/helloworld/modules/typeSimple.html#b	const b		148
-nim	c	bookofnim/helloworld/modules/typeSimple.html#c	const c		149
-nim	negint	bookofnim/helloworld/modules/typeSimple.html#negint	const negint		150
-nim	num0	bookofnim/helloworld/modules/typeSimple.html#num0	const num0		151
-nim	num1	bookofnim/helloworld/modules/typeSimple.html#num1	const num1		152
-nim	num2	bookofnim/helloworld/modules/typeSimple.html#num2	const num2		153
-nim	amilliamilliamilli	bookofnim/helloworld/modules/typeSimple.html#amilliamilliamilli	const amilliamilliamilli		154
-nim	e	bookofnim/helloworld/modules/typeSimple.html#e	const e		159
-nim	f	bookofnim/helloworld/modules/typeSimple.html#f	const f		160
-nim	num3	bookofnim/helloworld/modules/typeSimple.html#num3	const num3		167
-nim	num4	bookofnim/helloworld/modules/typeSimple.html#num4	const num4		168
-nim	num5	bookofnim/helloworld/modules/typeSimple.html#num5	const num5		169
-nim	g	bookofnim/helloworld/modules/typeSimple.html#g	const g		170
-nim	h	bookofnim/helloworld/modules/typeSimple.html#h	const h		171
-nim	i	bookofnim/helloworld/modules/typeSimple.html#i	const i		172
-nim	l	bookofnim/helloworld/modules/typeSimple.html#l	const l		173
-nim	m	bookofnim/helloworld/modules/typeSimple.html#m	const m		174
-nim	globalint	bookofnim/helloworld/modules/typeSimple.html#globalint	var globalint		182
-nim	globalfloat	bookofnim/helloworld/modules/typeSimple.html#globalfloat	var globalfloat		183
-nim	n	bookofnim/helloworld/modules/typeSimple.html#n	const n		196
-nim	o	bookofnim/helloworld/modules/typeSimple.html#o	const o		200
-nim	p	bookofnim/helloworld/modules/typeSimple.html#p	const p		204
-nim	str1	bookofnim/helloworld/modules/typeSimple.html#str1	let str1		216
-nim	str2	bookofnim/helloworld/modules/typeSimple.html#str2	let str2		217
-nim	str3	bookofnim/helloworld/modules/typeSimple.html#str3	let str3		224
-nim	str4	bookofnim/helloworld/modules/typeSimple.html#str4	let str4		225
-nim	str5	bookofnim/helloworld/modules/typeSimple.html#str5	let str5		226
-nim	char1	bookofnim/helloworld/modules/typeSimple.html#char1	let char1		227
-nim	msg	bookofnim/helloworld/modules/typeSimple.html#msg	var msg		229
-nim	woop6	bookofnim/helloworld/modules/typeSimple.html#woop6	let woop6		235
-nim	flush	bookofnim/helloworld/modules/typeSimple.html#flush	let flush		236
-nim	multiline	bookofnim/helloworld/modules/typeSimple.html#multiline	let multiline		237
-nim	globalstring	bookofnim/helloworld/modules/typeSimple.html#globalstring	var globalstring		246
+nim	xxx	bookofnim/helloworld/modules/typeSimple.html#xxx	let xxx		149
+nim	y	bookofnim/helloworld/modules/typeSimple.html#y	let y		150
+nim	z	bookofnim/helloworld/modules/typeSimple.html#z	let z		151
+nim	x1	bookofnim/helloworld/modules/typeSimple.html#x1	let x1		156
+nim	y1	bookofnim/helloworld/modules/typeSimple.html#y1	let y1		157
+nim	z1	bookofnim/helloworld/modules/typeSimple.html#z1	let z1		158
+nim	sum	bookofnim/helloworld/modules/typeSimple.html#sum	let sum		159
+nim	b	bookofnim/helloworld/modules/typeSimple.html#b	const b		163
+nim	c	bookofnim/helloworld/modules/typeSimple.html#c	const c		164
+nim	negint	bookofnim/helloworld/modules/typeSimple.html#negint	const negint		165
+nim	num0	bookofnim/helloworld/modules/typeSimple.html#num0	const num0		166
+nim	num1	bookofnim/helloworld/modules/typeSimple.html#num1	const num1		167
+nim	num2	bookofnim/helloworld/modules/typeSimple.html#num2	const num2		168
+nim	amilliamilliamilli	bookofnim/helloworld/modules/typeSimple.html#amilliamilliamilli	const amilliamilliamilli		169
+nim	e	bookofnim/helloworld/modules/typeSimple.html#e	const e		174
+nim	f	bookofnim/helloworld/modules/typeSimple.html#f	const f		175
+nim	num3	bookofnim/helloworld/modules/typeSimple.html#num3	const num3		182
+nim	num4	bookofnim/helloworld/modules/typeSimple.html#num4	const num4		183
+nim	num5	bookofnim/helloworld/modules/typeSimple.html#num5	const num5		184
+nim	g	bookofnim/helloworld/modules/typeSimple.html#g	const g		185
+nim	h	bookofnim/helloworld/modules/typeSimple.html#h	const h		186
+nim	i	bookofnim/helloworld/modules/typeSimple.html#i	const i		187
+nim	l	bookofnim/helloworld/modules/typeSimple.html#l	const l		188
+nim	m	bookofnim/helloworld/modules/typeSimple.html#m	const m		189
+nim	globalint	bookofnim/helloworld/modules/typeSimple.html#globalint	var globalint		197
+nim	globalfloat	bookofnim/helloworld/modules/typeSimple.html#globalfloat	var globalfloat		198
+nim	n	bookofnim/helloworld/modules/typeSimple.html#n	const n		211
+nim	o	bookofnim/helloworld/modules/typeSimple.html#o	const o		215
+nim	p	bookofnim/helloworld/modules/typeSimple.html#p	const p		219
+nim	str1	bookofnim/helloworld/modules/typeSimple.html#str1	let str1		231
+nim	str2	bookofnim/helloworld/modules/typeSimple.html#str2	let str2		232
+nim	str3	bookofnim/helloworld/modules/typeSimple.html#str3	let str3		239
+nim	str4	bookofnim/helloworld/modules/typeSimple.html#str4	let str4		240
+nim	str5	bookofnim/helloworld/modules/typeSimple.html#str5	let str5		241
+nim	char1	bookofnim/helloworld/modules/typeSimple.html#char1	let char1		242
+nim	msg	bookofnim/helloworld/modules/typeSimple.html#msg	var msg		244
+nim	woop6	bookofnim/helloworld/modules/typeSimple.html#woop6	let woop6		250
+nim	flush	bookofnim/helloworld/modules/typeSimple.html#flush	let flush		251
+nim	multiline	bookofnim/helloworld/modules/typeSimple.html#multiline	let multiline		252
+nim	globalstring	bookofnim/helloworld/modules/typeSimple.html#globalstring	var globalstring		261
 heading	simple types	bookofnim/helloworld/modules/typeSimple.html#simple-types	 simple types		0
 heading	TLDR	bookofnim/helloworld/modules/typeSimple.html#simple-types-tldr	  TLDR		0
 heading	links	bookofnim/helloworld/modules/typeSimple.html#simple-types-links	  links		0
@@ -52,4 +52,6 @@ heading	string/char procs	bookofnim/helloworld/modules/typeSimple.html#simple-ty
 heading	numbers	bookofnim/helloworld/modules/typeSimple.html#simple-types-numbers	  numbers		0
 heading	number procs	bookofnim/helloworld/modules/typeSimple.html#simple-types-number-procs	  number procs		0
 heading	number types	bookofnim/helloworld/modules/typeSimple.html#simple-types-number-types	  number types		0
-heading	mem procs	bookofnim/helloworld/modules/typeSimple.html#simple-types-mem-procs	  mem procs		0
+heading	reference types	bookofnim/helloworld/modules/typeSimple.html#simple-types-reference-types	  reference types		0
+heading	reference procs	bookofnim/helloworld/modules/typeSimple.html#simple-types-reference-procs	  reference procs		0
+heading	misc types	bookofnim/helloworld/modules/typeSimple.html#simple-types-misc-types	  misc types		0
