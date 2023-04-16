@@ -95,8 +95,8 @@ number procs
 - toInt	Convert floating-point number into an int
 - xor	Bitwise xor	^
 
-## number types
----------------
+number types
+------------
 - BackwardsIndex alias for distinct int, see range docs
 - float (alias for float64|BiggestFloat) === processors fastest type
 - float: float32 (C Float), 64 (C Double)
