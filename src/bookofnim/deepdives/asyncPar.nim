@@ -24,7 +24,7 @@
   - vars local to threads must use {.threadvar.}
     - implies all the effects of {.global.}
     - can be defined but not initialized: it will be replicated at thread creation
-      - `var x* {.threadvar.}: string` is okay, but not `.... = "abc"
+      - `var x* {.threadvar.}: string` is okay, but not `.... = "abc"`
   - exceptions
     - handled exceptions dont propagate across threads
     - unhandled exceptions terminates the entire process

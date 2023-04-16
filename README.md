@@ -105,9 +105,7 @@ blogs
 
 ---
 
-- stay away from nimpretty, its almost useless as a formatter
-  - run `nimpretty src/bookofnim.nim` and check the result
-  - [we're all waiting on this feature request](https://github.com/nim-lang/Nim/issues/8458)
+- stay away from nimpretty [until this is ever merged](https://github.com/nim-lang/Nim/issues/8458)
 - [read through concepts](https://nim-lang.org/docs/compiler/concepts.html)
   - [and this forum post](https://forum.nim-lang.org/t/9992)
   - [probably should review each module here](https://nim-lang.org/docs/compiler/theindex.html)
