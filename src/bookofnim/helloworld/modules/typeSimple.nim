@@ -23,8 +23,8 @@ links
 - ^0 terminated so nim strings can be converted to a cstring without a copy
 - compared using lexicographical order
 - to intrepret unicode, you need to import the unicode module
-- addQuoted escapes and quotes y:string then appends to x:string
-- addEscapedChar escapes y:char then appends to x:string
+- addQuoted escapes and quotes y then appends to x in place
+- addEscapedChar escapes y (backslashes everything) then appends to x
 
 ## char
 - 8 bit char (unsigned, basically an alias for uint8)
@@ -69,6 +69,8 @@ boolean procs
 - s.add(c)	Add character to the string
 - $	Convert various types to string
 - substr
+- find returns index of char in string
+- contains true/false
 
 ## numbers
 
