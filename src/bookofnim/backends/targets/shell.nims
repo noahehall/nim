@@ -2,7 +2,6 @@
 # ^ or /usr/bin/env -S nim --hints:off e.g.
 
 
-
 import std/[sugar, sequtils, strformat, strutils, distros, os]
 
 const
