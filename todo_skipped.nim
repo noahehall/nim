@@ -1,4 +1,46 @@
 #[
+## new list of todos
+- take the pure dir one by one: https://github.com/nim-lang/Nim/tree/devel/lib/pure
+- take the impure dir one by one: https://github.com/nim-lang/Nim/tree/devel/lib/impure
+- then std: https://github.com/nim-lang/Nim/tree/devel/lib/std
+- then linux: https://github.com/nim-lang/Nim/tree/devel/lib/posix
+- then posix: https://github.com/nim-lang/Nim/tree/devel/lib/posix
+- then js: https://github.com/nim-lang/Nim/tree/devel/lib/js
+- haha fk the windows dir
+
+## copypasta from readme
+
+
+---
+
+### quickies
+
+- [js issues](https://github.com/nim-lang/Nim/labels/Javascript)
+
+---
+
+- stay away from nimpretty [until this is ever merged](https://github.com/nim-lang/Nim/issues/8458)
+- [read through concepts](https://nim-lang.org/docs/compiler/concepts.html)
+  - [and this forum post](https://forum.nim-lang.org/t/9992)
+  - [probably should review each module here](https://nim-lang.org/docs/compiler/theindex.html)
+  - [haha we skipped experimental features](https://nim-lang.org/docs/manual_experimental.html)
+    - this is a must do
+- move the creation of htmldocs to a github action
+- [chaining anonymouse procs using with](https://forum.nim-lang.org/t/9500)
+  - add example
+- [check how qrgen overrides docgen with nimdoc.cfg](https://github.com/aruZeta/QRgen/blob/main/nimdoc.cfg)
+  - not sure how we missed this in the beginning
+- dont forget about the nimlang/tools dir
+- find the rst syntax for creating links between pages and remove all the markdown links
+- fix tests/src/skip and add it to a new `good examples of bad code` section
+- [check how getTime handles os checks](https://github.com/nim-lang/Nim/blob/devel/lib/pure/times.nim#L897)
+- [skipped most of the section on cross compilation](https://nim-lang.org/docs/nimc.html#crossminuscompilation-for-windows)
+- [checkout status opensource theyve already built bunch of things you'll need for nirv](https://github.com/status-im)
+- you should review compile_backends.nim again stuff should be alot clearer now
+- [optmizing nim](https://nim-lang.org/docs/nimc.html#optimizing-for-nim)
+- [pacman devkitpro for nix](https://github.com/devkitPro/pacman/releases)
+  - forgot why this is here but its mentioned in the docs for something
+
 
 todos
 -----

@@ -5,14 +5,9 @@
 
 ##[
 ## TLDR
-- Thread[T/void]
-  - thread (system) can be saved to a var
-  - spawn (threadpool): is ephemeral
-- proc[T/void] executed by and local to thread
-- relay: channel[T] node that relays data across actions and the thread in which its declared
-  - the main thread (module scope) is simpler and shared across all actors
-  - else you can declare within the body of action and send the ptr to another
 - threads
+  - thread (system) can be saved to a var / proc
+  - spawn (threadpool): is ephemeral
   - require --threads:on switch
   - each thread has its own GC heap and mem sharing is restricted
     - improves efficiency and prevents race conditions
@@ -27,9 +22,12 @@
   - exceptions
     - handled exceptions dont propagate across threads
     - unhandled exceptions terminates the entire process
-- channels
+- channel[T]
+  - node that relays data across threads in which its declared
+  - the main thread (module scope) is simpler and shared across all threads
+  - else you can declare within the body of proc thread and send the ptr to another
+  - meant for threads, unstable when used with spawn
   - require --threads:on switch
-  - designed for use with Threads, not Threadpool.spawn
   - cant relay cyclic data structures
   - can be passed by ptr to actions or declared in module scope
 - threadpool

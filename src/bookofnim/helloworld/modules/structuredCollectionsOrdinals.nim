@@ -115,6 +115,7 @@ immutable ops
 - find returns index of thing in item
 
 
+
 mutable ops
 -----------
 - add	y to collection x
@@ -122,11 +123,13 @@ mutable ops
 - dec(x)	decrements x by one
 - del	O(1) delete item at index, doesn't preserve the order
 - delete	Delete an item while preserving the order of elements (O(n) operation)
+- grow sets length of X to y
 - inc(x, n)	increments x by n; n is an integer
 - inc(x)	increments x by one
 - insert	Insert an item into container x
 - pop	Remove and return last item of a sequence
 - setLen increase/truncate the length of something
+- shrink truncates X to length Y
 - swapRefsInArray swaps x[N] with y[N] if the elements are refs
 
 inspection ops
