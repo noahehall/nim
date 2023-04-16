@@ -56,7 +56,7 @@ proc createDependencyGraphs(): (string, int) =
     for output in @[
       rootDir / "src/bookofnim.dot",
       rootDir / "src/bookofnim.png"
-    ]: output.mvFile absolutePath(docsDir / output.extractFilename)
+    ]: output.mvFile rootDir / docsDir / output.extractFilename
     ("dependency graph generated", 0)
   except OSError:
     ("failed to generate deps graph", 1)
