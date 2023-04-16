@@ -7,16 +7,13 @@
 ## TLDR
 - [custom types as keys require hash + == procs](https://nim-lang.org/docs/tables.html#basic-usage-hashing)
 - generally all table types have the same interface; CountTables a bit more
-
+- critbit can be used as a sorted string dictionary, see containers
 
 links
 -----
-- other
-  - [peter: option handling in nim](https://peterme.net/optional-value-handling-in-nim.html)
 - high impact
   - [tables aka dictionary](https://nim-lang.org/docs/tables.html)
   - [string tables](https://nim-lang.org/docs/strtabs.html)
-  - [options](https://nim-lang.org/docs/options.html)
   - [fusion btree tables](https://nim-lang.github.io/fusion/src/fusion/btreetables.html)
 - niche
   - [enum utils](https://nim-lang.org/docs/enumutils.html)
@@ -92,27 +89,6 @@ strtab types
 
 import std/[sugar, strformat, strutils, sequtils]
 
-echo "############################ options"
-# option[SomeType](nil) convert SomeType to an option
-import std/options
-
-const something = (x: string) => (if x == "thing": some("some" & x) else: none(string)) ## \
-  ## converts a thing to something
-
-const
-  maybe = some("thing") ## optional string
-  nothing = none(string) ## optional string
-
-echo fmt"{maybe=}"
-echo fmt"{nothing.isNone=}"
-echo fmt"{maybe.isSome=}"
-echo fmt"always isSome first {maybe.get=}"
-echo fmt"prefer get {maybe.unsafeGet=}"
-echo fmt"{nothing.get(maybe.get)=}"
-echo fmt"{maybe.filter(x => x.len == 1_000_000)=}"
-echo fmt"will mutate if nothings returned {maybe.map(x => x & x)=}"
-echo fmt"{maybe.flatMap(something)=}"
-echo fmt"{some(maybe).flatten=}"
 
 echo "############################ tables"
 # newTableFrom
