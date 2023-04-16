@@ -148,6 +148,10 @@
 
 ### cmdline
 
+#### nimcr
+
+- [truly run nimscripts as if they were shellscripts](https://github.com/PMunch/nimcr)
+
 #### cligen
 
 - [native API inferred cmdline parser](https://github.com/c-blake/cligen)

@@ -2,6 +2,9 @@
 # ^ or /usr/bin/env -S nim --hints:off e.g.
 
 
+# TODO: spike moving to nimcr
+# ^ @see https://github.com/PMunch/nimcr
+
 import std/[sugar, sequtils, strformat, strutils, distros, os]
 
 const
