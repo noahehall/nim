@@ -1,17 +1,16 @@
 ##
-## ordinals and structured
+## ordinals and structures
 ## =======================
 
 ##[
 ## TLDR
-- structured: arrays, sequences, tuples, objects, sets
-  - tuples and objects are in tupleObjectTable
+- structured types
   - can hold multiple values and have unlimited levels of nesting
   - two groups
-    - containers: e.g. objects, tuples are containers of fields
-    - collections: e.g. sequences, arrays are collections of items
-- ordinals: enums, integers, char, bool, subranges
-  - integers, chars and bool are in typeSimple
+    - containers of fields: e.g. objects, tuples (are in tupleObjectTable.nim)
+    - collections of items: e.g. sequences, arrays, char, sub/ranges
+- ordinal types
+  - enums, u/integers, bool
   - are countable and ordered, with a smallest & highest value
 - FYI about low & high procs
   - should only be used with types not values
@@ -20,7 +19,12 @@ links
 -----
 - [nim by example: arrays](https://nim-by-example.github.io/arrays/)
 
-## arrays
+## structured: collections
+- cstringArray
+
+array
+-----
+- array[n, T] fixed-length dimensionally homogeneous
 - array, openArray, UncheckedArray, varargs
 - the array size is encoded in its type
 - to pass an array to a proc its signature must specify the size and type
@@ -29,28 +33,33 @@ links
 - each array dimension must have the same type,
   - nested (multi-dimensional) arrays can have different types than their parent
 
-## set
+array like
+----------
+- openArray[T] a procs parameter that accepts an array/seq of any size but only of 1 dimension
+- UncheckedArray[T] array with no bounds checking for implmenting customized flexibly sized arrays
+- varargs[T] an openarray paramter that accepts a variable number of args in a procedure
+
+
+set (bit set)
+-------------
+- set[T] generic set constructor
 - basetype must be of int8/16, uint8/16, byte, char, enum
   - hash sets (import std/sets) dont have this restriction
 - implemented as high performance bit vectors
 - often used to provide flags for procs
 
-## sequence
+sequence
+--------
+- seq[T] dynamic-length dimensionally homogeneous
 - always heap allocated & gc'ed
 - can be passed to any proc accepting a seq/openarray
 - the @ is the array to seq operator: init array and convert to seq
   - converting an openArray into a seq is not as efficient as it copies all elements
   - or use the newSeq proc
 
-## enum
-- A variable of an enum can only be assigned one of the enum's specified values
-- enum values are usually a set of ordered symbols, internally mapped to an integer (0-based)
-- $ convert enum index value to its name
-- ord convert enum name to its index value
-- its idiomatic nim to have ordinal enums (0, 1, 2, 3, etc)
-  - and not assign disjoint values (1, 5, -10)
-
-## range
+range
+-----
+- range[T] generic constructor for range
 - range of values from an ordinal/flaoting-point type
 - .. Binary slice operator that constructs an inclusive interval
 - b[0 .. ^1] ==  b[0 .. b.len-1] == b[0 ..< b.len]
@@ -63,23 +72,26 @@ links
   - should be used to guard against negative numbers
   - you can use Natural.low to check for 0
 
-## slice
+slice
+-----
 - provides a range of values matching the type required by the operator/proc
 - same syntax as slice but different type (Slice) & context
 - collection types define operators/procs which accept slices in place of ranges
   - the operator/proc determines the type of values they except in a slice
 
-## ordinal types
-- array[n, T] fixed-length dimensionally homogeneous
-- cstringArray
-- openArray[T] a procs parameter that accepts an array/seq of any size but only of 1 dimension
+
+## ordinals
 - Ordinal[T] generic ordinal type
-- range[T] generic constructor for range
-- seq[T] dynamic-length dimensionally homogeneous
-- set[T] generic set constructor
-- SomeOrdinal
-- UncheckedArray[T] array with no bounds checking for implmenting customized flexibly sized arrays
-- varargs[T] an openarray paramter that accepts a variable number of args in a procedure
+- SomeOrdinal: any int, unit, bool, or enum
+
+enum
+----
+- A variable of an enum can only be assigned one of the enum's specified values
+- enum values are usually a set of ordered symbols, internally mapped to an integer (0-based)
+- $ convert enum index value to its name
+- ord convert enum name to its index value
+- its idiomatic nim to have ordinal enums (0, 1, 2, 3, etc)
+  - and not assign disjoint values (1, 5, -10)
 
 ## generic interface
 - should generally work with most types in this file

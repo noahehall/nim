@@ -25,6 +25,11 @@ todos
 - enables raw code substitution on nim's abstract syntax tree
 - are processed in the semantic pass of the compiler
 - accepts meta types
+
+template types
+--------------
+- untyped an expression thats not resolved for lazy evaluation
+- typed an expression that is resolved for greedy evaluation
 ]##
 
 echo "############################ template"

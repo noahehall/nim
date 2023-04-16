@@ -163,10 +163,8 @@ type GoodApplications* = object
   ## especially things like custom types
   ## may need additional abbreviations to describe their purpose
   pubfield*: string ## public: included in docs
-  # FYI: this throws on nim_docs src/bookofnim.nim
-  # ^ but not on nim doc src/bookofnim.nim
   # ^ Error: the field 'prvfield' is not accessible.
-  prvfield*: string # TODO: errors on doc creation
+  prvfield*: string # TODO: errors on doc creation if not exported
 
 echo "############################ documentation: runnableExamples"
 
@@ -178,12 +176,10 @@ runnableExamples:
 
 echo "############################ Exceptions "
 var err: ref OSError ## requires ref! only ref objects can be raised
-new(err) # a new OSError instance without a msg
+new(err) # instantiate it
 err.msg = "Oops! this is a bad error msg"
 
-type LearningError = object of CatchableError ## \
-  ## The first pass is figuring things out.
-  ## the second pass is ironing things out
+type LearningError = object of CatchableError
 
 block howlong:
   try:
@@ -221,7 +217,7 @@ if true:
     # explicitly convert the currentException to a type
     let e = (ref IOError)(getCurrentException())
     echo "wrong error type: ", e.msg
-  except:
+  except CatchableError:
     echo "unknown exception"
     let
       e = getCurrentException()

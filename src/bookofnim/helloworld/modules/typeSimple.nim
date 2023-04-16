@@ -100,12 +100,13 @@ number procs
 number types
 ------------
 - BackwardsIndex alias for distinct int, see range docs
-- float (alias for float64|BiggestFloat) === processors fastest type
-- float: float32 (C Float), 64 (C Double)
+- BiggestInt alias for int64
+- BiggestUInt alias uinty64
+- float (alias for float64|BiggestFloat) === processors fastest type,
+- float32,64
 - Inf float64 infinity
-- int (signed), 32bit/64bit depending on system
-- int === same size as pointer (platform word size), bitwidth depends on architecture
-- int8,16,32,64 - 8 = +-127, 16 = +-~32k, 32 = +-~2.1billion, BiggestInt alias for int64
+- int (signed), 32bit/64bit os arch, platform word size, bitwidth depends on os arch
+- int8,16,32,64
 - NaN not a number
 - Natural alias for range[0, ..high(int): useful for documentation/debugging/guards
 - NegInf !inf
@@ -120,14 +121,28 @@ number types
 - SomeSignedInt matches all signed integer types
 - SomeUnsignedInt matches all unsigned integer types
 - uint: unsigned integers, 32/64 bit depending on system,
-- uint8,16,32,64 # 8 = 0 -> 2550, 16 = ~65k, 32 = ~4billion, BiggestUInt alias uinty64
+- uint8,16,32,64
 
-## mem procs
+## reference types
+- ptr generic untraced pointer
+- ref generic traced pointer
+
+reference procs
+---------------
 - addr Take the address of a memory location
 - owned
 - unown
 - disarm
+
+## misc types
+- typedesc meta type denoting a type description, e.g. in a proc signature to pass in a type
+- nil
+- void
+- auto for type inference
+
 ]##
+
+{.push hint[XDeclaredButNotUsed]:off .}
 
 echo "############################ char"
 let

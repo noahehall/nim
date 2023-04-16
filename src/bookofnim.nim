@@ -8,17 +8,25 @@
 
 ##[
 ## TLDR
-- the minimum nim needed to make meaningful nim apps
+- the minimum nim needed to make meaningful nim v2 apps
 - always check the nim docs for the full syntax
 - if viewing this online:
   - every imported file has a `source` link to dive into the source code
 - the imported files (see below)
   - are grouped by expected search patterns & use case
-  - the nimscript source code [is available here](https://github.com/noahehall/nim/blob/develop/src/bookofnim/backends/targets/shell.nims)
+  - the nimscript guide [is available here](https://github.com/noahehall/nim/blob/develop/src/bookofnim/backends/targets/shell.nims)
 
 links
 -----
 - [latest test results](https://noahehall.github.io/nim/testresults.html)
+- use nims devel branch until the online documentation for v2 is ready
+  - [docs](https://github.com/nim-lang/Nim/tree/devel/doc)
+  - [system](https://github.com/nim-lang/Nim/blob/devel/lib/system.nim)
+  - [system imports](https://github.com/nim-lang/Nim/tree/devel/lib/system)
+  - [std](https://github.com/nim-lang/Nim/tree/devel/lib/std)
+  - [pure](https://github.com/nim-lang/Nim/tree/devel/lib/pure)
+  - [impure](https://github.com/nim-lang/Nim/tree/devel/lib/impure)
+
 ]##
 
 import bookofnim / helloworld / helloworld ## basic nim

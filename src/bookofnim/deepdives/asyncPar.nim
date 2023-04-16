@@ -5,14 +5,13 @@
 
 ##[
 ## TLDR
-- actors, actions and relays
-  - actor: instance of Thread[T/void]
-      - thread (system): a variable actor
-      - spawn (threadpool): an ephemeral ctor
-  - action: proc[T/void] executed by and local to an actor
-  - relay: channel[T] node that relays data across actions and the thread in which its declared
-    - the main thread (module scope) is simpler and shared across all actors
-    - else you can declare within the body of action and send the ptr to another
+- Thread[T/void]
+  - thread (system) can be saved to a var
+  - spawn (threadpool): is ephemeral
+- proc[T/void] executed by and local to thread
+- relay: channel[T] node that relays data across actions and the thread in which its declared
+  - the main thread (module scope) is simpler and shared across all actors
+  - else you can declare within the body of action and send the ptr to another
 - threads
   - require --threads:on switch
   - each thread has its own GC heap and mem sharing is restricted

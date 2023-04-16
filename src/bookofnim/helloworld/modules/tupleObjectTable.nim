@@ -5,7 +5,7 @@
 ##[
 ## TLDR
 - heterogenous containers of named fields of any type
-- enums are in ordinalStructured.nim
+- enums are in ordinalStructured.nim#ordinals
 
 links
 -----
