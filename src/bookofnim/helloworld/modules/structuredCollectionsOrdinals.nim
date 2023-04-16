@@ -1,13 +1,13 @@
 ##
-## ordinals and structures
-## =======================
+## structured collections and ordinals
+## ===================================
 
 ##[
 ## TLDR
 - structured types
   - can hold multiple values and have unlimited levels of nesting
   - two groups
-    - containers of fields: e.g. objects, tuples (are in tupleObjectTable.nim)
+    - containers of fields: e.g. objects, tuples (check structuredContainers.nim)
     - collections of items: e.g. sequences, arrays, char, sub/ranges
 - ordinal types
   - enums, u/integers, bool
@@ -157,6 +157,7 @@ inspection ops
 - incl(A, elem)	same as A = A + {elem}
 
 ]##
+{.push hint[XDeclaredButNotUsed]:off, hint[GlobalVar]:off .}
 
 echo "############################ arrays"
 var # vars dont need to be initialized to a value

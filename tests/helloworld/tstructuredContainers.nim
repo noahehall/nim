@@ -4,4 +4,4 @@ discard """
   disabled: false # memory leaks
 """
 
-import bookofnim / helloworld / modules / ordinalStructured
+import bookofnim / helloworld / modules / structuredContainers
