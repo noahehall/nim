@@ -16,7 +16,7 @@ links
 - [system vars](https://nim-lang.org/docs/system.html#8)
 - [typeinfo](https://nim-lang.org/docs/typeinfo.html)
 - [converters](https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#converter)
-
+- [special types](https://nim-lang.org/docs/manual.html#special-types)
 
 ## var
 - runtime mutable global var
@@ -60,7 +60,6 @@ links
 - only widening (smaller > larger) conversions are automatic/implicit
 - ord(i): convert char to an int
 - parseInt/parseFloat from a string
-- static(x): force the compile-time evaluation of the given expression
 - toFloat(int): convert int to a float
 - toInt(float): convert float to an int
 - toOpenArray
@@ -68,8 +67,9 @@ links
 
 ## type inspection
 - type(x): retrieve the type of x, discouraged should use typeof
-- typeof(x): retrieve the type of x
+- typeof(x, mode = typeofIter): retrieve the type of x
 - typeOfProc: retrieve the result of a proc, i.e. typeof x, typeOfProc
+- TypeofMode: enum[typeofProc|typeofIter] second param to typeof
 
 ## echo/repr
 - roughly equivalent to writeLine(stdout, x); flushFile(stdout)
@@ -86,58 +86,33 @@ const woop3 = "flush"
 
 # docs
 const fac4 = (var x = 1; for i in 1..4: x *= i; x) ## \
-  ## notice the use of semi colins to have multiple statements on a single line
+  ## use of semi colins to have multiple statements on a single line
 
 echo woop1, woop2, woop3, fac4
 
-let `let` = "stropping"
-echo(`let`) ## stropping enables keywords as identifiers
+let `let` = "stropping" ## stropping enables keywords as identifiers
+echo(`let`)
 
-var autoInt: auto = 7 ## type inference, relevant for proc return type
-echo "autoInt labeled auto but its type is ", $type(autoInt)
-
-echo "############################ static"
-static:
-  ## explicitly requires compile-time execution
-  echo "at compile time"
-
-# docs copypasta didnt work, @see https://nim-lang.org/docs/manual.html#special-types-static-t
-proc meaningOfLife(question: static string): auto =
-  var what {.global.} = 42
-  result = question
-const theAnswer = meaningOfLife("what is it")
-# echo theAnswer, "the meaning of life is ", $what lol dunno what should be a global?
+var autoInt: auto = 7 ## type inference; relevant for proc return types
+echo "autoInt labeled auto but its type is ", type(autoInt)
 
 
 echo "############################ variable logic"
+# shallow copy isnt defined for arc/orc
 # shallow(blah) marks blah as shallow for optimization, subsequent assignments  wont deep copy
 # shallowCopy(x, y) copies y into x
 
-when compiles(3 + 4):
-  ## checks whether x can be compiled without any semantic error.
-  ## useful to verify whether a type supports some operation:
-  echo "'+' for integers is available at compile time"
-
-var typeSupportBlah = "halb"
-when declared typeSupportBlah:
-  ## whether x is declared at compile time
-  echo "blah is declared at compile time"
-
-when not declared thisDoesntExist:
-  echo "some thing doesnt exist at compile time"
-
-when declaredInScope typeSupportBlah:
-  ## checks current scope at compile time
-  echo "blah is declared in scope at compile time"
-
-when defined typeSupportBlah:
-  ## checks whether something is defined at compile time
-  echo "something is defined at compile time"
-
+let someString = "some string"
 var d33pcopy: string ## \
   ## if gc:arc|orc you have to enable via --deepcopy:on
-d33pcopy.deepCopy typeSupportBlah
+d33pcopy.deepCopy someString
 echo "deep copy of some other thing ", d33pcopy
+
+var a = "i was a"
+var b = "i was b"
+a.swap b
+echo "a and b", a, b
+
 
 # get the default value
 echo "the default int value is ", int.default
@@ -186,12 +161,19 @@ var myInt = 10
 proc doubleFloat(x: float): float = x * x
 echo "cast int to a float ", doubleFloat(cast[float](myInt))
 
-echo "############################ type coercions"
+echo "############################ type support"
 # assert typeof("a b c".split) is string
 # assert typeof("a b c".split, typeOfProc) is seq[string]
 
-echo "coerce to expression to static: ", static[bool](1 == 1)
+echo "a static bool ", static[bool](1 == 1)
 
+let myStaticVar = static(1 + 2) ## \
+  ## static(x): force the compile-time evaluation of the given expression
+echo "my static var", myStaticVar
+
+static:
+  # can also be used as a block
+  echo "at compile time"
 echo "############################ converters (implicit type conversion procs)"
 type Option[T] = object
   case hasValue: bool
@@ -235,7 +217,7 @@ echo "just a regular echo statement"
 # for use with funcs/procs marked as {.noSideEffect.}
 debugEcho "this time with debugEcho "
 
-# prints anything
+# returns the string representation of anything
 # custom types cant use $ unless its defined for them (see elseware)
 # but you can use the repr proc on anything (its not the prettiest)
 echo "this time with repr ", @[1,2,3].repr

@@ -7,6 +7,7 @@
 ## TLDR
 - lists/queues are kept in lists.nim
 - table like stuff in containers
+- if something quacks like a sequence, you can probably use its procs
 
 ## links
 - high impact
@@ -22,6 +23,9 @@
 ## seqs
 - toSeq(blah) transforms any iterable into a sequence
 - newSeqWith useful for creating 2 dimensional sequences
+- add
+- del
+- insert
 - some procs have an it variant for even more succintness
   - allIt
   - anyIt

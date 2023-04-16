@@ -44,6 +44,23 @@ links
   - off/on are aliases for true/false
 - if and while conditions must be of type bool
 
+boolean procs
+-------------
+- != == etc
+- is
+- isnot
+- not
+- notin
+- and
+- or
+- in
+- xor
+- of
+
+
+## comparisons
+- cmp two numbers/strings
+
 ## string/char procs
 - len(s)	Return the length of a string
 - chr(i)	Convert an int in the range 0..255 to a character
@@ -52,13 +69,18 @@ links
 - s.add(c)	Add character to the string
 - $	Convert various types to string
 - substr
-- in/notin are for checking if chars are/notin a string
 
-## number procs
+## numbers
+
+number procs
+------------
 - and	Bitwise and	&
 - ashr	Arithmetic shift right
+- abs value of some number
 - div	Integer division
+- high(NumberType)
 - Inf == high(int)
+- low(NumberType)
 - max(x,y)
 - min(x,y)
 - mod	Integer modulo (remainder)	%
@@ -74,6 +96,7 @@ links
 - xor	Bitwise xor	^
 
 ## number types
+---------------
 - BackwardsIndex alias for distinct int, see range docs
 - float (alias for float64|BiggestFloat) === processors fastest type
 - float: float32 (C Float), 64 (C Double)
@@ -81,6 +104,7 @@ links
 - int (signed), 32bit/64bit depending on system
 - int === same size as pointer (platform word size), bitwidth depends on architecture
 - int8,16,32,64 - 8 = +-127, 16 = +-~32k, 32 = +-~2.1billion, BiggestInt alias for int64
+- NaN not a number
 - Natural alias for range[0, ..high(int): useful for documentation/debugging/guards
 - NegInf !inf
 - PFloat32 alias for ptr float32
@@ -96,15 +120,11 @@ links
 - uint: unsigned integers, 32/64 bit depending on system,
 - uint8,16,32,64 # 8 = 0 -> 2550, 16 = ~65k, 32 = ~4billion, BiggestUInt alias uinty64
 
-## misc procs
-- is	Check if two arguments are of the same type
-- isnot	Negated version of is
-- !=	Not equals
-- addr	Take the address of a memory location
-- T and F	Boolean and
-- T or F	Boolean or
-- T xor F	Boolean xor (exclusive or)
-- not T	Boolean not
+## mem procs
+- addr Take the address of a memory location
+- owned
+- unown
+- disarm
 ]##
 
 echo "############################ char"
