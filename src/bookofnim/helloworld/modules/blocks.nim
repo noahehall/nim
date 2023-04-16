@@ -49,7 +49,6 @@ let myChar = block:
   if yourChar in {'a', 'b', 'c'}:
     echo "yourChar was found ", yourChar
   yourChar # last expression is returned
-echo "can I sit in your char, i mean chair " & $myChar
 
 echo "############################ do"
 

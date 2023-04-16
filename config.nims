@@ -1,3 +1,6 @@
+# --hint:Conf:off # wtf? bookofnim/config.nims(1, 2) Error: 'on' or 'off' expected, but 'Conf:
+# ^ fails on any hint
+
 --debugger:native
 --deepcopy:on # required for mm:orc/arc
 --define:nimStrictDelete

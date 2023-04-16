@@ -154,9 +154,9 @@ runnableExamples
 ]##
 
 echo "############################ documentation: src code"
-let goodcode* = "isdocumented"  ## `goodcode` should be self documenting, but sometimes naming
-                                ## conventions arent enuff
-let badcode = "ishardtomaintain"  ## this is not included in docs because its not exported
+let goodcode* = "isdocumented"  ## doc comment on same line
+let badcode = "ishardtomaintain"  ## \
+  ## doc comment on next line
 
 
 type GoodApplications* = object

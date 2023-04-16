@@ -184,7 +184,7 @@ echo "############################ type casts"
 var myInt = 10
 
 proc doubleFloat(x: float): float = x * x
-echo "old people double your money in this infomercial: ", doubleFloat(cast[float](myInt))
+echo "cast int to a float ", doubleFloat(cast[float](myInt))
 
 echo "############################ type coercions"
 # assert typeof("a b c".split) is string
