@@ -25,7 +25,6 @@ todo
 - in general everything about tables
 - metatype examples
 - type bound operator examples (and should probably reread those docs)
-- find {.inheritable.} for introducing new object roots
 - object variants (reread the docs, couldnt get working)
 - probably should reread the typedesc docs
 - blah.reset an object to its default value
@@ -105,7 +104,7 @@ ref/pter procs
 - of i.e. instanceof creates a single layer of inheritance between types
 - as
 - in notin is isnot
-- isNil(x) sometimes more efficient than == nil
+- isNil(x) sometimes more efficient than == nil for pter types
 
 
 dynamic dispatch

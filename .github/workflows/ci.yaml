@@ -92,5 +92,5 @@ jobs:
       - name: Cache Docs
         uses: actions/cache/save@v3
         with:
-          path: src/htmldocs
+          path: ./htmldocs
           key: ${{ env.BRANCH_NAME }}

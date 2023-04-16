@@ -266,6 +266,7 @@ import std/[sugar, strformat, strutils, sequtils, tables]
 
 echo "############################ system"
 const srcPath = currentSourcePath()
+
 echo fmt"compile time only srcPath=currentSourcePath() {srcPath=}"
 echo fmt"{hostCPU=}"
 echo fmt"{hostOS=}"
@@ -275,6 +276,9 @@ echo "my process has X bytes of total memory ", getTotalMem()
 
 echo "my process is using X bytes of memory ", getOccupiedMem() ## \
   ## number of bytes owned by the process and hold data
+
+echo "call quit(errCode) to exit"
+echo "or quit(someMsg, errCode)"
 
 echo "############################ os"
 

@@ -1,11 +1,3 @@
-# V2! BABY
-
-- delete this section once this repo runs on V2
-- [install steps](https://nim-lang.org/blog/2023/03/31/version-20-rc2.html)
-- remember:
-  - the docs all point to 1.6 so you cant depend on them for v2
-  - after dealing with migration errors, add source links to the `devel` branch
-
 # book of nim
 
 > [bow to the crown](https://www.youtube.com/watch?v=AEtxGOjKx5c) - Heather Dale
@@ -13,6 +5,7 @@
 - my adventures in nim (1.6.12, will update to 2.0 when stable)
 - hopefully a useful cheatsheet for my fellow nOobs
 - contributions welcomed
+- [v2 install steps until v2 is actually released](https://nim-lang.org/blog/2023/03/31/version-20-rc2.html)
 
 ## for fullstack appdevs & bizdevops+sec teams
 
@@ -112,6 +105,9 @@ blogs
 
 ---
 
+- stay away from nimpretty, its almost useless as a formatter
+  - run `nimpretty src/bookofnim.nim` and check the result
+  - [we're all waiting on this feature request](https://github.com/nim-lang/Nim/issues/8458)
 - [read through concepts](https://nim-lang.org/docs/compiler/concepts.html)
   - [and this forum post](https://forum.nim-lang.org/t/9992)
   - [probably should review each module here](https://nim-lang.org/docs/compiler/theindex.html)

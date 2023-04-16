@@ -69,6 +69,28 @@ when nimvm:
 else:
   echo "I must be running after compilation via an executable"
 
+
+when compiles(3 + 4):
+  ## checks whether x can be compiled without any semantic error.
+  ## useful to verify whether a type supports some operation:
+  echo "'+' for integers is available at compile time"
+
+var typeSupportBlah = "halb"
+when declared typeSupportBlah:
+  ## whether x is declared at compile time
+  echo "blah is declared at compile time"
+
+when not declared thisDoesntExist:
+  echo "some thing doesnt exist at compile time"
+
+when declaredInScope typeSupportBlah:
+  ## checks current scope at compile time
+  echo "blah is declared in scope at compile time"
+
+when defined typeSupportBlah:
+  ## checks whether something is defined at compile time
+  echo "something is defined at compile time"
+
 echo "############################ case expressions"
 var numCase = 50.345
 echo case numCase

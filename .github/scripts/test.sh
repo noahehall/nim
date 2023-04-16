@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# FYI: you should prefer executing CI tasks with nim
-# @see test.nims as example
+# FYI: this file is deprecated
+# all CI tasks should use nimscript
 
 set -ex
 
