@@ -8,8 +8,21 @@
 - then js: https://github.com/nim-lang/Nim/tree/devel/lib/js
 - haha fk the windows dir
 
-## copypasta from readme
+## extracted from some file
 
+# echo "############################  use cases"
+# formatting objects
+# type
+#   Nirv = object
+#     paths, strats, actions: bool
+# var nirv = Nirv(paths: true, strats: true, actions: true)
+# echo "we need better $ " & $nirv
+# echo "we need better % $1 " % [$nirv]
+# echo &"we need better & {nirv}"
+# echo &"we need better & {$nirv}"
+
+
+## copypasta from readme
 
 ---
 

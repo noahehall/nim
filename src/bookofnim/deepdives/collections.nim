@@ -11,6 +11,7 @@
 
 ## links
 - high impact
+  - [critbits sorted strings](https://nim-lang.org/docs/critbits.html)
   - [int sets](https://nim-lang.org/docs/intsets.html)
   - [ordered +/ hash sets](https://nim-lang.org/docs/sets.html)
   - [packed (sparse bit) sets](https://nim-lang.org/docs/packedsets.html)
@@ -43,7 +44,27 @@
   - HashSet[A]
   - OrderedSet[A]
   - SomeSet[A] = HashSet|OrderedSet[A]
+
+## critbits
+- efficient sorted set/dict of strings contained in a crit bit tree
+- iterator like procs have a mblah similar to other nim types
+  - also a blahWithPrefix to only loop over keys starting with prefix
+
+critbit procs
+-------------
+- contains
+- containsOrIncl
+- excl
+- haskey
+- inc
+- missingOrExcl
+- toCritBitTree
+- items
+- keys
+- pairs
 ]##
+
+{.push hint[XDeclaredButNotUsed]: off .}
 
 import std/[sugar, strformat]
 
@@ -144,3 +165,26 @@ echo fmt"""{mstringset.missingOrExcl "woop"=}"""; echoMutatedSet()
 echo fmt"""silently removes key/hashset {{mstringset.excl "woop"}}"""
 echo fmt"""adds key/hash if missing {{mstringset.incl "soup"}}"""
 echo fmt"""pop an arbitrary item, throws on empty set {mstringset.pop=}"""
+
+echo "############################ critbits set"
+
+import std/critbits
+
+let sortedStringSet: CritBitTree[void] = ["zfirst", "asecond"].toCritBitTree
+  ## use void for set of sorted strings
+
+echo fmt"{sortedStringSet=}"
+echo fmt"{sortedStringSet.len=}"
+echo fmt"{toSeq(sortedStringSet.items)=}"
+echo fmt"{toSeq(sortedStringSet.keys)=}"
+
+echo "############################ critbits dict"
+
+let sortedStringDict: CritBitTree[int] = {"zfirst": 1, "asecond": 2}.toCritBitTree
+
+echo fmt"{sortedStringDict=}"
+echo fmt"{sortedStringDict.len=}"
+echo fmt"{toSeq(sortedStringDict.items)=}"
+echo fmt"{toSeq(sortedStringDict.keys)=}"
+echo fmt"{toSeq(sortedStringDict.values)=}"
+echo fmt"{toSeq(sortedStringDict.pairs)=}"
