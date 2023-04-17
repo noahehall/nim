@@ -44,6 +44,7 @@ import bookofnim / deepdives / [
     maths, ## statistical analysis, rational numbers, etc
     osIo, ## operating system, distros, files etc
     pragmasEffects, ## pragmas and the effect system
+    runtimeMemory, ## runtime memory operations
     servers, ## http, sockets, ftp etc + async versions
     strings, ## string utils, en/decoders, etc
     sugar, ## sugar, algorithms and other helpers
