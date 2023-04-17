@@ -6,7 +6,6 @@
 ##[
 ## TLDR
 - comeback later
-- check collections.nim for other stuff
 
 links
 -----
@@ -16,4 +15,12 @@ links
   - [heapqueue](https://nim-lang.org/docs/heapqueue.html)
 - niche
   - [shared list](https://nim-lang.org/docs/sharedlist.html)
+
+
+list procs
+----------
+- prepend node to a list
+- append node to a list
+- unlink node from a list
+
 ]##

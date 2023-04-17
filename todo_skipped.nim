@@ -1,6 +1,7 @@
 #[
 ## new list of todos
-- take the pure dir one by one: https://github.com/nim-lang/Nim/tree/devel/lib/pure
+- https://github.com/nim-lang/Nim/tree/devel/lib/pure
+  -
 - take the impure dir one by one: https://github.com/nim-lang/Nim/tree/devel/lib/impure
 - then std: https://github.com/nim-lang/Nim/tree/devel/lib/std
 - then linux: https://github.com/nim-lang/Nim/tree/devel/lib/posix
@@ -8,8 +9,25 @@
 - then js: https://github.com/nim-lang/Nim/tree/devel/lib/js
 - haha fk the windows dir
 
-## copypasta from readme
+## new skipped (and (maybe) not categorized)
+- https://github.com/nim-lang/Nim/blob/devel/lib/pure/ioselects
+- https://github.com/nim-lang/Nim/blob/devel/lib/pure/unidecode
 
+## extracted from some file
+
+# echo "############################  use cases"
+# formatting objects
+# type
+#   Nirv = object
+#     paths, strats, actions: bool
+# var nirv = Nirv(paths: true, strats: true, actions: true)
+# echo "we need better $ " & $nirv
+# echo "we need better % $1 " % [$nirv]
+# echo &"we need better & {nirv}"
+# echo &"we need better & {$nirv}"
+
+
+## copypasta from readme
 
 ---
 

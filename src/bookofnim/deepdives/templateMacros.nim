@@ -18,6 +18,7 @@ todos
 - [typed vs untyped for templates](https://nim-lang.org/docs/manual.html#templates-typed-vs-untyped-parameters)
 - [custom annotations with template pragmas](https://nim-lang.org/docs/manual.html#userminusdefined-pragmas-custom-annotations)
 - [macro pragmas](https://nim-lang.org/docs/manual.html#userminusdefined-pragmas-macro-pragmas)
+- [asyncmacro](https://github.com/nim-lang/Nim/blob/devel/lib/pure/asyncmacro.nim)
 
 ## templates
 - simple form of a macro

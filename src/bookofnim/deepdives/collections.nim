@@ -10,8 +10,12 @@
 - if something quacks like a sequence, you can probably use its procs
 
 ## links
+- other
+  - [peter: option handling in nim](https://peterme.net/optional-value-handling-in-nim.html)
 - high impact
+  - [critbits sorted strings](https://nim-lang.org/docs/critbits.html)
   - [int sets](https://nim-lang.org/docs/intsets.html)
+  - [options](https://nim-lang.org/docs/options.html)
   - [ordered +/ hash sets](https://nim-lang.org/docs/sets.html)
   - [packed (sparse bit) sets](https://nim-lang.org/docs/packedsets.html)
   - [seq (seq, strings, array) utils](https://nim-lang.org/docs/sequtils.html)
@@ -43,7 +47,29 @@
   - HashSet[A]
   - OrderedSet[A]
   - SomeSet[A] = HashSet|OrderedSet[A]
+
+## critbits
+- efficient sorted set/dict of strings contained in a crit bit tree
+
+critbit procs
+-------------
+- commonPreflixLen length of the longest common prefix of all keys
+- contains
+- containsOrIncl
+- excl
+- haskey
+- inc
+- items|itemsWithPrefix
+- keys|keysWithPrefix
+- missingOrExcl
+- pairs|mpairs
+- pairsWithPrefix|mpairsWithPrefix
+- toCritBitTree
+- values|mvalues|
+- valuesWithPrefix|mvaluesWithPrefix
 ]##
+
+{.push hint[XDeclaredButNotUsed]: off .}
 
 import std/[sugar, strformat]
 
@@ -144,3 +170,49 @@ echo fmt"""{mstringset.missingOrExcl "woop"=}"""; echoMutatedSet()
 echo fmt"""silently removes key/hashset {{mstringset.excl "woop"}}"""
 echo fmt"""adds key/hash if missing {{mstringset.incl "soup"}}"""
 echo fmt"""pop an arbitrary item, throws on empty set {mstringset.pop=}"""
+
+echo "############################ critbits set"
+
+import std/critbits
+
+let sortedStringSet: CritBitTree[void] = ["zfirst", "asecond"].toCritBitTree
+  ## use void for set of sorted strings
+
+echo fmt"{sortedStringSet=}"
+echo fmt"{sortedStringSet.len=}"
+echo fmt"{toSeq(sortedStringSet.items)=}"
+echo fmt"{toSeq(sortedStringSet.keys)=}"
+
+echo "############################ critbits dict"
+
+let sortedStringDict: CritBitTree[int] = {"zfirst": 1, "asecond": 2}.toCritBitTree
+
+echo fmt"{sortedStringDict=}"
+echo fmt"{sortedStringDict.len=}"
+echo fmt"{toSeq(sortedStringDict.items)=}"
+echo fmt"{toSeq(sortedStringDict.keys)=}"
+echo fmt"{toSeq(sortedStringDict.values)=}"
+echo fmt"{toSeq(sortedStringDict.pairs)=}"
+
+
+echo "############################ options"
+# option[SomeType](nil) convert SomeType to an option
+import std/options
+
+const something = (x: string) => (if x == "thing": some("some" & x) else: none(string)) ## \
+  ## converts a thing to something
+
+const
+  maybe = some("thing") ## optional string
+  nothing = none(string) ## optional string
+
+echo fmt"{maybe=}"
+echo fmt"{nothing.isNone=}"
+echo fmt"{maybe.isSome=}"
+echo fmt"always isSome first {maybe.get=}"
+echo fmt"prefer get {maybe.unsafeGet=}"
+echo fmt"{nothing.get(maybe.get)=}"
+echo fmt"{maybe.filter(x => x.len == 1_000_000)=}"
+echo fmt"will mutate if nothings returned {maybe.map(x => x & x)=}"
+echo fmt"{maybe.flatMap(something)=}"
+echo fmt"{some(maybe).flatten=}"

@@ -13,7 +13,6 @@ links
 - high impact
   - [str format](https://nim-lang.org/docs/strformat.html)
   - [str utils](https://nim-lang.org/docs/strutils.html)
-  - [critbit sorted strings](https://nim-lang.org/docs/critbits.html)
   - [uri parsing](https://nim-lang.org/docs/uri.html)
 - niche
   - [cstr utils](https://nim-lang.org/docs/cstrutils.html)
@@ -132,14 +131,3 @@ mutated.addf &" {mutated}"; echoMutated() # faster than using add + formatter
 mutated.delete 1.. (mutated.len div 2 + 1); echoMutated()
 mutated.removePrefix "this "; echoMutated()
 mutated.removeSuffix "string"; echoMutated()
-
-# echo "############################  use cases"
-# formatting objects
-# type
-#   Nirv = object
-#     paths, strats, actions: bool
-# var nirv = Nirv(paths: true, strats: true, actions: true)
-# echo "we need better $ " & $nirv
-# echo "we need better % $1 " % [$nirv]
-# echo &"we need better & {nirv}"
-# echo &"we need better & {$nirv}"
