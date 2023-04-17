@@ -50,21 +50,23 @@
 
 ## critbits
 - efficient sorted set/dict of strings contained in a crit bit tree
-- iterator like procs have a mblah similar to other nim types
-  - also a blahWithPrefix to only loop over keys starting with prefix
 
 critbit procs
 -------------
+- commonPreflixLen length of the longest common prefix of all keys
 - contains
 - containsOrIncl
 - excl
 - haskey
 - inc
+- items|itemsWithPrefix
+- keys|keysWithPrefix
 - missingOrExcl
+- pairs|mpairs
+- pairsWithPrefix|mpairsWithPrefix
 - toCritBitTree
-- items
-- keys
-- pairs
+- values|mvalues|
+- valuesWithPrefix|mvaluesWithPrefix
 ]##
 
 {.push hint[XDeclaredButNotUsed]: off .}
