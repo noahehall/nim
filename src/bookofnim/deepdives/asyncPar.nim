@@ -6,50 +6,21 @@
 ##[
 ## TLDR
 - see servers.nim for async server stuff
-- you generally need std/locks for any thread related logic
-- threads
-  - thread (system) can be saved to a var / proc
-  - spawn (threadpool): is ephemeral
-  - require --threads:on switch
-  - each thread has its own GC heap and mem sharing is restricted
-    - improves efficiency and prevents race conditions
-  - procs used with threads should have {.thread.} pragma
-    - to create a thread from the proc you must use spawn/createThread
-    - proc signature cant have var/ref/closure types (enforces no heap sharing restriction)
-    - implies `procvar`
-  - vars local to threads must use {.threadvar.}
-    - implies all the effects of {.global.}
-    - can be defined but not initialized: it will be replicated at thread creation
-      - `var x* {.threadvar.}: string` is okay, but not `.... = "abc"`
-  - exceptions
-    - handled exceptions dont propagate across threads
-    - unhandled exceptions terminates the entire process
-- channel[T]
-  - designed for system.threads, unstable when used with spawn
-  - relays non cyclic data from thread X to thread Y
-  - the main thread (module scope) is simpler and shared across all threads
-    - else you can declare within the body of proc thread and send the ptr to another
-  - require --threads:on switch
-- threadpool
-  - a flowvar can be awaited by a single caller
-- asyncdispatch
-  - dispatcher: simple event loop that buffers events to be polled (pulled) from the stack
-    - linux: uses epoll
-    - windows: IO Completion Ports
-    - other: select
-  - poll: doesnt return events, but Future[event]s when they're completed with a value/error
-    - always use a [reactor pattern (IMO)](https://en.wikipedia.org/wiki/Reactor_pattern) e.g.  waitFor/runForever
-      - procs of type Future[T | void] require {.async.} pragma for enabling `await` in the body
-        - awaited procs are suspended until and resumed once their Future arg is completed
-        - the dispatcher invokes the next async proc while the current is suspended
-        - vars, objects and other procs can be awaited
-        - awaited Futures with unhandled exceptions are rethrown
-          - yield Future; f.failed instead of try: await Future except: for increased reliability
-    - alternatively (IMO not preferred) use the [proactor pattern](https://en.wikipedia.org/wiki/Proactor_pattern)
-      - you can check Future.finished for success/failure and .failed specifically
-      - or pass a callback
-  - Futures ignore {raises: []} effects
-  - addWrite/Read exist for adapting unix-like libraries to be async on windows; avoid if possible
+- you generally need the following for any thread related logic
+  - required: --threads:on switch
+  - should use: std/locks
+- its useful to think about threads and channels using the actor model
+  - actor: a procedure recreated on a thread to execute some logic
+    - its simpler for actors to pull/push data via a channel to/from other actors
+    - else you can pass data between actors through a thread when its created
+  - channel: the bus in which data is sent between actors
+    - channels defined on the main thread are available to all actors
+    - channels not defined on the main thread must be passed to other threads by ptr via an actor
+  - thread: where execution occurs on a CPU, 12-core machine has 12 concurrent execution contexts
+    - only a single thread can execute at any given time per cpu, timesharing occurs otherwise
+    - Thread[void]: no data is passed via thread to its actor; the actor uses a channel only
+    - Thread[NotVoid]: on thread creation, instance of NotVoid is expected and provided to its actor
+
 
 links
 -----
@@ -84,32 +55,23 @@ todos
 - [add more sophisticated asyncdispatch examples](https://nim-lang.org/docs/asyncdispatch.html)
 - add more lock examples
 
-## locks
-- locks and conition vars
 
-lock types
-----------
-- Cond SysCond condition variable
-- Lock SysLock whether its re-entrant/not is unspecified
-
-lock procs
-----------
-- acquire the given lock
-- broadcast unblocks threads blocked on the specified condition variable
-- deinitCond frees resources associated with condition var
-- deinitLock frees resources associated with lock
-- initCond initializes a condition var
-- initLock intiializes a lock
-- release a lock
-- signal to a condition var
-- tryAcquire a given lock
-- wait on the condition var
-
-lock templates
---------------
-- withLock: acquires > executes body > releases
-
-## system threads
+## threads
+- thread (system) can be saved to a var / proc and awaited by many callers
+- spawn (threadpool): is ephemeral; a flowvar that can be awaited by a single caller
+- each thread has its own GC heap and mem sharing is restricted
+  - improves efficiency and prevents race conditions
+- procs used with threads should have {.thread.} pragma
+  - to create a thread from the proc you must use spawn/createThread
+  - proc signature cant have var/ref/closure types (enforces no heap sharing restriction)
+  - implies `procvar`
+  - vars local to threads must use {.threadvar.}
+    - implies all the effects of {.global.}
+    - can be defined but not initialized: it will be replicated at thread creation
+      - `var x* {.threadvar.}: string` is okay, but not `.... = "abc"`
+  - exceptions
+    - handled exceptions dont propagate across threads
+    - unhandled exceptions terminates the entire process
 
 system thread types
 -------------------
@@ -125,27 +87,8 @@ system thread procs
 - onThreadDestruction called upon threads destruction (returns/throws)
 - pinToCpu sets the affinity for a thread
 
-
-## system channels
-- communication across threads
-
-system channel types
---------------------
-- Channel for relaying messages across threads
-
-system channel procs
---------------------
-- close permenantly a channel and frees its resources
-- open or update a channel with size int (0 == unlimited)
-- peek at total messages in channel, -1 if channel closed, use tryRecv instead to avoid race conds
-- ready true if some thread is waiting for new messages
-- recv data; blocks its channel scope until delivered
-- send deeply copied data; blocks its channel scope until sent
-- tryRecv (bool, msg)
-- trySend deeply copied data without blocking
-
-
-## threadpool
+threadpool
+----------
 - implements parallel & spawn
 - abstraction over lower level system threads
 
@@ -181,9 +124,75 @@ threadpool procs
 - spawnX action on new thread if CPU core ready; else on this thread; blocks produce; prefer spawn
 
 
+## channels
+- designed for system.threads, unstable when used with spawn
+- deeply copies non cyclic data from thread X to thread Y
+- channels declared in the main thread (module scope) is simpler and shared across all threads
+  - else you can declare within the body of proc thread and send the ptr to another
+
+system channel types
+--------------------
+- Channel[T] for relaying messages across threads
+
+system channel procs
+--------------------
+- close permenantly a channel and frees its resources
+- open or update a channel with size int (0 == unlimited)
+- peek at total messages in channel, -1 if channel closed, use tryRecv instead to avoid race conds
+- ready true if some thread is waiting for new messages
+- recv data; blocks its channel scope until delivered
+- send deeply copied data; blocks its channel scope until sent
+- tryRecv (bool, msg)
+- trySend deeply copied data without blocking
+
+
+## locks
+- locks and conition vars
+
+lock types
+----------
+- Cond SysCond condition variable
+- Lock SysLock whether its re-entrant/not is unspecified
+
+lock procs
+----------
+- acquire the given lock
+- broadcast unblocks threads blocked on the specified condition variable
+- deinitCond frees resources associated with condition var
+- deinitLock frees resources associated with lock
+- initCond initializes a condition var
+- initLock intiializes a lock
+- release a lock
+- signal to a condition var
+- tryAcquire a given lock
+- wait on the condition var
+
+lock templates
+--------------
+- withLock: acquires > executes body > releases
+
+
 ## asyncdispatch
 - asynchronous IO: dispatcher (event loop), future and reactor (sync-style) await
 - the primary way to create and consume async programs
+- dispatcher: simple event loop that buffers events to be polled (pulled) from the stack
+  - linux: uses epoll
+  - windows: IO Completion Ports
+  - other: select
+- poll: doesnt return events, but Future[event]s when they're completed with a value/error
+  - always use a [reactor pattern (IMO)](https://en.wikipedia.org/wiki/Reactor_pattern) e.g.  waitFor/runForever
+    - procs of type Future[T | void] require {.async.} pragma for enabling `await` in the body
+      - awaited procs are suspended until and resumed once their Future arg is completed
+      - the dispatcher invokes the next async proc while the current is suspended
+      - vars, objects and other procs can be awaited
+      - awaited Futures with unhandled exceptions are rethrown
+        - yield Future; f.failed instead of try: await Future except: for increased reliability
+  - alternatively (IMO not preferred) use the [proactor pattern](https://en.wikipedia.org/wiki/Proactor_pattern)
+    - you can check Future.finished for success/failure and .failed specifically
+    - or pass a callback
+- Futures ignore {raises: []} effects
+- addWrite/Read exist for adapting unix-like libraries to be async on windows; avoid if possible
+
 
 asyncdispatch types
 -------------------
