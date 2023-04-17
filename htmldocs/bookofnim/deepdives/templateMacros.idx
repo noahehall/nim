@@ -1,12 +1,12 @@
 nimTitle	templateMacros	bookofnim/deepdives/templateMacros.html	module src/bookofnim/deepdives/templateMacros		0
-nim	`!=`	bookofnim/deepdives/templateMacros.html#!=.t,untyped,untyped	template `!=`(a, b: untyped): untyped		37
-nim	debug	bookofnim/deepdives/templateMacros.html#debug	const debug		45
-nim	xy	bookofnim/deepdives/templateMacros.html#xy	var xy		46
-nim	log_eager	bookofnim/deepdives/templateMacros.html#log_eager,string	proc log_eager(msg: string)		47
-nim	log_lazy	bookofnim/deepdives/templateMacros.html#log_lazy.t,string	template log_lazy(msg: string)		50
-nim	blockRunner	bookofnim/deepdives/templateMacros.html#blockRunner.t,bool,untyped	template blockRunner(please: bool; body: untyped): void		59
-nim	theyAskedNickely`gensym4	bookofnim/deepdives/templateMacros.html#theyAskedNickely`gensym4	let theyAskedNickely`gensym4		62
-nim	theyAskedNickely`gensym5	bookofnim/deepdives/templateMacros.html#theyAskedNickely`gensym5	let theyAskedNickely`gensym5		62
+nim	`!=`	bookofnim/deepdives/templateMacros.html#!=.t,untyped,untyped	template `!=`(a, b: untyped): untyped		38
+nim	debug	bookofnim/deepdives/templateMacros.html#debug	const debug		46
+nim	xy	bookofnim/deepdives/templateMacros.html#xy	var xy		47
+nim	log_eager	bookofnim/deepdives/templateMacros.html#log_eager,string	proc log_eager(msg: string)		48
+nim	log_lazy	bookofnim/deepdives/templateMacros.html#log_lazy.t,string	template log_lazy(msg: string)		51
+nim	blockRunner	bookofnim/deepdives/templateMacros.html#blockRunner.t,bool,untyped	template blockRunner(please: bool; body: untyped): void		60
+nim	theyAskedNickely`gensym4	bookofnim/deepdives/templateMacros.html#theyAskedNickely`gensym4	let theyAskedNickely`gensym4		63
+nim	theyAskedNickely`gensym5	bookofnim/deepdives/templateMacros.html#theyAskedNickely`gensym5	let theyAskedNickely`gensym5		63
 heading	templates and macros	bookofnim/deepdives/templateMacros.html#templates-and-macros	 templates and macros		0
 heading	TLDR	bookofnim/deepdives/templateMacros.html#templates-and-macros-tldr	  TLDR		0
 heading	todos	bookofnim/deepdives/templateMacros.html#templates-and-macros-todos	  todos		0

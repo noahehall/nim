@@ -242,10 +242,13 @@ digraph bookofnim {
 "bookofnim/deepdives/asyncPar" -> "std/os";
 "std/sequtils" -> "std/private/since";
 "std/sequtils" -> "std/macros";
+"std/critbits" -> "std/private/since";
 "bookofnim/deepdives/collections" -> "std/sugar";
 "bookofnim/deepdives/collections" -> "std/strformat";
 "bookofnim/deepdives/collections" -> "std/sequtils";
 "bookofnim/deepdives/collections" -> "std/sets";
+"bookofnim/deepdives/collections" -> "std/critbits";
+"bookofnim/deepdives/collections" -> "std/options";
 "std/strtabs" -> "std/private/since";
 "std/strtabs" -> "std/hashes";
 "std/strtabs" -> "std/strutils";
@@ -254,7 +257,6 @@ digraph bookofnim {
 "bookofnim/deepdives/containers" -> "std/strformat";
 "bookofnim/deepdives/containers" -> "std/strutils";
 "bookofnim/deepdives/containers" -> "std/sequtils";
-"bookofnim/deepdives/containers" -> "std/options";
 "bookofnim/deepdives/containers" -> "std/tables";
 "bookofnim/deepdives/containers" -> "std/strtabs";
 "bookofnim/deepdives/crypto" -> "std/strformat";
@@ -328,6 +330,7 @@ digraph bookofnim {
 "bookofnim/deepdives/osIo" -> "std/osproc";
 "bookofnim/deepdives/osIo" -> "std/strtabs";
 "bookofnim/deepdives/osIo" -> "std/parseopt";
+"bookofnim/deepdives/osIo" -> "std/cpuinfo";
 "std/uri" -> "std/strutils";
 "std/uri" -> "std/parseutils";
 "std/uri" -> "std/base64";
@@ -405,6 +408,7 @@ digraph bookofnim {
 "bookofnim" -> "bookofnim/deepdives/maths";
 "bookofnim" -> "bookofnim/deepdives/osIo";
 "bookofnim" -> "bookofnim/deepdives/pragmasEffects";
+"bookofnim" -> "bookofnim/deepdives/runtimeMemory";
 "bookofnim" -> "bookofnim/deepdives/servers";
 "bookofnim" -> "bookofnim/deepdives/strings";
 "bookofnim" -> "bookofnim/deepdives/sugar";

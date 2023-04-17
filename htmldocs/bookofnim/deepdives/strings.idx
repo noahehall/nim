@@ -1,8 +1,8 @@
 nimTitle	strings	bookofnim/deepdives/strings.html	module src/bookofnim/deepdives/strings		0
-nim	oneline	bookofnim/deepdives/strings.html#oneline	let oneline		75
-nim	multiline	bookofnim/deepdives/strings.html#multiline	let multiline		76
-nim	mutated	bookofnim/deepdives/strings.html#mutated	var mutated		127
-nim	echoMutated	bookofnim/deepdives/strings.html#echoMutated	proc echoMutated(): void		128
+nim	oneline	bookofnim/deepdives/strings.html#oneline	let oneline		74
+nim	multiline	bookofnim/deepdives/strings.html#multiline	let multiline		75
+nim	mutated	bookofnim/deepdives/strings.html#mutated	var mutated		126
+nim	echoMutated	bookofnim/deepdives/strings.html#echoMutated	proc echoMutated(): void		127
 heading	strings	bookofnim/deepdives/strings.html#strings	 strings		0
 heading	TLDR	bookofnim/deepdives/strings.html#strings-tldr	  TLDR		0
 heading	links	bookofnim/deepdives/strings.html#strings-links	  links		0

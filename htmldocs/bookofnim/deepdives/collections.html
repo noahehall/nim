@@ -52,6 +52,8 @@
 <li><a class="reference" id="collections-deep-dive-links_toc" href="#collections-deep-dive-links">links</a></li>
 <li><a class="reference" id="collections-deep-dive-seqs_toc" href="#collections-deep-dive-seqs">seqs</a></li>
 <li><a class="reference" id="collections-deep-dive-sets_toc" href="#collections-deep-dive-sets">sets</a></li>
+<li><a class="reference" id="collections-deep-dive-critbits_toc" href="#collections-deep-dive-critbits">critbits</a></li>
+<li><a class="reference" id="collections-deep-dive-critbit-procs_toc" href="#collections-deep-dive-critbit-procs">critbit procs</a></li>
 </ul><li>
   <details open>
     <summary><a class="reference reference-toplevel" href="#8" id="58">Vars</a></summary>
@@ -77,6 +79,17 @@
 </li>
 <li>
   <details open>
+    <summary><a class="reference reference-toplevel" href="#9" id="59">Lets</a></summary>
+    <ul class="simple simple-toc-section">
+      <li><a class="reference" href="#sortedStringDict" title="sortedStringDict: CritBitTree[int] = toCritBitTree(
+    [(&quot;zfirst&quot;, 1), (&quot;asecond&quot;, 2)])">sortedStringDict</a></li>
+<li><a class="reference" href="#sortedStringSet" title="sortedStringSet: CritBitTree[void] = toCritBitTree([&quot;zfirst&quot;, &quot;asecond&quot;])">sortedStringSet</a></li>
+
+    </ul>
+  </details>
+</li>
+<li>
+  <details open>
     <summary><a class="reference reference-toplevel" href="#10" id="60">Consts</a></summary>
     <ul class="simple simple-toc-section">
       <li><a class="reference" href="#floatSet" title="floatSet = (data: [(0, 0, 0.0), (0, 0, 0.0), (0, 0, 0.0), (0, 0, 0.0),
@@ -87,7 +100,10 @@
                    (4154412677857139934, 13, 1.0), (0, 0, 0.0)], counter: 4,
             first: 14, last: 5)">floatSet</a></li>
 <li><a class="reference" href="#immutable" title="immutable = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">immutable</a></li>
+<li><a class="reference" href="#maybe" title="maybe = (val: &quot;thing&quot;, has: true)">maybe</a></li>
+<li><a class="reference" href="#nothing" title="nothing = (val: &quot;&quot;, has: false)">nothing</a></li>
 <li><a class="reference" href="#seq2d" title="seq2d = [[1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]]">seq2d</a></li>
+<li><a class="reference" href="#something" title="something = :anonymous">something</a></li>
 <li><a class="reference" href="#stringSet1" title="stringSet1 = (data: [(2988173616, &quot;bee&quot;), (0, &quot;&quot;), (0, &quot;&quot;), (0, &quot;&quot;), (0, &quot;&quot;),
                      (0, &quot;&quot;), (0, &quot;&quot;), (0, &quot;&quot;), (4068491112, &quot;see&quot;), (0, &quot;&quot;),
                      (2680953434, &quot;dee&quot;), (0, &quot;&quot;), (0, &quot;&quot;), (0, &quot;&quot;),
@@ -136,7 +152,12 @@
 <li>if something quacks like a sequence, you can probably use its procs</li>
 </ul>
 
-<h2><a class="toc-backref" id="collections-deep-dive-links" href="#collections-deep-dive-links">links</a></h2><ul class="simple"><li>high impact<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/intsets.html">int sets</a></li>
+<h2><a class="toc-backref" id="collections-deep-dive-links" href="#collections-deep-dive-links">links</a></h2><ul class="simple"><li>other<ul class="simple"><li><a class="reference external" href="https://peterme.net/optional-value-handling-in-nim.html">peter: option handling in nim</a></li>
+</ul>
+</li>
+<li>high impact<ul class="simple"><li><a class="reference external" href="https://nim-lang.org/docs/critbits.html">critbits sorted strings</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/intsets.html">int sets</a></li>
+<li><a class="reference external" href="https://nim-lang.org/docs/options.html">options</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/sets.html">ordered +/ hash sets</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/packedsets.html">packed (sparse bit) sets</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/sequtils.html">seq (seq, strings, array) utils</a></li>
@@ -174,6 +195,25 @@
 </ul>
 </li>
 </ul>
+
+<h2><a class="toc-backref" id="collections-deep-dive-critbits" href="#collections-deep-dive-critbits">critbits</a></h2><ul class="simple"><li>efficient sorted set/dict of strings contained in a crit bit tree</li>
+</ul>
+
+<h2><a class="toc-backref" id="collections-deep-dive-critbit-procs" href="#collections-deep-dive-critbit-procs">critbit procs</a></h2><ul class="simple"><li>commonPreflixLen length of the longest common prefix of all keys</li>
+<li>contains</li>
+<li>containsOrIncl</li>
+<li>excl</li>
+<li>haskey</li>
+<li>inc</li>
+<li>items|itemsWithPrefix</li>
+<li>keys|keysWithPrefix</li>
+<li>missingOrExcl</li>
+<li>pairs|mpairs</li>
+<li>pairsWithPrefix|mpairsWithPrefix</li>
+<li>toCritBitTree</li>
+<li>values|mvalues|</li>
+<li>valuesWithPrefix|mvaluesWithPrefix</li>
+</ul>
 </p>
     <div class="section" id="8">
   <h1><a class="toc-backref" href="#8">Vars</a></h1>
@@ -183,8 +223,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L137" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L137" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L163" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L163" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -204,8 +244,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L88" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L88" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L114" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L114" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -214,8 +254,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L89" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L89" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L115" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L115" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -224,8 +264,35 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L130" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L130" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L156" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L156" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
+
+  </dl>
+</div>
+<div class="section" id="9">
+  <h1><a class="toc-backref" href="#9">Lets</a></h1>
+  <dl class="item">
+    <div id="sortedStringDict">
+  <dt><pre><span class="Identifier">sortedStringDict</span><span class="Other">:</span> <span class="Identifier">CritBitTree</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">toCritBitTree</span><span class="Other">(</span>
+    <span class="Other">[</span><span class="Other">(</span><span class="StringLit">&quot;zfirst&quot;</span><span class="Other">,</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="StringLit">&quot;asecond&quot;</span><span class="Other">,</span> <span class="DecNumber">2</span><span class="Other">)</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
+  <dd>
+    
+    
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L188" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L188" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
+<div id="sortedStringSet">
+  <dt><pre><span class="Identifier">sortedStringSet</span><span class="Other">:</span> <span class="Identifier">CritBitTree</span><span class="Other">[</span><span class="Identifier">void</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">toCritBitTree</span><span class="Other">(</span><span class="Other">[</span><span class="StringLit">&quot;zfirst&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;asecond&quot;</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
+  <dd>
+    
+    use void for set of sorted strings
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L178" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L178" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -246,8 +313,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L110" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L110" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L136" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L136" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -256,8 +323,28 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L54" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L54" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L80" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L80" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
+<div id="maybe">
+  <dt><pre><span class="Identifier">maybe</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">val</span><span class="Other">:</span> <span class="StringLit">&quot;thing&quot;</span><span class="Other">,</span> <span class="Identifier">has</span><span class="Other">:</span> <span class="DecNumber">true</span><span class="Other">)</span></pre></dt>
+  <dd>
+    
+    optional string
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L206" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L206" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
+<div id="nothing">
+  <dt><pre><span class="Identifier">nothing</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">val</span><span class="Other">:</span> <span class="StringLit">&quot;&quot;</span><span class="Other">,</span> <span class="Identifier">has</span><span class="Other">:</span> <span class="DecNumber">false</span><span class="Other">)</span></pre></dt>
+  <dd>
+    
+    optional string
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L207" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L207" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -266,8 +353,19 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L55" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L55" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L81" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L81" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
+<div id="something">
+  <dt><pre><span class="Identifier">something</span> <span class="Other">=</span> <span class="Operator">:anonymous</span></pre></dt>
+  <dd>
+    
+    
+converts a thing to something
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L202" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L202" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -279,8 +377,8 @@
   <dd>
     
     string|array|seq
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L108" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L108" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L134" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L134" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -293,8 +391,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L109" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L109" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L135" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L135" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -303,8 +401,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L56" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L56" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L82" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L82" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -320,8 +418,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L90" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L90" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L116" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L116" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -333,8 +431,8 @@
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L138" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L138" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/collections.nim#L164" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/collections.nim#L164" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -350,7 +448,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-04-16 17:48:15 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-04-17 02:09:34 UTC</small>
       </div>
     </div>
   </div>
