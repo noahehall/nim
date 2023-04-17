@@ -150,7 +150,7 @@
 
 #### nimcr
 
-- [truly run nimscripts as if they were shellscripts](https://github.com/PMunch/nimcr)
+- [nimscript cacher for faster subsequent executions](https://github.com/PMunch/nimcr)
 
 #### cligen
 
