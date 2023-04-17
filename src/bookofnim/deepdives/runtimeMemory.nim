@@ -7,6 +7,7 @@
 ## TLDR
 - come back later
 - move all the ptr/ref/locks stuff in here
+- add a test file
 
 links
 -----

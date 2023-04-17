@@ -28,6 +28,7 @@ branching todos
 - can also use elif, else branches
 ]##
 
+{.push hint[XDeclaredButNotUsed]:off .}
 echo "############################ if"
 if not false: echo "true": else: echo "false"
 
@@ -50,6 +51,10 @@ elif system.hostOS == "macosx":
   echo "running on Mac OS X!"
 else:
   echo "unknown operating system"
+
+# another example from the docs
+when defined(posix) and not (defined(macosx) or defined(bsd)):
+  echo "running on posix but not mac or bsd"
 
 when isMainModule:
   # true if the module is compiled as the main file

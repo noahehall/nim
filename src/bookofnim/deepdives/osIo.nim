@@ -599,3 +599,10 @@ for kind, key, val in cmdzOpts.getopt(): printToken(kind, key, val)
 
 var p = initOptParser(myOptsArgDash)
 echo fmt"{collect(for kind, key, val in p.getopt(): \{key: val\})=}"
+
+echo "############################ cpuinfo "
+
+import std/cpuinfo
+
+# requires cpuinfo because osproc is also imported
+echo fmt"{cpuinfo.countProcessors()=}"

@@ -1,12 +1,17 @@
 #[
 ## new list of todos
-- https://github.com/nim-lang/Nim/tree/devel/lib/pure/concurrency
+- https://github.com/nim-lang/Nim/tree/devel/lib/pure
+  -
 - take the impure dir one by one: https://github.com/nim-lang/Nim/tree/devel/lib/impure
 - then std: https://github.com/nim-lang/Nim/tree/devel/lib/std
 - then linux: https://github.com/nim-lang/Nim/tree/devel/lib/posix
 - then posix: https://github.com/nim-lang/Nim/tree/devel/lib/posix
 - then js: https://github.com/nim-lang/Nim/tree/devel/lib/js
 - haha fk the windows dir
+
+## new skipped (and (maybe) not categorized)
+- https://github.com/nim-lang/Nim/blob/devel/lib/pure/ioselects
+- https://github.com/nim-lang/Nim/blob/devel/lib/pure/unidecode
 
 ## extracted from some file
 
