@@ -5,6 +5,8 @@
 
 ##[
 ## TLDR
+- see servers.nim for async server stuff
+- you generally need std/locks for any thread related logic
 - threads
   - thread (system) can be saved to a var / proc
   - spawn (threadpool): is ephemeral
@@ -23,13 +25,11 @@
     - handled exceptions dont propagate across threads
     - unhandled exceptions terminates the entire process
 - channel[T]
-  - node that relays data across threads in which its declared
+  - designed for system.threads, unstable when used with spawn
+  - relays non cyclic data from thread X to thread Y
   - the main thread (module scope) is simpler and shared across all threads
-  - else you can declare within the body of proc thread and send the ptr to another
-  - meant for threads, unstable when used with spawn
+    - else you can declare within the body of proc thread and send the ptr to another
   - require --threads:on switch
-  - cant relay cyclic data structures
-  - can be passed by ptr to actions or declared in module scope
 - threadpool
   - a flowvar can be awaited by a single caller
 - asyncdispatch
@@ -246,11 +246,6 @@ asyncdispatch macros
 - async converts async procedures into iterators and yield statements
 - multisync converts async procs into both async & sync procs (removes await calls)
 
-asyncdispatch templates
------------------------
-- await
-
-
 ## asyncfutures
 - primitives for creating and consuming futures
 - all other modules build on asyncfutures and generally isnt imported directly
@@ -334,7 +329,6 @@ proc echoAction[T](x: T): void {.thread.} =
   L.withLock: echo fmt"i am thread {getThreadId()=} with data {x=}"
 
 echo "############################ system threads"
-
 
 L.initLock
 

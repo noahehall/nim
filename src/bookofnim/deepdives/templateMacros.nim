@@ -19,6 +19,7 @@ todos
 - [custom annotations with template pragmas](https://nim-lang.org/docs/manual.html#userminusdefined-pragmas-custom-annotations)
 - [macro pragmas](https://nim-lang.org/docs/manual.html#userminusdefined-pragmas-macro-pragmas)
 - [asyncmacro](https://github.com/nim-lang/Nim/blob/devel/lib/pure/asyncmacro.nim)
+- put the asyncdispatch templates in this file
 
 ## templates
 - simple form of a macro

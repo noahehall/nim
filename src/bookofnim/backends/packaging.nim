@@ -34,6 +34,7 @@ todos
 -----
 - verify the different app cfg locations
 - for some reason (oops) parseCfg is in shell.nims, it should be in this file
+- [this file has example of using @if... @end in a cfg file](https://github.com/nim-lang/Nim/blob/devel/lib/pure/asyncdispatch.nim.cfg)
 
 ## nimble
 - nim package manager

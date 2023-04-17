@@ -5,6 +5,7 @@
 
 ##[
 ## TLDR
+- for async i/o see asyncPar.nim
 - if a proc accepts a filename (string), it may also accept a File/Filehandle
 - tips
   - always use absolutePath when working with paths
