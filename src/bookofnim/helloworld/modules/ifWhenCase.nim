@@ -13,7 +13,9 @@ branching todos
 ---------------
 - [likely](https://nim-lang.org/docs/system.html#likely.t%2Cbool)
 - [unlikely](https://nim-lang.org/docs/system.html#unlikely.t%2Cbool)
-
+- an example of using when (and if?) inside an object constructor
+  - there are examples in the doc where when is used to optionally define props
+  - e.g. this file: https://github.com/nim-lang/Nim/blob/devel/lib/std/private/threadtypes.nim
 ## when
 - a compile time if statement
 - the condition MUST be a constant expression
