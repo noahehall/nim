@@ -1,7 +1,7 @@
 ##
 ## sugar deep dive
 ## ===============
-## [bookmark](https://nim-lang.org/docs/algorithm.html)
+## [bookmark](https://nim-lang.github.io/Nim/wrapnils.html)
 
 ##[
 ## TLDR
@@ -15,9 +15,12 @@ links
   - [with](https://nim-lang.org/docs/with.html)
   - [algorithm](https://nim-lang.org/docs/algorithm.html)
   - [enumarate any collection](https://nim-lang.org/docs/enumerate.html)
+  - [wrapnils optional chaining](https://nim-lang.github.io/Nim/wrapnils.html)
+
 
 todos
 -----
+- std/wrapnils: optional chaining
 - macro capture(locals: varargs[typed]; body: untyped): untyped
   - capture local variables for use in a closure
 - macro dump(x: untyped): untyped
@@ -26,7 +29,6 @@ todos
   - echo for debugging expressions, prints the expression textual representation
 - std/algorithm
   - then review all the sort procs for each datatype (they all depend on algo)
-
 
 ## sugar
 

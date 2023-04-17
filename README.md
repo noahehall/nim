@@ -6,6 +6,7 @@
 - hopefully a useful cheatsheet for my fellow nOobs
 - contributions welcomed
 - [v2 install steps until v2 is actually released](https://nim-lang.org/blog/2023/03/31/version-20-rc2.html)
+  - [v2 press release](https://nim-lang.org/blog/2022/12/21/version-20-rc.html)
 
 ## for fullstack appdevs & bizdevops+sec teams
 
@@ -92,3 +93,8 @@ blogs
 
 - [peter: nim blog](https://peterme.net/tags/nim.html)
 - [official nim blog](https://nim-lang.org/blog.html)
+
+benchmarks
+
+- [web frameworks](https://web-frameworks-benchmark.netlify.app/result)
+- [techempower](https://www.techempower.com/benchmarks/#section=data-r21&hw=ph&test=json)

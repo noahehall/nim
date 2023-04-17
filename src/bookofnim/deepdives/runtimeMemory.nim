@@ -18,7 +18,7 @@ types
 - sink
 - ref
 - ptr
-- pointer ?
+- pointer
 - addr
 - unsafeAddr
 

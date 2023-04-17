@@ -21,7 +21,11 @@
     - only a single thread can execute at any given time per cpu, timesharing occurs otherwise
     - Thread[void]: no data is passed via thread to its actor; the actor uses a channel only
     - Thread[NotVoid]: on thread creation, instance of NotVoid is expected and provided to its actor
-
+- 1.6.12 vs v2
+  - system.threads is now std/typedthreads
+  - system.threads still works in v2, but you should prefer import std/typedthreads
+    - maybe you dont even need to import typedthreads, not sure of the difference
+      - TODO
 
 links
 -----
@@ -74,6 +78,11 @@ todos
     - handled exceptions dont propagate across threads
     - unhandled exceptions terminates the entire process
 
+thread pragmas
+--------------
+- thread: defines this proc as a threads' proc
+- threadvar: declares this var as a threads' var
+
 system thread types
 -------------------
 - Thread[T] object
@@ -124,6 +133,9 @@ threadpool procs
 - unsafeRead a flowvar; blocks until flowvar value is available
 - spawnX action on new thread if CPU core ready; else on this thread; blocks produce; prefer spawn
 
+typedthreads
+------------
+- introduced in v2 ? seems to just be the system.threads module (which was deleted?)
 
 ## channels
 - designed for system.threads, unstable when used with spawn
