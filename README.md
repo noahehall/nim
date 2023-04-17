@@ -2,7 +2,7 @@
 
 > [bow to the crown](https://www.youtube.com/watch?v=AEtxGOjKx5c) - Heather Dale
 
-- my adventures in nim (1.6.12, will update to 2.0 when stable)
+- my adventures in nim >= 1.6.12 on ubuntu
 - hopefully a useful cheatsheet for my fellow nOobs
 - contributions welcomed
 - [v2 install steps until v2 is actually released](https://nim-lang.org/blog/2023/03/31/version-20-rc2.html)
