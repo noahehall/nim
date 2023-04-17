@@ -13,8 +13,9 @@
   - actor: a procedure recreated on a thread to execute some logic
     - its simpler for actors to pull/push data via a channel to/from other actors
     - else you can pass data between actors through a thread when its created
+    - an actor can create additional actors/threads/channels
   - channel: the bus in which data is sent between actors
-    - channels defined on the main thread are available to all actors
+    - channels defined on the main/current thread are available to all sibling actors
     - channels not defined on the main thread must be passed to other threads by ptr via an actor
   - thread: where execution occurs on a CPU, 12-core machine has 12 concurrent execution contexts
     - only a single thread can execute at any given time per cpu, timesharing occurs otherwise
@@ -132,7 +133,7 @@ threadpool procs
 
 system channel types
 --------------------
-- Channel[T] for relaying messages across threads
+- Channel[T] for relaying messages of type T
 
 system channel procs
 --------------------

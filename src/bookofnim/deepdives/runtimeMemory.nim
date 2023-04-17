@@ -13,4 +13,21 @@ links
 -----
 - [atomics](https://github.com/nim-lang/Nim/blob/devel/lib/pure/concurrency/atomics.nim)
 
+types
+-----
+- sink
+- ref
+- ptr
+- pointer ?
+- addr
+- unsafeAddr
+
+procs
+-----
+- alloc
+- dealloc
+
+pragmas
+-------
+- gcsafe
 ]##
