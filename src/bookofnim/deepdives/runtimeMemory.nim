@@ -13,6 +13,11 @@ links
 -----
 - [atomics](https://github.com/nim-lang/Nim/blob/devel/lib/pure/concurrency/atomics.nim)
 
+todos
+-----
+- [] is the dereferencing sign
+  - [see elegantbeefs response here](https://forum.nim-lang.org/t/10111)
+
 types
 -----
 - sink

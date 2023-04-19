@@ -26,6 +26,7 @@
 - [httpbeast: fast http 1.1 server](https://github.com/dom96/httpbeast)
 - [httpx](https://github.com/ringabout/httpx)
 - [jester: a sinetra-like web framework built on httpbeast](https://github.com/dom96/jester)
+- [kommandkit: high perf multithreaded webframework](https://git.termer.net/termer/KommandKit)
 - [limbdb: kv store using lmdb](https://forum.nim-lang.org/t/9210)
 - [llvm based compiler for nim](https://github.com/arnetheduck/nlvm)
 - [macr-based pattern matching library](https://github.com/alehander92/gara)
@@ -95,6 +96,10 @@
 #### jsony
 
 - [high perf, loose json >< object serialization](https://github.com/treeform/jsony)
+
+#### optionsutils
+
+- [sugar for Option type](https://github.com/PMunch/nim-optionsutils)
 
 ### tools
 

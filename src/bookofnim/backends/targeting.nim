@@ -12,6 +12,10 @@ links
   - [wrapping c libraries](https://peterme.net/wrapping-c-libraries-in-nim.html)
 - high impact
   - [default platforms](https://github.com/nim-lang/Nim/blob/devel/lib/system/platforms.nim)
+
+todos
+-----
+- [discussion: mobile apps with nim](https://forum.nim-lang.org/t/7251)
 ]##
 
 import
