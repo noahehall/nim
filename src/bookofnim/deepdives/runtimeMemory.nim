@@ -1,16 +1,19 @@
-##
 ## runtime memory operations
 ## =========================
 
 
 ##[
 ## TLDR
+- come back later
+  - this should continue where userDefinedTypes.nim ends
+  - ^ but focus on dealing with objects in memory
 - stack types arent garbage collected, only heap types
 - heap types also need to be initialized before used
 
 links
 -----
 - [atomics](https://github.com/nim-lang/Nim/blob/devel/lib/pure/concurrency/atomics.nim)
+- [lifetime-tracking hooks](https://nim-lang.org/docs/destructors.html#lifetimeminustracking-hooks)
 
 todos
 -----
@@ -18,6 +21,7 @@ todos
   - [see elegantbeefs response here](https://forum.nim-lang.org/t/10111)
 - reference all the ptr/ref/locks stuff in here
 - add a test file
+- hmm
 
 ## types
 
@@ -34,8 +38,7 @@ heap (ref) types
 - seq
 - sink
 - ref
-- ptr
-- pointer
+- ptr/pointer
 - addr
 - unsafeAddr
 - sets (hashSets)

@@ -4,6 +4,7 @@
 
 ##[
 ## TLDR
+- objects, enums and tuples are in userDefinedTypes.nim
 - structured types
   - can hold multiple values and have unlimited levels of nesting
   - two groups
@@ -87,15 +88,6 @@ slice
 ## ordinals
 - Ordinal[T] generic ordinal type
 - SomeOrdinal: any int, unit, bool, or enum
-
-enum
-----
-- A variable of an enum can only be assigned one of the enum's specified values
-- enum values are usually a set of ordered symbols, internally mapped to an integer (0-based)
-- $ convert enum index value to its name
-- ord convert enum name to its index value
-- its idiomatic nim to have ordinal enums (0, 1, 2, 3, etc)
-  - and not assign disjoint values (1, 5, -10)
 
 ## generic interface
 - should generally work with most types in this file
@@ -245,51 +237,6 @@ echo "concat 2 seq, copies both returns new", globalseq & @[4,5,6]
 echo "copy seq then append a single el and return new seq ", globalSeq & 4
 echo "copy seq then prepend a single el and return new seq ", 0 & globalseq
 
-echo "############################ enums"
-type AmericaOfJobs = enum
-  nineToFives, fiveToNines, twentyFourSeven # order matters: assigned as 0,1,2
-
-# you can assign custom string values for use with $ operator
-type PeopleOfAmerica {.pure.} = enum
-  coders = "think i am",
-  teachers = "pretend to be",
-  farmers = "prefer to be",
-  scientists = "trying to be"
-
-# you can assign both the ordinal and string value
-type ExplicitEnum = enum
-  AA = (0, "letter AA"),
-  BB = (1, "letter BB")
-
-echo ExplicitEnum.AA # letter AA
-echo twentyFourSeven # impure so doesnt need to be qualified
-echo PeopleOfAmerica.coders # coders needs to be qualified cuz its labeled pure
-
-# enum iteration via ord
-for i in ord(low(AmericaOfJobs))..
-        ord(high(AmericaOfJobs)):
-  echo AmericaOfJobs(i), " index is: ", i
-# iteration via enum
-# this echos the custom strings
-for peeps in PeopleOfAmerica.coders .. PeopleOfAmerica.scientists:
-  echo "we need more ", peeps
-
-# example from tut1
-type
-  Direction = enum
-    north, east, south, west # 0,1,2,3
-  BlinkLights = enum
-    off, on, slowBlink, mediumBlink, fastBlink
-  LevelSetting = array[north..west, BlinkLights] # 4 items of BlinkLights
-var
-  level: LevelSetting
-level[north] = on
-level[south] = slowBlink
-level[east] = fastBlink
-echo level        # --> [on, fastBlink, slowBlink, off]
-echo low(level)   # --> north
-echo len(level)   # --> 4
-echo high(level)  # --> west
 
 echo "############################ range"
 # BackwardsIndex returned by ^ (distinct int) values for reverse array access
