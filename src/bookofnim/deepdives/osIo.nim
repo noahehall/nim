@@ -6,6 +6,7 @@
 ##[
 ## TLDR
 - for async i/o see asyncPar.nim
+  - you generally want threadpool imported to getaround the blocking nature of i/o logic
 - if a proc accepts a filename (string), it may also accept a File/Filehandle
 - tips
   - always use absolutePath when working with paths
@@ -55,6 +56,9 @@
     - cmd accepting workingDir arg uses the current dir by default
   - poUsePath > poEvalCommand for portability and let nim escape cmd args correctly
   - refrain from using waitForExit for processes w/out poParemtStreams for fear of deadlocks
+- user input
+  - commandline params are passed when your app are started
+  - use the standard input stream to accept user input thereafter
 
 links
 -----
@@ -502,14 +506,6 @@ echo "############################ os/system exec/cmds/process"
 # stdmsg expands to stdout/err depending on useStdoutAsStdmsg switch
 # stdout stream
 
-when declared commandLineParams: echo fmt"{commandLineParams()}" else: discard ## \
-  ## only returns parameters, not the executable (see getAppFilename)
-
-when declared paramCount:
-  ## not defined when generating a dynamic library
-  echo fmt"{paramCount()=}"
-  echo if paramCount() > 0: fmt"{paramStr 1=}" else: fmt"no params provided to {paramStr 0=}"
-else: discard
 
 when defined(linux):
   echo fmt"{osErrorMsg OSErrorCode 0=}"
@@ -545,6 +541,32 @@ const buildInfo = "Revision " & staticExec("git rev-parse HEAD") &
                   ## returns stdout + stderr
 echo "build info: ", buildInfo
 
+
+echo "############################ os user input"
+# see parseopt for a more robust solution
+when declared commandLineParams:
+  echo fmt"{commandLineParams()}" else: discard
+  # only returns parameters, not the executable (see getAppFilename)
+
+when declared paramCount:
+  # not defined when generating a dynamic library
+  # should always be checked before access index with paramStr
+  echo fmt"{paramCount()=}"
+  echo if paramCount() > 0: fmt"{paramStr 1=}" else: fmt"no params provided to {paramStr 0=}"
+else: discard
+
+# commented as this breaks vscode runner
+when false:
+  when true: # runs on each line the user enters in their terminal
+    let userSaid = stdin.readLine() # blocks the application until a line is received
+    echo "received your msg", userSaid
+
+# see above
+when false:
+  while true:
+    # requires import threadpool for spawn and ^ operator
+    let userSaid = spawn stdin.readLine() # doesnt block cuz spawn
+    echo "reived your msg", ^userSaid # have to uyse the ^ to retrieve the flowvar
 
 echo "############################ osproc "
 

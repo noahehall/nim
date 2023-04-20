@@ -115,7 +115,7 @@ threadpool consts
 
 threadpool operators
 --------------------
-- ^ blocks until flowvar is available, then returns its value
+- ^ blocks if the value isnt ready, then always returns its value, check blah.isReady as workaround
 
 threadpool procs
 ----------------

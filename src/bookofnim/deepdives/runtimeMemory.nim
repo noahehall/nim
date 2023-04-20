@@ -19,6 +19,7 @@ links
 -----
 - [atomics](https://github.com/nim-lang/Nim/blob/devel/lib/pure/concurrency/atomics.nim)
 - [lifetime-tracking hooks](https://nim-lang.org/docs/destructors.html#lifetimeminustracking-hooks)
+- [gc common](https://github.com/nim-lang/Nim/blob/devel/lib/system/gc_common.nim)
 
 todos
 -----
