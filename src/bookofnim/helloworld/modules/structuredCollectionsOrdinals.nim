@@ -22,8 +22,11 @@ links
 ## structured: collections
 - cstringArray
 
-array
------
+## array
+- list of a static number of items
+- similar to C arrays but more memory safety
+array procs
+-----------
 - array[n, T] fixed-length dimensionally homogeneous
 - array, openArray, UncheckedArray, varargs
 - the array size is encoded in its type

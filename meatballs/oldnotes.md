@@ -1,9 +1,7 @@
 # nim
 
-- fkn need to finish this thing
-- haha only took 2 years, checkout [noahehall/nim for more](https://github.com/noahehall/nim)
-- TODO move this entire thing into bookofnim
-  - TODO: extract this info into the other files
+- nim in action: pg 40
+  - convert this to RST and import into the main file
 
 ## links
 

@@ -8,6 +8,7 @@
 - lists/queues are kept in lists.nim
 - table like stuff in containers
 - if something quacks like a sequence, you can probably use its procs
+  - and you probably want sequtils imported
 
 ## links
 - other

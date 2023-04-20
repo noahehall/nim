@@ -80,9 +80,9 @@ links
 
 
 echo "############################ variables"
-var woop1 = "flush"
-let woop2 = "hello"
-const woop3 = "flush"
+var woop1 = "flush" ## mutable vars dont require a value when defined
+let woop2 = "hello" ## must be assigned a value
+const woop3 = "flush" ## must be assigned a value
 
 # docs
 const fac4 = (var x = 1; for i in 1..4: x *= i; x) ## \

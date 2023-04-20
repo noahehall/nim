@@ -73,6 +73,10 @@ import std/[sugar, sequtils]
 let
   oneline = "this is a one line string"
   multiline = "this is a\nmultiline string"
+  multiline2 = """
+    this is a
+    multiline string
+  """
 
 echo "############################  strformat"
 import std/strformat
