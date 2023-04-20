@@ -28,6 +28,7 @@
 ## seqs
 - toSeq(blah) transforms any iterable into a sequence
 - newSeqWith useful for creating 2 dimensional sequences
+- newSeq perf optimization when the size is known
 - add
 - del
 - insert
@@ -40,7 +41,7 @@
   - keepItIf
   - mapIt
 
-## sets
+## sets (hash set)
 - efficient hash set and ordered hash set
 - values can be any hashable type, unlike system.set which only accept ordinals
 - like most things, has items and pairs iterator
@@ -79,6 +80,7 @@ import std/[sequtils]
 
 const
   immutable = toSeq(1..10)
+  mySeq = newSeq[string](3) ## if you know the size, always use newSeq for perf opt
   seq2d = newSeqWith(3, toSeq(1..5)) # @[@[1,2,3,4,5].repeat 3]
   zipped = @[("opt1", 'a'), ("opt2", 'b'), ("opt3", 'c')]
 

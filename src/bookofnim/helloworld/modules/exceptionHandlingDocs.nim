@@ -18,10 +18,13 @@
     - Exception is the base type for CatachableError (exceptions) and Defect (non catchable)
     - has to be allocated on the heap (requires ref) because their lifetime is unknown
   - raise keyword for throwing an exception/defect
+    - causes execution to cease until caught or program exits
     - e.g. `raise errInstance`
     - e.g. `raise newException(OSError, "Oops! did i do that?")`
     - raising without an error rethrows the previous exception
   - compile with `--panics:on` to make defects unrecoverable
+  - tracebacks:
+    - each line in the stack track is a call to a procedure
 - assert
   - -d:danger or --asertions:off to remove from compilation
   - --assertions:on to keep them in compiled output

@@ -23,8 +23,8 @@ todos
 - finished determine if a first class iterator has finished
 - countup  == `..` == `..<` (zero index countup)
 - countdown  == `..^` == `..^1` (zero index countdown)
-- items for i blah.items:
-- pairs for i,z blah.pairs:
+- items for i blah.items: always called if only 1 identifer is used
+- pairs for i,z blah.pairs: always called if two identifiers are used
 - low(blah) .. high(blah)
 
 ## iterators
@@ -59,6 +59,15 @@ iterator countTo(n: int): int =
   while i <= n: yield i; inc i
 
 for i in countTo(5): echo i
+
+iterator myIter(): int =
+  var i = 0
+  while i < 5:
+    yield i
+    i.inc
+
+for value in myIter():
+  echo "myIter() i=" & $value
 
 # std collection iterators
 # items/mitems : immutable/mutable, just the value

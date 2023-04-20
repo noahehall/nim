@@ -10,6 +10,7 @@
     - containers of fields: e.g. objects, tuples (check structuredContainers.nim)
     - collections of items: e.g. sequences, arrays, char, sub/ranges
 - ordinal types
+  - ordinals are values that can be orderly counted
   - enums, u/integers, bool
   - are countable and ordered, with a smallest & highest value
 - FYI about low & high procs
@@ -147,7 +148,11 @@ inspection ops
 - varargsLen the number of variadic arguments in x
 - in/notin
 
-## set procs
+## set
+- collection of distinct ordinal values
+
+set operators
+-------------
 - a - b	Difference
 - A - B	difference of two sets (A without B's elements)
 - A * B	intersection of two sets
@@ -156,9 +161,12 @@ inspection ops
 - A < B	strict subset relation (A is a proper subset of B)
 - A <= B	subset relation (A is subset of B or equal to B)
 - A == B	set equality
-- card(A)	the cardinality of A (number of elements in A)
 - e in A	set membership (A contains element e)
 - e notin A	A does not contain element e
+
+set procs
+---------
+- card(A)	the cardinality of A (number of elements in A)
 - excl(A, elem)	same as A = A - {elem}
 - incl(A, elem)	same as A = A + {elem}
 
