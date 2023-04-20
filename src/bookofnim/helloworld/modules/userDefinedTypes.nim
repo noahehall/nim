@@ -13,6 +13,7 @@
     - can be destructured/unpacked
     - lexical ordering of fields are maintained
     - field access by name/index (const int)
+    - can be anonymous and dont require a type statement
   - objects
     - provide inheritance & hidden fields
     - nominally equivalent: type name must match
@@ -67,6 +68,7 @@ enum
   - RootRef is a reference to RootObj (root of nims object hierachy, like javascripts object)
 - objects can be self-referencing
 - use the [] operator when logging the object (see strutils)
+- when both ref & non-ref exist for the same type, end each type name with Obj/Ref
 
 ref
 ---
@@ -115,8 +117,9 @@ multi-methods
 ]##
 
 {.push
-  hint[XDeclaredButNotUsed]:off,
-  hint[GlobalVar]:off
+  hint[XDeclaredButNotUsed]: off,
+  hint[GlobalVar]: off,
+  hint[Name]: off
 .}
 echo "############################ object"
 # exporting fields with *
@@ -128,6 +131,10 @@ type
     de: string
     wm: string
 
+type
+  DistroObj = object
+    computer: Computer
+  DistroRef = ref DistroObj
 
 echo "############################ getter/setters"
 # public fields can ignore this section

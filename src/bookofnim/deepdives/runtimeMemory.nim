@@ -7,8 +7,13 @@
 - come back later
   - this should continue where userDefinedTypes.nim ends
   - ^ but focus on dealing with objects in memory
-- stack types arent garbage collected, only heap types
-- heap types also need to be initialized before used
+- stack types
+  - arent garbage collected
+  - are immutable, always passed by value
+- heap types
+  - are garbage collected
+  - need to be initialized before used
+  - are mutable, the ref always points to the same memory location
 
 links
 -----
@@ -30,18 +35,19 @@ stack (value) types
 - array
 - float
 - int
+- object
 - set (system)
 
 heap (ref) types
 ----------------
-- string
-- seq
-- sink
-- ref
-- ptr/pointer
 - addr
-- unsafeAddr
+- ptr/pointer
+- ref
+- seq
 - sets (hashSets)
+- sink
+- string
+- unsafeAddr
 
 procs
 -----
