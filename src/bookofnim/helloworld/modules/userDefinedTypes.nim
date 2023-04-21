@@ -25,6 +25,7 @@ links
 -----
 - [distinct type aliases](https://nim-lang.org/docs/manual.html#types-distinct-type)
 - [inheritance](https://nim-lang.org/docs/manual.html#type-relations)
+- [reference and pointer types](https://nim-lang.org/docs/manual.html#types-reference-and-pointer-types)
 
 
 todos

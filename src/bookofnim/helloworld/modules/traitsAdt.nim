@@ -26,6 +26,10 @@ todos
   - mixin statement
   - bind statement
   - delegating bind statements
+- object variants: reread the docs
+  - using the dereferencing operator to reassign a case objects fields after instantiation
+  - differences with case + elif branches in the case statement
+  - enums vs range type for the discrimator field
 
 ## metatypes
 - untyped lookup symbols & perform type resolution after the expression is interpreted & checked
@@ -61,6 +65,9 @@ todos
   - generally a field called `kind` is set to SomeEnum, whose fields determine the branch
 - also called `case objects` in the docs
 
+variant pragmas
+---------------
+- uncheckedAssign disables re-assignment restrictions
 ]##
 
 {.push hint[XDeclaredButNotUsed]:off .}
@@ -177,3 +184,12 @@ type
 var fireTeam = Language(kind: nimlang, stack: "allstack", appName: "nirvai" )
 var webTeam = Language(kind: typescript, stack: "fullstack", appName: "nirvaiWeb")
 var opsTeam = Language(kind: shell, stack: "network", appName: "nirvConnect")
+
+type
+  FakeOption = object
+    case key: bool
+    of true: val: string
+    else: discard
+
+# create a fake option
+var myOpt = FakeOption(key: true, val: "has a value")

@@ -58,7 +58,7 @@ json types
 json procs
 ----------
 - kind get json node type
-- parseJson parses string into a json node
+- parseJson parses string into a json node, i.e. `JSON.parse`
 - getOrDefault from any j type
 - getInt(defaultValue)
 - getFloat(defaultValue)
