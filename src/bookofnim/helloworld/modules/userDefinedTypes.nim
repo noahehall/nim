@@ -24,6 +24,7 @@ links
 -----
 - [distinct type aliases](https://nim-lang.org/docs/manual.html#types-distinct-type)
 - [inheritance](https://nim-lang.org/docs/manual.html#type-relations)
+- [object variants](https://nim-lang.org/docs/manual.html#types-object-variants)
 
 todos
 -----
@@ -110,6 +111,8 @@ multi-methods
 
 ## variants
 - preferred over an object hierarchy with multiple levels when simple variants suffice
+- are objects with 2/more distinct manifestations based on some discriminating field(s)
+  - generally a field called `kind` is used to determine the branch
 
 ## recursive types
 - objects, tuples and ref objects that recursively depend on each other

@@ -8,6 +8,8 @@
 - nimble shipped with nim isnt the nimbiest version
   - install a nimbier nimble with `nimble install nimble`
 - parallel tasks are described in asyncPar
+- nimscript defined here is strictly for app configuration and nimble support
+  - check targets/shell.nims for in depth nimscripting
 
 links
 -----
@@ -112,11 +114,11 @@ creating nimble packages
 package dir structure
 ---------------------
 .. code-block:: Nim
-  .                           # The root directory of the project
   ├── LICENSE
   ├── README.md
   ├── foobar.nimble           # The project .nimble file
   └── src
+      ├── foobar.nims         # cfg specifically for sibling foobar.nim
       ├── foobar.nim          # Imported via `import foobar`
   │   └── foobar              # package module dir
   │   │   ├── utils.nim       # Imported via `import foobar/utils`
