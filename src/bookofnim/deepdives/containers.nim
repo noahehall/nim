@@ -8,6 +8,7 @@
 - [custom types as keys require hash + == procs](https://nim-lang.org/docs/tables.html#basic-usage-hashing)
 - generally all table types have the same interface; CountTables a bit more
 - critbit can be used as a sorted string dictionary
+- system.table is often used to collect and convert literals into std/tables
 
 links
 -----
@@ -35,7 +36,7 @@ table types
 - each has a blahRef variant
   - CountTable[A] tracks the occurrences of each key
   - OrderedTable[A; B] preserves the insertion order of keys
-  - Table[A; B] regular dictionary
+  - Table[A; B] regular hash table
 - == check returns true if both/neither are nil and
   - count: content + count identical
   - ordered: content + order identical
@@ -61,7 +62,9 @@ strtab types
 
 ]##
 
-import std/[sugar, strformat, strutils, sequtils]
+{.push hint[XDeclaredButNotUsed]:off, hint[GlobalVar]:off, hint[Name]: off .}
+
+import std/[sugar, strformat, strutils]
 
 
 echo "############################ tables"
@@ -74,7 +77,10 @@ const
   hashTable = baseTable.toTable ## newTable
   orderededTable = baseTable.toOrderedTable ## [('a', 5), ('b', 9)].toOrderedTable
   countTable = "wooperscooper".toCountTable ## anyOpenArrayLikeThing.toCountTable
-
+  anotherTable = toTable[string, int]({
+    "first": 1,
+    "second": 2
+  })
 
 echo "############################ pure tables"
 
