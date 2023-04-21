@@ -3,7 +3,6 @@
 
 ##[
 ## TLDR
-- come back later
 - algebraic data types and catchall for nims type system
 
 links
@@ -15,6 +14,7 @@ links
 
 todos
 -----
+- read through the scala notes and try to replicate the algebraic DTs
 - move all the type logic stuff in here
 - create a test file
 - add readme
@@ -57,11 +57,13 @@ todos
 
 ## object variants
 - preferred over an object hierarchy with multiple levels when simple variants suffice
-- are objects with 2/more distinct manifestations based on some discriminating field(s)
-  - generally a field called `kind` is used to determine the branch
+- are tagged unions, which use an enum to discrimate between variant
+  - generally a field called `kind` is set to SomeEnum, whose fields determine the branch
+- also called `case objects` in the docs
+
 ]##
 
-
+{.push hint[XDeclaredButNotUsed]:off .}
 echo "############################ type aliases"
 type
   BigMoney* = int # <- can be used wherever int is expected
@@ -152,30 +154,26 @@ template declareVariableWithType(T: typedesc, value: T) =
 declareVariableWithType(int, 42)
 
 
-echo "############################ variants"
-# better example @see https://nim-lang.org/docs/json.html#JsonNodeObj
-# copied from docs
-# This is an example how an abstract syntax tree could be modelled in Nim
-type
-  NodeKind = enum  # the different node types
-    nkInt,          # a leaf with an integer value
-    nkFloat,        # a leaf with a float value
-    nkString,       # a leaf with a string value
-    nkAdd,          # an addition
-    nkSub,          # a subtraction
-    nkIf            # an if statement
-  Node2 = ref object
-    case kind: NodeKind  # the `kind` field is the discriminator
-    of nkInt: intVal: int
-    of nkFloat: floatVal: float
-    of nkString: strVal: string
-    of nkAdd, nkSub:
-      leftOp, rightOp: Node2
-    of nkIf:
-      condition, thenPart, elsePart: Node2
+echo "############################ object variants"
 
-var myFloat = Node2(kind: nkFloat, floatVal: 1.0)
-echo "my float is: ", myFloat.repr
-# the following statement raises an `FieldDefect` exception, because
-# n.kind's value does not fit:
-# n.strVal = ""
+type
+  LanguageKind = enum # consumers can create these kinds of object variants
+    typescript, nimlang, shell
+  Language = ref LanguageObj # uses the fields defined in the object
+  LanguageObj = object # tagged unions
+    # shared fields
+    stack: string
+    appName: string
+    # each variant must have distinct fields
+    case kind: LanguageKind # discriminated by this field
+    of typescript:
+      bun: bool
+    of nimlang:
+      c: bool
+    of shell:
+      bash: bool
+
+# create a new case object
+var fireTeam = Language(kind: nimlang, stack: "allstack", appName: "nirvai" )
+var webTeam = Language(kind: typescript, stack: "fullstack", appName: "nirvaiWeb")
+var opsTeam = Language(kind: shell, stack: "network", appName: "nirvConnect")
