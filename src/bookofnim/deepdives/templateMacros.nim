@@ -32,6 +32,10 @@ template types
 --------------
 - untyped an expression thats not resolved for lazy evaluation
 - typed an expression that is resolved for greedy evaluation
+
+## macros
+- an API for metaprogramming
+
 ]##
 
 echo "############################ template"

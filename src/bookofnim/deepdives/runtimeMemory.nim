@@ -58,4 +58,9 @@ procs
 pragmas
 -------
 - gcsafe
+
+## unsafe Nim features
+- unsafe: i.e. you have to manage memory yourself, e.g. pointers & bit casts
+- generally required when directly consuming foreign functions outside of a wrapper
+  - a wrapper would manage the memory for you
 ]##

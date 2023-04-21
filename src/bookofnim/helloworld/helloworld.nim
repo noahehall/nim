@@ -117,6 +117,24 @@ my preferences
   - procs/iterators are overloaded, so no ambiguity
   - everything else must be qualified (c.b | d.b) if signatures are ambiguous
 
+pure modules
+------------
+- [pure module devel dir](https://github.com/nim-lang/Nim/tree/devel/lib/pure)]
+- a module with no dependencies on foreign functions (modules of other languages, e.g. C)
+
+impure modules
+--------------
+- [impure module devel dir](https://github.com/nim-lang/Nim/tree/devel/lib/impure)
+- a module with a foreign function dependency
+- the foreign function must be installed on the host computer for the module to work
+- preferred over wrapper modules as they dont require manual memory management
+
+wrapper modules
+---------------
+- nim modules that provide a 1-to-1 interface with a foreign function (e.g. C libraries)
+- can be used directly in Nim, albeit with unsafe features like pointers and bit casts
+  - see runtimeMemory.nim
+
 import
 ------
 - top-level symbols marked * from another module
@@ -135,8 +153,8 @@ import
     import "this/valid dir name/but invalid for nim/someMod" # someMod.woop
     import pkg/someNimblePkg # use pkg to import a nimble pkg
     from thisThing import this, thaz, thoz # can invoke this,that,thot without qualifying
-    from thisThing import nil # force symbol qualification, e.g. thisThing.blah()
-    from thisThing as thingThis import nil # even with an alias
+    from thisThing import nil # imports thisThing but none of its symbols, use thisThng.woop()
+    from thisThing as thingThis import nil # same as above, but with a custom namespace
 
 include
 -------
@@ -239,10 +257,12 @@ expressions
 
 visibility
 ----------
-- var: local or global depending on scope,
-- force local scope vars to global via {.global.} pragma
-- export symbols with asterisk e.g. `woop*` and it will be visible to client modules
-- scopes: all blocks (ifs, loops, procs, etc) introduce a closure EXCEPT when statements
+- nim is module and block scoped
+- module scope: each nimfile creates an isolated context
+  - use the `*` to export symbols into the scope of consumers
+- block scope: within a module, every block (ifs, loops, procs, etc) introduces a new scope
+  - EXCEPT when statements
+- force block scoped vars to global via {.global.} pragma
 ]##
 
 {.push warning[UnusedImport]:off, hint[GlobalVar]:off .}
