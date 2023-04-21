@@ -69,6 +69,32 @@ critbit procs
 - toCritBitTree
 - values|mvalues|
 - valuesWithPrefix|mvaluesWithPrefix
+
+
+## options
+
+option exceptions
+-----------------
+- UnpackDefect when getting a value that doesnt exist
+
+option types
+------------
+- Option[T] some/none
+- Some[T]
+- None[T]
+
+option procs
+------------
+- isSome thing there
+- isNone nil
+- get the value or raise UnpackDefect
+- filter returns Some/None depending on supplied lambda
+- flatMap map for chaining
+- flatten remove one level of a nested Option
+
+options operators
+-----------------
+- == true if both are none/equal values
 ]##
 
 {.push hint[XDeclaredButNotUsed]: off .}

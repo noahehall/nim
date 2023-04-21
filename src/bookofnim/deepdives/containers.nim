@@ -7,14 +7,14 @@
 ## TLDR
 - [custom types as keys require hash + == procs](https://nim-lang.org/docs/tables.html#basic-usage-hashing)
 - generally all table types have the same interface; CountTables a bit more
-- critbit can be used as a sorted string dictionary, see containers
+- critbit can be used as a sorted string dictionary
 
 links
 -----
 - high impact
-  - [tables aka dictionary](https://nim-lang.org/docs/tables.html)
-  - [string tables](https://nim-lang.org/docs/strtabs.html)
-  - [fusion btree tables](https://nim-lang.github.io/fusion/src/fusion/btreetables.html)
+  - [tables: hash](https://nim-lang.org/docs/tables.html)
+  - [tables: string](https://nim-lang.org/docs/strtabs.html)
+  - [tables: fusion btree](https://nim-lang.github.io/fusion/src/fusion/btreetables.html)
 - niche
   - [enum utils](https://nim-lang.org/docs/enumutils.html)
   - [shared tables](https://nim-lang.org/docs/sharedtables.html)
@@ -40,32 +40,6 @@ table types
   - count: content + count identical
   - ordered: content + order identical
   - table: content identical
-
-
-## options
-
-option exceptions
------------------
-- UnpackDefect when getting a value that doesnt exist
-
-option types
-------------
-- Option[T] some/none
-- Some[T]
-- None[T]
-
-option procs
-------------
-- isSome thing there
-- isNone nil
-- get the value or raise UnpackDefect
-- filter returns Some/None depending on supplied lambda
-- flatMap map for chaining
-- flatten remove one level of a nested Option
-
-options operators
------------------
-- == true if both are none/equal values
 
 ## strtabs
 - efficient string to string hash table supporting case/style in/sensitive

@@ -49,11 +49,14 @@ array like
 table
 -----
 - syntactic sugar for an array constructor (not to be confused with std/tables!)
-- {"k": "v"} == [("k", "v")]
-- {key, val}.newOrderedTable to convert it to a dictionary (requires std/tables)
+  - i.e. {"k": "v"} == [("k", "v")]
 - benefits of table design
   - the order of (key,val) are preserved to support ordered dicts
   - literals can be a const which requires a minimal amount of memory
+  - can be efficiently converted to any std/table type
+    - count table
+    - hash table
+    - ordered table
 
 ## sequence
 - seq[T] dynamic-length dimensionally homogeneous
