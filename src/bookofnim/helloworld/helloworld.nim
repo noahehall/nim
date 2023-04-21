@@ -110,7 +110,7 @@ my preferences
 - include can split 1 module == 1..X files
 - top level statements are executed at start of program (useful for initialization tasks)
 - enable information hiding and separate compilation
-- only top-level symbols marked with * are exported
+- all symbols are private (module scoped) unless exported with `*`
 - isMainModule: returns true if current module compiled as the main file (see testing.nim)
 - ambiguity
   - when module A imports symbol B that exists in C and D

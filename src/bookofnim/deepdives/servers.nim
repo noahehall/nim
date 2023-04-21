@@ -57,6 +57,10 @@ links
   - [low level native socket interface](https://nim-lang.org/docs/nativesockets.html)
 
 
+todos
+-----
+- niminaction: copy notes from 80 to 100
+
 ## httpclient
 - nim fetch
 
