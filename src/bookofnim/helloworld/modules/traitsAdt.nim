@@ -11,6 +11,7 @@ links
 - [type classes](https://nim-lang.org/docs/manual.html#generics-type-classes
 - [implicit generics](https://nim-lang.org/docs/manual.html#generics-implicit-generics)
 - [type bound operators](https://nim-lang.org/docs/manual.html#procedures-type-bound-operators)
+- [object variants](https://nim-lang.org/docs/manual.html#types-object-variants)
 
 todos
 -----
@@ -53,6 +54,11 @@ todos
 - since nim treats the names of types as regular values in certain contexts in the compilation phase
 - typedesc is a generic type for all types denoting the type class of all types
 - procs using typedesc params are implicitly generic
+
+## object variants
+- preferred over an object hierarchy with multiple levels when simple variants suffice
+- are objects with 2/more distinct manifestations based on some discriminating field(s)
+  - generally a field called `kind` is used to determine the branch
 ]##
 
 
@@ -144,3 +150,32 @@ template declareVariableWithType(T: typedesc, value: T) =
   var x: T = value
 
 declareVariableWithType(int, 42)
+
+
+echo "############################ variants"
+# better example @see https://nim-lang.org/docs/json.html#JsonNodeObj
+# copied from docs
+# This is an example how an abstract syntax tree could be modelled in Nim
+type
+  NodeKind = enum  # the different node types
+    nkInt,          # a leaf with an integer value
+    nkFloat,        # a leaf with a float value
+    nkString,       # a leaf with a string value
+    nkAdd,          # an addition
+    nkSub,          # a subtraction
+    nkIf            # an if statement
+  Node2 = ref object
+    case kind: NodeKind  # the `kind` field is the discriminator
+    of nkInt: intVal: int
+    of nkFloat: floatVal: float
+    of nkString: strVal: string
+    of nkAdd, nkSub:
+      leftOp, rightOp: Node2
+    of nkIf:
+      condition, thenPart, elsePart: Node2
+
+var myFloat = Node2(kind: nkFloat, floatVal: 1.0)
+echo "my float is: ", myFloat.repr
+# the following statement raises an `FieldDefect` exception, because
+# n.kind's value does not fit:
+# n.strVal = ""

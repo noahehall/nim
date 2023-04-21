@@ -4,6 +4,7 @@
 ##[
 ## TLDR
 - objects, tuples and enums are used to define custom types
+  - object variants are in traitsAdts.nim
 - if a ref/ptr points to nothing, its value is nil
 - enum and object types may only be defined within a type statement
 - tuples vs objects
@@ -24,14 +25,14 @@ links
 -----
 - [distinct type aliases](https://nim-lang.org/docs/manual.html#types-distinct-type)
 - [inheritance](https://nim-lang.org/docs/manual.html#type-relations)
-- [object variants](https://nim-lang.org/docs/manual.html#types-object-variants)
+
 
 todos
 -----
 - add a testfile
 - import in bookofnim.nim
 - update readme
-- object variants (reread the docs, couldnt get working)
+
 
 ## base types
 - used to construct custom types
@@ -108,11 +109,6 @@ multi-methods
 - occurs when multiple overloaded procs exist with different signatures
 - however they are still ambiguous because of inheritance
 - you have to use --multimethods:on when compiling
-
-## variants
-- preferred over an object hierarchy with multiple levels when simple variants suffice
-- are objects with 2/more distinct manifestations based on some discriminating field(s)
-  - generally a field called `kind` is used to determine the branch
 
 ## recursive types
 - objects, tuples and ref objects that recursively depend on each other
@@ -375,35 +371,6 @@ new bbbb
 # they're both Units, but collide doesnt have an overload specifically for that
 # so which will be used? type preference occurs from left -> right
 collide(aaaa, bbbb)
-
-echo "############################ variants"
-# better example @see https://nim-lang.org/docs/json.html#JsonNodeObj
-# copied from docs
-# This is an example how an abstract syntax tree could be modelled in Nim
-type
-  NodeKind = enum  # the different node types
-    nkInt,          # a leaf with an integer value
-    nkFloat,        # a leaf with a float value
-    nkString,       # a leaf with a string value
-    nkAdd,          # an addition
-    nkSub,          # a subtraction
-    nkIf            # an if statement
-  Node2 = ref object
-    case kind: NodeKind  # the `kind` field is the discriminator
-    of nkInt: intVal: int
-    of nkFloat: floatVal: float
-    of nkString: strVal: string
-    of nkAdd, nkSub:
-      leftOp, rightOp: Node2
-    of nkIf:
-      condition, thenPart, elsePart: Node2
-
-var myFloat = Node2(kind: nkFloat, floatVal: 1.0)
-echo "my float is: ", myFloat.repr
-# the following statement raises an `FieldDefect` exception, because
-# n.kind's value does not fit:
-# n.strVal = ""
-
 
 echo "############################ recursive types"
 # copied from docs
