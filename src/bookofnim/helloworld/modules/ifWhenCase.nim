@@ -70,11 +70,13 @@ when false: # trick for commenting code
   echo "this code is never compiled and not required to be commented out"
 
 # check if execution is compiletime or runtime (executable)
-# likely got this from the docs too
+# cannot contain elif branches
+# must contain an else branch
+# cannot define new symbols
 when nimvm:
   echo "in nim's vm, so its compile time"
 else:
-  echo "I must be running after compilation via an executable"
+  echo "runtime via an executable"
 
 
 when compiles(3 + 4):

@@ -8,8 +8,8 @@
 - structured types
   - can hold multiple values and have unlimited levels of nesting
   - two groups
-    - containers of fields: e.g. objects, tuples (check structuredContainers.nim)
-    - collections of items: e.g. sequences, arrays, char, sub/ranges
+    - containers of fields: e.g. objects, tuples, hashtables
+    - collections of items: e.g. sequences, arrays, char, sub/ranges, tables
 - ordinal types
   - ordinals are values that can be orderly counted
   - enums, u/integers, bool
@@ -20,6 +20,7 @@
 links
 -----
 - [nim by example: arrays](https://nim-by-example.github.io/arrays/)
+- [table constructor](https://nim-lang.org/docs/manual.html#statements-and-expressions-table-constructor)
 
 ## structured: collections
 - cstringArray
@@ -27,6 +28,7 @@ links
 ## array
 - list of a static number of items
 - similar to C arrays but more memory safety
+
 array procs
 -----------
 - array[n, T] fixed-length dimensionally homogeneous
@@ -44,23 +46,24 @@ array like
 - UncheckedArray[T] array with no bounds checking for implmenting customized flexibly sized arrays
 - varargs[T] an openarray paramter that accepts a variable number of args in a procedure
 
+table
+-----
+- syntactic sugar for an array constructor
+- {"k": "v"} == [("k", "v")]
+- {key, val}.newOrderedTable to convert it to a dictionary (requires std/tables)
+- benefits of table design
+  - the order of (key,val) are preserved to support ordered dicts
+  - literals can be a const which requires a minimal amount of memory
 
-set (bit set)
--------------
-- set[T] generic set constructor
-- basetype must be of int8/16, uint8/16, byte, char, enum
-  - hash sets (import std/sets) dont have this restriction
-- implemented as high performance bit vectors
-- often used to provide flags for procs
-
-sequence
---------
+## sequence
 - seq[T] dynamic-length dimensionally homogeneous
 - always heap allocated & gc'ed
 - can be passed to any proc accepting a seq/openarray
 - the @ is the array to seq operator: init array and convert to seq
   - converting an openArray into a seq is not as efficient as it copies all elements
   - or use the newSeq proc
+
+## range and alice
 
 range
 -----
@@ -111,7 +114,6 @@ immutable ops
 - find returns index of thing in item
 
 
-
 mutable ops
 -----------
 - add	y to collection x
@@ -141,7 +143,12 @@ inspection ops
 - in/notin
 
 ## set
+- set[T] generic set constructor
 - collection of distinct ordinal values
+- basetype must be of int8/16, uint8/16, byte, char, enum
+  - hash sets (import std/sets) dont have this restriction
+- implemented as high performance bit vectors
+- often used to provide flags for procs
 
 set operators
 -------------
@@ -208,6 +215,15 @@ lastWeek[0] = onSundayIAte
 echo "last sunday i ate: ", lastWeek[0]
 echo "but there are ", lastWeek.len , " days in a week.. are you cheating on your diet?"
 
+
+
+echo "############################ tables"
+
+let areJustArrays: array[0, int] = {:}
+echo "tables are sugar for arrays: " & $areJustArrays.repr
+var myTable = {"fname": "noah", "lname": "hall"}
+echo "my name is: ", $myTable
+echo "my firstname is: ", myTable[0][1]
 
 echo "############################ sequences"
 # seq[T] generic type for constructing sequences

@@ -80,6 +80,10 @@ todos
 - available for the JavaScript target too.
 - cant be used with funcs/{.noSideEffect.} (use debugEcho)
 
+## important globals
+
+- nimvm: true if current execution context is compile time
+
 ]##
 
 
