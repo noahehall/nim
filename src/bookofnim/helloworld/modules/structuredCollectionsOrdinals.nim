@@ -48,7 +48,7 @@ array like
 
 table
 -----
-- syntactic sugar for an array constructor
+- syntactic sugar for an array constructor (not to be confused with std/tables!)
 - {"k": "v"} == [("k", "v")]
 - {key, val}.newOrderedTable to convert it to a dictionary (requires std/tables)
 - benefits of table design
