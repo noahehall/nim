@@ -13,10 +13,12 @@
 --panics:on
 --parallelBuild:0 # 1 is always a good idea in CI
 --stackTraceMsgs:on
---styleCheck:hint
+--styleCheck:error
 --threads:on
 --tlsEmulation:on
+--unitsep:on # ASCII unit separator between error msgs
 --warnings:on
+# hintAsError:blah:on, warningAsError:blah:on
 
 case getCommand():
   of "c", "cc", "cpp", "objc":

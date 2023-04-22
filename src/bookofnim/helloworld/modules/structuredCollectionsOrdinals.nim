@@ -146,6 +146,7 @@ inspection ops
 - in/notin
 
 ## set
+- see deepdives/collections.nim for sets (hash set)
 - set[T] generic set constructor
 - collection of distinct ordinal values
 - basetype must be of int8/16, uint8/16, byte, char, enum

@@ -7,6 +7,7 @@
 ## TLDR
 - the sweetest nim syntax
 - the fusion pkg provides additional sugar, but its modules are dispersed through other files
+- working with data structures (e.g. sorting) generally requires std/algorithm
 
 links
 -----
@@ -79,8 +80,16 @@ const myTable = collect:
 echo "sugary table: " & $myTable
 
 
-echo "############################ sort algorithms"
+echo "############################ algorithm"
 import std/algorithm
+
 # cmp is useful for writing generic algs without perf loss
 # cmpMem is available for pointer types
-echo "echo sort seq[int] with cmp[int] ", sorted(@[4, 2, 6, 5, 8, 7], cmp[int])
+echo "sort seq[int] with cmp[int] ", sorted(@[4, 2, 6, 5, 8, 7], cmp[int])
+
+proc cmpCustom[T](x, y: T): int =
+  ## return 0, -1 or 1 for custom sorts
+  ## requires == and < operators defined for type T
+  result = if x == y: 0 elif x < y: -1 else: 1
+
+echo "using custom cmp proc ", sorted(@[4, 2, 6, 5, 8, 7], cmpCustom[int])

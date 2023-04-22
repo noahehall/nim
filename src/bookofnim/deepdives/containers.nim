@@ -131,7 +131,7 @@ type
     name: string
     uid: int
 
-var t = initTable[int, User]()
+var t = initTable[int, User]() ## initialize an empty hash table
 let u = User(name: "Hello", uid: 99)
 t[1] = u
 
@@ -175,3 +175,19 @@ echo "############################ strtabs impure"
 var newUser = newStringTable(modeCaseSensitive)
 
 proc echoUser: void = echo fmt"{newUser=}"
+
+echo "############################ custom objects as keys"
+# example of using custom objects as keys
+# see crypto.nim for full details of the hashes module
+
+import std/hashes
+
+
+proc hash(x: User): Hash = !$x.uid.hash
+  ## arbitrary logic for hashing a User
+  ## for use as key in a table
+
+var userDictionary = initTable[User, string]()
+userDictionary[User(name: "noah", uid: 1234)] = "custom keys!"
+
+echo fmt"{userDictionary=}"

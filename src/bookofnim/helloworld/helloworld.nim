@@ -83,6 +83,7 @@ borrowed from somewhere else (e.g. status auditor docs)
 
 my preferences
 --------------
+- prefer set/sets over sequences/arrays when possible
 - use fmt"{expr}" > &"{expr}" unless you need escapes (me)
 - use Natural/Positive for checks/type desc i.e. Positive.low == 1 Natural.low == 0
 - never discard Futures; use waitFor (eventually) / asyncCheck (immediately) to throwaway value/error
@@ -95,7 +96,7 @@ my preferences
   - e.g. pref x.fn y,z when working with objects
   - e.g. pref fn x,y when working with procs
   - e.g. pref fn(x, ...) when chaining/closures (calling syntax impacts type compatibility (docs))
-- -- > - cmd line switches so you can sort nim compiler options
+- prefer `--` over `-` cmd line switches so you can sort nim compiler options
 - object vs tuple
   - tuple: inheritance / private fields / reference equality NOT required
   - object: inheritance / private fields / reference equality IS required
