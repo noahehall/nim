@@ -59,8 +59,8 @@ when defined(posix) and not (defined(macosx) or defined(bsd)):
   echo "running on posix but not mac or bsd"
 
 when isMainModule:
-  # true if the module is compiled as the main file
-  # useful for embedding tests within the module
+  # true if the current file is compiled directly
+  # useful for embedding logic (e.g. tests) that arent executed when the file is imported
   assert true == true
 
 var whichVerse:string = when 1 < 2: "real world" else: "twitter verse"

@@ -109,27 +109,39 @@ package dir structure
 .. code-block:: Nim
   ├── LICENSE
   ├── README.md
-  ├── foobar.nimble           # The project .nimble file
+  ├── foobar.nimble  # The project .nimble file
+  ├── foobar.nim     # only put it here if this is the only module
   └── src
       ├── foobar.nims         # cfg specifically for sibling foobar.nim
       ├── foobar.nim          # Imported via `import foobar`
   │   └── foobar              # package module dir
   │   │   ├── utils.nim       # Imported via `import foobar/utils`
   │   │   ├── common.nim      # Imported via `import foobar/common`
-          └── private         # package internal modules
-  │   │   │   ├── hidden.nim  # Imported via `import foobar/private/hidden`
+          └── private         # consumers cant import private modules
+  │   │   │   ├── hidden.nim  # internally you can `import foobar/private/hidden`
   └── tests           # Contains the tests
       ├── config.nims
       ├── tfoo1.nim   # First test
       └── tfoo2.nim   # Second test
 
+creating nimble libraries
+-------------------------
+- all previous info still stands correct, however pay attention to the following
+- libraries arent pre-compiled, thus the directory structure most be obeyed
+  - if the library contains a single module, it can be in the root directory next to the .nimble file
+  - else create MyPackageName dir and put library files in there
+    - consumers can then `import myPackageName / myModuleName`
+
 releasing and publishing packages
 ---------------------------------
+- be sure to compile with nimble and NOT nim
+  - nimble adds extra checks, e.g. package dependencies are listed in the .nimble file
 - releasing
   - increment the version in .nimble
   - commit changes
-  - `git tag v1.2.3`
-  - push your tags
+  - tag the commit `git tag v1.2.3`
+    - this MUST MATCH the version number in step 1, else nimble will refuse to install it
+  - git push --tags
 - publishing
   - use `nimble publish`
   - or manually clone the [packages](https://github.com/nim-lang/packages) repo and submit a PR

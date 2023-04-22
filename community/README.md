@@ -93,6 +93,10 @@
 
 ### data
 
+#### bigints
+
+- [arbitrary precision integers for 64 bit systems](https://github.com/nim-lang/bigints)
+
 #### jsony
 
 - [high perf, loose json >< object serialization](https://github.com/treeform/jsony)
