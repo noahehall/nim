@@ -1,26 +1,29 @@
-# --hint:Conf:off # wtf? bookofnim/config.nims(1, 2) Error: 'on' or 'off' expected, but 'Conf:
-# ^ fails on any hint
-
+--assertions:off
+--checks:on
 --debugger:native
 --deepcopy:on # required for mm:orc/arc
 --define:nimStrictDelete
+--define:release
 --define:ssl
 --define:threadsafe
+--errorMax:1
 --experimental:strictEffects
+--forceBuild:on
 --hints:on
 --mm:orc
 --multimethods:on
 --panics:on
---parallelBuild:0 # 1 is always a good idea in CI
+--parallelBuild:0
 --stackTraceMsgs:on
---styleCheck:hint # in real apps set this to error
+--styleCheck:error
 --threads:on
 --tlsEmulation:on
 --unitsep:on # ASCII unit separator between error msgs
+--verbosity:0
 --warnings:on
-# you probably want the following in real apps
-# --warningAsError:GcUnsafe:on
 # --hintAsError:Performance:on
+# --hintAsError:XDeclaredButNotUsed:on
+# --warningAsError:GcUnsafe:on
 
 case getCommand():
   of "c", "cc", "cpp", "objc":
@@ -29,22 +32,37 @@ case getCommand():
     --stackTrace:on
   else: discard
 
+case existsEnv "CI":
+  of true:
+    --parallelBuild:0
+  else: discard
+
 case getEnv "ENV":
   of "DEV":
     --assertions:on
-    --checks:on
     --debuginfo:on
     --declaredLocs:on
+    --define:debug
     --errorMax:0
     --excessiveStackTrace:on
+    --forceBuild:off
     --opt:size
     --showAllMismatches:on
+    --styleCheck:hint
     --verbosity:2
     # --colors:on # breaks vscode run code extension
-  else:
-    --assertions:off
-    --define:release
-    --errorMax:1
-    --forceBuild:on
+    # --hintAsError:Performance:off
+    # --warningAsError:GcUnsafe:off
+  of "PERF":
+    --danger
+  of "SIZE":
+    --checks:off
+    --opt:size
+    --passC:"-flto"
+    --passL:"-flto"
+  of "SPEED":
+    --checks:off
     --opt:speed
-    --verbosity:0
+    --passC:"-flto"
+    --passL:"-s"
+  else: discard

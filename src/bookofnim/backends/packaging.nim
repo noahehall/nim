@@ -18,18 +18,11 @@ links
 - other
   - [configs used by nim](https://github.com/nim-lang/Nim/tree/devel/config)
   - [example config with tasks](https://github.com/kaushalmodi/nim_config/blob/master/config.nims)
-  - [example nimscript script](https://github.com/noahehall/nim/blob/develop/src/bookofnim/backends/targets/shell.nims)
   - [nimble repo](https://github.com/nim-lang/nimble)
   - [understanding how nim is built for X may help you do the same](https://nim-lang.org/docs/packaging.html)
-  - peter:
-      - [nimscript part 1](https://peterme.net/using-nimscript-as-a-configuration-language-embedding-nimscript-pt-1.html)
-      - [nimscript part 2](https://peterme.net/how-to-embed-nimscript-into-a-nim-program-embedding-nimscript-pt-2.html)
-      - [nimscript part 3](https://peterme.net/creating-condensed-shared-libraries-embedding-nimscript-pt-3.html)
 - high impact
   - [nimble pkg reference](https://github.com/nim-lang/nimble#nimble-reference)
   - [nims intro](https://nim-lang.org/docs/nims.html)
-  - [nimscript compatibility tests](https://github.com/nim-lang/Nim/blob/devel/tests/test_nimscript.nims)
-  - [nimscript spec (including tasks)](https://nim-lang.org/docs/nimscript.html)
   - [parse config](https://nim-lang.org/docs/parsecfg.html)
 - niche
   - [base object of a lexer](https://nim-lang.org/docs/lexbase.html)
@@ -83,6 +76,7 @@ creating nimble packages
     namedBin["main"] = "mymain" # rename binary
     namedBin = {"main": "mymain", "main2": "other-main"}.toTable() # rename binaries
 
+
     # package dependencies
     # ^= latest compatible semver
     # ~= latest version by increasing the last digit to highest version
@@ -103,6 +97,25 @@ creating nimble packages
 
     # package tasks: list a pkgs tasks via `nimble tasks`
     # see task section below
+
+package directives
+------------------
+- author
+- backend
+- bin
+- binDir
+- description
+- installDirs
+- installExt
+- installFiles
+- license
+- packageName
+- skipDirs
+- skipExt
+- skipFiles
+- srcDir
+- version
+- requires(varargs[string])
 
 package dir structure
 ---------------------
@@ -169,19 +182,6 @@ nimble configuration
 
 ## nimscript
 - subset of nim that can be evaluated by nims builtin VM
-- [runnable example](https://github.com/noahehall/nim/blob/develop/src/bookofnim/backends/targets/shell.nims)
-
-nimscript limitations
----------------------
-- not available
-  - any stdlib module relying on `importc` pragma
-  - multimethods
-- works but not 100% tested
-  - ptr operations
-  - var T args (rely on ptr operations)
-- nimscript vs nim
-  - random.randomize() requires an int64 as a seed
-
 
 nimscript for app configuration
 -------------------------------
@@ -196,74 +196,6 @@ nimscript for app configuration
 .. code-block:: Nim
   switch("opt", "size") || hint(name, bool) || warning(name, bool)
   --opt:size # IMO the cleaner syntax
-
-
-nimscript for scripting
------------------------
-- The syntax, style, etc is identical to compiled nim
-- supports templates, macros, types, concepts, effect tracking system, etc
-- std and third party pkgs can work in both .nim and .nims (see limitations)
-- a nims file is its own config file, but you can rely on the other types
-- shebang has two formats
-.. code-block:: Nim
-    # without switches
-    #!/usr/bin/env nim
-
-    # with switches
-    #!/usr/bin/env -S nim --hints:off
-
-nimscript nimble integration
-----------------------------
-- author
-- backend
-- bin
-- binDir
-- description
-- installDirs
-- installExt
-- installFiles
-- license
-- packageName
-- skipDirs
-- skipExt
-- skipFiles
-- srcDir
-- version
-- requires(varargs[string])
-
-nimscript types
----------------
-- ScriptMode enum
-  - Silent bool
-  - Verbose bool echos cmd before execution
-  - Whatif bool echos cmds without execution
-
-nimscript vars
---------------
-- mode ScriptMode runtime behavior
-- requiresData seq[string] for read/write access
-
-nimscript procs
----------------
-- cppDefine(string) is a C preprocessor #define and needs to be mangled
-- patchFile(pkg, thisFile, withThisFile) overrides location of a file belonging to pkg
-- readAllFromStdin() read all data from stdin; blocks until EOF event (stdin closed)
-- readLineFromStdin() read a line from stdin; blocks until EOF event (stdin closed)
-- toDll(fname) posix adds lib$fname.so, windows appends .dll to fname
-- toExe(fname) posix returns fname unmodified, windows appends .exe
-- cpFile from, to
-- mvFile
-- setCommand that Nim should continue execution with
-- getCommand that Nim is currently using to execute
-- switch(x, y) nim compiler switch, IMO prefer --x:y
-
-nimscript tasks
----------------
-- a template which creates a proc named blahTask
-- useful for package build scripts, shell scripts, devops actions, and integration with nimble
-  - tasks have before and after lifecycle hooks within .nimble files
-  - you have the power of nim wherever you would use a shell script
-- default tasks: help, build, tests, and bench cmds
 
 ## parsecfg
 - high performance config parser in windows ini syntax

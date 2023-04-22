@@ -68,6 +68,8 @@ todos
 
 ]##
 
+{.push warning[UnusedImport]:off, hint[XDeclaredButNotUsed]:off .}
+
 import std/[sugar, sequtils]
 
 let

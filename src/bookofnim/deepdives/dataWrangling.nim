@@ -72,6 +72,8 @@ re procs
 
 ]##
 
+{.push warning[UnusedImport]:off .}
+
 import std/[sugar, strformat]
 
 echo "############################ re"

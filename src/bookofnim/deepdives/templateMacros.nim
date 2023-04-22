@@ -38,6 +38,7 @@ template types
 
 ]##
 
+
 echo "############################ template"
 # copied from docs
 template `!=` (a, b: untyped): untyped =
@@ -50,10 +51,10 @@ assert(5 != 6)
 # lazy evaluation of proc args
 const debug = true
 var xy = 4
-proc log_eager(msg: string) {.inline.} =
+proc logEager(msg: string) {.inline.} =
   ## msg arg is evaluted before the fn is evoked
   if debug: stdout.writeLine(msg)
-template log_lazy(msg: string) =
+template logLazy(msg: string) =
   ## the template is processed before msg arg
   ## so if debug is false, msg wont be evaluted
   if debug: stdout.writeLine(msg)

@@ -255,11 +255,11 @@ me[0 .. 1] = "NO"
 echo "change first 2 els ", me
 
 # @ converts [x..y, type] into seq[type] efficiently
-var globalseq = @[1,2,3]
+var globalSeq = @[1,2,3]
 
-echo "concat 2 seq, copies both returns new", globalseq & @[4,5,6]
+echo "concat 2 seq, copies both returns new", globalSeq & @[4,5,6]
 echo "copy seq then append a single el and return new seq ", globalSeq & 4
-echo "copy seq then prepend a single el and return new seq ", 0 & globalseq
+echo "copy seq then prepend a single el and return new seq ", 0 & globalSeq
 
 
 echo "############################ range"
