@@ -35,6 +35,7 @@ todos
     - prevents race conditions and improves efficiency
   - has its own garbage collector
     - threads dont wait on other threads for the GC like in other languages
+- spawned procedures cannot safely handle var parameters
 
 ## types
 
@@ -74,4 +75,14 @@ errors/warnings
 - unsafe: i.e. you have to manage memory yourself, e.g. pointers & bit casts
 - generally required when directly consuming foreign functions outside of a wrapper
   - a wrapper would manage the memory for you
+
+## effective memory utilization
+- its all about knowing when to mutate, and not
+- memory waste (i.e. slow programs) in nim often the result of over allocation and deallocation
+  - i.e. creating too many vars to store ephemeral/short-lived data
+- using var to pass by reference is more efficient than passing stack values
+  - particularly important in loops/procs, when allocating new vars to store strings/ints/etc
+- `.setLen` to reset loop counters > over reassigning to 0 reuses existing memory
+- when dealing with parallel programs
+  - try to find the right size chunk/fragment of data to slice and send to each thread
 ]##

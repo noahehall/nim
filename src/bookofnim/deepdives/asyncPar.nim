@@ -108,6 +108,7 @@ thread vs threadpool
   - check flowVar.isReady instead of awaiting it directly to not block the current thread
   - e.g in a loop with sleep to pause between iterations
   - when the flowVar is fullfilled retrieve the value with ^flowVar
+  - procedures that return a non-ref type cant be spawned
 
 thread pragmas
 --------------
@@ -136,7 +137,7 @@ threadpool
 
 threadpool types
 ----------------
-- FlowVar data flow
+- FlowVar[T] future returned from a spawned proc containing a value T
 - FlowVarBase untyped base class for FlowVar
 - ThreadId
 

@@ -5,7 +5,6 @@
 ## TLDR
 - iterators are included, as their only used with loops
   - the parallel iterator is in asyncParMem
-- for loops can iterate over any iterator
 
 links
 -----
@@ -13,6 +12,7 @@ links
 - [iterator tut](https://nim-by-example.github.io/for_iterators/)
 - [closureScope](https://nim-lang.org/docs/system.html#%7C%7C.i%2CS%2CT%2Cstaticstring)
 - [status iterator docs](https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#iterators)
+- [system io iterators](https://nim-lang.org/docs/io.html#15)
 
 todos
 -----
@@ -26,6 +26,7 @@ todos
 - items for i blah.items: always called if only 1 identifer is used
 - pairs for i,z blah.pairs: always called if two identifiers are used
 - low(blah) .. high(blah)
+- lines(somefile) each line in the file
 
 ## iterators
 - inlined at the callsite when compiled
@@ -44,7 +45,7 @@ todos
 
 {.push hint[GlobalVar]:off .}
 
-echo "############################ iterators "
+echo "############################ iterator (procs) "
 # iterable[T] an expression that yeilds T
 iterator `...`*[T](a: T, b: T): T =
   var res: T = a
