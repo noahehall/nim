@@ -5,7 +5,8 @@
 
 ##[
 ## TLDR
-- nimble shipped with nim isnt the nimbiest version
+- nimble
+  - shipped with nim isnt the nimbiest version
   - install a nimbier nimble with `nimble install nimble`
   - is package-level package manager, i.e. pnpm not apt-get
 - parallel tasks are described in asyncPar
@@ -48,7 +49,10 @@ nimble packages
   - the .nimble filename should match the source codes mainFile.nim
   - the .nimble file is executed as nimscript, thus you have full access to nims VM
     - a package should generally define atleast a test task on install
-- generally requires git to be available at runtime
+- requires git/mercurial depending on where you're fetching remote packages from
+- nimble package versions: `nimble install blah bleh@123`
+  - @123 | @>=0.1.2 | @#gitCommitHash | @#head (or any tag)
+  - @url
 
 creating nimble packages
 ------------------------
