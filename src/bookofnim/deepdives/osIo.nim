@@ -7,6 +7,7 @@
 ## TLDR
 - for async i/o see asyncPar.nim
   - you generally want threadpool imported to getaround the blocking nature of i/o logic
+  - this includes executing external processes
 - if a proc accepts a filename (string), it may also accept a File/Filehandle
 - tips
   - always use absolutePath when working with paths

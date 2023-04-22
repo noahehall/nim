@@ -11,7 +11,7 @@
   - tuples
     - structurally equivalent: order and type of fields must match
     - all fields are public
-    - can be destructured/unpacked
+    - can be destructured/unpacked; use `_` to ignore elements
     - lexical ordering of fields are maintained
     - field access by name/index (const int)
     - can be anonymous and dont require a type statement

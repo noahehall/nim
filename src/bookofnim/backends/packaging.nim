@@ -7,6 +7,7 @@
 ## TLDR
 - nimble shipped with nim isnt the nimbiest version
   - install a nimbier nimble with `nimble install nimble`
+  - is package-level package manager, i.e. pnpm not apt-get
 - parallel tasks are described in asyncPar
 - nimscript defined here is strictly for app configuration and nimble support
   - check targets/shell.nims for in depth nimscripting
@@ -41,25 +42,10 @@ todos
 ## nimble
 - nim package manager
 
-nimble configuration
---------------------
-- posix: ~/.config/nimble/nimble.ini
-- windows: Users\someuser\AppData\Roaming\nimble\nimble.ini
-.. code-block:: Nim
-    # where to install pkgs
-    nimbleDir = r"~/nimble/"
-
-    # if true will add chcp 65001 to .cmd stubs generated in ~/.nimble/bin/
-    chcp = true
-
-    # specify new custom package list(s)
-    # over default with one named "Official"
-    # multiple path/urls can be specified per name
-    [PackageList]
-    name = "My local list"
-    path/url = r"/any/path/or/url"
-    cloneUsingHttps = true  # replace git:// with https://
-    httpProxy = ""
+nimble packages
+---------------
+- a directory with a .nimble file and one/more .nim files
+- generally requires git to be available at runtime
 
 creating nimble packages
 ------------------------
@@ -140,6 +126,27 @@ releasing and publishing packages
 - publishing
   - use `nimble publish`
   - or manually clone the [packages](https://github.com/nim-lang/packages) repo and submit a PR
+
+
+nimble configuration
+--------------------
+- posix: ~/.config/nimble/nimble.ini
+- windows: Users\someuser\AppData\Roaming\nimble\nimble.ini
+.. code-block:: Nim
+    # where to install pkgs
+    nimbleDir = r"~/nimble/"
+
+    # if true will add chcp 65001 to .cmd stubs generated in ~/.nimble/bin/
+    chcp = true
+
+    # specify new custom package list(s)
+    # over default with one named "Official"
+    # multiple path/urls can be specified per name
+    [PackageList]
+    name = "My local list"
+    path/url = r"/any/path/or/url"
+    cloneUsingHttps = true  # replace git:// with https://
+    httpProxy = ""
 
 ## nimscript
 - subset of nim that can be evaluated by nims builtin VM

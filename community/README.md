@@ -137,6 +137,12 @@
 
 - [github repo template with github actions, tests, etc](https://github.com/treeform/nimtemplate)
 
+### os
+
+#### osinfo
+
+- [better cross platform osinfo](https://github.com/dom96/osinfo)
+
 ### ci
 
 #### github actions

@@ -67,7 +67,11 @@ table
   - or use the newSeq proc
 
 ## range and alice
-
+- range: a type whose values fall into an arbitrary boundary
+- slice: an operator to extract a range from something, usually to pass to a proc
+- both use the same syntax, only the context changes
+  - 0 .. 2 --> inclusive .. inclusive
+  - 0 .. ^1 --> ^ counts backwards, ^1 includes the last element, ^2 doesnt
 range
 -----
 - range[T] generic constructor for range

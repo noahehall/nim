@@ -18,7 +18,9 @@
 --tlsEmulation:on
 --unitsep:on # ASCII unit separator between error msgs
 --warnings:on
-# hintAsError:blah:on, warningAsError:blah:on you probably want warningAsError:GcUnsafe:on
+# you probably want the following in real apps
+# --warningAsError:GcUnsafe:on
+# --hintAsError:Performance:on
 
 case getCommand():
   of "c", "cc", "cpp", "objc":

@@ -7,6 +7,8 @@
 TLDR
 - [see dom96s response to this question before using marshal to parse json](https://stackoverflow.com/questions/26191114/how-to-convert-object-to-json-in-nim)
 - see data wrangling, for wrangling data
+- parser modules generally start with parse
+  - if dealing with html syntax trees, i believe the xml parsers work as well
 
 links
 -----
