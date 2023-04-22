@@ -13,10 +13,10 @@
 --panics:on
 --parallelBuild:0 # 1 is always a good idea in CI
 --stackTraceMsgs:on
---styleCheck:error # in real apps set this to error
+--styleCheck:hint # in real apps set this to error
 --threads:on
 --tlsEmulation:on
---unitsep:on # ASCII unit separator between error msgsfff
+--unitsep:on # ASCII unit separator between error msgs
 --warnings:on
 # hintAsError:blah:on, warningAsError:blah:on you probably want warningAsError:GcUnsafe:on
 
