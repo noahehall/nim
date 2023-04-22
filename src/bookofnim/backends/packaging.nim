@@ -45,6 +45,9 @@ todos
 nimble packages
 ---------------
 - a directory with a .nimble file and one/more .nim files
+  - the .nimble filename should match the source codes mainFile.nim
+  - the .nimble file is executed as nimscript, thus you have full access to nims VM
+    - a package should generally define atleast a test task on install
 - generally requires git to be available at runtime
 
 creating nimble packages
