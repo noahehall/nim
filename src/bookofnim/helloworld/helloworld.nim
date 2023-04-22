@@ -144,7 +144,8 @@ import
 - else traverses up the nim PATH for the first match
   - [search path docs](https://nim-lang.org/docs/nimc.html#compiler-usage-search-path-handling)
   .. code-block:: Nim
-    import math # everything
+    import math # everything except private symbols
+    import foo {.all.}  # import everything
     import std/math # import math specifically from the std library
     import mySubdir/thirdFile
     import myOtherSubdir / [fourthFile, fifthFile]
@@ -153,6 +154,7 @@ import
     import this/thing/here, "that/is/in/this/sub/dir" # identifier is stil here.woop
     import "this/valid dir name/but invalid for nim/someMod" # someMod.woop
     import pkg/someNimblePkg # use pkg to import a nimble pkg
+    rom system {.all.} as system2 import nil
     from thisThing import this, thaz, thoz # can invoke this,that,thot without qualifying
     from thisThing import nil # imports thisThing but none of its symbols, use thisThng.woop()
     from thisThing as thingThis import nil # same as above, but with a custom namespace

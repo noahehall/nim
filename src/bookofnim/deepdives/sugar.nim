@@ -17,7 +17,8 @@ links
   - [algorithm](https://nim-lang.org/docs/algorithm.html)
   - [enumarate any collection](https://nim-lang.org/docs/enumerate.html)
   - [wrapnils optional chaining](https://nim-lang.github.io/Nim/wrapnils.html)
-
+- niche
+  - [import private symbols](https://github.com/nim-lang/Nim/blob/devel/lib/std/importutils.nim)
 
 todos
 -----

@@ -56,6 +56,7 @@ case getEnv "ENV":
   of "PERF":
     --danger
   of "SIZE":
+    # @see https://github.com/ee7/binary-size
     --checks:off
     --opt:size
     --passC:"-flto"

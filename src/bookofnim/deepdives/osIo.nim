@@ -84,6 +84,7 @@ links
   - [read stdin](https://nim-lang.org/docs/rdstdin.html)
   - [system io](https://nim-lang.org/docs/io.html)
   - [terminal](https://nim-lang.org/docs/terminal.html)
+  - [temp files and directories](https://github.com/nim-lang/Nim/blob/devel/lib/std/tempfiles.nim)
 - niche
   - [open users browser](https://nim-lang.org/docs/browsers.html)
   - [raw posix interface]https://nim-lang.org/docs/posix.html
