@@ -360,8 +360,8 @@ echo fmt"{parentDirs(fossdir, true).toSeq=}"
 for dir in [tmpdir, dirtmp]: createDir dir; echo fmt"{dir} {dirExists dir=}"; removeDir dir
 
 let hiddenFiles = collect:
-  for k in getHomeDir().walkDir:
-    if k.path.isHidden: k.path.lastPathPart
+  for kind, path in getHomeDir().walkDir:
+    if path.isHidden: fmt"{kind}: {path.lastPathPart=}"
 echo fmt"filtered collect getHomeDir().walkdir {hiddenFiles=}"
 
 i = 0
