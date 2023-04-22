@@ -4,9 +4,8 @@
 
 ##[
 ## TLDR
-- come back later
-  - this should continue where userDefinedTypes.nim ends
-  - ^ but focus on dealing with objects in memory
+- continue where userDefinedTypes.nim and asyncPar.nim ends
+  - but focus on dealing with objects in memory
 - stack types
   - arent garbage collected
   - are immutable, always passed by value
@@ -28,6 +27,14 @@ todos
 - reference all the ptr/ref/locks stuff in here
 - add a test file
 - hmm
+
+## garbage collector safety
+
+- each thread
+  - has an isolated memory heap; no sharing occurs
+    - prevents race conditions and improves efficiency
+  - has its own garbage collector
+    - threads dont wait on other threads for the GC like in other languages
 
 ## types
 
@@ -58,6 +65,10 @@ procs
 pragmas
 -------
 - gcsafe
+
+errors/warnings
+---------------
+- GC-Safe error: accessing/mutating/assigning a variable owned by another thread
 
 ## unsafe Nim features
 - unsafe: i.e. you have to manage memory yourself, e.g. pointers & bit casts

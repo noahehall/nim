@@ -6,7 +6,8 @@
 ##[
 ## TLDR
 - see servers.nim for async server stuff
-- you generally need the following for any thread related logic
+- see runtimeMemory.nim for understanding threads, memory and GC
+- you need the following for any thread related logic
   - required: --threads:on switch
   - should use: std/locks
 - its useful to think about threads and channels using the actor model
@@ -20,12 +21,26 @@
   - thread: where execution occurs on a CPU, 12-core machine has 12 concurrent execution contexts
     - only a single thread can execute at any given time per cpu, timesharing occurs otherwise
     - Thread[void]: no data is passed via thread to its actor; the actor uses a channel only
-    - Thread[NotVoid]: on thread creation, instance of NotVoid is expected and provided to its actor
+    - Thread[NotVoid]: on thread creation, instance of NotVoid is expected and passed to its actor
+      - in order to pass multiple params, use something like a tuple/array/etc
 - 1.6.12 vs v2
   - system.threads is now std/typedthreads
   - system.threads still works in v2, but you should prefer import std/typedthreads
     - maybe you dont even need to import typedthreads, not sure of the difference
       - TODO
+- concurrency vs parallelism in nim
+  - task: generally a process, e.g. an instance of a program
+  - thread: child of a parent process, that can execute in parallel to other threads
+    - threads will spawn child processes to execute their tasks
+    - main process -> child thread -> child threads process -> execute this task
+  - concurrency: performing tasks without waiting for other tasks is highly evolved
+    - are CPU bound, i.e. execute on the same thread with timesharing to simulate multitasking
+  - parallelism: performing tasks at the same time is still evolving
+    - the API is mature and stable, however, the dev teams goals have yet to be fully realized
+      - e.g. parallel async await might not be available yet (dunno)
+    - parallel tasks are distributed across physical CPUs for true multitasking
+      - or via simultaneous multithreading (SMT) like intels Hyper-Threading
+    - if all CPUs are taken, timesharing occurs (concurrency semantics)
 
 links
 -----
@@ -62,11 +77,10 @@ todos
 
 
 ## threads
-- thread (system) can be saved to a var / proc and awaited by many callers
-- spawn (threadpool): is ephemeral; a flowvar that can be awaited by a single caller
+
 - each thread has its own GC heap and mem sharing is restricted
   - improves efficiency and prevents race conditions
-- procs used with threads should have {.thread.} pragma
+- procs used with threads require {.thread.} pragma
   - to create a thread from the proc you must use spawn/createThread
   - proc signature cant have var/ref/closure types (enforces no heap sharing restriction)
   - implies `procvar`
@@ -78,10 +92,28 @@ todos
     - handled exceptions dont propagate across threads
     - unhandled exceptions terminates the entire process
 
+thread vs threadpool
+--------------------
+- thread (system) create and save a thread to a variable
+  - requires manually managing the thread, its tasks, and execution
+  - are resource intensive: only when full control is required on a limited number of threads
+  - executes procedures but doesnt return their results
+- spawn (threadpool): create a task and save its future result to a variable
+  - you spawn a procedure thats added to a pool (queue) of tasks
+  - threadpool manages creation of threads, distribution and execution of tasks
+    - you dont have to worry about the number of threads or underutilizing created threads
+  - are optimized and efficient: can be used for creating ALOT of threads with intensive tasks
+  - execute any invocable expression and returns a FlowVar[T] with the future result
+- spawn and FlowVar
+  - check flowVar.isReady instead of awaiting it directly to not block the current thread
+  - e.g in a loop with sleep to pause between iterations
+  - when the flowVar is fullfilled retrieve the value with ^flowVar
+
 thread pragmas
 --------------
-- thread: defines this proc as a threads' proc
+- thread: this proc is intended for multitasking
 - threadvar: declares this var as a threads' var
+- raises: should always be used to ensure a thread proc handles all its exceptions
 
 system thread types
 -------------------
@@ -89,8 +121,8 @@ system thread types
 
 system thread procs
 -------------------
-- createThread of type T/void with thread fn X and data arg Y/nil
-- getThreadId() of the currently thread
+- createThread and execute a proc on it
+- getThreadId of some thread
 - handle of Thread[T]
 - joinThread back to main process when finished
 - joinThreads back to main process when finished
