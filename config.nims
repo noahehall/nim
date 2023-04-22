@@ -21,9 +21,9 @@
 --unitsep:on # ASCII unit separator between error msgs
 --verbosity:0
 --warnings:on
-# --hintAsError:Performance:on
-# --hintAsError:XDeclaredButNotUsed:on
-# --warningAsError:GcUnsafe:on
+switch("hintAsError", "Performance:on") # --hintAsError:Performance:on fails
+switch("hintAsError", "XDeclaredButNotUsed:on") # see above
+switch("warningAsError", "GcUnsafe:on") # see above
 
 case getCommand():
   of "c", "cc", "cpp", "objc":
@@ -51,8 +51,9 @@ case getEnv "ENV":
     --styleCheck:hint
     --verbosity:2
     # --colors:on # breaks vscode run code extension
-    # --hintAsError:Performance:off
-    # --warningAsError:GcUnsafe:off
+    switch("hintAsError", "Performance:off") # --hintAsError:Performance:on fails
+    switch("hintAsError", "XDeclaredButNotUsed:off") # see above
+    switch("warningAsError", "GcUnsafe:off") # see above
   of "PERF":
     --danger
   of "SIZE":

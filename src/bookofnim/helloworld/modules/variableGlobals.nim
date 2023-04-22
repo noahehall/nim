@@ -86,7 +86,7 @@ todos
 
 ]##
 
-
+{.push hint[XDeclaredButNotUsed]:off .}
 echo "############################ variables"
 var woop1 = "flush" ## mutable vars dont require a value when defined
 let woop2 = "hello" ## must be assigned a value

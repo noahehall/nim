@@ -156,6 +156,7 @@ runnableExamples
 
 ]##
 
+{.push hint[XDeclaredButNotUsed]:off .}
 echo "############################ documentation: src code"
 let goodcode* = "isdocumented"  ## doc comment on same line
 let badcode = "ishardtomaintain"  ## \
@@ -198,6 +199,7 @@ proc neverThrows(): string {.raises: [].} =
   result = "dont compile if I can raise any error"
 echo neverThrows()
 
+{.push hint[XCannotRaiseY]:off.}
 proc maybeThrows(x: int): int {.raises: [ValueError].} =
   ## only value errors are allowed
   try:
@@ -206,7 +208,7 @@ proc maybeThrows(x: int): int {.raises: [ValueError].} =
     echo "caught a value error!"
   result = x
 echo maybeThrows(23)
-
+{.pop.}
 
 echo "############################ try/except/finally "
 if true:

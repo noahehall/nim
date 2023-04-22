@@ -26,6 +26,7 @@ links
 - are executed once, the first time they're seen by the compiler
 ]##
 
+{. hint[XDeclaredButNotUsed]:off .}
 echo "############################ block"
 
 let sniper = "scope module" ## is in the module scope, global to this module
