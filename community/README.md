@@ -66,6 +66,7 @@
 - [qrgen: generate QR codes](https://github.com/aruZeta/QRgen)
 - [ready: redis client](https://github.com/guzba/ready)
 - [scorper: micro webframework built on chronos](https://github.com/bung87/scorper)
+- [threadproxy: inter-thread communication](https://github.com/jackhftang/threadproxy.nim)
 - [ttop: sys monitoring tool](https://github.com/inv2004/ttop)
 - [uing: updated fork of nim-lang/ui](https://github.com/neroist/uing)
 - [vaf: http fuzzer](https://github.com/d4rckh/vaf)
