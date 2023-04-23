@@ -83,7 +83,11 @@ case existsEnv "CI":
 when (NimMajor, NimMinor, NimPatch) <= (1,6,12):
   # throws in v2, maybe its no longer experimental?
   --experimental:implicitDeref
-  switch("warningAsError", "HoleEnumConv:off") # fails in ci, no clue
+  # fails in ci, no clue but my stupid guess is
+  # it may have to do with multiple nim versions installed locally when theres only 1 in CI
+  switch("warningAsError", "HoleEnumConv:off")
+  switch("hintAsError", "Performance:off")
+  # throws on nim source code
   # @see https://github.com/nim-lang/Nim/issues/21713
   switch("hintAsError", "XDeclaredButNotUsed:off")
   switch("warningAsError", "Deprecated:off")
