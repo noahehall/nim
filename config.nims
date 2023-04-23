@@ -26,6 +26,7 @@
 --verbosity:0
 --warnings:on
 switch("hint","GlobalVar:off") # spams u to death
+switch("hintAsError", "DuplicateModuleImport:on")
 switch("hintAsError", "Performance:on")
 switch("hintAsError", "XDeclaredButNotUsed:on")
 switch("warningAsError", "ConfigDeprecated:on")
@@ -33,7 +34,8 @@ switch("warningAsError", "Deprecated:on")
 switch("warningAsError", "GcUnsafe:on")
 switch("warningAsError", "HoleEnumConv:on")
 switch("warningAsError", "ResultUsed:on")
-
+switch("warningAsError", "CastSizes:on")
+switch("warningAsError", "UnusedImport:on")
 case getCommand():
   of "c", "cc", "cpp", "objc":
     --lineDir:on
