@@ -34,7 +34,6 @@ switch("warningAsError", "Deprecated:on")
 switch("warningAsError", "GcUnsafe:on")
 switch("warningAsError", "HoleEnumConv:on")
 switch("warningAsError", "ResultUsed:on")
-switch("warningAsError", "CastSizes:on")
 switch("warningAsError", "UnusedImport:on")
 case getCommand():
   of "c", "cc", "cpp", "objc":
@@ -94,3 +93,4 @@ when (NimMajor, NimMinor, NimPatch) <= (1,6,12):
   switch("warningAsError", "Deprecated:off")
 else:
   --define:futureLogging
+  switch("warningAsError", "CastSizes:on")
