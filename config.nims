@@ -72,13 +72,6 @@ case getEnv "ENV":
     --passL:"-s"
   else: discard
 
-case existsEnv "TEST":
-  of true:
-    --assertions:on
-    --stackTraceMsgs:on
-    --verbosity:3
-  else: discard
-
 case existsEnv "CI":
   of true:
     --parallelBuild:1

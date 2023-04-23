@@ -18,4 +18,7 @@ when defined(windows):
   switch("tlsEmulation", "off")
 
 # internal
-switch("putenv", "TEST=1")
+switch("putenv", "TEST=1") # dont set ENV=TEST, e.g. to run tests against PERF
+switch("assertions", "on")
+switch("stackTraceMsgs", "on")
+switch("verbosity", "3")
