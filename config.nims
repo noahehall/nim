@@ -26,6 +26,7 @@
 --unitsep:on # ASCII unit separator between error msgs
 --verbosity:0
 --warnings:on
+switch("hint","GlobalVar:off") # spams u to death
 switch("hintAsError", "Performance:on")
 switch("hintAsError", "XDeclaredButNotUsed:on")
 switch("warningAsError", "ConfigDeprecated:on")
