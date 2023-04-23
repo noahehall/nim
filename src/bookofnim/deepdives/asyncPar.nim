@@ -541,7 +541,7 @@ except: echo fmt"couldnt create {afilepath.parentDir}"
 
 var
   reader = afilepath.openAsync fmRead
-  writer = afilepath.openASync fmWrite
+  writer = afilepath.openAsync fmWrite
 
 
 waitFor writer.write "first line in file\n"
