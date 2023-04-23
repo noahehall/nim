@@ -1,4 +1,5 @@
 # --colors:on # breaks vscode run code extension
+# --define:futureLogging # fails in CI
 # --experimental:codeReordering dont use or fear the amount of logs it produces
 # FYI: hint/warningAsError requires switch() syntax
 
@@ -6,7 +7,6 @@
 --checks:on
 --debugger:native
 --deepcopy:on # required for mm:orc/arc
---define:futureLogging
 --define:nimStrictDelete
 --define:release
 --define:ssl
