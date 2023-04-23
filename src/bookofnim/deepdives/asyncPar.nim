@@ -10,6 +10,8 @@
 - you need the following for any thread related logic
   - required: --threads:on switch
   - should use: std/locks
+- you need the following for any async stuff
+  - getFuturesInProgress requires --define:futureLogging
 - its useful to think about threads and channels using the actor model
   - actor: a procedure recreated on a thread to execute some logic
     - its simpler for actors to pull/push data via a channel to/from other actors
@@ -459,9 +461,6 @@ close relay
 
 echo "############################ asyncdispatch "
 import std/[asyncdispatch]
-
-
-## getFuturesInProgress requires --define:futureLogging
 
 proc f1 (): Future[string] {.async.} =
   ## handling exeptions the correct way

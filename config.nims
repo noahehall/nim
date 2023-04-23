@@ -5,6 +5,7 @@
 --checks:on
 --debugger:native
 --deepcopy:on # required for mm:orc/arc
+--define:futureLogging
 --define:nimStrictDelete
 --define:release
 --define:ssl
