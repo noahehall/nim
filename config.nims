@@ -1,5 +1,4 @@
 # --colors:on # breaks vscode run code extension
-# --define:futureLogging # fails in CI
 # --experimental:codeReordering dont use or fear the amount of logs it produces
 # FYI: hint/warningAsError requires switch() syntax
 
@@ -20,7 +19,7 @@
 --panics:on
 --parallelBuild:0
 --stackTraceMsgs:off
---styleCheck:error
+--styleCheck:hint
 --threads:on
 --tlsEmulation:on
 --unitsep:on # ASCII unit separator between error msgs
@@ -54,7 +53,7 @@ case getEnv "ENV":
     --opt:size
     --showAllMismatches:on
     --stackTraceMsgs:on
-    --styleCheck:hint
+    --styleCheck:error
     --verbosity:2
     switch("hintAsError", "XDeclaredButNotUsed:off")
     switch("warningAsError", "Deprecated:off")
@@ -91,3 +90,5 @@ when (NimMajor, NimMinor, NimPatch) <= (1,6,12):
   # @see https://github.com/nim-lang/Nim/issues/21713
   switch("hintAsError", "XDeclaredButNotUsed:off")
   switch("warningAsError", "Deprecated:off")
+else:
+  --define:futureLogging
