@@ -18,7 +18,7 @@
 --multimethods:on
 --panics:on
 --parallelBuild:0
---stackTraceMsgs:on
+--stackTraceMsgs:off
 --styleCheck:error
 --threads:on
 --tlsEmulation:on
@@ -40,11 +40,6 @@ case getCommand():
     --stackTrace:on
   else: discard
 
-case existsEnv "CI":
-  of true:
-    --parallelBuild:1
-  else: discard
-
 case getEnv "ENV":
   of "DEV":
     --assertions:on
@@ -56,6 +51,7 @@ case getEnv "ENV":
     --forceBuild:off
     --opt:size
     --showAllMismatches:on
+    --stackTraceMsgs:on
     --styleCheck:hint
     --verbosity:2
     switch("hintAsError", "XDeclaredButNotUsed:off")
@@ -74,4 +70,17 @@ case getEnv "ENV":
     --opt:speed
     --passC:"-flto"
     --passL:"-s"
+  else: discard
+
+case existsEnv "TEST":
+  of true:
+    --assertions:on
+    --stackTraceMsgs:on
+    --verbosity:3
+  else: discard
+
+case existsEnv "CI":
+  of true:
+    --parallelBuild:1
+    --verbosity:2
   else: discard
