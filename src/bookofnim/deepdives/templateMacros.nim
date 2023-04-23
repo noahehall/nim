@@ -20,6 +20,7 @@ todos
 - [macro pragmas](https://nim-lang.org/docs/manual.html#userminusdefined-pragmas-macro-pragmas)
 - [asyncmacro](https://github.com/nim-lang/Nim/blob/devel/lib/pure/asyncmacro.nim)
 - put the asyncdispatch templates in this file
+- niminaction chapter 9
 
 ## templates
 - simple form of a macro

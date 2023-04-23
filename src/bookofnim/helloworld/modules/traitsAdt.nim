@@ -30,6 +30,10 @@ todos
   - using the dereferencing operator to reassign a case objects fields after instantiation
   - differences with case + elif branches in the case statement
   - enums vs range type for the discrimator field
+- generics and the method call syntax
+  - theres a `[:X]` syntax that doesnt conflict with the method call syntax (blah.method)
+    - [docs](https://nim-lang.org/docs/manual.html#procedures-method-call-syntax)
+    - [forum post](https://forum.nim-lang.org/t/10125)
 
 ## metatypes
 - untyped lookup symbols & perform type resolution after the expression is interpreted & checked
@@ -68,6 +72,10 @@ todos
 variant pragmas
 ---------------
 - uncheckedAssign disables re-assignment restrictions
+
+## generics
+- abc
+
 ]##
 
 {.push hint[XDeclaredButNotUsed]:off .}
