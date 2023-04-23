@@ -8,7 +8,7 @@
 - httpclient
   - generally always instantiate a newMimTypes before streaming files from disk
   - by default all procs set useStream == true
-    - can be set to false; but even small files are highly inefficient
+    - can be set to false; but then even small files are highly inefficient
   - TLS support requires openssl to be in path and nim compiled with `-d:ssl`
     - used automagically if any URL is prefixed with `https`
     - certs are retrieved via std/ssl_certs
@@ -39,7 +39,8 @@
     - downloadFile and optionally save to filename
     - head and return response
     - request using an arbitrary http method and keep the connection alive until close()
-
+- net and asyncnet
+  - you generally still need some of the procs in net when working with asyncnet
 
 links
 -----
@@ -56,6 +57,10 @@ links
   - [shared a/sync http primitives](https://nim-lang.org/docs/httpcore.html)
   - [low level native socket interface](https://nim-lang.org/docs/nativesockets.html)
 
+
+todos
+-----
+- niminaction: copy notes from 80 to 100
 
 ## httpclient
 - nim fetch
@@ -185,6 +190,7 @@ let fetch = newHttpClient(timeout = timeout)
 echo fmt"{fetch.getContent getmegood=}"
 echo fmt"{fetch.get(getmegood).body=}"
 echo fmt"{fetch.get(getmegood).headers=}"
+echo fmt"{fetch.get(getmegood).version=}"
 echo fmt"{fetch.get(getmegood).status=}"
 echo fmt"{fetch.get(getmebad).status=}"
 

@@ -29,6 +29,7 @@ system procs
 - dec dec an ordinal in place
 ]##
 
+{.push warning[UnusedImport]:off .}
 
 echo "############################ math"
 

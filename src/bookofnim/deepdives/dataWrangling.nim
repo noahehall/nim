@@ -6,9 +6,16 @@
 ##[
 TLDR
 - for parsing configuration files, see packaging
-- re follows perl 5 (see pcre spec link) thus not posix compliant
+- constructing regular expressions are expensive, save to a var if you can reuse it
+- re
+  - follows perl 5 (see pcre spec link)
+  - is an impure module require C's PCRE to be available at runtime
 - pegs meant to replace re
 - scanf can be extended with arbitrary procs for data wrangling
+- parseutils
+  - provides many declarative wrappers utilizing while loops
+  - prefer this over manually looping through haystacks looking for needles
+  - sometimes faster than using re module
 
 links
 - intros
@@ -72,15 +79,17 @@ re procs
 
 ]##
 
+{.push warning[UnusedImport]:off .}
+
 import std/[sugar, strformat]
 
 echo "############################ re"
 # rex"ignore whitespace and # comments"
 # transformFile for quick scripting
 
-const lost = "lost something in this string, can you help me find it?"
-
 import std/re
+
+const lost = "lost something in this string, can you help me find it?"
 
 echo fmt"""{lost.contains re"^lost.*\?$"=}"""
 echo fmt"""{lost.endsWith re"it\?"=}"""

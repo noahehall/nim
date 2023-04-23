@@ -1,6 +1,6 @@
 ##
-## compiling and managing memory with nimc
-## =======================================
+## compiling and custome memory mgmt
+## =================================
 ## bookmark: rework this entire file
 
 ##[

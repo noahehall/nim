@@ -2,10 +2,13 @@
 ## os and i/o
 ## ==========
 ## [bookmark](https://nim-lang.org/docs/streams.html)
+#
 
 ##[
 ## TLDR
 - for async i/o see asyncPar.nim
+  - you generally want threadpool imported to getaround the blocking nature of i/o logic
+  - this includes executing external processes
 - if a proc accepts a filename (string), it may also accept a File/Filehandle
 - tips
   - always use absolutePath when working with paths
@@ -55,6 +58,9 @@
     - cmd accepting workingDir arg uses the current dir by default
   - poUsePath > poEvalCommand for portability and let nim escape cmd args correctly
   - refrain from using waitForExit for processes w/out poParemtStreams for fear of deadlocks
+- user input
+  - commandline params are passed when your app are started
+  - use the standard input stream to accept user input thereafter
 
 links
 -----
@@ -64,6 +70,7 @@ links
 - high impact
   - [basic os utils](https://nim-lang.org/docs/os.html)
   - [distro detection & os pkg manager](https://nim-lang.org/docs/distros.html)
+  - [env support](https://nim-lang.github.io/Nim/envvars.html)
   - [file and string streams](https://nim-lang.org/docs/streams.html)
   - [fusion file permissions](https://nim-lang.github.io/fusion/src/fusion/filepermissions.html)
   - [fusion io utils](https://nim-lang.github.io/fusion/src/fusion/ioutils.html)
@@ -77,6 +84,7 @@ links
   - [read stdin](https://nim-lang.org/docs/rdstdin.html)
   - [system io](https://nim-lang.org/docs/io.html)
   - [terminal](https://nim-lang.org/docs/terminal.html)
+  - [temp files and directories](https://github.com/nim-lang/Nim/blob/devel/lib/std/tempfiles.nim)
 - niche
   - [open users browser](https://nim-lang.org/docs/browsers.html)
   - [raw posix interface]https://nim-lang.org/docs/posix.html
@@ -356,8 +364,8 @@ echo fmt"{parentDirs(fossdir, true).toSeq=}"
 for dir in [tmpdir, dirtmp]: createDir dir; echo fmt"{dir} {dirExists dir=}"; removeDir dir
 
 let hiddenFiles = collect:
-  for k in getHomeDir().walkDir:
-    if k.path.isHidden: k.path.lastPathPart
+  for kind, path in getHomeDir().walkDir:
+    if path.isHidden: fmt"{kind}: {path.lastPathPart=}"
 echo fmt"filtered collect getHomeDir().walkdir {hiddenFiles=}"
 
 i = 0
@@ -502,14 +510,6 @@ echo "############################ os/system exec/cmds/process"
 # stdmsg expands to stdout/err depending on useStdoutAsStdmsg switch
 # stdout stream
 
-when declared commandLineParams: echo fmt"{commandLineParams()}" else: discard ## \
-  ## only returns parameters, not the executable (see getAppFilename)
-
-when declared paramCount:
-  ## not defined when generating a dynamic library
-  echo fmt"{paramCount()=}"
-  echo if paramCount() > 0: fmt"{paramStr 1=}" else: fmt"no params provided to {paramStr 0=}"
-else: discard
 
 when defined(linux):
   echo fmt"{osErrorMsg OSErrorCode 0=}"
@@ -545,6 +545,32 @@ const buildInfo = "Revision " & staticExec("git rev-parse HEAD") &
                   ## returns stdout + stderr
 echo "build info: ", buildInfo
 
+
+echo "############################ os user input"
+# see parseopt for a more robust solution
+when declared commandLineParams:
+  echo fmt"{commandLineParams()}" else: discard
+  # only returns parameters, not the executable (see getAppFilename)
+
+when declared paramCount:
+  # not defined when generating a dynamic library
+  # should always be checked before access index with paramStr
+  echo fmt"{paramCount()=}"
+  echo if paramCount() > 0: fmt"{paramStr 1=}" else: fmt"no params provided to {paramStr 0=}"
+else: discard
+
+# commented as this breaks vscode runner
+when false:
+  when true: # runs on each line the user enters in their terminal
+    let userSaid = stdin.readLine() # blocks the application until a line is received
+    echo "received your msg", userSaid
+
+# see above
+when false:
+  while true:
+    # requires import threadpool for spawn and ^ operator
+    let userSaid = spawn stdin.readLine() # doesnt block cuz spawn
+    echo "reived your msg", ^userSaid # have to uyse the ^ to retrieve the flowvar
 
 echo "############################ osproc "
 

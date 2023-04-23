@@ -8,6 +8,7 @@
 - lists/queues are kept in lists.nim
 - table like stuff in containers
 - if something quacks like a sequence, you can probably use its procs
+  - and you probably want sequtils imported
 
 ## links
 - other
@@ -27,6 +28,7 @@
 ## seqs
 - toSeq(blah) transforms any iterable into a sequence
 - newSeqWith useful for creating 2 dimensional sequences
+- newSeq perf optimization when the size is known
 - add
 - del
 - insert
@@ -39,7 +41,7 @@
   - keepItIf
   - mapIt
 
-## sets
+## sets (hash set)
 - efficient hash set and ordered hash set
 - values can be any hashable type, unlike system.set which only accept ordinals
 - like most things, has items and pairs iterator
@@ -67,6 +69,32 @@ critbit procs
 - toCritBitTree
 - values|mvalues|
 - valuesWithPrefix|mvaluesWithPrefix
+
+
+## options
+
+option exceptions
+-----------------
+- UnpackDefect when getting a value that doesnt exist
+
+option types
+------------
+- Option[T] some/none
+- Some[T]
+- None[T]
+
+option procs
+------------
+- isSome thing there
+- isNone nil
+- get the value or raise UnpackDefect
+- filter returns Some/None depending on supplied lambda
+- flatMap map for chaining
+- flatten remove one level of a nested Option
+
+options operators
+-----------------
+- == true if both are none/equal values
 ]##
 
 {.push hint[XDeclaredButNotUsed]: off .}
@@ -78,6 +106,7 @@ import std/[sequtils]
 
 const
   immutable = toSeq(1..10)
+  mySeq = newSeq[string](3) ## if you know the size, always use newSeq for perf opt
   seq2d = newSeqWith(3, toSeq(1..5)) # @[@[1,2,3,4,5].repeat 3]
   zipped = @[("opt1", 'a'), ("opt2", 'b'), ("opt3", 'c')]
 

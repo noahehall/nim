@@ -6,7 +6,8 @@
 ##[
 ## TLDR
 - generally any proc that accepts a string, also accepts a char, and sometimes set[char]
-
+- if supporting unicode, use the unicode procs to prevent any gotchas
+  - e.g. the default .len proc doesnt return the actual number of chars in a unicode string
 
 links
 -----
@@ -41,7 +42,8 @@ todos
   - parse[Int, BiggestInt/Uint, BinInt, Bool, Enum, Float, HexInt, HexStr, OctInt, Uint]
   - to[Bin,Hex,Oct,Octal]
   - trimZeros,
-
+- rework this entire file
+  - we dont need examples of every fkn proc, but we should list them
 
 ## strformat
 - simply importing strformat enhances the system & operator
@@ -66,13 +68,23 @@ todos
 - the split like procs also have an iterator syntax that accepts a block
 - [tokenize looks interesting](https://nim-lang.org/docs/strutils.html#tokenize.i%2Cstring%2Cset%5Bchar%5D)
 
+## string formatters
+- strutils: "$1 $2" % ["first, "second"]
+- strformat: fmt"{first} {second}"
+
 ]##
+
+{.push warning[UnusedImport]:off, hint[XDeclaredButNotUsed]:off .}
 
 import std/[sugar, sequtils]
 
 let
   oneline = "this is a one line string"
   multiline = "this is a\nmultiline string"
+  multiline2 = """
+    this is a
+    multiline string
+  """
 
 echo "############################  strformat"
 import std/strformat

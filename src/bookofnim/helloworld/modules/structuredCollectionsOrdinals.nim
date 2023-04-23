@@ -4,12 +4,14 @@
 
 ##[
 ## TLDR
+- objects, enums and tuples are in userDefinedTypes.nim
 - structured types
   - can hold multiple values and have unlimited levels of nesting
   - two groups
-    - containers of fields: e.g. objects, tuples (check structuredContainers.nim)
-    - collections of items: e.g. sequences, arrays, char, sub/ranges
+    - containers of fields: e.g. objects, tuples, hashtables
+    - collections of items: e.g. sequences, arrays, char, sub/ranges, tables
 - ordinal types
+  - ordinals are values that can be orderly counted
   - enums, u/integers, bool
   - are countable and ordered, with a smallest & highest value
 - FYI about low & high procs
@@ -18,12 +20,17 @@
 links
 -----
 - [nim by example: arrays](https://nim-by-example.github.io/arrays/)
+- [table constructor](https://nim-lang.org/docs/manual.html#statements-and-expressions-table-constructor)
 
 ## structured: collections
 - cstringArray
 
-array
------
+## array
+- list of a static number of items
+- similar to C arrays but more memory safety
+
+array procs
+-----------
 - array[n, T] fixed-length dimensionally homogeneous
 - array, openArray, UncheckedArray, varargs
 - the array size is encoded in its type
@@ -39,17 +46,19 @@ array like
 - UncheckedArray[T] array with no bounds checking for implmenting customized flexibly sized arrays
 - varargs[T] an openarray paramter that accepts a variable number of args in a procedure
 
+table
+-----
+- syntactic sugar for an array constructor (not to be confused with std/tables!)
+  - i.e. {"k": "v"} == [("k", "v")]
+- benefits of table design
+  - the order of (key,val) are preserved to support ordered dicts
+  - literals can be a const which requires a minimal amount of memory
+  - can be efficiently converted to any std/table type
+    - count table
+    - hash table
+    - ordered table
 
-set (bit set)
--------------
-- set[T] generic set constructor
-- basetype must be of int8/16, uint8/16, byte, char, enum
-  - hash sets (import std/sets) dont have this restriction
-- implemented as high performance bit vectors
-- often used to provide flags for procs
-
-sequence
---------
+## sequence
 - seq[T] dynamic-length dimensionally homogeneous
 - always heap allocated & gc'ed
 - can be passed to any proc accepting a seq/openarray
@@ -57,6 +66,12 @@ sequence
   - converting an openArray into a seq is not as efficient as it copies all elements
   - or use the newSeq proc
 
+## range and alice
+- range: a type whose values fall into an arbitrary boundary
+- slice: an operator to extract a range from something, usually to pass to a proc
+- both use the same syntax, only the context changes
+  - 0 .. 2 --> inclusive .. inclusive
+  - 0 .. ^1 --> ^ counts backwards, ^1 includes the last element, ^2 doesnt
 range
 -----
 - range[T] generic constructor for range
@@ -84,15 +99,6 @@ slice
 - Ordinal[T] generic ordinal type
 - SomeOrdinal: any int, unit, bool, or enum
 
-enum
-----
-- A variable of an enum can only be assigned one of the enum's specified values
-- enum values are usually a set of ordered symbols, internally mapped to an integer (0-based)
-- $ convert enum index value to its name
-- ord convert enum name to its index value
-- its idiomatic nim to have ordinal enums (0, 1, 2, 3, etc)
-  - and not assign disjoint values (1, 5, -10)
-
 ## generic interface
 - should generally work with most types in this file
 
@@ -113,7 +119,6 @@ immutable ops
 - succ(x[, n]) returns the n'th successor of x
 - toOpenArray not defined in js targets
 - find returns index of thing in item
-
 
 
 mutable ops
@@ -144,7 +149,17 @@ inspection ops
 - varargsLen the number of variadic arguments in x
 - in/notin
 
-## set procs
+## set
+- see deepdives/collections.nim for sets (hash set)
+- set[T] generic set constructor
+- collection of distinct ordinal values
+- basetype must be of int8/16, uint8/16, byte, char, enum
+  - hash sets (import std/sets) dont have this restriction
+- implemented as high performance bit vectors
+- often used to provide flags for procs
+
+set operators
+-------------
 - a - b	Difference
 - A - B	difference of two sets (A without B's elements)
 - A * B	intersection of two sets
@@ -153,9 +168,12 @@ inspection ops
 - A < B	strict subset relation (A is a proper subset of B)
 - A <= B	subset relation (A is subset of B or equal to B)
 - A == B	set equality
-- card(A)	the cardinality of A (number of elements in A)
 - e in A	set membership (A contains element e)
 - e notin A	A does not contain element e
+
+set procs
+---------
+- card(A)	the cardinality of A (number of elements in A)
 - excl(A, elem)	same as A = A - {elem}
 - incl(A, elem)	same as A = A + {elem}
 
@@ -206,6 +224,15 @@ echo "last sunday i ate: ", lastWeek[0]
 echo "but there are ", lastWeek.len , " days in a week.. are you cheating on your diet?"
 
 
+
+echo "############################ tables"
+
+let areJustArrays: array[0, int] = {:}
+echo "tables are sugar for arrays: " & $areJustArrays.repr
+var myTable = {"fname": "noah", "lname": "hall"}
+echo "my name is: ", $myTable
+echo "my firstname is: ", myTable[0][1]
+
 echo "############################ sequences"
 # seq[T] generic type for constructing sequences
 var
@@ -228,57 +255,12 @@ me[0 .. 1] = "NO"
 echo "change first 2 els ", me
 
 # @ converts [x..y, type] into seq[type] efficiently
-var globalseq = @[1,2,3]
+var globalSeq = @[1,2,3]
 
-echo "concat 2 seq, copies both returns new", globalseq & @[4,5,6]
+echo "concat 2 seq, copies both returns new", globalSeq & @[4,5,6]
 echo "copy seq then append a single el and return new seq ", globalSeq & 4
-echo "copy seq then prepend a single el and return new seq ", 0 & globalseq
+echo "copy seq then prepend a single el and return new seq ", 0 & globalSeq
 
-echo "############################ enums"
-type AmericaOfJobs = enum
-  nineToFives, fiveToNines, twentyFourSeven # order matters: assigned as 0,1,2
-
-# you can assign custom string values for use with $ operator
-type PeopleOfAmerica {.pure.} = enum
-  coders = "think i am",
-  teachers = "pretend to be",
-  farmers = "prefer to be",
-  scientists = "trying to be"
-
-# you can assign both the ordinal and string value
-type ExplicitEnum = enum
-  AA = (0, "letter AA"),
-  BB = (1, "letter BB")
-
-echo ExplicitEnum.AA # letter AA
-echo twentyFourSeven # impure so doesnt need to be qualified
-echo PeopleOfAmerica.coders # coders needs to be qualified cuz its labeled pure
-
-# enum iteration via ord
-for i in ord(low(AmericaOfJobs))..
-        ord(high(AmericaOfJobs)):
-  echo AmericaOfJobs(i), " index is: ", i
-# iteration via enum
-# this echos the custom strings
-for peeps in PeopleOfAmerica.coders .. PeopleOfAmerica.scientists:
-  echo "we need more ", peeps
-
-# example from tut1
-type
-  Direction = enum
-    north, east, south, west # 0,1,2,3
-  BlinkLights = enum
-    off, on, slowBlink, mediumBlink, fastBlink
-  LevelSetting = array[north..west, BlinkLights] # 4 items of BlinkLights
-var
-  level: LevelSetting
-level[north] = on
-level[south] = slowBlink
-level[east] = fastBlink
-echo level        # --> [on, fastBlink, slowBlink, off]
-echo low(level)   # --> north
-echo len(level)   # --> 4
-echo high(level)  # --> west
 
 echo "############################ range"
 # BackwardsIndex returned by ^ (distinct int) values for reverse array access
@@ -292,7 +274,7 @@ type
 echo MySubrange
 
 var thisRange: range[0..5]
-echo "thisRange bounds = ", thisRange.low, "..", thisRange.high
+echo "thisRange bounds = ", (typeof thisRange).low, "..", (typeof thisRange).high
 # for i in thisRange:  doesnt work, you need to use low & and high
 for i in thisRange..thisRange: # dunno, works but says deprecated
   echo "got range to work ", i

@@ -14,6 +14,7 @@
 ### worth checking out
 
 - [algorithms in nim: coming soon](https://github.com/TheAlgorithms/Nim)
+- [arraymancer: deep learning tensor library](https://github.com/mratsim/Arraymancer)
 - [async tools: async utilities for nim](https://github.com/cheatfate/asynctools)
 - [Basolato: fullstack web framework](https://github.com/itsumura-h/nim-basolato)
 - [c2nim: converts C and C++ header files to nim code](https://github.com/nim-lang/c2nim)
@@ -21,11 +22,12 @@
 - [dsl: svg|gif generator](https://github.com/bluenote10/NimSvg)
 - [DSL: webserver: composable http handlers](https://github.com/andreaferretti/rosencrantz)
 - [fidget: UI Library + Figma plugin](https://github.com/treeform/fidget)
+- [godot-nim: mobile dev with godot 3](https://github.com/pragmagic/godot-nim#made-with-godot-nim)
 - [hastyscribe: cli markdown > html converter](https://github.com/h3rald/hastyscribe)
 - [http auth](https://github.com/FedericoCeratto/nim-httpauth)
 - [httpbeast: fast http 1.1 server](https://github.com/dom96/httpbeast)
 - [httpx](https://github.com/ringabout/httpx)
-- [jester: a sinetra-like web framework built on httpbeast](https://github.com/dom96/jester)
+- [jester: a sinetra-like micro web framework built on httpbeast](https://github.com/dom96/jester)
 - [kommandkit: high perf multithreaded webframework](https://git.termer.net/termer/KommandKit)
 - [limbdb: kv store using lmdb](https://forum.nim-lang.org/t/9210)
 - [llvm based compiler for nim](https://github.com/arnetheduck/nlvm)
@@ -34,6 +36,7 @@
 - [mummy: http/websocket server](https://github.com/guzba/mummy)
 - [neel: create lightweight electron apps](https://github.com/Niminem/Neel)
 - [ni18n: super fast i18](https://github.com/heinthanth/ni18n)
+- [nico: game development](https://github.com/ftsf/nico)
 - [NiGui: cross platform desktop GUI toolkit](https://github.com/trustable-code/NiGui)
 - [nim_config:kaushal's nim config](https://github.com/kaushalmodi/nim_config#list-available-tasks)
 - [nim-regex: parsing,compiling,executing regex](https://github.com/nitely/nim-regex)
@@ -58,16 +61,16 @@
 - [nyml: yaml parser](https://github.com/openpeep/nyml)
 - [parlexgen: macro for generating lexers and parsers](https://github.com/choltreppe/parlexgen)
 - [presto: rest api from status-im built on chronos](https://github.com/status-im/nim-presto)
+- [prologue: web framework](https://github.com/planety/prologue)
 - [prologue: web framework](https://github.com/planety/Prologue)
-- [protobuf-nim: protobuff protocol with 0 deps](https://github.com/PMunch/protobuf-nim)
 - [qrgen: generate QR codes](https://github.com/aruZeta/QRgen)
 - [ready: redis client](https://github.com/guzba/ready)
 - [scorper: micro webframework built on chronos](https://github.com/bung87/scorper)
+- [threadproxy: inter-thread communication](https://github.com/jackhftang/threadproxy.nim)
 - [ttop: sys monitoring tool](https://github.com/inv2004/ttop)
 - [uing: updated fork of nim-lang/ui](https://github.com/neroist/uing)
 - [vaf: http fuzzer](https://github.com/d4rckh/vaf)
 - [valido: string validators & sanitizers](https://github.com/openpeep/valido)
-- [web framework](https://github.com/planety/prologue)
 - [zippy: deflate,zlib,gzip,tarballs,zip files management](https://github.com/guzba/zippy)
 
 ## orgs/people with nim open source
@@ -75,6 +78,7 @@
 - [araq](https://github.com/Araq)
 - [cblake](https://github.com/c-blake)
 - [dom96](https://github.com/dom96)
+- [embedded/iot packages](https://github.com/EmbeddedNim)
 - [guzba](https://github.com/guzba)
 - [iffy](https://github.com/iffy)
 - [jiro](https://github.com/jiro4989)
@@ -82,7 +86,8 @@
 - [planety](https://github.com/planety)
 - [pmunch](https://github.com/PMunch)
 - [ringabout](https://github.com/ringabout)
-- [status-im](https://github.com/orgs/status-im/repositories?q=&type=all&language=nim&sort=)
+- [scientific computing packages](https://github.com/SciNim)
+- [status blockchain packages](https://github.com/status-im)
 - [treeform](https://github.com/treeform)
 - [waku](https://github.com/orgs/waku-org/repositories?q=&type=all&language=nim&sort=)
 
@@ -93,6 +98,10 @@
 
 ### data
 
+#### bigints
+
+- [arbitrary precision integers for 64 bit systems](https://github.com/nim-lang/bigints)
+
 #### jsony
 
 - [high perf, loose json >< object serialization](https://github.com/treeform/jsony)
@@ -100,6 +109,10 @@
 #### optionsutils
 
 - [sugar for Option type](https://github.com/PMunch/nim-optionsutils)
+
+#### protobuf-nim
+
+- [protobuff serialization and binding generators](https://github.com/PMunch/protobuf-nim)
 
 ### tools
 
@@ -136,6 +149,12 @@
 #### nimtemplate
 
 - [github repo template with github actions, tests, etc](https://github.com/treeform/nimtemplate)
+
+### os
+
+#### osinfo
+
+- [better cross platform osinfo](https://github.com/dom96/osinfo)
 
 ### ci
 
