@@ -381,6 +381,8 @@ var
   numThreads: array[4, Thread[int]] ## actors working with int data
   iAmGuarded {.guard: L .}: string = "require r/w to occur through my lock"
 
+echo fmt"{iAmGuarded}"
+
 proc echoAction[T](x: T): void {.thread.} =
   ## withLock to acquire, execute & release automatically
   L.withLock: echo fmt"i am thread {getThreadId()=} with data {x=}"
