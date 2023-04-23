@@ -27,7 +27,7 @@
 - [http auth](https://github.com/FedericoCeratto/nim-httpauth)
 - [httpbeast: fast http 1.1 server](https://github.com/dom96/httpbeast)
 - [httpx](https://github.com/ringabout/httpx)
-- [jester: a sinetra-like web framework built on httpbeast](https://github.com/dom96/jester)
+- [jester: a sinetra-like micro web framework built on httpbeast](https://github.com/dom96/jester)
 - [kommandkit: high perf multithreaded webframework](https://git.termer.net/termer/KommandKit)
 - [limbdb: kv store using lmdb](https://forum.nim-lang.org/t/9210)
 - [llvm based compiler for nim](https://github.com/arnetheduck/nlvm)

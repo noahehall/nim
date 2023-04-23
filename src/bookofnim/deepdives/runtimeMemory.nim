@@ -62,13 +62,16 @@ todos
 ## ref synchronization across threads
 - ensures shared resources are consumed synchronously to prevent race conditions
 
-locks
------
-- limits access to a single var by preventing r/w while another thread has acquired it
+locks and guards
+----------------
+- lock: limits access to a single var by preventing r/w while another thread has acquired it
+- guard: assigning a var to a lock forces the compiler to route all r/w through the lock
+- useful when mutating global variables, or sharing many distinct resources between many threads
 
-guards
-------
-- assigning a var to a lock forces the compiler to route all r/w through the lock
+channels
+--------
+- FIFO message passing between threads
+- useful when locks & guards are overkill
 
 ## types
 
@@ -100,7 +103,7 @@ procs
 pragmas
 -------
 - gcsafe
-- guard attachs an initialized lock to a variable
+- guard attachs a lock to a var, compiler ensures lock is acquired before r/w attempted
 
 errors/warnings
 ---------------

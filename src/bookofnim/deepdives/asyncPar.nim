@@ -75,6 +75,8 @@ todos
 - [passing channels safely](https://nim-lang.org/docs/channels_builtin.html#example-passing-channels-safely)
 - [multiple async backend support](https://nim-lang.org/docs/asyncdispatch.html#multiple-async-backend-support)
 - [add more sophisticated asyncdispatch examples](https://nim-lang.org/docs/asyncdispatch.html)
+- acquiring a lock for a channel is useless, locks only work with guarded vars
+  - ^ update examples
 
 ## threads
 
@@ -213,9 +215,13 @@ lock procs
 - tryAcquire a given lock
 - wait on the condition var
 
+lock pragmas
+------------
+- guard assigns a lock to a variable, compiler throws if r/w attempts without requireing lock
+
 lock templates
 --------------
-- withLock: acquires > executes body > releases
+- withLock: acquires > executes body > releases, useful with guarded variables
 
 
 ## asyncdispatch
@@ -318,7 +324,6 @@ asyncfutures types
   - cause: FutureBase
 - FutureVar[T] distinct Future[T]
 
-
 asyncfutures consts
 -------------------
 - isFutureLoggingEnabled
@@ -374,11 +379,9 @@ var
   gf: Thread[void] ## actor working as gf
   L: Lock
   numThreads: array[4, Thread[int]] ## actors working with int data
+  iAmGuarded {.guard: L .}: string = "require r/w to occur through my lock"
 
 proc echoAction[T](x: T): void {.thread.} =
-  ## L.acquire
-  ## execute stuff
-  ## L.release
   ## withLock to acquire, execute & release automatically
   L.withLock: echo fmt"i am thread {getThreadId()=} with data {x=}"
 

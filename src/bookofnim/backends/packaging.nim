@@ -32,6 +32,10 @@ todos
 - verify the different app cfg locations
 - for some reason (oops) parseCfg is in shell.nims, it should be in this file
 - [this file has example of using @if... @end in a cfg file](https://github.com/nim-lang/Nim/blob/devel/lib/pure/asyncdispatch.nim.cfg)
+- the packaging section should show examples of
+  - creating a package (compiled bin)
+  - creating a library (dont compile, install source files)
+  - creating a composite library + package (compiling + installing source files)
 
 ## nimble
 - nim package manager
@@ -71,6 +75,8 @@ creating nimble packages
     # installDirs, installFiles, installExt <-- allow list: will only be installed
     installExt = @["nim"] # required if your pkg is both a library & binary
     srcDir = "./src"
+    bin = @["myMainFile"] # compile this file before installing
+    skipExt = @["nim"] # dont install source .nim files (we only want to copy the compiled bin)
     binDir = "./bin"
     backend = "c"
     namedBin["main"] = "mymain" # rename binary
