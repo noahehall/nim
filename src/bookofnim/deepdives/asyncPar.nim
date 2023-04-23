@@ -5,8 +5,8 @@
 
 ##[
 ## TLDR
+- see runtimeMemory.nim for more on threads, thread synchronization, memory and GC
 - see servers.nim for async server stuff
-- see runtimeMemory.nim for understanding threads, memory and GC
 - you need the following for any thread related logic
   - required: --threads:on switch
   - should use: std/locks
@@ -73,8 +73,6 @@ todos
 - [passing channels safely](https://nim-lang.org/docs/channels_builtin.html#example-passing-channels-safely)
 - [multiple async backend support](https://nim-lang.org/docs/asyncdispatch.html#multiple-async-backend-support)
 - [add more sophisticated asyncdispatch examples](https://nim-lang.org/docs/asyncdispatch.html)
-- add more lock examples
-
 
 ## threads
 
@@ -376,7 +374,6 @@ var
   numThreads: array[4, Thread[int]] ## actors working with int data
 
 proc echoAction[T](x: T): void {.thread.} =
-  ## action that accepts data
   ## L.acquire
   ## execute stuff
   ## L.release
@@ -385,7 +382,7 @@ proc echoAction[T](x: T): void {.thread.} =
 
 echo "############################ system threads"
 
-L.initLock
+L.initLock # must be initialized
 
 for i in numThreads.low .. numThreads.high:
   createThread(numThreads[i], echoAction, i)
@@ -437,7 +434,7 @@ proc receiveActionA: void {.thread.} =
 
 gf.createThread sendActionA
 bf.createThread receiveActionA
-jointhreads gf, bf
+joinThreads gf, bf
 
 echo "############################ threadpool"
 import std/threadpool

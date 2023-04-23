@@ -4,8 +4,7 @@
 
 ##[
 ## TLDR
-- continue where userDefinedTypes.nim and asyncPar.nim ends
-  - but focus on dealing with objects in memory
+- continues where userDefinedTypes.nim and asyncPar.nim ends
 - stack types
   - arent garbage collected
   - are immutable, always passed by value
@@ -13,6 +12,9 @@
   - are garbage collected
   - need to be initialized before used
   - are mutable, the ref always points to the same memory location
+- declaring variables as var
+  - give value types heap semantics
+  - if declared globally (module scoped) are stored in the executables data section (not the stack)
 
 links
 -----
@@ -36,6 +38,37 @@ todos
   - has its own garbage collector
     - threads dont wait on other threads for the GC like in other languages
 - spawned procedures cannot safely handle var parameters
+- race conditions: when 2/more threads read/write to a heap type at the same time
+  - using {.thread.} guards against this as the compiler will throw
+  - passing data through channels guards against this
+  - sharing heap types requires manual memory management procedures
+
+
+## unsafe Nim features
+- unsafe: i.e. you have to manage memory yourself, e.g. pointers & bit casts
+- generally required when directly consuming foreign functions outside of a wrapper
+  - a wrapper would manage the memory for you
+
+## effective memory utilization
+- its all about knowing when to mutate, and not
+- memory waste (i.e. slow programs) in nim often the result of over allocation and deallocation
+  - i.e. creating too many vars to store ephemeral/short-lived data
+- using var to pass by reference is more efficient than passing stack values
+  - particularly important in loops/procs, when allocating new vars to store strings/ints/etc
+- `.setLen` to reset loop counters > over reassigning to 0 reuses existing memory
+- when dealing with parallel programs
+  - try to find the right size chunk/fragment of data to slice and send to each thread
+
+## ref synchronization across threads
+- ensures shared resources are consumed synchronously to prevent race conditions
+
+locks
+-----
+- limits access to a single var by preventing r/w while another thread has acquired it
+
+guards
+------
+- assigning a var to a lock forces the compiler to route all r/w through the lock
 
 ## types
 
@@ -62,27 +95,15 @@ procs
 -----
 - alloc
 - dealloc
+- allocShared memory for a heap variable to pass between threads
 
 pragmas
 -------
 - gcsafe
+- guard attachs an initialized lock to a variable
 
 errors/warnings
 ---------------
-- GC-Safe error: accessing/mutating/assigning a variable owned by another thread
+- GC-Safe error: accessing/mutating/assigning a heap-type variable owned by another thread
 
-## unsafe Nim features
-- unsafe: i.e. you have to manage memory yourself, e.g. pointers & bit casts
-- generally required when directly consuming foreign functions outside of a wrapper
-  - a wrapper would manage the memory for you
-
-## effective memory utilization
-- its all about knowing when to mutate, and not
-- memory waste (i.e. slow programs) in nim often the result of over allocation and deallocation
-  - i.e. creating too many vars to store ephemeral/short-lived data
-- using var to pass by reference is more efficient than passing stack values
-  - particularly important in loops/procs, when allocating new vars to store strings/ints/etc
-- `.setLen` to reset loop counters > over reassigning to 0 reuses existing memory
-- when dealing with parallel programs
-  - try to find the right size chunk/fragment of data to slice and send to each thread
 ]##

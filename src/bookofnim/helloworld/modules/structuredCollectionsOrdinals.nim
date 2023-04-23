@@ -274,7 +274,7 @@ type
 echo MySubrange
 
 var thisRange: range[0..5]
-echo "thisRange bounds = ", thisRange.low, "..", thisRange.high
+echo "thisRange bounds = ", (typeof thisRange).low, "..", (typeof thisRange).high
 # for i in thisRange:  doesnt work, you need to use low & and high
 for i in thisRange..thisRange: # dunno, works but says deprecated
   echo "got range to work ", i

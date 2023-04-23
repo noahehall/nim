@@ -1,3 +1,6 @@
+# FYI: hint/warningAsError requires switch() syntax
+# --colors:on # breaks vscode run code extension
+
 --assertions:off
 --checks:on
 --debugger:native
@@ -21,9 +24,13 @@
 --unitsep:on # ASCII unit separator between error msgs
 --verbosity:0
 --warnings:on
-switch("hintAsError", "Performance:on") # --hintAsError:Performance:on fails
-switch("hintAsError", "XDeclaredButNotUsed:on") # see above
-switch("warningAsError", "GcUnsafe:on") # see above
+switch("hintAsError", "Performance:on")
+switch("hintAsError", "XDeclaredButNotUsed:on")
+switch("warningAsError", "ConfigDeprecated:on")
+switch("warningAsError", "Deprecated:on")
+switch("warningAsError", "GcUnsafe:on")
+switch("warningAsError", "HoleEnumConv:on")
+switch("warningAsError", "ResultUsed:on")
 
 case getCommand():
   of "c", "cc", "cpp", "objc":
@@ -50,10 +57,9 @@ case getEnv "ENV":
     --showAllMismatches:on
     --styleCheck:hint
     --verbosity:2
-    # --colors:on # breaks vscode run code extension
-    switch("hintAsError", "Performance:off") # --hintAsError:Performance:on fails
-    switch("hintAsError", "XDeclaredButNotUsed:off") # see above
-    switch("warningAsError", "GcUnsafe:off") # see above
+    switch("hintAsError", "XDeclaredButNotUsed:off")
+    switch("warningAsError", "Deprecated:off")
+    switch("warningAsError", "HoleEnumConv:off")
   of "PERF":
     --danger
   of "SIZE":
