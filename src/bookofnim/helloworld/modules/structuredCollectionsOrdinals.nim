@@ -255,7 +255,7 @@ me[0 .. 1] = "NO"
 echo "change first 2 els ", me
 
 # @ converts [x..y, type] into seq[type] efficiently
-var globalSeq = @[1,2,3]
+let globalSeq = @[1,2,3]
 
 echo "concat 2 seq, copies both returns new", globalSeq & @[4,5,6]
 echo "copy seq then append a single el and return new seq ", globalSeq & 4

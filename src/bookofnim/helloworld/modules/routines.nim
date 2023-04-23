@@ -228,9 +228,6 @@ proc runFn(a: string, fn: proc(x: string): string): string =
 echo runFn("with this string", proc (x: string): string = "received: " & x)
 
 # closures with do notation
-# just a shorter proc
-# haha fkn notice how the DO is placed after the fn
-# lol and not as a param to the fn
 echo runFn("with another string") do (x: string) -> string: "another: " & x
 
 

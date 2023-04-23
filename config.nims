@@ -1,5 +1,6 @@
-# FYI: hint/warningAsError requires switch() syntax
 # --colors:on # breaks vscode run code extension
+# --experimental:codeReordering dont use or fear the amount of logs it produces
+# FYI: hint/warningAsError requires switch() syntax
 
 --assertions:off
 --checks:on
@@ -77,3 +78,10 @@ case existsEnv "CI":
     --parallelBuild:1
     --verbosity:2
   else: discard
+
+when (NimMajor, NimMinor, NimPatch) <= (1,6,12):
+  # throws in v2, maybe its no longer experimental?
+  --experimental:implicitDeref
+  # @see https://github.com/nim-lang/Nim/issues/21713
+  switch("hintAsError", "XDeclaredButNotUsed:off")
+  switch("warningAsError", "Deprecated:off")

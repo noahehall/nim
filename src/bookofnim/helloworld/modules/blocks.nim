@@ -17,11 +17,6 @@ links
 - [once template](https://nim-lang.org/docs/system.html#once.t%2Cuntyped)
 
 
-## do blocks
-- in this context can be considered an alias for `block:`
-- see routines for use with proc expressions to create closures
-- see macros for using do to do macros
-
 ## once blocks
 - are executed once, the first time they're seen by the compiler
 ]##
@@ -51,9 +46,6 @@ let myChar = block:
     echo "yourChar was found ", yourChar
   yourChar # last expression is returned
 
-echo "############################ do"
-
-echo do: "this expression"
 
 echo "############################ once"
 

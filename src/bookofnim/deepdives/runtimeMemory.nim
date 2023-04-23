@@ -21,6 +21,7 @@ links
 - [atomics](https://github.com/nim-lang/Nim/blob/devel/lib/pure/concurrency/atomics.nim)
 - [lifetime-tracking hooks](https://nim-lang.org/docs/destructors.html#lifetimeminustracking-hooks)
 - [gc common](https://github.com/nim-lang/Nim/blob/devel/lib/system/gc_common.nim)
+- [ref and pointer types](https://nim-lang.org/docs/manual.html#types-reference-and-pointer-types)
 
 todos
 -----
@@ -86,8 +87,8 @@ stack (value) types
 heap (ref) types
 ----------------
 - addr
-- ptr/pointer
-- ref
+- ptr/pointer untraced refs pointing to manually allocated objects, required for low-level ops
+- ref point to garbage-collected heap objects
 - seq
 - sets (hashSets)
 - sink
@@ -99,14 +100,17 @@ procs
 - alloc
 - dealloc
 - allocShared memory for a heap variable to pass between threads
+- [] must be empty to deReferenceThisVar[]
+- addr returns the untraced address of an objec
 
 pragmas
 -------
 - gcsafe
 - guard attachs a lock to a var, compiler ensures lock is acquired before r/w attempted
 
-errors/warnings
+errors/warnings/hints
 ---------------
 - GC-Safe error: accessing/mutating/assigning a heap-type variable owned by another thread
-
+- Performance hint:
+  - using immutable procs on vars that introduce an implicit copy, e.g. seqVar & @[1,2]
 ]##

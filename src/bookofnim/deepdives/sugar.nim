@@ -17,6 +17,7 @@ links
   - [algorithm](https://nim-lang.org/docs/algorithm.html)
   - [enumarate any collection](https://nim-lang.org/docs/enumerate.html)
   - [wrapnils optional chaining](https://nim-lang.github.io/Nim/wrapnils.html)
+  - [system do notation](https://nim-lang.org/docs/manual_experimental.html#do-notation)
 - niche
   - [import private symbols](https://github.com/nim-lang/Nim/blob/devel/lib/std/importutils.nim)
 
@@ -32,6 +33,14 @@ todos
 - std/algorithm
   - then review all the sort procs for each datatype (they all depend on algo)
 
+## do blocks and proc fn signatures
+- do blocks can be considered an alias for `block:`
+- proc expressions can use do notation when passed as a parameter to a proc
+- can also be used to pass multiple blocks to a macro
+- i.e.
+  - do with paranthesis is an anonymous proc
+  - do without paranthesis is just a block of code
+
 ## sugar
 
 sugar procs
@@ -39,6 +48,19 @@ sugar procs
 - -> for type defs in proc signatures
 - => for lambdas
 ]##
+
+
+echo "############################ do"
+
+echo do: "this expression"
+
+## expects a proc
+proc echoThis(a: proc (x: string): string): void =
+  echo a("expression")
+# we pass a proc via do
+# the () on echoThis isnt required
+echoThis do (x:string) -> string:
+  "this " & x
 
 
 echo "############################ sugar"
