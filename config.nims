@@ -41,7 +41,7 @@ case getCommand():
 
 case existsEnv "CI":
   of true:
-    --parallelBuild:0
+    --parallelBuild:1
   else: discard
 
 case getEnv "ENV":
