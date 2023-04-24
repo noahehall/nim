@@ -89,8 +89,8 @@ when (NimMajor, NimMinor, NimPatch) <= (1,6,12):
   switch("hintAsError", "Performance:off")
   switch("hintAsError", "XDeclaredButNotUsed:off")
   switch("warningAsError", "Deprecated:off")
-  switch("warningAsError", "HoleEnumConv:off") # only in ci?
-  switch("warningAsError", "UnusedImport:off") # only in ci?
+  switch("warningAsError", "HoleEnumConv:off") # only in ci on nim source
+  switch("warningAsError", "UnusedImport:off") # only in ci on nim source
 else:
   --define:futureLogging
   switch("warningAsError", "CastSizes:on")

@@ -20,3 +20,5 @@ requires "nim >= 1.6.12"
 
 task test, "executes ./github/scripts/tests.nims":
   exec "nim e .github/scripts/test.nims"
+
+# TODO: create a setup task that installs the .github/hooks to .git/hooks

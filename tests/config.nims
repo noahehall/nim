@@ -22,6 +22,7 @@ when defined(windows):
 # internal
 switch("assertions", "on")
 switch("path", "$projectDir/../../src") # relative to test files
+switch("putenv", "NIM_TESTAMENT_REMOTE_NETWORKING=1")
 switch("putenv", "TEST=1") # dont set ENV=TEST; this enables us to run tests against any env
 switch("stackTraceMsgs", "on")
 switch("verbosity", "3")
