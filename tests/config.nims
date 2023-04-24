@@ -1,3 +1,5 @@
+import ../config.nims
+
 # copypasta from nim @see https://github.com/nim-lang/Nim/blob/devel/tests/config.nims
 ## prevent common user config settings to interfere with testament expectations
 ## Indifidual tests can override this if needed to test for these options.
