@@ -84,13 +84,15 @@ when (NimMajor, NimMinor, NimPatch) <= (1,6,12):
   # throws in v2, maybe its no longer experimental?
   --experimental:implicitDeref
   # fails in ci, no clue but my stupid guess is
-  # it may have to do with multiple nim versions installed locally when theres only 1 in CI
+  # we need to delete test cache files before running tests after changing config switches
   switch("warningAsError", "HoleEnumConv:off")
   switch("hintAsError", "Performance:off")
   # throws on nim source code
   # @see https://github.com/nim-lang/Nim/issues/21713
+  switch("hintAsError", "DuplicateModuleImport:off")
   switch("hintAsError", "XDeclaredButNotUsed:off")
   switch("warningAsError", "Deprecated:off")
+  switch("warningAsError", "UnusedImport:off")
 else:
   --define:futureLogging
   switch("warningAsError", "CastSizes:on")

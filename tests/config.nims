@@ -1,4 +1,4 @@
-import ../config.nims
+# import ../config.nims # this is redundant; reminder for your future self
 
 # copypasta from nim @see https://github.com/nim-lang/Nim/blob/devel/tests/config.nims
 ## prevent common user config settings to interfere with testament expectations
