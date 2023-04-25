@@ -137,6 +137,8 @@ time procs
 - isLeapDay true if datetime is leapday, e.g. feb29 in year 2000, affects time offset calculations
 ]##
 
+{.push hint[XDeclaredButNotUsed]:off, warning[UnusedImport]:off .}
+
 import std/[sugar, strformat]
 
 echo "############################ time"

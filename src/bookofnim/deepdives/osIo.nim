@@ -439,16 +439,16 @@ proc readFile: string =
   defer: close f ## \
     ## make sure to close the file object
   echo "i started to read when I was ", getFilePos f
-  echo "first line in file is: ", readline f
+  echo "first line in file is: ", readLine f
   echo if endOfFile f: "game over" else: "hooked on phonics worked for me"
-  echo "we need to get a handle on this file ", getFileHAndle f ## \
+  echo "we need to get a handle on this file ", getFileHandle f ## \
     ## returns the C library's handle on the file
   echo "so instead use ", getOsFileHandle f ## \
     ## useful for platform specific logic
     ## perhaps always use getOsFileHandle, dunno
   echo "but wasnt good until i turned ", getFilePos f
   echo "reading so much I gained ", getFileSize f, " in bytes"
-  result = readline f
+  result = readLine f
 echo "the current line in file is ", readFile()
 
 try:

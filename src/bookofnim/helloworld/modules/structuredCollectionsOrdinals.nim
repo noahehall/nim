@@ -317,7 +317,7 @@ type
     D
   MyFlags = set[MyFlag]
 
-proc toNum(f: MyFlags): int = cast[cint](f)
+proc toNum(f: MyFlags): int = cast[int8](f)
 proc toFlags(v: int): MyFlags = cast[MyFlags](v)
 
 echo "toNum {}: ", toNum({})

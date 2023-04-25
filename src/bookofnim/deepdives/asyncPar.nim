@@ -371,8 +371,8 @@ asyncfile procs
   - writeFromStream: perfect for saving streamed data to af ile without wasting memory
 ]##
 
-import std/[sugar, strutils, strformat, locks]
-from std/os import sleep
+{.push warning[UnusedImport]:off .}
+import std/[sugar, strutils, strformat, locks, os]
 
 var
   bf: Thread[void] ## actor working as bf
@@ -531,7 +531,8 @@ fakeFailed.fail(someErr)
 if fakeFailed.failed: echo fmt"{fakeFailed.readError.msg=}"
 
 echo "############################ asyncfile "
-import std/[asyncfile, os] ## asyncdispatch imported above
+import std/[asyncfile] ## asyncdispatch and os imported above
+
 
 const
   afilepath = "/tmp/or/rary.txt"

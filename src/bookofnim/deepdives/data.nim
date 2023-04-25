@@ -97,6 +97,8 @@ jsonutils procs
 
 
 ]##
+# styleCheck complains about capitulation of http headers
+{.push hint[Name]:off, warning[UnusedImport]:off .}
 
 import std/[sugar, strformat, strutils, sequtils, options, tables]
 

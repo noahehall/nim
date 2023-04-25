@@ -62,7 +62,11 @@ strtab types
 
 ]##
 
-{.push hint[XDeclaredButNotUsed]:off, hint[GlobalVar]:off, hint[Name]: off .}
+{.push
+  hint[GlobalVar]:off,
+  hint[XDeclaredButNotUsed]:off,
+  warning[UnusedImport]:off
+.}
 
 import std/[sugar, strformat, strutils]
 
@@ -110,10 +114,10 @@ echo "############################ impure tables"
 var
   mutated = hashTable
   mCountTable = countTable
-proc echoMutated(): void = echo "table: ", mutated, " count: ", mcountTable
+proc echoMutated(): void = echo "table: ", mutated, " count: ", mCountTable
 echoMutated()
 
-mutated["middle"] = "slime"; echomutated()
+mutated["middle"] = "slime"; echoMutated()
 mutated.del "middle"; echoMutated()
 mCountTable.inc 'p'; echoMutated()
 mCountTable.merge countTable; echoMutated()
