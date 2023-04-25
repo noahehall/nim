@@ -19,7 +19,8 @@ jobs:
   ci:
     name: CI / ${{ matrix.os }} / Nim${{ matrix.nimv }}
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 10 # extra 5 minutes for compiling the devel branch
+    # extra 5 minutes for initial compiling of #version-2-0 when not in cache
+    timeout-minutes: 15
 
     strategy:
       fail-fast: false # fail workflow after all jobs, not first error
