@@ -8,7 +8,7 @@
 - httpclient
   - generally always instantiate a newMimTypes before streaming files from disk
   - by default all procs set useStream == true
-    - can be set to false; but even small files are highly inefficient
+    - can be set to false; but then even small files are highly inefficient
   - TLS support requires openssl to be in path and nim compiled with `-d:ssl`
     - used automagically if any URL is prefixed with `https`
     - certs are retrieved via std/ssl_certs
@@ -39,7 +39,8 @@
     - downloadFile and optionally save to filename
     - head and return response
     - request using an arbitrary http method and keep the connection alive until close()
-
+- net and asyncnet
+  - you generally still need some of the procs in net when working with asyncnet
 
 links
 -----
@@ -56,6 +57,10 @@ links
   - [shared a/sync http primitives](https://nim-lang.org/docs/httpcore.html)
   - [low level native socket interface](https://nim-lang.org/docs/nativesockets.html)
 
+
+todos
+-----
+- niminaction: copy notes from 80 to 100
 
 ## httpclient
 - nim fetch
@@ -161,7 +166,8 @@ asynchttpserver procs
 - acceptRequest
 ]##
 
-import std/[strformat, sugar, strutils, sequtils, json]
+
+import std/[strformat, strutils, json]
 
 echo "############################ httpclient"
 
@@ -185,6 +191,7 @@ let fetch = newHttpClient(timeout = timeout)
 echo fmt"{fetch.getContent getmegood=}"
 echo fmt"{fetch.get(getmegood).body=}"
 echo fmt"{fetch.get(getmegood).headers=}"
+echo fmt"{fetch.get(getmegood).version=}"
 echo fmt"{fetch.get(getmegood).status=}"
 echo fmt"{fetch.get(getmebad).status=}"
 
@@ -192,7 +199,9 @@ fetch.headers = newHttpHeaders({ "Content-Type": "application/json" })
 echo fmt"{fetch.postContent postme, body = $data=}"
 
 fetch.headers = newHttpHeaders({ "X-Vault-Token": "abc-123-321-cba" })
-try: echo fmt"{fetch.getContent getmetimeout=}" except: echo "gotta catchem all!"
+try: echo fmt"{fetch.getContent getmetimeout=}" except CatchableError: echo "gotta catchem all!"
+
+
 
 fetch.close
 
@@ -204,10 +213,20 @@ let afetch = newAsyncHttpClient()
 proc agetContent(self: AsyncHttpClient, url: string): Future[Option[string]] {.async.} =
   ## wraps async calls to provide await for AsyncHttpClient
   let res = self.getContent url
-  yield res; result = if res.failed: none string else: some await res
+  yield res;
+  result = if res.failed: none string else: some res.read
+
 
 echo fmt"{waitFor afetch.agetContent getmegood=}"
 
-echo fmt"{waitFor withTimeout(afetch.agetContent(getmegood), 1)=}"
+
+# FYI: this cause asyncnet to throw on v2
+# echo fmt"{waitFor withTimeout(afetch.agetContent(getmegood), 1)=}"
+# you should instead yield all async requests
+proc fetchWithTimeout: Future[void] {.async.} =
+  let aResponse = withTimeout(afetch.agetContent(getmegood), 1)
+  yield aResponse
+  echo if aResponse.failed: "failed with error" else: fmt"request success: {aResponse.read=}"
+waitFor fetchWithTimeout()
 
 afetch.close

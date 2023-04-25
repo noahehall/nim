@@ -83,6 +83,7 @@ borrowed from somewhere else (e.g. status auditor docs)
 
 my preferences
 --------------
+- prefer set/sets over sequences/arrays when possible
 - use fmt"{expr}" > &"{expr}" unless you need escapes (me)
 - use Natural/Positive for checks/type desc i.e. Positive.low == 1 Natural.low == 0
 - never discard Futures; use waitFor (eventually) / asyncCheck (immediately) to throwaway value/error
@@ -95,7 +96,7 @@ my preferences
   - e.g. pref x.fn y,z when working with objects
   - e.g. pref fn x,y when working with procs
   - e.g. pref fn(x, ...) when chaining/closures (calling syntax impacts type compatibility (docs))
-- -- > - cmd line switches so you can sort nim compiler options
+- prefer `--` over `-` cmd line switches so you can sort nim compiler options
 - object vs tuple
   - tuple: inheritance / private fields / reference equality NOT required
   - object: inheritance / private fields / reference equality IS required
@@ -110,12 +111,30 @@ my preferences
 - include can split 1 module == 1..X files
 - top level statements are executed at start of program (useful for initialization tasks)
 - enable information hiding and separate compilation
-- only top-level symbols marked with * are exported
+- all symbols are private (module scoped) unless exported with `*`
 - isMainModule: returns true if current module compiled as the main file (see testing.nim)
 - ambiguity
   - when module A imports symbol B that exists in C and D
   - procs/iterators are overloaded, so no ambiguity
   - everything else must be qualified (c.b | d.b) if signatures are ambiguous
+
+pure modules
+------------
+- [pure module devel dir](https://github.com/nim-lang/Nim/tree/devel/lib/pure)]
+- a module with no dependencies on foreign functions (modules of other languages, e.g. C)
+
+impure modules
+--------------
+- [impure module devel dir](https://github.com/nim-lang/Nim/tree/devel/lib/impure)
+- a module with a foreign function dependency
+- the foreign function must be installed on the host computer for the module to work
+- preferred over wrapper modules as they dont require manual memory management
+
+wrapper modules
+---------------
+- nim modules that provide a 1-to-1 interface with a foreign function (e.g. C libraries)
+- can be used directly in Nim, albeit with unsafe features like pointers and bit casts
+  - see runtimeMemory.nim
 
 import
 ------
@@ -125,7 +144,8 @@ import
 - else traverses up the nim PATH for the first match
   - [search path docs](https://nim-lang.org/docs/nimc.html#compiler-usage-search-path-handling)
   .. code-block:: Nim
-    import math # everything
+    import math # everything except private symbols
+    import foo {.all.}  # import everything
     import std/math # import math specifically from the std library
     import mySubdir/thirdFile
     import myOtherSubdir / [fourthFile, fifthFile]
@@ -134,9 +154,10 @@ import
     import this/thing/here, "that/is/in/this/sub/dir" # identifier is stil here.woop
     import "this/valid dir name/but invalid for nim/someMod" # someMod.woop
     import pkg/someNimblePkg # use pkg to import a nimble pkg
+    rom system {.all.} as system2 import nil
     from thisThing import this, thaz, thoz # can invoke this,that,thot without qualifying
-    from thisThing import nil # force symbol qualification, e.g. thisThing.blah()
-    from thisThing as thingThis import nil # even with an alias
+    from thisThing import nil # imports thisThing but none of its symbols, use thisThng.woop()
+    from thisThing as thingThis import nil # same as above, but with a custom namespace
 
 include
 -------
@@ -239,10 +260,12 @@ expressions
 
 visibility
 ----------
-- var: local or global depending on scope,
-- force local scope vars to global via {.global.} pragma
-- export symbols with asterisk e.g. `woop*` and it will be visible to client modules
-- scopes: all blocks (ifs, loops, procs, etc) introduce a closure EXCEPT when statements
+- nim is module and block scoped
+- module scope: each nimfile creates an isolated context
+  - use the `*` to export symbols into the scope of consumers
+- block scope: within a module, every block (ifs, loops, procs, etc) introduces a new scope
+  - EXCEPT when statements
+- force block scoped vars to global via {.global.} pragma
 ]##
 
 {.push warning[UnusedImport]:off, hint[GlobalVar]:off .}

@@ -2,10 +2,13 @@
 
 > [bow to the crown](https://www.youtube.com/watch?v=AEtxGOjKx5c) - Heather Dale
 
-- my adventures in nim (1.6.12, will update to 2.0 when stable)
+- my adventures in nim >= 1.6.12 on ubuntu
 - hopefully a useful cheatsheet for my fellow nOobs
 - contributions welcomed
 - [v2 install steps until v2 is actually released](https://nim-lang.org/blog/2023/03/31/version-20-rc2.html)
+  - [v2 press release](https://nim-lang.org/blog/2022/12/21/version-20-rc.html)
+
+[![bookofnim-ci](https://github.com/noahehall/nim/actions/workflows/ci.yaml/badge.svg?branch=develop)](https://github.com/noahehall/nim/actions/workflows/ci.yaml)
 
 ## for fullstack appdevs & bizdevops+sec teams
 
@@ -33,7 +36,7 @@
 
 - this repo serves two purposes for programmers considering nim as their Nth language:
   - [primary: source code](/src/bookofnim.nim) you can execute while reading
-    - generally concise examples of the subject at hand
+    - generally concise examples of nims syntax
   - [secondary: documentation](https://noahehall.github.io/nim/htmldocs/bookofnim.html) you can read while coding
     - generally concise abbreviations extracted from nim docs/blogs/etc & categorized with links to technical specs
 - thus each _chapter_ consists of docs to read and code to run:
@@ -72,7 +75,7 @@
 
 internal
 
-- [vscode code-runner cmd for both nimscript and nim files](https://github.com/noahehall/theBookOfNoah/blob/master/vscode.settings.jsonc#L185)
+- [vscode code-runner cmd for both nimscript and nim files](https://github.com/noahehall/theBookOfNoah/blob/master/vscode.settings.jsonc)
 - [shell fns for nim, nimble and choosenim](https://github.com/noahehall/theBookOfNoah/blob/master/linux/bash_cli_fns/nimlang.sh)
 - [community packages](./community/README.md)
 
@@ -92,3 +95,8 @@ blogs
 
 - [peter: nim blog](https://peterme.net/tags/nim.html)
 - [official nim blog](https://nim-lang.org/blog.html)
+
+benchmarks
+
+- [web frameworks](https://web-frameworks-benchmark.netlify.app/result)
+- [techempower](https://www.techempower.com/benchmarks/#section=data-r21&hw=ph&test=json)

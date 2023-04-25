@@ -68,6 +68,7 @@ base64 procs
 
 ]##
 
+{.push warning[UnusedImport]:off .}
 import std/[strformat, sugar]
 
 const

@@ -13,7 +13,9 @@ branching todos
 ---------------
 - [likely](https://nim-lang.org/docs/system.html#likely.t%2Cbool)
 - [unlikely](https://nim-lang.org/docs/system.html#unlikely.t%2Cbool)
-
+- an example of using when (and if?) inside an object constructor
+  - there are examples in the doc where when is used to optionally define props
+  - e.g. this file: https://github.com/nim-lang/Nim/blob/devel/lib/std/private/threadtypes.nim
 ## when
 - a compile time if statement
 - the condition MUST be a constant expression
@@ -57,8 +59,8 @@ when defined(posix) and not (defined(macosx) or defined(bsd)):
   echo "running on posix but not mac or bsd"
 
 when isMainModule:
-  # true if the module is compiled as the main file
-  # useful for embedding tests within the module
+  # true if the current file is compiled directly
+  # useful for embedding logic (e.g. tests) that arent executed when the file is imported
   assert true == true
 
 var whichVerse:string = when 1 < 2: "real world" else: "twitter verse"
@@ -68,11 +70,13 @@ when false: # trick for commenting code
   echo "this code is never compiled and not required to be commented out"
 
 # check if execution is compiletime or runtime (executable)
-# likely got this from the docs too
+# cannot contain elif branches
+# must contain an else branch
+# cannot define new symbols
 when nimvm:
   echo "in nim's vm, so its compile time"
 else:
-  echo "I must be running after compilation via an executable"
+  echo "runtime via an executable"
 
 
 when compiles(3 + 4):

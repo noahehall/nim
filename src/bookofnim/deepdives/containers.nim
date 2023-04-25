@@ -7,14 +7,15 @@
 ## TLDR
 - [custom types as keys require hash + == procs](https://nim-lang.org/docs/tables.html#basic-usage-hashing)
 - generally all table types have the same interface; CountTables a bit more
-- critbit can be used as a sorted string dictionary, see containers
+- critbit can be used as a sorted string dictionary
+- system.table is often used to collect and convert literals into std/tables
 
 links
 -----
 - high impact
-  - [tables aka dictionary](https://nim-lang.org/docs/tables.html)
-  - [string tables](https://nim-lang.org/docs/strtabs.html)
-  - [fusion btree tables](https://nim-lang.github.io/fusion/src/fusion/btreetables.html)
+  - [tables: hash](https://nim-lang.org/docs/tables.html)
+  - [tables: string](https://nim-lang.org/docs/strtabs.html)
+  - [tables: fusion btree](https://nim-lang.github.io/fusion/src/fusion/btreetables.html)
 - niche
   - [enum utils](https://nim-lang.org/docs/enumutils.html)
   - [shared tables](https://nim-lang.org/docs/sharedtables.html)
@@ -35,37 +36,11 @@ table types
 - each has a blahRef variant
   - CountTable[A] tracks the occurrences of each key
   - OrderedTable[A; B] preserves the insertion order of keys
-  - Table[A; B] regular dictionary
+  - Table[A; B] regular hash table
 - == check returns true if both/neither are nil and
   - count: content + count identical
   - ordered: content + order identical
   - table: content identical
-
-
-## options
-
-option exceptions
------------------
-- UnpackDefect when getting a value that doesnt exist
-
-option types
-------------
-- Option[T] some/none
-- Some[T]
-- None[T]
-
-option procs
-------------
-- isSome thing there
-- isNone nil
-- get the value or raise UnpackDefect
-- filter returns Some/None depending on supplied lambda
-- flatMap map for chaining
-- flatten remove one level of a nested Option
-
-options operators
------------------
-- == true if both are none/equal values
 
 ## strtabs
 - efficient string to string hash table supporting case/style in/sensitive
@@ -87,7 +62,13 @@ strtab types
 
 ]##
 
-import std/[sugar, strformat, strutils, sequtils]
+{.push
+  hint[GlobalVar]:off,
+  hint[XDeclaredButNotUsed]:off,
+  warning[UnusedImport]:off
+.}
+
+import std/[sugar, strformat, strutils]
 
 
 echo "############################ tables"
@@ -100,7 +81,10 @@ const
   hashTable = baseTable.toTable ## newTable
   orderededTable = baseTable.toOrderedTable ## [('a', 5), ('b', 9)].toOrderedTable
   countTable = "wooperscooper".toCountTable ## anyOpenArrayLikeThing.toCountTable
-
+  anotherTable = toTable[string, int]({
+    "first": 1,
+    "second": 2
+  })
 
 echo "############################ pure tables"
 
@@ -130,10 +114,10 @@ echo "############################ impure tables"
 var
   mutated = hashTable
   mCountTable = countTable
-proc echoMutated(): void = echo "table: ", mutated, " count: ", mcountTable
+proc echoMutated(): void = echo "table: ", mutated, " count: ", mCountTable
 echoMutated()
 
-mutated["middle"] = "slime"; echomutated()
+mutated["middle"] = "slime"; echoMutated()
 mutated.del "middle"; echoMutated()
 mCountTable.inc 'p'; echoMutated()
 mCountTable.merge countTable; echoMutated()
@@ -151,7 +135,7 @@ type
     name: string
     uid: int
 
-var t = initTable[int, User]()
+var t = initTable[int, User]() ## initialize an empty hash table
 let u = User(name: "Hello", uid: 99)
 t[1] = u
 
@@ -195,3 +179,19 @@ echo "############################ strtabs impure"
 var newUser = newStringTable(modeCaseSensitive)
 
 proc echoUser: void = echo fmt"{newUser=}"
+
+echo "############################ custom objects as keys"
+# example of using custom objects as keys
+# see crypto.nim for full details of the hashes module
+
+import std/hashes
+
+
+proc hash(x: User): Hash = !$x.uid.hash
+  ## arbitrary logic for hashing a User
+  ## for use as key in a table
+
+var userDictionary = initTable[User, string]()
+userDictionary[User(name: "noah", uid: 1234)] = "custom keys!"
+
+echo fmt"{userDictionary=}"

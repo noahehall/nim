@@ -1,6 +1,7 @@
 name: bookofnim-ci
 
 on:
+  workflow_dispatch: # manually trigger workflows in github UI
   push:
     branches: [deploy]
   pull_request:
@@ -18,13 +19,14 @@ jobs:
   ci:
     name: CI / ${{ matrix.os }} / Nim${{ matrix.nimv }}
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 10 # extra 5 minutes for compiling the devel branch
+    # extra 5 minutes for initial compiling of #version-2-0 when not in cache
+    timeout-minutes: 15
 
     strategy:
-      fail-fast: true
+      fail-fast: false # fail workflow after all jobs, not first error
       matrix:
-        os: [ubuntu-latest] # macos-12
-        nimv: [1.6.12, "devel"] # 1.9.3 doesnt work with choosenim
+        os: [ubuntu-latest]
+        nimv: [1.6.12, "#version-2-0"]
 
     steps:
       - name: Checkout

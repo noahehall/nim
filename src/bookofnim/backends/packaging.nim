@@ -5,27 +5,24 @@
 
 ##[
 ## TLDR
-- nimble shipped with nim isnt the nimbiest version
+- nimble
+  - shipped with nim isnt the nimbiest version
   - install a nimbier nimble with `nimble install nimble`
+  - is package-level package manager, i.e. pnpm not apt-get
 - parallel tasks are described in asyncPar
+- nimscript defined here is strictly for app configuration and nimble support
+  - check targets/shell.nims for in depth nimscripting
 
 links
 -----
 - other
   - [configs used by nim](https://github.com/nim-lang/Nim/tree/devel/config)
   - [example config with tasks](https://github.com/kaushalmodi/nim_config/blob/master/config.nims)
-  - [example nimscript script](https://github.com/noahehall/nim/blob/develop/src/bookofnim/backends/targets/shell.nims)
   - [nimble repo](https://github.com/nim-lang/nimble)
   - [understanding how nim is built for X may help you do the same](https://nim-lang.org/docs/packaging.html)
-  - peter:
-      - [nimscript part 1](https://peterme.net/using-nimscript-as-a-configuration-language-embedding-nimscript-pt-1.html)
-      - [nimscript part 2](https://peterme.net/how-to-embed-nimscript-into-a-nim-program-embedding-nimscript-pt-2.html)
-      - [nimscript part 3](https://peterme.net/creating-condensed-shared-libraries-embedding-nimscript-pt-3.html)
 - high impact
   - [nimble pkg reference](https://github.com/nim-lang/nimble#nimble-reference)
   - [nims intro](https://nim-lang.org/docs/nims.html)
-  - [nimscript compatibility tests](https://github.com/nim-lang/Nim/blob/devel/tests/test_nimscript.nims)
-  - [nimscript spec (including tasks)](https://nim-lang.org/docs/nimscript.html)
   - [parse config](https://nim-lang.org/docs/parsecfg.html)
 - niche
   - [base object of a lexer](https://nim-lang.org/docs/lexbase.html)
@@ -34,29 +31,25 @@ todos
 -----
 - verify the different app cfg locations
 - for some reason (oops) parseCfg is in shell.nims, it should be in this file
+- [this file has example of using @if... @end in a cfg file](https://github.com/nim-lang/Nim/blob/devel/lib/pure/asyncdispatch.nim.cfg)
+- the packaging section should show examples of
+  - creating a package (compiled bin)
+  - creating a library (dont compile, install source files)
+  - creating a composite library + package (compiling + installing source files)
 
 ## nimble
 - nim package manager
 
-nimble configuration
---------------------
-- posix: ~/.config/nimble/nimble.ini
-- windows: Users\someuser\AppData\Roaming\nimble\nimble.ini
-.. code-block:: Nim
-    # where to install pkgs
-    nimbleDir = r"~/nimble/"
-
-    # if true will add chcp 65001 to .cmd stubs generated in ~/.nimble/bin/
-    chcp = true
-
-    # specify new custom package list(s)
-    # over default with one named "Official"
-    # multiple path/urls can be specified per name
-    [PackageList]
-    name = "My local list"
-    path/url = r"/any/path/or/url"
-    cloneUsingHttps = true  # replace git:// with https://
-    httpProxy = ""
+nimble packages
+---------------
+- a directory with a .nimble file and one/more .nim files
+  - the .nimble filename should match the source codes mainFile.nim
+  - the .nimble file is executed as nimscript, thus you have full access to nims VM
+    - a package should generally define atleast a test task on install
+- requires git/mercurial depending on where you're fetching remote packages from
+- nimble package versions: `nimble install blah bleh@123`
+  - @123 | @>=0.1.2 | @#gitCommitHash | @#head (or any tag)
+  - @url
 
 creating nimble packages
 ------------------------
@@ -82,10 +75,13 @@ creating nimble packages
     # installDirs, installFiles, installExt <-- allow list: will only be installed
     installExt = @["nim"] # required if your pkg is both a library & binary
     srcDir = "./src"
+    bin = @["myMainFile"] # compile this file before installing
+    skipExt = @["nim"] # dont install source .nim files (we only want to copy the compiled bin)
     binDir = "./bin"
     backend = "c"
     namedBin["main"] = "mymain" # rename binary
     namedBin = {"main": "mymain", "main2": "other-main"}.toTable() # rename binaries
+
 
     # package dependencies
     # ^= latest compatible semver
@@ -108,83 +104,8 @@ creating nimble packages
     # package tasks: list a pkgs tasks via `nimble tasks`
     # see task section below
 
-package dir structure
----------------------
-.. code-block:: Nim
-  .                           # The root directory of the project
-  ├── LICENSE
-  ├── README.md
-  ├── foobar.nimble           # The project .nimble file
-  └── src
-      ├── foobar.nim          # Imported via `import foobar`
-  │   └── foobar              # package module dir
-  │   │   ├── utils.nim       # Imported via `import foobar/utils`
-  │   │   ├── common.nim      # Imported via `import foobar/common`
-          └── private         # package internal modules
-  │   │   │   ├── hidden.nim  # Imported via `import foobar/private/hidden`
-  └── tests           # Contains the tests
-      ├── config.nims
-      ├── tfoo1.nim   # First test
-      └── tfoo2.nim   # Second test
-
-releasing and publishing packages
----------------------------------
-- releasing
-  - increment the version in .nimble
-  - commit changes
-  - `git tag v1.2.3`
-  - push your tags
-- publishing
-  - use `nimble publish`
-  - or manually clone the [packages](https://github.com/nim-lang/packages) repo and submit a PR
-
-## nimscript
-- subset of nim that can be evaluated by nims builtin VM
-- [runnable example](https://github.com/noahehall/nim/blob/develop/src/bookofnim/backends/targets/shell.nims)
-
-nimscript limitations
----------------------
-- not available
-  - any stdlib module relying on `importc` pragma
-  - multimethods
-- works but not 100% tested
-  - ptr operations
-  - var T args (rely on ptr operations)
-- nimscript vs nim
-  - random.randomize() requires an int64 as a seed
-
-
-nimscript for app configuration
--------------------------------
-- nim will automatically process .nims configs in the following order (later overrides previous)
-.. code-block:: Nim
-  $XDG_CONFIG_HOME/nim/config.nims || ~/config/nim/config.nims
-  $parentDir/config.nims
-  $projectDir/config.nims
-  $project.nims
-
-- syntax for setting switches has 2 forms
-.. code-block:: Nim
-  switch("opt", "size") || hint(name, bool) || warning(name, bool)
-  --opt:size # IMO the cleaner syntax
-
-
-nimscript for scripting
------------------------
-- The syntax, style, etc is identical to compiled nim
-- supports templates, macros, types, concepts, effect tracking system, etc
-- std and third party pkgs can work in both .nim and .nims (see limitations)
-- a nims file is its own config file, but you can rely on the other types
-- shebang has two formats
-.. code-block:: Nim
-    # without switches
-    #!/usr/bin/env nim
-
-    # with switches
-    #!/usr/bin/env -S nim --hints:off
-
-nimscript nimble integration
-----------------------------
+package directives
+------------------
 - author
 - backend
 - bin
@@ -202,39 +123,85 @@ nimscript nimble integration
 - version
 - requires(varargs[string])
 
-nimscript types
----------------
-- ScriptMode enum
-  - Silent bool
-  - Verbose bool echos cmd before execution
-  - Whatif bool echos cmds without execution
+package dir structure
+---------------------
+.. code-block:: Nim
+  ├── LICENSE
+  ├── README.md
+  ├── foobar.nimble  # The project .nimble file
+  ├── foobar.nim     # only put it here if this is the only module
+  └── src
+      ├── foobar.nims         # cfg specifically for sibling foobar.nim
+      ├── foobar.nim          # Imported via `import foobar`
+  │   └── foobar              # package module dir
+  │   │   ├── utils.nim       # Imported via `import foobar/utils`
+  │   │   ├── common.nim      # Imported via `import foobar/common`
+          └── private         # consumers cant import private modules
+  │   │   │   ├── hidden.nim  # internally you can `import foobar/private/hidden`
+  └── tests           # Contains the tests
+      ├── config.nims
+      ├── tfoo1.nim   # First test
+      └── tfoo2.nim   # Second test
 
-nimscript vars
---------------
-- mode ScriptMode runtime behavior
-- requiresData seq[string] for read/write access
+creating nimble libraries
+-------------------------
+- all previous info still stands correct, however pay attention to the following
+- libraries arent pre-compiled, thus the directory structure most be obeyed
+  - if the library contains a single module, it can be in the root directory next to the .nimble file
+  - else create MyPackageName dir and put library files in there
+    - consumers can then `import myPackageName / myModuleName`
 
-nimscript procs
----------------
-- cppDefine(string) is a C preprocessor #define and needs to be mangled
-- patchFile(pkg, thisFile, withThisFile) overrides location of a file belonging to pkg
-- readAllFromStdin() read all data from stdin; blocks until EOF event (stdin closed)
-- readLineFromStdin() read a line from stdin; blocks until EOF event (stdin closed)
-- toDll(fname) posix adds lib$fname.so, windows appends .dll to fname
-- toExe(fname) posix returns fname unmodified, windows appends .exe
-- cpFile from, to
-- mvFile
-- setCommand that Nim should continue execution with
-- getCommand that Nim is currently using to execute
-- switch(x, y) nim compiler switch, IMO prefer --x:y
+releasing and publishing packages
+---------------------------------
+- be sure to compile with nimble and NOT nim
+  - nimble adds extra checks, e.g. package dependencies are listed in the .nimble file
+- releasing
+  - increment the version in .nimble
+  - commit changes
+  - tag the commit `git tag v1.2.3`
+    - this MUST MATCH the version number in step 1, else nimble will refuse to install it
+  - git push --tags
+- publishing
+  - use `nimble publish`
+  - or manually clone the [packages](https://github.com/nim-lang/packages) repo and submit a PR
 
-nimscript tasks
----------------
-- a template which creates a proc named blahTask
-- useful for package build scripts, shell scripts, devops actions, and integration with nimble
-  - tasks have before and after lifecycle hooks within .nimble files
-  - you have the power of nim wherever you would use a shell script
-- default tasks: help, build, tests, and bench cmds
+
+nimble configuration
+--------------------
+- posix: ~/.config/nimble/nimble.ini
+- windows: Users\someuser\AppData\Roaming\nimble\nimble.ini
+.. code-block:: Nim
+    # where to install pkgs
+    nimbleDir = r"~/nimble/"
+
+    # if true will add chcp 65001 to .cmd stubs generated in ~/.nimble/bin/
+    chcp = true
+
+    # specify new custom package list(s)
+    # over default with one named "Official"
+    # multiple path/urls can be specified per name
+    [PackageList]
+    name = "My local list"
+    path/url = r"/any/path/or/url"
+    cloneUsingHttps = true  # replace git:// with https://
+    httpProxy = ""
+
+## nimscript
+- subset of nim that can be evaluated by nims builtin VM
+
+nimscript for app configuration
+-------------------------------
+- nim will automatically process .nims configs in the following order (later overrides previous)
+.. code-block:: Nim
+  $XDG_CONFIG_HOME/nim/config.nims || ~/config/nim/config.nims
+  $parentDir/config.nims
+  $projectDir/config.nims
+  $project.nims
+
+- syntax for setting switches has 2 forms
+.. code-block:: Nim
+  switch("opt", "size") || hint(name, bool) || warning(name, bool)
+  --opt:size # IMO the cleaner syntax
 
 ## parsecfg
 - high performance config parser in windows ini syntax

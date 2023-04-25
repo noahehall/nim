@@ -19,6 +19,8 @@ todos
 - [custom annotations with template pragmas](https://nim-lang.org/docs/manual.html#userminusdefined-pragmas-custom-annotations)
 - [macro pragmas](https://nim-lang.org/docs/manual.html#userminusdefined-pragmas-macro-pragmas)
 - [asyncmacro](https://github.com/nim-lang/Nim/blob/devel/lib/pure/asyncmacro.nim)
+- put the asyncdispatch templates in this file
+- niminaction chapter 9
 
 ## templates
 - simple form of a macro
@@ -31,7 +33,12 @@ template types
 --------------
 - untyped an expression thats not resolved for lazy evaluation
 - typed an expression that is resolved for greedy evaluation
+
+## macros
+- an API for metaprogramming
+
 ]##
+
 
 echo "############################ template"
 # copied from docs
@@ -45,10 +52,10 @@ assert(5 != 6)
 # lazy evaluation of proc args
 const debug = true
 var xy = 4
-proc log_eager(msg: string) {.inline.} =
+proc logEager(msg: string) {.inline.} =
   ## msg arg is evaluted before the fn is evoked
   if debug: stdout.writeLine(msg)
-template log_lazy(msg: string) =
+template logLazy(msg: string) =
   ## the template is processed before msg arg
   ## so if debug is false, msg wont be evaluted
   if debug: stdout.writeLine(msg)

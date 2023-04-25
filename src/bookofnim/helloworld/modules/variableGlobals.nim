@@ -18,6 +18,10 @@ links
 - [converters](https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#converter)
 - [special types](https://nim-lang.org/docs/manual.html#special-types)
 
+todos
+-----
+- blah.reset a thing to its default value
+
 ## var
 - runtime mutable global var
 
@@ -76,13 +80,17 @@ links
 - available for the JavaScript target too.
 - cant be used with funcs/{.noSideEffect.} (use debugEcho)
 
+## important globals
+
+- nimvm: true if current execution context is compile time
+
 ]##
 
-
+{.push hint[XDeclaredButNotUsed]:off .}
 echo "############################ variables"
-var woop1 = "flush"
-let woop2 = "hello"
-const woop3 = "flush"
+var woop1 = "flush" ## mutable vars dont require a value when defined
+let woop2 = "hello" ## must be assigned a value
+const woop3 = "flush" ## must be assigned a value
 
 # docs
 const fac4 = (var x = 1; for i in 1..4: x *= i; x) ## \

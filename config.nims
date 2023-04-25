@@ -1,23 +1,40 @@
-# --hint:Conf:off # wtf? bookofnim/config.nims(1, 2) Error: 'on' or 'off' expected, but 'Conf:
-# ^ fails on any hint
+# --colors:on # breaks vscode run code extension
+# --experimental:codeReordering dont use or fear the amount of logs it produces
+# FYI: hint/warningAsError requires switch() syntax
 
+--assertions:off
+--checks:on
 --debugger:native
 --deepcopy:on # required for mm:orc/arc
 --define:nimStrictDelete
+--define:release
 --define:ssl
 --define:threadsafe
+--errorMax:1
 --experimental:strictEffects
+--forceBuild:on
 --hints:on
 --mm:orc
 --multimethods:on
 --panics:on
---parallelBuild:0 # 1 is always a good idea in CI
---stackTraceMsgs:on
---styleCheck:hint
+--parallelBuild:0
+--stackTraceMsgs:off
+--styleCheck:error # can push specific pragmas, e.g. hint[Name]:off
 --threads:on
 --tlsEmulation:on
+--unitsep:on # ASCII unit separator between error msgs
+--verbosity:0
 --warnings:on
-
+switch("hint","GlobalVar:off") # spams u to death
+switch("hintAsError", "DuplicateModuleImport:on")
+switch("hintAsError", "Performance:on")
+switch("hintAsError", "XDeclaredButNotUsed:on")
+switch("warningAsError", "ConfigDeprecated:on")
+switch("warningAsError", "Deprecated:on")
+switch("warningAsError", "GcUnsafe:on")
+switch("warningAsError", "HoleEnumConv:on")
+switch("warningAsError", "ResultUsed:on")
+switch("warningAsError", "UnusedImport:on")
 case getCommand():
   of "c", "cc", "cpp", "objc":
     --lineDir:on
@@ -28,19 +45,51 @@ case getCommand():
 case getEnv "ENV":
   of "DEV":
     --assertions:on
-    --checks:on
     --debuginfo:on
     --declaredLocs:on
+    --define:debug
     --errorMax:0
     --excessiveStackTrace:on
+    --forceBuild:off
     --opt:size
     --showAllMismatches:on
+    --stackTraceMsgs:on
     --verbosity:2
-    # --colors:on # breaks vscode run code extension
-  else:
-    --assertions:off
-    --define:release
-    --errorMax:1
-    --forceBuild:on
+    switch("hintAsError", "XDeclaredButNotUsed:off")
+    switch("warningAsError", "Deprecated:off")
+    switch("warningAsError", "HoleEnumConv:off")
+  of "PERF":
+    --danger
+  of "SIZE":
+    # @see https://github.com/ee7/binary-size
+    --checks:off
+    --opt:size
+    --passC:"-flto"
+    --passL:"-flto"
+  of "SPEED":
+    --checks:off
     --opt:speed
-    --verbosity:0
+    --passC:"-flto"
+    --passL:"-s"
+  else: discard
+
+case existsEnv "CI":
+  of true:
+    --parallelBuild:1
+    --verbosity:2
+  else: discard
+
+when (NimMajor, NimMinor, NimPatch) <= (1,6,12):
+  # throws in v2, maybe its no longer experimental?
+  --experimental:implicitDeref
+  # throws on nim source code
+  # @see https://github.com/nim-lang/Nim/issues/21713
+  switch("hintAsError", "DuplicateModuleImport:off")
+  switch("hintAsError", "Performance:off")
+  switch("hintAsError", "XDeclaredButNotUsed:off")
+  switch("warningAsError", "Deprecated:off")
+  switch("warningAsError", "HoleEnumConv:off") # only in ci on nim source
+  switch("warningAsError", "UnusedImport:off") # only in ci on nim source
+else:
+  --define:futureLogging
+  switch("warningAsError", "CastSizes:on")

@@ -70,7 +70,7 @@ todos
 - dont have a name and surrounded by paranthesis
 
 ]##
-
+{.push hint[XDeclaredButNotUsed]: off .}
 echo "############################ procedures"
 
 proc pubfn*(): void =
@@ -81,7 +81,7 @@ proc eko(s = "Default value"): void =
   debugEcho s
 eko "first"
 eko("second")
-"third".eChO
+"third".echo
 
 # use of semi to group parameters by type
 proc ekoGroups(a, b: int; c: string, d: char): void = echo "ints: ", a, b, " strings: ", c, d
@@ -196,22 +196,23 @@ echo "size of fruits ", openArraySize(fruits)
 echo "number of capitals ", openArraySize(capitals)
 
 echo "############################ varargs (proc spread params)"
-# haha almost forgot the _ doesnt matter
 # varargs[T] generic constructor
 # s auto converted to seq[string]
-proc eko_all(s: varargs[string]) =
+proc ekoAll(s: varargs[string]) =
   # varargsLen returns the numbe rof variadic arguments
   echo "total els in varargs: ", varargsLen(s), " maybe not ", len(s)
   for x in s:
     echo "var arg: ", x
-e_k_o_a_l_l "this", "that", "thot"
+# remember case and _ doesnt matter
+# commented because we set styleCheck:error in config.nims
+# e_k_o_a_l_l "this", "that", "thot"
 
 # `$` second param converts each item to string
 # s == seq[string] no matter what we pass
-proc eko_anything(s: varargs[string, `$`]) =
+proc ekoAnything(s: varargs[string, `$`]) =
   for x in s:
     echo x
-eKoAnyThInG 1, "threee", @[1,2,3]
+ekoAnything 1, "threee", @[1,2,3]
 
 echo "############################ funcs (pure procs)"
 func woop(): string =
@@ -227,9 +228,6 @@ proc runFn(a: string, fn: proc(x: string): string): string =
 echo runFn("with this string", proc (x: string): string = "received: " & x)
 
 # closures with do notation
-# just a shorter proc
-# haha fkn notice how the DO is placed after the fn
-# lol and not as a param to the fn
 echo runFn("with another string") do (x: string) -> string: "another: " & x
 
 

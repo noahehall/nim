@@ -1,6 +1,6 @@
 ##
-## compiling and managing memory with nimc
-## =======================================
+## compiling and custome memory mgmt
+## =================================
 ## bookmark: rework this entire file
 
 ##[
@@ -51,6 +51,7 @@ todos
   - [forum conversation](https://forum.nim-lang.org/t/9948)
 - [embedded stack trace profiler guide](https://nim-lang.org/1.6.10/estp.html)
 - [additional features](https://nim-lang.org/docs/nimc.html#additional-features)
+- [compiling nim with PGO post](https://forum.nim-lang.org/t/10128)
 
 ## nimc
 - nim CMD OPTS FILE ARGS

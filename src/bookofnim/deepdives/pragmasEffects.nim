@@ -99,6 +99,7 @@ type pragmas
 - byref pass this obj/tuple by ref into procs
 - final mark an object as non inheritable
 - inheritable create alternative RootObj
+- overloadableEnums allows two Enums to have same fieldnames, to be resolved at runtime
 - packed sets an objects field back to back in memory; e.g. for network/hardware drivers
 - pure requires enums to be fully qualified; x fails, but y.x doesnt
 - shallow objects can be shallow copied; use w/ caution; speeds up assignments considerably

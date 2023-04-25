@@ -1,14 +1,21 @@
 #[
 ## new list of todos
+- async / para stuff
+  - https://github.com/nim-lang/Nim/blob/devel/lib/std/typedthreads.nim
+  - https://github.com/nim-lang/Nim/blob/devel/lib/pure/concurrency/threadpool.nim
+  - https://github.com/nim-lang/Nim/blob/devel/lib/system/threadids.nim
+  - https://github.com/nim-lang/Nim/blob/devel/lib/pure/asyncstreams.nim
+  - https://github.com/nim-lang/Nim/blob/devel/lib/pure/asyncfutures.nim
+  - https://github.com/nim-lang/Nim/blob/devel/lib/pure/asyncfile.nim
 - https://github.com/nim-lang/Nim/tree/devel/lib/pure
-  -
 - take the impure dir one by one: https://github.com/nim-lang/Nim/tree/devel/lib/impure
 - then std: https://github.com/nim-lang/Nim/tree/devel/lib/std
 - then linux: https://github.com/nim-lang/Nim/tree/devel/lib/posix
 - then posix: https://github.com/nim-lang/Nim/tree/devel/lib/posix
 - then js: https://github.com/nim-lang/Nim/tree/devel/lib/js
 - haha fk the windows dir
-
+- run this repo on the mac and deal with any errors
+  - should only have to update the .github/scripts that use apt to install deps
 ## new skipped (and (maybe) not categorized)
 - https://github.com/nim-lang/Nim/blob/devel/lib/pure/ioselects
 - https://github.com/nim-lang/Nim/blob/devel/lib/pure/unidecode

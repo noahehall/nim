@@ -1,9 +1,96 @@
 #!/usr/bin/env nim
-# ^ or /usr/bin/env -S nim --hints:off e.g.
+# ^ or /usr/bin/env -S nim e --hints:off
+
+##
+## nimscript as bash replacement
+## =============================
+## bookmark: dunno
+
+##[
+## TLDR
+- dont assume
+  - all system modules/procs/etc are available, always verify
+  - all std libraries can be imported, always verify
+
+links
+-----
+- other
+  - peter:
+      - [nimscript part 1](https://peterme.net/using-nimscript-as-a-configuration-language-embedding-nimscript-pt-1.html)
+      - [nimscript part 2](https://peterme.net/how-to-embed-nimscript-into-a-nim-program-embedding-nimscript-pt-2.html)
+      - [nimscript part 3](https://peterme.net/creating-condensed-shared-libraries-embedding-nimscript-pt-3.html)
+- high impact
+  - [nimscript compatibility tests](https://github.com/nim-lang/Nim/blob/devel/tests/test_nimscript.nims)
+  - [nimscript spec (including tasks)](https://nim-lang.org/docs/nimscript.html)
+
+todos
+-----
+- [spike moving to nimcr](https://github.com/PMunch/nimcr)
 
 
-# TODO: spike moving to nimcr
-# ^ @see https://github.com/PMunch/nimcr
+## nimscript limitations
+
+- not available
+  - any stdlib module relying on `importc` pragma
+  - multimethods
+- works but not 100% tested
+  - ptr operations
+  - var T args (rely on ptr operations)
+- nimscript vs nim
+  - random.randomize() requires an int64 as a seed
+
+
+nimscript for scripting
+-----------------------
+- The syntax, style, etc is identical to compiled nim
+- supports templates, macros, types, concepts, effect tracking system, etc
+- std and third party pkgs can work in both .nim and .nims (see limitations)
+- a nims file is its own config file, but you can rely on the other types
+- shebang has two formats
+.. code-block:: Nim
+    # without switches
+    #!/usr/bin/env nim
+
+    # with switches
+    #!/usr/bin/env -S nim --hints:off
+
+
+nimscript types
+---------------
+- ScriptMode enum
+  - Silent bool
+  - Verbose bool echos cmd before execution
+  - Whatif bool echos cmds without execution
+
+nimscript vars
+--------------
+- mode ScriptMode runtime behavior
+- requiresData seq[string] for read/write access
+
+nimscript procs
+---------------
+- cppDefine(string) is a C preprocessor #define and needs to be mangled
+- patchFile(pkg, thisFile, withThisFile) overrides location of a file belonging to pkg
+- readAllFromStdin() read all data from stdin; blocks until EOF event (stdin closed)
+- readLineFromStdin() read a line from stdin; blocks until EOF event (stdin closed)
+- toDll(fname) posix adds lib$fname.so, windows appends .dll to fname
+- toExe(fname) posix returns fname unmodified, windows appends .exe
+- cpFile from, to
+- mvFile
+- setCommand that Nim should continue execution with
+- getCommand that Nim is currently using to execute
+- switch(x, y) nim compiler switch, IMO prefer --x:y
+
+nimscript tasks
+---------------
+- a template which creates a proc named blahTask
+- useful for package build scripts, shell scripts, devops actions, and integration with nimble
+  - tasks have before and after lifecycle hooks within .nimble files
+  - you have the power of nim wherever you would use a shell script
+- default tasks: help, build, tests, and bench cmds
+
+]##
+
 
 import std/[sugar, sequtils, strformat, strutils, distros, os]
 
