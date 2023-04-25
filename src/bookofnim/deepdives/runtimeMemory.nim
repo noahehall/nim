@@ -109,7 +109,7 @@ pragmas
 - guard attachs a lock to a var, compiler ensures lock is acquired before r/w attempted
 
 errors/warnings/hints
----------------
+---------------------
 - GC-Safe error: accessing/mutating/assigning a heap-type variable owned by another thread
 - Performance hint:
   - using immutable procs on vars that introduce an implicit copy, e.g. seqVar & @[1,2]
