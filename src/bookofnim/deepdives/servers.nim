@@ -166,7 +166,8 @@ asynchttpserver procs
 - acceptRequest
 ]##
 
-import std/[strformat, sugar, strutils, sequtils, json]
+
+import std/[strformat, strutils, json]
 
 echo "############################ httpclient"
 
@@ -198,7 +199,9 @@ fetch.headers = newHttpHeaders({ "Content-Type": "application/json" })
 echo fmt"{fetch.postContent postme, body = $data=}"
 
 fetch.headers = newHttpHeaders({ "X-Vault-Token": "abc-123-321-cba" })
-try: echo fmt"{fetch.getContent getmetimeout=}" except: echo "gotta catchem all!"
+try: echo fmt"{fetch.getContent getmetimeout=}" except CatchableError: echo "gotta catchem all!"
+
+
 
 fetch.close
 
@@ -210,10 +213,20 @@ let afetch = newAsyncHttpClient()
 proc agetContent(self: AsyncHttpClient, url: string): Future[Option[string]] {.async.} =
   ## wraps async calls to provide await for AsyncHttpClient
   let res = self.getContent url
-  yield res; result = if res.failed: none string else: some await res
+  yield res;
+  result = if res.failed: none string else: some res.read
+
 
 echo fmt"{waitFor afetch.agetContent getmegood=}"
 
-echo fmt"{waitFor withTimeout(afetch.agetContent(getmegood), 1)=}"
+
+# FYI: this cause asyncnet to throw on v2
+# echo fmt"{waitFor withTimeout(afetch.agetContent(getmegood), 1)=}"
+# you should instead yield all async requests
+proc fetchWithTimeout: Future[void] {.async.} =
+  let aResponse = withTimeout(afetch.agetContent(getmegood), 1)
+  yield aResponse
+  echo if aResponse.failed: "failed with error" else: fmt"request success: {aResponse.read=}"
+waitFor fetchWithTimeout()
 
 afetch.close

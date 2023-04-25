@@ -18,6 +18,8 @@ todos
 - [discussion: mobile apps with nim](https://forum.nim-lang.org/t/7251)
 ]##
 
+{.push warning[UnusedImport]:off .}
+
 import
   targets/[
     fullstackJavascript

@@ -8,6 +8,8 @@
 - [v2 install steps until v2 is actually released](https://nim-lang.org/blog/2023/03/31/version-20-rc2.html)
   - [v2 press release](https://nim-lang.org/blog/2022/12/21/version-20-rc.html)
 
+[![bookofnim-ci](https://github.com/noahehall/nim/actions/workflows/ci.yaml/badge.svg?branch=develop)](https://github.com/noahehall/nim/actions/workflows/ci.yaml)
+
 ## for fullstack appdevs & bizdevops+sec teams
 
 > a language should scale like math: the same notation describing the lowest and highest layers - Andreas

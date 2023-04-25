@@ -19,7 +19,7 @@
 --panics:on
 --parallelBuild:0
 --stackTraceMsgs:off
---styleCheck:hint
+--styleCheck:error # can push specific pragmas, e.g. hint[Name]:off
 --threads:on
 --tlsEmulation:on
 --unitsep:on # ASCII unit separator between error msgs
@@ -54,7 +54,6 @@ case getEnv "ENV":
     --opt:size
     --showAllMismatches:on
     --stackTraceMsgs:on
-    --styleCheck:error
     --verbosity:2
     switch("hintAsError", "XDeclaredButNotUsed:off")
     switch("warningAsError", "Deprecated:off")
