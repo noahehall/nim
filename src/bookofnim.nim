@@ -29,6 +29,8 @@ links
 
 ]##
 
+{.push warning[UnusedImport]:off .}
+
 import bookofnim / helloworld / helloworld ## basic nim
 
 import bookofnim / deepdives / [

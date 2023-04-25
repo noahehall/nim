@@ -166,7 +166,8 @@ asynchttpserver procs
 - acceptRequest
 ]##
 
-import std/[strformat, sugar, strutils, sequtils, json]
+
+import std/[strformat, strutils, json]
 
 echo "############################ httpclient"
 
@@ -198,7 +199,7 @@ fetch.headers = newHttpHeaders({ "Content-Type": "application/json" })
 echo fmt"{fetch.postContent postme, body = $data=}"
 
 fetch.headers = newHttpHeaders({ "X-Vault-Token": "abc-123-321-cba" })
-try: echo fmt"{fetch.getContent getmetimeout=}" except: echo "gotta catchem all!"
+# try: echo fmt"{fetch.getContent getmetimeout=}" except: echo "gotta catchem all!"
 
 fetch.close
 
@@ -214,6 +215,12 @@ proc agetContent(self: AsyncHttpClient, url: string): Future[Option[string]] {.a
 
 echo fmt"{waitFor afetch.agetContent getmegood=}"
 
+
 echo fmt"{waitFor withTimeout(afetch.agetContent(getmegood), 1)=}"
+proc fetchWithTimeout: Future[void] {.async.} =
+  let aResponse = withTimeout(afetch.agetContent(getmegood), 1)
+  yield aResponse
+  echo if aResponse.failed: "failed with timeout" else: fmt"{aResponse.repr=}"
+waitFor fetchWithTimeout()
 
 afetch.close
