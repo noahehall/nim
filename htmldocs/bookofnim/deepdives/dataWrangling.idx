@@ -1,10 +1,9 @@
-nimTitle	dataWrangling	bookofnim/deepdives/dataWrangling.html	module src/bookofnim/deepdives/dataWrangling		0
-nim	lost	bookofnim/deepdives/dataWrangling.html#lost	const lost		81
-heading	data wrangling	bookofnim/deepdives/dataWrangling.html#data-wrangling	 data wrangling		0
-heading	todos	bookofnim/deepdives/dataWrangling.html#data-wrangling-todos	  todos		0
-heading	re	bookofnim/deepdives/dataWrangling.html#data-wrangling-re	  re		0
-heading	re metacharacters	bookofnim/deepdives/dataWrangling.html#data-wrangling-re-metacharacters	  re metacharacters		0
-heading	re exceptions	bookofnim/deepdives/dataWrangling.html#data-wrangling-re-exceptions	  re exceptions		0
-heading	re types	bookofnim/deepdives/dataWrangling.html#data-wrangling-re-types	  re types		0
-heading	re consts	bookofnim/deepdives/dataWrangling.html#data-wrangling-re-consts	  re consts		0
-heading	re procs	bookofnim/deepdives/dataWrangling.html#data-wrangling-re-procs	  re procs		0
+lost	bookofnim/deepdives/dataWrangling.html#lost	dataWrangling: lost	
+data wrangling	bookofnim/deepdives/dataWrangling.html#data-wrangling	 data wrangling	
+todos	bookofnim/deepdives/dataWrangling.html#data-wrangling-todos	  todos	
+re	bookofnim/deepdives/dataWrangling.html#data-wrangling-re	  re	
+re metacharacters	bookofnim/deepdives/dataWrangling.html#data-wrangling-re-metacharacters	  re metacharacters	
+re exceptions	bookofnim/deepdives/dataWrangling.html#data-wrangling-re-exceptions	  re exceptions	
+re types	bookofnim/deepdives/dataWrangling.html#data-wrangling-re-types	  re types	
+re consts	bookofnim/deepdives/dataWrangling.html#data-wrangling-re-consts	  re consts	
+re procs	bookofnim/deepdives/dataWrangling.html#data-wrangling-re-procs	  re procs	

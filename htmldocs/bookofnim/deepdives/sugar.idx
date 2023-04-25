@@ -1,14 +1,16 @@
-nimTitle	sugar	bookofnim/deepdives/sugar.html	module src/bookofnim/deepdives/sugar		0
-nim	runFn	bookofnim/deepdives/sugar.html#runFn,string,	proc runFn(x: string; fn: (string) -> string): string		43
-nim	myLambda	bookofnim/deepdives/sugar.html#myLambda	let myLambda		48
-nim	myProc	bookofnim/deepdives/sugar.html#myProc,string	proc myProc(s: string): string		50
-nim	myRange	bookofnim/deepdives/sugar.html#myRange	const myRange		61
-nim	mySeq	bookofnim/deepdives/sugar.html#mySeq	const mySeq		63
-nim	myHashSet	bookofnim/deepdives/sugar.html#myHashSet	const myHashSet		70
-nim	myTable	bookofnim/deepdives/sugar.html#myTable	const myTable		75
-heading	sugar deep dive	bookofnim/deepdives/sugar.html#sugar-deep-dive	 sugar deep dive		0
-heading	TLDR	bookofnim/deepdives/sugar.html#sugar-deep-dive-tldr	  TLDR		0
-heading	links	bookofnim/deepdives/sugar.html#sugar-deep-dive-links	  links		0
-heading	todos	bookofnim/deepdives/sugar.html#sugar-deep-dive-todos	  todos		0
-heading	sugar	bookofnim/deepdives/sugar.html#sugar-deep-dive-sugar	  sugar		0
-heading	sugar procs	bookofnim/deepdives/sugar.html#sugar-deep-dive-sugar-procs	  sugar procs		0
+echoThis	bookofnim/deepdives/sugar.html#echoThis,proc(string)	sugar: echoThis(a: proc (x: string): string): void	
+runFn	bookofnim/deepdives/sugar.html#runFn,string,	sugar: runFn(x: string; fn: (string) -&gt; string): string	
+myLambda	bookofnim/deepdives/sugar.html#myLambda	sugar: myLambda	
+myProc	bookofnim/deepdives/sugar.html#myProc,string	sugar: myProc(s: string): string	
+myRange	bookofnim/deepdives/sugar.html#myRange	sugar: myRange	
+mySeq	bookofnim/deepdives/sugar.html#mySeq	sugar: mySeq	
+myHashSet	bookofnim/deepdives/sugar.html#myHashSet	sugar: myHashSet	
+myTable	bookofnim/deepdives/sugar.html#myTable	sugar: myTable	
+cmpCustom	bookofnim/deepdives/sugar.html#cmpCustom,T,T	sugar: cmpCustom[T](x, y: T): int	
+sugar deep dive	bookofnim/deepdives/sugar.html#sugar-deep-dive	 sugar deep dive	
+TLDR	bookofnim/deepdives/sugar.html#sugar-deep-dive-tldr	  TLDR	
+links	bookofnim/deepdives/sugar.html#sugar-deep-dive-links	  links	
+todos	bookofnim/deepdives/sugar.html#sugar-deep-dive-todos	  todos	
+do blocks and proc fn signatures	bookofnim/deepdives/sugar.html#sugar-deep-dive-do-blocks-and-proc-fn-signatures	  do blocks and proc fn signatures	
+sugar	bookofnim/deepdives/sugar.html#sugar-deep-dive-sugar	  sugar	
+sugar procs	bookofnim/deepdives/sugar.html#sugar-deep-dive-sugar-procs	  sugar procs	

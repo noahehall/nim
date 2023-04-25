@@ -1,4 +1,16 @@
-nimTitle	runtimeMemory	bookofnim/deepdives/runtimeMemory.html	module src/bookofnim/deepdives/runtimeMemory		0
-heading	runtime memory operations	bookofnim/deepdives/runtimeMemory.html#runtime-memory-operations	 runtime memory operations		0
-heading	TLDR	bookofnim/deepdives/runtimeMemory.html#runtime-memory-operations-tldr	  TLDR		0
-heading	links	bookofnim/deepdives/runtimeMemory.html#runtime-memory-operations-links	  links		0
+runtime memory operations	bookofnim/deepdives/runtimeMemory.html#runtime-memory-operations	 runtime memory operations	
+TLDR	bookofnim/deepdives/runtimeMemory.html#runtime-memory-operations-tldr	  TLDR	
+links	bookofnim/deepdives/runtimeMemory.html#runtime-memory-operations-links	  links	
+todos	bookofnim/deepdives/runtimeMemory.html#runtime-memory-operations-todos	  todos	
+garbage collector safety	bookofnim/deepdives/runtimeMemory.html#runtime-memory-operations-garbage-collector-safety	  garbage collector safety	
+unsafe Nim features	bookofnim/deepdives/runtimeMemory.html#runtime-memory-operations-unsafe-nim-features	  unsafe Nim features	
+effective memory utilization	bookofnim/deepdives/runtimeMemory.html#runtime-memory-operations-effective-memory-utilization	  effective memory utilization	
+ref synchronization across threads	bookofnim/deepdives/runtimeMemory.html#runtime-memory-operations-ref-synchronization-across-threads	  ref synchronization across threads	
+locks and guards	bookofnim/deepdives/runtimeMemory.html#runtime-memory-operations-locks-and-guards	  locks and guards	
+channels	bookofnim/deepdives/runtimeMemory.html#runtime-memory-operations-channels	  channels	
+types	bookofnim/deepdives/runtimeMemory.html#runtime-memory-operations-types	  types	
+stack (value) types	bookofnim/deepdives/runtimeMemory.html#runtime-memory-operations-stack-value-types	  stack (value) types	
+heap (ref) types	bookofnim/deepdives/runtimeMemory.html#runtime-memory-operations-heap-ref-types	  heap (ref) types	
+procs	bookofnim/deepdives/runtimeMemory.html#runtime-memory-operations-procs	  procs	
+pragmas	bookofnim/deepdives/runtimeMemory.html#runtime-memory-operations-pragmas	  pragmas	
+errors/warnings/hints	bookofnim/deepdives/runtimeMemory.html#runtime-memory-operations-errorsslashwarningsslashhints	  errors/warnings/hints	

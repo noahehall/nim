@@ -1,10 +1,9 @@
-nimTitle	ifWhenCase	bookofnim/helloworld/modules/ifWhenCase.html	module src/bookofnim/helloworld/modules/ifWhenCase		0
-nim	whichVerse	bookofnim/helloworld/modules/ifWhenCase.html#whichVerse	var whichVerse		64
-nim	typeSupportBlah	bookofnim/helloworld/modules/ifWhenCase.html#typeSupportBlah	var typeSupportBlah		83
-nim	numCase	bookofnim/helloworld/modules/ifWhenCase.html#numCase	var numCase		100
-nim	positiveOrNegative	bookofnim/helloworld/modules/ifWhenCase.html#positiveOrNegative,int	proc positiveOrNegative(num: int): string		120
-heading	branching: if when case	bookofnim/helloworld/modules/ifWhenCase.html#branchingcolon-if-when-case	 branching: if when case		0
-heading	TLDR	bookofnim/helloworld/modules/ifWhenCase.html#branchingcolon-if-when-case-tldr	  TLDR		0
-heading	branching todos	bookofnim/helloworld/modules/ifWhenCase.html#branchingcolon-if-when-case-branching-todos	  branching todos		0
-heading	when	bookofnim/helloworld/modules/ifWhenCase.html#branchingcolon-if-when-case-when	  when		0
-heading	case	bookofnim/helloworld/modules/ifWhenCase.html#branchingcolon-if-when-case-case	  case		0
+whichVerse	bookofnim/helloworld/modules/ifWhenCase.html#whichVerse	ifWhenCase: whichVerse	
+typeSupportBlah	bookofnim/helloworld/modules/ifWhenCase.html#typeSupportBlah	ifWhenCase: typeSupportBlah	
+numCase	bookofnim/helloworld/modules/ifWhenCase.html#numCase	ifWhenCase: numCase	
+positiveOrNegative	bookofnim/helloworld/modules/ifWhenCase.html#positiveOrNegative,int	ifWhenCase: positiveOrNegative(num: int): string	
+branching: if when case	bookofnim/helloworld/modules/ifWhenCase.html#branchingcolon-if-when-case	 branching: if when case	
+TLDR	bookofnim/helloworld/modules/ifWhenCase.html#branchingcolon-if-when-case-tldr	  TLDR	
+branching todos	bookofnim/helloworld/modules/ifWhenCase.html#branchingcolon-if-when-case-branching-todos	  branching todos	
+when	bookofnim/helloworld/modules/ifWhenCase.html#branchingcolon-if-when-case-when	  when	
+case	bookofnim/helloworld/modules/ifWhenCase.html#branchingcolon-if-when-case-case	  case	
