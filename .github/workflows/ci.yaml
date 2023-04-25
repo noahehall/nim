@@ -1,6 +1,7 @@
 name: bookofnim-ci
 
 on:
+  workflow_dispatch: # manually trigger workflows in github UI
   push:
     branches: [deploy]
   pull_request:
