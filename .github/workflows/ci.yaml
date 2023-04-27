@@ -20,7 +20,8 @@ jobs:
     name: CI / ${{ matrix.os }} / Nim${{ matrix.nimv }}
     runs-on: ${{ matrix.os }}
     # extra 15 minutes for initial compiling of #devel when not in cache
-    # there seems to be a significant time increase for v2 release candidate
+    # FYI: version-2-0 fails doc job, just use #devel until v2 is actually released
+    # there seems to be a significant time increase for #version-2-0 release candidate
     # even on subsequent runs where the cache can be restored
     timeout-minutes: 30
 
