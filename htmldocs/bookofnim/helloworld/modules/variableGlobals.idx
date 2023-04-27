@@ -1,38 +1,39 @@
-woop1	bookofnim/helloworld/modules/variableGlobals.html#woop1	variableGlobals: woop1	
-woop2	bookofnim/helloworld/modules/variableGlobals.html#woop2	variableGlobals: woop2	
-woop3	bookofnim/helloworld/modules/variableGlobals.html#woop3	variableGlobals: woop3	
-fac4	bookofnim/helloworld/modules/variableGlobals.html#fac4	variableGlobals: fac4	
-`let`	bookofnim/helloworld/modules/variableGlobals.html#let	variableGlobals: let	
-autoInt	bookofnim/helloworld/modules/variableGlobals.html#autoInt	variableGlobals: autoInt	
-someString	bookofnim/helloworld/modules/variableGlobals.html#someString	variableGlobals: someString	
-d33pcopy	bookofnim/helloworld/modules/variableGlobals.html#d33pcopy	variableGlobals: d33pcopy	
-a	bookofnim/helloworld/modules/variableGlobals.html#a	variableGlobals: a	
-b	bookofnim/helloworld/modules/variableGlobals.html#b	variableGlobals: b	
-myInt	bookofnim/helloworld/modules/variableGlobals.html#myInt	variableGlobals: myInt	
-doubleFloat	bookofnim/helloworld/modules/variableGlobals.html#doubleFloat,float	variableGlobals: doubleFloat(x: float): float	
-myStaticVar	bookofnim/helloworld/modules/variableGlobals.html#myStaticVar	variableGlobals: myStaticVar	
-Option	bookofnim/helloworld/modules/variableGlobals.html#Option	variableGlobals: Option	
-aa	bookofnim/helloworld/modules/variableGlobals.html#aa	variableGlobals: aa	
-bb	bookofnim/helloworld/modules/variableGlobals.html#bb	variableGlobals: bb	
-get	bookofnim/helloworld/modules/variableGlobals.html#get.c,Option[T]	variableGlobals: get[T](x: Option[T]): T	
-toBool	bookofnim/helloworld/modules/variableGlobals.html#toBool.c,int	variableGlobals: toBool(x: int): bool	
-somevar	bookofnim/helloworld/modules/variableGlobals.html#somevar	variableGlobals: somevar	
-othervar	bookofnim/helloworld/modules/variableGlobals.html#othervar	variableGlobals: othervar	
-MyType	bookofnim/helloworld/modules/variableGlobals.html#MyType	variableGlobals: MyType	
-instance	bookofnim/helloworld/modules/variableGlobals.html#instance	variableGlobals: instance	
-variables and globals	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals	 variables and globals	
-TLDR	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-tldr	  TLDR	
-links	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-links	  links	
-todos	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-todos	  todos	
-var	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-var	  var	
-let	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-let	  let	
-const	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-const	  const	
-static	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-static	  static	
-eval	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-eval	  eval	
-stropping	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-stropping	  stropping	
-auto	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-auto	  auto	
-type casts	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-type-casts	  type casts	
-type coercions	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-type-coercions	  type coercions	
-type inspection	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-type-inspection	  type inspection	
-echo/repr	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-echoslashrepr	  echo/repr	
-important globals	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-important-globals	  important globals	
+nimTitle	variableGlobals	bookofnim/helloworld/modules/variableGlobals.html	module src/bookofnim/helloworld/modules/variableGlobals		0
+nim	woop1	bookofnim/helloworld/modules/variableGlobals.html#woop1	var woop1		91
+nim	woop2	bookofnim/helloworld/modules/variableGlobals.html#woop2	let woop2		92
+nim	woop3	bookofnim/helloworld/modules/variableGlobals.html#woop3	const woop3		93
+nim	fac4	bookofnim/helloworld/modules/variableGlobals.html#fac4	const fac4		96
+nim	`let`	bookofnim/helloworld/modules/variableGlobals.html#let	let `let`		101
+nim	autoInt	bookofnim/helloworld/modules/variableGlobals.html#autoInt	var autoInt		104
+nim	someString	bookofnim/helloworld/modules/variableGlobals.html#someString	let someString		113
+nim	d33pcopy	bookofnim/helloworld/modules/variableGlobals.html#d33pcopy	var d33pcopy		114
+nim	a	bookofnim/helloworld/modules/variableGlobals.html#a	var a		119
+nim	b	bookofnim/helloworld/modules/variableGlobals.html#b	var b		120
+nim	myInt	bookofnim/helloworld/modules/variableGlobals.html#myInt	var myInt		167
+nim	doubleFloat	bookofnim/helloworld/modules/variableGlobals.html#doubleFloat,float	proc doubleFloat(x: float): float		169
+nim	myStaticVar	bookofnim/helloworld/modules/variableGlobals.html#myStaticVar	let myStaticVar		178
+nim	Option	bookofnim/helloworld/modules/variableGlobals.html#Option	object Option		186
+nim	aa	bookofnim/helloworld/modules/variableGlobals.html#aa	let aa		192
+nim	bb	bookofnim/helloworld/modules/variableGlobals.html#bb	let bb		193
+nim	get	bookofnim/helloworld/modules/variableGlobals.html#get.c,Option[T]	converter get[T](x: Option[T]): T		195
+nim	toBool	bookofnim/helloworld/modules/variableGlobals.html#toBool.c,int	converter toBool(x: int): bool		203
+nim	somevar	bookofnim/helloworld/modules/variableGlobals.html#somevar	var somevar		208
+nim	othervar	bookofnim/helloworld/modules/variableGlobals.html#othervar	var othervar		209
+nim	MyType	bookofnim/helloworld/modules/variableGlobals.html#MyType	type MyType		215
+nim	instance	bookofnim/helloworld/modules/variableGlobals.html#instance	var instance		216
+heading	variables and globals	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals	 variables and globals		0
+heading	TLDR	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-tldr	  TLDR		0
+heading	links	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-links	  links		0
+heading	TODOs	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-todos	  TODOs		0
+heading	var	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-var	  var		0
+heading	let	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-let	  let		0
+heading	const	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-const	  const		0
+heading	static	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-static	  static		0
+heading	eval	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-eval	  eval		0
+heading	stropping	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-stropping	  stropping		0
+heading	auto	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-auto	  auto		0
+heading	type casts	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-type-casts	  type casts		0
+heading	type coercions	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-type-coercions	  type coercions		0
+heading	type inspection	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-type-inspection	  type inspection		0
+heading	echo/repr	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-echoslashrepr	  echo/repr		0
+heading	important globals	bookofnim/helloworld/modules/variableGlobals.html#variables-and-globals-important-globals	  important globals		0

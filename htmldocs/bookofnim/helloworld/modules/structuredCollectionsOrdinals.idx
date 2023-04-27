@@ -1,71 +1,72 @@
-nums4	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#nums4	structuredCollectionsOrdinals: nums4	
-rangeArr	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#rangeArr	structuredCollectionsOrdinals: rangeArr	
-emptyArr	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#emptyArr	structuredCollectionsOrdinals: emptyArr	
-nums	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#nums	structuredCollectionsOrdinals: nums	
-smun	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#smun	structuredCollectionsOrdinals: smun	
-arrayWithRange	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#arrayWithRange	structuredCollectionsOrdinals: arrayWithRange	
-withArrParam	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#withArrParam,array[I,T]	structuredCollectionsOrdinals: withArrParam[I, T](a: array[I, T]): string	
-breakfast	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#breakfast	TimeToEat.breakfast	
-lunch	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#lunch	TimeToEat.lunch	
-dinner	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#dinner	TimeToEat.dinner	
-sweettooth	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#sweettooth	TimeToEat.sweettooth	
-TimeToEat	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#TimeToEat	structuredCollectionsOrdinals: TimeToEat	
-proteinshake	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#proteinshake	WhatToEat.proteinshake	
-ramen	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#ramen	WhatToEat.ramen	
-ramentWithMeet	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#ramentWithMeet	WhatToEat.ramentWithMeet	
-pnutbutteryjelly	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#pnutbutteryjelly	WhatToEat.pnutbutteryjelly	
-WhatToEat	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#WhatToEat	structuredCollectionsOrdinals: WhatToEat	
-Eating	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#Eating	structuredCollectionsOrdinals: Eating	
-WeeklyFoodTracker	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#WeeklyFoodTracker	structuredCollectionsOrdinals: WeeklyFoodTracker	
-MonthlyFoodTracker	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#MonthlyFoodTracker	structuredCollectionsOrdinals: MonthlyFoodTracker	
-onSundayIAte	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#onSundayIAte	structuredCollectionsOrdinals: onSundayIAte	
-lastWeek	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#lastWeek	structuredCollectionsOrdinals: lastWeek	
-areJustArrays	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#areJustArrays	structuredCollectionsOrdinals: areJustArrays	
-myTable	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#myTable	structuredCollectionsOrdinals: myTable	
-woops	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#woops	structuredCollectionsOrdinals: woops	
-swoop	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#swoop	structuredCollectionsOrdinals: swoop	
-emptySeq	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#emptySeq	structuredCollectionsOrdinals: emptySeq	
-seqEmpty	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#seqEmpty	structuredCollectionsOrdinals: seqEmpty	
-me	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#me	structuredCollectionsOrdinals: me	
-globalSeq	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#globalSeq	structuredCollectionsOrdinals: globalSeq	
-lastFour	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#lastFour	structuredCollectionsOrdinals: lastFour	
-lastOne	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#lastOne	structuredCollectionsOrdinals: lastOne	
-MySubrange	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#MySubrange	structuredCollectionsOrdinals: MySubrange	
-thisRange	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#thisRange	structuredCollectionsOrdinals: thisRange	
-a	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#a	structuredCollectionsOrdinals: a	
-bbb	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#bbb	structuredCollectionsOrdinals: bbb	
-myCharSet	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#myCharSet	structuredCollectionsOrdinals: myCharSet	
-Opts	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#Opts	structuredCollectionsOrdinals: Opts	
-IsOn	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#IsOn	structuredCollectionsOrdinals: IsOn	
-simpleOpts	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#simpleOpts	structuredCollectionsOrdinals: simpleOpts	
-onn	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#onn	structuredCollectionsOrdinals: onn	
-offf	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#offf	structuredCollectionsOrdinals: offf	
-flags	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#flags	structuredCollectionsOrdinals: flags	
-MyFlag	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#MyFlag	structuredCollectionsOrdinals: MyFlag	
-MyFlags	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#MyFlags	structuredCollectionsOrdinals: MyFlags	
-toNum	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#toNum,MyFlags	structuredCollectionsOrdinals: toNum(f: MyFlags): int	
-toFlags	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#toFlags,int	structuredCollectionsOrdinals: toFlags(v: int): MyFlags	
-globalset1	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#globalset1	structuredCollectionsOrdinals: globalset1	
-globalset2	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#globalset2	structuredCollectionsOrdinals: globalset2	
-globalset11	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#globalset11	structuredCollectionsOrdinals: globalset11	
-globalarr	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#globalarr	structuredCollectionsOrdinals: globalarr	
-structured collections and ordinals	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals	 structured collections and ordinals	
-TLDR	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-tldr	  TLDR	
-links	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-links	  links	
-structured: collections	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-structuredcolon-collections	  structured: collections	
-array	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-array	  array	
-array procs	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-array-procs	  array procs	
-array like	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-array-like	  array like	
-table	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-table	  table	
-sequence	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-sequence	  sequence	
-range and alice	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-range-and-alice	  range and alice	
-range	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-range	  range	
-slice	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-slice	  slice	
-ordinals	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-ordinals	  ordinals	
-generic interface	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-generic-interface	  generic interface	
-immutable ops	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-immutable-ops	  immutable ops	
-mutable ops	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-mutable-ops	  mutable ops	
-inspection ops	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-inspection-ops	  inspection ops	
-set	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-set	  set	
-set operators	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-set-operators	  set operators	
-set procs	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-set-procs	  set procs	
+nimTitle	structuredCollectionsOrdinals	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html	module src/bookofnim/helloworld/modules/structuredCollectionsOrdinals		0
+nim	nums4	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#nums4	var nums4		185
+nim	rangeArr	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#rangeArr	var rangeArr		186
+nim	emptyArr	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#emptyArr	var emptyArr		187
+nim	nums	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#nums	let nums		189
+nim	smun	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#smun	let smun		190
+nim	arrayWithRange	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#arrayWithRange	let arrayWithRange		193
+nim	withArrParam	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#withArrParam,array[I,T]	proc withArrParam[I, T](a: array[I, T]): string		195
+nim	breakfast	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#breakfast	TimeToEat.breakfast		203
+nim	lunch	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#lunch	TimeToEat.lunch		203
+nim	dinner	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#dinner	TimeToEat.dinner		203
+nim	sweettooth	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#sweettooth	TimeToEat.sweettooth		203
+nim	TimeToEat	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#TimeToEat	enum TimeToEat		203
+nim	proteinshake	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#proteinshake	WhatToEat.proteinshake		205
+nim	ramen	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#ramen	WhatToEat.ramen		205
+nim	ramentWithMeet	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#ramentWithMeet	WhatToEat.ramentWithMeet		205
+nim	pnutbutteryjelly	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#pnutbutteryjelly	WhatToEat.pnutbutteryjelly		205
+nim	WhatToEat	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#WhatToEat	enum WhatToEat		205
+nim	Eating	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#Eating	type Eating		207
+nim	WeeklyFoodTracker	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#WeeklyFoodTracker	type WeeklyFoodTracker		208
+nim	MonthlyFoodTracker	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#MonthlyFoodTracker	type MonthlyFoodTracker		209
+nim	onSundayIAte	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#onSundayIAte	var onSundayIAte		212
+nim	lastWeek	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#lastWeek	var lastWeek		221
+nim	areJustArrays	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#areJustArrays	let areJustArrays		230
+nim	myTable	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#myTable	var myTable		232
+nim	woops	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#woops	var woops		239
+nim	swoop	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#swoop	var swoop		240
+nim	emptySeq	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#emptySeq	var emptySeq		241
+nim	seqEmpty	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#seqEmpty	var seqEmpty		242
+nim	me	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#me	var me		253
+nim	globalSeq	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#globalSeq	let globalSeq		258
+nim	lastFour	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#lastFour	const lastFour		267
+nim	lastOne	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#lastOne	const lastOne		268
+nim	MySubrange	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#MySubrange	type MySubrange		273
+nim	thisRange	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#thisRange	var thisRange		276
+nim	a	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#a	var a		288
+nim	bbb	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#bbb	var bbb		289
+nim	myCharSet	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#myCharSet	let myCharSet		299
+nim	Opts	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#Opts	type Opts		302
+nim	IsOn	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#IsOn	type IsOn		303
+nim	simpleOpts	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#simpleOpts	let simpleOpts		305
+nim	onn	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#onn	let onn		306
+nim	offf	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#offf	let offf		307
+nim	flags	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#flags	let flags		308
+nim	MyFlag	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#MyFlag	enum MyFlag		313
+nim	MyFlags	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#MyFlags	type MyFlags		318
+nim	toNum	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#toNum,MyFlags	proc toNum(f: MyFlags): int		320
+nim	toFlags	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#toFlags,int	proc toFlags(v: int): MyFlags		321
+nim	globalset1	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#globalset1	var globalset1		331
+nim	globalset2	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#globalset2	var globalset2		332
+nim	globalset11	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#globalset11	var globalset11		340
+nim	globalarr	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#globalarr	var globalarr		353
+heading	structured collections and ordinals	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals	 structured collections and ordinals		0
+heading	TLDR	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-tldr	  TLDR		0
+heading	links	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-links	  links		0
+heading	structured: collections	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-structuredcolon-collections	  structured: collections		0
+heading	array	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-array	  array		0
+heading	array procs	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-array-procs	  array procs		0
+heading	array like	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-array-like	  array like		0
+heading	table	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-table	  table		0
+heading	sequence	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-sequence	  sequence		0
+heading	range and alice	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-range-and-alice	  range and alice		0
+heading	range	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-range	  range		0
+heading	slice	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-slice	  slice		0
+heading	ordinals	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-ordinals	  ordinals		0
+heading	generic interface	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-generic-interface	  generic interface		0
+heading	immutable ops	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-immutable-ops	  immutable ops		0
+heading	mutable ops	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-mutable-ops	  mutable ops		0
+heading	inspection ops	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-inspection-ops	  inspection ops		0
+heading	set	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-set	  set		0
+heading	set operators	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-set-operators	  set operators		0
+heading	set procs	bookofnim/helloworld/modules/structuredCollectionsOrdinals.html#structured-collections-and-ordinals-set-procs	  set procs		0

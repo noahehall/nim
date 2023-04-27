@@ -1,28 +1,29 @@
-goodcode	bookofnim/helloworld/modules/exceptionHandlingDocs.html#goodcode	exceptionHandlingDocs: goodcode	
-badcode	bookofnim/helloworld/modules/exceptionHandlingDocs.html#badcode	exceptionHandlingDocs: badcode	
-GoodApplications	bookofnim/helloworld/modules/exceptionHandlingDocs.html#GoodApplications	exceptionHandlingDocs: GoodApplications	
-err	bookofnim/helloworld/modules/exceptionHandlingDocs.html#err	exceptionHandlingDocs: err	
-LearningError	bookofnim/helloworld/modules/exceptionHandlingDocs.html#LearningError	exceptionHandlingDocs: LearningError	
-neverThrows	bookofnim/helloworld/modules/exceptionHandlingDocs.html#neverThrows	exceptionHandlingDocs: neverThrows(): string	
-maybeThrows	bookofnim/helloworld/modules/exceptionHandlingDocs.html#maybeThrows,int	exceptionHandlingDocs: maybeThrows(x: int): int	
-deferExample	bookofnim/helloworld/modules/exceptionHandlingDocs.html#deferExample	exceptionHandlingDocs: deferExample(): auto	
-loc`gensym9	bookofnim/helloworld/modules/exceptionHandlingDocs.html#loc`gensym9	exceptionHandlingDocs: loc`gensym9	
-ploc`gensym9	bookofnim/helloworld/modules/exceptionHandlingDocs.html#ploc`gensym9	exceptionHandlingDocs: ploc`gensym9	
-loc`gensym11	bookofnim/helloworld/modules/exceptionHandlingDocs.html#loc`gensym11	exceptionHandlingDocs: loc`gensym11	
-ploc`gensym11	bookofnim/helloworld/modules/exceptionHandlingDocs.html#ploc`gensym11	exceptionHandlingDocs: ploc`gensym11	
-wrong`gensym12	bookofnim/helloworld/modules/exceptionHandlingDocs.html#wrong`gensym12	exceptionHandlingDocs: wrong`gensym12	
-begin`gensym12	bookofnim/helloworld/modules/exceptionHandlingDocs.html#begin`gensym12	exceptionHandlingDocs: begin`gensym12	
-msgEnd`gensym12	bookofnim/helloworld/modules/exceptionHandlingDocs.html#msgEnd`gensym12	exceptionHandlingDocs: msgEnd`gensym12	
-raisedForeign	bookofnim/helloworld/modules/exceptionHandlingDocs.html#raisedForeign.t	exceptionHandlingDocs: raisedForeign()	
-exception handling, debugging, documentation	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation	 exception handling, debugging, documentation	
-TLDR	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-tldr	  TLDR	
-links	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-links	  links	
-todos	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-todos	  todos	
-Exception Handling	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-exception-handling	  Exception Handling	
-Defect types	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-defect-types	  Defect types	
-Error (exception) types	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-error-exception-types	  Error (exception) types	
-try/except/finally	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-tryslashexceptslashfinally	  try/except/finally	
-defer	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-defer	  defer	
-assert	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-assert	  assert	
-documentation	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-documentation	  documentation	
-runnableExamples	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-runnableexamples	  runnableExamples	
+nimTitle	exceptionHandlingDocs	bookofnim/helloworld/modules/exceptionHandlingDocs.html	module src/bookofnim/helloworld/modules/exceptionHandlingDocs		0
+nim	goodcode	bookofnim/helloworld/modules/exceptionHandlingDocs.html#goodcode	let goodcode		161
+nim	badcode	bookofnim/helloworld/modules/exceptionHandlingDocs.html#badcode	let badcode		162
+nim	GoodApplications	bookofnim/helloworld/modules/exceptionHandlingDocs.html#GoodApplications	object GoodApplications		166
+nim	err	bookofnim/helloworld/modules/exceptionHandlingDocs.html#err	var err		182
+nim	LearningError	bookofnim/helloworld/modules/exceptionHandlingDocs.html#LearningError	object LearningError		186
+nim	neverThrows	bookofnim/helloworld/modules/exceptionHandlingDocs.html#neverThrows	proc neverThrows(): string		197
+nim	maybeThrows	bookofnim/helloworld/modules/exceptionHandlingDocs.html#maybeThrows,int	proc maybeThrows(x: int): int		203
+nim	deferExample	bookofnim/helloworld/modules/exceptionHandlingDocs.html#deferExample	proc deferExample(): auto		242
+nim	loc`gensym9	bookofnim/helloworld/modules/exceptionHandlingDocs.html#loc`gensym9	const loc`gensym9		46
+nim	ploc`gensym9	bookofnim/helloworld/modules/exceptionHandlingDocs.html#ploc`gensym9	const ploc`gensym9		47
+nim	loc`gensym11	bookofnim/helloworld/modules/exceptionHandlingDocs.html#loc`gensym11	const loc`gensym11		46
+nim	ploc`gensym11	bookofnim/helloworld/modules/exceptionHandlingDocs.html#ploc`gensym11	const ploc`gensym11		47
+nim	wrong`gensym12	bookofnim/helloworld/modules/exceptionHandlingDocs.html#wrong`gensym12	var wrong`gensym12		97
+nim	begin`gensym12	bookofnim/helloworld/modules/exceptionHandlingDocs.html#begin`gensym12	const begin`gensym12		98
+nim	msgEnd`gensym12	bookofnim/helloworld/modules/exceptionHandlingDocs.html#msgEnd`gensym12	const msgEnd`gensym12		99
+nim	raisedForeign`gensym12	bookofnim/helloworld/modules/exceptionHandlingDocs.html#raisedForeign`gensym12.t	template raisedForeign`gensym12()		100
+heading	exception handling, debugging, documentation	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation	 exception handling, debugging, documentation		0
+heading	TLDR	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-tldr	  TLDR		0
+heading	links	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-links	  links		0
+heading	TODOs	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-todos	  TODOs		0
+heading	Exception Handling	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-exception-handling	  Exception Handling		0
+heading	Defect types	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-defect-types	  Defect types		0
+heading	Error (exception) types	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-error-exception-types	  Error (exception) types		0
+heading	try/except/finally	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-tryslashexceptslashfinally	  try/except/finally		0
+heading	defer	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-defer	  defer		0
+heading	assert	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-assert	  assert		0
+heading	documentation	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-documentation	  documentation		0
+heading	runnableExamples	bookofnim/helloworld/modules/exceptionHandlingDocs.html#exception-handling-debugging-documentation-runnableexamples	  runnableExamples		0

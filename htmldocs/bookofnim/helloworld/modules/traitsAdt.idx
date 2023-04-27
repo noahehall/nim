@@ -1,0 +1,40 @@
+nimTitle	traitsAdt	bookofnim/helloworld/modules/traitsAdt.html	module src/bookofnim/helloworld/modules/traitsAdt		0
+nim	BigMoney	bookofnim/helloworld/modules/traitsAdt.html#BigMoney	type BigMoney		84
+nim	StrOrInt	bookofnim/helloworld/modules/traitsAdt.html#StrOrInt	type StrOrInt		87
+nim	thizString	bookofnim/helloworld/modules/traitsAdt.html#thizString	let thizString		88
+nim	thisInt	bookofnim/helloworld/modules/traitsAdt.html#thisInt	let thisInt		89
+nim	BiggerMoney	bookofnim/helloworld/modules/traitsAdt.html#BiggerMoney	type BiggerMoney		95
+nim	BiggestMoney	bookofnim/helloworld/modules/traitsAdt.html#BiggestMoney	type BiggestMoney		96
+nim	wtf	bookofnim/helloworld/modules/traitsAdt.html#wtf,T	proc wtf[T](a: T): auto		116
+nim	foo	bookofnim/helloworld/modules/traitsAdt.html#foo,T	proc foo[T](i: T)		127
+nim	ii	bookofnim/helloworld/modules/traitsAdt.html#ii	var ii		129
+nim	myRecord	bookofnim/helloworld/modules/traitsAdt.html#myRecord	var myRecord		137
+nim	OtherRecord	bookofnim/helloworld/modules/traitsAdt.html#OtherRecord	tuple OtherRecord		140
+nim	RecordType	bookofnim/helloworld/modules/traitsAdt.html#RecordType	type RecordType		145
+nim	printFields	bookofnim/helloworld/modules/traitsAdt.html#printFields,T	proc printFields[T: RecordType](rec: T)		148
+nim	utherRecord	bookofnim/helloworld/modules/traitsAdt.html#utherRecord	var utherRecord		152
+nim	fieldsPrint	bookofnim/helloworld/modules/traitsAdt.html#fieldsPrint,T,T	proc fieldsPrint[T: distinct tuple | object](first, second: T)		160
+nim	declareVariableWithType	bookofnim/helloworld/modules/traitsAdt.html#declareVariableWithType.t,typedesc,typedesc	template declareVariableWithType(T: typedesc; value: T:type)		166
+nim	x`gensym0	bookofnim/helloworld/modules/traitsAdt.html#x`gensym0	var x`gensym0		167
+nim	typescript	bookofnim/helloworld/modules/traitsAdt.html#typescript	LanguageKind.typescript		175
+nim	nimlang	bookofnim/helloworld/modules/traitsAdt.html#nimlang	LanguageKind.nimlang		175
+nim	shell	bookofnim/helloworld/modules/traitsAdt.html#shell	LanguageKind.shell		175
+nim	LanguageKind	bookofnim/helloworld/modules/traitsAdt.html#LanguageKind	enum LanguageKind		175
+nim	Language	bookofnim/helloworld/modules/traitsAdt.html#Language	type Language		177
+nim	LanguageObj	bookofnim/helloworld/modules/traitsAdt.html#LanguageObj	object LanguageObj		178
+nim	fireTeam	bookofnim/helloworld/modules/traitsAdt.html#fireTeam	var fireTeam		192
+nim	webTeam	bookofnim/helloworld/modules/traitsAdt.html#webTeam	var webTeam		193
+nim	opsTeam	bookofnim/helloworld/modules/traitsAdt.html#opsTeam	var opsTeam		194
+nim	FakeOption	bookofnim/helloworld/modules/traitsAdt.html#FakeOption	object FakeOption		197
+nim	myOpt	bookofnim/helloworld/modules/traitsAdt.html#myOpt	var myOpt		203
+heading	algebraic data types and traits	bookofnim/helloworld/modules/traitsAdt.html#algebraic-data-types-and-traits	 algebraic data types and traits		0
+heading	TLDR	bookofnim/helloworld/modules/traitsAdt.html#algebraic-data-types-and-traits-tldr	  TLDR		0
+heading	links	bookofnim/helloworld/modules/traitsAdt.html#algebraic-data-types-and-traits-links	  links		0
+heading	TODOs	bookofnim/helloworld/modules/traitsAdt.html#algebraic-data-types-and-traits-todos	  TODOs		0
+heading	metatypes	bookofnim/helloworld/modules/traitsAdt.html#algebraic-data-types-and-traits-metatypes	  metatypes		0
+heading	type bound operators	bookofnim/helloworld/modules/traitsAdt.html#algebraic-data-types-and-traits-type-bound-operators	  type bound operators		0
+heading	type classes	bookofnim/helloworld/modules/traitsAdt.html#algebraic-data-types-and-traits-type-classes	  type classes		0
+heading	typedesc	bookofnim/helloworld/modules/traitsAdt.html#algebraic-data-types-and-traits-typedesc	  typedesc		0
+heading	object variants	bookofnim/helloworld/modules/traitsAdt.html#algebraic-data-types-and-traits-object-variants	  object variants		0
+heading	variant pragmas	bookofnim/helloworld/modules/traitsAdt.html#algebraic-data-types-and-traits-variant-pragmas	  variant pragmas		0
+heading	generics	bookofnim/helloworld/modules/traitsAdt.html#algebraic-data-types-and-traits-generics	  generics		0

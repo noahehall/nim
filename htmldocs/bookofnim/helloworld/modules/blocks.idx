@@ -1,7 +1,8 @@
-sniper	bookofnim/helloworld/modules/blocks.html#sniper	blocks: sniper	
-myChar	bookofnim/helloworld/modules/blocks.html#myChar	blocks: myChar	
-alreadyExecuted`gensym2	bookofnim/helloworld/modules/blocks.html#alreadyExecuted`gensym2	blocks: alreadyExecuted`gensym2	
-blocks	bookofnim/helloworld/modules/blocks.html#blocks	 blocks	
-TLDR	bookofnim/helloworld/modules/blocks.html#blocks-tldr	  TLDR	
-links	bookofnim/helloworld/modules/blocks.html#blocks-links	  links	
-once blocks	bookofnim/helloworld/modules/blocks.html#blocks-once-blocks	  once blocks	
+nimTitle	blocks	bookofnim/helloworld/modules/blocks.html	module src/bookofnim/helloworld/modules/blocks		0
+nim	sniper	bookofnim/helloworld/modules/blocks.html#sniper	let sniper		27
+nim	myChar	bookofnim/helloworld/modules/blocks.html#myChar	let myChar		43
+nim	alreadyExecuted`gensym2	bookofnim/helloworld/modules/blocks.html#alreadyExecuted`gensym2	var alreadyExecuted`gensym2		2582
+heading	blocks	bookofnim/helloworld/modules/blocks.html#blocks	 blocks		0
+heading	TLDR	bookofnim/helloworld/modules/blocks.html#blocks-tldr	  TLDR		0
+heading	links	bookofnim/helloworld/modules/blocks.html#blocks-links	  links		0
+heading	once blocks	bookofnim/helloworld/modules/blocks.html#blocks-once-blocks	  once blocks		0

@@ -1,25 +1,26 @@
-timeout	bookofnim/deepdives/servers.html#timeout	servers: timeout	
-endpoint	bookofnim/deepdives/servers.html#endpoint	servers: endpoint	
-getmegood	bookofnim/deepdives/servers.html#getmegood	servers: getmegood	
-getmebad	bookofnim/deepdives/servers.html#getmebad	servers: getmebad	
-getmetimeout	bookofnim/deepdives/servers.html#getmetimeout	servers: getmetimeout	
-postme	bookofnim/deepdives/servers.html#postme	servers: postme	
-data	bookofnim/deepdives/servers.html#data	servers: data	
-fetch	bookofnim/deepdives/servers.html#fetch	servers: fetch	
-afetch	bookofnim/deepdives/servers.html#afetch	servers: afetch	
-agetContent	bookofnim/deepdives/servers.html#agetContent,AsyncHttpClient,string	servers: agetContent(self: AsyncHttpClient; url: string): Future[Option[string]]	
-fetchWithTimeout	bookofnim/deepdives/servers.html#fetchWithTimeout	servers: fetchWithTimeout(): Future[void]	
-servers	bookofnim/deepdives/servers.html#servers	 servers	
-TLDR	bookofnim/deepdives/servers.html#servers-tldr	  TLDR	
-links	bookofnim/deepdives/servers.html#servers-links	  links	
-todos	bookofnim/deepdives/servers.html#servers-todos	  todos	
-httpclient	bookofnim/deepdives/servers.html#servers-httpclient	  httpclient	
-httpclient errors	bookofnim/deepdives/servers.html#servers-httpclient-errors	  httpclient errors	
-httpclient types	bookofnim/deepdives/servers.html#servers-httpclient-types	  httpclient types	
-httpclient consts	bookofnim/deepdives/servers.html#servers-httpclient-consts	  httpclient consts	
-httpclient operators	bookofnim/deepdives/servers.html#servers-httpclient-operators	  httpclient operators	
-httpclient procs	bookofnim/deepdives/servers.html#servers-httpclient-procs	  httpclient procs	
-asynchttpserver	bookofnim/deepdives/servers.html#servers-asynchttpserver	  asynchttpserver	
-asynchttpserver types	bookofnim/deepdives/servers.html#servers-asynchttpserver-types	  asynchttpserver types	
-asynchttpserver consts	bookofnim/deepdives/servers.html#servers-asynchttpserver-consts	  asynchttpserver consts	
-asynchttpserver procs	bookofnim/deepdives/servers.html#servers-asynchttpserver-procs	  asynchttpserver procs	
+nimTitle	servers	bookofnim/deepdives/servers.html	module src/bookofnim/deepdives/servers		0
+nim	timeout	bookofnim/deepdives/servers.html#timeout	const timeout		177
+nim	endpoint	bookofnim/deepdives/servers.html#endpoint	const endpoint		178
+nim	getmegood	bookofnim/deepdives/servers.html#getmegood	const getmegood		179
+nim	getmebad	bookofnim/deepdives/servers.html#getmebad	const getmebad		180
+nim	getmetimeout	bookofnim/deepdives/servers.html#getmetimeout	const getmetimeout		181
+nim	postme	bookofnim/deepdives/servers.html#postme	const postme		182
+nim	data	bookofnim/deepdives/servers.html#data	let data		184
+nim	fetch	bookofnim/deepdives/servers.html#fetch	let fetch		189
+nim	afetch	bookofnim/deepdives/servers.html#afetch	let afetch		211
+nim	agetContent	bookofnim/deepdives/servers.html#agetContent,AsyncHttpClient,string	proc agetContent(self: AsyncHttpClient; url: string): Future[Option[string]]		213
+nim	fetchWithTimeout	bookofnim/deepdives/servers.html#fetchWithTimeout	proc fetchWithTimeout(): Future[void]		226
+heading	servers	bookofnim/deepdives/servers.html#servers	 servers		0
+heading	TLDR	bookofnim/deepdives/servers.html#servers-tldr	  TLDR		0
+heading	links	bookofnim/deepdives/servers.html#servers-links	  links		0
+heading	TODOs	bookofnim/deepdives/servers.html#servers-todos	  TODOs		0
+heading	httpclient	bookofnim/deepdives/servers.html#servers-httpclient	  httpclient		0
+heading	httpclient errors	bookofnim/deepdives/servers.html#servers-httpclient-errors	  httpclient errors		0
+heading	httpclient types	bookofnim/deepdives/servers.html#servers-httpclient-types	  httpclient types		0
+heading	httpclient consts	bookofnim/deepdives/servers.html#servers-httpclient-consts	  httpclient consts		0
+heading	httpclient operators	bookofnim/deepdives/servers.html#servers-httpclient-operators	  httpclient operators		0
+heading	httpclient procs	bookofnim/deepdives/servers.html#servers-httpclient-procs	  httpclient procs		0
+heading	asynchttpserver	bookofnim/deepdives/servers.html#servers-asynchttpserver	  asynchttpserver		0
+heading	asynchttpserver types	bookofnim/deepdives/servers.html#servers-asynchttpserver-types	  asynchttpserver types		0
+heading	asynchttpserver consts	bookofnim/deepdives/servers.html#servers-asynchttpserver-consts	  asynchttpserver consts		0
+heading	asynchttpserver procs	bookofnim/deepdives/servers.html#servers-asynchttpserver-procs	  asynchttpserver procs		0

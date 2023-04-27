@@ -1,12 +1,13 @@
-oneline	bookofnim/deepdives/strings.html#oneline	strings: oneline	
-multiline	bookofnim/deepdives/strings.html#multiline	strings: multiline	
-multiline2	bookofnim/deepdives/strings.html#multiline2	strings: multiline2	
-mutated	bookofnim/deepdives/strings.html#mutated	strings: mutated	
-echoMutated	bookofnim/deepdives/strings.html#echoMutated	strings: echoMutated(): void	
-strings	bookofnim/deepdives/strings.html#strings	 strings	
-TLDR	bookofnim/deepdives/strings.html#strings-tldr	  TLDR	
-links	bookofnim/deepdives/strings.html#strings-links	  links	
-todos	bookofnim/deepdives/strings.html#strings-todos	  todos	
-strformat	bookofnim/deepdives/strings.html#strings-strformat	  strformat	
-strutils	bookofnim/deepdives/strings.html#strings-strutils	  strutils	
-string formatters	bookofnim/deepdives/strings.html#strings-string-formatters	  string formatters	
+nimTitle	strings	bookofnim/deepdives/strings.html	module src/bookofnim/deepdives/strings		0
+nim	oneline	bookofnim/deepdives/strings.html#oneline	let oneline		82
+nim	multiline	bookofnim/deepdives/strings.html#multiline	let multiline		83
+nim	multiline2	bookofnim/deepdives/strings.html#multiline2	let multiline2		84
+nim	mutated	bookofnim/deepdives/strings.html#mutated	var mutated		138
+nim	echoMutated	bookofnim/deepdives/strings.html#echoMutated	proc echoMutated(): void		139
+heading	strings	bookofnim/deepdives/strings.html#strings	 strings		0
+heading	TLDR	bookofnim/deepdives/strings.html#strings-tldr	  TLDR		0
+heading	links	bookofnim/deepdives/strings.html#strings-links	  links		0
+heading	TODOs	bookofnim/deepdives/strings.html#strings-todos	  TODOs		0
+heading	strformat	bookofnim/deepdives/strings.html#strings-strformat	  strformat		0
+heading	strutils	bookofnim/deepdives/strings.html#strings-strutils	  strutils		0
+heading	string formatters	bookofnim/deepdives/strings.html#strings-string-formatters	  string formatters		0

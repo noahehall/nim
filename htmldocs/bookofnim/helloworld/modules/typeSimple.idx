@@ -1,56 +1,57 @@
-xxx	bookofnim/helloworld/modules/typeSimple.html#xxx	typeSimple: xxx	
-y	bookofnim/helloworld/modules/typeSimple.html#y	typeSimple: y	
-z	bookofnim/helloworld/modules/typeSimple.html#z	typeSimple: z	
-x1	bookofnim/helloworld/modules/typeSimple.html#x1	typeSimple: x1	
-y1	bookofnim/helloworld/modules/typeSimple.html#y1	typeSimple: y1	
-z1	bookofnim/helloworld/modules/typeSimple.html#z1	typeSimple: z1	
-sum	bookofnim/helloworld/modules/typeSimple.html#sum	typeSimple: sum	
-b	bookofnim/helloworld/modules/typeSimple.html#b	typeSimple: b	
-c	bookofnim/helloworld/modules/typeSimple.html#c	typeSimple: c	
-negint	bookofnim/helloworld/modules/typeSimple.html#negint	typeSimple: negint	
-num0	bookofnim/helloworld/modules/typeSimple.html#num0	typeSimple: num0	
-num1	bookofnim/helloworld/modules/typeSimple.html#num1	typeSimple: num1	
-num2	bookofnim/helloworld/modules/typeSimple.html#num2	typeSimple: num2	
-amilliamilliamilli	bookofnim/helloworld/modules/typeSimple.html#amilliamilliamilli	typeSimple: amilliamilliamilli	
-e	bookofnim/helloworld/modules/typeSimple.html#e	typeSimple: e	
-f	bookofnim/helloworld/modules/typeSimple.html#f	typeSimple: f	
-num3	bookofnim/helloworld/modules/typeSimple.html#num3	typeSimple: num3	
-num4	bookofnim/helloworld/modules/typeSimple.html#num4	typeSimple: num4	
-num5	bookofnim/helloworld/modules/typeSimple.html#num5	typeSimple: num5	
-g	bookofnim/helloworld/modules/typeSimple.html#g	typeSimple: g	
-h	bookofnim/helloworld/modules/typeSimple.html#h	typeSimple: h	
-i	bookofnim/helloworld/modules/typeSimple.html#i	typeSimple: i	
-l	bookofnim/helloworld/modules/typeSimple.html#l	typeSimple: l	
-m	bookofnim/helloworld/modules/typeSimple.html#m	typeSimple: m	
-globalint	bookofnim/helloworld/modules/typeSimple.html#globalint	typeSimple: globalint	
-globalfloat	bookofnim/helloworld/modules/typeSimple.html#globalfloat	typeSimple: globalfloat	
-n	bookofnim/helloworld/modules/typeSimple.html#n	typeSimple: n	
-o	bookofnim/helloworld/modules/typeSimple.html#o	typeSimple: o	
-p	bookofnim/helloworld/modules/typeSimple.html#p	typeSimple: p	
-str1	bookofnim/helloworld/modules/typeSimple.html#str1	typeSimple: str1	
-str2	bookofnim/helloworld/modules/typeSimple.html#str2	typeSimple: str2	
-str3	bookofnim/helloworld/modules/typeSimple.html#str3	typeSimple: str3	
-str4	bookofnim/helloworld/modules/typeSimple.html#str4	typeSimple: str4	
-str5	bookofnim/helloworld/modules/typeSimple.html#str5	typeSimple: str5	
-char1	bookofnim/helloworld/modules/typeSimple.html#char1	typeSimple: char1	
-msg	bookofnim/helloworld/modules/typeSimple.html#msg	typeSimple: msg	
-woop6	bookofnim/helloworld/modules/typeSimple.html#woop6	typeSimple: woop6	
-flush	bookofnim/helloworld/modules/typeSimple.html#flush	typeSimple: flush	
-multiline	bookofnim/helloworld/modules/typeSimple.html#multiline	typeSimple: multiline	
-globalstring	bookofnim/helloworld/modules/typeSimple.html#globalstring	typeSimple: globalstring	
-simple types	bookofnim/helloworld/modules/typeSimple.html#simple-types	 simple types	
-TLDR	bookofnim/helloworld/modules/typeSimple.html#simple-types-tldr	  TLDR	
-links	bookofnim/helloworld/modules/typeSimple.html#simple-types-links	  links	
-string	bookofnim/helloworld/modules/typeSimple.html#simple-types-string	  string	
-char	bookofnim/helloworld/modules/typeSimple.html#simple-types-char	  char	
-byte	bookofnim/helloworld/modules/typeSimple.html#simple-types-byte	  byte	
-bool	bookofnim/helloworld/modules/typeSimple.html#simple-types-bool	  bool	
-boolean procs	bookofnim/helloworld/modules/typeSimple.html#simple-types-boolean-procs	  boolean procs	
-comparisons	bookofnim/helloworld/modules/typeSimple.html#simple-types-comparisons	  comparisons	
-string/char procs	bookofnim/helloworld/modules/typeSimple.html#simple-types-stringslashchar-procs	  string/char procs	
-numbers	bookofnim/helloworld/modules/typeSimple.html#simple-types-numbers	  numbers	
-number procs	bookofnim/helloworld/modules/typeSimple.html#simple-types-number-procs	  number procs	
-number types	bookofnim/helloworld/modules/typeSimple.html#simple-types-number-types	  number types	
-reference types	bookofnim/helloworld/modules/typeSimple.html#simple-types-reference-types	  reference types	
-reference procs	bookofnim/helloworld/modules/typeSimple.html#simple-types-reference-procs	  reference procs	
-misc types	bookofnim/helloworld/modules/typeSimple.html#simple-types-misc-types	  misc types	
+nimTitle	typeSimple	bookofnim/helloworld/modules/typeSimple.html	module src/bookofnim/helloworld/modules/typeSimple		0
+nim	xxx	bookofnim/helloworld/modules/typeSimple.html#xxx	let xxx		149
+nim	y	bookofnim/helloworld/modules/typeSimple.html#y	let y		150
+nim	z	bookofnim/helloworld/modules/typeSimple.html#z	let z		151
+nim	x1	bookofnim/helloworld/modules/typeSimple.html#x1	let x1		156
+nim	y1	bookofnim/helloworld/modules/typeSimple.html#y1	let y1		157
+nim	z1	bookofnim/helloworld/modules/typeSimple.html#z1	let z1		158
+nim	sum	bookofnim/helloworld/modules/typeSimple.html#sum	let sum		159
+nim	b	bookofnim/helloworld/modules/typeSimple.html#b	const b		163
+nim	c	bookofnim/helloworld/modules/typeSimple.html#c	const c		164
+nim	negint	bookofnim/helloworld/modules/typeSimple.html#negint	const negint		165
+nim	num0	bookofnim/helloworld/modules/typeSimple.html#num0	const num0		166
+nim	num1	bookofnim/helloworld/modules/typeSimple.html#num1	const num1		167
+nim	num2	bookofnim/helloworld/modules/typeSimple.html#num2	const num2		168
+nim	amilliamilliamilli	bookofnim/helloworld/modules/typeSimple.html#amilliamilliamilli	const amilliamilliamilli		169
+nim	e	bookofnim/helloworld/modules/typeSimple.html#e	const e		174
+nim	f	bookofnim/helloworld/modules/typeSimple.html#f	const f		175
+nim	num3	bookofnim/helloworld/modules/typeSimple.html#num3	const num3		182
+nim	num4	bookofnim/helloworld/modules/typeSimple.html#num4	const num4		183
+nim	num5	bookofnim/helloworld/modules/typeSimple.html#num5	const num5		184
+nim	g	bookofnim/helloworld/modules/typeSimple.html#g	const g		185
+nim	h	bookofnim/helloworld/modules/typeSimple.html#h	const h		186
+nim	i	bookofnim/helloworld/modules/typeSimple.html#i	const i		187
+nim	l	bookofnim/helloworld/modules/typeSimple.html#l	const l		188
+nim	m	bookofnim/helloworld/modules/typeSimple.html#m	const m		189
+nim	globalint	bookofnim/helloworld/modules/typeSimple.html#globalint	var globalint		197
+nim	globalfloat	bookofnim/helloworld/modules/typeSimple.html#globalfloat	var globalfloat		198
+nim	n	bookofnim/helloworld/modules/typeSimple.html#n	const n		211
+nim	o	bookofnim/helloworld/modules/typeSimple.html#o	const o		215
+nim	p	bookofnim/helloworld/modules/typeSimple.html#p	const p		219
+nim	str1	bookofnim/helloworld/modules/typeSimple.html#str1	let str1		231
+nim	str2	bookofnim/helloworld/modules/typeSimple.html#str2	let str2		232
+nim	str3	bookofnim/helloworld/modules/typeSimple.html#str3	let str3		239
+nim	str4	bookofnim/helloworld/modules/typeSimple.html#str4	let str4		240
+nim	str5	bookofnim/helloworld/modules/typeSimple.html#str5	let str5		241
+nim	char1	bookofnim/helloworld/modules/typeSimple.html#char1	let char1		242
+nim	msg	bookofnim/helloworld/modules/typeSimple.html#msg	var msg		244
+nim	woop6	bookofnim/helloworld/modules/typeSimple.html#woop6	let woop6		250
+nim	flush	bookofnim/helloworld/modules/typeSimple.html#flush	let flush		251
+nim	multiline	bookofnim/helloworld/modules/typeSimple.html#multiline	let multiline		252
+nim	globalstring	bookofnim/helloworld/modules/typeSimple.html#globalstring	var globalstring		261
+heading	simple types	bookofnim/helloworld/modules/typeSimple.html#simple-types	 simple types		0
+heading	TLDR	bookofnim/helloworld/modules/typeSimple.html#simple-types-tldr	  TLDR		0
+heading	links	bookofnim/helloworld/modules/typeSimple.html#simple-types-links	  links		0
+heading	string	bookofnim/helloworld/modules/typeSimple.html#simple-types-string	  string		0
+heading	char	bookofnim/helloworld/modules/typeSimple.html#simple-types-char	  char		0
+heading	byte	bookofnim/helloworld/modules/typeSimple.html#simple-types-byte	  byte		0
+heading	bool	bookofnim/helloworld/modules/typeSimple.html#simple-types-bool	  bool		0
+heading	boolean procs	bookofnim/helloworld/modules/typeSimple.html#simple-types-boolean-procs	  boolean procs		0
+heading	comparisons	bookofnim/helloworld/modules/typeSimple.html#simple-types-comparisons	  comparisons		0
+heading	string/char procs	bookofnim/helloworld/modules/typeSimple.html#simple-types-stringslashchar-procs	  string/char procs		0
+heading	numbers	bookofnim/helloworld/modules/typeSimple.html#simple-types-numbers	  numbers		0
+heading	number procs	bookofnim/helloworld/modules/typeSimple.html#simple-types-number-procs	  number procs		0
+heading	number types	bookofnim/helloworld/modules/typeSimple.html#simple-types-number-types	  number types		0
+heading	reference types	bookofnim/helloworld/modules/typeSimple.html#simple-types-reference-types	  reference types		0
+heading	reference procs	bookofnim/helloworld/modules/typeSimple.html#simple-types-reference-procs	  reference procs		0
+heading	misc types	bookofnim/helloworld/modules/typeSimple.html#simple-types-misc-types	  misc types		0

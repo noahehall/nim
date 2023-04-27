@@ -1,0 +1,94 @@
+nimTitle	userDefinedTypes	bookofnim/helloworld/modules/userDefinedTypes.html	module src/bookofnim/helloworld/modules/userDefinedTypes		0
+nim	Computer	bookofnim/helloworld/modules/userDefinedTypes.html#Computer	object Computer		129
+nim	DistroObj	bookofnim/helloworld/modules/userDefinedTypes.html#DistroObj	object DistroObj		135
+nim	DistroRef	bookofnim/helloworld/modules/userDefinedTypes.html#DistroRef	type DistroRef		137
+nim	SomeObj	bookofnim/helloworld/modules/userDefinedTypes.html#SomeObj	object SomeObj		144
+nim	prv=	bookofnim/helloworld/modules/userDefinedTypes.html#prv=,SomeObj,string	proc prv=(x: var SomeObj; v: string)		149
+nim	prv	bookofnim/helloworld/modules/userDefinedTypes.html#prv,SomeObj	proc prv(x: SomeObj): string		151
+nim	myobj	bookofnim/helloworld/modules/userDefinedTypes.html#myobj	var myobj		153
+nim	Vector	bookofnim/helloworld/modules/userDefinedTypes.html#Vector	object Vector		161
+nim	`[]=`	bookofnim/helloworld/modules/userDefinedTypes.html#[]=,Vector,int,float	proc `[]=`(v: var Vector; i: int; value: float)		165
+nim	`[]`	bookofnim/helloworld/modules/userDefinedTypes.html#[],Vector,int	proc `[]`(v: Vector; i: int): float		172
+nim	NirvStack	bookofnim/helloworld/modules/userDefinedTypes.html#NirvStack	tuple NirvStack		184
+nim	StackNirv	bookofnim/helloworld/modules/userDefinedTypes.html#StackNirv	tuple StackNirv		188
+nim	hardCoreStack	bookofnim/helloworld/modules/userDefinedTypes.html#hardCoreStack	var hardCoreStack		191
+nim	newCoreStack	bookofnim/helloworld/modules/userDefinedTypes.html#newCoreStack	var newCoreStack		193
+nim	js	bookofnim/helloworld/modules/userDefinedTypes.html#js	let js		196
+nim	sj	bookofnim/helloworld/modules/userDefinedTypes.html#sj	var sj		199
+nim	bizDevOps	bookofnim/helloworld/modules/userDefinedTypes.html#bizDevOps	var bizDevOps		204
+nim	tmpTuple	bookofnim/helloworld/modules/userDefinedTypes.html#tmpTuple	let tmpTuple		209
+nim	bizRating	bookofnim/helloworld/modules/userDefinedTypes.html#bizRating	let bizRating		209
+nim	devRating	bookofnim/helloworld/modules/userDefinedTypes.html#devRating	let devRating		209
+nim	opsRating	bookofnim/helloworld/modules/userDefinedTypes.html#opsRating	let opsRating		209
+nim	tmpTuple	bookofnim/helloworld/modules/userDefinedTypes.html#tmpTuple_2	let tmpTuple		211
+nim	first	bookofnim/helloworld/modules/userDefinedTypes.html#first	let first		211
+nim	third	bookofnim/helloworld/modules/userDefinedTypes.html#third	let third		211
+nim	aaa	bookofnim/helloworld/modules/userDefinedTypes.html#aaa	let aaa		216
+nim	nineToFives	bookofnim/helloworld/modules/userDefinedTypes.html#nineToFives	AmericaOfJobs.nineToFives		224
+nim	fiveToNines	bookofnim/helloworld/modules/userDefinedTypes.html#fiveToNines	AmericaOfJobs.fiveToNines		224
+nim	twentyFourSeven	bookofnim/helloworld/modules/userDefinedTypes.html#twentyFourSeven	AmericaOfJobs.twentyFourSeven		224
+nim	AmericaOfJobs	bookofnim/helloworld/modules/userDefinedTypes.html#AmericaOfJobs	enum AmericaOfJobs		224
+nim	PeopleOfAmerica	bookofnim/helloworld/modules/userDefinedTypes.html#PeopleOfAmerica	enum PeopleOfAmerica		228
+nim	AA	bookofnim/helloworld/modules/userDefinedTypes.html#AA	ExplicitEnum.AA		235
+nim	BB	bookofnim/helloworld/modules/userDefinedTypes.html#BB	ExplicitEnum.BB		235
+nim	ExplicitEnum	bookofnim/helloworld/modules/userDefinedTypes.html#ExplicitEnum	enum ExplicitEnum		235
+nim	north	bookofnim/helloworld/modules/userDefinedTypes.html#north	Direction.north		254
+nim	east	bookofnim/helloworld/modules/userDefinedTypes.html#east	Direction.east		254
+nim	south	bookofnim/helloworld/modules/userDefinedTypes.html#south	Direction.south		254
+nim	west	bookofnim/helloworld/modules/userDefinedTypes.html#west	Direction.west		254
+nim	Direction	bookofnim/helloworld/modules/userDefinedTypes.html#Direction	enum Direction		254
+nim	off	bookofnim/helloworld/modules/userDefinedTypes.html#off	BlinkLights.off		256
+nim	on	bookofnim/helloworld/modules/userDefinedTypes.html#on	BlinkLights.on		256
+nim	slowBlink	bookofnim/helloworld/modules/userDefinedTypes.html#slowBlink	BlinkLights.slowBlink		256
+nim	mediumBlink	bookofnim/helloworld/modules/userDefinedTypes.html#mediumBlink	BlinkLights.mediumBlink		256
+nim	fastBlink	bookofnim/helloworld/modules/userDefinedTypes.html#fastBlink	BlinkLights.fastBlink		256
+nim	BlinkLights	bookofnim/helloworld/modules/userDefinedTypes.html#BlinkLights	enum BlinkLights		256
+nim	LevelSetting	bookofnim/helloworld/modules/userDefinedTypes.html#LevelSetting	type LevelSetting		258
+nim	level	bookofnim/helloworld/modules/userDefinedTypes.html#level	var level		260
+nim	Someone	bookofnim/helloworld/modules/userDefinedTypes.html#Someone	object Someone		272
+nim	people	bookofnim/helloworld/modules/userDefinedTypes.html#people	let people		278
+nim	SomeoneRef	bookofnim/helloworld/modules/userDefinedTypes.html#SomeoneRef	type SomeoneRef		285
+nim	OrRefObject	bookofnim/helloworld/modules/userDefinedTypes.html#OrRefObject	type OrRefObject		286
+nim	people2	bookofnim/helloworld/modules/userDefinedTypes.html#people2	let people2		288
+nim	baseMethod	bookofnim/helloworld/modules/userDefinedTypes.html#baseMethod.e,SomeoneRef	method baseMethod(self: SomeoneRef): bool		292
+nim	WhoWoop	bookofnim/helloworld/modules/userDefinedTypes.html#WhoWoop	type WhoWoop		301
+nim	YouWoop	bookofnim/helloworld/modules/userDefinedTypes.html#YouWoop	type YouWoop		303
+nim	IWoop	bookofnim/helloworld/modules/userDefinedTypes.html#IWoop	type IWoop		304
+nim	did_i_woop	bookofnim/helloworld/modules/userDefinedTypes.html#did_i_woop,WhoWoop	proc did_i_woop(self: WhoWoop): string		307
+nim	didiwoop	bookofnim/helloworld/modules/userDefinedTypes.html#didiwoop,YouWoop	proc didiwoop(self: YouWoop): string		309
+nim	dIdIwoop	bookofnim/helloworld/modules/userDefinedTypes.html#dIdIwoop,IWoop	proc dIdIwoop(self: IWoop): string		311
+nim	sherlockwoops	bookofnim/helloworld/modules/userDefinedTypes.html#sherlockwoops	var sherlockwoops		318
+nim	Expression	bookofnim/helloworld/modules/userDefinedTypes.html#Expression	type Expression		332
+nim	Literal	bookofnim/helloworld/modules/userDefinedTypes.html#Literal	type Literal		333
+nim	PlusExpr	bookofnim/helloworld/modules/userDefinedTypes.html#PlusExpr	type PlusExpr		335
+nim	eval	bookofnim/helloworld/modules/userDefinedTypes.html#eval.e,Expression	method eval(e: Expression): int		339
+nim	eval	bookofnim/helloworld/modules/userDefinedTypes.html#eval.e,Literal	method eval(e: Literal): int		343
+nim	eval	bookofnim/helloworld/modules/userDefinedTypes.html#eval.e,PlusExpr	method eval(e: PlusExpr): int		344
+nim	newLit	bookofnim/helloworld/modules/userDefinedTypes.html#newLit,int	proc newLit(x: int): Literal		346
+nim	newPlus	bookofnim/helloworld/modules/userDefinedTypes.html#newPlus,Expression,Expression	proc newPlus(a, b: Expression): PlusExpr		347
+nim	Thing	bookofnim/helloworld/modules/userDefinedTypes.html#Thing	type Thing		356
+nim	Unit	bookofnim/helloworld/modules/userDefinedTypes.html#Unit	type Unit		357
+nim	collide	bookofnim/helloworld/modules/userDefinedTypes.html#collide.e,Thing,Thing	method collide(a, b: Thing)		360
+nim	collide	bookofnim/helloworld/modules/userDefinedTypes.html#collide.e,Thing,Unit	method collide(a: Thing; b: Unit)		363
+nim	collide	bookofnim/helloworld/modules/userDefinedTypes.html#collide.e,Unit,Thing	method collide(a: Unit; b: Thing)		366
+nim	aaaa	bookofnim/helloworld/modules/userDefinedTypes.html#aaaa	var aaaa		369
+nim	bbbb	bookofnim/helloworld/modules/userDefinedTypes.html#bbbb	var bbbb		369
+nim	Node	bookofnim/helloworld/modules/userDefinedTypes.html#Node	type Node		379
+nim	Sym	bookofnim/helloworld/modules/userDefinedTypes.html#Sym	object Sym		383
+nimgrp	collide	bookofnim/helloworld/modules/userDefinedTypes.html#collide-methods-all	method		360
+nimgrp	eval	bookofnim/helloworld/modules/userDefinedTypes.html#eval-methods-all	method		339
+heading	user defined types	bookofnim/helloworld/modules/userDefinedTypes.html#user-defined-types	 user defined types		0
+heading	TLDR	bookofnim/helloworld/modules/userDefinedTypes.html#user-defined-types-tldr	  TLDR		0
+heading	links	bookofnim/helloworld/modules/userDefinedTypes.html#user-defined-types-links	  links		0
+heading	TODOs	bookofnim/helloworld/modules/userDefinedTypes.html#user-defined-types-todos	  TODOs		0
+heading	base types	bookofnim/helloworld/modules/userDefinedTypes.html#user-defined-types-base-types	  base types		0
+heading	objects	bookofnim/helloworld/modules/userDefinedTypes.html#user-defined-types-objects	  objects		0
+heading	tuples	bookofnim/helloworld/modules/userDefinedTypes.html#user-defined-types-tuples	  tuples		0
+heading	enum	bookofnim/helloworld/modules/userDefinedTypes.html#user-defined-types-enum	  enum		0
+heading	inheritance	bookofnim/helloworld/modules/userDefinedTypes.html#user-defined-types-inheritance	  inheritance		0
+heading	ref	bookofnim/helloworld/modules/userDefinedTypes.html#user-defined-types-ref	  ref		0
+heading	ptr	bookofnim/helloworld/modules/userDefinedTypes.html#user-defined-types-ptr	  ptr		0
+heading	ref/pter procs	bookofnim/helloworld/modules/userDefinedTypes.html#user-defined-types-refslashpter-procs	  ref/pter procs		0
+heading	dynamic dispatch	bookofnim/helloworld/modules/userDefinedTypes.html#user-defined-types-dynamic-dispatch	  dynamic dispatch		0
+heading	multi-methods	bookofnim/helloworld/modules/userDefinedTypes.html#user-defined-types-multiminusmethods	  multi-methods		0
+heading	recursive types	bookofnim/helloworld/modules/userDefinedTypes.html#user-defined-types-recursive-types	  recursive types		0

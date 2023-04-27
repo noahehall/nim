@@ -1,24 +1,25 @@
-compiling and custome memory mgmt	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt	 compiling and custome memory mgmt	
-TLDR	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-tldr	  TLDR	
-links	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-links	  links	
-todos	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-todos	  todos	
-nimc	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-nimc	  nimc	
-CMDS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-cmds	  CMDS	
-compiler OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-compiler-opts	  compiler OPTS	
-compile time symbol/switches OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-compile-time-symbolslashswitches-opts	  compile time symbol/switches OPTS	
-output OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-output-opts	  output OPTS	
-cross compilation OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-cross-compilation-opts	  cross compilation OPTS	
-path OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-path-opts	  path OPTS	
-configuration file hierarchy &amp; precedence	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-configuration-file-hierarchy-amp-precedence	  configuration file hierarchy &amp; precedence	
-configuration OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-configuration-opts	  configuration OPTS	
-documention OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-documention-opts	  documention OPTS	
-debugging OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-debugging-opts	  debugging OPTS	
-runtime OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-runtime-opts	  runtime OPTS	
-specific runtime check OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-specific-runtime-check-opts	  specific runtime check OPTS	
-specific compiler hint OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-specific-compiler-hint-opts	  specific compiler hint OPTS	
-specific compiler warning OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-specific-compiler-warning-opts	  specific compiler warning OPTS	
-compiler style check OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-compiler-style-check-opts	  compiler style check OPTS	
-environment variables	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-environment-variables	  environment variables	
-type opts	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-type-opts	  type opts	
-skipped	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-skipped	  skipped	
-memory management	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-memory-management	  memory management	
+nimTitle	nimcMemory	bookofnim/backends/nimcMemory.html	module src/bookofnim/backends/nimcMemory		0
+heading	compiling and custome memory mgmt	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt	 compiling and custome memory mgmt		0
+heading	TLDR	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-tldr	  TLDR		0
+heading	links	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-links	  links		0
+heading	TODOs	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-todos	  TODOs		0
+heading	nimc	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-nimc	  nimc		0
+heading	CMDS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-cmds	  CMDS		0
+heading	compiler OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-compiler-opts	  compiler OPTS		0
+heading	compile time symbol/switches OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-compile-time-symbolslashswitches-opts	  compile time symbol/switches OPTS		0
+heading	output OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-output-opts	  output OPTS		0
+heading	cross compilation OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-cross-compilation-opts	  cross compilation OPTS		0
+heading	path OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-path-opts	  path OPTS		0
+heading	configuration file hierarchy & precedence	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-configuration-file-hierarchy-amp-precedence	  configuration file hierarchy &amp; precedence		0
+heading	configuration OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-configuration-opts	  configuration OPTS		0
+heading	documention OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-documention-opts	  documention OPTS		0
+heading	debugging OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-debugging-opts	  debugging OPTS		0
+heading	runtime OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-runtime-opts	  runtime OPTS		0
+heading	specific runtime check OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-specific-runtime-check-opts	  specific runtime check OPTS		0
+heading	specific compiler hint OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-specific-compiler-hint-opts	  specific compiler hint OPTS		0
+heading	specific compiler warning OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-specific-compiler-warning-opts	  specific compiler warning OPTS		0
+heading	compiler style check OPTS	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-compiler-style-check-opts	  compiler style check OPTS		0
+heading	environment variables	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-environment-variables	  environment variables		0
+heading	type opts	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-type-opts	  type opts		0
+heading	skipped	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-skipped	  skipped		0
+heading	memory management	bookofnim/backends/nimcMemory.html#compiling-and-custome-memory-mgmt-memory-management	  memory management		0

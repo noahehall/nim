@@ -1,34 +1,35 @@
-baseTable	bookofnim/deepdives/containers.html#baseTable	containers: baseTable	
-hashTable	bookofnim/deepdives/containers.html#hashTable	containers: hashTable	
-orderededTable	bookofnim/deepdives/containers.html#orderededTable	containers: orderededTable	
-countTable	bookofnim/deepdives/containers.html#countTable	containers: countTable	
-anotherTable	bookofnim/deepdives/containers.html#anotherTable	containers: anotherTable	
-keys	bookofnim/deepdives/containers.html#keys	containers: keys	
-values	bookofnim/deepdives/containers.html#values	containers: values	
-keyValues	bookofnim/deepdives/containers.html#keyValues	containers: keyValues	
-mutated	bookofnim/deepdives/containers.html#mutated	containers: mutated	
-mCountTable	bookofnim/deepdives/containers.html#mCountTable	containers: mCountTable	
-echoMutated	bookofnim/deepdives/containers.html#echoMutated	containers: echoMutated(): void	
-i	bookofnim/deepdives/containers.html#i	containers: i	
-User	bookofnim/deepdives/containers.html#User	containers: User	
-t	bookofnim/deepdives/containers.html#t	containers: t	
-u	bookofnim/deepdives/containers.html#u	containers: u	
-hc`gensym128	bookofnim/deepdives/containers.html#hc`gensym128	containers: hc`gensym128	
-index`gensym128	bookofnim/deepdives/containers.html#index`gensym128	containers: index`gensym128	
-hasKey`gensym128	bookofnim/deepdives/containers.html#hasKey`gensym128	containers: hasKey`gensym128	
-hc`gensym130	bookofnim/deepdives/containers.html#hc`gensym130	containers: hc`gensym130	
-index`gensym130	bookofnim/deepdives/containers.html#index`gensym130	containers: index`gensym130	
-hasKey`gensym130	bookofnim/deepdives/containers.html#hasKey`gensym130	containers: hasKey`gensym130	
-authnz	bookofnim/deepdives/containers.html#authnz	containers: authnz	
-newUser	bookofnim/deepdives/containers.html#newUser	containers: newUser	
-echoUser	bookofnim/deepdives/containers.html#echoUser	containers: echoUser(): void	
-hash	bookofnim/deepdives/containers.html#hash,User	containers: hash(x: User): Hash	
-userDictionary	bookofnim/deepdives/containers.html#userDictionary	containers: userDictionary	
-containers deepdive	bookofnim/deepdives/containers.html#containers-deepdive	 containers deepdive	
-TLDR	bookofnim/deepdives/containers.html#containers-deepdive-tldr	  TLDR	
-links	bookofnim/deepdives/containers.html#containers-deepdive-links	  links	
-todos	bookofnim/deepdives/containers.html#containers-deepdive-todos	  todos	
-tables	bookofnim/deepdives/containers.html#containers-deepdive-tables	  tables	
-table types	bookofnim/deepdives/containers.html#containers-deepdive-table-types	  table types	
-strtabs	bookofnim/deepdives/containers.html#containers-deepdive-strtabs	  strtabs	
-strtab types	bookofnim/deepdives/containers.html#containers-deepdive-strtab-types	  strtab types	
+nimTitle	containers	bookofnim/deepdives/containers.html	module src/bookofnim/deepdives/containers		0
+nim	baseTable	bookofnim/deepdives/containers.html#baseTable	const baseTable		80
+nim	hashTable	bookofnim/deepdives/containers.html#hashTable	const hashTable		81
+nim	orderededTable	bookofnim/deepdives/containers.html#orderededTable	const orderededTable		82
+nim	countTable	bookofnim/deepdives/containers.html#countTable	const countTable		83
+nim	anotherTable	bookofnim/deepdives/containers.html#anotherTable	const anotherTable		84
+nim	keys	bookofnim/deepdives/containers.html#keys	let keys		101
+nim	values	bookofnim/deepdives/containers.html#values	let values		105
+nim	keyValues	bookofnim/deepdives/containers.html#keyValues	let keyValues		109
+nim	mutated	bookofnim/deepdives/containers.html#mutated	var mutated		115
+nim	mCountTable	bookofnim/deepdives/containers.html#mCountTable	var mCountTable		116
+nim	echoMutated	bookofnim/deepdives/containers.html#echoMutated	proc echoMutated(): void		117
+nim	i	bookofnim/deepdives/containers.html#i	var i		129
+nim	User	bookofnim/deepdives/containers.html#User	object User		134
+nim	t	bookofnim/deepdives/containers.html#t	var t		138
+nim	u	bookofnim/deepdives/containers.html#u	let u		139
+nim	hc`gensym135	bookofnim/deepdives/containers.html#hc`gensym135	var hc`gensym135		624
+nim	index`gensym135	bookofnim/deepdives/containers.html#index`gensym135	var index`gensym135		625
+nim	hasKey`gensym135	bookofnim/deepdives/containers.html#hasKey`gensym135	let hasKey`gensym135		626
+nim	hc`gensym137	bookofnim/deepdives/containers.html#hc`gensym137	var hc`gensym137		663
+nim	index`gensym137	bookofnim/deepdives/containers.html#index`gensym137	var index`gensym137		664
+nim	hasKey`gensym137	bookofnim/deepdives/containers.html#hasKey`gensym137	let hasKey`gensym137		665
+nim	authnz	bookofnim/deepdives/containers.html#authnz	let authnz		161
+nim	newUser	bookofnim/deepdives/containers.html#newUser	var newUser		179
+nim	echoUser	bookofnim/deepdives/containers.html#echoUser	proc echoUser(): void		181
+nim	hash	bookofnim/deepdives/containers.html#hash,User	proc hash(x: User): Hash		190
+nim	userDictionary	bookofnim/deepdives/containers.html#userDictionary	var userDictionary		194
+heading	containers deepdive	bookofnim/deepdives/containers.html#containers-deepdive	 containers deepdive		0
+heading	TLDR	bookofnim/deepdives/containers.html#containers-deepdive-tldr	  TLDR		0
+heading	links	bookofnim/deepdives/containers.html#containers-deepdive-links	  links		0
+heading	TODOs	bookofnim/deepdives/containers.html#containers-deepdive-todos	  TODOs		0
+heading	tables	bookofnim/deepdives/containers.html#containers-deepdive-tables	  tables		0
+heading	table types	bookofnim/deepdives/containers.html#containers-deepdive-table-types	  table types		0
+heading	strtabs	bookofnim/deepdives/containers.html#containers-deepdive-strtabs	  strtabs		0
+heading	strtab types	bookofnim/deepdives/containers.html#containers-deepdive-strtab-types	  strtab types		0

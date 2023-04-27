@@ -1,15 +1,16 @@
-myString	bookofnim/deepdives/crypto.html#myString	crypto: myString	
-SomeObject	bookofnim/deepdives/crypto.html#SomeObject	crypto: SomeObject	
-objectSome	bookofnim/deepdives/crypto.html#objectSome	crypto: objectSome	
-items	bookofnim/deepdives/crypto.html#items.i,SomeObject	crypto: items(self: SomeObject): Hash	
-hash	bookofnim/deepdives/crypto.html#hash,SomeObject	crypto: hash(self: SomeObject): Hash	
-cryptography	bookofnim/deepdives/crypto.html#cryptography	 cryptography	
-TLDR	bookofnim/deepdives/crypto.html#cryptography-tldr	  TLDR	
-todos	bookofnim/deepdives/crypto.html#cryptography-todos	  todos	
-links	bookofnim/deepdives/crypto.html#cryptography-links	  links	
-ssl_certs	bookofnim/deepdives/crypto.html#cryptography-ssl-certs	  ssl_certs	
-env vars	bookofnim/deepdives/crypto.html#cryptography-env-vars	  env vars	
-hashes	bookofnim/deepdives/crypto.html#cryptography-hashes	  hashes	
-hashes procs	bookofnim/deepdives/crypto.html#cryptography-hashes-procs	  hashes procs	
-base64	bookofnim/deepdives/crypto.html#cryptography-base64	  base64	
-base64 procs	bookofnim/deepdives/crypto.html#cryptography-base64-procs	  base64 procs	
+nimTitle	crypto	bookofnim/deepdives/crypto.html	module src/bookofnim/deepdives/crypto		0
+nim	myString	bookofnim/deepdives/crypto.html#myString	const myString		75
+nim	SomeObject	bookofnim/deepdives/crypto.html#SomeObject	object SomeObject		77
+nim	objectSome	bookofnim/deepdives/crypto.html#objectSome	let objectSome		81
+nim	items	bookofnim/deepdives/crypto.html#items.i,SomeObject	iterator items(self: SomeObject): Hash		87
+nim	hash	bookofnim/deepdives/crypto.html#hash,SomeObject	proc hash(self: SomeObject): Hash		92
+heading	cryptography	bookofnim/deepdives/crypto.html#cryptography	 cryptography		0
+heading	TLDR	bookofnim/deepdives/crypto.html#cryptography-tldr	  TLDR		0
+heading	TODOs	bookofnim/deepdives/crypto.html#cryptography-todos	  TODOs		0
+heading	links	bookofnim/deepdives/crypto.html#cryptography-links	  links		0
+heading	ssl_certs	bookofnim/deepdives/crypto.html#cryptography-ssl-certs	  ssl_certs		0
+heading	env vars	bookofnim/deepdives/crypto.html#cryptography-env-vars	  env vars		0
+heading	hashes	bookofnim/deepdives/crypto.html#cryptography-hashes	  hashes		0
+heading	hashes procs	bookofnim/deepdives/crypto.html#cryptography-hashes-procs	  hashes procs		0
+heading	base64	bookofnim/deepdives/crypto.html#cryptography-base64	  base64		0
+heading	base64 procs	bookofnim/deepdives/crypto.html#cryptography-base64-procs	  base64 procs		0

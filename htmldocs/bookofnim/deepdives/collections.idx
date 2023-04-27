@@ -1,30 +1,31 @@
-immutable	bookofnim/deepdives/collections.html#immutable	collections: immutable	
-mySeq	bookofnim/deepdives/collections.html#mySeq	collections: mySeq	
-seq2d	bookofnim/deepdives/collections.html#seq2d	collections: seq2d	
-zipped	bookofnim/deepdives/collections.html#zipped	collections: zipped	
-mutable	bookofnim/deepdives/collections.html#mutable	collections: mutable	
-mutated	bookofnim/deepdives/collections.html#mutated	collections: mutated	
-echoMutated	bookofnim/deepdives/collections.html#echoMutated	collections: echoMutated(): void	
-stringSet1	bookofnim/deepdives/collections.html#stringSet1	collections: stringSet1	
-stringSet2	bookofnim/deepdives/collections.html#stringSet2	collections: stringSet2	
-floatSet	bookofnim/deepdives/collections.html#floatSet	collections: floatSet	
-x	bookofnim/deepdives/collections.html#x	collections: x	
-mstringset	bookofnim/deepdives/collections.html#mstringset	collections: mstringset	
-echoMutatedSet	bookofnim/deepdives/collections.html#echoMutatedSet	collections: echoMutatedSet(): void	
-sortedStringSet	bookofnim/deepdives/collections.html#sortedStringSet	collections: sortedStringSet	
-sortedStringDict	bookofnim/deepdives/collections.html#sortedStringDict	collections: sortedStringDict	
-something	bookofnim/deepdives/collections.html#something	collections: something	
-maybe	bookofnim/deepdives/collections.html#maybe	collections: maybe	
-nothing	bookofnim/deepdives/collections.html#nothing	collections: nothing	
-collections deep dive	bookofnim/deepdives/collections.html#collections-deep-dive	 collections deep dive	
-TLDR	bookofnim/deepdives/collections.html#collections-deep-dive-tldr	  TLDR	
-links	bookofnim/deepdives/collections.html#collections-deep-dive-links	  links	
-seqs	bookofnim/deepdives/collections.html#collections-deep-dive-seqs	  seqs	
-sets (hash set)	bookofnim/deepdives/collections.html#collections-deep-dive-sets-hash-set	  sets (hash set)	
-critbits	bookofnim/deepdives/collections.html#collections-deep-dive-critbits	  critbits	
-critbit procs	bookofnim/deepdives/collections.html#collections-deep-dive-critbit-procs	  critbit procs	
-options	bookofnim/deepdives/collections.html#collections-deep-dive-options	  options	
-option exceptions	bookofnim/deepdives/collections.html#collections-deep-dive-option-exceptions	  option exceptions	
-option types	bookofnim/deepdives/collections.html#collections-deep-dive-option-types	  option types	
-option procs	bookofnim/deepdives/collections.html#collections-deep-dive-option-procs	  option procs	
-options operators	bookofnim/deepdives/collections.html#collections-deep-dive-options-operators	  options operators	
+nimTitle	collections	bookofnim/deepdives/collections.html	module src/bookofnim/deepdives/collections		0
+nim	immutable	bookofnim/deepdives/collections.html#immutable	const immutable		108
+nim	mySeq	bookofnim/deepdives/collections.html#mySeq	const mySeq		109
+nim	seq2d	bookofnim/deepdives/collections.html#seq2d	const seq2d		110
+nim	zipped	bookofnim/deepdives/collections.html#zipped	const zipped		111
+nim	mutable	bookofnim/deepdives/collections.html#mutable	var mutable		143
+nim	mutated	bookofnim/deepdives/collections.html#mutated	var mutated		144
+nim	echoMutated	bookofnim/deepdives/collections.html#echoMutated	proc echoMutated(): void		145
+nim	stringSet1	bookofnim/deepdives/collections.html#stringSet1	const stringSet1		163
+nim	stringSet2	bookofnim/deepdives/collections.html#stringSet2	const stringSet2		164
+nim	floatSet	bookofnim/deepdives/collections.html#floatSet	const floatSet		165
+nim	x	bookofnim/deepdives/collections.html#x	var x		185
+nim	mstringset	bookofnim/deepdives/collections.html#mstringset	var mstringset		192
+nim	echoMutatedSet	bookofnim/deepdives/collections.html#echoMutatedSet	proc echoMutatedSet(): void		193
+nim	sortedStringSet	bookofnim/deepdives/collections.html#sortedStringSet	let sortedStringSet		207
+nim	sortedStringDict	bookofnim/deepdives/collections.html#sortedStringDict	let sortedStringDict		217
+nim	something	bookofnim/deepdives/collections.html#something	const something		231
+nim	maybe	bookofnim/deepdives/collections.html#maybe	const maybe		235
+nim	nothing	bookofnim/deepdives/collections.html#nothing	const nothing		236
+heading	collections deep dive	bookofnim/deepdives/collections.html#collections-deep-dive	 collections deep dive		0
+heading	TLDR	bookofnim/deepdives/collections.html#collections-deep-dive-tldr	  TLDR		0
+heading	links	bookofnim/deepdives/collections.html#collections-deep-dive-links	  links		0
+heading	seqs	bookofnim/deepdives/collections.html#collections-deep-dive-seqs	  seqs		0
+heading	sets (hash set)	bookofnim/deepdives/collections.html#collections-deep-dive-sets-hash-set	  sets (hash set)		0
+heading	critbits	bookofnim/deepdives/collections.html#collections-deep-dive-critbits	  critbits		0
+heading	critbit procs	bookofnim/deepdives/collections.html#collections-deep-dive-critbit-procs	  critbit procs		0
+heading	options	bookofnim/deepdives/collections.html#collections-deep-dive-options	  options		0
+heading	option exceptions	bookofnim/deepdives/collections.html#collections-deep-dive-option-exceptions	  option exceptions		0
+heading	option types	bookofnim/deepdives/collections.html#collections-deep-dive-option-types	  option types		0
+heading	option procs	bookofnim/deepdives/collections.html#collections-deep-dive-option-procs	  option procs		0
+heading	options operators	bookofnim/deepdives/collections.html#collections-deep-dive-options-operators	  options operators		0

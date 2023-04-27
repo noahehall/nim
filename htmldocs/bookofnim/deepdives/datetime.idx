@@ -1,19 +1,20 @@
-bday	bookofnim/deepdives/datetime.html#bday	datetime: bday	
-sometime	bookofnim/deepdives/datetime.html#sometime	datetime: sometime	
-fdate	bookofnim/deepdives/datetime.html#fdate	datetime: fdate	
-ftime	bookofnim/deepdives/datetime.html#ftime	datetime: ftime	
-dailycoding	bookofnim/deepdives/datetime.html#dailycoding	datetime: dailycoding	
-relaxing	bookofnim/deepdives/datetime.html#relaxing	datetime: relaxing	
-hour	bookofnim/deepdives/datetime.html#hour	datetime: hour	
-datetime	bookofnim/deepdives/datetime.html#datetime	 datetime	
-TLDR	bookofnim/deepdives/datetime.html#datetime-tldr	  TLDR	
-links	bookofnim/deepdives/datetime.html#datetime-links	  links	
-todos	bookofnim/deepdives/datetime.html#datetime-todos	  todos	
-time	bookofnim/deepdives/datetime.html#datetime-time	  time	
-time format strings	bookofnim/deepdives/datetime.html#datetime-time-format-strings	  time format strings	
-time design	bookofnim/deepdives/datetime.html#datetime-time-design	  time design	
-time Duration (see types)	bookofnim/deepdives/datetime.html#datetime-time-duration-see-types	  time Duration (see types)	
-time TimeInterval (see types)	bookofnim/deepdives/datetime.html#datetime-time-timeinterval-see-types	  time TimeInterval (see types)	
-times types	bookofnim/deepdives/datetime.html#datetime-times-types	  times types	
-time exceptions	bookofnim/deepdives/datetime.html#datetime-time-exceptions	  time exceptions	
-time procs	bookofnim/deepdives/datetime.html#datetime-time-procs	  time procs	
+nimTitle	datetime	bookofnim/deepdives/datetime.html	module src/bookofnim/deepdives/datetime		0
+nim	bday	bookofnim/deepdives/datetime.html#bday	let bday		153
+nim	sometime	bookofnim/deepdives/datetime.html#sometime	let sometime		159
+nim	fdate	bookofnim/deepdives/datetime.html#fdate	let fdate		161
+nim	ftime	bookofnim/deepdives/datetime.html#ftime	let ftime		163
+nim	dailycoding	bookofnim/deepdives/datetime.html#dailycoding	let dailycoding		196
+nim	relaxing	bookofnim/deepdives/datetime.html#relaxing	let relaxing		217
+nim	hour	bookofnim/deepdives/datetime.html#hour	let hour		221
+heading	datetime	bookofnim/deepdives/datetime.html#datetime	 datetime		0
+heading	TLDR	bookofnim/deepdives/datetime.html#datetime-tldr	  TLDR		0
+heading	links	bookofnim/deepdives/datetime.html#datetime-links	  links		0
+heading	TODOs	bookofnim/deepdives/datetime.html#datetime-todos	  TODOs		0
+heading	time	bookofnim/deepdives/datetime.html#datetime-time	  time		0
+heading	time format strings	bookofnim/deepdives/datetime.html#datetime-time-format-strings	  time format strings		0
+heading	time design	bookofnim/deepdives/datetime.html#datetime-time-design	  time design		0
+heading	time Duration (see types)	bookofnim/deepdives/datetime.html#datetime-time-duration-see-types	  time Duration (see types)		0
+heading	time TimeInterval (see types)	bookofnim/deepdives/datetime.html#datetime-time-timeinterval-see-types	  time TimeInterval (see types)		0
+heading	times types	bookofnim/deepdives/datetime.html#datetime-times-types	  times types		0
+heading	time exceptions	bookofnim/deepdives/datetime.html#datetime-time-exceptions	  time exceptions		0
+heading	time procs	bookofnim/deepdives/datetime.html#datetime-time-procs	  time procs		0
