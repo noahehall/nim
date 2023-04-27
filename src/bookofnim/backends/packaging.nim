@@ -27,7 +27,7 @@ links
 - niche
   - [base object of a lexer](https://nim-lang.org/docs/lexbase.html)
 
-todos
+TODOs
 -----
 - verify the different app cfg locations
 - for some reason (oops) parseCfg is in shell.nims, it should be in this file

@@ -21,7 +21,7 @@ links
 - [tools dir](https://github.com/nim-lang/Nim/tree/devel/tools)
 - [status auditor docs](https://status-im.github.io/nim-style-guide/00_introduction.html)
 
-todos
+TODOs
 -----
 - nim in action: copy all your notes starting from pg 40
 

@@ -7,7 +7,7 @@
 - pretty much skipped the entire section on templates, and definitely on macros
 - FYI: you dont know nim if you dont know templates & macros
 
-todos
+TODOs
 -----
 - niminaction: chapter 9
 - [macros](https://nim-lang.org/docs/manual.html#macros)

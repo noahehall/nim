@@ -20,7 +20,7 @@ links
   - [enum utils](https://nim-lang.org/docs/enumutils.html)
   - [shared tables](https://nim-lang.org/docs/sharedtables.html)
 
-todos
+TODOs
 -----
 - tables
   - [the commit for indexBy, scroll down for tests](https://github.com/nim-lang/Nim/commit/5498415f3b44048739c9b7116638824713d9c1df)

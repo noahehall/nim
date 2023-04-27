@@ -13,7 +13,7 @@ links
 - high impact
   - [default platforms](https://github.com/nim-lang/Nim/blob/devel/lib/system/platforms.nim)
 
-todos
+TODOs
 -----
 - [discussion: mobile apps with nim](https://forum.nim-lang.org/t/7251)
 ]##

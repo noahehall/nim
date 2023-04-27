@@ -32,7 +32,7 @@ links
 - nitche
   - [perl compatible regex](https://nim-lang.org/docs/pcre.html)
 
-todos
+TODOs
 -----
 - re
   - study the expression: no clue what this means

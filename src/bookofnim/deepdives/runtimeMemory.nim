@@ -23,7 +23,7 @@ links
 - [gc common](https://github.com/nim-lang/Nim/blob/devel/lib/system/gc_common.nim)
 - [ref and pointer types](https://nim-lang.org/docs/manual.html#types-reference-and-pointer-types)
 
-todos
+TODOs
 -----
 - [] is the dereferencing sign
   - [see elegantbeefs response here](https://forum.nim-lang.org/t/10111)

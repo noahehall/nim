@@ -14,7 +14,7 @@ links
 - [status iterator docs](https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#iterators)
 - [system io iterators](https://nim-lang.org/docs/io.html#15)
 
-todos
+TODOs
 -----
 - [nim by example: closure iterators](https://nim-by-example.github.io/for_iterators/)
 - iterToProc

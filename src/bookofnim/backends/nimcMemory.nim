@@ -42,7 +42,7 @@ links
   - [nim compiler](https://nim-lang.org/docs/nimc.html)
 
 
-todos
+TODOs
 -----
 - niminaction: appendix b 282-290
 - [checkout glmf example repo for targeting android/ios](https://github.com/treeform/glfm)

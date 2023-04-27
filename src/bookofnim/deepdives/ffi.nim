@@ -8,7 +8,7 @@ links
 -----
 - [native python integration](https://github.com/yglukhov/nimpy)
 
-todos
+TODOs
 -----
 - niminaction chapter 8
 - import in bookofnim and add to readme

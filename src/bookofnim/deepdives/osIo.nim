@@ -89,7 +89,7 @@ links
   - [open users browser](https://nim-lang.org/docs/browsers.html)
   - [raw posix interface]https://nim-lang.org/docs/posix.html
 
-todos
+TODOs
 -----
 - cpuEndian
 - cpuRelax

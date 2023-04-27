@@ -69,7 +69,7 @@ links
   - [fusion pools](https://nim-lang.github.io/fusion/src/fusion/pools.html)
   - [fusion smart pointers](https://nim-lang.github.io/fusion/src/fusion/smartptrs.html)
 
-todos
+TODOs
 -----
 - [passing channels safely](https://nim-lang.org/docs/channels_builtin.html#example-passing-channels-safely)
 - [multiple async backend support](https://nim-lang.org/docs/asyncdispatch.html#multiple-async-backend-support)

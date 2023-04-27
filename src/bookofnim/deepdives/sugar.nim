@@ -21,7 +21,7 @@ links
 - niche
   - [import private symbols](https://github.com/nim-lang/Nim/blob/devel/lib/std/importutils.nim)
 
-todos
+TODOs
 -----
 - std/wrapnils: optional chaining
 - macro capture(locals: varargs[typed]; body: untyped): untyped

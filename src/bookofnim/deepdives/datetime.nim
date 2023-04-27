@@ -23,7 +23,7 @@ links
 - [mono times](https://nim-lang.org/docs/monotimes.html)
 - [timezone names, but any unambiguous string can be used](https://en.wikipedia.org/wiki/Tz_database)
 
-todos
+TODOs
 -----
 - time
   - high, low
