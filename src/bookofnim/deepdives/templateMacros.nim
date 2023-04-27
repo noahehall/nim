@@ -1,5 +1,5 @@
-## filters, templates and macros
-## =============================
+## templates and macros
+## ====================
 ## [bookmark](https://nim-lang.org/docs/manual.html#templates)
 
 ##[
@@ -9,8 +9,6 @@
 
 todos
 -----
-- [filters](https://nim-lang.org/docs/filters.html)
-  - niminaction: 200 -> 210
 - niminaction: chapter 9
 - [macros](https://nim-lang.org/docs/manual.html#macros)
   - ^ continue until you get to SpecialTypes

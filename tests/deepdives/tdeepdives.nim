@@ -12,5 +12,5 @@ import bookofnim / deepdives / [
     pragmasEffects, ## pragmas and the effect system
     strings, ## string utils, en/decoders, etc
     sugar, ## sugar, algorithms and other helpers
-    filtersTemplateMacros, ## filters, templates and macros
+    templateMacros, ## filters, templates and macros
   ]

@@ -42,6 +42,8 @@ import bookofnim / deepdives / [
     dataWrangling, ## regex, strscan, etc
     datetime, ## dates and times
     dbs, ## database clients + mime types
+    ffi, ## interfacing with other languages
+    filters, ## templating systems and preprocessors
     lists, ## list/queues
     maths, ## statistical analysis, rational numbers, etc
     osIo, ## operating system, distros, files etc
@@ -50,7 +52,7 @@ import bookofnim / deepdives / [
     servers, ## http, sockets, ftp etc + async versions
     strings, ## string utils, en/decoders, etc
     sugar, ## sugar, algorithms and other helpers
-    filtersTemplateMacros, ## filters, templates and macros
+    templateMacros, ## templates and macros
     tests,  ## testament, nimble
   ]
 
