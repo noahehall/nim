@@ -58,6 +58,8 @@ jobs:
       - name: test
         run: nim e ${GITHUB_WORKSPACE}/.github/scripts/test.nims
 
+  # dunno: this is failing in CI using #version-2-0
+  # ^ it worked using #devel
   docs:
     name: DOCS
     needs: CI
