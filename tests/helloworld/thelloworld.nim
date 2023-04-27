@@ -4,4 +4,4 @@ discard """
   disabled: false # memory leaks
 """
 
-import bookofnim / helloworld / modules / variableGlobals
+import bookofnim / helloworld / helloworld
