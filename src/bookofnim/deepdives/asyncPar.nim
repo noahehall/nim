@@ -28,8 +28,7 @@
 - 1.6.12 vs v2
   - system.threads is now std/typedthreads
   - system.threads still works in v2, but you should prefer import std/typedthreads
-    - maybe you dont even need to import typedthreads, not sure of the difference
-      - TODO
+    - TODO: maybe you dont even need to import typedthreads, not sure of the difference
 - concurrency vs parallelism in nim
   - task: generally a process, e.g. an instance of a program
   - thread: child of a parent process, that can execute in parallel to other threads
