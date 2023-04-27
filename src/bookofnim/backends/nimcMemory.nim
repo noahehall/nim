@@ -44,6 +44,7 @@ links
 
 todos
 -----
+- niminaction: appendix b 282-290
 - [checkout glmf example repo for targeting android/ios](https://github.com/treeform/glfm)
 - review this entire file again, shiz alot clearer now
 - useStdoutAsStdmsg @see https://nim-lang.org/docs/io.html#stdmsg.t

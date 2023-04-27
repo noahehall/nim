@@ -11,6 +11,7 @@ todos
 -----
 - [filters](https://nim-lang.org/docs/filters.html)
   - niminaction: 200 -> 210
+- niminaction: chapter 9
 - [macros](https://nim-lang.org/docs/manual.html#macros)
   - ^ continue until you get to SpecialTypes
 - [macro tut](https://nim-lang.org/docs/tut3.html)

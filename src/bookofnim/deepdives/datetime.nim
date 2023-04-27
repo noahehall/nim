@@ -147,6 +147,7 @@ import std/times
 
 
 echo "############################ time datetimes"
+# TODO: getTime().getGMTime() used in niminaction example
 
 let
   bday = dateTime(1969, mJan, 01, zone = utc()) ## \
