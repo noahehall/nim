@@ -21,7 +21,7 @@ links
 - [tools dir](https://github.com/nim-lang/Nim/tree/devel/tools)
 - [status auditor docs](https://status-im.github.io/nim-style-guide/00_introduction.html)
 
-todos
+TODOs
 -----
 - nim in action: copy all your notes starting from pg 40
 
@@ -275,9 +275,11 @@ import modules / [
   exceptionHandlingDocs, ## exceptions, assertions, doc comments, try/catch, defer
   ifWhenCase, ## if when and case statements
   loopsIterator, ## loops and iterators
-  structuredCollectionsOrdinals, ## e.g. sequences, enums, arrays
   routines, ## main types of procs
-  structuredContainers, ## e.g. objects, custom types, tables
+  structuredCollectionsOrdinals, ## ordered and collections of items
+  structuredContainers, ## objects with named fields
+  traitsAdt, ## type traints and algebraic data types
   typeSimple, ## basic types
-  variableGlobals, ## const, let, var; catchall for globals
+  userDefinedTypes, ## custom types with objects, tuples and enums
+  variableGlobals, ## creating variables and globals
 ]

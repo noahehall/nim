@@ -18,7 +18,7 @@ links
 - [converters](https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#converter)
 - [special types](https://nim-lang.org/docs/manual.html#special-types)
 
-todos
+TODOs
 -----
 - blah.reset a thing to its default value
 

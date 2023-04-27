@@ -9,7 +9,7 @@
 - all can be used as expressions and the result assigned to a var
 - case statement branches should be listed in order of most expected
 
-branching todos
+branching TODOs
 ---------------
 - [likely](https://nim-lang.org/docs/system.html#likely.t%2Cbool)
 - [unlikely](https://nim-lang.org/docs/system.html#unlikely.t%2Cbool)

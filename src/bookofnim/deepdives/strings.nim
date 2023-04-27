@@ -28,7 +28,7 @@ links
   - [punycode](https://nim-lang.org/docs/punycode.html)
 
 
-todos
+TODOs
 -----
 - strutils
   - BinaryPrefixMode, FloatFormatMode, SkipTable, addSep, align[left,right]

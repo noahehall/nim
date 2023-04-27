@@ -12,7 +12,7 @@ links
 - [type bound operators](https://nim-lang.org/docs/manual.html#procedures-type-bound-operators)
 - [object variants](https://nim-lang.org/docs/manual.html#types-object-variants)
 
-todos
+TODOs
 -----
 - read through the scala notes and try to replicate the algebraic DTs
 - move all the type logic stuff in here

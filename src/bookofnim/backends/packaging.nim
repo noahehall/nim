@@ -11,7 +11,7 @@
   - is package-level package manager, i.e. pnpm not apt-get
 - parallel tasks are described in asyncPar
 - nimscript defined here is strictly for app configuration and nimble support
-  - check targets/shell.nims for in depth nimscripting
+  - check targets/shell.nims for in depth nimscripting and tasks
 
 links
 -----
@@ -27,7 +27,7 @@ links
 - niche
   - [base object of a lexer](https://nim-lang.org/docs/lexbase.html)
 
-todos
+TODOs
 -----
 - verify the different app cfg locations
 - for some reason (oops) parseCfg is in shell.nims, it should be in this file
@@ -186,13 +186,17 @@ nimble configuration
     cloneUsingHttps = true  # replace git:// with https://
     httpProxy = ""
 
-## nimscript
+## nimscript for app configuration
 - subset of nim that can be evaluated by nims builtin VM
+- see backends/shell.nim for indepth nimscript
+  - as well as tasks, as they can only be run in `.nims` and `.nimble` files
 
-nimscript for app configuration
--------------------------------
+`.nims` as config files
+-----------------------
 - nim will automatically process .nims configs in the following order (later overrides previous)
 .. code-block:: Nim
+  # $project === name of the file being compiled
+  # i.e. compiling blah.nim will automatically load blah.nims
   $XDG_CONFIG_HOME/nim/config.nims || ~/config/nim/config.nims
   $parentDir/config.nims
   $projectDir/config.nims
@@ -202,6 +206,7 @@ nimscript for app configuration
 .. code-block:: Nim
   switch("opt", "size") || hint(name, bool) || warning(name, bool)
   --opt:size # IMO the cleaner syntax
+
 
 ## parsecfg
 - high performance config parser in windows ini syntax

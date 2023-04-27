@@ -27,7 +27,7 @@ links
 - other
   - [peter: return tips n tricks](https://peterme.net/tips-and-tricks-with-implicit-return-in-nim.html)
 
-todos
+TODOs
 -----
 - [offsetOf](https://nim-lang.org/docs/system.html#offsetOf.t%2Ctypedesc%5BT%5D%2Cuntyped)
 - [rangeCheck(cond)](https://nim-lang.org/docs/system.html#rangeCheck.t)

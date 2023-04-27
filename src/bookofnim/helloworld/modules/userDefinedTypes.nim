@@ -28,7 +28,7 @@ links
 - [reference and pointer types](https://nim-lang.org/docs/manual.html#types-reference-and-pointer-types)
 
 
-todos
+TODOs
 -----
 - add a testfile
 - import in bookofnim.nim

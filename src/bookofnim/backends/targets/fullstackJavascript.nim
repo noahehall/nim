@@ -6,12 +6,12 @@
 
 ##[
 ## TLDR
+- filters are discussed filtersTemplateMacros.nim
 - gotchas / best practices
   - addr and ptr have different semantic meaning in JavaScript; newbs should avoid
   - cast[T](x) translated to (x), except between signed/unsigned ints
   - cstring in JavaScript means JavaScript string, and shouldnt be used as binary data buffer
-
-todos
+TODOs
 -----
 - the JS codegen only translates to JS what is used at runtime, not at compile-time.
   - In practice though some modules like marshal.nim might not yet be ready for it.
@@ -19,7 +19,6 @@ todos
 - [forum discussion on js](https://forum.nim-lang.org/t/9148#62619)
   - std/jsconsole
   - theres bunches of gold nuggets in that thread
-
 links
 -----
 

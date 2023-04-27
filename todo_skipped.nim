@@ -1,5 +1,5 @@
 #[
-## new list of todos
+## new list of TODOs
 - async / para stuff
   - https://github.com/nim-lang/Nim/blob/devel/lib/std/typedthreads.nim
   - https://github.com/nim-lang/Nim/blob/devel/lib/pure/concurrency/threadpool.nim
@@ -67,7 +67,7 @@
   - forgot why this is here but its mentioned in the docs for something
 
 
-todos
+TODOs
 -----
 .. code-block:: Nim
   # probably need a memory_mgmt.nim file

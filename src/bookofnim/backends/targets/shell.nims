@@ -23,7 +23,7 @@ links
   - [nimscript compatibility tests](https://github.com/nim-lang/Nim/blob/devel/tests/test_nimscript.nims)
   - [nimscript spec (including tasks)](https://nim-lang.org/docs/nimscript.html)
 
-todos
+TODOs
 -----
 - [spike moving to nimcr](https://github.com/PMunch/nimcr)
 

@@ -25,7 +25,7 @@ links
 - [pragmas section in manual](https://nim-lang.org/docs/manual.html#pragmas)
 - [effect system in manual](https://nim-lang.org/docs/manual.html#effect-system)
 
-todos
+TODOs
 -----
 - [effect system](https://nim-lang.org/docs/manual.html#effect-system)
 - [experimental](https://nim-lang.org/docs/manual_experimental.html)

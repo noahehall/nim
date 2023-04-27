@@ -9,13 +9,13 @@ jobs:
     name: Commit docs
     if: (github.event.pull_request.merged == true) && (github.base_ref == 'develop')
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 10 # extra 5 minutes for compiling the devel branch
+    timeout-minutes: 15 # extra 5 minutes for compiling the #devel branch
 
     strategy:
-      fail-fast: true # fail immediately
+      fail-fast: true
       matrix:
         os: [ubuntu-latest]
-        nimv: ["#version-2-0"]
+        nimv: ["#devel"]
 
     steps:
       - name: Checkout

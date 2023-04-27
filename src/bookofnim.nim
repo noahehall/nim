@@ -42,6 +42,8 @@ import bookofnim / deepdives / [
     dataWrangling, ## regex, strscan, etc
     datetime, ## dates and times
     dbs, ## database clients + mime types
+    ffi, ## interfacing with other languages
+    filters, ## templating systems and preprocessors
     lists, ## list/queues
     maths, ## statistical analysis, rational numbers, etc
     osIo, ## operating system, distros, files etc

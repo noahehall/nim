@@ -23,7 +23,7 @@ links
 - [mono times](https://nim-lang.org/docs/monotimes.html)
 - [timezone names, but any unambiguous string can be used](https://en.wikipedia.org/wiki/Tz_database)
 
-todos
+TODOs
 -----
 - time
   - high, low
@@ -147,6 +147,7 @@ import std/times
 
 
 echo "############################ time datetimes"
+# TODO: getTime().getGMTime() used in niminaction example
 
 let
   bday = dateTime(1969, mJan, 01, zone = utc()) ## \

@@ -1,4 +1,5 @@
 from strutils import unindent
+import os
 
 # Package
 
@@ -21,4 +22,16 @@ requires "nim >= 1.6.12"
 task test, "executes ./github/scripts/tests.nims":
   exec "nim e .github/scripts/test.nims"
 
-# TODO: create a setup task that installs the .github/hooks to .git/hooks
+task copyGitHooks, "copies .github/hooks to .git/hooks":
+  let toDir = currentSourcePath() / ".." / ".git/hooks"
+  let fromDir = currentSourcePath() / ".." / ".github/hooks"
+  for kind, path in fromDir.walkDir:
+    # git hooks dont have file extensions
+    if kind == pcFile and path.searchExtPos == -1:
+      echo "installing git hook: ", path.lastPathPart
+      path.cpFile toDir / path.lastPathPart
+
+
+task postclone, "executes post-repo-clone tasks":
+  copyGitHooksTask()
+  testTask()

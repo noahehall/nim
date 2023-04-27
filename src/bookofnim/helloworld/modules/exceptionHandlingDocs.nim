@@ -58,7 +58,7 @@ links
   - [drnim](https://nim-lang.org/docs/drnim.html)
   - [segfaults module](https://nim-lang.org/docs/segfaults.html)
 
-todos
+TODOs
 -----
 - drnim tool
 - debugger
