@@ -19,7 +19,7 @@ jobs:
   ci:
     name: CI / ${{ matrix.os }} / Nim${{ matrix.nimv }}
     runs-on: ${{ matrix.os }}
-    # extra 15 minutes for initial compiling of #version-2-0 when not in cache
+    # extra 15 minutes for initial compiling of #devel when not in cache
     # there seems to be a significant time increase for v2 release candidate
     # even on subsequent runs where the cache can be restored
     timeout-minutes: 30
@@ -28,7 +28,7 @@ jobs:
       fail-fast: false # fail workflow after all jobs, not first error
       matrix:
         os: [ubuntu-latest]
-        nimv: [1.6.12, "#version-2-0"]
+        nimv: [1.6.12, "#devel"]
 
     steps:
       - name: Checkout
@@ -58,8 +58,6 @@ jobs:
       - name: test
         run: nim e ${GITHUB_WORKSPACE}/.github/scripts/test.nims
 
-  # dunno: this is failing in CI using #version-2-0
-  # ^ it worked using #devel
   docs:
     name: DOCS
     needs: CI
@@ -70,7 +68,7 @@ jobs:
       fail-fast: true
       matrix:
         os: ["ubuntu-latest"]
-        nimv: ["#version-2-0"]
+        nimv: ["#devel"]
 
     steps:
       - name: Checkout
