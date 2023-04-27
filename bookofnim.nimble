@@ -3,7 +3,7 @@ import os
 
 # Package
 
-version       = "0.1.1"
+version       = "1.9.3" # syncd to nim version
 author        = "noahehall"
 description   = """
   book of nim: bow to the crown
