@@ -50,7 +50,7 @@ import bookofnim / deepdives / [
     servers, ## http, sockets, ftp etc + async versions
     strings, ## string utils, en/decoders, etc
     sugar, ## sugar, algorithms and other helpers
-    templateMacros, ## templates and macros
+    filtersTemplateMacros, ## filters, templates and macros
     tests,  ## testament, nimble
   ]
 
