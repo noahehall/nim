@@ -5,6 +5,7 @@
 
 ##[
 ## TLDR
+- additional info for nimv2 in asyncParV2.nim
 - see runtimeMemory.nim for more on threads, thread synchronization, memory and GC
 - see servers.nim for async server stuff
 - you need the following for any thread related logic
@@ -26,22 +27,10 @@
     - Thread[NotVoid]: on thread creation, instance of NotVoid is expected and passed to its actor
       - in order to pass multiple params, use something like a tuple/array/etc
 - 1.6.12 vs v2
-  - system.threads is now std/typedthreads
+  - system.thread types moved to std/private/threadtypes
+  - system.thread logic upgraded and moved to std/typedthreads
   - system.threads still works in v2, but you should prefer import std/typedthreads
-    - TODO: maybe you dont even need to import typedthreads, not sure of the difference
-- concurrency vs parallelism in nim
-  - task: generally a process, e.g. an instance of a program
-  - thread: child of a parent process, that can execute in parallel to other threads
-    - threads will spawn child processes to execute their tasks
-    - main process -> child thread -> child threads process -> execute this task
-  - concurrency: performing tasks without waiting for other tasks is highly evolved
-    - are CPU bound, i.e. execute on the same thread with timesharing to simulate multitasking
-  - parallelism: performing tasks at the same time is still evolving
-    - the API is mature and stable, however, the dev teams goals have yet to be fully realized
-      - e.g. parallel async await might not be available yet (dunno)
-    - parallel tasks are distributed across physical CPUs for true multitasking
-      - or via simultaneous multithreading (SMT) like intels Hyper-Threading
-    - if all CPUs are taken, timesharing occurs (concurrency semantics)
+
 
 links
 -----
@@ -76,6 +65,20 @@ TODOs
 - [add more sophisticated asyncdispatch examples](https://nim-lang.org/docs/asyncdispatch.html)
 - acquiring a lock for a channel is useless, locks only work with guarded vars
   - ^ update examples
+
+## concurrency and parallelism in nim
+- task: generally a process, e.g. an instance of a program
+- thread: child of a parent process, that can execute in parallel to other threads
+  - threads will spawn child processes to execute their tasks
+  - main process -> child thread -> child threads process -> execute this task
+- concurrency: performing tasks without waiting for other tasks is highly evolved
+  - are CPU bound, i.e. execute on the same thread with timesharing to simulate multitasking
+- parallelism: performing tasks at the same time is still evolving
+  - the API is mature and stable, however, the dev teams goals have yet to be fully realized
+    - e.g. parallel async await might not be available yet
+  - parallel tasks are distributed across physical CPUs for true multitasking
+    - or via simultaneous multithreading (SMT) like intels Hyper-Threading
+  - if all CPUs are taken, timesharing occurs (concurrency semantics)
 
 ## threads
 
