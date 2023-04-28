@@ -31,6 +31,7 @@ links
 
 {.push warning[UnusedImport]:off .}
 
+# latest Nim v1
 import bookofnim / helloworld / helloworld ## basic nim
 
 import bookofnim / deepdives / [
@@ -61,3 +62,6 @@ import bookofnim / backends / [
     packaging, ## compiling, nimble, etc
     targeting, ## the 4 backends, archs, os, nimscript, etc
   ]
+
+# latest nim v2
+import bookofnim / v2 / nimv2

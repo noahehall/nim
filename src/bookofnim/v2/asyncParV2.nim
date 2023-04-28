@@ -17,9 +17,22 @@ links
 
 ## threads
 
-typedthreads
+typedthreads procs
 ------------
-- abc
-
+- running true if thread is executing
+- handle of thread
+- joinThreads back to main thread
+- joinThread back to main thread
+- destroyThread is a potentially dangerous action
+- createThread and start execution
+- pinThread to a cpu & set its affinity
+-
 
 ]##
+
+{.push warning[UnusedImport]:off .}
+
+
+import std/typedthreads
+
+echo "typedthreads!"
