@@ -14,6 +14,12 @@ links
 -----
 - [std/typedthreads](https://github.com/nim-lang/Nim/blob/devel/lib/std/typedthreads.nim)
 - [sys atomics](https://github.com/nim-lang/Nim/blob/devel/lib/std/sysatomics.nim)
+- [system threadids](https://github.com/nim-lang/Nim/blob/devel/lib/system/threadids.nim)
+- [system threadimpl](https://github.com/nim-lang/Nim/blob/devel/lib/system/threadimpl.nim)
+
+TODOs
+-----
+- see github issue, we should isolate all v2 async/par stuff in here
 
 ## threads
 

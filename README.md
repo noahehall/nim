@@ -49,7 +49,7 @@
 
 - this repo serves two purposes for programmers considering nim as their Nth language:
   - [primary: source code](/src/bookofnim.nim) you can execute while reading
-    - examples covering >= 90%% of nim
+    - examples covering ~ 90%% of nim
   - [secondary: documentation](https://noahehall.github.io/nim/htmldocs/bookofnim.html) you can read while coding
     - contextual info for the API examples with links to documentation and related references
 - thus each _chapter_ consists of docs to read and code to run:
