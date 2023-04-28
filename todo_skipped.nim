@@ -1,6 +1,14 @@
 #[
 ## even newer list of todos
+- stop doing the async stuff and finish off nim in action book notes
+  - js backend
+  - foreign function interface
+  - templates
+  - macros
 - [read this book before mastering nim](https://ssalewski.de/nimprogramming.html#_about_this_book)
+- [figure out what genode is](https://genode.org/)
+  - [nim has a dir dedicated to genode](https://github.com/nim-lang/Nim/tree/devel/lib/genode)
+  - [and another](https://github.com/nim-lang/Nim/tree/devel/lib/genode_cpp)
 
 ## new list of TODOs
 - async / para stuff
