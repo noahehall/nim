@@ -5,7 +5,6 @@
 
 ##[
 ## TLDR
-- continues where asyncPar.nim finishes and focuses on nim v2
 - changes in v2
   - system.thread types moved to std/private/threadtypes
   - system.thread logic upgraded and moved to std/typedthreads
@@ -14,6 +13,7 @@
 links
 -----
 - [std/typedthreads](https://github.com/nim-lang/Nim/blob/devel/lib/std/typedthreads.nim)
+- [sys atomics](https://github.com/nim-lang/Nim/blob/devel/lib/std/sysatomics.nim)
 
 ## threads
 
@@ -35,4 +35,4 @@ typedthreads procs
 
 import std/typedthreads
 
-echo "typedthreads!"
+echo "asyncpar v2!"

@@ -8,9 +8,18 @@
 
 TODOs
 -----
-- im sure theres a better strategy for doing this
+- see if theres an alternative to include
+  - check templateMacrosv2.outparams
+
+## modules removed in v1
+- asdf
 ]##
 
 when (NimMajor, NimMinor, NimPatch) >= (1,9,3):
   include
-    asyncParV2
+    asyncParV2,
+    dataWranglingV2,
+    exceptionHandlingV2,
+    osIoV2,
+    stringsV2,
+    templateMacrosV2
