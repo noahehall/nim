@@ -95,7 +95,7 @@ nimscript tasks
 import std/[sugar, sequtils, strformat, strutils, distros, os]
 
 const
-  configFile = "bookofnim.nim.ini"
+  configFile = "bookofnim.nim.cfg"
   dirtmp = "/tmp/dir"
   dotdir = "."
   mydir = "targets"
@@ -132,7 +132,7 @@ put(SOME_KEY, someval) ## upsert conf
 echo fmt"{exists(SOME_KEY)=}"
 echo fmt"empty string if not found {get(SOME_KEY)=}"
 
-echo "############################ config external via .ini"
+echo "############################ config external"
 import std/[parsecfg]
 
 echo fmt"{thisDir()=}"
