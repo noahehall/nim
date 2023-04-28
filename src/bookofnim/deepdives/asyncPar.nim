@@ -26,10 +26,6 @@
     - Thread[void]: no data is passed via thread to its actor; the actor uses a channel only
     - Thread[NotVoid]: on thread creation, instance of NotVoid is expected and passed to its actor
       - in order to pass multiple params, use something like a tuple/array/etc
-- 1.6.12 vs v2
-  - system.thread types moved to std/private/threadtypes
-  - system.thread logic upgraded and moved to std/typedthreads
-  - system.threads still works in v2, but you should prefer import std/typedthreads
 
 
 links
@@ -170,9 +166,6 @@ threadpool procs
 - unsafeRead a flowvar; blocks until flowvar value is available
 - spawnX action on new thread if CPU core ready; else on this thread; blocks produce; prefer spawn
 
-typedthreads
-------------
-- introduced in v2 ? seems to just be the system.threads module (which was deleted?)
 
 ## channels
 - designed for system.threads, unstable when used with spawn
@@ -377,10 +370,10 @@ asyncfile procs
 import std/[sugar, strutils, strformat, locks, os]
 
 var
-  bf: Thread[void] ## actor working as bf
-  gf: Thread[void] ## actor working as gf
+  bf: Thread[void]
+  gf: Thread[void]
   L: Lock
-  numThreads: array[4, Thread[int]] ## actors working with int data
+  numThreads: array[4, Thread[int]]
   iAmGuarded {.guard: L .}: string = "require r/w to occur through my lock"
 
 echo fmt"{iAmGuarded}"
@@ -421,8 +414,8 @@ proc receiveAction: void {.thread.} =
 
 open relay, maxItems = 0 ## 0 = unlimited queue
 
-gf.createThread sendAction ## gf actor plays sendAction action
-bf.createThread receiveAction ## bf actor plays receiveAction action
+gf.createThread sendAction
+bf.createThread receiveAction
 joinThreads gf, bf
 
 echo "############################ channels: non blocking"
@@ -449,7 +442,6 @@ echo "############################ threadpool"
 import std/threadpool
 
 for i in numThreads.low .. numThreads.high:
-  ## create ephemeral actors for some action
   spawn (i + 10).echoAction
 sync() ## join created actors to main thread
 
