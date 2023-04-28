@@ -1,4 +1,7 @@
 #[
+## even newer list of todos
+- [read this book before mastering nim](https://ssalewski.de/nimprogramming.html#_about_this_book)
+
 ## new list of TODOs
 - async / para stuff
   - https://github.com/nim-lang/Nim/blob/devel/lib/std/typedthreads.nim

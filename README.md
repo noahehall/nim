@@ -96,7 +96,7 @@
 
 > You can read and write nim, whats next?
 
-- diving into the source code, and a few good books
+- diving into the source code, books, and additional exercises
   - [source: nim](https://github.com/nim-lang/Nim/tree/devel/lib)
     - [impure](https://github.com/nim-lang/Nim/tree/devel/lib/impure)
     - [nimscript](https://github.com/nim-lang/Nim/blob/devel/lib/system/nimscript.nim)
@@ -109,11 +109,10 @@
   - [source: nimble api](https://github.com/nim-lang/nimble/blob/master/src/nimblepkg/nimscriptapi.nim)
   - [source: nimtemplate repo template](https://github.com/treeform/nimtemplate/tree/master/src)
   - [book: nim in action](https://www.manning.com/books/nim-in-action)
-    - released in 2017, still highly relevant and recommended
-  - [computer programming with Nim](https://ssalewski.de/nimprogramming.html)
+  - [book: computer programming with Nim](https://ssalewski.de/nimprogramming.html)
   - [book: mastering nim](https://nim-lang.org/blog/2022/06/29/mastering-nim.html)
-    - havent read this one yet, but its new; i like new
     - [excerpt of code examples are available](https://github.com/Araq/mastering_nim/tree/master)
+  - [exercises: nim on exercism](https://exercism.org/tracks/nim)
 
 ## links
 
@@ -144,3 +143,7 @@ benchmarks
 
 - [web frameworks](https://web-frameworks-benchmark.netlify.app/result)
 - [techempower](https://www.techempower.com/benchmarks/#section=data-r21&hw=ph&test=json)
+
+nimskull
+
+- [statically typed structured nim fork](https://github.com/nim-works/nimskull)
