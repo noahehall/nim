@@ -132,7 +132,7 @@ put(SOME_KEY, someval) ## upsert conf
 echo fmt"{exists(SOME_KEY)=}"
 echo fmt"empty string if not found {get(SOME_KEY)=}"
 
-echo "############################ config external via .ini"
+echo "############################ config external"
 import std/[parsecfg]
 
 echo fmt"{thisDir()=}"

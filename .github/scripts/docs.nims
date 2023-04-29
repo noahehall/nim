@@ -31,7 +31,8 @@ cd rootDir
 proc installDeps: (string, int) =
   result = """
     sudo apt-fast -y install \
-      graphviz
+      graphviz \
+      zstd
   """.gorgeEx
 
 proc deletePrevdocs: (string, int) =
@@ -67,7 +68,7 @@ proc mvFilesToHtmlDocsDir: (string, int) =
     for output in @[
       rootDir / "src/bookofnim.dot",
       rootDir / "src/bookofnim.png",
-      rootDir / "testresults.html"
+      rootDir / "testresults.html" # TODO think this broke viewing testresults in github pages
     ]: output.mvFile rootDir / docsDir / output.extractFilename
     ("documentation moved to htmldocs dir", 0)
   except CatchableError:

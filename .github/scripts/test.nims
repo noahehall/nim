@@ -15,7 +15,8 @@ cd rootDir
 proc installDeps: (string, int) =
   result = """
     sudo apt-fast -y install \
-      valgrind
+      valgrind \
+      zstd
   """.gorgeEx
 
 proc runTests: (string, int) =
