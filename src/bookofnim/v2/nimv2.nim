@@ -5,6 +5,7 @@
 ##[
 ## TLDR
 - migrating to V2
+  - [read this changelog](https://github.com/nim-lang/Nim/blob/9ba07edb2ec7fcdd628cfa7155c4853160ebd5c3/changelog.md)
   - system modules moved to std library
     - assertions > std/assertions
     - atomics > std/sysatomics
