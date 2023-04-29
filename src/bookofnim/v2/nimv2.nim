@@ -16,9 +16,12 @@
 
 TODOs
 -----
+- summary the stuff listed on the changelog (see above)
+  - then you can delete most of the stuff here
 - see if theres an alternative to include for supporting nimv2
   - check templateMacrosv2.outparams
 - figure out where the impure/db_ modules moved to
+  - moved to nimble packages
 - verify the TLDR about sys modules moved to std
   - ensure the source code is relatively the same and they arent a totally new module
 - aggregate a big list of changes in this file
