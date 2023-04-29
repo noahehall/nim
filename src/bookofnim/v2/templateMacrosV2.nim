@@ -12,6 +12,8 @@ links
 - [outparams](https://github.com/nim-lang/Nim/blob/devel/lib/std/outparams.nim)
 ]##
 
+{.push warning[UnusedImport]:off .}
+
 import std/[
   outparams
 ]

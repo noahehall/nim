@@ -24,7 +24,7 @@ TODOs
 ## threads
 
 typedthreads procs
-------------
+------------------
 - running true if thread is executing
 - handle of thread
 - joinThreads back to main thread
@@ -32,12 +32,10 @@ typedthreads procs
 - destroyThread is a potentially dangerous action
 - createThread and start execution
 - pinThread to a cpu & set its affinity
--
 
 ]##
 
 {.push warning[UnusedImport]:off .}
-
 
 import std/typedthreads
 
