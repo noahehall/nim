@@ -21,12 +21,14 @@ links
   - [example config with tasks](https://github.com/kaushalmodi/nim_config/blob/master/config.nims)
   - [nimble repo](https://github.com/nim-lang/nimble)
   - [understanding how nim is built for X may help you do the same](https://nim-lang.org/docs/packaging.html)
-- high impact
+- high impact docs
   - [nimble pkg reference](https://github.com/nim-lang/nimble#nimble-reference)
   - [nims intro](https://nim-lang.org/docs/nims.html)
   - [parse config](https://nim-lang.org/docs/parsecfg.html)
 - niche
   - [base object of a lexer](https://nim-lang.org/docs/lexbase.html)
+- source
+  - abc
 
 TODOs
 -----

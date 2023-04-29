@@ -5,7 +5,6 @@
 
 ##[
 ## TLDR
-- additional info for nimv2 in asyncParV2.nim
 - see runtimeMemory.nim for more on threads, thread synchronization, memory and GC
 - see servers.nim for async server stuff
 - you need the following for any thread related logic

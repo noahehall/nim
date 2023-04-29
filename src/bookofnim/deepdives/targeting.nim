@@ -5,6 +5,7 @@
 ##[
 ## TLDR
 - come back later
+- provide details on using the 4 backends to target specific runtime environments
 
 links
 -----

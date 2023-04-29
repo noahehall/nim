@@ -33,14 +33,15 @@ links
   - [chris: understanding mmap (video)](https://www.youtube.com/watch?v=8hVLcyBkSXY)
   - [memory mgmt intro](https://nimbus.guide/auditors-book/02.2.3_memory_management_gc.html)
   - [advanced compilers self guided online course](https://www.cs.cornell.edu/courses/cs6120/2020fa/self-guided/)
-- high impact
+- high impact docs
   - [backend introduction](https://nim-lang.org/docs/backends.html)
   - [cross compile applications](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
   - [destructors and move symantics](https://nim-lang.org/docs/destructors.html)
   - [gc docs](https://nim-lang.org/1.6.0/gc.html)
   - [memory management](https://nim-lang.org/docs/mm.html)
   - [nim compiler](https://nim-lang.org/docs/nimc.html)
-
+- source
+  - abc
 
 TODOs
 -----
