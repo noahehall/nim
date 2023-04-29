@@ -94,7 +94,7 @@
 
 > diving into the source code
 
-- [source: nim](https://github.com/nim-lang/Nim/tree/devel/lib)
+- [nim](https://github.com/nim-lang/Nim/tree/devel/lib)
   - [impure](https://github.com/nim-lang/Nim/tree/devel/lib/impure)
   - [nimscript](https://github.com/nim-lang/Nim/blob/devel/lib/system/nimscript.nim)
   - [pure](https://github.com/nim-lang/Nim/tree/devel/lib/pure)
@@ -102,20 +102,21 @@
   - [system](https://github.com/nim-lang/Nim/blob/devel/lib/system.nim#L1)
   - [test examples](https://github.com/nim-lang/Nim/tree/devel/tests)
   - [testament](https://github.com/nim-lang/Nim/tree/devel/testament)
-- [source: nimforum SPA](https://github.com/nim-lang/nimforum/tree/master/src)
-- [source: nimble api](https://github.com/nim-lang/nimble/blob/master/src/nimblepkg/nimscriptapi.nim)
-- [source: nimtemplate repo template](https://github.com/treeform/nimtemplate/tree/master/src)
+- [nimforum SPA](https://github.com/nim-lang/nimforum/tree/master/src)
+- [nimble api](https://github.com/nim-lang/nimble/blob/master/src/nimblepkg/nimscriptapi.nim)
+- [nimtemplate repo template](https://github.com/treeform/nimtemplate/tree/master/src)
 
 > how about some books?
 
-- [book: nim in action](https://www.manning.com/books/nim-in-action)
-- [book: computer programming with Nim](https://ssalewski.de/nimprogramming.html)
-- [book: mastering nim](https://nim-lang.org/blog/2022/06/29/mastering-nim.html)
+- [nim in action](https://www.manning.com/books/nim-in-action)
+- [computer programming with Nim](https://ssalewski.de/nimprogramming.html)
+- [mastering nim](https://nim-lang.org/blog/2022/06/29/mastering-nim.html)
   - [excerpt of code examples are available](https://github.com/Araq/mastering_nim/tree/master)
 
 > practicing online
 
-- [exercises: nim on exercism](https://exercism.org/tracks/nim)
+- [ nim on exercism](https://exercism.org/tracks/nim)
+- [nim on codewars](https://www.codewars.com/kata/search/nim)
 
 ## links
 
