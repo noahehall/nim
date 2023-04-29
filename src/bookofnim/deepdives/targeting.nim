@@ -6,6 +6,7 @@
 ## TLDR
 - come back later
 - provide details on using the 4 backends to target specific runtime environments
+- the 4 backends enable you to target [pretty much anything](https://nim-lang.org/docs/distros.html#7)
 
 links
 -----

@@ -4,7 +4,9 @@ discard """
   cmd: "nim e --hints:on -d:testing $options $file"
   joinable: false
   valgrind: true
-  disabled: true # thisDir() reports this file, and not the source file
+  disabled: true
+  # ^ TODO(noah): thisDir() reports this file, and not the source file
+  # ^ try currentSourcePath i think it is
 """
 
 import "bookofnim/backends/targets/shell.nims"
