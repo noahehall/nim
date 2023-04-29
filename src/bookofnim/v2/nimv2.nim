@@ -40,7 +40,11 @@ TODOs
 - [nimtracker](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/pure/nimtracker.nim)
 - [punycode](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/pure/punycode.nim)
 - [smtp](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/pure/smtp.nim)
-  - weird because the smtp.nim.cfg still exists in v2
+- think the db stuff were just moved somewhere else
+  - [mysql](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/wrappers/mysql.nim)
+  - [odbcsql](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/wrappers/odbcsql.nim)
+  - [postgres](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/wrappers/postgres.nim)
+  - [sqlite3](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/wrappers/sqlite3.nim)
 
 ## system modules removed in v2
 - [arithm](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/system/arithm.nim)
