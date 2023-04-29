@@ -51,6 +51,7 @@
 <ul class="simple"><li><a class="reference" id="concurrency-and-parallelism-tldr_toc" href="#concurrency-and-parallelism-tldr">TLDR</a></li>
 <li><a class="reference" id="concurrency-and-parallelism-links_toc" href="#concurrency-and-parallelism-links">links</a></li>
 <li><a class="reference" id="concurrency-and-parallelism-todos_toc" href="#concurrency-and-parallelism-todos">TODOs</a></li>
+<li><a class="reference" id="concurrency-and-parallelism-concurrency-and-parallelism-in-nim_toc" href="#concurrency-and-parallelism-concurrency-and-parallelism-in-nim">concurrency and parallelism in nim</a></li>
 <li><a class="reference" id="concurrency-and-parallelism-threads_toc" href="#concurrency-and-parallelism-threads">threads</a></li>
 <li><a class="reference" id="concurrency-and-parallelism-thread-vs-threadpool_toc" href="#concurrency-and-parallelism-thread-vs-threadpool">thread vs threadpool</a></li>
 <li><a class="reference" id="concurrency-and-parallelism-thread-pragmas_toc" href="#concurrency-and-parallelism-thread-pragmas">thread pragmas</a></li>
@@ -61,7 +62,6 @@
 <li><a class="reference" id="concurrency-and-parallelism-threadpool-consts_toc" href="#concurrency-and-parallelism-threadpool-consts">threadpool consts</a></li>
 <li><a class="reference" id="concurrency-and-parallelism-threadpool-operators_toc" href="#concurrency-and-parallelism-threadpool-operators">threadpool operators</a></li>
 <li><a class="reference" id="concurrency-and-parallelism-threadpool-procs_toc" href="#concurrency-and-parallelism-threadpool-procs">threadpool procs</a></li>
-<li><a class="reference" id="concurrency-and-parallelism-typedthreads_toc" href="#concurrency-and-parallelism-typedthreads">typedthreads</a></li>
 <li><a class="reference" id="concurrency-and-parallelism-channels_toc" href="#concurrency-and-parallelism-channels">channels</a></li>
 <li><a class="reference" id="concurrency-and-parallelism-system-channel-types_toc" href="#concurrency-and-parallelism-system-channel-types">system channel types</a></li>
 <li><a class="reference" id="concurrency-and-parallelism-system-channel-procs_toc" href="#concurrency-and-parallelism-system-channel-procs">system channel procs</a></li>
@@ -176,7 +176,8 @@
     <p class="module-desc">
 <h1><a class="toc-backref" id="concurrency-and-parallelism" href="#concurrency-and-parallelism">concurrency and parallelism</a></h1><p><a class="reference external" href="https://nim-lang.org/docs/asyncstreams.html">bookmark</a></p>
 
-<h2><a class="toc-backref" id="concurrency-and-parallelism-tldr" href="#concurrency-and-parallelism-tldr">TLDR</a></h2><ul class="simple"><li>see runtimeMemory.nim for more on threads, thread synchronization, memory and GC</li>
+<h2><a class="toc-backref" id="concurrency-and-parallelism-tldr" href="#concurrency-and-parallelism-tldr">TLDR</a></h2><ul class="simple"><li>additional info for nimv2 in asyncParV2.nim</li>
+<li>see runtimeMemory.nim for more on threads, thread synchronization, memory and GC</li>
 <li>see servers.nim for async server stuff</li>
 <li>you need the following for any thread related logic<ul class="simple"><li>required: --threads:on switch</li>
 <li>should use: std/locks</li>
@@ -199,31 +200,6 @@
 <li>Thread<a class="reference internal" href="#NotVoid">NotVoid</a>: on thread creation, instance of NotVoid is expected and passed to its actor<ul class="simple"><li>in order to pass multiple params, use something like a tuple/array/etc</li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>1.6.12 vs v2<ul class="simple"><li>system.threads is now std/typedthreads</li>
-<li>system.threads still works in v2, but you should prefer import std/typedthreads<ul class="simple"><li>TODO: maybe you dont even need to import typedthreads, not sure of the difference</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>concurrency vs parallelism in nim<ul class="simple"><li>task: generally a process, e.g. an instance of a program</li>
-<li>thread: child of a parent process, that can execute in parallel to other threads<ul class="simple"><li>threads will spawn child processes to execute their tasks</li>
-<li>main process -&gt; child thread -&gt; child threads process -&gt; execute this task</li>
-</ul>
-</li>
-<li>concurrency: performing tasks without waiting for other tasks is highly evolved<ul class="simple"><li>are CPU bound, i.e. execute on the same thread with timesharing to simulate multitasking</li>
-</ul>
-</li>
-<li>parallelism: performing tasks at the same time is still evolving<ul class="simple"><li>the API is mature and stable, however, the dev teams goals have yet to be fully realized<ul class="simple"><li>e.g. parallel async await might not be available yet (dunno)</li>
-</ul>
-</li>
-<li>parallel tasks are distributed across physical CPUs for true multitasking<ul class="simple"><li>or via simultaneous multithreading (SMT) like intels Hyper-Threading</li>
-</ul>
-</li>
-<li>if all CPUs are taken, timesharing occurs (concurrency semantics)</li>
 </ul>
 </li>
 </ul>
@@ -264,6 +240,25 @@
 <li><a class="reference external" href="https://nim-lang.org/docs/asyncdispatch.html#multiple-async-backend-support">multiple async backend support</a></li>
 <li><a class="reference external" href="https://nim-lang.org/docs/asyncdispatch.html">add more sophisticated asyncdispatch examples</a></li>
 <li>acquiring a lock for a channel is useless, locks only work with guarded vars<ul class="simple"><li>^ update examples</li>
+</ul>
+</li>
+</ul>
+
+<h2><a class="toc-backref" id="concurrency-and-parallelism-concurrency-and-parallelism-in-nim" href="#concurrency-and-parallelism-concurrency-and-parallelism-in-nim">concurrency and parallelism in nim</a></h2><ul class="simple"><li>task: generally a process, e.g. an instance of a program</li>
+<li>thread: child of a parent process, that can execute in parallel to other threads<ul class="simple"><li>threads will spawn child processes to execute their tasks</li>
+<li>main process -&gt; child thread -&gt; child threads process -&gt; execute this task</li>
+</ul>
+</li>
+<li>concurrency: performing tasks without waiting for other tasks is highly evolved<ul class="simple"><li>are CPU bound, i.e. execute on the same thread with timesharing to simulate multitasking</li>
+</ul>
+</li>
+<li>parallelism: performing tasks at the same time is still evolving<ul class="simple"><li>the API is mature and stable, however, the dev teams goals have yet to be fully realized<ul class="simple"><li>e.g. parallel async await might not be available yet</li>
+</ul>
+</li>
+<li>parallel tasks are distributed across physical CPUs for true multitasking<ul class="simple"><li>or via simultaneous multithreading (SMT) like intels Hyper-Threading</li>
+</ul>
+</li>
+<li>if all CPUs are taken, timesharing occurs (concurrency semantics)</li>
 </ul>
 </li>
 </ul>
@@ -355,9 +350,6 @@
 <li>sync spanwed actors; i.e. joinThreads</li>
 <li>unsafeRead a flowvar; blocks until flowvar value is available</li>
 <li>spawnX action on new thread if CPU core ready; else on this thread; blocks produce; prefer spawn</li>
-</ul>
-
-<h2><a class="toc-backref" id="concurrency-and-parallelism-typedthreads" href="#concurrency-and-parallelism-typedthreads">typedthreads</a></h2><ul class="simple"><li>introduced in v2 ? seems to just be the system.threads module (which was deleted?)</li>
 </ul>
 
 <h2><a class="toc-backref" id="concurrency-and-parallelism-channels" href="#concurrency-and-parallelism-channels">channels</a></h2><ul class="simple"><li>designed for system.threads, unstable when used with spawn</li>
@@ -563,9 +555,9 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dt><pre><span class="Identifier">bf</span><span class="Other">:</span> <span class="Identifier">Thread</span><span class="Other">[</span><span class="Identifier">void</span><span class="Other">]</span></pre></dt>
   <dd>
     
-    actor working as bf
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L377" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L377" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L373" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L373" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -574,8 +566,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     FutureVar<a class="reference internal" href="#T">T</a>
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L508" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L508" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L503" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L503" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -583,9 +575,9 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dt><pre><span class="Identifier">gf</span><span class="Other">:</span> <span class="Identifier">Thread</span><span class="Other">[</span><span class="Identifier">void</span><span class="Other">]</span></pre></dt>
   <dd>
     
-    actor working as gf
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L378" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L378" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L374" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L374" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -594,8 +586,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L381" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L381" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L377" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L377" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -604,8 +596,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L379" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L379" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L375" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L375" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -613,9 +605,9 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dt><pre><span class="Identifier">numThreads</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">4</span><span class="Other">,</span> <span class="Identifier">Thread</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">]</span></pre></dt>
   <dd>
     
-    actors working with int data
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L380" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L380" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L376" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L376" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -624,8 +616,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L545" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L545" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L540" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L540" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -634,8 +626,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     a queue for string data
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L403" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L403" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L399" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L399" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -644,8 +636,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L546" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L546" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L541" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L541" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -660,8 +652,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L498" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L498" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L493" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L493" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -670,8 +662,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L550" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L550" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L545" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L545" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -680,8 +672,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     Future<a class="reference internal" href="#T">T</a>
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L505" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L505" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L500" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L500" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -690,8 +682,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     provide a name for debugging
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L506" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L506" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L501" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L501" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -700,8 +692,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L477" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L477" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L472" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L472" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -710,8 +702,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L497" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L497" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L492" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L492" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -721,8 +713,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L507" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L507" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L502" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L502" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -737,8 +729,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L537" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L537" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L532" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L532" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -754,8 +746,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     withLock to acquire, execute &amp; release automatically
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L385" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L385" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L381" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L381" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -768,8 +760,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     handling exeptions the correct way
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L469" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L469" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L464" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L464" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -782,8 +774,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     handling exceptions the wrong way
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L481" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L481" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L476" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L476" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -796,8 +788,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L491" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L491" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L486" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L486" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -809,8 +801,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     action for consuming data recv blocks its channel's scope until msg received
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L413" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L413" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L409" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L409" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -823,8 +815,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     action for consuming data without blocking
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L433" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L433" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L429" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L429" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -836,8 +828,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L407" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L407" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L403" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L403" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -849,8 +841,8 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
   <dd>
     
     action for sending data without blocking
-    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L427" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L427" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/noahehall/nim/tree/develop/src/bookofnim/deepdives/asyncPar.nim#L423" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/noahehall/nim/edit/devel/src/bookofnim/deepdives/asyncPar.nim#L423" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -866,7 +858,7 @@ adjust channel size capping at 1 messageunsuccessful because total msg &gt; chan
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-04-27 10:42:38 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-04-29 03:01:30 UTC</small>
       </div>
     </div>
   </div>
