@@ -1,14 +1,14 @@
 # book of nim
 
+[![bookofnim-ci](https://github.com/noahehall/nim/actions/workflows/ci.yaml/badge.svg?branch=develop)](https://github.com/noahehall/nim/actions/workflows/ci.yaml)
+
 > [bow to the crown](https://www.youtube.com/watch?v=AEtxGOjKx5c) - Heather Dale
 
-- my adventures in nim >= 1.6.12 on ubuntu
+- my adventures in nim V2 (`choosenim #devel`)
 - hopefully a useful cheatsheet for my fellow nOobs
 - contributions welcomed
-- [v2 install steps until v2 is actually released](https://nim-lang.org/blog/2023/03/31/version-20-rc2.html)
-  - [v2 press release](https://nim-lang.org/blog/2022/12/21/version-20-rc.html)
-
-[![bookofnim-ci](https://github.com/noahehall/nim/actions/workflows/ci.yaml/badge.svg?branch=develop)](https://github.com/noahehall/nim/actions/workflows/ci.yaml)
+- [v2 press release](https://nim-lang.org/blog/2022/12/21/version-20-rc.html)
+- [changelog](https://github.com/nim-lang/Nim/blob/9ba07edb2ec7fcdd628cfa7155c4853160ebd5c3/changelog.md)
 
 ## for fullstack appdevs & bizdevops+sec teams
 
@@ -34,18 +34,17 @@
 
 ## recommended ramp up
 
-> You've walked through the tutorials, whats next?
+> tutorials to get you familiar with nim
 
-- if you havent, review these first
-  - [adambard: learn x in y minutes](https://learnxinyminutes.com/docs/nim/)
-  - [flaviut: nim by example](https://nim-by-example.github.io/)
-  - [miran: nim basics](https://narimiran.github.io/nim-basics/)
-  - [status: auditor docs](https://status-im.github.io/nim-style-guide/00_introduction.html)
-  - [official nim tutorial](https://nim-lang.org/docs/tut1.html)
-  - [official nim wiki](https://github.com/nim-lang/Nim/wiki)
-  - [cheatsheet: reStructured Text](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
+- [adambard: learn x in y minutes](https://learnxinyminutes.com/docs/nim/)
+- [flaviut: nim by example](https://nim-by-example.github.io/)
+- [miran: nim basics](https://narimiran.github.io/nim-basics/)
+- [status: auditor docs](https://status-im.github.io/nim-style-guide/00_introduction.html)
+- [official nim tutorial](https://nim-lang.org/docs/tut1.html)
+- [official nim wiki](https://github.com/nim-lang/Nim/wiki)
+- [cheatsheet: reStructured Text](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
 
-> You've finally finished the tutorials, whats next?
+> indepth nim syntax and API
 
 - this repo serves two purposes for programmers considering nim as their Nth language:
   - [primary: source code](/src/bookofnim.nim) you can execute while reading
@@ -71,48 +70,53 @@
       - [operating systems and i/o](/src/bookofnim/deepdives/osIo.nim)
     - round 2
       - [testing with testament](/src/bookofnim/deepdives/tests.nim)
-  - 3: concurrency, parallelism, servers and databases
+  - 3: concurrency, parallelism, servers
     - round 1
       - [async and threads](/src/bookofnim/deepdives/asyncPar.nim)
     - round 2
       - [web and application servers](/src/bookofnim/deepdives/servers.nim)
-      - [databases](/src/bookofnim/deepdives/dbs.nim)
-  - 4: compiling, packaging, and memory management
+  - 4: compiler, packages, and memory management
     - round 1
       - [pragmas and effects](/src/bookofnim/deepdives/pragmasEffects.nim),
-      - [managing memory at runtime](src/bookofnim/deepdives/runtimeMemory.nim)
+      - [managing memory at runtime](src/bookofnim/deepdives/memoryRuntime.nim)
     - round 2
-      - [packaging apps and app configuration](/src/bookofnim/backends/packaging.nim)
-      - [compiling and garbage collectors](/src/bookofnim/backends/nimcMemory.nim)
-      - [targeting runtime environments](/src/bookofnim/backends/targeting.nim)
-      - [specific runtime targets](/src/bookofnim/backends/targets/)
+      - [packaging and configuring nim apps](/src/bookofnim/deepdives/packaging.nim)
+      - [compiling and garbage collectors](/src/bookofnim/deepdives/memoryCompiler.nim)
+      - [targeting runtime environments](/src/bookofnim/deepdives/targeting.nim)
+      - [four backends](/src/bookofnim/backends) with [unlimited targets](/src/bookofnim/backends/targets/)
   - 5: filters, metaprogramming and interfacing with other languages
     - round 1
       - [filters](/src/bookofnim/deepdives/filters.nim)
       - [templates and macros](/src/bookofnim/deepdives/templateMacros.nim)
     - round 2
       - [foreign function interface](/src/bookofnim/deepdives/ffi.nim)
-  - 6: [community packages](./community/README.md)
+  - 6: [opensource](/src/bookofnim/opensource/opensource.nim)
 
-> You can read and write nim, whats next?
+> diving into the source code
 
-- diving into the source code, books, and additional exercises
-  - [source: nim](https://github.com/nim-lang/Nim/tree/devel/lib)
-    - [impure](https://github.com/nim-lang/Nim/tree/devel/lib/impure)
-    - [nimscript](https://github.com/nim-lang/Nim/blob/devel/lib/system/nimscript.nim)
-    - [pure](https://github.com/nim-lang/Nim/tree/devel/lib/pure)
-    - [standard](https://github.com/nim-lang/Nim/tree/devel/lib/std)
-    - [system](https://github.com/nim-lang/Nim/blob/devel/lib/system.nim#L1)
-    - [test examples](https://github.com/nim-lang/Nim/tree/devel/tests)
-    - [testament](https://github.com/nim-lang/Nim/tree/devel/testament)
-  - [source: nimforum SPA](https://github.com/nim-lang/nimforum/tree/master/src)
-  - [source: nimble api](https://github.com/nim-lang/nimble/blob/master/src/nimblepkg/nimscriptapi.nim)
-  - [source: nimtemplate repo template](https://github.com/treeform/nimtemplate/tree/master/src)
-  - [book: nim in action](https://www.manning.com/books/nim-in-action)
-  - [book: computer programming with Nim](https://ssalewski.de/nimprogramming.html)
-  - [book: mastering nim](https://nim-lang.org/blog/2022/06/29/mastering-nim.html)
-    - [excerpt of code examples are available](https://github.com/Araq/mastering_nim/tree/master)
-  - [exercises: nim on exercism](https://exercism.org/tracks/nim)
+- [nim](https://github.com/nim-lang/Nim/tree/devel/lib)
+  - [impure](https://github.com/nim-lang/Nim/tree/devel/lib/impure)
+  - [nimscript](https://github.com/nim-lang/Nim/blob/devel/lib/system/nimscript.nim)
+  - [pure](https://github.com/nim-lang/Nim/tree/devel/lib/pure)
+  - [standard](https://github.com/nim-lang/Nim/tree/devel/lib/std)
+  - [system](https://github.com/nim-lang/Nim/blob/devel/lib/system.nim#L1)
+  - [test examples](https://github.com/nim-lang/Nim/tree/devel/tests)
+  - [testament](https://github.com/nim-lang/Nim/tree/devel/testament)
+- [nimforum SPA](https://github.com/nim-lang/nimforum/tree/master/src)
+- [nimble api](https://github.com/nim-lang/nimble/blob/master/src/nimblepkg/nimscriptapi.nim)
+- [nimtemplate repo template](https://github.com/treeform/nimtemplate/tree/master/src)
+
+> how about some books?
+
+- [nim in action](https://www.manning.com/books/nim-in-action)
+- [computer programming with Nim](https://ssalewski.de/nimprogramming.html)
+- [mastering nim](https://nim-lang.org/blog/2022/06/29/mastering-nim.html)
+  - [excerpt of code examples are available](https://github.com/Araq/mastering_nim/tree/master)
+
+> practicing online
+
+- [ nim on exercism](https://exercism.org/tracks/nim)
+- [nim on codewars](https://www.codewars.com/kata/search/nim)
 
 ## links
 

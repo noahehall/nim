@@ -5,6 +5,7 @@
 ##[
 ## TLDR
 - migrating to V2
+  - [read this changelog](https://github.com/nim-lang/Nim/blob/9ba07edb2ec7fcdd628cfa7155c4853160ebd5c3/changelog.md)
   - system modules moved to std library
     - assertions > std/assertions
     - atomics > std/sysatomics
@@ -15,9 +16,12 @@
 
 TODOs
 -----
+- summary the stuff listed on the changelog (see above)
+  - then you can delete most of the stuff here
 - see if theres an alternative to include for supporting nimv2
   - check templateMacrosv2.outparams
 - figure out where the impure/db_ modules moved to
+  - moved to nimble packages
 - verify the TLDR about sys modules moved to std
   - ensure the source code is relatively the same and they arent a totally new module
 - aggregate a big list of changes in this file
@@ -40,7 +44,11 @@ TODOs
 - [nimtracker](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/pure/nimtracker.nim)
 - [punycode](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/pure/punycode.nim)
 - [smtp](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/pure/smtp.nim)
-  - weird because the smtp.nim.cfg still exists in v2
+- think the db stuff were just moved somewhere else
+  - [mysql](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/wrappers/mysql.nim)
+  - [odbcsql](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/wrappers/odbcsql.nim)
+  - [postgres](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/wrappers/postgres.nim)
+  - [sqlite3](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/wrappers/sqlite3.nim)
 
 ## system modules removed in v2
 - [arithm](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/system/arithm.nim)
@@ -55,13 +63,13 @@ TODOs
 ]##
 
 {.push warning[UnusedImport]:off .}
-
-import
-  asyncParV2,
-  dataWranglingV2,
-  dbsV2,
-  exceptionHandlingV2,
-  osIoV2,
-  stringsV2,
-  systemV2,
-  templateMacrosV2
+when (NimMajor, NimMinor, NimPatch) >= (1,9,3):
+  include
+    asyncParV2,
+    dataWranglingV2,
+    dbsV2,
+    exceptionHandlingV2,
+    osIoV2,
+    stringsV2,
+    systemV2,
+    templateMacrosV2

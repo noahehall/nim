@@ -26,10 +26,10 @@ task copyGitHooks, "copies .github/hooks to .git/hooks":
   let toDir = currentSourcePath() / ".." / ".git/hooks"
   let fromDir = currentSourcePath() / ".." / ".github/hooks"
   for kind, path in fromDir.walkDir:
-    # git hooks dont have file extensions
-    if kind == pcFile and path.searchExtPos == -1:
+    if kind == pcFile and path[(path.len - 3) .. ^1] == ".sh":
       echo "installing git hook: ", path.lastPathPart
-      path.cpFile toDir / path.lastPathPart
+      # git hooks dont have file extensions
+      path.cpFile toDir / path.lastPathPart[0 .. ^4]
 
 
 task postclone, "executes post-repo-clone tasks":

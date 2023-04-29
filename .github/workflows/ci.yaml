@@ -26,10 +26,10 @@ jobs:
     timeout-minutes: 30
 
     strategy:
-      fail-fast: false # fail workflow after all jobs, not first error
+      fail-fast: false # fail workflow after non dependent jobs, not first error
       matrix:
         os: [ubuntu-latest]
-        nimv: [1.6.12, "#devel"]
+        nimv: ["#devel"]
 
     steps:
       - name: Checkout
