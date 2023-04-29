@@ -1,7 +1,7 @@
 ##
 ## servers
 ## =======
-## [bookmark](https://nim-lang.org/docs/asynchttpserver.html#acceptRequest%2CAsyncHttpServer%2Cproc%28Request%29)
+## [bookmark](https://nim-lang.github.io/Nim/asynchttpserver.html#acceptRequest%2CAsyncHttpServer%2Cproc%28Request%29)
 
 ##[
 ## TLDR
@@ -45,17 +45,17 @@
 links
 -----
 - high impact
-  - [cookies](https://nim-lang.org/docs/cookies.html)
-  - [ftp client (async)](https://nim-lang.org/docs/asyncftpclient.html)
-  - [http a/sync client](https://nim-lang.org/docs/httpclient.html)
-  - [http server (async)](https://nim-lang.org/docs/asynchttpserver.html)
-  - [socket server (async)](https://nim-lang.org/docs/asyncnet.html)
-  - [socket server](https://nim-lang.org/docs/net.html)
-  - [uri interface](https://nim-lang.org/docs/uri.html)
+  - [cookies](https://nim-lang.github.io/Nim/cookies.html)
+  - [ftp client (async)](https://nim-lang.github.io/Nim/asyncftpclient.html)
+  - [http a/sync client](https://nim-lang.github.io/Nim/httpclient.html)
+  - [http server (async)](https://nim-lang.github.io/Nim/asynchttpserver.html)
+  - [socket server (async)](https://nim-lang.github.io/Nim/asyncnet.html)
+  - [socket server](https://nim-lang.github.io/Nim/net.html)
+  - [uri interface](https://nim-lang.github.io/Nim/uri.html)
 - niche
-  - [email cilent](https://nim-lang.org/docs/smtp.html)
-  - [shared a/sync http primitives](https://nim-lang.org/docs/httpcore.html)
-  - [low level native socket interface](https://nim-lang.org/docs/nativesockets.html)
+  - [email cilent](https://nim-lang.github.io/Nim/smtp.html)
+  - [shared a/sync http primitives](https://nim-lang.github.io/Nim/httpcore.html)
+  - [low level native socket interface](https://nim-lang.github.io/Nim/nativesockets.html)
 
 
 TODOs
@@ -127,7 +127,7 @@ httpclient procs
 - body of a response
 - close connects held by an http client
 - code corronspding to a response status
-- contentLength from response header, throws if not an int
+- contentLength from response header, defaults to -1
 - contentType from response header
 - getSocket for details about current connection
 - lastModified from response header
@@ -166,6 +166,7 @@ asynchttpserver procs
 - acceptRequest
 ]##
 
+{.push hint[XDeclaredButNotUsed]:off .}
 
 import std/[strformat, strutils, json]
 
@@ -188,45 +189,45 @@ echo "############################ httpclient sync"
 
 let fetch = newHttpClient(timeout = timeout)
 
-echo fmt"{fetch.getContent getmegood=}"
-echo fmt"{fetch.get(getmegood).body=}"
-echo fmt"{fetch.get(getmegood).headers=}"
-echo fmt"{fetch.get(getmegood).version=}"
-echo fmt"{fetch.get(getmegood).status=}"
-echo fmt"{fetch.get(getmebad).status=}"
+# echo fmt"{fetch.getContent getmegood=}" # TODO(noah): v2 / config.nims: Uninit
+# echo fmt"{fetch.get(getmegood).body=}"
+# echo fmt"{fetch.get(getmegood).headers=}"
+# echo fmt"{fetch.get(getmegood).version=}"
+# echo fmt"{fetch.get(getmegood).status=}"
+# echo fmt"{fetch.get(getmebad).status=}"
 
 fetch.headers = newHttpHeaders({ "Content-Type": "application/json" })
 echo fmt"{fetch.postContent postme, body = $data=}"
 
-fetch.headers = newHttpHeaders({ "X-Vault-Token": "abc-123-321-cba" })
-try: echo fmt"{fetch.getContent getmetimeout=}" except CatchableError: echo "gotta catchem all!"
+# fetch.headers = newHttpHeaders({ "X-Vault-Token": "abc-123-321-cba" })
+# try: echo fmt"{fetch.getContent getmetimeout=}" except CatchableError: echo "gotta catchem all!"
 
 
 
-fetch.close
+# fetch.close
 
 echo "############################ httpclient async"
-import std/[asyncdispatch, options] # httpclient already imported above
+# import std/[asyncdispatch, options] # httpclient already imported above
 
-let afetch = newAsyncHttpClient()
+# let afetch = newAsyncHttpClient()
 
-proc agetContent(self: AsyncHttpClient, url: string): Future[Option[string]] {.async.} =
-  ## wraps async calls to provide await for AsyncHttpClient
-  let res = self.getContent url
-  yield res;
-  result = if res.failed: none string else: some res.read
+# proc agetContent(self: AsyncHttpClient, url: string): Future[Option[string]] {.async.} =
+#   ## wraps async calls to provide await for AsyncHttpClient
+#   let res = self.getContent url
+#   yield res;
+#   result = if res.failed: none string else: some res.read
 
 
-echo fmt"{waitFor afetch.agetContent getmegood=}"
+# echo fmt"{waitFor afetch.agetContent getmegood=}"
 
 
 # FYI: this cause asyncnet to throw on v2
 # echo fmt"{waitFor withTimeout(afetch.agetContent(getmegood), 1)=}"
 # you should instead yield all async requests
-proc fetchWithTimeout: Future[void] {.async.} =
-  let aResponse = withTimeout(afetch.agetContent(getmegood), 1)
-  yield aResponse
-  echo if aResponse.failed: "failed with error" else: fmt"request success: {aResponse.read=}"
-waitFor fetchWithTimeout()
+# proc fetchWithTimeout: Future[void] {.async.} =
+#   let aResponse = withTimeout(afetch.agetContent(getmegood), 1)
+#   yield aResponse
+#   echo if aResponse.failed: "failed with error" else: fmt"request success: {aResponse.read=}"
+# waitFor fetchWithTimeout()
 
-afetch.close
+# afetch.close

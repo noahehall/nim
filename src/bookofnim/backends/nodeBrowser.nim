@@ -22,12 +22,12 @@ TODOs
 links
 -----
 
-- https://nim-lang.org/docs/dom.html (js)
-- https://nim-lang.org/docs/asyncjs.html (js)
-- https://nim-lang.org/docs/jsbigints.html (js)
-- https://nim-lang.org/docs/jsconsole.html (js)
-- https://nim-lang.org/docs/jscore.html (js)
-- https://nim-lang.org/docs/jsffi.html (js)
+- https://nim-lang.github.io/Nim/dom.html (js)
+- https://nim-lang.github.io/Nim/asyncjs.html (js)
+- https://nim-lang.github.io/Nim/jsbigints.html (js)
+- https://nim-lang.github.io/Nim/jsconsole.html (js)
+- https://nim-lang.github.io/Nim/jscore.html (js)
+- https://nim-lang.github.io/Nim/jsffi.html (js)
 - [fusion js sets](https://nim-lang.github.io/fusion/src/fusion/js/jssets.html)
 - [fusion js xmlhttprequest](https://nim-lang.github.io/fusion/src/fusion/js/jsxmlhttprequest.html)
 - [fusion js xmlserializer](https://nim-lang.github.io/fusion/src/fusion/js/jsxmlserializer.html)

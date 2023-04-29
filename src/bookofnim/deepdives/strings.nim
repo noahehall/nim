@@ -1,7 +1,7 @@
 ##
 ## strings
 ## =======
-## [bookmark](https://nim-lang.org/docs/uri.html)
+## [bookmark](https://nim-lang.github.io/Nim/uri.html)
 
 ##[
 ## TLDR
@@ -12,20 +12,20 @@
 links
 -----
 - high impact
-  - [str format](https://nim-lang.org/docs/strformat.html)
-  - [str utils](https://nim-lang.org/docs/strutils.html)
-  - [uri parsing](https://nim-lang.org/docs/uri.html)
+  - [str format](https://nim-lang.github.io/Nim/strformat.html)
+  - [str utils](https://nim-lang.github.io/Nim/strutils.html)
+  - [uri parsing](https://nim-lang.github.io/Nim/uri.html)
 - niche
-  - [cstr utils](https://nim-lang.org/docs/cstrutils.html)
-  - [ropes (very long strings)](https://nim-lang.org/docs/ropes.html)
-  - [str (high perf) utils](https://nim-lang.org/docs/strbasics.html)
-  - [str misc](https://nim-lang.org/docs/strmisc.html)
-  - [unicode](https://nim-lang.org/docs/unicode.html)
-  - [unicode decode](https://nim-lang.org/docs/unidecode.html)
-  - [word wrap](https://nim-lang.org/docs/wordwrap.html)
-  - [encodings](https://nim-lang.org/docs/encodings.html)
-  - [edit distance](https://nim-lang.org/docs/editdistance.html)
-  - [punycode](https://nim-lang.org/docs/punycode.html)
+  - [cstr utils](https://nim-lang.github.io/Nim/cstrutils.html)
+  - [ropes (very long strings)](https://nim-lang.github.io/Nim/ropes.html)
+  - [str (high perf) utils](https://nim-lang.github.io/Nim/strbasics.html)
+  - [str misc](https://nim-lang.github.io/Nim/strmisc.html)
+  - [unicode](https://nim-lang.github.io/Nim/unicode.html)
+  - [unicode decode](https://nim-lang.github.io/Nim/unidecode.html)
+  - [word wrap](https://nim-lang.github.io/Nim/wordwrap.html)
+  - [encodings](https://nim-lang.github.io/Nim/encodings.html)
+  - [edit distance](https://nim-lang.github.io/Nim/editdistance.html)
+  - [punycode](https://nim-lang.github.io/Nim/punycode.html)
 
 
 TODOs
@@ -48,17 +48,17 @@ TODOs
 ## strformat
 - simply importing strformat enhances the system & operator
 - doesnt interprate literal escapes like & does e.g. fmt"{str1}\n\n\n"
-- escape works with these [char](https://nim-lang.org/docs/manual.html#lexical-analysis-character-literals) and [string](https://nim-lang.org/docs/manual.html#lexical-analysis-string-literals) literals
+- escape works with these [char](https://nim-lang.github.io/Nim/manual.html#lexical-analysis-character-literals) and [string](https://nim-lang.github.io/Nim/manual.html#lexical-analysis-string-literals) literals
   - for others use a hex/decimal char/string
   - if an API returns a string regex containing `\s` im sure theres something in regex.nim that can help
 - fmt syntax: [[fill]align][sign][#][0][minimumwidth][.precision][type]
   - 3 align flags: > < ^
   - 3 sign flags for numbers: + - (space)
   - additional flags exist specifically for integers & floats
-- [fmt floats section is interesting](https://nim-lang.org/docs/strformat.html#formatting-floats)
-  - [as is fmt expressions](https://nim-lang.org/docs/strformat.html#expressions)
-  - [shiz gets crazy](https://nim-lang.org/docs/strformat.html#implementation-details)
-  - [flags for fmt](https://nim-lang.org/docs/strformat.html#standard-format-specifiers-for-strings-integers-and-floats)
+- [fmt floats section is interesting](https://nim-lang.github.io/Nim/strformat.html#formatting-floats)
+  - [as is fmt expressions](https://nim-lang.github.io/Nim/strformat.html#expressions)
+  - [shiz gets crazy](https://nim-lang.github.io/Nim/strformat.html#implementation-details)
+  - [flags for fmt](https://nim-lang.github.io/Nim/strformat.html#standard-format-specifiers-for-strings-integers-and-floats)
 
 ## strutils
 - AllChars (and related) useful for creating inverted sets to check for invalid chars in a string
@@ -66,7 +66,7 @@ TODOs
 - stripLineEnd is useful conjunction with osproc.execCmdEx
 - skipped type conversion procs; check skipped for the ones we skipped
 - the split like procs also have an iterator syntax that accepts a block
-- [tokenize looks interesting](https://nim-lang.org/docs/strutils.html#tokenize.i%2Cstring%2Cset%5Bchar%5D)
+- [tokenize looks interesting](https://nim-lang.github.io/Nim/strutils.html#tokenize.i%2Cstring%2Cset%5Bchar%5D)
 
 ## string formatters
 - strutils: "$1 $2" % ["first, "second"]

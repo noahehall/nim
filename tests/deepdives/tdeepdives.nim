@@ -3,6 +3,7 @@ discard """
   valgrind: true
 """
 
+# TODO(noah): we broke this apart because theres some memory leaks in certain files
 import bookofnim / deepdives / [
     collections, ## non list/queues, e.g. arrays and seqs
     containers,  ## tuples, tables and object

@@ -1,21 +1,15 @@
 ##
 ## routines
 ## ========
-## [bookmark](https://nim-lang.org/docs/manual_experimental.html#do-notation)
-# check how do is used in this screenshot: https://forum.nim-lang.org/t/9961
+## [bookmark](https://nim-lang.github.io/Nim/manual_experimental.html#do-notation)
 
 ##[
 ## TLDR
 - routine: a symbol of kind proc, func, method, iterator, macro, template, converter
   - IMO this definition should also include tasks
-  - where to find which
-    - converters in globalVariables
-    - iterators in loopsIterators
-    - lambdas in sugar
-    - std & nimscript tasks in packaging
-    - templates in templateMacros
-    - other routine types are in this file
-  - routine exception tracking is in pragmasEffects
+- callback parameters
+  - must be annoted with `{ .effectsOf consumerFnName .}`
+  - e.g. a sort fn thats always used with cmp function
 
 gotchas
 -------
@@ -29,14 +23,25 @@ links
 
 TODOs
 -----
-- [offsetOf](https://nim-lang.org/docs/system.html#offsetOf.t%2Ctypedesc%5BT%5D%2Cuntyped)
-- [rangeCheck(cond)](https://nim-lang.org/docs/system.html#rangeCheck.t)
-- [forward directions, couldnt get it to compile](https://nim-lang.org/docs/manual.html#var-return-type-future-directions)
+- [offsetOf](https://nim-lang.github.io/Nim/system.html#offsetOf.t%2Ctypedesc%5BT%5D%2Cuntyped)
+- [forward directions, couldnt get it to compile](https://nim-lang.github.io/Nim/manual.html#var-return-type-future-directions)
 - [read the status docs on this one](https://nimbus.guide/auditors-book/02.1.4_closure_iterators.html)
   - something to do with long lived ref objects & unreclaimable memory
+- [using parameter statements](https://nim-lang.github.io/Nim/manual.html#statements-and-expressions-using-statement)
+- [semi colins for visual distinction](https://nim-lang.github.io/Nim/manual.html#procedures)
+  - required when using using parameters
+- [procedure type pragmas](https://nim-lang.github.io/Nim/manual.html#types-procedural-type)
+  - nimcall, closure, stdcall, cdecl, safecall, inline, fastcall, thiscall, syscall, noconv
 
+## routines
 
-## procedures
+non overloadable routines
+-------------------------
+- declared, defined, definedInScope, compiles, sizeof,
+- is, shallowCopy, getAst, astToStr, spawn, procCall
+
+procedures
+----------
 - returning things: (cant contain a yield statement)
   - use return keyword for early returns
   - result = sumExpression: enables return value optimization & copy elision
@@ -45,36 +50,51 @@ TODOs
 - args passed to procs are eagerly evaluated
   - see templates for lazy evaluation
 
-## openArray
-- openArray[T] implemented as a pointer to the array data and a length field
-- only used in proc signatures for accepting an array of any length
-  - cant be used to with multidimensional array arguments
-- always index with int and starting at 0
-- array args must match the param base type, index type is ignored
-- arrays and seqs are implicity converted for openArray params
-
-## varargs
-- enables passing a variable number of args to a proc param
-- the args are converted to an array if the param is the last param
-
-## funcs
-- alias for {. noSideEffect .}
+funcs
+-----
+- alias for `proc blah() {. noSideEffect .}: ...`
 - compiler throws error if reading/writing to global variables
   - i.e. any var not a parameter/local
 - allocating a seq/string does not throw an err
 
-## closures
-- can be created with proc expressions or do notation
+closures
+--------
+- can be created with proc expressions or do notation (see sugar)
 
-## anonymous procs
+anonymous procs
+---------------
 - dont have a name and surrounded by paranthesis
 
+## special routine parameters
+
+openArray[T, `$`]
+-----------------
+- implemented as a pointer to the array data and a length field
+- only used in proc signatures for accepting an array of any length
+  - cant be used to with multidimensional array arguments
+  - can set any proc as the `$` for transformation
+- always index with int and starting at 0
+- array args must match the param base type, index type is ignored
+- arrays and seqs are implicity converted for openArray params
+
+varargs[T]
+----------
+- enables passing a variable number of args to a proc param
+- the args are converted to an array if the param is the last param
+
+var parameters and return types
+-------------------------------
+- prefix a parameter/return type with `var` in signature enables mutations
+  - in param: proc can modify
+  - in return: consumer can modify
+- are not nevessary for efficient parameter passing
 ]##
+
 {.push hint[XDeclaredButNotUsed]: off .}
 echo "############################ procedures"
 
 proc pubfn*(): void =
-  echo "the * makes this fn public"
+  echo "the * makes this fn importable"
 
 # params with defaults dont requre a type
 proc eko(s = "Default value"): void =
@@ -112,7 +132,7 @@ proc passedByReference(yy: var string): void =
 passedByReference zz
 
 proc redurn(this: string): string =
-  result &= this
+  result = this
 debugEcho redurn "Wtf is result value"
 
 # you can use explicitly return aswell
@@ -124,11 +144,11 @@ proc mutate(this: var int): int =
 var num7 = 5
 debugEcho mutate num7, num7.mutate, mutate(num7)
 
+
 # you can return a var indicating the caller can mutate the return
 var gg = 0
-proc writeAccessToG(): var int =
-  result = gg
-writeAccessToG() = 6
+proc writeAccessToG(x: var int): var int =x
+writeAccessToG(gg) = 6
 echo "g == 6 ", gg == 6
 
 # noSideEffect pragma: statically ensures there are no side effects
@@ -167,7 +187,7 @@ if `==`( `+`(3, 4), 7): echo "invoking operator as proc looks weird"
 # calling syntax impacts type compatability
 # ^ I cant seem to get this to throw an error
 # ^ read the docs (manual) and figure this out
-# ^ @see https://nim-lang.org/docs/manual.html#types-procedural-type
+# ^ @see https://nim-lang.github.io/Nim/manual.html#types-procedural-type
 proc greet(name: string): string =
   "Hello, " & name & "!"
 proc bye(name: string): string =
@@ -226,9 +246,6 @@ echo "############################ closures"
 proc runFn(a: string, fn: proc(x: string): string): string =
   fn a
 echo runFn("with this string", proc (x: string): string = "received: " & x)
-
-# closures with do notation
-echo runFn("with another string") do (x: string) -> string: "another: " & x
 
 
 # anonymous proc

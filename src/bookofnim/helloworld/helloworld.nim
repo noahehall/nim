@@ -1,29 +1,24 @@
 ##
 ## Hello world: my name is nim #version-2-0
 ## ========================================
-## [bookmark](https://nim-lang.org/docs/manual.html#special-types)
+## [bookmark](https://nim-lang.github.io/Nim/manual.html#special-types)
 
 ##[
 ## TLDR
-- only uses the implicitly imported system
-  - dont import (system, threads, channel) directly, theres some compiler magic to makem work
-  - threads, channels, templates, macros, effects, pragmas, os and io are in deepdives
 - newer nim versions seems to be getting more strict/better at catching programmer errors
-- you should expect everything in nim is heavily overloaded
-  - hence only base syntax is shown and shouldnt be considered comprehensive in any form
+- you can expect everything in nim is `almost` always
+  - heavily overloaded
+  - can be used as an expression
+
 
 
 links
 -----
-- [system module](https://nim-lang.org/docs/system.html)
-- [api design](https://nim-lang.org/docs/apis.html)
-- [manual](https://nim-lang.org/docs/manual.html)
+- [system module](https://nim-lang.github.io/Nim/system.html)
+- [api design](https://nim-lang.github.io/Nim/apis.html)
+- [manual](https://nim-lang.github.io/Nim/manual.html)
 - [tools dir](https://github.com/nim-lang/Nim/tree/devel/tools)
 - [status auditor docs](https://status-im.github.io/nim-style-guide/00_introduction.html)
-
-TODOs
------
-- nim in action: copy all your notes starting from pg 40
 
 ## std library
 - pure libraries: do not depend on external *.dll/lib*.so binary
@@ -117,6 +112,9 @@ my preferences
   - when module A imports symbol B that exists in C and D
   - procs/iterators are overloaded, so no ambiguity
   - everything else must be qualified (c.b | d.b) if signatures are ambiguous
+- module pseudo directories
+  - std: e.g. `import std/blah` imports from nims library to avoid identically named modules
+  - pkg: e.g. `import pkg/blah` imports nimble packages, but technically just the opposite of `std`
 
 pure modules
 ------------
@@ -140,9 +138,11 @@ import
 ------
 - top-level symbols marked * from another module
 - are only allowed at the top level
+- can except to limit whats imported
+  - the except list is not checked, allowing you to import future incompatible versions of a module
 - looks in the current dir relative to the imported file and uses the first match
 - else traverses up the nim PATH for the first match
-  - [search path docs](https://nim-lang.org/docs/nimc.html#compiler-usage-search-path-handling)
+  - [search path docs](https://nim-lang.github.io/Nim/nimc.html#compiler-usage-search-path-handling)
   .. code-block:: Nim
     import math # everything except private symbols
     import foo {.all.}  # import everything
@@ -240,6 +240,7 @@ keywords
   - its idiomatic nim to mutate it
 - discard
   - use a proc for its side effects but ignore its return value
+  - or prefix a triple quoted string to fake a comment
 
 statements
 ----------
@@ -268,7 +269,7 @@ visibility
 - force block scoped vars to global via {.global.} pragma
 ]##
 
-{.push warning[UnusedImport]:off, hint[GlobalVar]:off .}
+{.push warning[UnusedImport]:off .}
 
 import modules / [
   blocks, ## block statements,
@@ -278,7 +279,7 @@ import modules / [
   routines, ## main types of procs
   structuredCollectionsOrdinals, ## ordered and collections of items
   structuredContainers, ## objects with named fields
-  traitsAdt, ## type traints and algebraic data types
+  typeSystem, ## classes, traits, adts, etc
   typeSimple, ## basic types
   userDefinedTypes, ## custom types with objects, tuples and enums
   variableGlobals, ## creating variables and globals

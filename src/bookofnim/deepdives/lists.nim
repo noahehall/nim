@@ -1,7 +1,7 @@
 ##
 ## lists
 ## =====
-## [bookmark](https://nim-lang.org/docs/lists.html)
+## [bookmark](https://nim-lang.github.io/Nim/lists.html)
 
 ##[
 ## TLDR
@@ -10,11 +10,11 @@
 links
 -----
 - high impact
-  - [singly/doubly linked list/rings](https://nim-lang.org/docs/lists.html)
-  - [double ended queue](https://nim-lang.org/docs/deques.html)
-  - [heapqueue](https://nim-lang.org/docs/heapqueue.html)
+  - [singly/doubly linked list/rings](https://nim-lang.github.io/Nim/lists.html)
+  - [double ended queue](https://nim-lang.github.io/Nim/deques.html)
+  - [heapqueue](https://nim-lang.github.io/Nim/heapqueue.html)
 - niche
-  - [shared list](https://nim-lang.org/docs/sharedlist.html)
+  - [shared list](https://nim-lang.github.io/Nim/sharedlist.html)
 
 
 list procs

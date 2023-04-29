@@ -1,7 +1,7 @@
 ##
 ## collections deep dive
 ## =====================
-## [bookmark](https://nim-lang.org/docs/packedsets.html)
+## [bookmark](https://nim-lang.github.io/Nim/packedsets.html)
 
 ##[
 ## TLDR
@@ -14,16 +14,16 @@
 - other
   - [peter: option handling in nim](https://peterme.net/optional-value-handling-in-nim.html)
 - high impact
-  - [critbits sorted strings](https://nim-lang.org/docs/critbits.html)
-  - [int sets](https://nim-lang.org/docs/intsets.html)
-  - [options](https://nim-lang.org/docs/options.html)
-  - [ordered +/ hash sets](https://nim-lang.org/docs/sets.html)
-  - [packed (sparse bit) sets](https://nim-lang.org/docs/packedsets.html)
-  - [seq (seq, strings, array) utils](https://nim-lang.org/docs/sequtils.html)
-  - [set utils](https://nim-lang.org/docs/setutils.html)
+  - [critbits sorted strings](https://nim-lang.github.io/Nim/critbits.html)
+  - [int sets](https://nim-lang.github.io/Nim/intsets.html)
+  - [options](https://nim-lang.github.io/Nim/options.html)
+  - [ordered +/ hash sets](https://nim-lang.github.io/Nim/sets.html)
+  - [packed (sparse bit) sets](https://nim-lang.github.io/Nim/packedsets.html)
+  - [seq (seq, strings, array) utils](https://nim-lang.github.io/Nim/sequtils.html)
+  - [set utils](https://nim-lang.github.io/Nim/setutils.html)
 - niche
   - [fusion pointers](https://nim-lang.github.io/fusion/src/fusion/pointers.html)
-  - [fixed length runtime arrays](https://nim-lang.org/docs/rtarrays.html)
+  - [fixed length runtime arrays](https://nim-lang.github.io/Nim/rtarrays.html)
 
 ## seqs
 - toSeq(blah) transforms any iterable into a sequence
@@ -97,7 +97,7 @@ options operators
 - == true if both are none/equal values
 ]##
 
-{.push hint[XDeclaredButNotUsed]: off .}
+{.push hint[XDeclaredButNotUsed]:off, warning[UnusedImport]:off .}
 
 import std/[sugar, strformat]
 
@@ -146,25 +146,27 @@ proc echoMutated(): void = echo "seq: ", $mutable, "str: ", $mutated
 
 echoMutated()
 
-mutable.apply x => x * x; echoMutated() ## \
-  ## mutates its operand
-mutable.apply x => mutated.addInt x; echoMutated() ## \
-  ## mutates the string instead
-mutable.delete 2..3; echoMutated() ## \
-  ## inclusive from..to
-mutable.insert @[3,2,1], 1; echoMutated() ## \
-  ## default is to unshift at 0 and can be omitted
+mutable.apply x => x * x; echoMutated()
+  # mutates its operand
+mutable.apply x => mutated.addInt x; echoMutated()
+  # mutates the string instead
+mutable.delete 2..3; echoMutated()
+  # inclusive from..to
+mutable.insert @[3,2,1], 1; echoMutated()
+  # default is to unshift at 0 and can be omitted
 mutable.keepIf x => x > 0; echoMutated()
 
 echo "############################ sets"
 import std/sets
 
 const
-  stringSet1 = toHashSet ["ay", "bee", "see", "dee"] ## string|array|seq
-  stringSet2 = toHashSet ["dee","ee", "ehf", "gee", "aych"]
   floatSet = toOrderedSet [1.0, 3.0, 2.0, 4.0]
+  stringSet2 = toHashSet ["dee","ee", "ehf", "gee", "aych"]
+  stringSet1 = toHashSet(["ay", "bee", "see", "dee"])
+    ## string|array|seq < figure out which of the above this belongs to
 
 echo "############################ sets pure"
+
 
 echo fmt"alias for intersection {stringset1 * stringset2=}"
 echo fmt"alias for union {stringset1 + stringset2=}"
@@ -214,6 +216,7 @@ echo fmt"{toSeq(sortedStringSet.keys)=}"
 
 echo "############################ critbits dict"
 
+
 let sortedStringDict: CritBitTree[int] = {"zfirst": 1, "asecond": 2}.toCritBitTree
 
 echo fmt"{sortedStringDict=}"
@@ -229,11 +232,10 @@ echo "############################ options"
 import std/options
 
 const something = (x: string) => (if x == "thing": some("some" & x) else: none(string)) ## \
-  ## converts a thing to something
 
 const
   maybe = some("thing") ## optional string
-  nothing = none(string) ## optional string
+  nothing = none(string)
 
 echo fmt"{maybe=}"
 echo fmt"{nothing.isNone=}"

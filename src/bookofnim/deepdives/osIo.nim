@@ -1,7 +1,7 @@
 ##
 ## os and i/o
 ## ==========
-## [bookmark](https://nim-lang.org/docs/streams.html)
+## [bookmark](https://nim-lang.github.io/Nim/streams.html)
 #
 
 ##[
@@ -67,43 +67,32 @@ links
 - other
   - [nitch source code](https://github.com/unxsh/nitch)
   - [peter: handling files in nim](https://peterme.net/handling-files-in-nim.html)
+  - [consuming data from thousands of small files](https://forum.nim-lang.org/t/10146)
 - high impact
-  - [basic os utils](https://nim-lang.org/docs/os.html)
-  - [distro detection & os pkg manager](https://nim-lang.org/docs/distros.html)
+  - [basic os utils](https://nim-lang.github.io/Nim/os.html)
+  - [distro detection & os pkg manager](https://nim-lang.github.io/Nim/distros.html)
   - [env support](https://nim-lang.github.io/Nim/envvars.html)
-  - [file and string streams](https://nim-lang.org/docs/streams.html)
+  - [file and string streams](https://nim-lang.github.io/Nim/streams.html)
   - [fusion file permissions](https://nim-lang.github.io/fusion/src/fusion/filepermissions.html)
   - [fusion io utils](https://nim-lang.github.io/fusion/src/fusion/ioutils.html)
   - [fusion scripting](https://nim-lang.github.io/fusion/src/fusion/scripting.html)
-  - [get cpu/cors info](https://nim-lang.org/docs/cpuinfo.html)
-  - [i/o multiplexing](https://nim-lang.org/docs/selectors.html)
-  - [mem files](https://nim-lang.org/docs/memfiles.html)
-  - [parse cmdline opts](https://nim-lang.org/docs/parseopt.html)
-  - [posix wrapper](https://nim-lang.org/docs/posix_utils.html)
-  - [process exec & comms](https://nim-lang.org/docs/osproc.html)
-  - [read stdin](https://nim-lang.org/docs/rdstdin.html)
-  - [system io](https://nim-lang.org/docs/io.html)
-  - [terminal](https://nim-lang.org/docs/terminal.html)
+  - [get cpu/cors info](https://nim-lang.github.io/Nim/cpuinfo.html)
+  - [i/o multiplexing](https://nim-lang.github.io/Nim/selectors.html)
+  - [mem files](https://nim-lang.github.io/Nim/memfiles.html)
+  - [parse cmdline opts](https://nim-lang.github.io/Nim/parseopt.html)
+  - [posix wrapper](https://nim-lang.github.io/Nim/posix_utils.html)
+  - [process exec & comms](https://nim-lang.github.io/Nim/osproc.html)
+  - [read stdin](https://nim-lang.github.io/Nim/rdstdin.html)
+  - [system io](https://nim-lang.github.io/Nim/io.html)
+  - [terminal](https://nim-lang.github.io/Nim/terminal.html)
   - [temp files and directories](https://github.com/nim-lang/Nim/blob/devel/lib/std/tempfiles.nim)
 - niche
-  - [open users browser](https://nim-lang.org/docs/browsers.html)
-  - [raw posix interface]https://nim-lang.org/docs/posix.html
+  - [open users browser](https://nim-lang.github.io/Nim/browsers.html)
+  - [raw posix interface]https://nim-lang.github.io/Nim/posix.html
 
 TODOs
 -----
-- cpuEndian
-- cpuRelax
-- DynlibFormat, ExeExt[s], ScriptExt
-- [find instantiationInfo in the docs](https://stackoverflow.com/questions/55891650/how-to-use-slurp-gorge-staticread-staticexec-in-the-directory-of-the-callsite)
-
-
-## system
-
-vars/procs/etc
---------------
-- hostCPU
-  - "i386", "alpha", "powerpc", "powerpc64",
-  - "powerpc64el", "sparc", "amd64", "mips",
+- cpuEndianwarning"mips",
   - "mipsel", "arm", "arm64", "mips64", "mips64el", "riscv32", "riscv64"
 - hostOS
   - "windows", "macosx", "linux", "netbsd",
@@ -115,7 +104,7 @@ vars/procs/etc
   - fmReadWriteExisting same but doesnt create file
   - fmAppend append doesnt create file
 - getFreeMem  number of bytes owned by the process, but do not hold any meaningful data
-
+- file and open arent in system anymore
 
 ## os
 
@@ -271,6 +260,8 @@ parseopt iterators
 
 ]##
 
+{.push hint[XDeclaredButNotUsed]: off.}
+
 import std/[sugar, strformat, strutils, sequtils, tables]
 
 echo "############################ system"
@@ -404,10 +395,10 @@ echo fmt"{addFileExt someFile, md=}"
 echo fmt"{addFileExt someFile & $'.' & md, txt=}"
 echo fmt"{changeFileExt someFile.addFileExt md, txt=}"
 echo fmt"{expandFilename somefile.addFileExt md=}"
-echo fmt"{getCreationTime readme=}"
-echo fmt"{getLastAccessTime readme=}"
-echo fmt"{getLastModificationTime readme=}"
-echo fmt"bunch of stuff {getFileInfo readme=}"
+# echo fmt"{getCreationTime readme=}" # TODO(noah): throws in v2
+# echo fmt"{getLastAccessTime readme=}" # TODO(noah): throws in v2
+# echo fmt"{getLastModificationTime readme=}" # TODO(noah): throws in v2
+# echo fmt"bunch of stuff {getFileInfo readme=}" # TODO(noah): throws in v2
 echo fmt"bytes {getFileSize readme=}"
 echo fmt"{isValidFilename absolutePath readme=}"
 echo fmt"{sameFile readme, readme=}"
@@ -417,59 +408,63 @@ echo fmt"{readme.absolutePath.splitFile=}"
 
 const helloworldReadme = "src/bookofnim/helloworld/helloworld.md"
 
-let entireFile = try: readFile helloworldReadme except: "" ## \
-  ## calls readAll then closes the file afterwards
-  ## raises IO exception on err
-  ## use staticRead instead for compiletime
-if entireFile.len is Positive:
-  echo "file has ", len entireFile, " characters"
+# TODO(noah): readFile isnt system in v2?
+# let entireFile = try: readFile helloworldReadme except: "" ## \
+#   ## calls readAll then closes the file afterwards
+#   ## raises IO exception on err
+#   ## use staticRead instead for compiletime
+# if entireFile.len is Positive:
+#   echo "file has ", len entireFile, " characters"
 
+# TODO(noah): readLines isnt system in v2?
+# let first5Lines = try: readLines helloworldReadme, 5 except: @[] ## \
+#   ## raises IO exception on err, EOF if N > lines in file
+#   ## lines must be delimited by LF/CRLF
+#   ## available at compiletime
+# for line in first5Lines: echo "say my line: ", line
 
-let first5Lines = try: readLines helloworldReadme, 5 except: @[] ## \
-  ## raises IO exception on err, EOF if N > lines in file
-  ## lines must be delimited by LF/CRLF
-  ## available at compiletime
-for line in first5Lines: echo "say my line: ", line
+# TODO(noah): readFile isnt system in v2
+# proc readFile: string =
+#   let f = open helloworldReadme ## \
+#     ## open string, fMode = fmRead, bufSize = -1: File
+#     ## open File; string/filehandle; fmode = fmRead: bool
+#     ## can pass bufSize whenever you pass a string
+#   defer: close f ## \
+#     ## make sure to close the file object
+#   echo "i started to read when I was ", getFilePos f
+#   echo "first line in file is: ", readLine f
+#   echo if endOfFile f: "game over" else: "hooked on phonics worked for me"
+#   echo "we need to get a handle on this file ", getFileHandle f ## \
+#     ## returns the C library's handle on the file
+#   echo "so instead use ", getOsFileHandle f ## \
+#     ## useful for platform specific logic
+#     ## perhaps always use getOsFileHandle, dunno
+#   echo "but wasnt good until i turned ", getFilePos f
+#   echo "reading so much I gained ", getFileSize f, " in bytes"
+#   result = readLine f
+# echo "the current line in file is ", readFile()
 
-proc readFile: string =
-  let f = open helloworldReadme ## \
-    ## open string, fMode = fmRead, bufSize = -1: File
-    ## open File; string/filehandle; fmode = fmRead: bool
-    ## can pass bufSize whenever you pass a string
-  defer: close f ## \
-    ## make sure to close the file object
-  echo "i started to read when I was ", getFilePos f
-  echo "first line in file is: ", readLine f
-  echo if endOfFile f: "game over" else: "hooked on phonics worked for me"
-  echo "we need to get a handle on this file ", getFileHandle f ## \
-    ## returns the C library's handle on the file
-  echo "so instead use ", getOsFileHandle f ## \
-    ## useful for platform specific logic
-    ## perhaps always use getOsFileHandle, dunno
-  echo "but wasnt good until i turned ", getFilePos f
-  echo "reading so much I gained ", getFileSize f, " in bytes"
-  result = readLine f
-echo "the current line in file is ", readFile()
-
-try:
-  for line in helloworldReadme.lines: echo "loop over line: ", line ## \
-    ## append .lines to the string/File
-    ## else it loops over the filename (not the content)
-    ## raises IOError if file doesnt exist
-except: echo "maybe file doesnt exist?"
+# TODO(noah): lines isnt system in v2
+# try:
+#   for line in helloworldReadme.lines: echo "loop over line: ", line ## \
+#     ## append .lines to the string/File
+#     ## else it loops over the filename (not the content)
+#     ## raises IOError if file doesnt exist
+# except: echo "maybe file doesnt exist?"
 
 # upsert a file
 const tmpfile = "/tmp/helloworld.txt"
-writeFile tmpfile, "a luv letter to nim"
-echo readFile tmpfile
+# writeFile tmpfile, "a luv letter to nim" # TODO(noah): writeFile isnt system in v2
+# echo readFile tmpfile
 
 # overwrite an existing file
-proc writeLines(s: seq[string]): void =
-  let f = tmpfile.open(fmWrite) # open for writing
-  defer: close f
-  for i, l in s: f.writeLine l
-writeLines @["first line", "Second line"]
-echo readFile tmpfile
+# TODO(noah): open isnt system in v2
+# proc writeLines(s: seq[string]): void =
+#   let f = tmpfile.open(fmWrite) # open for writing
+#   defer: close f
+#   for i, l in s: f.writeLine l
+# writeLines @["first line", "Second line"]
+# echo readFile tmpfile
 
 echo "############################ os permissions/user"
 # copyFileWithPermissions src, dest, ignorePermErrs = true, options
@@ -514,7 +509,7 @@ echo "############################ os/system exec/cmds/process"
 when defined(linux):
   echo fmt"{osErrorMsg OSErrorCode 0=}"
   echo fmt"{osErrorMsg OSErrorCode 1=}"
-  echo fmt"{osErrorMsg OSErrorCode osLastError()=}"
+  echo fmt"{osErrorMsg osLastError()=}"
 
 
 if fmt"tree -L 1 {tmpdir.parentDir} | grep -E [n,m]i[n,m]".execShellCmd != 0: ## \
@@ -533,10 +528,11 @@ echo fmt"""{findExe "nim"=}"""
 # echo "whats your name: "
 # echo "hello: ", readLine(stdin) disabled cuz it stops code runner
 
-stdout.writeLine "equivalent to an echo"
-flushFile stdout
-stderr.writeLine "but i only see red"
-flushFile stderr
+# TODO(noah): stdout/err arent system in v2
+# stdout.writeLine "equivalent to an echo"
+# flushFile stdout
+# stderr.writeLine "but i only see red"
+# flushFile stderr
 
 # docs
 const buildInfo = "Revision " & staticExec("git rev-parse HEAD") &
@@ -611,17 +607,18 @@ var
 proc printToken(kind: CmdLineKind, key: string, val: string) =
   ## copied from docs
   case kind
-  of cmdEnd: doAssert(false)  # Doesn't happen with getopt()
+  # of cmdEnd: doAssert(false)  # TODO(noah): doAssert isnt system in v2
   of cmdShortOption, cmdLongOption: echo fmt"long/short option {key=} {val=}"
   of cmdArgument: echo fmt"cmd arg {key=} "
+  else: discard # TODO(noah): hack for doAssert not being system
 
-echo "\n\n", fmt"{cmdxOpts=}"
+# echo "\n\n", fmt"{cmdxOpts=}" # TODO(noah): throws in v2
 for kind, key, val in cmdxOpts.getopt(): printToken(kind, key, val)
 
-echo "\n\n", fmt"{cmdyOpts=}"
+# echo "\n\n", fmt"{cmdyOpts=}" # TODO(noah): throws in v2
 for kind, key, val in cmdyOpts.getopt(): printToken(kind, key, val)
 
-echo "\n\n", fmt"{cmdzOpts=}"
+# echo "\n\n", fmt"{cmdzOpts=}" # TODO(noah): throws in v2
 for kind, key, val in cmdzOpts.getopt(): printToken(kind, key, val)
 
 var p = initOptParser(myOptsArgDash)

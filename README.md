@@ -16,21 +16,28 @@
 
 - fullstack is a first principle for us; nim redefines what that means
 - many application developers are moving to/incorporating rust/go in their stack; suspend judgment and consider nim for (many, but definitely) these reasons
+- first-class features
   - [cross compile applications](https://nim-lang.org/docs/nimc.html#crossminuscompilation)
   - [cross platform scripts](https://nim-lang.org/docs/nims.html#benefits)
   - [robust application & script configuration](https://nim-lang.org/docs/parsecfg.html)
-  - [documentation is a first class citizen](https://nim-lang.org/docs/docgen.html)
+  - [documentation + html generation](https://nim-lang.org/docs/docgen.html)
     - [with first class support for reStructured text](https://docutils.sourceforge.io/docs/user/rst/quickref.html)
-  - [testing is a first class citizen](https://nim-lang.github.io/Nim/testament.html)
+  - [Holistic Test Suite](https://nim-lang.github.io/Nim/testament.html)
+    - TODO add unittest here even tho we dont use it
     - [with html reports](https://noahehall.github.io/nim/htmldocs/testresults.html)
     - [and valgrind integration for memory leaks](https://valgrind.org/)
-  - [first class support for postgres, mysql](https://nim-lang.org/docs/lib.html#impure-libraries-database-support)
-    - [including a generic ODBC wrapper for other dbs](https://nim-lang.org/docs/db_odbc.html)
   - [future proof design philisophy](https://www.youtube.com/watch?v=aDi50K_Id_k)
     - [with ergonomic APIs](https://nim-lang.org/docs/apis.html)
   - [various pragmas to customize, restrict and enhance the compiler and runtime](https://nim-lang.github.io/Nim/manual.html#pragmas)
-  - [community forum](https://forum.nim-lang.org/)
   - [spiderman's uncle](https://nim-lang.org/docs/tut3.html)
+- core-developer supported features
+  - [core-developer support for postgres, mysql](https://nim-lang.org/docs/lib.html#impure-libraries-database-support)
+    - [including a generic ODBC wrapper for other dbs](https://nim-lang.org/docs/db_odbc.html)
+  - TODO: i think the docs are still under nimlang, but the packages have moved to nimble
+    - add channels to this list
+- community driven
+  - [community-driven forum](https://forum.nim-lang.org/)
+  - TODO add the links to the other places
 
 ## recommended ramp up
 
@@ -128,6 +135,9 @@ internal
 
 nimlang
 
+- [AAA: nims index ctrl f-it](https://nim-lang.github.io/Nim/theindex.html)
+- [stable (i.e. 1.6\*)](https://nim-lang.org/docs/manual.html)
+- [v2 (i.e. >= 1.9.3)](https://nim-lang.github.io/Nim/manual.html)
 - [std library](https://nim-lang.org/docs/lib.html)
 - [nim manual](https://nim-lang.org/docs/manual.html)
 - [api design](https://nim-lang.org/docs/apis.html)

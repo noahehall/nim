@@ -1,38 +1,46 @@
 ## templates and macros
 ## ====================
-## [bookmark](https://nim-lang.org/docs/manual.html#templates)
+## [bookmark](https://nim-lang.github.io/Nim/manual.html#templates)
 
 ##[
 ## TLDR
 - pretty much skipped the entire section on templates, and definitely on macros
 - FYI: you dont know nim if you dont know templates & macros
 
+links
+-----
+- [templates](https://nim-lang.github.io/Nim/manual.html#templates)
+- [macros](https://nim-lang.github.io/Nim/manual.html#macros)
+
 TODOs
 -----
+- [dynamic arguments for bindSym](https://nim-lang.github.io/Nim/manual_experimental.html#dynamic-arguments-for-bindsym)
+- [term rewriting macros](https://nim-lang.github.io/Nim/manual_experimental.html#term-rewriting-macros)
 - niminaction: chapter 9
-- [macros](https://nim-lang.org/docs/manual.html#macros)
+- [macros](https://nim-lang.github.io/Nim/manual.html#macros)
   - ^ continue until you get to SpecialTypes
-- [macro tut](https://nim-lang.org/docs/tut3.html)
+- [macro tut](https://nim-lang.github.io/Nim/tut3.html)
 - [fusion astdsl](https://nim-lang.github.io/fusion/src/fusion/astdsl.html)
 - [templates vs generics](https://forum.nim-lang.org/t/9985)
-- [system.nimNode is discussed here](https://nim-lang.org/docs/manual.html#pragmas-compiletime-pragma)
-- [typed vs untyped for templates](https://nim-lang.org/docs/manual.html#templates-typed-vs-untyped-parameters)
-- [custom annotations with template pragmas](https://nim-lang.org/docs/manual.html#userminusdefined-pragmas-custom-annotations)
-- [macro pragmas](https://nim-lang.org/docs/manual.html#userminusdefined-pragmas-macro-pragmas)
+- [system.nimNode is discussed here](https://nim-lang.github.io/Nim/manual.html#pragmas-compiletime-pragma)
+- [entire templates section](https://nim-lang.github.io/Nim/manual.html#templates-typed-vs-untyped-parameters)
+- [custom annotations with template pragmas](https://nim-lang.github.io/Nim/manual.html#userminusdefined-pragmas-custom-annotations)
+- [macro pragmas](https://nim-lang.github.io/Nim/manual.html#userminusdefined-pragmas-macro-pragmas)
 - [asyncmacro](https://github.com/nim-lang/Nim/blob/devel/lib/pure/asyncmacro.nim)
 - put the asyncdispatch templates in this file
-- niminaction chapter 9
+
+
 
 ## templates
 - simple form of a macro
-- [supports lazy evaluation](https://nim-lang.org/docs/manual.html#overload-resolution-lazy-type-resolution-for-untyped)
+- [supports lazy evaluation](https://nim-lang.github.io/Nim/manual.html#overload-resolution-lazy-type-resolution-for-untyped)
 - enables raw code substitution on nim's abstract syntax tree
 - are processed in the semantic pass of the compiler
 - accepts meta types
 
 template types
 --------------
-- untyped an expression thats not resolved for lazy evaluation
+- untyped an expression thats not resolved, i.e. lazy evaluation that prevents type checking
 - typed an expression that is resolved for greedy evaluation
 
 ## macros
@@ -40,6 +48,7 @@ template types
 
 ]##
 
+{.push hint[XDeclaredButNotUsed]: off.}
 
 echo "############################ template"
 # copied from docs
@@ -48,21 +57,23 @@ template `!=` (a, b: untyped): untyped =
   ## then replace a != b in the original with the below template
   ## i.e. assert(5 != 6) -> assert(not (5 == 6))
   not (a == b)
-assert(5 != 6)
+# assert(5 != 6) # TODO(noah): throws in v2
 
 # lazy evaluation of proc args
 const debug = true
 var xy = 4
-proc logEager(msg: string) {.inline.} =
-  ## msg arg is evaluted before the fn is evoked
-  if debug: stdout.writeLine(msg)
-template logLazy(msg: string) =
-  ## the template is processed before msg arg
-  ## so if debug is false, msg wont be evaluted
-  if debug: stdout.writeLine(msg)
+# TODO(noah): stdout not system in v2
+# proc logEager(msg: string) {.inline.} =
+#   ## msg arg is evaluted before the fn is evoked
+#   if debug: stdout.writeLine(msg)
+# template logLazy(msg: string) =
+#   ## the template is processed before msg arg
+#   ## so if debug is false, msg wont be evaluted
+#   if debug: stdout.writeLine(msg)
 
-logEager("x has the value: " & $xy) ## & and $ are expensive! only use with lazy templates
-logLazy("x has the value: " & $xy)
+# TODO(noah): requires updating both procs to v2
+# logEager("x has the value: " & $xy) ## & and $ are expensive! only use with lazy templates
+# logLazy("x has the value: " & $xy)
 
 # copied from docs
 template blockRunner(please: bool, body: untyped): void =

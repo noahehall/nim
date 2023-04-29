@@ -1,6 +1,6 @@
 ## testing
 ## =======
-## [bookmark](https://nim-lang.org/docs/testament.html)
+## [bookmark](https://nim-lang.github.io/Nim/testament.html)
 
 
 ##[
@@ -33,14 +33,14 @@ links
   - [testament src](https://github.com/nim-lang/Nim/tree/devel/testament)
 - high impact
   - [status fuzz testing](https://github.com/status-im/nim-testutils/tree/master/testutils/fuzzing)
-  - [testament: preferred testing tool](https://nim-lang.org/docs/testament.html)
-  - [testament: unit test boilerplate](https://nim-lang.org/docs/testament.html#writing-unitests)
+  - [testament: preferred testing tool](https://nim-lang.github.io/Nim/testament.html)
+  - [testament: unit test boilerplate](https://nim-lang.github.io/Nim/testament.html#writing-unitests)
   - [profiling and debugging](https://nim-lang.org/blog/2017/10/02/documenting-profiling-and-debugging-nim-code.html)
   - [nimble test docs](https://github.com/nim-lang/nimble#tests)
   - [valgrind dynamic analysis toolset](https://valgrind.org/)
 - niche
-  - [dr nim](https://nim-lang.org/docs/drnim.html)
-  - [unit tests (prefer testament)](https://nim-lang.org/docs/unittest.html)
+  - [dr nim](https://nim-lang.github.io/Nim/drnim.html)
+  - [unit tests (prefer testament)](https://nim-lang.github.io/Nim/unittest.html)
   - [Z3 proof engine](https://github.com/Z3Prover/z3)
 
 
@@ -79,7 +79,7 @@ testament writing tests
         - "compile" only | "run" and compile | "reject" tests that dont throw expected errors
         - reject test if stdout fails sparsely match with expected stdout
   - examples that reflect specs & code
-    - [unittests examples](https://nim-lang.org/docs/testament.html#unitests-examples)
+    - [unittests examples](https://nim-lang.github.io/Nim/testament.html#unitests-examples)
     - expected output with tests grouped in blocks [tarray](https://github.com/nim-lang/Nim/blob/devel/tests/array/tarray.nim)
     - expected errors [inline with the code](https://github.com/nim-lang/Nim/blob/9a110047cbe2826b1d4afe63e3a1f5a08422b73f/tests/effects/teffects1.nim)
     - expected errors [based on exit code + output substitution](https://github.com/nim-lang/Nim/blob/devel/tests/assert/tassert.nim)

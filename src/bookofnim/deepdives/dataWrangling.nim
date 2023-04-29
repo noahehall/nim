@@ -1,7 +1,7 @@
 ##
 ## data wrangling
 ## ==============
-## [bookmark](https://nim-lang.org/docs/strscans.html)
+## [bookmark](https://nim-lang.github.io/Nim/strscans.html)
 
 ##[
 TLDR
@@ -24,13 +24,13 @@ links
 - examples
   - [nimgrep source code](https://github.com/nim-lang/Nim/blob/devel/tools/nimgrep.nim)
 - high impact
-  - [peg matching](https://nim-lang.org/docs/pegs.html)
-  - [regex pcre wrapper](https://nim-lang.org/docs/re.html)
-  - [string scans](https://nim-lang.org/docs/strscans.html)
+  - [peg matching](https://nim-lang.github.io/Nim/pegs.html)
+  - [regex pcre wrapper](https://nim-lang.github.io/Nim/re.html)
+  - [string scans](https://nim-lang.github.io/Nim/strscans.html)
   - [fusion matching](https://nim-lang.github.io/fusion/src/fusion/matching.html)
-  - [parse utils](https://nim-lang.org/docs/parseutils.html)
+  - [parse utils](https://nim-lang.github.io/Nim/parseutils.html)
 - nitche
-  - [perl compatible regex](https://nim-lang.org/docs/pcre.html)
+  - [perl compatible regex](https://nim-lang.github.io/Nim/pcre.html)
 
 TODOs
 -----

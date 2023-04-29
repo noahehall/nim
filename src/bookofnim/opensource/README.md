@@ -32,6 +32,7 @@
 - [limbdb: kv store using lmdb](https://forum.nim-lang.org/t/9210)
 - [llvm based compiler for nim](https://github.com/arnetheduck/nlvm)
 - [macr-based pattern matching library](https://github.com/alehander92/gara)
+- [malebolgia: spawn for embedded devices](https://github.com/Araq/malebolgia)
 - [moe: vim like editor that didnt work on the first try](https://github.com/fox0430/moe)
 - [mummy: http/websocket server](https://github.com/guzba/mummy)
 - [neel: create lightweight electron apps](https://github.com/Niminem/Neel)
@@ -45,11 +46,13 @@
 - [nimdata: data manipulation](https://github.com/bluenote10/NimData)
 - [nimib: convert your nim code and its outputs to html docs](https://github.com/pietroppeter/nimib)
 - [nimibook: port of mdbook to Nim](https://github.com/pietroppeter/nimibook)
+- [nimpy: integration with python](https://github.com/yglukhov/nimpy)
 - [nimqt: bindings for QT interface development](https://github.com/jerous86/nimqt)
 - [nimquery: document.qerySelector+all for nim](https://github.com/GULPF/nimquery)
 - [nimtemplate: nim project/library starter kit](https://github.com/treeform/nimtemplate)
 - [NimTemplate: third-person template for unreal engine](https://github.com/jmgomez/NimTemplate)
 - [nimterlingua: compiletime i18](https://github.com/juancarlospaco/nim-nimterlingua)
+- [nimuring: pure implementation of io_uring](https://github.com/blackmius/nimuring)
 - [nimx: cross platform GUI framework](https://github.com/yglukhov/nimx)
 - [NimYAML: serialize & stream yaml bidrectionally](https://github.com/flyx/NimYAML)
 - [nitch: neofetch alternative](https://github.com/unxsh/nitch)
@@ -62,10 +65,11 @@
 - [parlexgen: macro for generating lexers and parsers](https://github.com/choltreppe/parlexgen)
 - [presto: rest api from status-im built on chronos](https://github.com/status-im/nim-presto)
 - [prologue: web framework](https://github.com/planety/prologue)
-- [prologue: web framework](https://github.com/planety/Prologue)
 - [qrgen: generate QR codes](https://github.com/aruZeta/QRgen)
 - [ready: redis client](https://github.com/guzba/ready)
 - [scorper: micro webframework built on chronos](https://github.com/bung87/scorper)
+- [stash table: concurrent hash table](https://github.com/olliNiinivaara/StashTable)
+- [sunk: then, catch and finally for futures](https://github.com/archnim/sunk)
 - [threadproxy: inter-thread communication](https://github.com/jackhftang/threadproxy.nim)
 - [ttop: sys monitoring tool](https://github.com/inv2004/ttop)
 - [uing: updated fork of nim-lang/ui](https://github.com/neroist/uing)
@@ -73,7 +77,7 @@
 - [valido: string validators & sanitizers](https://github.com/openpeep/valido)
 - [zippy: deflate,zlib,gzip,tarballs,zip files management](https://github.com/guzba/zippy)
 
-## orgs/people with nim open source
+## orgs/people with high-quality open source nim packages
 
 - [araq](https://github.com/Araq)
 - [cblake](https://github.com/c-blake)
@@ -83,6 +87,7 @@
 - [iffy](https://github.com/iffy)
 - [jiro](https://github.com/jiro4989)
 - [juan](https://github.com/juancarlospaco)
+- [mratsim](https://github.com/mratsim)
 - [planety](https://github.com/planety)
 - [pmunch](https://github.com/PMunch)
 - [ringabout](https://github.com/ringabout)
@@ -114,6 +119,12 @@
 
 - [protobuff serialization and binding generators](https://github.com/PMunch/protobuf-nim)
 
+### functional
+
+#### zero functional
+
+- [zero-cost chaining for functional abstractions](https://github.com/zero-functional/zero-functional)
+
 ### tools
 
 #### INim
@@ -121,10 +132,17 @@
 - [repl nim](https://github.com/inim-repl/INim)
 - dude this is a fkn must have
 
+### async / concurrency
+
 #### chronos
 
 - [asyncdispatch alternative used by some other popular pkgs](https://github.com/status-im/nim-chronos)
-- [read this as well](https://nim-lang.org/docs/asyncdispatch.html#multiple-async-backend-support)
+- [read this as well](https://nim-lang.github.io/Nim/asyncdispatch.html#multiple-async-backend-support)
+
+#### weave
+
+- [state-of-the-art multithreading runtime](https://github.com/mratsim/weave)
+- std/channels is based on this project
 
 ### appdev
 

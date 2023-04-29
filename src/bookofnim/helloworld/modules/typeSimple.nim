@@ -5,7 +5,7 @@
 ##[
 ## TLDR
 - Conversion between int and int32 or int64 must be explicit except for string literals.
-- stay away from [blah% operators in practice](https://nim-lang.org/docs/manual.html#types-preminusdefined-integer-types)
+- stay away from [blah% operators in practice](https://nim-lang.github.io/Nim/manual.html#types-preminusdefined-integer-types)
   - % are mainly for backwards compatibility with previous nim versions
 - generally procs that work for strings work for chars
 - generally strings can use any seq proc for manipulation
@@ -14,8 +14,8 @@
 
 links
 -----
-- [wide strings](https://nim-lang.org/docs/widestrs.html)
-- [dollars](https://nim-lang.org/docs/dollars.html)
+- [wide strings](https://nim-lang.github.io/Nim/widestrs.html)
+- [dollars](https://nim-lang.github.io/Nim/dollars.html)
 
 ## string
 - value semantics
@@ -67,7 +67,8 @@ boolean procs
 - ord(c)	Return int value of a character
 - a & b	Concatenate two strings
 - s.add(c)	Add character to the string
-- $	Convert various types to string
+- $	Convert various types to string (except float)
+- repr convert anything to a string
 - substr
 - find returns index of char in string
 - contains true/false
@@ -157,7 +158,21 @@ let
   y1: int8  = int8('a') # 'a' == 97'i8
   z1: float = 2.5       # int(2.5) rounds down to 2
   sum: int = int(x1) + int(y1) + int(z1) # sum == 100
-
+discard """
+  'i8	int8
+  'i16	int16
+  'i32	int32
+  'i64	int64
+  'u	uint
+  'u8	uint8
+  'u16	uint16
+  'u32	uint32
+  'u64	uint64
+  'f	float32
+  'd	float64
+  'f32	float32
+  'f64	float64
+"""
 
 const
   b = 100
@@ -173,7 +188,7 @@ echo "abs -1 is ", abs -1
 const
   e: uint8 = 100
   f = 100'u8
-echo "4 / 2 === ", num2 / num1 # / always returns a float
+echo "4 / 2 === ", (num2 / num1).repr #
 echo "4 div 2 === ", num2 div num1 # always returns an int
 
 
@@ -187,7 +202,7 @@ const
   i = 4e7 # 4 * 10^7
   l = 1.0e9
   m = 1.0E9
-echo "4.0 / 2.0 === ", num4 / num3
+# echo "4.0 / 2.0 === ", num4 / num3 # TODO(noah): throws in v2
 echo "4.0 div 2.0 === ", "gotcha: div is only for integers"
 echo "conversion acts like javascript floor()"
 echo "int(4.9) div int(2.0) === ", int(num5) div int(num3)

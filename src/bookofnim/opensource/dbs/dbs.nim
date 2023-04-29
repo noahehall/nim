@@ -15,22 +15,22 @@
 links
 -----
 - other
-  - [avoiding sql injections](https://nim-lang.org/docs/manual.html#distinct-type-avoiding-sql-injection-attacks)
+  - [avoiding sql injections](https://nim-lang.github.io/Nim/manual.html#distinct-type-avoiding-sql-injection-attacks)
   - [limbdb forum post](https://forum.nim-lang.org/t/9210)
     - [cloudflare lmbd post](https://blog.cloudflare.com/introducing-quicksilver-configuration-distribution-at-internet-scale/)
 - high impact
-  - [mysql client](https://nim-lang.org/docs/db_mysql.html)
-  - [postgres client](https://nim-lang.org/docs/db_postgres.html)
-  - [sqlite client](https://nim-lang.org/docs/db_sqlite.html)
-  - [generic odbc wrapper](https://nim-lang.org/docs/db_odbc.html)
-  - [sql parser](https://nim-lang.org/docs/parsesql.html)
-  - [mime types db for files & http servers](https://nim-lang.org/docs/mimetypes.html)
+  - [mysql client](https://nim-lang.github.io/Nim/db_mysql.html)
+  - [postgres client](https://nim-lang.github.io/Nim/db_postgres.html)
+  - [sqlite client](https://nim-lang.github.io/Nim/db_sqlite.html)
+  - [generic odbc wrapper](https://nim-lang.github.io/Nim/db_odbc.html)
+  - [sql parser](https://nim-lang.github.io/Nim/parsesql.html)
+  - [mime types db for files & http servers](https://nim-lang.github.io/Nim/mimetypes.html)
 - niche
-  - [postgres interface](https://nim-lang.org/docs/postgres.html)
-  - [sqlite interface](https://nim-lang.org/docs/sqlite3.html)
-  - [mysql interface](https://nim-lang.org/docs/mysql.html)
-  - [odbc interface](https://nim-lang.org/docs/odbcsql.html)
-  - [variable length ints](https://nim-lang.org/docs/varints.html)
+  - [postgres interface](https://nim-lang.github.io/Nim/postgres.html)
+  - [sqlite interface](https://nim-lang.github.io/Nim/sqlite3.html)
+  - [mysql interface](https://nim-lang.github.io/Nim/mysql.html)
+  - [odbc interface](https://nim-lang.github.io/Nim/odbcsql.html)
+  - [variable length ints](https://nim-lang.github.io/Nim/varints.html)
 
 ## sqlite, postgres & mysql
 - the interface should be the same between all 3

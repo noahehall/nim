@@ -1,0 +1,44 @@
+nimTitle	typeSystem	bookofnim/helloworld/modules/typeSystem.html	module src/bookofnim/helloworld/modules/typeSystem		0
+nim	BigMoney	bookofnim/helloworld/modules/typeSystem.html#BigMoney	type BigMoney		111
+nim	StrOrInt	bookofnim/helloworld/modules/typeSystem.html#StrOrInt	type StrOrInt		114
+nim	thizString	bookofnim/helloworld/modules/typeSystem.html#thizString	let thizString		115
+nim	thisInt	bookofnim/helloworld/modules/typeSystem.html#thisInt	let thisInt		116
+nim	BiggerMoney	bookofnim/helloworld/modules/typeSystem.html#BiggerMoney	type BiggerMoney		122
+nim	BiggestMoney	bookofnim/helloworld/modules/typeSystem.html#BiggestMoney	type BiggestMoney		123
+nim	wtf	bookofnim/helloworld/modules/typeSystem.html#wtf,T	proc wtf[T](a: T): auto		143
+nim	foo	bookofnim/helloworld/modules/typeSystem.html#foo,T	proc foo[T](i: T)		154
+nim	ii	bookofnim/helloworld/modules/typeSystem.html#ii	var ii		156
+nim	myRecord	bookofnim/helloworld/modules/typeSystem.html#myRecord	var myRecord		164
+nim	OtherRecord	bookofnim/helloworld/modules/typeSystem.html#OtherRecord	tuple OtherRecord		167
+nim	RecordType	bookofnim/helloworld/modules/typeSystem.html#RecordType	type RecordType		172
+nim	printFields	bookofnim/helloworld/modules/typeSystem.html#printFields,T	proc printFields[T: RecordType](rec: T)		175
+nim	utherRecord	bookofnim/helloworld/modules/typeSystem.html#utherRecord	var utherRecord		179
+nim	fieldsPrint	bookofnim/helloworld/modules/typeSystem.html#fieldsPrint,T,T	proc fieldsPrint[T: distinct tuple | object](first, second: T)		187
+nim	declareVariableWithType	bookofnim/helloworld/modules/typeSystem.html#declareVariableWithType.t,typedesc,typedesc	template declareVariableWithType(T: typedesc; value: T:type)		193
+nim	x`gensym0	bookofnim/helloworld/modules/typeSystem.html#x`gensym0	var x`gensym0		194
+nim	Option	bookofnim/helloworld/modules/typeSystem.html#Option	object Option		200
+nim	aa	bookofnim/helloworld/modules/typeSystem.html#aa	let aa		206
+nim	bb	bookofnim/helloworld/modules/typeSystem.html#bb	let bb		207
+nim	get	bookofnim/helloworld/modules/typeSystem.html#get.c,Option[T]	converter get[T](x: Option[T]): T		209
+nim	toBool	bookofnim/helloworld/modules/typeSystem.html#toBool.c,int	converter toBool(x: int): bool		217
+nim	somevar	bookofnim/helloworld/modules/typeSystem.html#somevar	var somevar		222
+nim	othervar	bookofnim/helloworld/modules/typeSystem.html#othervar	var othervar		223
+nim	MyType	bookofnim/helloworld/modules/typeSystem.html#MyType	type MyType		229
+nim	instance	bookofnim/helloworld/modules/typeSystem.html#instance	var instance		230
+nim	myStaticVar	bookofnim/helloworld/modules/typeSystem.html#myStaticVar	let myStaticVar		241
+nim	myInt	bookofnim/helloworld/modules/typeSystem.html#myInt	var myInt		246
+nim	doubleFloat	bookofnim/helloworld/modules/typeSystem.html#doubleFloat,float	proc doubleFloat(x: float): float		248
+nim	x	bookofnim/helloworld/modules/typeSystem.html#x	let x		254
+nim	y	bookofnim/helloworld/modules/typeSystem.html#y	let y		255
+heading	nims type system	bookofnim/helloworld/modules/typeSystem.html#nims-type-system	 nims type system		0
+heading	TLDR	bookofnim/helloworld/modules/typeSystem.html#nims-type-system-tldr	  TLDR		0
+heading	links	bookofnim/helloworld/modules/typeSystem.html#nims-type-system-links	  links		0
+heading	TODOs	bookofnim/helloworld/modules/typeSystem.html#nims-type-system-todos	  TODOs		0
+heading	metatypes	bookofnim/helloworld/modules/typeSystem.html#nims-type-system-metatypes	  metatypes		0
+heading	type bound operators	bookofnim/helloworld/modules/typeSystem.html#nims-type-system-type-bound-operators	  type bound operators		0
+heading	type classes	bookofnim/helloworld/modules/typeSystem.html#nims-type-system-type-classes	  type classes		0
+heading	typedesc	bookofnim/helloworld/modules/typeSystem.html#nims-type-system-typedesc	  typedesc		0
+heading	staticTT	bookofnim/helloworld/modules/typeSystem.html#nims-type-system-statictt	  static<a class="reference internal" href="#T">T</a>		0
+heading	converters	bookofnim/helloworld/modules/typeSystem.html#nims-type-system-converters	  converters		0
+heading	inspection	bookofnim/helloworld/modules/typeSystem.html#nims-type-system-inspection	  inspection		0
+heading	generics	bookofnim/helloworld/modules/typeSystem.html#nims-type-system-generics	  generics		0
