@@ -5,6 +5,7 @@
 
 ##[
 ## TLDR
+- ".nims", ".cfg", ".nimcfg", ".nimble" are valid configuration extensions.
 - nimble
   - shipped with nim isnt the nimbiest version
   - install a nimbier nimble with `nimble install nimble`

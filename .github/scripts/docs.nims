@@ -31,7 +31,8 @@ cd rootDir
 proc installDeps: (string, int) =
   result = """
     sudo apt-fast -y install \
-      graphviz
+      graphviz \
+      zstd
   """.gorgeEx
 
 proc deletePrevdocs: (string, int) =

@@ -95,7 +95,7 @@ nimscript tasks
 import std/[sugar, sequtils, strformat, strutils, distros, os]
 
 const
-  configFile = "bookofnim.nim.cfg"
+  configFile = "bookofnim.nim.ini"
   dirtmp = "/tmp/dir"
   dotdir = "."
   mydir = "targets"
