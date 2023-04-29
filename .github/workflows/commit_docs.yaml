@@ -18,6 +18,9 @@ jobs:
         nimv: ["#devel"]
 
     steps:
+      - name: Zstd
+        run: sudo apt-fast -y install zstd
+
       - name: Checkout
         uses: actions/checkout@v3
 
