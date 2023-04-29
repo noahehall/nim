@@ -1,0 +1,17 @@
+nimTitle	memoryRuntime	bookofnim/deepdives/memoryRuntime.html	module src/bookofnim/deepdives/memoryRuntime		0
+heading	runtime memory operations	bookofnim/deepdives/memoryRuntime.html#runtime-memory-operations	 runtime memory operations		0
+heading	TLDR	bookofnim/deepdives/memoryRuntime.html#runtime-memory-operations-tldr	  TLDR		0
+heading	links	bookofnim/deepdives/memoryRuntime.html#runtime-memory-operations-links	  links		0
+heading	TODOs	bookofnim/deepdives/memoryRuntime.html#runtime-memory-operations-todos	  TODOs		0
+heading	garbage collector safety	bookofnim/deepdives/memoryRuntime.html#runtime-memory-operations-garbage-collector-safety	  garbage collector safety		0
+heading	unsafe Nim features	bookofnim/deepdives/memoryRuntime.html#runtime-memory-operations-unsafe-nim-features	  unsafe Nim features		0
+heading	effective memory utilization	bookofnim/deepdives/memoryRuntime.html#runtime-memory-operations-effective-memory-utilization	  effective memory utilization		0
+heading	ref synchronization across threads	bookofnim/deepdives/memoryRuntime.html#runtime-memory-operations-ref-synchronization-across-threads	  ref synchronization across threads		0
+heading	locks and guards	bookofnim/deepdives/memoryRuntime.html#runtime-memory-operations-locks-and-guards	  locks and guards		0
+heading	channels	bookofnim/deepdives/memoryRuntime.html#runtime-memory-operations-channels	  channels		0
+heading	types	bookofnim/deepdives/memoryRuntime.html#runtime-memory-operations-types	  types		0
+heading	stack (value) types	bookofnim/deepdives/memoryRuntime.html#runtime-memory-operations-stack-value-types	  stack (value) types		0
+heading	heap (ref) types	bookofnim/deepdives/memoryRuntime.html#runtime-memory-operations-heap-ref-types	  heap (ref) types		0
+heading	procs	bookofnim/deepdives/memoryRuntime.html#runtime-memory-operations-procs	  procs		0
+heading	pragmas	bookofnim/deepdives/memoryRuntime.html#runtime-memory-operations-pragmas	  pragmas		0
+heading	errors/warnings/hints	bookofnim/deepdives/memoryRuntime.html#runtime-memory-operations-errorsslashwarningsslashhints	  errors/warnings/hints		0

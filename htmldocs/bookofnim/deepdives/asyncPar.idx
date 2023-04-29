@@ -1,29 +1,29 @@
 nimTitle	asyncPar	bookofnim/deepdives/asyncPar.html	module src/bookofnim/deepdives/asyncPar		0
-nim	bf	bookofnim/deepdives/asyncPar.html#bf	var bf		373
-nim	gf	bookofnim/deepdives/asyncPar.html#gf	var gf		374
-nim	L	bookofnim/deepdives/asyncPar.html#L	var L		375
-nim	numThreads	bookofnim/deepdives/asyncPar.html#numThreads	var numThreads		376
-nim	iAmGuarded	bookofnim/deepdives/asyncPar.html#iAmGuarded	var iAmGuarded		377
-nim	echoAction	bookofnim/deepdives/asyncPar.html#echoAction,T	proc echoAction[T](x: T): void		381
-nim	relay	bookofnim/deepdives/asyncPar.html#relay	var relay		399
-nim	sendAction	bookofnim/deepdives/asyncPar.html#sendAction	proc sendAction(): void		403
-nim	receiveAction	bookofnim/deepdives/asyncPar.html#receiveAction	proc receiveAction(): void		409
-nim	sendActionA	bookofnim/deepdives/asyncPar.html#sendActionA	proc sendActionA(): void		423
-nim	receiveActionA	bookofnim/deepdives/asyncPar.html#receiveActionA	proc receiveActionA(): void		429
-nim	f1	bookofnim/deepdives/asyncPar.html#f1	proc f1(): Future[string]		464
-nim	fv1	bookofnim/deepdives/asyncPar.html#fv1	let fv1		472
-nim	f2	bookofnim/deepdives/asyncPar.html#f2	proc f2(): Future[string]		476
-nim	laterGater	bookofnim/deepdives/asyncPar.html#laterGater,string	proc laterGater(s: string): Future[void]		486
-nim	seeya	bookofnim/deepdives/asyncPar.html#seeya	let seeya		492
-nim	afterwhile	bookofnim/deepdives/asyncPar.html#afterwhile	let afterwhile		493
-nim	fake1	bookofnim/deepdives/asyncPar.html#fake1	let fake1		500
-nim	fakeFailed	bookofnim/deepdives/asyncPar.html#fakeFailed	let fakeFailed		501
-nim	someErr	bookofnim/deepdives/asyncPar.html#someErr	let someErr		502
-nim	fake2	bookofnim/deepdives/asyncPar.html#fake2	var fake2		503
-nim	afilepath	bookofnim/deepdives/asyncPar.html#afilepath	const afilepath		532
-nim	reader	bookofnim/deepdives/asyncPar.html#reader	var reader		540
-nim	writer	bookofnim/deepdives/asyncPar.html#writer	var writer		541
-nim	cursize	bookofnim/deepdives/asyncPar.html#cursize	let cursize		545
+nim	bf	bookofnim/deepdives/asyncPar.html#bf	var bf		372
+nim	gf	bookofnim/deepdives/asyncPar.html#gf	var gf		373
+nim	L	bookofnim/deepdives/asyncPar.html#L	var L		374
+nim	numThreads	bookofnim/deepdives/asyncPar.html#numThreads	var numThreads		375
+nim	iAmGuarded	bookofnim/deepdives/asyncPar.html#iAmGuarded	var iAmGuarded		376
+nim	echoAction	bookofnim/deepdives/asyncPar.html#echoAction,T	proc echoAction[T](x: T): void		380
+nim	relay	bookofnim/deepdives/asyncPar.html#relay	var relay		398
+nim	sendAction	bookofnim/deepdives/asyncPar.html#sendAction	proc sendAction(): void		402
+nim	receiveAction	bookofnim/deepdives/asyncPar.html#receiveAction	proc receiveAction(): void		408
+nim	sendActionA	bookofnim/deepdives/asyncPar.html#sendActionA	proc sendActionA(): void		422
+nim	receiveActionA	bookofnim/deepdives/asyncPar.html#receiveActionA	proc receiveActionA(): void		428
+nim	f1	bookofnim/deepdives/asyncPar.html#f1	proc f1(): Future[string]		463
+nim	fv1	bookofnim/deepdives/asyncPar.html#fv1	let fv1		471
+nim	f2	bookofnim/deepdives/asyncPar.html#f2	proc f2(): Future[string]		475
+nim	laterGater	bookofnim/deepdives/asyncPar.html#laterGater,string	proc laterGater(s: string): Future[void]		485
+nim	seeya	bookofnim/deepdives/asyncPar.html#seeya	let seeya		491
+nim	afterwhile	bookofnim/deepdives/asyncPar.html#afterwhile	let afterwhile		492
+nim	fake1	bookofnim/deepdives/asyncPar.html#fake1	let fake1		499
+nim	fakeFailed	bookofnim/deepdives/asyncPar.html#fakeFailed	let fakeFailed		500
+nim	someErr	bookofnim/deepdives/asyncPar.html#someErr	let someErr		501
+nim	fake2	bookofnim/deepdives/asyncPar.html#fake2	var fake2		502
+nim	afilepath	bookofnim/deepdives/asyncPar.html#afilepath	const afilepath		531
+nim	reader	bookofnim/deepdives/asyncPar.html#reader	var reader		539
+nim	writer	bookofnim/deepdives/asyncPar.html#writer	var writer		540
+nim	cursize	bookofnim/deepdives/asyncPar.html#cursize	let cursize		544
 heading	concurrency and parallelism	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism	 concurrency and parallelism		0
 heading	TLDR	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-tldr	  TLDR		0
 heading	links	bookofnim/deepdives/asyncPar.html#concurrency-and-parallelism-links	  links		0

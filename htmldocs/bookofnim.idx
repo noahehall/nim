@@ -2,10 +2,3 @@ nimTitle	bookofnim	bookofnim.html	module src/bookofnim		0
 heading	the book of nim	bookofnim.html#the-book-of-nim	 the book of nim		0
 heading	TLDR	bookofnim.html#the-book-of-nim-tldr	  TLDR		0
 heading	links	bookofnim.html#the-book-of-nim-links	  links		0
-heading	Nimv2 Hack	bookofnim.html#nimv2-hack	 Nimv2 Hack		0
-heading	TLDR	bookofnim.html#nimv2-hack-tldr	  TLDR		0
-heading	TODOs	bookofnim.html#nimv2-hack-todos	  TODOs		0
-heading	experimental modules in v2	bookofnim.html#nimv2-hack-experimental-modules-in-v2	  experimental modules in v2		0
-heading	std modules deprecated in v2	bookofnim.html#nimv2-hack-std-modules-deprecated-in-v2	  std modules deprecated in v2		0
-heading	std modules removed in v2	bookofnim.html#nimv2-hack-std-modules-removed-in-v2	  std modules removed in v2		0
-heading	system modules removed in v2	bookofnim.html#nimv2-hack-system-modules-removed-in-v2	  system modules removed in v2		0

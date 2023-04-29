@@ -1,0 +1,25 @@
+nimTitle	memoryCompiler	bookofnim/deepdives/memoryCompiler.html	module src/bookofnim/deepdives/memoryCompiler		0
+heading	memory GC and compiler	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler	 memory GC and compiler		0
+heading	TLDR	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-tldr	  TLDR		0
+heading	links	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-links	  links		0
+heading	TODOs	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-todos	  TODOs		0
+heading	nimc	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-nimc	  nimc		0
+heading	CMDS	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-cmds	  CMDS		0
+heading	compiler OPTS	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-compiler-opts	  compiler OPTS		0
+heading	compile time symbol/switches OPTS	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-compile-time-symbolslashswitches-opts	  compile time symbol/switches OPTS		0
+heading	output OPTS	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-output-opts	  output OPTS		0
+heading	cross compilation OPTS	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-cross-compilation-opts	  cross compilation OPTS		0
+heading	path OPTS	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-path-opts	  path OPTS		0
+heading	configuration file hierarchy & precedence	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-configuration-file-hierarchy-amp-precedence	  configuration file hierarchy &amp; precedence		0
+heading	configuration OPTS	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-configuration-opts	  configuration OPTS		0
+heading	documention OPTS	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-documention-opts	  documention OPTS		0
+heading	debugging OPTS	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-debugging-opts	  debugging OPTS		0
+heading	runtime OPTS	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-runtime-opts	  runtime OPTS		0
+heading	specific runtime check OPTS	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-specific-runtime-check-opts	  specific runtime check OPTS		0
+heading	specific compiler hint OPTS	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-specific-compiler-hint-opts	  specific compiler hint OPTS		0
+heading	specific compiler warning OPTS	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-specific-compiler-warning-opts	  specific compiler warning OPTS		0
+heading	compiler style check OPTS	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-compiler-style-check-opts	  compiler style check OPTS		0
+heading	environment variables	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-environment-variables	  environment variables		0
+heading	type opts	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-type-opts	  type opts		0
+heading	skipped	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-skipped	  skipped		0
+heading	memory management	bookofnim/deepdives/memoryCompiler.html#memory-gc-and-compiler-memory-management	  memory management		0

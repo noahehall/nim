@@ -93,30 +93,30 @@ except:
                              ## raises IO exception on err
                              ## use staticRead instead for compiletime">entireFile</a></li>
 <li><a class="reference" href="#env" title="env =
-  var collectResult_3472884816 = initTable(32)
+  var collectResult_3489662032 = initTable(32)
   ## should probably be a strtabs
   for k, v in envPairs():
     if not contains(v, &quot;woop&quot;) and v == &quot;1&quot;:
-      collectResult_3472884816[k] = v
-  collectResult_3472884816">env</a></li>
+      collectResult_3489662032[k] = v
+  collectResult_3489662032">env</a></li>
 <li><a class="reference" href="#first5Lines" title="first5Lines = try:
   readLines helloworldReadme, 5
 except:
   @[]">first5Lines</a></li>
 <li><a class="reference" href="#hiddenFiles" title="hiddenFiles =
-  var collectResult_3472884156 = newSeq(Natural(0))
+  var collectResult_3489661372 = newSeq(Natural(0))
   for kind, path in walkDir(getHomeDir(), false, false, false):
     if isHidden(path):
-      add(collectResult_3472884156) do:
-        var fmtRes_3472884181 = newStringOfCap(48)
-        formatValue(fmtRes_3472884181, kind, &quot;&quot;)
-        add(fmtRes_3472884181, &quot;: &quot;)
-        add(fmtRes_3472884181, &quot;path.lastPathPart=&quot;)
-        formatValue(fmtRes_3472884181, lastPathPart(path), &quot;&quot;)
-        fmtRes_3472884181
-  collectResult_3472884156">hiddenFiles</a></li>
+      add(collectResult_3489661372) do:
+        var fmtRes_3489661397 = newStringOfCap(48)
+        formatValue(fmtRes_3489661397, kind, &quot;&quot;)
+        add(fmtRes_3489661397, &quot;: &quot;)
+        add(fmtRes_3489661397, &quot;path.lastPathPart=&quot;)
+        formatValue(fmtRes_3489661397, lastPathPart(path), &quot;&quot;)
+        fmtRes_3489661397
+  collectResult_3489661372">hiddenFiles</a></li>
 <li><a class="reference" href="#hiddenFilesRec" title="hiddenFilesRec =
-  var collectResult_3472884202 = newSeq(Natural(0))
+  var collectResult_3489661418 = newSeq(Natural(0))
   for v in walkDirRec(getHomeDir(), {pcFile}, {pcDir}, false, false, false):
     if (
       10 &lt; i):
@@ -124,8 +124,8 @@ except:
     else:
       i += 1
     if isHidden(v):
-      add(collectResult_3472884202, lastPathPart(v))
-  collectResult_3472884202">hiddenFilesRec</a></li>
+      add(collectResult_3489661418, lastPathPart(v))
+  collectResult_3489661418">hiddenFilesRec</a></li>
 <li><a class="reference" href="#myEnv" title="myEnv = newStringTable([(&quot;FILE&quot;, &quot;/var/log/wtmp&quot;)], modeCaseSensitive)">myEnv</a></li>
 <li><a class="reference" href="#someCmd" title="someCmd = &quot;whoami&quot;">someCmd</a></li>
 <li><a class="reference" href="#someCmdArg" title="someCmdArg = someCmd &amp; &quot; $FILE&quot;">someCmdArg</a></li>
@@ -138,7 +138,7 @@ except:
     <summary><a class="reference reference-toplevel" href="#10" id="60">Consts</a></summary>
     <ul class="simple simple-toc-section">
       <li><a class="reference" href="#appName" title="appName = &quot;bookofnim&quot;">appName</a></li>
-<li><a class="reference" href="#buildInfo" title="buildInfo = &quot;Revision f472b07805cf3a0716812fe6641bcc58cb1ead3c\nCompiled on #43-Ubuntu SMP Wed Mar 29 16:11:05 UTC 2023&quot;">buildInfo</a></li>
+<li><a class="reference" href="#buildInfo" title="buildInfo = &quot;Revision 1c9c926ebd359efc93546cb33973bd1f6f67aa7b\nCompiled on #43-Ubuntu SMP Wed Mar 29 16:11:05 UTC 2023&quot;">buildInfo</a></li>
 <li><a class="reference" href="#dirtmp" title="dirtmp = &quot;/tmp/min&quot;">dirtmp</a></li>
 <li><a class="reference" href="#dotpath" title="dotpath = &quot;./par/sibl/nephew&quot;">dotpath</a></li>
 <li><a class="reference" href="#fossdir" title="fossdir = &quot;~/git/foss/&quot;">fossdir</a></li>
@@ -539,12 +539,12 @@ except:
 </div>
 <div id="env">
   <dt><pre><span class="Identifier">env</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">collectResult_3472884816</span> <span class="Other">=</span> <span class="Identifier">initTable</span><span class="Other">(</span><span class="DecNumber">32</span><span class="Other">)</span>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_3489662032</span> <span class="Other">=</span> <span class="Identifier">initTable</span><span class="Other">(</span><span class="DecNumber">32</span><span class="Other">)</span>
   <span class="Comment">## should probably be a strtabs</span>
   <span class="Keyword">for</span> <span class="Identifier">k</span><span class="Other">,</span> <span class="Identifier">v</span> <span class="Keyword">in</span> <span class="Identifier">envPairs</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span>
     <span class="Keyword">if</span> <span class="Identifier">not</span> <span class="Identifier">contains</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">,</span> <span class="StringLit">&quot;woop&quot;</span><span class="Other">)</span> <span class="Identifier">and</span> <span class="Identifier">v</span> <span class="Operator">==</span> <span class="StringLit">&quot;1&quot;</span><span class="Other">:</span>
-      <span class="Identifier">collectResult_3472884816</span><span class="Other">[</span><span class="Identifier">k</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">v</span>
-  <span class="Identifier">collectResult_3472884816</span></pre></dt>
+      <span class="Identifier">collectResult_3489662032</span><span class="Other">[</span><span class="Identifier">k</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">v</span>
+  <span class="Identifier">collectResult_3489662032</span></pre></dt>
   <dd>
     
     
@@ -568,17 +568,17 @@ except:
 </div>
 <div id="hiddenFiles">
   <dt><pre><span class="Identifier">hiddenFiles</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">collectResult_3472884156</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_3489661372</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
   <span class="Keyword">for</span> <span class="Identifier">kind</span><span class="Other">,</span> <span class="Identifier">path</span> <span class="Keyword">in</span> <span class="Identifier">walkDir</span><span class="Other">(</span><span class="Identifier">getHomeDir</span><span class="Other">(</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">false</span><span class="Other">,</span> <span class="Identifier">false</span><span class="Other">,</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span>
     <span class="Keyword">if</span> <span class="Identifier">isHidden</span><span class="Other">(</span><span class="Identifier">path</span><span class="Other">)</span><span class="Other">:</span>
-      <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_3472884156</span><span class="Other">)</span> <span class="Keyword">do</span><span class="Other">:</span>
-        <span class="Keyword">var</span> <span class="Identifier">fmtRes_3472884181</span> <span class="Other">=</span> <span class="Identifier">newStringOfCap</span><span class="Other">(</span><span class="DecNumber">48</span><span class="Other">)</span>
-        <span class="Identifier">formatValue</span><span class="Other">(</span><span class="Identifier">fmtRes_3472884181</span><span class="Other">,</span> <span class="Identifier">kind</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span>
-        <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">fmtRes_3472884181</span><span class="Other">,</span> <span class="StringLit">&quot;: &quot;</span><span class="Other">)</span>
-        <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">fmtRes_3472884181</span><span class="Other">,</span> <span class="StringLit">&quot;path.lastPathPart=&quot;</span><span class="Other">)</span>
-        <span class="Identifier">formatValue</span><span class="Other">(</span><span class="Identifier">fmtRes_3472884181</span><span class="Other">,</span> <span class="Identifier">lastPathPart</span><span class="Other">(</span><span class="Identifier">path</span><span class="Other">)</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span>
-        <span class="Identifier">fmtRes_3472884181</span>
-  <span class="Identifier">collectResult_3472884156</span></pre></dt>
+      <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_3489661372</span><span class="Other">)</span> <span class="Keyword">do</span><span class="Other">:</span>
+        <span class="Keyword">var</span> <span class="Identifier">fmtRes_3489661397</span> <span class="Other">=</span> <span class="Identifier">newStringOfCap</span><span class="Other">(</span><span class="DecNumber">48</span><span class="Other">)</span>
+        <span class="Identifier">formatValue</span><span class="Other">(</span><span class="Identifier">fmtRes_3489661397</span><span class="Other">,</span> <span class="Identifier">kind</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span>
+        <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">fmtRes_3489661397</span><span class="Other">,</span> <span class="StringLit">&quot;: &quot;</span><span class="Other">)</span>
+        <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">fmtRes_3489661397</span><span class="Other">,</span> <span class="StringLit">&quot;path.lastPathPart=&quot;</span><span class="Other">)</span>
+        <span class="Identifier">formatValue</span><span class="Other">(</span><span class="Identifier">fmtRes_3489661397</span><span class="Other">,</span> <span class="Identifier">lastPathPart</span><span class="Other">(</span><span class="Identifier">path</span><span class="Other">)</span><span class="Other">,</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span>
+        <span class="Identifier">fmtRes_3489661397</span>
+  <span class="Identifier">collectResult_3489661372</span></pre></dt>
   <dd>
     
     
@@ -589,7 +589,7 @@ except:
 </div>
 <div id="hiddenFilesRec">
   <dt><pre><span class="Identifier">hiddenFilesRec</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">collectResult_3472884202</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">var</span> <span class="Identifier">collectResult_3489661418</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span>
   <span class="Keyword">for</span> <span class="Identifier">v</span> <span class="Keyword">in</span> <span class="Identifier">walkDirRec</span><span class="Other">(</span><span class="Identifier">getHomeDir</span><span class="Other">(</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">{</span><span class="Identifier">pcFile</span><span class="Other">}</span><span class="Other">,</span> <span class="Other">{</span><span class="Identifier">pcDir</span><span class="Other">}</span><span class="Other">,</span> <span class="Identifier">false</span><span class="Other">,</span> <span class="Identifier">false</span><span class="Other">,</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span>
     <span class="Keyword">if</span> <span class="Other">(</span>
       <span class="DecNumber">10</span> <span class="Operator">&lt;</span> <span class="Identifier">i</span><span class="Other">)</span><span class="Other">:</span>
@@ -597,8 +597,8 @@ except:
     <span class="Keyword">else</span><span class="Other">:</span>
       <span class="Identifier">i</span> <span class="Operator">+=</span> <span class="DecNumber">1</span>
     <span class="Keyword">if</span> <span class="Identifier">isHidden</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">)</span><span class="Other">:</span>
-      <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_3472884202</span><span class="Other">,</span> <span class="Identifier">lastPathPart</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">collectResult_3472884202</span></pre></dt>
+      <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">collectResult_3489661418</span><span class="Other">,</span> <span class="Identifier">lastPathPart</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Identifier">collectResult_3489661418</span></pre></dt>
   <dd>
     
     
@@ -654,7 +654,7 @@ except:
   </dd>
 </div>
 <div id="buildInfo">
-  <dt><pre><span class="Identifier">buildInfo</span> <span class="Other">=</span> <span class="StringLit">&quot;Revision f472b07805cf3a0716812fe6641bcc58cb1ead3c\nCompiled on #43-Ubuntu SMP Wed Mar 29 16:11:05 UTC 2023&quot;</span></pre></dt>
+  <dt><pre><span class="Identifier">buildInfo</span> <span class="Other">=</span> <span class="StringLit">&quot;Revision 1c9c926ebd359efc93546cb33973bd1f6f67aa7b\nCompiled on #43-Ubuntu SMP Wed Mar 29 16:11:05 UTC 2023&quot;</span></pre></dt>
   <dd>
     
     
@@ -875,7 +875,7 @@ sample options with arguments
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-04-29 03:10:57 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-04-29 13:01:07 UTC</small>
       </div>
     </div>
   </div>

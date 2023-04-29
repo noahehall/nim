@@ -1,0 +1,18 @@
+nimTitle	packaging	bookofnim/deepdives/packaging.html	module src/bookofnim/deepdives/packaging		0
+heading	packaging and configuring apps	bookofnim/deepdives/packaging.html#packaging-and-configuring-apps	 packaging and configuring apps		0
+heading	TLDR	bookofnim/deepdives/packaging.html#packaging-and-configuring-apps-tldr	  TLDR		0
+heading	links	bookofnim/deepdives/packaging.html#packaging-and-configuring-apps-links	  links		0
+heading	TODOs	bookofnim/deepdives/packaging.html#packaging-and-configuring-apps-todos	  TODOs		0
+heading	nimble	bookofnim/deepdives/packaging.html#packaging-and-configuring-apps-nimble	  nimble		0
+heading	nimble packages	bookofnim/deepdives/packaging.html#packaging-and-configuring-apps-nimble-packages	  nimble packages		0
+heading	creating nimble packages	bookofnim/deepdives/packaging.html#packaging-and-configuring-apps-creating-nimble-packages	  creating nimble packages		0
+heading	package directives	bookofnim/deepdives/packaging.html#packaging-and-configuring-apps-package-directives	  package directives		0
+heading	package dir structure	bookofnim/deepdives/packaging.html#packaging-and-configuring-apps-package-dir-structure	  package dir structure		0
+heading	creating nimble libraries	bookofnim/deepdives/packaging.html#packaging-and-configuring-apps-creating-nimble-libraries	  creating nimble libraries		0
+heading	releasing and publishing packages	bookofnim/deepdives/packaging.html#packaging-and-configuring-apps-releasing-and-publishing-packages	  releasing and publishing packages		0
+heading	nimble configuration	bookofnim/deepdives/packaging.html#packaging-and-configuring-apps-nimble-configuration	  nimble configuration		0
+heading	nimscript for app configuration	bookofnim/deepdives/packaging.html#packaging-and-configuring-apps-nimscript-for-app-configuration	  nimscript for app configuration		0
+heading	nim.nims as config files	bookofnim/deepdives/packaging.html#packaging-and-configuring-apps-nimdotnims-as-config-files	  <tt class="docutils literal"><span class="pre"><span class="Operator">.</span><span class="Identifier">nims</span></span></tt> as config files		0
+heading	parsecfg	bookofnim/deepdives/packaging.html#packaging-and-configuring-apps-parsecfg	  parsecfg		0
+heading	parsecfg types	bookofnim/deepdives/packaging.html#packaging-and-configuring-apps-parsecfg-types	  parsecfg types		0
+heading	parsecfg procs	bookofnim/deepdives/packaging.html#packaging-and-configuring-apps-parsecfg-procs	  parsecfg procs		0

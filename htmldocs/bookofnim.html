@@ -50,13 +50,6 @@
   <li><a class="reference" id="the-book-of-nim_toc" href="#the-book-of-nim">the book of nim</a></li>
 <ul class="simple"><li><a class="reference" id="the-book-of-nim-tldr_toc" href="#the-book-of-nim-tldr">TLDR</a></li>
 <li><a class="reference" id="the-book-of-nim-links_toc" href="#the-book-of-nim-links">links</a></li>
-</ul><li><a class="reference" id="nimv2-hack_toc" href="#nimv2-hack">Nimv2 Hack</a></li>
-<ul class="simple"><li><a class="reference" id="nimv2-hack-tldr_toc" href="#nimv2-hack-tldr">TLDR</a></li>
-<li><a class="reference" id="nimv2-hack-todos_toc" href="#nimv2-hack-todos">TODOs</a></li>
-<li><a class="reference" id="nimv2-hack-experimental-modules-in-v2_toc" href="#nimv2-hack-experimental-modules-in-v2">experimental modules in v2</a></li>
-<li><a class="reference" id="nimv2-hack-std-modules-deprecated-in-v2_toc" href="#nimv2-hack-std-modules-deprecated-in-v2">std modules deprecated in v2</a></li>
-<li><a class="reference" id="nimv2-hack-std-modules-removed-in-v2_toc" href="#nimv2-hack-std-modules-removed-in-v2">std modules removed in v2</a></li>
-<li><a class="reference" id="nimv2-hack-system-modules-removed-in-v2_toc" href="#nimv2-hack-system-modules-removed-in-v2">system modules removed in v2</a></li>
 </ul><li>
   <a class="reference reference-toplevel" href="#6" id="56">Imports</a>
 </li>
@@ -95,67 +88,11 @@
 </ul>
 </li>
 </ul>
-
-<h1><a class="toc-backref" id="nimv2-hack" href="#nimv2-hack">Nimv2 Hack</a></h1>
-<h2><a class="toc-backref" id="nimv2-hack-tldr" href="#nimv2-hack-tldr">TLDR</a></h2><ul class="simple"><li>migrating to V2<ul class="simple"><li>system modules moved to std library<ul class="simple"><li>assertions &gt; std/assertions</li>
-<li>atomics &gt; std/sysatomics</li>
-<li>widestrs &gt; std/widestrs</li>
-<li>system threads &gt; architecture redesign<ul class="simple"><li>think this was split into multiple <tt class="docutils literal"><span class="pre"><span class="Identifier">system</span><span class="Operator">/</span><span class="Identifier">thread</span><span class="Operator">*</span></span></tt> modules</li>
-<li>as well as some new std modules</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-<h2><a class="toc-backref" id="nimv2-hack-todos" href="#nimv2-hack-todos">TODOs</a></h2><ul class="simple"><li>see if theres an alternative to include for supporting nimv2<ul class="simple"><li>check templateMacrosv2.outparams</li>
-</ul>
-</li>
-<li>figure out where the impure/<a class="reference internal" href="#db">db</a> modules moved to</li>
-<li>verify the TLDR about sys modules moved to std<ul class="simple"><li>ensure the source code is relatively the same and they arent a totally new module</li>
-</ul>
-</li>
-<li>aggregate a big list of changes in this file<ul class="simple"><li>but still decompose examples into distinct files</li>
-</ul>
-</li>
-</ul>
-
-<h2><a class="toc-backref" id="nimv2-hack-experimental-modules-in-v2" href="#nimv2-hack-experimental-modules-in-v2">experimental modules in v2</a></h2><ul class="simple"><li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/devel/lib/experimental/diff.nim">diff</a></li>
-</ul>
-
-<h2><a class="toc-backref" id="nimv2-hack-std-modules-deprecated-in-v2" href="#nimv2-hack-std-modules-deprecated-in-v2">std modules deprecated in v2</a></h2><ul class="simple"><li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/devel/lib/deprecated/pure/future.nim">future</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/devel/lib/deprecated/pure/mersenne.nim">mersenne</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/devel/lib/deprecated/pure/ospaths.nim">ospaths</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/devel/lib/deprecated/pure/oswalkdir.nim">oswalkdir</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/devel/lib/deprecated/pure/securehash.nim">securehash</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/devel/lib/deprecated/pure/sums.nim">sums</a></li>
-</ul>
-
-<h2><a class="toc-backref" id="nimv2-hack-std-modules-removed-in-v2" href="#nimv2-hack-std-modules-removed-in-v2">std modules removed in v2</a></h2><ul class="simple"><li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/v1.6.12/lib/pure/asyncftpclient.nim">asyncftpclient</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/v1.6.12/lib/pure/future.nim">future</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/v1.6.12/lib/pure/nimtracker.nim">nimtracker</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/v1.6.12/lib/pure/punycode.nim">punycode</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/v1.6.12/lib/pure/smtp.nim">smtp</a><ul class="simple"><li>weird because the smtp.nim.cfg still exists in v2</li>
-</ul>
-</li>
-</ul>
-
-<h2><a class="toc-backref" id="nimv2-hack-system-modules-removed-in-v2" href="#nimv2-hack-system-modules-removed-in-v2">system modules removed in v2</a></h2><ul class="simple"><li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/v1.6.12/lib/system/arithm.nim">arithm</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/v1.6.12/lib/system/dragonbox.nim">dragonbox</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/v1.6.12/lib/system/io.nim">io</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/v1.6.12/lib/system/schubfach.nim">schubfach</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/v1.6.12/lib/system/syslocks.nim">syslocks</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/v1.6.12/lib/system/sysspawn.nim">syspawn</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/v1.6.12/lib/system/threads.nim">threads</a></li>
-<li><a class="reference external" href="https://github.com/nim-lang/Nim/blob/v1.6.12/lib/system/widestrs.nim">widestrs</a></li>
-</ul>
 </p>
     <div class="section" id="6">
   <h1><a class="toc-backref" href="#6">Imports</a></h1>
   <dl class="item">
-    <a class="reference external" href="bookofnim/helloworld/helloworld.html">bookofnim/helloworld/helloworld</a>, <a class="reference external" href="bookofnim/deepdives/asyncPar.html">bookofnim/deepdives/asyncPar</a>, <a class="reference external" href="bookofnim/deepdives/collections.html">bookofnim/deepdives/collections</a>, <a class="reference external" href="bookofnim/deepdives/containers.html">bookofnim/deepdives/containers</a>, <a class="reference external" href="bookofnim/deepdives/crypto.html">bookofnim/deepdives/crypto</a>, <a class="reference external" href="bookofnim/deepdives/data.html">bookofnim/deepdives/data</a>, <a class="reference external" href="bookofnim/deepdives/dataWrangling.html">bookofnim/deepdives/dataWrangling</a>, <a class="reference external" href="bookofnim/deepdives/datetime.html">bookofnim/deepdives/datetime</a>, <a class="reference external" href="bookofnim/deepdives/dbs.html">bookofnim/deepdives/dbs</a>, <a class="reference external" href="bookofnim/deepdives/ffi.html">bookofnim/deepdives/ffi</a>, <a class="reference external" href="bookofnim/deepdives/filters.html">bookofnim/deepdives/filters</a>, <a class="reference external" href="bookofnim/deepdives/lists.html">bookofnim/deepdives/lists</a>, <a class="reference external" href="bookofnim/deepdives/maths.html">bookofnim/deepdives/maths</a>, <a class="reference external" href="bookofnim/deepdives/osIo.html">bookofnim/deepdives/osIo</a>, <a class="reference external" href="bookofnim/deepdives/pragmasEffects.html">bookofnim/deepdives/pragmasEffects</a>, <a class="reference external" href="bookofnim/deepdives/runtimeMemory.html">bookofnim/deepdives/runtimeMemory</a>, <a class="reference external" href="bookofnim/deepdives/servers.html">bookofnim/deepdives/servers</a>, <a class="reference external" href="bookofnim/deepdives/strings.html">bookofnim/deepdives/strings</a>, <a class="reference external" href="bookofnim/deepdives/sugar.html">bookofnim/deepdives/sugar</a>, <a class="reference external" href="bookofnim/deepdives/templateMacros.html">bookofnim/deepdives/templateMacros</a>, <a class="reference external" href="bookofnim/deepdives/tests.html">bookofnim/deepdives/tests</a>, <a class="reference external" href="bookofnim/backends/nimcMemory.html">bookofnim/backends/nimcMemory</a>, <a class="reference external" href="bookofnim/backends/packaging.html">bookofnim/backends/packaging</a>, <a class="reference external" href="bookofnim/backends/targeting.html">bookofnim/backends/targeting</a>, <a class="reference external" href="bookofnim/v2/asyncParV2.html">bookofnim/v2/asyncParV2</a>, <a class="reference external" href="bookofnim/v2/dataWranglingV2.html">bookofnim/v2/dataWranglingV2</a>, <a class="reference external" href="bookofnim/v2/dbsV2.html">bookofnim/v2/dbsV2</a>, <a class="reference external" href="bookofnim/v2/exceptionHandlingV2.html">bookofnim/v2/exceptionHandlingV2</a>, <a class="reference external" href="bookofnim/v2/osIoV2.html">bookofnim/v2/osIoV2</a>, <a class="reference external" href="bookofnim/v2/stringsV2.html">bookofnim/v2/stringsV2</a>, <a class="reference external" href="bookofnim/v2/systemV2.html">bookofnim/v2/systemV2</a>, <a class="reference external" href="bookofnim/v2/templateMacrosV2.html">bookofnim/v2/templateMacrosV2</a>
+    <a class="reference external" href="bookofnim/helloworld/helloworld.html">bookofnim/helloworld/helloworld</a>, <a class="reference external" href="bookofnim/deepdives/asyncPar.html">bookofnim/deepdives/asyncPar</a>, <a class="reference external" href="bookofnim/deepdives/collections.html">bookofnim/deepdives/collections</a>, <a class="reference external" href="bookofnim/deepdives/containers.html">bookofnim/deepdives/containers</a>, <a class="reference external" href="bookofnim/deepdives/crypto.html">bookofnim/deepdives/crypto</a>, <a class="reference external" href="bookofnim/deepdives/data.html">bookofnim/deepdives/data</a>, <a class="reference external" href="bookofnim/deepdives/dataWrangling.html">bookofnim/deepdives/dataWrangling</a>, <a class="reference external" href="bookofnim/deepdives/datetime.html">bookofnim/deepdives/datetime</a>, <a class="reference external" href="bookofnim/deepdives/ffi.html">bookofnim/deepdives/ffi</a>, <a class="reference external" href="bookofnim/deepdives/filters.html">bookofnim/deepdives/filters</a>, <a class="reference external" href="bookofnim/deepdives/lists.html">bookofnim/deepdives/lists</a>, <a class="reference external" href="bookofnim/deepdives/maths.html">bookofnim/deepdives/maths</a>, <a class="reference external" href="bookofnim/deepdives/memoryCompiler.html">bookofnim/deepdives/memoryCompiler</a>, <a class="reference external" href="bookofnim/deepdives/memoryRuntime.html">bookofnim/deepdives/memoryRuntime</a>, <a class="reference external" href="bookofnim/deepdives/osIo.html">bookofnim/deepdives/osIo</a>, <a class="reference external" href="bookofnim/deepdives/packaging.html">bookofnim/deepdives/packaging</a>, <a class="reference external" href="bookofnim/deepdives/pragmasEffects.html">bookofnim/deepdives/pragmasEffects</a>, <a class="reference external" href="bookofnim/deepdives/servers.html">bookofnim/deepdives/servers</a>, <a class="reference external" href="bookofnim/deepdives/strings.html">bookofnim/deepdives/strings</a>, <a class="reference external" href="bookofnim/deepdives/sugar.html">bookofnim/deepdives/sugar</a>, <a class="reference external" href="bookofnim/deepdives/templateMacros.html">bookofnim/deepdives/templateMacros</a>, <a class="reference external" href="bookofnim/deepdives/tests.html">bookofnim/deepdives/tests</a>
   </dl>
 </div>
 
@@ -165,7 +102,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-04-29 03:10:58 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-04-29 13:01:07 UTC</small>
       </div>
     </div>
   </div>
