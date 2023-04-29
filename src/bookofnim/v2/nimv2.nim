@@ -63,13 +63,13 @@ TODOs
 ]##
 
 {.push warning[UnusedImport]:off .}
-
-import
-  asyncParV2,
-  dataWranglingV2,
-  dbsV2,
-  exceptionHandlingV2,
-  osIoV2,
-  stringsV2,
-  systemV2,
-  templateMacrosV2
+when (NimMajor, NimMinor, NimPatch) >= (1,9,3):
+  include
+    asyncParV2,
+    dataWranglingV2,
+    dbsV2,
+    exceptionHandlingV2,
+    osIoV2,
+    stringsV2,
+    systemV2,
+    templateMacrosV2

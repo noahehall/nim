@@ -64,5 +64,4 @@ import bookofnim / backends / [
   ]
 
 # latest nim v2
-when (NimMajor, NimMinor, NimPatch) >= (1,9,3):
-  include bookofnim / v2 / nimv2
+import bookofnim / v2 / nimv2
