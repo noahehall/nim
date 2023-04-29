@@ -1,7 +1,6 @@
 # nim
 
-- nim in action: pg 40
-  - convert this to RST and import into the main file
+- convert this to RST and import into the main file
 
 ## links
 

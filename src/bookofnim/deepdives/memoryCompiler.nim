@@ -1,6 +1,6 @@
 ##
-## compiling and custome memory mgmt
-## =================================
+## memory GC and compiler
+## ======================
 ## bookmark: rework this entire file
 
 ##[

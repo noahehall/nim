@@ -4,4 +4,4 @@ discard """
   disabled: false
 """
 
-import bookofnim / community / dbs
+import bookofnim / opensource / dbs

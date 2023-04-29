@@ -1,6 +1,6 @@
 ##
-## nimble packages, nimscripts, and app cfgs
-## =========================================
+## packaging and configuring apps
+## ==============================
 ## bookmark: dunno
 
 ##[
