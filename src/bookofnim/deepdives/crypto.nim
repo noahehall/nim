@@ -106,5 +106,7 @@ import std/base64
 
 echo fmt"{myString.encode=}"
 echo fmt"{myString.encode.decode=}"
-# echo fmt"{encode $objectSome=}" TODO(noah): throws in v2
-# echo fmt"{decode encode $objectSome=}" TODO(noah): throws in v2
+
+# TODO(noah): think requires overloading
+# echo fmt"{encode $objectSome=}"
+# echo fmt"{decode encode $objectSome=}"
