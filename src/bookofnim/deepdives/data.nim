@@ -172,7 +172,7 @@ echo "############################ json impure"
 # toUgly is faster than pretty/$ but requires a var
 
 var
-  reqData = %* { "tupac": {"quotes": ["dreams are for real"]}} ## \
+  reqData = %* { "tupac": {"quotes": ["dreams are for real"]}}
     ## dynamic: instantiate json node
 
 proc echoReqData: void = echo fmt"{reqData=}"
@@ -205,7 +205,7 @@ t.fromJsonHook parseJson """{
   }""" ## inplace version of jsonTo
 echo fmt"t.fromJsonHook(parseJson(string)) -> {t=}"
 
-const opts = Joptions(allowExtraKeys: true, allowMissingKeys: true) ## \
+const opts = Joptions(allowExtraKeys: true, allowMissingKeys: true)
   ## more succcint than the strtab example
 # echo fmt"{resJson.jsonTo(ResponseType, opts)=}" # TODO(noah): throws in v2
 
