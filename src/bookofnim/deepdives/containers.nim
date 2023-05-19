@@ -79,8 +79,7 @@ import std/tables
 const
   baseTable = {"fname": "noah", "lname": "hall"} ## system table
   hashTable = baseTable.toTable ## newTable
-  # TODO(noah) throws in v2
-  # orderededTable = baseTable.toOrderedTable ## [('a', 5), ('b', 9)].toOrderedTable
+  orderededTable = baseTable.toOrderedTable ## [('a', 5), ('b', 9)].toOrderedTable
   countTable = "wooperscooper".toCountTable ## anyOpenArrayLikeThing.toCountTable
   anotherTable = toTable[string, int]({
     "first": 1,
@@ -146,13 +145,13 @@ t.withValue(1, value):
   value.name = "Nim"
   value.uid = 1314
 
-# TODO(noah): throws in v2
-# t.withValue(521, value):
-#   doAssert false
-# do:
-#   # block is executed when `key` not in `t`
-#   t[1314] = User(name: "exist", uid: 521)
-
+from std/assertions import doAssert
+t.withValue(521, value):
+  doAssert false
+do:
+  # block is executed when `key` not in `t`
+  t[1314] = User(name: "exist", uid: 521)
+echo fmt"{t[1314].name=}"
 
 echo "############################ strtabs"
 # len, keys, pairs, values
@@ -163,7 +162,7 @@ let
   authnz = {
     "ROLE": "USER",
     "TRUSTED": "0",
-    }.newStringTable modeCaseSensitive ## \
+    }.newStringTable modeCaseSensitive
       ## also accepts a tuple[varargs] of keyX,valY, ...
 
 echo fmt"{authnz.mode=}"
@@ -196,5 +195,5 @@ proc hash(x: User): Hash = !$x.uid.hash
 var userDictionary = initTable[User, string]()
 userDictionary[User(name: "noah", uid: 1234)] = "custom keys!"
 
-# TODO(noah): throws in v2
+# TODO(noah): requires overloading $ for userDictionary?
 # echo fmt"{userDictionary=}"
