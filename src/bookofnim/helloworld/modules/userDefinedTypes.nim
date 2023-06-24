@@ -23,17 +23,23 @@
 
 links
 -----
-- [distinct type aliases](https://nim-lang.org/docs/manual.html#types-distinct-type)
-- [inheritance](https://nim-lang.org/docs/manual.html#type-relations)
-- [reference and pointer types](https://nim-lang.org/docs/manual.html#types-reference-and-pointer-types)
-
+- [distinct type aliases](https://nim-lang.github.io/Nim/manual.html#types-distinct-type)
+- [inheritance](https://nim-lang.github.io/Nim/manual.html#type-relations)
+- [reference and pointer types](https://nim-lang.github.io/Nim/manual.html#types-reference-and-pointer-types)
+- [object variants](https://nim-lang.github.io/Nim/manual.html#types-object-variants)
 
 TODOs
------
-- add a testfile
-- import in bookofnim.nim
-- update readme
-
+- [strict case objects](https://nim-lang.github.io/Nim/manual_experimental.html#strict-case-objects)
+- [concepts](https://nim-lang.github.io/Nim/manual_experimental.html#concepts)
+- [setters for private fields](https://nim-lang.github.io/Nim/manual.html#procedures-properties)
+- [procCall i.e. super](https://nim-lang.github.io/Nim/manual.html#methods-inhibit-dynamic-method-resolution-via-proccall)
+- object variants: reread the docs
+  - using the dereferencing operator to reassign a case objects fields after instantiation
+  - differences with case + elif branches in the case statement
+  - enums vs range type for the discrimator field
+- an example of using when (and if?) inside an object constructor
+  - there are examples in the doc where when is used to optionally define props
+  - e.g. this file: https://github.com/nim-lang/Nim/blob/devel/lib/std/private/threadtypes.nim
 
 ## base types
 - used to construct custom types
@@ -111,6 +117,16 @@ multi-methods
 - however they are still ambiguous because of inheritance
 - you have to use --multimethods:on when compiling
 
+## object variants
+- preferred over an object hierarchy with multiple levels when simple variants suffice
+- are tagged unions, which use an enum to discrimate between variant
+  - generally a field called `kind` is set to SomeEnum, whose fields determine the branch
+- also called `case objects` in the docs
+
+variant pragmas
+---------------
+- uncheckedAssign disables re-assignment restrictions
+
 ## recursive types
 - objects, tuples and ref objects that recursively depend on each other
 - must be declared within a single type section
@@ -127,9 +143,10 @@ echo "############################ object"
 
 type
   Computer = object
-    os: string
+    os: string = "ubuntu"
     de: string
     wm: string
+    name = "default values in v2! type inferred"
 
 type
   DistroObj = object
@@ -151,6 +168,9 @@ proc `prv=`*(x: var SomeObj, v: string) {.inline.} =
 proc `prv`*(x: SomeObj): string {.inline.} = x.prv
 
 var myobj = SomeObj(pub: "pub field")
+proc `$`(x: SomeObj): string =
+  ## overload $ for SomeObj
+  x.pub & " " & x.prv
 
 echo "myobj before setting: ", myobj
 myobj.prv= "another value"
@@ -168,14 +188,17 @@ proc `[]=`* (v: var Vector, i: int, value: float) =
   of 0: v.x = value
   of 1: v.y = value
   of 2: v.z = value
-  else: assert(false)
+  # else: assert(false) # TODO(noah): assert isnt system in v2
+  else: discard # see above
+
 proc `[]`* (v: Vector, i: int): float =
+  result = 0
   # getter
   case i
   of 0: result = v.x
   of 1: result = v.y
   of 2: result = v.z
-  else: assert(false)
+  else: discard
 
 
 echo "############################ tuple"
@@ -289,7 +312,7 @@ let people2 = SomeoneRef(name: "npc",
   bday: "before noah",
   age: 1)
 
-method baseMethod(self: SomeoneRef): bool {.base.} =
+method baseMethod(self: SomeoneRef): void {.base.} =
   # override this base method
   raise newException(CatchableError, "Method without implementation override")
 
@@ -335,9 +358,12 @@ type
   PlusExpr = ref object of Expression
     a, b: Expression
 
+# TODO(noah): v2 fkn v2 or the strict config.nim switches
 # watch out: 'eval' relies on dynamic binding
-method eval(e: Expression): int {.base.} = # <-- its for the base type
-  # override this base method
+method eval(e: Expression): int {.base.} =
+  result = 0
+  ## example base method that simply quits with a message for the consumer
+  ## you can force call the base method via procCall someMethod()
   quit "to override!"
 # use methods because at runtime we need to know the type
 method eval(e: Literal): int = e.x
@@ -345,10 +371,8 @@ method eval(e: PlusExpr): int = eval(e.a) + eval(e.b)
 # these procs dont need dynamic binding
 proc newLit(x: int): Literal = Literal(x: x)
 proc newPlus(a, b: Expression): PlusExpr = PlusExpr(a: a, b: b)
-
 echo eval(newPlus(newPlus(newLit(1), newLit(2)), newLit(4)))
 
-# you can force call the base method via procCall someMethod(a,b)
 
 echo "############################ multi-methods"
 # copied from docs
@@ -357,7 +381,7 @@ type
   Unit = ref object of Thing
     x: int
 # accepts any Thing
-method collide(a, b: Thing) {.inline.} =
+method collide(a, b: Thing) {.inline, base.} =
   quit "to override!"
 # note the order
 method collide(a: Thing, b: Unit) {.inline.} =
@@ -384,3 +408,37 @@ type
     name: string     # the symbol's name
     line: int        # the line the symbol was declared in
     code: Node       # the symbol's abstract syntax tree
+
+
+echo "############################ object variants"
+
+type
+  LanguageKind = enum # consumers can create these kinds of object variants
+    typescript, nimlang, shell
+  Language = ref LanguageObj # uses the fields defined in the object
+  LanguageObj = object # tagged unions
+    # shared fields
+    stack: string
+    appName: string
+    # each variant must have distinct fields
+    case kind: LanguageKind # discriminated by this field
+    of typescript:
+      bun: bool
+    of nimlang:
+      c: bool
+    of shell:
+      bash: bool
+
+# create a new case object
+var fireTeam = Language(kind: nimlang, stack: "allstack", appName: "nirvai" )
+var webTeam = Language(kind: typescript, stack: "fullstack", appName: "nirvaiWeb")
+var opsTeam = Language(kind: shell, stack: "network", appName: "nirvConnect")
+
+type
+  FakeOption = object
+    case key: bool
+    of true: val: string
+    else: discard
+
+# create a fake option
+var myOpt = FakeOption(key: true, val: "has a value")

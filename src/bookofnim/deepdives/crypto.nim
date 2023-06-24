@@ -1,7 +1,7 @@
 ##
 ## cryptography
 ## ============
-## [bookmark](https://nim-lang.org/docs/sha1.html)
+## [bookmark](https://nim-lang.github.io/Nim/sha1.html)
 
 ##[
 ## TLDR
@@ -19,17 +19,17 @@ links
 - other
   - before using any nim hashing fn: [read this](https://github.com/nim-lang/Nim/issues/19863)
 - high impact
-  - [base64 en/decoder](https://nim-lang.org/docs/base64.html)
-  - [efficient 1way hashing](https://nim-lang.org/docs/hashes.html)
-  - [globally distributed unique IDs](https://nim-lang.org/docs/oids.html)
-  - [md5 checksums](https://nim-lang.org/docs/md5.html)
-  - [openssl](https://nim-lang.org/docs/openssl.html)
-  - [random number generator](https://nim-lang.org/docs/random.html)
-  - [random sys number generator](https://nim-lang.org/docs/sysrand.html)
-  - [sha-1](https://nim-lang.org/docs/sha1.html)
-  - [ssl cert finder](https://nim-lang.org/docs/ssl_certs.html)
+  - [base64 en/decoder](https://nim-lang.github.io/Nim/base64.html)
+  - [efficient 1way hashing](https://nim-lang.github.io/Nim/hashes.html)
+  - [globally distributed unique IDs](https://nim-lang.github.io/Nim/oids.html)
+  - [md5 checksums](https://nim-lang.github.io/Nim/md5.html)
+  - [openssl](https://nim-lang.github.io/Nim/openssl.html)
+  - [random number generator](https://nim-lang.github.io/Nim/random.html)
+  - [random sys number generator](https://nim-lang.github.io/Nim/sysrand.html)
+  - [sha-1](https://nim-lang.github.io/Nim/sha1.html)
+  - [ssl cert finder](https://nim-lang.github.io/Nim/ssl_certs.html)
 - nitche
-  - [mersenne](https://nim-lang.org/docs/mersenne.html)
+  - [mersenne](https://nim-lang.github.io/Nim/mersenne.html)
 
 
 ## ssl_certs
@@ -106,5 +106,7 @@ import std/base64
 
 echo fmt"{myString.encode=}"
 echo fmt"{myString.encode.decode=}"
-echo fmt"{encode $objectSome=}"
-echo fmt"{decode encode $objectSome=}"
+
+# TODO(noah): think requires overloading
+# echo fmt"{encode $objectSome=}"
+# echo fmt"{decode encode $objectSome=}"

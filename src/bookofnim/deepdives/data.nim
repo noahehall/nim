@@ -1,7 +1,7 @@
 ##
 ## working with data
 ## =================
-## [bookmark](https://nim-lang.org/docs/logging.html)
+## [bookmark](https://nim-lang.github.io/Nim/logging.html)
 
 ##[
 TLDR
@@ -13,23 +13,23 @@ TLDR
 links
 -----
 - high impact
-  - [csv parser](https://nim-lang.org/docs/parsecsv.html)
-  - [json utils](https://nim-lang.org/docs/jsonutils.html)
-  - [json](https://nim-lang.org/docs/json.html)
-  - [logging](https://nim-lang.org/docs/logging.html)
-  - [marshal](https://nim-lang.org/docs/marshal.html)
+  - [csv parser](https://nim-lang.github.io/Nim/parsecsv.html)
+  - [json utils](https://nim-lang.github.io/Nim/jsonutils.html)
+  - [json](https://nim-lang.github.io/Nim/json.html)
+  - [logging](https://nim-lang.github.io/Nim/logging.html)
+  - [marshal](https://nim-lang.github.io/Nim/marshal.html)
 - niche
-  - [base object of a lexer](https://nim-lang.org/docs/lexbase.html)
+  - [base object of a lexer](https://nim-lang.github.io/Nim/lexbase.html)
   - [fusion ht/xml parser](https://nim-lang.github.io/fusion/src/fusion/htmlparser/parsexml.html)
   - [fusion ht/xml tree](https://nim-lang.github.io/fusion/src/fusion/htmlparser/xmltree.html)
   - [fusion htmlparser](https://nim-lang.github.io/fusion/src/fusion/htmlparser.html)
-  - [ht/xml parser](https://nim-lang.org/docs/xmlparser.html)
-  - [ht/xml tree](https://nim-lang.org/docs/xmltree.html)
-  - [ht/xml](https://nim-lang.org/docs/parsexml.html)
-  - [html generator](https://nim-lang.org/docs/htmlgen.html)
-  - [html parser](https://nim-lang.org/docs/htmlparser.html)
-  - [json parser](https://nim-lang.org/docs/parsejson.html)
-  - [var ints](https://nim-lang.org/docs/varints.html)
+  - [ht/xml parser](https://nim-lang.github.io/Nim/xmlparser.html)
+  - [ht/xml tree](https://nim-lang.github.io/Nim/xmltree.html)
+  - [ht/xml](https://nim-lang.github.io/Nim/parsexml.html)
+  - [html generator](https://nim-lang.github.io/Nim/htmlgen.html)
+  - [html parser](https://nim-lang.github.io/Nim/htmlparser.html)
+  - [json parser](https://nim-lang.github.io/Nim/parsejson.html)
+  - [var ints](https://nim-lang.github.io/Nim/varints.html)
 
 ## json
 
@@ -98,7 +98,11 @@ jsonutils procs
 
 ]##
 # styleCheck complains about capitulation of http headers
-{.push hint[Name]:off, warning[UnusedImport]:off .}
+{.push
+  hint[Name]:off,
+  warning[UnusedImport]:off,
+  hint[XDeclaredButNotUsed]:off
+.}
 
 import std/[sugar, strformat, strutils, sequtils, options, tables]
 
@@ -142,7 +146,7 @@ let
 echo fmt"{resJson.pretty=}"""
 echo fmt"{resJson.kind=}"
 echo fmt"{resJson=}"
-echo fmt"{resType=}"
+# echo fmt"{resType=}" TODO(noah): throws in v2
 echo fmt"{resJson.hash=}"
 echo fmt"""{resJson.hasKey "body"=}"""
 echo fmt"""{resJson.contains "body"=}"""
@@ -159,7 +163,7 @@ echo fmt"""{resJson["headers"]["Status"].getInt=}"""
 echo fmt"""{resJson\{"headers","Status"\}.getInt=}"""
 echo fmt"""{resJson["headers"]["Host"].copy=}"""
 
-echo fmt"""curlies return default value {resJson\{"doesntexist"\}.getFloat=}"""
+# echo fmt"""curlies return default value {resJson\{"doesntexist"\}.getFloat=}""" # TODO(noah): throws in v2
 echo fmt"""e.g. empty string {resJson["headers"]\{"X-Vault-Token"\}.getStr=}"""
 echo fmt"""{"string to json + quotes".escapeJson=}"""
 echo fmt"""{"string to json - quotes".escapeJsonUnquoted=}"""
@@ -168,7 +172,7 @@ echo "############################ json impure"
 # toUgly is faster than pretty/$ but requires a var
 
 var
-  reqData = %* { "tupac": {"quotes": ["dreams are for real"]}} ## \
+  reqData = %* { "tupac": {"quotes": ["dreams are for real"]}}
     ## dynamic: instantiate json node
 
 proc echoReqData: void = echo fmt"{reqData=}"
@@ -201,9 +205,9 @@ t.fromJsonHook parseJson """{
   }""" ## inplace version of jsonTo
 echo fmt"t.fromJsonHook(parseJson(string)) -> {t=}"
 
-const opts = Joptions(allowExtraKeys: true, allowMissingKeys: true) ## \
+const opts = Joptions(allowExtraKeys: true, allowMissingKeys: true)
   ## more succcint than the strtab example
-echo fmt"{resJson.jsonTo(ResponseType, opts)=}"
+# echo fmt"{resJson.jsonTo(ResponseType, opts)=}" # TODO(noah): throws in v2
 
 echo fmt"{some(1).toJson=}"
 echo fmt"{none[int]().toJson=}"

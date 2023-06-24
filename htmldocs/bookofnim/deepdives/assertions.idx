@@ -1,0 +1,15 @@
+nimTitle	assertions	bookofnim/deepdives/assertions.html	module src/bookofnim/deepdives/assertions		0
+nim	loc`gensym1	bookofnim/deepdives/assertions.html#loc`gensym1	const loc`gensym1		46
+nim	ploc`gensym1	bookofnim/deepdives/assertions.html#ploc`gensym1	const ploc`gensym1		47
+nim	loc`gensym8	bookofnim/deepdives/assertions.html#loc`gensym8	const loc`gensym8		46
+nim	ploc`gensym8	bookofnim/deepdives/assertions.html#ploc`gensym8	const ploc`gensym8		47
+nim	wrong`gensym9	bookofnim/deepdives/assertions.html#wrong`gensym9	var wrong`gensym9		97
+nim	begin`gensym9	bookofnim/deepdives/assertions.html#begin`gensym9	const begin`gensym9		98
+nim	msgEnd`gensym9	bookofnim/deepdives/assertions.html#msgEnd`gensym9	const msgEnd`gensym9		99
+nim	raisedForeign`gensym9	bookofnim/deepdives/assertions.html#raisedForeign`gensym9.t	template raisedForeign`gensym9()		100
+heading	assertions	bookofnim/deepdives/assertions.html#assertions	 assertions		0
+heading	TLDR	bookofnim/deepdives/assertions.html#assertions-tldr	  TLDR		0
+heading	links	bookofnim/deepdives/assertions.html#assertions-links	  links		0
+heading	assertion procs	bookofnim/deepdives/assertions.html#assertions-assertion-procs	  assertion procs		0
+heading	assert	bookofnim/deepdives/assertions.html#assertions-assert	  assert		0
+heading	doAssert	bookofnim/deepdives/assertions.html#assertions-doassert	  doAssert		0

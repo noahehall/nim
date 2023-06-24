@@ -11,16 +11,15 @@
     - containers of fields: e.g. objects, tuples, hashtables
     - collections of items: e.g. sequences, arrays, char, sub/ranges, tables
 - ordinal types
-  - ordinals are values that can be orderly counted
+  - ordinals are values that are countable and ordered, with a smallest & highest value
   - enums, u/integers, bool
-  - are countable and ordered, with a smallest & highest value
 - FYI about low & high procs
   - should only be used with types not values
 
 links
 -----
 - [nim by example: arrays](https://nim-by-example.github.io/arrays/)
-- [table constructor](https://nim-lang.org/docs/manual.html#statements-and-expressions-table-constructor)
+- [table constructor](https://nim-lang.github.io/Nim/manual.html#statements-and-expressions-table-constructor)
 
 ## structured: collections
 - cstringArray
@@ -28,17 +27,16 @@ links
 ## array
 - list of a static number of items
 - similar to C arrays but more memory safety
-
-array procs
------------
-- array[n, T] fixed-length dimensionally homogeneous
-- array, openArray, UncheckedArray, varargs
 - the array size is encoded in its type
 - to pass an array to a proc its signature must specify the size and type
 - array access is always bounds checked (theres a flag to disable)
 - the index type can be any ordinal type
 - each array dimension must have the same type,
   - nested (multi-dimensional) arrays can have different types than their parent
+
+array types
+-----------
+- array[n, T] fixed-length dimensionally homogeneous
 
 array like
 ----------
@@ -72,6 +70,7 @@ table
 - both use the same syntax, only the context changes
   - 0 .. 2 --> inclusive .. inclusive
   - 0 .. ^1 --> ^ counts backwards, ^1 includes the last element, ^2 doesnt
+
 range
 -----
 - range[T] generic constructor for range
@@ -337,9 +336,10 @@ echo "is {1,2,3} a subset of {1,2,3} ", globalset1 <= {1,2,3}
 echo "is {1,2,3} a strict subset of y ", globalset1 < {1,2,3}
 echo "the cardinality of {1,2,3} is ", card globalset1
 
-var globalset11 = deepCopy globalset1
-globalset11.excl({2})
-echo "remove {2} from {1,2,3} ", globalset11
+# TODO(noah): dunno throws in v2
+# var globalset11 = deepCopy globalset1
+# globalset11.excl({2})
+# echo "remove {2} from {1,2,3} ", globalset11
 
 
 echo "############################ general logic"

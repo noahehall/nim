@@ -1,36 +1,51 @@
 ##
 ## pragmas, effects and experimental features
 ## ==========================================
-## - [bookmark](https://nim-lang.org/docs/manual.html#effect-system-tag-tracking)
+## - [bookmark](https://nim-lang.github.io/Nim/manual.html#effect-system-tag-tracking)
 
 ##[
 ## TLDR
 - pragmas
-  - syntax: `{.pragma1, pragma2:val, etc.}`
+  - syntax: `{.pragma1, pragma2:val, type[pragma]:val, etc.}`
   - many pragmas require familiarity of C/C++/objc
-  - FYI:
-    - a futile attempt was taken at categorizing pragmas
-    - template annotation & macro pragmas are in templateMacros.nim
-    - thread/async pragmas are in asyncPar.nim
+  - FYI: a futile attempt was taken at categorizing pragmas
 - effect system consists of
-  - proc exception tracking
-  - user defined effect tag tracking
-  - functional side effect tracking
+  - and empty [] in raises/tags declares none are permitted
+  - compile time routine CatchableError tracking {.raises: [commaSeparated] .}
+    - compile time tracking of exception types a routine can/t throw
+  - user defined effect tag (type) tracking {.tags:[commaSeparated}.}
+    - create a type that denotes some user defined thing you want to track
+    - apply tag(s) to routine A to permit
+    - apply empty [] or {.forbids: [commaSeparated] .} to routine B to restrict calls to routine A
+  - functional side effect tracking (implies gc safety below)
+    - {.noSideEffect.} throws if this routine has sideEffects
+    - {.cast(noSideEffect).}: disables side effect tracking
+    - a routine has no sideEffects if:
+      - it doesnt access a threadlocal/global var
+      - does not invoke a routine that does
   - memory/gc safety tracking
+    - a routine is GC safe if:
+      - doesnt (in)directly access global vars of type string, seq, ref or closures
+    - {.gcsafe.} throws if a routine is unsafe
+    - {.cast(gcsafe).} disables safety tracking
+  - effect logging
+    - a single line with {.effects.} causes the compiler to output all effects up to that point
 
 links
 -----
 - other
   - [wikipedia side effects](https://en.wikipedia.org/wiki/Effect_system)
-- [pragmas section in manual](https://nim-lang.org/docs/manual.html#pragmas)
-- [effect system in manual](https://nim-lang.org/docs/manual.html#effect-system)
+- [effect system intro](https://nim-lang.github.io/Nim/manual.html#effect-system)
+- [list of effects](https://github.com/nim-lang/Nim/blob/devel/lib/system/exceptions.nim)
+- [pragmas intro](https://nim-lang.github.io/Nim/manual.html#pragmas)
 
 TODOs
 -----
-- [effect system](https://nim-lang.org/docs/manual.html#effect-system)
-- [experimental](https://nim-lang.org/docs/manual_experimental.html)
+- [experimental features](https://nim-lang.github.io/Nim/manual_experimental.html)
+- [dot operator template](https://nim-lang.github.io/Nim/manual_experimental.html#special-operators-dot-operators)
 - move all the C pragmas into the backends dir
 - [document the effect types from devel branch](https://github.com/nim-lang/Nim/blob/devel/lib/system/exceptions.nim)
+- distribute the pragmas in this file into other files, but keep this comprehensive list up to date
 
 ## pragmas
 - enable new functionality without adding new keywords to the language
@@ -59,11 +74,10 @@ custom pragmas
   - booldefine same as intdefine but for bools
 - user defined pragmas: WOOP is a new pragma,
   - pragma:WOOP, pragmaX, pragmaY
-- see templateMacros.nim for template pragmas
 
 universal pragmas
 -----------------
-- compileTime marks proc as compile time only; vars init during compile and const at runtime
+- compileTime marks symbol as compile time only; vars init during compile and const at runtime
 - deprecated: "optional msg" flag, prints warning in compiler logs if symbol is used
 - effects will output all inferred effects (e.g. exceptions) up to this point
 - error: "msg" annotate a symbol with an error msg; when the symbol is used a static error is thrown
@@ -73,11 +87,17 @@ universal pragmas
 - push: x,y,z add pragmas until popped, e.g. {.push hints:off, warning[blah]: on.}
 - used: inform the compiler this symbol/module is used, and not to print warning about it
 - warning: "msg" same as error but for warnings
+- hint: "msg" output a a hint when symbol is used
 
 var pragmas
 -----------
-- global converts a proc scoped var into a global
-- threadvar informs the compiler this var should be local to a thread
+- global stores a proc scoped var in a global location so its initialized only once at startup
+- register this variable for placement in a hardware register for faster access
+
+thread pragmas
+--------------
+- thread this proc can be passed to createThread/spawn
+- threadvar this var is local to a thread, implies global pragma
 
 routine pragmas
 ---------------
@@ -85,11 +105,11 @@ routine pragmas
 - base method used on a base type for inheritable objects
 - closure
 - effectsOf: paramX inform the compiler this proc has the effects of paramX
+- inline this proc at the callsite instead of calling it
 - noReturn proc that never returns
 - noSideEffect proc is interpreted as a func (see routines.nim)
 - raises: [x,y,z] list permitted exceptions; non listed force compiler errs
 - tags: [x,y,z] list of user defined effects to enforce
-- thread informs the compiler this proc is meant for execution on a new thread
 - varags this proc can take a variable number of params after the last one
 
 type pragmas
@@ -101,18 +121,39 @@ type pragmas
 - inheritable create alternative RootObj
 - overloadableEnums allows two Enums to have same fieldnames, to be resolved at runtime
 - packed sets an objects field back to back in memory; e.g. for network/hardware drivers
-- pure requires enums to be fully qualified; x fails, but y.x doesnt
-- shallow objects can be shallow copied; use w/ caution; speeds up assignments considerably
+- pure requires enums to be fully qualified; or omit an objects type field at runtime
+- shallow copy on assignment; breaks GC safety; speeds up assignments considerably
 - union sets an objects fields overlaid in memory producing a union instead of struct in C/++
+- forbids from invoking/consuming type T
+- noinit do not initialize this symbol with a default value (optimization)
+- requiresInit throw error if this symbol is later used without first being initialized
 
 JS pragmas
 ----------
 - importJs fns/symbols that can be called via `obj.fn(args)`
 
-experimental pragmas
---------------------
-- enable experimental features
-  - parallel
+experimental: "woop"
+------------------------
+- FYI:
+  - can be applied to a symbol / module / config switch
+- callOperator enabless overload `(a[,b...])` so it calls a template like `blah(a,...)`
+- dotOperators enable overloading `a.b | a.b = c` so it calls a template like `blah(a,b,c)`
+- flexibleOptionalParams allows optional parameters in combination with `: body`
+- notnil enables annotating nillable types to be initialized with non nill values at compile time
+- parallel mechanism for safer parallel logic via compiler checks during semantic analysis
+- strictCaseObjects requires every field access to be valid at compile time
+- strictDefs every local variable must be initialized explicitly before use (except with let)
+- strictFuncs implements a stricter definition of `side effect` when impacts ref/ptr types
+- strictNotNil also checks builtin and imported modules
+- views a variable that is/contains a non ptr/proc lent/openArray; best used with strictFuncs
+
+template pragmas
+----------------
+- redefine a template symbols as long as the signature doesnt change
+
+macro pragmas
+-------------
+- command
 
 compilation pragmas
 -------------------
@@ -120,14 +161,12 @@ compilation pragmas
 - boundChecks:on/off
 - callconv:on/off
 - checks:on/off
-- hint[woop]:on/off
-- hints:on/off
+- hints:on/off or hint[woop]:on/off
 - nilChecks:on/off
 - optimization:none/speed/size
 - overflowChecks: on/off
 - patterns:on/off
-- warning[woop]:on/off
-- warnings:on/off
+- warnings:on/off or warning[woop]:on/off
 
 niche pragmas
 -------------
@@ -137,33 +176,34 @@ niche pragmas
 
 unknown/skipped/C pragmas
 -------------------------
-- align
+- align for variables and object field members
 - bitsize
 - codegenDecl
 - compile
 - computedGoTo dunno; something to do with case statements in a while loop and interpreters
 - cpopNonPod
+- cppNonPod
 - dirty something to do with templates
 - discardable
-- dynlib: "exactName" import a proc/var from a dynamic .{dll,so} library
 - dynlib export this symbol to a dynamic library, must be used with exportc
+- dynlib: "exactName" import a proc/var from a dynamic .{dll,so} library
 - emit
 - exportc: "optionalName" use the symbols/provided name when exporting this to c
 - extern: "x$1" affects symbol name mangling when exported
-- header
+- header dont declare this symbol in C, instead create an include statement
 - importc import a proc/var from C
 - importCpp
 - importObjC
 - incompleteStruct
 - inject something to do with symbol visibility
-- inline a proc; dunno what that means
 - link
 - localPassc
-- nodecl
+- noalias mapped to Cs restrict keyword
+- nodecl dont generate a declaration for the symbol in C, use header pragma instead
 - passc
 - passl
-- registerProc dunno; included in the compileTime example
-- size dunno
+- registerProc included in the compileTime example
+- size
 - volatile
 
 
@@ -216,7 +256,7 @@ effect types
 
 
 echo "############################ push/pop pragma"
-# @see https://nim-lang.org/docs/manual.html#pragmas-push-and-pop-pragmas
+# @see https://nim-lang.github.io/Nim/manual.html#pragmas-push-and-pop-pragmas
 # this (im-status) trick prohibits procs from throwing defects, but allows errors
 # compiler will throw if its analysis determines a proc can throw a defect, helps u debug
 

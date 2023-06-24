@@ -1,26 +1,23 @@
 ##
 ## variables and globals
 ## =====================
+## redo this entire file, likely just name it globals or something
 
 ##[
 ## TLDR
-- catchall for global keywords/procs/types/etc not specified in other files
 - anything like `BLAH=` can be written `BLAH =`
   - the former enables you to define/overload operators via 'proc `woop=`[bloop](soop): doop = toot'
-- converts are listed here because their purpose is implicit type coercion
-- additional type features are covered in structuredContainers.nim
 - you can call clear on pretty much anything
 
 links
 -----
-- [system vars](https://nim-lang.org/docs/system.html#8)
-- [typeinfo](https://nim-lang.org/docs/typeinfo.html)
-- [converters](https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#converter)
-- [special types](https://nim-lang.org/docs/manual.html#special-types)
+- [system vars](https://nim-lang.github.io/Nim/system.html#8)
 
 TODOs
 -----
 - blah.reset a thing to its default value
+- [type conversions](https://nim-lang.github.io/Nim/manual.html#statements-and-expressions-type-conversions)
+- [type casts](https://nim-lang.github.io/Nim/manual.html#statements-and-expressions-type-casts)
 
 ## var
 - runtime mutable global var
@@ -69,12 +66,6 @@ TODOs
 - toOpenArray
 - toOpenArrayByte
 
-## type inspection
-- type(x): retrieve the type of x, discouraged should use typeof
-- typeof(x, mode = typeofIter): retrieve the type of x
-- typeOfProc: retrieve the result of a proc, i.e. typeof x, typeOfProc
-- TypeofMode: enum[typeofProc|typeofIter] second param to typeof
-
 ## echo/repr
 - roughly equivalent to writeLine(stdout, x); flushFile(stdout)
 - available for the JavaScript target too.
@@ -106,9 +97,6 @@ echo "autoInt labeled auto but its type is ", type(autoInt)
 
 
 echo "############################ variable logic"
-# shallow copy isnt defined for arc/orc
-# shallow(blah) marks blah as shallow for optimization, subsequent assignments  wont deep copy
-# shallowCopy(x, y) copies y into x
 
 let someString = "some string"
 var d33pcopy: string ## \
@@ -162,60 +150,6 @@ echo "quit the program with quit(n) or quit(msg, n)"
 
 echo "############################ global let"
 # nimvm: bool true in Nim VM context and false otherwise; valid for when expressions
-
-echo "############################ type casts"
-var myInt = 10
-
-proc doubleFloat(x: float): float = x * x
-echo "cast int to a float ", doubleFloat(cast[float](myInt))
-
-echo "############################ type support"
-# assert typeof("a b c".split) is string
-# assert typeof("a b c".split, typeOfProc) is seq[string]
-
-echo "a static bool ", static[bool](1 == 1)
-
-let myStaticVar = static(1 + 2) ## \
-  ## static(x): force the compile-time evaluation of the given expression
-echo "my static var", myStaticVar
-
-static:
-  # can also be used as a block
-  echo "at compile time"
-echo "############################ converters (implicit type conversion procs)"
-type Option[T] = object
-  case hasValue: bool
-  of true:
-    value: T
-  else:
-    discard
-let aa = Option[int](hasValue: true, value: 1)
-let bb = Option[int](hasValue: true, value: 2)
-
-converter get[T](x: Option[T]): T =
-  ## create an implicit conversion for Option[T]
-  ## now Option[int] + Option[int] works
-  x.value
-echo "adding two options ", aa + bb
-
-# copied from docs
-# bad style ahead: Nim is not C.
-converter toBool(x: int): bool = x != 0
-if 4:
-  echo "compiles because implicit conversxion converts int to bool"
-
-echo "############################ type inference"
-var somevar: seq[char] = @['n', 'o', 'a', 'h']
-var othervar: string = ""
-echo "somevar is seq? ", somevar is seq
-echo "somevar is seq[char]? ", "throws err when adding subtype seq[char]"
-echo "somevar isnot string? ", somevar isnot string
-
-
-type MyType = ref object of RootObj
-var instance: MyType = MyType()
-
-echo "is instance of MyType ", instance of MyType
 
 
 echo "############################ echo and related"

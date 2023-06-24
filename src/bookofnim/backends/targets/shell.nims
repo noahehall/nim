@@ -21,7 +21,7 @@ links
       - [nimscript part 3](https://peterme.net/creating-condensed-shared-libraries-embedding-nimscript-pt-3.html)
 - high impact
   - [nimscript compatibility tests](https://github.com/nim-lang/Nim/blob/devel/tests/test_nimscript.nims)
-  - [nimscript spec (including tasks)](https://nim-lang.org/docs/nimscript.html)
+  - [nimscript spec (including tasks)](https://nim-lang.github.io/Nim/nimscript.html)
 
 TODOs
 -----

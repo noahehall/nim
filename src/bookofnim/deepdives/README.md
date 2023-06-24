@@ -4,7 +4,7 @@
 
 ## todo
 
-- [everything in the std library](https://nim-lang.org/docs/lib.html)
+- [everything in the std library](https://nim-lang.github.io/Nim/lib.html)
 - nimgrep
 - niminst
 - nimpretty

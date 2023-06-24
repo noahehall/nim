@@ -19,11 +19,10 @@ let
     --git.url:https://github.com/noahehall/nim \
     --hints:off \
     --index:on \
-    --multimethods:on \
-    --project \
-    --threads:on \
-    --verbosity:0 \
     --outdir:{docsDir} \
+    --project \
+    --verbosity:0 \
+    --warnings:off \
     """
 
 cd rootDir
@@ -52,6 +51,14 @@ proc createSourceDocs: (string, int) =
   except OSError:
     ("failed to create documentation", 1)
 
+proc createSourceDocsIndex: (string, int) =
+  echo "create user-serachable index HTML"
+  try:
+    fmt"buildIndex -o:{rootDir/docsDir}/theindex.html {rootDir / docsDir}".selfExec
+    ("user-searchable index HTML created", 0)
+  except OSError:
+    ("failed to user-searchable index", 1)
+
 proc createTestResults: (string, int) = createTestResultsHtml()
 
 proc createDependencyGraphs: (string, int) =
@@ -68,7 +75,7 @@ proc mvFilesToHtmlDocsDir: (string, int) =
     for output in @[
       rootDir / "src/bookofnim.dot",
       rootDir / "src/bookofnim.png",
-      rootDir / "testresults.html" # TODO think this broke viewing testresults in github pages
+      # rootDir / "testresults.html" # TODO(noah) think this broke viewing testresults in github pages
     ]: output.mvFile rootDir / docsDir / output.extractFilename
     ("documentation moved to htmldocs dir", 0)
   except CatchableError:
@@ -79,6 +86,7 @@ when isMainModule:
     installDeps,
     deletePrevdocs,
     createSourceDocs,
+    createSourceDocsIndex,
     createDependencyGraphs,
     createTestResults,
     mvFilesToHtmlDocsDir # must occur last

@@ -8,16 +8,20 @@
 - the sweetest nim syntax
 - the fusion pkg provides additional sugar, but its modules are dispersed through other files
 - working with data structures (e.g. sorting) generally requires std/algorithm
+- do
+  - do with paranthesis creates an anonymous proc closure
+  - do without paranthesis is just a block of code
 
 links
 -----
 - high impact
-  - [sugar](https://nim-lang.org/docs/sugar.html)
-  - [with](https://nim-lang.org/docs/with.html)
-  - [algorithm](https://nim-lang.org/docs/algorithm.html)
-  - [enumarate any collection](https://nim-lang.org/docs/enumerate.html)
+  - [sugar](https://nim-lang.github.io/Nim/sugar.html)
+  - [with](https://nim-lang.github.io/Nim/with.html)
+  - [algorithm](https://nim-lang.github.io/Nim/algorithm.html)
+  - [enumarate any collection](https://nim-lang.github.io/Nim/enumerate.html)
   - [wrapnils optional chaining](https://nim-lang.github.io/Nim/wrapnils.html)
-  - [system do notation](https://nim-lang.org/docs/manual_experimental.html#do-notation)
+  - [do notation](https://nim-lang.github.io/Nim/manual.html#procedures-do-notation)
+
 - niche
   - [import private symbols](https://github.com/nim-lang/Nim/blob/devel/lib/std/importutils.nim)
 
@@ -33,13 +37,12 @@ TODOs
 - std/algorithm
   - then review all the sort procs for each datatype (they all depend on algo)
 
-## do blocks and proc fn signatures
+## do statements, blocks and last proc params
+- can be used when the last param of a proc invocation expects a routing
+  - i.e. `foo(a, b, proc () = ...)` == `foo(a, b) do (): ...` or
 - do blocks can be considered an alias for `block:`
-- proc expressions can use do notation when passed as a parameter to a proc
-- can also be used to pass multiple blocks to a macro
-- i.e.
-  - do with paranthesis is an anonymous proc
-  - do without paranthesis is just a block of code
+  - can also be used to pass multiple blocks to a macro
+  - allows macros to receive both indented statements lists
 
 ## sugar
 

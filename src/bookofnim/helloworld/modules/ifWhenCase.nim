@@ -9,13 +9,15 @@
 - all can be used as expressions and the result assigned to a var
 - case statement branches should be listed in order of most expected
 
-branching TODOs
----------------
-- [likely](https://nim-lang.org/docs/system.html#likely.t%2Cbool)
-- [unlikely](https://nim-lang.org/docs/system.html#unlikely.t%2Cbool)
-- an example of using when (and if?) inside an object constructor
-  - there are examples in the doc where when is used to optionally define props
-  - e.g. this file: https://github.com/nim-lang/Nim/blob/devel/lib/std/private/threadtypes.nim
+links
+-----
+- [likely](https://nim-lang.github.io/Nim/system.html#likely.t%2Cbool)
+- [unlikely](https://nim-lang.github.io/Nim/system.html#unlikely.t%2Cbool)
+
+TODOs
+-----
+- [rangeCheck(cond)](https://nim-lang.github.io/Nim/system.html#rangeCheck.t)
+
 ## when
 - a compile time if statement
 - the condition MUST be a constant expression
@@ -30,7 +32,10 @@ branching TODOs
 - can also use elif, else branches
 ]##
 
-{.push hint[XDeclaredButNotUsed]:off .}
+{.push
+  hint[XDeclaredButNotUsed]:off,
+  warning[UnreachableElse]:off
+.}
 echo "############################ if"
 if not false: echo "true": else: echo "false"
 
@@ -42,6 +47,14 @@ if 11 < 2 or (11 == 11 and 'a' >= 'b' and not true or false):
   echo "hello world"
 elif "woop" == "poow": echo "poows arent woops"
 else: echo "you are the holy one"
+
+let imTrue = true
+
+# useful with complex conditions
+if likely(imTrue):
+  echo "hint to the compiler"
+if unlikely(not imTrue):
+  echo "same thing"
 
 echo "############################ when"
 # think this is as copypasta from docs
@@ -61,7 +74,8 @@ when defined(posix) and not (defined(macosx) or defined(bsd)):
 when isMainModule:
   # true if the current file is compiled directly
   # useful for embedding logic (e.g. tests) that arent executed when the file is imported
-  assert true == true
+  echo "i am the mainfile"
+else: echo "I have been imported"
 
 var whichVerse:string = when 1 < 2: "real world" else: "twitter verse"
 echo "i live in the " & whichVerse
@@ -69,7 +83,7 @@ echo "i live in the " & whichVerse
 when false: # trick for commenting code
   echo "this code is never compiled and not required to be commented out"
 
-# check if execution is compiletime or runtime (executable)
+# check if execution is compiletime or runtime
 # cannot contain elif branches
 # must contain an else branch
 # cannot define new symbols
@@ -103,9 +117,8 @@ when defined typeSupportBlah:
 echo "############################ case expressions"
 var numCase = 50.345
 echo case numCase
-  of 2: "of 2 satisifes float 2.0" # ofs must a constant expression
-  # duplicate case labels are errors in v2
-  # of 2.0: "is float 2.0" # if we switch to devel branch this throws duplicate
+  of 2: "of 2 satisifes float 2.0" # ofs must be a constant expression
+  # of 2.0: "is float 2.0" # duplicate case labels are errors in v2
   of 5.0, 6.0:
     {.linearScanEnd.} # signify the end of likely scenarios
     "float is 5 or 6.0"

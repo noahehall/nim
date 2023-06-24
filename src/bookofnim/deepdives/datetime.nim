@@ -1,7 +1,7 @@
 ##
 ## datetime
 ## ========
-## [bookmark](https://nim-lang.org/docs/monotimes.html)
+## [bookmark](https://nim-lang.github.io/Nim/monotimes.html)
 
 ##[
 ## TLDR
@@ -19,8 +19,8 @@
 
 links
 -----
-- [date & times](https://nim-lang.org/docs/times.html)
-- [mono times](https://nim-lang.org/docs/monotimes.html)
+- [date & times](https://nim-lang.github.io/Nim/times.html)
+- [mono times](https://nim-lang.github.io/Nim/monotimes.html)
 - [timezone names, but any unambiguous string can be used](https://en.wikipedia.org/wiki/Tz_database)
 
 TODOs
@@ -177,13 +177,14 @@ echo fmt"epoch Time {$fromUnixFloat(0)=}"
 echo fmt"epoch Time {$fromUnix(0)=}"
 echo fmt"epoch Time {$fromUnix(0).utc=}"
 echo fmt"epoch {$initTime(0,0)=}"
-echo fmt"epoch {epochTime()=}"
+# echo fmt"epoch {epochTime()=}" # TODO(noah): throws in v2
 echo fmt"{getTime().utc + 1.hours=}"
 echo fmt"{$bday.utcOffset=}"
 echo fmt"{$bday.toTime=}"
-echo fmt"{$bday.toTime.toUnix=}" ## time since epoch
-echo fmt"${bday.toTime.toUnixFloat=}" ## same but using subsecond resolution
-echo fmt"{$bday.weekday=}" ## any dt unit (see above)
+echo fmt"{$bday.toTime.toUnix=}" # time since epoch
+# TODO(noah): throws in v2
+# echo fmt"${bday.toTime.toUnixFloat=}" # same but using subsecond resolution
+echo fmt"{$bday.weekday=}" # any dt unit (see above)
 echo fmt"""{bday.format "YYYY'/'MMM' at 'htt"=}"""
 echo fmt"""string to date {"1969-01-01".parse(fdate)=}"""
 echo fmt"""string to formatted date {"1969-01-01".parse(fdate).format(fdate)=}"""

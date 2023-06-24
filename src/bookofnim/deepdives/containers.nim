@@ -5,7 +5,7 @@
 
 ##[
 ## TLDR
-- [custom types as keys require hash + == procs](https://nim-lang.org/docs/tables.html#basic-usage-hashing)
+- [custom types as keys require hash + == procs](https://nim-lang.github.io/Nim/tables.html#basic-usage-hashing)
 - generally all table types have the same interface; CountTables a bit more
 - critbit can be used as a sorted string dictionary
 - system.table is often used to collect and convert literals into std/tables
@@ -13,12 +13,12 @@
 links
 -----
 - high impact
-  - [tables: hash](https://nim-lang.org/docs/tables.html)
-  - [tables: string](https://nim-lang.org/docs/strtabs.html)
+  - [tables: hash](https://nim-lang.github.io/Nim/tables.html)
+  - [tables: string](https://nim-lang.github.io/Nim/strtabs.html)
   - [tables: fusion btree](https://nim-lang.github.io/fusion/src/fusion/btreetables.html)
 - niche
-  - [enum utils](https://nim-lang.org/docs/enumutils.html)
-  - [shared tables](https://nim-lang.org/docs/sharedtables.html)
+  - [enum utils](https://nim-lang.github.io/Nim/enumutils.html)
+  - [shared tables](https://nim-lang.github.io/Nim/sharedtables.html)
 
 TODOs
 -----
@@ -140,17 +140,18 @@ let u = User(name: "Hello", uid: 99)
 t[1] = u
 
 t.withValue(1, value):
-  ## block is executed only if `key` in `t`
-  ## to modify value it must be a ref/ptr
+  # block is executed only if t has key 1
+  # to modify value it must be a ref/ptr, which User is
   value.name = "Nim"
   value.uid = 1314
 
+from std/assertions import doAssert
 t.withValue(521, value):
   doAssert false
 do:
   # block is executed when `key` not in `t`
   t[1314] = User(name: "exist", uid: 521)
-
+echo fmt"{t[1314].name=}"
 
 echo "############################ strtabs"
 # len, keys, pairs, values
@@ -161,7 +162,7 @@ let
   authnz = {
     "ROLE": "USER",
     "TRUSTED": "0",
-    }.newStringTable modeCaseSensitive ## \
+    }.newStringTable modeCaseSensitive
       ## also accepts a tuple[varargs] of keyX,valY, ...
 
 echo fmt"{authnz.mode=}"
@@ -194,4 +195,5 @@ proc hash(x: User): Hash = !$x.uid.hash
 var userDictionary = initTable[User, string]()
 userDictionary[User(name: "noah", uid: 1234)] = "custom keys!"
 
-echo fmt"{userDictionary=}"
+# TODO(noah): requires overloading $ for userDictionary?
+# echo fmt"{userDictionary=}"

@@ -18,7 +18,7 @@
 
 links
 -----
-- [latest test results](https://noahehall.github.io/nim/htmldocs/testresults.html)
+- [latest test results](https://noahehall.github.io/nim/testresults.html)
 - use nims devel branch until the online documentation for v2 is ready
   - [docs](https://github.com/nim-lang/Nim/tree/devel/doc)
   - [system](https://github.com/nim-lang/Nim/blob/devel/lib/system.nim)
@@ -31,10 +31,10 @@ links
 
 {.push warning[UnusedImport]:off .}
 
-# latest Nim v1
 import bookofnim / helloworld / helloworld ## basic nim
 
 import bookofnim / deepdives / [
+    assertions, ## all types of assertions
     asyncPar, ## concurrency, parallelism (except async servers)
     collections, ## non list/queues, e.g. arrays and seqs
     containers,  ## tuples, tables and object

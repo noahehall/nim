@@ -31,25 +31,25 @@
   - [fuzz tests](https://github.com/status-im/nim-testutils/tree/master/testutils/fuzzing)
 - tuts
   - [bunches of tuts](https://nim-lang.org/documentation.html)
-  - [nim tutorial](https://nim-lang.org/docs/tut1.html)
+  - [nim tutorial](https://nim-lang.github.io/Nim/tut1.html)
   - [nim for typescript programmers tutorial](https://github.com/nim-lang/Nim/wiki/Nim-for-TypeScript-Programmers)
   - [nim by example](https://nim-by-example.github.io/getting_started/)
-  - [nim style guide](https://nim-lang.org/docs/nep1.html)
+  - [nim style guide](https://nim-lang.github.io/Nim/nep1.html)
 - specs
-  - [nim manual](https://nim-lang.org/docs/manual.html)
-  - [sugar](https://nim-lang.org/docs/sugar.html)
-  - [assertions](https://nim-lang.org/docs/assertions.html)
+  - [nim manual](https://nim-lang.github.io/Nim/manual.html)
+  - [sugar](https://nim-lang.github.io/Nim/sugar.html)
+  - [assertions](https://nim-lang.github.io/Nim/assertions.html)
   - [quick intro](https://narimiran.github.io/nim-basics/)
-  - [compiler user guide](https://nim-lang.org/docs/nimc.html)
-  - [docgen tools guide](https://nim-lang.org/docs/docgen.html)
-  - [docs](https://nim-lang.org/docs/lib.html)
+  - [compiler user guide](https://nim-lang.github.io/Nim/nimc.html)
+  - [docgen tools guide](https://nim-lang.github.io/Nim/docgen.html)
+  - [docs](https://nim-lang.github.io/Nim/lib.html)
 - specs
-  - [manual](https://nim-lang.org/docs/manual.html)
-  - [experimental features](https://nim-lang.org/docs/manual_experimental.html)
-  - [nim destructors and move semantics](https://nim-lang.org/docs/destructors.html)
-  - [standard library](https://nim-lang.org/docs/lib.html)
+  - [manual](https://nim-lang.github.io/Nim/manual.html)
+  - [experimental features](https://nim-lang.github.io/Nim/manual_experimental.html)
+  - [nim destructors and move semantics](https://nim-lang.github.io/Nim/destructors.html)
+  - [standard library](https://nim-lang.github.io/Nim/lib.html)
   - [nim for flow programmers](https://github.com/nim-lang/Nim/wiki/Nim-for-TypeScript-Programmers)
-  - [cmdline](https://nim-lang.org/docs/nimc.html)
+  - [cmdline](https://nim-lang.github.io/Nim/nimc.html)
 
 ## basics
 
@@ -59,6 +59,8 @@
 
 ### terms
 
+- compile time function evaluation: CTFE
+- dependency tracking
 - autovivification: creating tree structures on the fly
 - locations: something im memory consisting of some type of component; a variable is a name for a location
   - each variable and location is of a certain type

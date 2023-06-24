@@ -12,27 +12,37 @@
   - are garbage collected
   - need to be initialized before used
   - are mutable, the ref always points to the same memory location
+- value semantics
+  - sequences and strings are heap types BUT are copied on assignment like stack types
 - declaring variables as var
   - give value types heap semantics
   - if declared globally (module scoped) are stored in the executables data section (not the stack)
+- ARC/ORC at runtime
+  - shallow/shallowoCopy arent defined for arc/orc
+  - use move /+ assignment and sink for optimization
+- other MM
+  - shallow(blah) marks blah as shallow for optimization, subsequent assignments  wont deep copy
+  - shallowCopy(x, y) copies y into x
 
 links
 -----
 - [atomics](https://github.com/nim-lang/Nim/blob/devel/lib/pure/concurrency/atomics.nim)
-- [lifetime-tracking hooks](https://nim-lang.org/docs/destructors.html#lifetimeminustracking-hooks)
+- [destructors and move semantics](https://nim-lang.github.io/Nim/destructors.html)
 - [gc common](https://github.com/nim-lang/Nim/blob/devel/lib/system/gc_common.nim)
-- [ref and pointer types](https://nim-lang.org/docs/manual.html#types-reference-and-pointer-types)
+- [ref and pointer types](https://nim-lang.github.io/Nim/manual.html#types-reference-and-pointer-types)
+- [mixing gced memory with ptr](https://nim-lang.github.io/Nim/manual.html#types-mixing-gc-ed-memory-with-nimptr)
 
 TODOs
 -----
 - [] is the dereferencing sign
   - [see elegantbeefs response here](https://forum.nim-lang.org/t/10111)
 - reference all the ptr/ref/locks stuff in here
-- add a test file
-- hmm
+- [addr docs](https://nim-lang.github.io/Nim/manual.html#statements-and-expressions-the-addr-operator)
+- [ORC and threads discussion](https://forum.nim-lang.org/t/10155)
+- [refc docs](https://nim-lang.github.io/Nim/refc.html)
 
 ## garbage collector safety
-
+- string, seq, ref and closures are always garbage collected
 - each thread
   - has an isolated memory heap; no sharing occurs
     - prevents race conditions and improves efficiency
@@ -75,7 +85,6 @@ channels
 - useful when locks & guards are overkill
 
 ## types
-
 stack (value) types
 -------------------
 - array
@@ -83,17 +92,35 @@ stack (value) types
 - int
 - object
 - set (system)
+- char
+- ptr/pointer types (alloc)
 
 heap (ref) types
 ----------------
 - addr
-- ptr/pointer untraced refs pointing to manually allocated objects, required for low-level ops
+- ptr/pointer (malloc) untraced refs pointing to manually allocated objects, required for low-level ops
 - ref point to garbage-collected heap objects
 - seq
 - sets (hashSets)
 - sink
 - string
-- unsafeAddr
+- unsafeAddr deprecated
+
+copied on assignment
+--------------------
+- sequences
+- strings
+
+mutable
+-------
+- var
+- ref/pointer types can always be mutated through a pointer
+
+immutable
+---------
+- const (compile time)
+- let (runtime, cant be reassigned)
+- ref/pointer variables cant point to a new ref/pointer after
 
 procs
 -----

@@ -1,7 +1,7 @@
 ##
 ## filters
 ## =======
-## [bookmark](https://nim-lang.org/docs/asyncstreams.html)
+## [bookmark](https://nim-lang.github.io/Nim/asyncstreams.html)
 
 ##[
 ## TLDR
@@ -9,6 +9,6 @@
 
 TODO
 ----
-- [filters](https://nim-lang.org/docs/filters.html)
+- [filters](https://nim-lang.github.io/Nim/filters.html)
   - niminaction: 200 -> 210
 ]##

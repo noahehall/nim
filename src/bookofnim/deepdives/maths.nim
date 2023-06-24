@@ -1,7 +1,7 @@
 ##
 ## maths
 ## =====
-## [bookmark](https://nim-lang.org/docs/math.html)
+## [bookmark](https://nim-lang.github.io/Nim/math.html)
 
 ##[
 ## TLDR
@@ -10,13 +10,13 @@
 links
 -----
 - high impact
-  - [basic math](https://nim-lang.org/docs/math.html)
-  - [rational numbers](https://nim-lang.org/docs/rationals.html)
-  - [statistical analysis](https://nim-lang.org/docs/stats.html)
+  - [basic math](https://nim-lang.github.io/Nim/math.html)
+  - [rational numbers](https://nim-lang.github.io/Nim/rationals.html)
+  - [statistical analysis](https://nim-lang.github.io/Nim/stats.html)
 - niche
-  - [complex numbers](https://nim-lang.org/docs/complex.html)
-  - [floating point env](https://nim-lang.org/docs/fenv.html)
-  - [summation functions](https://nim-lang.org/docs/sums.html)
+  - [complex numbers](https://nim-lang.github.io/Nim/complex.html)
+  - [floating point env](https://nim-lang.github.io/Nim/fenv.html)
+  - [summation functions](https://nim-lang.github.io/Nim/sums.html)
 
 system procs
 ------------

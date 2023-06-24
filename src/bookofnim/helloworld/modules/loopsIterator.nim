@@ -8,11 +8,11 @@
 
 links
 -----
-- [iterators](https://nim-lang.org/docs/iterators.html)
+- [iterators](https://nim-lang.github.io/Nim/iterators.html)
 - [iterator tut](https://nim-by-example.github.io/for_iterators/)
-- [closureScope](https://nim-lang.org/docs/system.html#%7C%7C.i%2CS%2CT%2Cstaticstring)
+- [closureScope](https://nim-lang.github.io/Nim/system.html#%7C%7C.i%2CS%2CT%2Cstaticstring)
 - [status iterator docs](https://nimbus.guide/auditors-book/02.1_nim_routines_proc_func_templates_macros.html#iterators)
-- [system io iterators](https://nim-lang.org/docs/io.html#15)
+- [system io iterators](https://nim-lang.github.io/Nim/io.html#15)
 
 TODOs
 -----
@@ -21,25 +21,34 @@ TODOs
 
 ## loop/iterator related procs
 - finished determine if a first class iterator has finished
-- countup  == `..` == `..<` (zero index countup)
-- countdown  == `..^` == `..^1` (zero index countdown)
+- countup  == `..` == `..<` (zero index countup) < is non inclusive upper bound
+- countdown  (zero index countdown)
 - items for i blah.items: always called if only 1 identifer is used
 - pairs for i,z blah.pairs: always called if two identifiers are used
 - low(blah) .. high(blah)
 - lines(somefile) each line in the file
 
 ## iterators
-- inlined at the callsite when compiled
+- routines that can be used in a for loop
+- used for defining custom loops on complex objects
+- {.inline.} iterators are inlined at the callsite compiled
+  - restrictions:
+      - only for templates, macros and other inline iterators
+      - cant be recursive
+      - uses yield instead of return
   - do not have the overhead from function calling
-  - prone to code bloat
-  - useful for defining custom loops on complex objects
-- can be used as operators if you enclose the name in back ticks
-- can be wrapped in a proc with the same name to accumulate the result and return it as a seq
-- distinction with procs
+  - having more than 1 yield statement leads to code bloat
+    - the body of the for loop is inlined at EACH yield statement
+- {.closure.} iterators
+  - restrictions:
+      - cannot be executed at compile time
+      - uses yield, use return to end early
+      - cant be used with js backend
+  - can be used as operators if you enclose the name in back ticks
+  - can be wrapped in a proc with the same name to accumulate the result and return it as a seq
+- restrictions for both inline and closure iterators
   - can only be called from loops
-  - uses yield instead of return keyword
   - doesnt have an implicit result
-  - dont support recursion
   - cant be forward declared
 ]##
 
@@ -104,7 +113,7 @@ while true:
   echo "correct finished usage: ", value # 1,2,3
 
 echo "############################ for"
-# loops over iterators
+# looping over iterators
 for i in 1..5: echo "loop .. " & $i
 for i in 1 ..< 5: echo "loop ..< ", i
 for i in countup(0,10,2): echo "evens only ", i # alias for ..

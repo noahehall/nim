@@ -1,24 +1,23 @@
 ## blocks
 ## ======
 
-
 ##[
 ## TLDR
 - blocks have a () syntax but we skipped it as its not idiomatic nim in this context
 - new scope introduced after the : symbol, and ends when the indentention returns to previous level
 - named blocks can be exited specifically with `break blockName`
+  - Using a break in a unnamed block is deprecated and will soon be an error
 - like most other things, blocks can be expressions and assigned to a var
-- see loopIterator.nim for closureScope blocks
+- do notation, static and iterator closureScope can also be blocks, see elseware
+- once blocks
+  - are executed once, the first time they're seen by the compiler
 
 links
 -----
-- [block statements](https://nim-lang.org/docs/manual.html#statements-and-expressions-block-statement)
-- [block expressions](https://nim-lang.org/docs/manual.html#statements-and-expressions-block-expression)
-- [once template](https://nim-lang.org/docs/system.html#once.t%2Cuntyped)
+- [block statements](https://nim-lang.github.io/Nim/manual.html#statements-and-expressions-block-statement)
+- [block expressions](https://nim-lang.github.io/Nim/manual.html#statements-and-expressions-block-expression)
+- [once template](https://nim-lang.github.io/Nim/system.html#once.t%2Cuntyped)
 
-
-## once blocks
-- are executed once, the first time they're seen by the compiler
 ]##
 
 {. hint[XDeclaredButNotUsed]:off .}

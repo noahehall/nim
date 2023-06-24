@@ -5,6 +5,7 @@
 ##[
 ## TLDR
 - migrating to V2
+  - [read this article](https://nim-lang.org/blog/2022/12/21/version-20-rc.html)
   - [read this changelog](https://github.com/nim-lang/Nim/blob/9ba07edb2ec7fcdd628cfa7155c4853160ebd5c3/changelog.md)
   - system modules moved to std library
     - assertions > std/assertions
@@ -44,7 +45,7 @@ TODOs
 - [nimtracker](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/pure/nimtracker.nim)
 - [punycode](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/pure/punycode.nim)
 - [smtp](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/pure/smtp.nim)
-- think the db stuff were just moved somewhere else
+- are now nimble packages
   - [mysql](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/wrappers/mysql.nim)
   - [odbcsql](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/wrappers/odbcsql.nim)
   - [postgres](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/wrappers/postgres.nim)
@@ -59,6 +60,26 @@ TODOs
 - [syspawn](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/system/sysspawn.nim)
 - [threads](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/system/threads.nim)
 - [widestrs](https://github.com/nim-lang/Nim/blob/v1.6.12/lib/system/widestrs.nim)
+
+    system modules now std modules
+    std/syncio
+    std/assertions
+    std/formatfloat
+    std/objectdollar
+    std/widestrs
+    std/typedthreads
+    std/sysatomics
+
+    std modules now nimble packages
+    std/punycode => punycode
+    std/asyncftpclient => asyncftpclient
+    std/smtp => smtp
+    std/db_common => db_connector/db_common
+    std/db_sqlite => db_connector/db_sqlite
+    std/db_mysql => db_connector/db_mysql
+    std/db_postgres => db_connector/db_postgres
+    std/db_odbc => db_connector/db_odbc
+
 
 ]##
 

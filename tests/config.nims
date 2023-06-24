@@ -21,8 +21,18 @@ when defined(windows):
 
 # internal
 switch("assertions", "on")
+switch("debuginfo", "on")
+switch("declaredLocs", "on")
+switch("excessiveStackTrace", "on")
+switch("forceBuild", "on")
 switch("path", "$projectDir/../../src") # relative to test files
 switch("putenv", "NIM_TESTAMENT_REMOTE_NETWORKING=1")
-switch("putenv", "TEST=1") # dont set ENV=TEST; this enables us to run tests against any env
+switch("putenv", "TEST=1")
 switch("stackTraceMsgs", "on")
 switch("verbosity", "2")
+
+case existsEnv "DEV":
+  of false:
+    --forceBuild:on
+    --parallelBuild:1
+  else: discard
