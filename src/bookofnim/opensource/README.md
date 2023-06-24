@@ -17,6 +17,7 @@
 - [arraymancer: deep learning tensor library](https://github.com/mratsim/Arraymancer)
 - [async tools: async utilities for nim](https://github.com/cheatfate/asynctools)
 - [Basolato: fullstack web framework](https://github.com/itsumura-h/nim-basolato)
+- [bro: stylesheet language; aka the sass kiler](https://github.com/openpeeps/bro)
 - [c2nim: converts C and C++ header files to nim code](https://github.com/nim-lang/c2nim)
 - [docopt: create cli interfaces](https://github.com/docopt/docopt.nim)
 - [dsl: svg|gif generator](https://github.com/bluenote10/NimSvg)
@@ -76,6 +77,7 @@
 - [uing: updated fork of nim-lang/ui](https://github.com/neroist/uing)
 - [vaf: http fuzzer](https://github.com/d4rckh/vaf)
 - [valido: string validators & sanitizers](https://github.com/openpeep/valido)
+- [valido: string validators and sanitizers](https://github.com/openpeeps/valido)
 - [zippy: deflate,zlib,gzip,tarballs,zip files management](https://github.com/guzba/zippy)
 
 ## orgs/people with high-quality open source nim packages
@@ -89,6 +91,7 @@
 - [jiro](https://github.com/jiro4989)
 - [juan](https://github.com/juancarlospaco)
 - [mratsim](https://github.com/mratsim)
+- [openpeeps](https://github.com/openpeeps)
 - [planety](https://github.com/planety)
 - [pmunch](https://github.com/PMunch)
 - [ringabout](https://github.com/ringabout)
