@@ -68,6 +68,7 @@
 - [qrgen: generate QR codes](https://github.com/aruZeta/QRgen)
 - [ready: redis client](https://github.com/guzba/ready)
 - [scorper: micro webframework built on chronos](https://github.com/bung87/scorper)
+- [serverless-nim](https://github.com/epiphone/serverless-nim)
 - [stash table: concurrent hash table](https://github.com/olliNiinivaara/StashTable)
 - [sunk: then, catch and finally for futures](https://github.com/archnim/sunk)
 - [threadproxy: inter-thread communication](https://github.com/jackhftang/threadproxy.nim)
@@ -161,6 +162,10 @@
 
 - [graphql services in nim](https://github.com/status-im/nim-graphql)
 - supports http/s, sockets, i/rpc, stdin/out
+
+#### denim
+
+- [native node/bun addons](https://github.com/openpeeps/denim)
 
 ### starter kits
 

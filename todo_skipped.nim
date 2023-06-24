@@ -9,6 +9,8 @@
 - [figure out what genode is](https://genode.org/)
   - [nim has a dir dedicated to genode](https://github.com/nim-lang/Nim/tree/devel/lib/genode)
   - [and another](https://github.com/nim-lang/Nim/tree/devel/lib/genode_cpp)
+- [atlas shrugged](https://forum.nim-lang.org/t/10234)
+  - [tut](https://github.com/nim-lang/atlas/blob/master/readme.md)
 
 ## new list of TODOs
 - async / para stuff
